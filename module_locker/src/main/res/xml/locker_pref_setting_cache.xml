@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+
+    <PreferenceCategory
+            app:iconSpaceReserved="false"
+            android:title="缓存设置">
+
+        <CheckBoxPreference
+                android:defaultValue="false"
+                android:key="@string/sp_key_no_photo"
+                android:layout="@layout/custom_preference_layout"
+                android:summary="@string/switch_no_photo_mode_summary"
+                android:title="@string/switch_photo_mode" />
+
+        <CheckBoxPreference
+                android:defaultValue="false"
+                android:key="@string/sp_key_no_show_top"
+                android:layout="@layout/custom_preference_layout"
+                android:summary="@string/switch_show_top_summary"
+                android:title="@string/switch_show_top_title" />
+
+        <Preference
+                android:key="@string/sp_key_clean_cache"
+                android:layout="@layout/custom_preference_layout"
+                android:title="@string/clear_cache" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

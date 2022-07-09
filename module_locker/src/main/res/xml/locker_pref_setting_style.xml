@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+
+    <PreferenceCategory
+            app:iconSpaceReserved="false"
+            android:title="个性设置">
+
+        <com.ve.lib.common.view.widget.preference.IconPreference
+                android:key="@string/sp_key_theme_color"
+                android:layout="@layout/custom_preference_layout"
+                android:summary="@string/choose_theme_color_summary"
+                android:title="@string/choose_theme_color" />
+
+        <SwitchPreference
+                android:defaultValue="false"
+                android:key="@string/sp_key_nav_color"
+                android:layout="@layout/custom_preference_layout"
+                android:summary="@string/nav_bar_coloration_summary"
+                android:title="@string/nav_bar_coloration" />
+
+
+        <Preference
+                android:key="@string/sp_key_auto_night_mode"
+                android:layout="@layout/custom_preference_layout"
+                android:summary="@string/auto_night_mode_summary"
+                android:title="@string/auto_night_mode" />
+
+        <Preference
+                android:key="@string/sp_key_text_size"
+                android:layout="@layout/custom_preference_layout"
+                android:summary="设置字体大小"
+                android:title="字体大小" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

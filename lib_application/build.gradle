@@ -1,0 +1,41 @@
+apply from: "../build.library.gradle"
+
+android {
+    defaultConfig {
+        //设置了resourcePrefix值后，所有的资源名必须以指定的字符串做前缀，否则会报错。
+        //但是resourcePrefix这个值只能限定xml里面的资源，并不能限定图片资源，所有图片资源仍然需要手动去修改资源名。
+        //resourcePrefix "app_"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+
+    //使用api 将引用依赖暴露给其他模块
+    api rootProject.ext.androidxLibs
+    //基本视图依赖
+    api rootProject.ext.commonLibs
+    api rootProject.ext.rxJavaLibs
+    //网络依赖
+    api rootProject.ext.networkLibs
+    //注解
+    kapt rootProject.ext.annotationProcessorLibs
+    //annotationProcessor rootProject.ext.annotationProcessorLibs
+
+    implementation rootProject.ext.libARouter
+    api 'com.afollestad.material-dialogs:core:3.3.0'
+    api 'com.afollestad.material-dialogs:files:3.3.0'
+    api 'com.afollestad.material-dialogs:color:3.3.0'
+    api 'com.afollestad.material-dialogs:datetime:3.3.0'
+    api 'com.afollestad.material-dialogs:bottomsheets:3.3.0'
+    api 'com.afollestad.material-dialogs:lifecycle:3.3.0'
+
+
+//    api 'cn.jiguang.sdk:jmessage:2.9.2'  // 此处以JMessage 2.9.2 版本为例。
+//
+//    api 'cn.jiguang.sdk:jcore:2.3.0'  // 此处以JCore 2.3.0 版本为例。
+//
+//    api 'org.projectlombok:lombok:1.18.16'
+//    kapt 'org.projectlombok:lombok:1.18.16'
+}

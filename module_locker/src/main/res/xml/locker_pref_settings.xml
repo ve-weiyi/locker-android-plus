@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <PreferenceCategory
+            app:iconSpaceReserved="false"
+            android:title="用户管理">
+
+        <Preference
+                android:defaultValue="false"
+                android:key="@string/sp_key_account_setting"
+                android:layout="@layout/custom_preference_layout_line"
+                tools:summary="用户名"
+                android:title="账号管理"
+                android:icon="@mipmap/hust_logo"
+                />
+<!--        <Preference-->
+<!--                android:defaultValue="false"-->
+<!--                android:key="sp_key_phone"-->
+<!--                android:layout="@layout/custom_preference_layout_line"-->
+<!--                android:summary="15623356029"-->
+<!--                android:title="手机号码"-->
+<!--                />-->
+        <Preference
+                android:defaultValue="false"
+                android:key="sp_key_key_manager"
+                android:layout="@layout/custom_preference_layout_line"
+                android:title="秘钥管理" />
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+            app:iconSpaceReserved="false"
+            android:title="通用设置">
+
+<!--        <Preference-->
+<!--                android:defaultValue="false"-->
+<!--                android:key="sp_key_no_declare"-->
+<!--                android:layout="@layout/custom_preference_layout_line"-->
+<!--                android:title="消息设置"-->
+
+<!--                />-->
+
+        <Preference
+                android:defaultValue="false"
+                android:key="@string/sp_key_style_setting"
+                android:summary="开启自动切换夜间模式哦"
+                android:layout="@layout/custom_preference_layout_line"
+                android:title="个性设置"
+                />
+
+        <Preference
+                android:defaultValue="false"
+                android:key="@string/sp_key_cache_setting"
+                android:layout="@layout/custom_preference_layout_line"
+                android:title="缓存设置" />
+
+        <Preference
+                android:defaultValue="false"
+                android:key="@string/sp_key_other_setting"
+                android:layout="@layout/custom_preference_layout_line"
+                android:title="其他设置" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            app:iconSpaceReserved="false"
+            android:title="辅助功能"    >
+
+        <SwitchPreference
+                android:defaultValue="false"
+                android:key="sp_key_biometrics"
+                android:layout="@layout/custom_preference_layout_button"
+                android:title="指纹识别"
+                />
+        <SwitchPreference
+                android:defaultValue="false"
+                android:key="sp_key_long_copy"
+                android:layout="@layout/custom_preference_layout_button"
+                android:title="长按复制密码或卡号"
+                />
+
+        <Preference
+                android:defaultValue="false"
+                android:key="sp_key_auto_fill"
+                android:layout="@layout/custom_preference_layout_line"
+                android:title="自动填充"
+                />
+
+        <Preference
+                android:defaultValue="false"
+                android:key="sp_key_input"
+                android:layout="@layout/custom_preference_layout_line"
+                android:title="导入/导出" />
+
+        <Preference
+                android:defaultValue="false"
+                android:key="sp_key_recreate_database"
+                android:layout="@layout/custom_preference_layout_line"
+                android:title="重置数据库" />
+
+    </PreferenceCategory>
+
+<!--    <PreferenceCategory-->
+<!--            app:iconSpaceReserved="false"-->
+<!--            android:title="授权设置"-->
+<!--            >-->
+
+<!--        <Preference-->
+<!--                android:defaultValue="false"-->
+<!--                android:key="sp_key_no_declare"-->
+<!--                android:layout="@layout/custom_preference_layout_line"-->
+<!--                android:title="用户协议"-->
+<!--                />-->
+
+<!--        <Preference-->
+<!--                android:defaultValue="false"-->
+<!--                android:key="sp_key_no_declare"-->
+<!--                android:layout="@layout/custom_preference_layout_line"-->
+<!--                android:title="隐私政策" />-->
+
+<!--        <Preference-->
+<!--                android:defaultValue="false"-->
+<!--                android:key="sp_key_no_declare"-->
+<!--                android:layout="@layout/custom_preference_layout_line"-->
+<!--                android:title="隐私权限设置"-->
+<!--                />-->
+
+<!--    </PreferenceCategory>-->
+
+    <PreferenceCategory
+            app:iconSpaceReserved="false"
+            android:title="帮助">
+
+<!--        <EditTextPreference-->
+<!--                android:defaultValue="false"-->
+<!--                android:key="sp_key_webdev"-->
+<!--                android:layout="@layout/custom_preference_layout_line"-->
+<!--                android:title="服务器迁移"-->
+<!--                />-->
+        <Preference
+                android:defaultValue="false"
+                android:key="sp_key_feedback"
+                android:layout="@layout/custom_preference_layout_line"
+                android:title="反馈与建议"
+                />
+        <Preference
+                android:defaultValue="false"
+                android:key="sp_key_check_update"
+                android:layout="@layout/custom_preference_layout_line"
+                android:title="检查更新"
+                />
+        <Preference
+                android:defaultValue="false"
+                android:key="@string/sp_key_about_setting"
+                android:layout="@layout/custom_preference_layout_line"
+                android:title="关于"
+                />
+
+        <Preference
+                android:defaultValue="false"
+                />
+    </PreferenceCategory>
+</PreferenceScreen>

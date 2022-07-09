@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+            android:id="@+id/action_privacy_code"
+            android:enabled="true"
+            android:icon="@drawable/ic_baseline_code_24"
+            android:title="自动生成"
+            app:showAsAction="ifRoom" />
+    <item
+            android:id="@+id/action_privacy_check"
+            android:enabled="true"
+            android:icon="@drawable/ic_baseline_check_24"
+            android:title="保存"
+            app:showAsAction="ifRoom" />
+    <item
+            android:id="@+id/action_privacy_help"
+            android:enabled="true"
+            android:icon="@drawable/ic_baseline_help_outline_24"
+            android:title="帮助"
+            app:showAsAction="ifRoom" />
+
+</menu>

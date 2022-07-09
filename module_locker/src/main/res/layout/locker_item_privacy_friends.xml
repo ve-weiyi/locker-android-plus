@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <com.ve.module.locker.ui.view.TagSwipeItemLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_4"
+            app:sideVisibility="false"
+            android:theme="@style/AppTheme"
+            >
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/item_layout_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:paddingHorizontal="@dimen/dp_8"
+            android:paddingVertical="@dimen/dp_8"
+            android:background="@drawable/bg_round_pass">
+
+        <com.google.android.material.imageview.ShapeableImageView
+                app:shapeAppearanceOverlay="@style/roundImageView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/iv_app_icon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_baseline_person_24"
+                />
+
+        <CheckBox
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/check_button"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+
+                android:focusable="true"
+                android:visibility="visible"
+                tools:visibility="visible" />
+
+
+        <TextView
+                app:layout_constraintStart_toEndOf="@id/iv_app_icon"
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/tv_friends_nickname"
+                android:paddingStart="@dimen/dp_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_4"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:singleLine="true"
+                tools:text="昵称"
+                tools:textStyle="bold"
+                style="@style/tv_title_normal"
+                />
+        <ImageView
+                android:id="@+id/iv_friends_sex"
+                app:layout_constraintStart_toEndOf="@id/tv_friends_nickname"
+                app:layout_constraintTop_toTopOf="@id/tv_friends_nickname"
+                android:layout_marginTop="@dimen/dp_2"
+                android:layout_marginStart="@dimen/dp_2"
+                android:layout_width="@dimen/dp_16"
+                android:layout_height="@dimen/dp_16"
+                android:background="@drawable/ic_male"
+                />
+
+        <TextView
+                app:layout_constraintStart_toStartOf="@id/tv_friends_nickname"
+                app:layout_constraintTop_toBottomOf="@id/tv_friends_nickname"
+                android:layout_marginTop="@dimen/dp_4"
+
+                android:id="@+id/tv_friends_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                style="@style/tv_content_second"
+                tools:text="名字"
+                app:drawableStartCompat="@drawable/ic_baseline_person_24" />
+
+        <TextView
+                app:layout_constraintEnd_toStartOf="@id/check_button"
+                app:layout_constraintTop_toTopOf="@id/tv_friends_name"
+                android:paddingEnd="32dp"
+                android:id="@+id/tv_friends_birthday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                style="@style/tv_content_second"
+                tools:text="2022-05-01"
+                app:drawableStartCompat="@drawable/ic_birthday" />
+
+
+        <LinearLayout
+                android:id="@+id/layout_phone"
+                app:layout_constraintTop_toBottomOf="@id/tv_friends_name"
+                app:layout_constraintStart_toStartOf="@id/tv_friends_name"
+                app:layout_constraintEnd_toStartOf="@id/check_button"
+                android:layout_marginVertical="@dimen/dp_4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                >
+
+            <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/tv_friends_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    style="@style/tv_content_small"
+
+                    android:singleLine="true"
+                    tools:text="15623356029"
+                    app:drawableStartCompat="@drawable/ic_baseline_phone_24" />
+
+
+            <TextView
+                    android:layout_weight="1"
+                    android:id="@+id/tv_friends_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/tv_content_small"
+                    android:singleLine="true"
+                    tools:text="791422171@qq.com"
+                    app:drawableStartCompat="@drawable/ic_baseline_email_24" />
+        </LinearLayout>
+
+
+        <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/layout_details"
+                app:layout_constraintTop_toBottomOf="@id/layout_phone"
+                app:layout_constraintStart_toStartOf="@id/layout_phone"
+                app:layout_constraintEnd_toStartOf="@id/check_button"
+                android:layout_marginTop="@dimen/dp_8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:visibility="visible"
+                >
+            <LinearLayout
+                    android:id="@+id/layout_qq"
+                    app:layout_constraintTop_toBottomOf="@id/layout_phone"
+                    app:layout_constraintStart_toStartOf="@id/layout_phone"
+                    app:layout_constraintEnd_toStartOf="@id/check_button"
+                    android:layout_marginVertical="@dimen/dp_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="@dimen/dp_20"
+                    >
+
+                <TextView
+                        android:layout_weight="1"
+                        android:id="@+id/tv_friends_qq"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/tv_content_small"
+                        android:singleLine="true"
+                        tools:text="791422171"
+                        app:drawableStartCompat="@drawable/ic_qq" />
+
+
+                <TextView
+                        android:layout_weight="1"
+                        android:id="@+id/tv_friends_wechat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/tv_content_small"
+                        android:singleLine="true"
+                        tools:text="wy791422171"
+                        app:drawableStartCompat="@drawable/ic_wechat" />
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/layout_address"
+                    app:layout_constraintTop_toBottomOf="@id/layout_qq"
+                    app:layout_constraintStart_toStartOf="@id/layout_qq"
+                    app:layout_constraintEnd_toStartOf="@id/check_button"
+                    android:layout_marginVertical="@dimen/dp_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                <TextView
+                        android:layout_weight="1"
+                        android:id="@+id/tv_friends_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        style="@style/tv_content_second"
+                        tools:text="华中科技大学。"
+                        app:drawableStartCompat="@drawable/ic_home_black_24dp" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                    app:layout_constraintTop_toBottomOf="@id/layout_qq"
+                    app:layout_constraintStart_toStartOf="@id/layout_qq"
+                    app:layout_constraintEnd_toStartOf="@id/check_button"
+                    android:layout_marginVertical="@dimen/dp_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                <TextView
+                        android:layout_weight="1"
+                        android:id="@+id/tv_friends_department"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        style="@style/tv_content_second"
+                        tools:text="计算机学院。"
+                        app:drawableStartCompat="@drawable/ic_department" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/layout_desc"
+                    app:layout_constraintTop_toBottomOf="@id/layout_address"
+                    app:layout_constraintStart_toStartOf="@id/layout_address"
+                    app:layout_constraintEnd_toStartOf="@id/check_button"
+                    android:layout_marginVertical="@dimen/dp_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                <TextView
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:id="@+id/tv_friends_remark"
+                        style="@style/tv_content_second"
+                        tools:text="床前明月光，疑是地上霜。举头望明月，低头思故乡。"
+                        app:drawableStartCompat="@drawable/ic_baseline_description_24" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                >
+
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/item_btn_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:background="@drawable/bg_done"
+                    android:paddingLeft="@dimen/dp_6"
+                    android:paddingRight="@dimen/dp_6"
+                    android:text="编辑"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_12"
+                    app:backgroundTint="@null"
+                    app:rippleColor="@null"
+                    app:backgroundTintMode="src_over"
+                    />
+
+            <Button
+                    android:id="@+id/item_btn_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_delete"
+                    android:paddingLeft="@dimen/dp_6"
+                    android:paddingRight="@dimen/dp_6"
+                    android:text="@string/delete"
+                    app:backgroundTint="@null"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_12" />
+
+        </LinearLayout>
+
+    </com.ve.module.locker.ui.view.TagSwipeItemLayout>

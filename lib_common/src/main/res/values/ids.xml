@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="empty_view" type="id" />
+    <item name="error_view" type="id" />
+    <item name="loading_view" type="id" />
+    <item name="content_view" type="id" />
+    <item name="no_network_view" type="id" />
+
+    <item name="empty_retry_view" type="id" />
+    <item name="error_retry_view" type="id" />
+    <item name="no_network_retry_view" type="id" />
+
+
+    <item name="statusbarutil_fake_status_bar_view" type="id" />
+    <item name="statusbarutil_translucent_view" type="id" />
+
+    <item name="vertical_image_id" type="id" />
+    <item name="vertical_text_id" type="id" />
+    <item name="vertical_tip_id" type="id" />
+
+    <item name="horizontal_image_id" type="id" />
+    <item name="horizontal_tile_id" type="id" />
+    <item name="horizontal_right_image_id" type="id" />
+
+</resources>

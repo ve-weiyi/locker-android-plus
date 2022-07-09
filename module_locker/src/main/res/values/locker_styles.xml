@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+        tools:ignore="ResourceName">
+
+
+    <style name="InputTextLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="background">@drawable/shape_round_grey</item>
+        <item name="boxBackgroundMode">none</item>
+        <!--        &lt;!&ndash;        右边小眼睛&ndash;&gt;-->
+        <!--        <item name="passwordToggleEnabled">true</item>-->
+        <!--        <item name="endIconMode">clear_text</item>-->
+        <!--右边图标填充色-->
+        <!--        <item name="passwordToggleTint">@color/colorPrimary</item>-->
+        <item name="passwordToggleTintMode">src_atop</item>
+        <!--        左边图标-->
+        <!--        <item name="startIconDrawable">@drawable/fab_add</item>-->
+        <!--        长度提示-->
+        <item name="counterEnabled">false</item>
+        <item name="counterMaxLength">10</item>
+        <!--        长度超出限制时提示错误信息-->
+        <item name="errorEnabled">false</item>
+
+    </style>
+
+
+    <style name="InputTextLayoutStyle.See" parent="InputTextLayoutStyle">
+        <item name="boxBackgroundMode">outline</item>
+        <item name="passwordToggleEnabled">true</item>
+        <!--        <item name="endIconMode">password_toggle</item>-->
+        <item name="passwordToggleTint">@color/colorPrimary</item>
+        <item name="boxBackgroundColor">@color/grey100</item>
+        <item name="boxStrokeColor">@color/colorPrimary</item>
+        <item name="boxCornerRadiusTopStart">@dimen/dp_10</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/dp_10</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/dp_10</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/dp_10</item>
+    </style>
+
+    <style name="InputTextLayoutStyle.ClearText" parent="InputTextLayoutStyle">
+        <item name="errorEnabled">false</item>
+        <item name="boxBackgroundMode">outline</item>
+        <item name="passwordToggleEnabled">true</item>
+        <item name="endIconDrawable">@drawable/ic_baseline_clear_24</item>
+        <item name="endIconMode">clear_text</item>
+        <!--右边图标填充色-->
+        <item name="passwordToggleTint">@color/colorPrimary</item>
+        <item name="boxBackgroundColor">@color/grey100</item>
+        <item name="boxStrokeColor">@color/colorPrimary</item>
+        <item name="boxCornerRadiusTopStart">@dimen/dp_10</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/dp_10</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/dp_10</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/dp_10</item>
+    </style>
+
+    <style name="InputTextLayoutStyle.Bound" parent="InputTextLayoutStyle">
+
+        <!--右边图标填充色-->
+        <item name="passwordToggleTint">@color/colorPrimary</item>
+        <item name="boxBackgroundMode">outline</item>
+        <item name="passwordToggleEnabled">true</item>
+        <item name="boxBackgroundColor">@color/grey100</item>
+        <item name="boxStrokeColor">@color/colorPrimary</item>
+        <item name="boxCornerRadiusTopStart">@dimen/dp_10</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/dp_10</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/dp_10</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/dp_10</item>
+    </style>
+
+    <style name="EditText.Bound">
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <!--    不可以编辑-->
+    <style name="EditText.See" >
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:focusable">false</item>
+        <item name="android:focusableInTouchMode">false</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/shape_round_grey</item>
+    </style>
+
+    <style name="EditText">
+        <item name="android:padding">8dp</item>
+        <item name="android:background">@drawable/shape_round_grey</item>
+        <!--        <item name="android:inputType">text|textPassword</item>-->
+    </style>
+
+
+    <style name="customDialogBg">
+        <!--        背景颜色-->
+        <item name="md_background_color">#000000</item>
+        <!--        点击时的涟漪颜色-->
+        <item name="md_ripple_color">#000000</item>
+
+        <!--        标题字体颜色-->
+        <item name="md_color_title">#998899</item>
+        <!--        内容字体颜色-->
+        <item name="md_color_content">#873187</item>
+        <!--        按钮字体颜色-->
+        <item name="md_color_button_text">#270E27</item>
+    </style>
+
+    <style name="tv_user_left_text" parent="tv_title_normal">
+
+    </style>
+
+    <style name="tv_user_right_text" parent="tv_content_second">
+        <item name="android:textSize">@dimen/dp_16</item>
+        <item name="android:drawableEnd">@drawable/ic_arrow_right_24dp</item>
+    </style>
+</resources>

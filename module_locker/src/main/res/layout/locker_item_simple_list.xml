@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <com.ve.module.locker.ui.view.TagSwipeItemLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:theme="@style/AppTheme"
+            >
+
+        <RelativeLayout
+                android:id="@+id/item_layout_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <com.ve.module.locker.ui.view.TagTiltTextView
+                    android:id="@+id/tv_tilt"
+                    android:layout_width="@dimen/dp_25"
+                    android:layout_height="@dimen/dp_25"
+
+                    app:tagTiltLength="@dimen/dp_16"
+                    app:tagTiltMode="left_top_triangle"
+                    app:tagTiltText="重要的"
+                    app:tagTiltBgColor="@color/blue"
+                    app:tagTiltTextSize="@dimen/sp_8"
+                    app:tagTiltTextColor="@color/white"
+                    tools:visibility="visible" />
+
+            <ImageView
+                    android:id="@+id/item_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:src="@drawable/ic_baseline_format_list_bulleted_24"
+                    />
+
+            <TextView
+                    android:id="@+id/item_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentEnd="true"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:layout_marginEnd="@dimen/dp_10"
+                    android:text="10"
+                    android:textColor="@color/color_text_normal"
+                    android:textSize="@dimen/sp_20" />
+
+            <TextView
+                    android:id="@+id/item_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_toEndOf="@id/item_icon"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:paddingLeft="@dimen/dp_16"
+                    android:paddingRight="@dimen/dp_16"
+                    android:text="标题"
+                    android:textColor="@color/color_text_normal"
+                    android:textSize="@dimen/sp_20" />
+
+            <TextView
+                    android:id="@+id/item_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/item_name"
+                    android:layout_alignStart="@+id/item_name"
+                    android:layout_marginVertical="@dimen/dp_5"
+
+                    android:paddingLeft="@dimen/dp_16"
+                    android:paddingRight="@dimen/dp_16"
+                    android:text="床前明月光，疑是地上霜。举头望明月，低头思故乡。---李白"
+                    android:lines="1"
+                    android:maxLines="3"
+                    android:ellipsize="end"
+                    android:textColor="@color/color_text_gray_light"
+                    android:textSize="@dimen/item_tv_content" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/colorPrimary"
+                >
+
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/item_btn_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:background="@drawable/bg_done"
+                    android:paddingLeft="@dimen/dp_6"
+                    android:paddingRight="@dimen/dp_6"
+                    android:text="编辑"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_12"
+                    app:backgroundTint="@null"
+                    app:rippleColor="@null"
+                    app:backgroundTintMode="src_over"
+                    />
+
+            <Button
+                    android:id="@+id/item_btn_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_delete"
+                    android:paddingLeft="@dimen/dp_6"
+                    android:paddingRight="@dimen/dp_6"
+                    android:text="@string/delete"
+                    app:backgroundTint="@null"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_12" />
+
+        </LinearLayout>
+
+    </com.ve.module.locker.ui.view.TagSwipeItemLayout>
+

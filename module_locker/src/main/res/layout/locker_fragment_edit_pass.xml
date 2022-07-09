@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <androidx.core.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorBackground"
+                android:orientation="vertical">
+
+            <include
+                    android:id="@+id/layout_base_info"
+                    android:background="@color/white"
+                    android:layout_marginHorizontal="@dimen/dp_10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    layout="@layout/locker_layout_privacy_header" />
+
+
+            <LinearLayout
+
+
+                    android:background="@drawable/bg_round_white_8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:layout_marginHorizontal="@dimen/dp_10"
+                    android:paddingHorizontal="@dimen/dp_20"
+                    android:paddingTop="@dimen/dp_8"
+                    android:paddingBottom="@dimen/dp_100"
+                    android:orientation="vertical">
+
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:textColor="@color/blue"
+                            android:text="账号" />
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:orientation="horizontal">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                                android:id="@+id/et_detail_account"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="@style/InputTextLayoutStyle.ClearText">
+
+                            <EditText
+                                    style="@style/EditText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="@dimen/dp_10"
+                                    android:hint="必须填写账号哦" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:layout_marginTop="10dp"
+                            android:textColor="@color/blue"
+                            android:text="密码" />
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:orientation="horizontal">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                                android:layout_weight="1"
+                                android:id="@+id/et_detail_password"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="@style/InputTextLayoutStyle.See">
+
+                            <EditText
+                                    style="@style/EditText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="@dimen/dp_10"
+                                    tools:hint="12312421" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginVertical="@dimen/dp_16"
+                        android:orientation="horizontal">
+
+                    <TextView
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:gravity="center_vertical"
+                            android:textColor="@color/blue"
+                            android:text="所属app" />
+
+                    <TextView
+                            android:id="@+id/tv_app_name"
+                            app:layout_constraintEnd_toStartOf="@id/iv_app_icon"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            android:padding="@dimen/dp_8"
+                            android:layout_alignParentEnd="true"
+                            android:gravity="end"
+                            android:clickable="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="locker"
+                            android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                            style="@style/tv_content_primary" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                            app:shapeAppearanceOverlay="@style/roundImageView"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            android:id="@+id/iv_app_icon"
+                            android:foreground="?android:attr/selectableItemBackgroundBorderless"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            tools:src="@tools:sample/avatars"
+
+                            />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:id="@+id/tv_item_url"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:layout_marginTop="10dp"
+                            android:textColor="@color/blue"
+                            android:text="链接" />
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_item_owner"
+                            android:gravity="end"
+                            android:orientation="horizontal">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                                android:layout_weight="1"
+                                android:id="@+id/et_detail_url"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="@style/InputTextLayoutStyle.ClearText">
+
+                            <EditText
+                                    style="@style/EditText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="@dimen/dp_10"
+                                    tools:hint="必填项" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:layout_marginTop="10dp"
+                            android:textColor="@color/blue"
+                            android:text="绑定手机号" />
+
+                    <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="end"
+                            android:orientation="horizontal">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                                android:layout_weight="1"
+                                android:id="@+id/et_detail_phone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="@style/InputTextLayoutStyle.ClearText">
+
+                            <EditText
+                                    style="@style/EditText"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:padding="@dimen/dp_10"
+                                    tools:hint="15623356029" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="@dimen/dp_10">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="@dimen/dp_16"
+                            android:layout_marginVertical="10dp"
+                            android:textColor="@color/blue"
+                            android:text="备注" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                            android:layout_weight="1"
+                            android:id="@+id/et_detail_remark"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/InputTextLayoutStyle.ClearText">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                                style="@style/EditText"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingTop="@dimen/dp_10"
+                                android:paddingBottom="40dp"
+                                tools:hint="@string/text_content" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+    <!--
+
+    定义应用程序的数据库名称。
+    默认情况下，每个数据库名称都应以结尾。db。
+    如果你没有把你的数据库命名为。db，
+    LitePal会自动为您添加后缀。
+    例如：
+    <dbname value=“demo”/
+
+    -->
+    <!--数据库名称-->
+    <dbname value="locker" />
+    <!--数据库版本-->
+    <version value="5" />
+
+    <!--映射模型-->
+    <list>
+        <!--添加实体类，此处必须映射完整路径-->
+        <mapping class="com.ve.module.locker.model.db.entity.PrivacyTag" />
+        <mapping class="com.ve.module.locker.model.db.entity.PrivacyFolder" />
+        <mapping class="com.ve.module.locker.model.db.entity.PrivacyCardInfo" />
+        <mapping class="com.ve.module.locker.model.db.entity.PrivacyPassInfo" />
+        <mapping class="com.ve.module.locker.model.db.entity.PrivacyFriendsInfo" />
+
+        <mapping class="com.ve.module.locker.model.db.entity.PrivacyCardDetails" />
+        <mapping class="com.ve.module.locker.model.db.entity.PrivacyPassDetails" />
+        <mapping class="com.ve.module.locker.model.db.entity.TagAndCard" />
+        <mapping class="com.ve.module.locker.model.db.entity.TagAndPass" />
+    </list>
+    <!--数据库存储位置
+
+    1.设置值为internal(默认)，位置：文件放在data/user/0/package/cache目录下，需要root权限才可以查看 context.getFilesDir()
+    2.设置值为external，位置：内部存储\Android\data\你的项目包名\files\database，手机可以查看 context.getExtraFilesDir()
+    3.设置值为例如：dbFile，位置：内存存储\dbFile
+    -->
+
+    <!-- 直接设置这个，就表示数据库存储的位置，直接打开手机存储就可以找到 -->
+    <storage value="internal" />
+</litepal>

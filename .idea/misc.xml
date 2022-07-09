@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.2743589743589744" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.175" />
+        <entry key="lib_application/src/main/res/drawable-v24/bg_round_card.xml" value="0.159" />
+        <entry key="lib_application/src/main/res/drawable-v24/bg_round_pass.xml" value="0.159" />
+        <entry key="lib_common/src/main/res/drawable/bg_placeholder.xml" value="0.159" />
+        <entry key="lib_common/src/main/res/drawable/shape_dialog.xml" value="0.159" />
+        <entry key="lib_common/src/main/res/layout-v21/item_icon_listpreference_preview.xml" value="0.346875" />
+        <entry key="lib_common/src/main/res/layout-v21/item_sticky_header.xml" value="0.346875" />
+        <entry key="lib_common/src/main/res/layout/agentweb_error_page.xml" value="0.1921875" />
+        <entry key="lib_common/src/main/res/layout/dialog_y_loading.xml" value="0.346875" />
+        <entry key="lib_common/src/main/res/layout/empty_view.xml" value="0.2520833333333333" />
+        <entry key="lib_common/src/main/res/layout/error_view.xml" value="0.2520833333333333" />
+        <entry key="lib_common/src/main/res/layout/layout_bridge.xml" value="0.2520833333333333" />
+        <entry key="lib_common/src/main/res/layout/layout_empty_view.xml" value="0.2520833333333333" />
+        <entry key="lib_common/src/main/res/layout/layout_error_view.xml" value="0.2520833333333333" />
+        <entry key="lib_common/src/main/res/layout/layout_loading_view.xml" value="0.18020833333333333" />
+        <entry key="lib_common/src/main/res/layout/layout_network_tip.xml" value="0.18020833333333333" />
+        <entry key="lib_common/src/main/res/layout/layout_network_view.xml" value="0.18020833333333333" />
+        <entry key="lib_common/src/main/res/layout/layout_upgrade_dialog.xml" value="0.2796875" />
+        <entry key="lib_common/src/main/res/layout/loading_view.xml" value="0.346875" />
+        <entry key="lib_common/src/main/res/layout/my_dialog.xml" value="0.1" />
+        <entry key="lib_common/src/main/res/layout/no_network_view.xml" value="0.18020833333333333" />
+        <entry key="lib_common/src/main/res/layout/password_generator.xml" value="0.2520833333333333" />
+        <entry key="lib_common/src/main/res/layout/toast_custom.xml" value="0.2520833333333333" />
+        <entry key="lib_utils/src/main/res/drawable/bg_placeholder.xml" value="0.159" />
+        <entry key="lib_utils/src/main/res/drawable/shape_bg_black.xml" value="0.159" />
+        <entry key="lib_view/src/main/res/drawable/shape_dialog.xml" value="0.159" />
+        <entry key="lib_view/src/main/res/layout-v21/custom_preference_layout.xml" value="0.2520833333333333" />
+        <entry key="lib_view/src/main/res/layout-v21/custom_preference_layout_button.xml" value="0.2520833333333333" />
+        <entry key="lib_view/src/main/res/layout-v21/custom_preference_layout_line.xml" value="0.2520833333333333" />
+        <entry key="lib_view/src/main/res/layout-v21/item_icon_listpreference.xml" value="0.2520833333333333" />
+        <entry key="lib_view/src/main/res/layout-v21/item_icon_listpreference_preview.xml" value="0.2520833333333333" />
+        <entry key="lib_view/src/main/res/layout-v21/item_icon_preference_preview.xml" value="0.2520833333333333" />
+        <entry key="lib_view/src/main/res/layout-v21/preference_color_picker.xml" value="0.2520833333333333" />
+        <entry key="lib_view/src/main/res/layout/empty_view.xml" value="0.2520833333333333" />
+        <entry key="lib_view/src/main/res/layout/error_view.xml" value="0.2520833333333333" />
+        <entry key="module_locker/src/main/res/layout/locker_activity_about.xml" value="0.346875" />
+        <entry key="module_locker/src/main/res/layout/locker_activity_category_details.xml" value="0.1953125" />
+        <entry key="module_locker/src/main/res/layout/locker_fragment_drawer.xml" value="0.346875" />
+        <entry key="module_locker/src/main/res/layout/locker_fragment_me.xml" value="0.346875" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

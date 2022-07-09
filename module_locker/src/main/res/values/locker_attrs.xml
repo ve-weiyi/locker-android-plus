@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" >
+
+    <declare-styleable name="TagSwipeItemLayout" tools:ignore="ResourceName">
+        <attr name="sideVisibility" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="PrivacyItemView" tools:ignore="ResourceName">
+        <attr name="paddingLeft" format="dimension" />
+        <attr name="paddingRight" format="dimension" />
+        <attr name="paddingTop" format="dimension" />
+        <attr name="paddingBottom" format="dimension" />
+
+        <attr name="hIconWidth" format="dimension" />
+        <attr name="hIconHeight" format="dimension" />
+        <attr name="hIcon" format="reference" />
+        <attr name="iconPaddingRight" format="dimension" />
+
+
+        <attr name="titleTextSize" format="dimension" />
+        <attr name="titleTextColor" format="color" />
+        <attr name="titleText" format="string" />
+
+        <attr name="editTextSize" format="dimension" />
+        <attr name="editTextColor" format="color" />
+        <attr name="editText" format="string" />
+        <attr name="editTextBackground" format="reference" />
+
+        <attr name="rightTextSize" format="dimension" />
+        <attr name="rightTextColor" format="color" />
+        <attr name="rightText" format="string" />
+
+        <attr name="rightIcon" format="reference" />
+        <attr name="rightIconWidth" format="dimension" />
+        <attr name="rightIconHeight" format="dimension" />
+        <attr name="rightIconMarginLeft" format="dimension" />
+
+
+        <attr name="hTipTextSize" format="dimension" />
+        <attr name="hTipTextColor" format="color" />
+        <attr name="hTipText" format="string" />
+        <attr name="hTipPaddingLeft" format="dimension" />
+        <attr name="hTipVisibility" format="boolean" />
+    </declare-styleable>
+
+
+    <!-- TagTiltTextView -->
+    <declare-styleable name="TagTiltTextView" tools:ignore="ResourceName">
+        <attr name="tagTiltBgColor" format="color" />
+        <attr name="tagTiltTextSize" format="dimension" />
+        <attr name="tagTiltText" format="string" />
+        <attr name="tagTiltTextColor" format="color" />
+        <attr name="tagTiltLength" format="dimension" />
+        <attr name="tagTiltMode" format="enum">
+            <enum name="left_top" value="0" />
+            <enum name="left_top_triangle" value="1" />
+            <enum name="left_bottom" value="2" />
+            <enum name="left_bottom_triangle" value="3" />
+            <enum name="right_top" value="4" />
+            <enum name="right_top_triangle" value="5" />
+            <enum name="right_bottom" value="6" />
+            <enum name="right_bottom_triangle" value="7" />
+        </attr>
+    </declare-styleable>
+</resources>

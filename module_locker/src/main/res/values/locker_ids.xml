@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+        tools:ignore="ResourceName">
+
+    <item name="privacy_edit_id" type="id"  />
+    <item name="privacy_title_id" type="id" />
+    <item name="privacy_right_image_id" type="id" />
+    <item name="privacy_right_text_id" type="id" />
+</resources>

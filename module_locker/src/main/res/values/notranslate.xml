@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools"
+        tools:ignore="ResourceName"
+        translatable="false"
+        >
+
+    <string name="sp_key_account_setting">sp_key_account_setting</string>
+
+    <string name="sp_key_style_setting">sp_key_style_setting</string>
+    <string name="sp_key_news_setting">sp_key_news_setting</string>
+    <string name="sp_key_cache_setting">sp_key_cache_setting</string>
+    <string name="sp_key_other_setting">sp_key_other_setting</string>
+    <string name="sp_key_about_setting">sp_key_about_setting</string>
+
+
+    <string name="sp_key_no_photo">sp_key_no_photo</string>
+    <string name="sp_key_no_show_top">sp_key_no_show_top</string>
+    <string name="sp_key_night_mode">sp_key_night_mode</string>
+    <string name="sp_key_auto_night_mode">sp_key_auto_night_mode</string>
+    <string name="sp_key_auto_night_start">sp_key_auto_night_start</string>
+    <string name="sp_key_auto_night_end">sp_key_auto_night_end</string>
+
+    <string name="sp_key_text_size">sp_key_text_size</string>
+    <string name="sp_key_theme_color">sp_key_theme_color</string>
+    <string name="sp_key_nav_color">sp_key_nav_color</string>
+    <string name="sp_key_clean_cache">sp_key_clean_cache</string>
+    <string name="sp_key_scan_qr_code">sp_key_scan_qr_code</string>
+
+    <string name="sp_key_app_version">sp_key_app_version</string>
+    <string name="sp_key_app_website">sp_key_app_website</string>
+    <string name="sp_key_update_log">sp_key_update_log</string>
+    <string name="sp_key_source_code">sp_key_source_code</string>
+    <string name="sp_key_copyright">sp_key_no_copyright</string>
+    <string name="sp_key_about_us">sp_key_no_about_us</string>
+</resources>

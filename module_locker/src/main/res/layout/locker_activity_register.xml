@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground"
+        android:fitsSystemWindows="true">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <include
+                android:id="@+id/ext_toolbar"
+                layout="@layout/locker_toolbar" />
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingHorizontal="40dp">
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_50"
+                    android:gravity="center"
+                    android:text="注册 locker"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_text_normal"
+                    android:textSize="@dimen/sp_20" />
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:gravity="center"
+                    android:text="当前仅支持使用邮箱账号注册"
+                    android:textSize="@dimen/sp_14" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/et_username"
+                    android:layout_marginTop="@dimen/dp_20"
+                    style="@style/InputTextLayoutStyle.ClearText"
+
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:padding="@dimen/dp_10"
+                        android:hint="请输入邮箱号"
+                        android:background="@drawable/shape_round_grey_tag"
+                        android:inputType="textEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                    android:id="@+id/tv_send_code"
+                    android:layout_gravity="end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="发送验证码" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/InputTextLayoutStyle.Bound"
+                    android:focusable="true"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:id="@+id/et_password"
+                    android:focusableInTouchMode="true">
+
+                <EditText
+
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:padding="@dimen/dp_10"
+                        android:hint="@string/password"
+                        android:background="@drawable/shape_round_grey_tag"
+                        android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/InputTextLayoutStyle.Bound"
+                    android:focusable="true"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:id="@+id/et_password2"
+                    android:focusableInTouchMode="true">
+
+                <EditText
+
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:padding="@dimen/dp_10"
+                        android:hint="再次输入密码"
+                        android:background="@drawable/shape_round_grey_tag"
+                        android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <RelativeLayout
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    android:id="@+id/layout_captcha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp">
+
+                <TextView
+                        android:id="@+id/tv_captcha_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="验证码已发送至"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                <TextView
+                        android:id="@+id/tv_captcha_timer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="20dp"
+                        android:enabled="true"
+                        android:text="60s" />
+
+                <TextView
+                        android:id="@+id/tv_captcha_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_captcha_title"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text=' 13333' />
+
+                <com.ve.lib.common.view.widget.view.CaptchaView
+                        android:id="@+id/captcha_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_captcha_phone"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp" />
+
+                <TextView
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/captcha_view"
+                        android:layout_centerHorizontal="true"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/dp_8"
+                        android:text="请输入验证码"
+                        android:textSize="24dp"
+                        android:textStyle="bold" />
+
+                <ProgressBar
+                        android:visibility="gone"
+                        style="@style/Widget.AppCompat.ProgressBar"
+
+                        android:layout_width="160dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/captcha_view"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="20dp"
+                        android:indeterminate="true"
+                        android:indeterminateTint="#ffff4b4b"
+                        android:indeterminateTintMode="src_atop" />
+
+            </RelativeLayout>
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_register"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    android:background="@drawable/btn_login_bg"
+                    android:gravity="center"
+
+                    android:text="@string/register"
+                    android:textColor="@color/white" />
+
+
+            <TextView
+
+                    android:id="@+id/tv_sign_in"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:paddingVertical="@dimen/dp_16"
+                    android:gravity="right"
+                    android:text="@string/have_account"
+                    style="@style/tv_title_normal_gray"
+                    />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

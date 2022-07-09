@@ -1,0 +1,60 @@
+<resources xmlns:tools="http://schemas.android.com/tools" translatable="false">
+
+    <string name="locker_app_name">locker</string>
+
+    <string name="locker_login">立即登陆</string>
+    <string name="locker_login_tip">登陆隐私储物柜</string>
+    <string name="locker_login_tip_2">手机电脑多端同步,管理您的隐私信息</string>
+
+    <string name="locker_request_permission">为保证应用正常运行, 请打开相关权限</string>
+    <string name="locker_function_not_completed">此功能暂时无实现</string>
+    <string name="locker_op_failed">操作失败</string>
+    <string name="locker_check_network">当前网络不可用，请检查你的网络设置</string>
+    <string name="locker_agree_rule">请点击同意《用户协议》和《隐私政策》《儿童隐私政策》</string>
+    <string name="locker_exit_app_toast">"再按一次退出程序"</string>
+
+    <!-- 登录相关-->
+    <string name="locker_input_correct_phone_number">"请输入十一位数字的手机号"</string>
+    <string name="locker_capture_code_success">"验证码发送成功，请注意查收"</string>
+    <string name="locker_input_password">"请输入密码"</string>
+    <string name="locker_phone_login">"手机号登录"</string>
+    <string name="locker_re_obtain_code">"重新获取"</string>
+    <string name="locker_forget_password">"忘记密码"</string>
+    <string name="locker_password_tip">"请设置登录密码,8–20位字符,至少字母/数字/符号两种组合"</string>
+
+
+    <string name="locker_about_content" translatable="false"><![CDATA[
+            <h2>应用简介</h2>
+            <p>\t\tlocker是一款简单的私密信息管理工具。应用实现个人银行账户及密码、邮件地址及密码、好友联系信息、web应用系统账户及密码等个人隐私信息的加密保存。</p>
+            <p>\t\t当然这只是我们目前的功能，未来我们将提供更多更加便捷的功能…</p>
+            <p>\t\t如果您有任何好的建议：</p>
+                <br/>\t\t\t\t关于页面排版
+                <br/>\t\t\t\t未来你希望增加的功能等
+            <p>\t\t可以添加开发者QQ：<b>791422171</b> 进行反馈</p>
+]]></string>
+
+    <string name="locker_service_item" translatable="false"><![CDATA[
+    <p>\t\t1.locker(下称"本产品"）是一款开源的隐私数据管理工具。应用实现个人银行账户及密码、邮件地址及密码、好友联系信息、web应用系统账户及密码等个人隐私信息的加密保存。应用设计初衷是交付华中科技大学本科生毕业设计作业，源码仅供学习，请勿将其用于其他商业用途。</p>
+    <p>\t\t2.本产品不做任何担保。由于用户行为(Root等)导致用户信息泄漏或丢失，本产品免责。</p>
+    <p>\t\t3.任何由于黑客攻击、计算机病毒侵入或发作、因政府管制而造成的暂时性关闭等影响网络正常经营的不可抗力而造成的个人资料泄露、丢失、被盗用或被窜改等，本产品均得免责。</p>
+    <p>\t\t4.使用者因为违反本声明的规定而触犯中华人民共和国法律的，一切后果自己负责，本产品不承担任何责任。</p>
+    <p>\t\t5.开发者不会向任何无关第三方提供、出售、出租、分享或交易您的个人信息。locker也不会将普通用户的信息用于商业用途。</p>
+    <p>\t\t6.在使用过程中，locker需要获取手机的存储权限(导入及导出功能)、手机识别码 (用于用户统计)、 生物识别验证(用于指纹登录)及联网权限(检查更新)。</p>
+    ]]></string>
+
+    <string name="locker_edit_help" translatable="false"><![CDATA[
+    <p>\t\t1.本应用提供密码强度检测功能和自动生成密码功能，您只需要点击菜单栏左边的[&lt;&gt;]按钮，即可以自动生成高强度的密码，您也可以自行填写密码。在生成之后，也不要忘了去其他平台修改密码哦！</p>
+    <p>\t\t2.您可以在基本信息中将填入一些方便您索引的提示信息，如:[我的中国银行卡]。您填写的敏感信息将以加密的形式保存在数据库中。这意味着即使您的数据库泄漏，只要您保管好您的秘钥，其他人也很难破解其中的信息。</p>
+    <p>\t\t3.注意，本应用仅拥有保存信息的功能，设计初衷是为了辅助用户记住不同平台的密码和账号。如您填写的密码与实际密码不符合，也可能导致您无法登录该平台账号。</p>
+    ]]></string>
+
+    <string name="locker_key_tip"><![CDATA[
+        <p>locker会对每一个用户生成独一无二的密钥并将其存储到系统特定的区域中，这意味着即使反编译了locker并通过某些方法获取到了数据库中的数据，也无法轻易破解。</p>
+        <p>    密码的加密和解密将依赖此密钥，请妥善保管此密钥。 如果您进行了WebDAV同步，即使卸载了Allpass并且备份文件中密码已加密．仍然可以通过密钥找回数据。</p>
+    ]]></string>
+
+    <string name="locker_key_tip_1"><![CDATA[
+        <p>    如果您使用过locker进行云端数据库备份，那么密钥更新后旧的备份文件无法再使用！（本机数据不受影响）</p>
+        <p>    为了安全保证，仍建议在升级前通过“导出为csv”的方式进行备份！</p>
+    ]]></string>
+</resources>
