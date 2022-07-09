@@ -26,17 +26,17 @@ data class PrivacyPassDetails(
     @Encrypt(algorithm = AES)
     var password: String,
 
-    //(value = "链接")
+    //(value = "网站链接")
     @Encrypt(algorithm = AES)
     var url: String? = null,
-
-    //(value = "绑定手机号")
-    @Encrypt(algorithm = AES)
-    var phone: String? = null,
 
     //(value = "所属app包名")
     @Encrypt(algorithm = AES)
     var appPackageName: String = LockerApplication.context.packageName,
+
+    //(value = "绑定手机号")
+    @Encrypt(algorithm = AES)
+    var phone: String? = null,
 
     //(value = "备注")
     @Encrypt(algorithm = AES)

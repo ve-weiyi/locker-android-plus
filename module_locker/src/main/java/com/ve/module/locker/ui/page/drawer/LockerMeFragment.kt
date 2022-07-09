@@ -20,6 +20,7 @@ import com.ve.module.locker.common.config.LockerConstant
 import com.ve.module.locker.common.config.LockerLifecycle
 
 import com.ve.module.locker.databinding.LockerFragmentDrawerBinding
+import com.ve.module.locker.databinding.LockerFragmentMeBinding
 import com.ve.module.locker.model.http.model.LoginVO
 import com.ve.module.locker.ui.page.auth.LockerLoginActivity
 import com.ve.module.locker.ui.page.category.list.LockerListFolderFragment
@@ -40,9 +41,9 @@ import org.greenrobot.eventbus.EventBus
  * @Author  weiyi
  * @Date 2022/4/7
  */
-class LockerDrawerFragment : BaseVmFragment<LockerFragmentDrawerBinding, LockerDrawerViewModel>() , View.OnClickListener {
-    override fun attachViewBinding(): LockerFragmentDrawerBinding {
-        return LockerFragmentDrawerBinding.inflate(layoutInflater)
+class LockerMeFragment : BaseVmFragment<LockerFragmentMeBinding, LockerDrawerViewModel>() , View.OnClickListener {
+    override fun attachViewBinding(): LockerFragmentMeBinding{
+        return LockerFragmentMeBinding.inflate(layoutInflater)
     }
 
     override fun attachViewModelClass(): Class<LockerDrawerViewModel> {
@@ -60,6 +61,7 @@ class LockerDrawerFragment : BaseVmFragment<LockerFragmentDrawerBinding, LockerD
 
     override fun initWebData() {
         super.initWebData()
+
         if(LocationLifecycle.isPermissionEnable(mContext) &&LocationLifecycle.isLocationProviderEnabled(mContext)){
             val locationLifecycle=LocationLifecycle.instance
             lifecycle.addObserver(locationLifecycle)
@@ -78,7 +80,6 @@ class LockerDrawerFragment : BaseVmFragment<LockerFragmentDrawerBinding, LockerD
         super.initObserver()
 
         LockerLifecycle.loginState.observe(this) {
-
             SpUtil.setValue(LockerConstant.SP_KEY_LOGIN_STATE_KEY,it)
             LogUtil.msg("$mViewName --$it---  "+ SpUtil.getValue(LockerConstant.SP_KEY_LOGIN_STATE_KEY,false))
             showHeather(it)
@@ -101,55 +102,36 @@ class LockerDrawerFragment : BaseVmFragment<LockerFragmentDrawerBinding, LockerD
     override fun initListener() {
         super.initListener()
 
-        mBinding.lockerLoginNow.setOnclickNoRepeatListener  {
+        mBinding.layoutUnLogin.layoutMain.setOnclickNoRepeatListener  {
             startActivity(mContext, LockerLoginActivity::class.java)
         }
 
         mBinding.exitLayout.setOnclickNoRepeatListener (this)
 
-        mBinding.iconFolder.setOnclickNoRepeatListener(this)
-        mBinding.iconTag.setOnclickNoRepeatListener(this)
-
-
+        mBinding.actionTodayWeather.setOnclickNoRepeatListener(this)
         mBinding.actionSystemSetting.setOnclickNoRepeatListener(this)
         mBinding.actionNightModel.setOnclickNoRepeatListener(this)
         mBinding.actionFeedback.setOnclickNoRepeatListener(this)
-        mBinding.actionAbout.setOnclickNoRepeatListener(this)
-        mBinding.actionShare.setOnClickListener(this)
-        mBinding.actionTodayWeather.setOnclickNoRepeatListener(this)
+        mBinding.actionShare.setOnclickNoRepeatListener(this)
+
 
         mBinding.actionBlog.setOnclickNoRepeatListener(this)
         mBinding.actionGithub.setOnclickNoRepeatListener(this)
+        mBinding.actionAbout.setOnclickNoRepeatListener(this)
 
         startActivityLaunch = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
                 LogUtil.msg(result.toString())
             }
     }
+
     override fun onClick(v: View?) {
         LogUtil.msg("click view ")
         when(v?.id){
-
             R.id.exit_layout->{
                 LockerLifecycle.loginState.value=false
                 LockerLifecycle.loginData.value= LoginVO()
                 showMsg("退出登录成功")
             }
-
-            R.id.icon_tag -> {
-                LockerContainerActivity.start(
-                    mContext,
-                    LockerListTagFragment::class.java.name,
-                    "标签管理"
-                )
-            }
-            R.id.icon_folder -> {
-                LockerContainerActivity.start(
-                    mContext,
-                    LockerListFolderFragment::class.java.name,
-                    "文件夹管理"
-                )
-            }
-
 
             R.id.action_blog -> {
                 LockerWebContainerActivity.start(mContext, "我的博客", LockerConstant.blog_url)
@@ -191,6 +173,7 @@ class LockerDrawerFragment : BaseVmFragment<LockerFragmentDrawerBinding, LockerD
                     startActivity(intent)
                 }
             }
+
             R.id.action_share->{
                 Intent().run {
                     action = Intent.ACTION_SEND
@@ -206,10 +189,10 @@ class LockerDrawerFragment : BaseVmFragment<LockerFragmentDrawerBinding, LockerD
     private fun showHeather(isLogin: Boolean) {
         if (isLogin) {
             mBinding.layoutUserinfo.layoutMain.visibility = View.VISIBLE
-            mBinding.layoutUnLogin.visibility = View.GONE
+            mBinding.layoutUnLogin.layoutMain.visibility = View.GONE
         } else {
             mBinding.layoutUserinfo.layoutMain.visibility = View.GONE
-            mBinding.layoutUnLogin.visibility = View.VISIBLE
+            mBinding.layoutUnLogin.layoutMain.visibility = View.VISIBLE
         }
     }
 

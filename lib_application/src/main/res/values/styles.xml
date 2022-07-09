@@ -4,47 +4,51 @@
     <style name="tv_text_layout">
         <item name="android:paddingVertical">0dp</item>
         <item name="android:paddingHorizontal">2dp</item>
-        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_gravity">center_vertical</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">wrap_content</item>
-<!--        文字与图片距离-->
+        <!--        文字与图片距离-->
         <item name="android:drawablePadding">4dp</item>
         <item name="android:gravity">center_vertical</item>
     </style>
 
-
-
+    <!--    标题字体，标题字体都加粗了-->
     <style name="tv_title_big" parent="tv_text_layout">
-        <item name="android:textSize">@dimen/text_biggest</item>
+        <item name="android:textSize">@dimen/text_bigger</item>
         <item name="android:textColor">@color/color_text_normal</item>
         <item name="android:textStyle">bold</item>
     </style>
 
+    <!--    标题-->
     <style name="tv_title_normal" parent="tv_text_layout">
         <item name="android:textSize">@dimen/text_normal</item>
         <item name="android:textColor">@color/color_text_normal</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="tv_title_normal_gray" parent="tv_text_layout">
         <item name="android:textSize">@dimen/text_normal</item>
         <item name="android:textColor">@color/color_text_gray</item>
+        <item name="android:textStyle">bold</item>
     </style>
+
 
     <style name="tv_content_primary" parent="tv_text_layout">
         <item name="android:textSize">@dimen/text_normal</item>
         <item name="android:textColor">@color/color_text_normal</item>
-<!--        <item name="android:textColor">@color/black</item>-->
+        <!--        <item name="android:textColor">@color/black</item>-->
     </style>
 
     <style name="tv_content_second" parent="tv_text_layout">
         <item name="android:textSize">@dimen/text_second</item>
-<!--        <item name="android:textColor">@color/gray</item>-->
+        <!--        <item name="android:textColor">@color/gray</item>-->
     </style>
 
     <style name="tv_content_small" parent="tv_text_layout">
         <item name="android:textSize">@dimen/text_small</item>
-<!--        <item name="android:textColor">@color/gray</item>-->
+        <!--        <item name="android:textColor">@color/gray</item>-->
     </style>
+
 
     <dimen name="text_small">12sp</dimen>
     <dimen name="text_second">14sp</dimen>
@@ -52,6 +56,25 @@
     <dimen name="text_big">18sp</dimen>
     <dimen name="text_bigger">20sp</dimen>
     <dimen name="text_biggest">22sp</dimen>
+
+    <!--    列表边距-->
+    <dimen name="list_padding_normal_v">4dp</dimen>
+    <dimen name="list_padding_normal_h">8dp</dimen>
+
+    <!--    控件边距-->
+    <dimen name="padding_small">2dp</dimen>
+    <dimen name="padding_normal">4dp</dimen>
+    <dimen name="padding_big">8dp</dimen>
+    <dimen name="padding_giant">16dp</dimen>
+
+    <!--    控件边距-->
+    <dimen name="margin_small">2dp</dimen>
+    <dimen name="margin_normal">4dp</dimen>
+    <dimen name="margin_big">8dp</dimen>
+    <dimen name="margin_giant">16dp</dimen>
+
+
+
 
 
     <!-- 键盘字体 -->

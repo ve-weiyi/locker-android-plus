@@ -12,6 +12,7 @@ import com.ve.lib.common.base.model.FragmentPage
 import com.ve.module.locker.databinding.LockerActivityMainBinding
 import com.ve.module.locker.ui.page.category.LockerFolderFragment
 import com.ve.module.locker.ui.page.drawer.LockerDrawerFragment
+import com.ve.module.locker.ui.page.drawer.LockerMeFragment
 import com.ve.module.locker.ui.page.privacy.list.LockerListPassFragment
 import com.ve.module.locker.ui.page.privacy.list.LockerListCardFragment
 import com.ve.module.locker.ui.page.privacy.list.LockerListFriendsFragment
@@ -37,7 +38,7 @@ class LockerMainActivity : BaseVmActivity<LockerActivityMainBinding, LockerViewM
             FragmentPage(pageCount++,"卡片",LockerListCardFragment::class.java),
             FragmentPage(pageCount++,"好友", LockerListFriendsFragment::class.java),
             FragmentPage(pageCount++,"分类", LockerFolderFragment::class.java),
-            FragmentPage(pageCount++,"我的",LockerDrawerFragment::class.java),
+            FragmentPage(pageCount++,"我的", LockerMeFragment::class.java),
         )
     }
 
