@@ -4,6 +4,5 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project(':lib_application')
-
-//    implementation project(':main')
+    implementation project(':module_locker')
 }

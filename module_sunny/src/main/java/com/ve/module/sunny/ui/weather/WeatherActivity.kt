@@ -90,12 +90,17 @@ class WeatherActivity : BaseVmActivity<ActivityWeatherBinding, WeatherViewModel>
             LogUtil.d("----return weather ")
             finish()
         }
+
         //返回主页面
-        nowBinding.nowSwipe.setOnClickListener {
+        nowBinding.bodyLayout.setOnClickListener {
             LogUtil.d("----swap weather ")
             mBinding.drawerLayout.openDrawer(GravityCompat.START)
         }
-
+//返回主页面
+        nowBinding.btnSwap.setOnClickListener {
+            LogUtil.d("----swap weather ")
+            mBinding.drawerLayout.openDrawer(GravityCompat.START)
+        }
         mBinding.drawerLayout.addDrawerListener(object : DrawerLayout.DrawerListener {
             override fun onDrawerStateChanged(newState: Int) {}
 

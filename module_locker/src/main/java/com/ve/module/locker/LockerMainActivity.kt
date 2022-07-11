@@ -2,6 +2,7 @@ package com.ve.module.locker
 
 import android.os.Bundle
 import android.view.Gravity
+import androidx.core.view.MenuCompat
 import androidx.core.view.get
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.navigation.NavigationBarView
@@ -85,7 +86,6 @@ class LockerMainActivity : BaseVmActivity<LockerActivityMainBinding, LockerViewM
         val transaction = supportFragmentManager.beginTransaction()
         hideFragments(transaction)
         mIndex = index
-
         val toolbar = mBinding.extToolbar.toolbar
         val mFragmentPage = mFragmentPageList[index]
         if (mFragmentPage.mFragment == null) {
