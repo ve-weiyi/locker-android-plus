@@ -30,21 +30,6 @@ object AndroidUtil {
         }
     }
 
-    fun getAppByPackageName(context: Context, packageName: String): AppInfo? {
-        val packageManager: PackageManager = context.packageManager
-        return try {
-        val packages = packageManager.getInstalledPackages(0)
-
-        val appInfo = context.packageManager.getApplicationInfo(packageName, PackageManager.GET_META_DATA)
-        LogUtil.msg(appInfo.packageName)
-        return AppInfo( appInfo.packageName,appInfo.loadLabel(packageManager).toString(), appInfo.loadIcon(packageManager))
-        } catch (e: Exception) {
-            LogUtil.msg(e)
-            e.printStackTrace()
-            return AppInfo(context.applicationInfo,packageManager)
-        }
-    }
-
     fun getAppName(context: Context, appId: String): String? {
         return try {
             val appInfo =
@@ -56,6 +41,25 @@ object AndroidUtil {
         }
     }
 
+
+    /**
+     * 获取APP 信息，失败则返回本应用的信息
+     */
+    fun getAppInfo(context: Context, packageName: String): AppInfo? {
+        val packageManager: PackageManager = context.packageManager
+        return try {
+            val appInfo = context.packageManager.getApplicationInfo(packageName, PackageManager.GET_META_DATA)
+            LogUtil.msg(appInfo.packageName)
+            return AppInfo(
+                appInfo.packageName,
+                appInfo.loadLabel(packageManager).toString(),
+                appInfo.loadIcon(packageManager)
+            )
+        } catch (e: Exception) {
+            e.printStackTrace()
+            return AppInfo(context.applicationInfo, packageManager)
+        }
+    }
 
     /**
      * 根据名称查找应用（忽略大小写）
@@ -135,14 +139,35 @@ object AndroidUtil {
 
         ) : Serializable {
 
-            constructor(applicationInfo: ApplicationInfo,packageManager: PackageManager) : this() {
-                packageName=applicationInfo.packageName
-                name=applicationInfo.loadLabel(packageManager).toString()
-                icon=applicationInfo.loadIcon(packageManager)
-            }
+        constructor(applicationInfo: ApplicationInfo, packageManager: PackageManager) : this() {
+            packageName = applicationInfo.packageName
+            name = applicationInfo.loadLabel(packageManager).toString()
+            icon = applicationInfo.loadIcon(packageManager)
+        }
 
     }
 
+    /**
+     * 银行信息
+     */
+    data class BankInfo(
+
+        /**
+         * 名称
+         */
+        var name: String = "unknown",
+
+        /**
+         * icon链接
+         */
+        var iconUrl: String ,
+
+        ) : Serializable {
+
+            companion object{
+                var zg=BankInfo( name = "中国银行", iconUrl = "https://static.ve77.cn/avatar/tiger.jpg")
+            }
+    }
 
     fun getCertificatesHash(context: Context, packageName: String): String {
         val pm: PackageManager = context.packageManager

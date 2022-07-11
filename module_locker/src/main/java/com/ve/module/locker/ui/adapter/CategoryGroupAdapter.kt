@@ -31,10 +31,9 @@ class CategoryGroupAdapter:BaseBindingGroupAdapter
     ) {
         val item=getChild(groupPosition,childPosition)
         childViewHolder.apply {
-            mBinding.tvPrivacyInfoName.text=item.privacyName
+            mBinding.tvPrivacyName.text=item.privacyName
             mBinding.tvPrivacyInfoDesc.text=item.privacyDesc
             ImageLoader.load(childViewHolder.view.context,item.privacyCover,mBinding.ivAppIcon)
-            mBinding.tvPrivacyInfoCreateTime.text=item.createTime
             mBinding.tvPrivacyInfoUpdateTime.text=item.updateTime
         }
     }

@@ -5,9 +5,9 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="@dimen/padding_giant"
-        android:paddingBottom="@dimen/padding_small"
-        android:paddingHorizontal="@dimen/padding_small"
+        android:paddingTop="@dimen/dimen_giant"
+        android:paddingBottom="@dimen/dimen_small"
+        android:paddingHorizontal="@dimen/dimen_small"
         android:orientation="vertical"
         >
     <!--登录用户信息-->
@@ -291,7 +291,7 @@
                     android:id="@+id/operator_view"
                     android:layout_width="match_parent"
                     android:layout_height="52dp"
-                    android:layout_marginTop="@dimen/margin_normal"
+                    android:layout_marginTop="@dimen/dimen_normal"
                     android:layout_alignParentBottom="true"
                     android:background="@drawable/bg_round_white_8dp"
                     android:orientation="horizontal">

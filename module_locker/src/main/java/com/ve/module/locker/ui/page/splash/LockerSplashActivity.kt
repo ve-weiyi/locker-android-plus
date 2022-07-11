@@ -63,9 +63,6 @@ class LockerSplashActivity : BaseActivity<LockerActivitySplashBinding>() {
         var isLogin=SpUtil.getValue(LockerConstant.SP_KEY_LOGIN_STATE_KEY,false)
         val data=SpUtil.getValue(LockerConstant.SP_KEY_LOGIN_DATA_KEY,LoginVO())
 
-        isLogin=true
-
-        LogUtil.msg("isLogin $biometric")
         LogUtil.msg(data.toString())
         alphaAnimation = AlphaAnimation(0.3F, 1.0F)
         alphaAnimation?.run {

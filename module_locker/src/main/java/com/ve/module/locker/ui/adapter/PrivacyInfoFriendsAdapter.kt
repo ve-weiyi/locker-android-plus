@@ -10,7 +10,7 @@ import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.ve.lib.common.vutils.LogUtil
 import com.ve.lib.common.vutils.DateTimeUtil
 import com.ve.module.locker.R
-import com.ve.module.locker.model.db.entity.PrivacyFriendsInfo
+import com.ve.module.locker.model.db.entity.PrivacyFriend
 
 /**
  * @Description hello word!
@@ -18,20 +18,20 @@ import com.ve.module.locker.model.db.entity.PrivacyFriendsInfo
  * @Date 2022/4/10
  */
 class PrivacyInfoFriendsAdapter :
-    BaseSectionQuickAdapter<PrivacyFriendsInfo, BaseViewHolder>(
+    BaseSectionQuickAdapter<PrivacyFriend, BaseViewHolder>(
         com.ve.lib.common.R.layout.item_sticky_header, R.layout.locker_item_privacy_friends
     ), LoadMoreModule, DraggableModule, UpFetchModule {
 
     var isCheckMode = false
     private var isAllCheck = false
-    private var mSelectList = mutableListOf<PrivacyFriendsInfo>()
+    private var mSelectList = mutableListOf<PrivacyFriend>()
     private var keywords = ""
 
     init {
         addChildClickViewIds(R.id.item_layout_content, R.id.item_btn_edit, R.id.item_btn_delete)
     }
 
-    override fun convert(holder: BaseViewHolder, item: PrivacyFriendsInfo) {
+    override fun convert(holder: BaseViewHolder, item: PrivacyFriend) {
         holder.apply {
             setText(R.id.tv_friends_nickname,item.nickname)
             setText(R.id.tv_friends_name,item.name)
@@ -80,13 +80,13 @@ class PrivacyInfoFriendsAdapter :
         }
     }
 
-    override fun convertHeader(helper: BaseViewHolder, item: PrivacyFriendsInfo) {
+    override fun convertHeader(helper: BaseViewHolder, item: PrivacyFriend) {
         LogUtil.msg("head " + item.headerName)
         helper.setText(com.ve.lib.common.R.id.tv_header, item.headerName)
         helper.setEnabled(com.ve.lib.common.R.id.tv_header, false)
     }
 
-    fun getSelectData(): MutableList<PrivacyFriendsInfo> {
+    fun getSelectData(): MutableList<PrivacyFriend> {
         return mSelectList
     }
 

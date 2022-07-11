@@ -22,8 +22,8 @@ import com.ve.module.locker.common.config.LockerLifecycle
 import com.ve.module.locker.databinding.LockerFragmentDrawerBinding
 import com.ve.module.locker.model.http.model.LoginVO
 import com.ve.module.locker.ui.page.auth.LockerLoginActivity
-import com.ve.module.locker.ui.page.category.list.LockerListFolderFragment
-import com.ve.module.locker.ui.page.category.list.LockerListTagFragment
+import com.ve.module.locker.ui.page.category.folder.LockerFolderListFragment
+import com.ve.module.locker.ui.page.category.tag.LockerTagListFragment
 import com.ve.module.locker.ui.page.container.LockerContainerActivity
 import com.ve.module.locker.ui.page.container.LockerWebContainerActivity
 import com.ve.module.locker.ui.page.feedback.LockerFeedBackActivity
@@ -138,14 +138,14 @@ class LockerDrawerFragment : BaseVmFragment<LockerFragmentDrawerBinding, LockerD
             R.id.icon_tag -> {
                 LockerContainerActivity.start(
                     mContext,
-                    LockerListTagFragment::class.java.name,
+                    LockerTagListFragment::class.java.name,
                     "标签管理"
                 )
             }
             R.id.icon_folder -> {
                 LockerContainerActivity.start(
                     mContext,
-                    LockerListFolderFragment::class.java.name,
+                    LockerFolderListFragment::class.java.name,
                     "文件夹管理"
                 )
             }

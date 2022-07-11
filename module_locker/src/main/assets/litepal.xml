@@ -20,14 +20,13 @@
         <!--添加实体类，此处必须映射完整路径-->
         <mapping class="com.ve.module.locker.model.db.entity.PrivacyTag" />
         <mapping class="com.ve.module.locker.model.db.entity.PrivacyFolder" />
-        <mapping class="com.ve.module.locker.model.db.entity.PrivacyCardInfo" />
-        <mapping class="com.ve.module.locker.model.db.entity.PrivacyPassInfo" />
-        <mapping class="com.ve.module.locker.model.db.entity.PrivacyFriendsInfo" />
 
-        <mapping class="com.ve.module.locker.model.db.entity.PrivacyCardDetails" />
-        <mapping class="com.ve.module.locker.model.db.entity.PrivacyPassDetails" />
-        <mapping class="com.ve.module.locker.model.db.entity.TagAndCard" />
-        <mapping class="com.ve.module.locker.model.db.entity.TagAndPass" />
+
+        <mapping class="com.ve.module.locker.model.db.entity.PrivacyFriend" />
+        <mapping class="com.ve.module.locker.model.db.entity.PrivacyCard" />
+        <mapping class="com.ve.module.locker.model.db.entity.PrivacyPass" />
+
+        <mapping class="com.ve.module.locker.model.db.entity.TagLink" />
     </list>
     <!--数据库存储位置
 

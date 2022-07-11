@@ -16,6 +16,7 @@ import com.zhy.view.flowlayout.TagAdapter
  */
 class FlowTagAdapter( data:List<PrivacyTag>?=null):TagAdapter<PrivacyTag>(data) {
 
+
     override fun getView(parent: FlowLayout?, position: Int, t: PrivacyTag): View {
 
         val tv: TextView = LayoutInflater.from(parent?.context).inflate(

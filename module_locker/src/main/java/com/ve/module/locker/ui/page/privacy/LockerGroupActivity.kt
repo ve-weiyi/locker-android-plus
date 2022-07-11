@@ -5,12 +5,12 @@ import android.content.Intent
 import android.os.Bundle
 import com.ve.lib.common.base.view.vm.BaseVmActivity
 import com.ve.lib.common.vutils.LogUtil
-import com.ve.module.locker.databinding.LockerActivityCategoryDetailsBinding
+import com.ve.module.locker.databinding.LockerActivityClassifyGroupBinding
 import com.ve.module.locker.model.db.entity.PrivacyFolder
 import com.ve.module.locker.model.db.entity.PrivacyTag
 import com.ve.module.locker.model.http.model.ConditionVO
 import com.ve.module.locker.ui.adapter.CategoryGroupAdapter
-import com.ve.module.locker.ui.viewmodel.LockerCategoryViewModel
+import com.ve.module.locker.ui.viewmodel.LockerClassifyViewModel
 import java.io.Serializable
 
 /**
@@ -19,14 +19,14 @@ import java.io.Serializable
  * @Description  current project locker-android
  */
 class LockerGroupActivity:
-    BaseVmActivity<LockerActivityCategoryDetailsBinding, LockerCategoryViewModel>() {
+    BaseVmActivity<LockerActivityClassifyGroupBinding, LockerClassifyViewModel>() {
 
     companion object {
 
         const val FRAGMENT_TITLE_KEY: String = "this.title"
         const val FRAGMENT_ARGUMENTS_KEY = "this.args"
-
         const val FRAGMENT_DATA_KEY: String = "this.data"
+
         /**
          * person.javaClass == person::class.java == Person::class.java
          * person.javaClass != Person::class
@@ -42,13 +42,14 @@ class LockerGroupActivity:
         }
     }
     
-    override fun attachViewBinding(): LockerActivityCategoryDetailsBinding {
-        return LockerActivityCategoryDetailsBinding.inflate(layoutInflater)
+    override fun attachViewBinding(): LockerActivityClassifyGroupBinding {
+        return LockerActivityClassifyGroupBinding.inflate(layoutInflater)
     }
 
-    override fun attachViewModelClass(): Class<LockerCategoryViewModel> {
-        return LockerCategoryViewModel::class.java
+    override fun attachViewModelClass(): Class<LockerClassifyViewModel> {
+        return LockerClassifyViewModel::class.java
     }
+
     lateinit var fragmentTitle: String
     lateinit var fragmentArguments: Bundle
     var data: Serializable?=null
@@ -76,7 +77,6 @@ class LockerGroupActivity:
             }else if(data is PrivacyTag){
                 tagId= (data as PrivacyTag).id
             }
-
         })
     }
 
@@ -84,11 +84,19 @@ class LockerGroupActivity:
         super.initObserver()
         mViewModel.resultGroupList.observe(this){
             val data = it.filter { it.second.isNotEmpty() }.toMutableList()
-            mGroupAdapter.setNewInstance(true,data.map { it.first }.toMutableList(),data.map { it.second}.toMutableList())
+            if(data.isEmpty()){
+                mBinding.multipleStatusView.showEmpty()
+            }else{
+                mBinding.multipleStatusView.showContent()
+                mGroupAdapter.setNewInstance(true,
+                    data.map { it.first }.toMutableList(),
+                    data.map { it.second}.toMutableList()
+                )
 
-            val groupCount=mGroupAdapter.groupCount
-            for(i in 0 until  groupCount){
-                mBinding.recyclerView.expandGroup(i)
+                val groupCount=mGroupAdapter.groupCount
+                for(i in 0 until  groupCount){
+                    mBinding.recyclerView.expandGroup(i)
+                }
             }
             LogUtil.msg(it.toString())
         }

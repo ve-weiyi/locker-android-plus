@@ -21,6 +21,7 @@ class ExampleUnitTest {
         assertEquals(4, 2 + 2)
     }
 
+
     @Test
     fun logMsg(){
         val str="452724199911171333"

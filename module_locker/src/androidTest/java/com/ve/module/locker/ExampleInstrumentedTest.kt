@@ -69,15 +69,13 @@ class ExampleInstrumentedTest {
 
         var generatedPassword = passwordGenerator.generatePassword()
     }
+
     @Test
     fun appDataBaseTest() {
         LogUtil.e(" androidTest是整合测试。可以运行在设备或虛拟设备上.需要编译打包为APK在设备上运行，可以实时杏看细节.\n")
 
         runBlocking {
-
             AppDataBase.initDataBase()
-
-
         }
     }
 

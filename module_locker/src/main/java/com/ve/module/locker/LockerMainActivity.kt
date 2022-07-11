@@ -10,12 +10,12 @@ import com.ve.lib.common.event.AppRecreateEvent
 import com.ve.lib.common.event.DrawerOpenEvent
 import com.ve.lib.common.base.model.FragmentPage
 import com.ve.module.locker.databinding.LockerActivityMainBinding
-import com.ve.module.locker.ui.page.category.LockerFolderFragment
-import com.ve.module.locker.ui.page.drawer.LockerDrawerFragment
+import com.ve.module.locker.ui.page.category.LockerClassifyFragment
+import com.ve.module.locker.ui.page.category.folder.LockerFolderGridFragment
 import com.ve.module.locker.ui.page.drawer.LockerMeFragment
-import com.ve.module.locker.ui.page.privacy.list.LockerListPassFragment
-import com.ve.module.locker.ui.page.privacy.list.LockerListCardFragment
-import com.ve.module.locker.ui.page.privacy.list.LockerListFriendsFragment
+import com.ve.module.locker.ui.page.privacy.card.LockerCardListFragment
+import com.ve.module.locker.ui.page.privacy.pass.LockerPassListFragment
+import com.ve.module.locker.ui.page.privacy.friends.LockerFriendsListFragment
 
 import com.ve.module.locker.ui.viewmodel.LockerViewModel
 
@@ -26,35 +26,39 @@ class LockerMainActivity : BaseVmActivity<LockerActivityMainBinding, LockerViewM
 
 
     private var mIndex = 0
-    private lateinit var mFragmentPageList :MutableList<FragmentPage>
+    private lateinit var mFragmentPageList: MutableList<FragmentPage>
     override fun enableNetworkTip(): Boolean {
         return false
     }
 
     private fun initFragment() {
-        var pageCount=0
-        mFragmentPageList= mutableListOf(
-            FragmentPage(pageCount++,"密码", LockerListPassFragment::class.java),
-            FragmentPage(pageCount++,"卡片",LockerListCardFragment::class.java),
-            FragmentPage(pageCount++,"好友", LockerListFriendsFragment::class.java),
-            FragmentPage(pageCount++,"分类", LockerFolderFragment::class.java),
-            FragmentPage(pageCount++,"我的", LockerMeFragment::class.java),
+        var pageCount = 0
+        mFragmentPageList = mutableListOf(
+            FragmentPage(pageCount++, "密码", LockerPassListFragment::class.java),
+            FragmentPage(pageCount++, "卡片", LockerCardListFragment::class.java),
+            FragmentPage(pageCount++, "好友", LockerFriendsListFragment::class.java),
+            FragmentPage(pageCount++, "分类", LockerClassifyFragment::class.java),
+            FragmentPage(pageCount++, "我的", LockerMeFragment::class.java),
         )
     }
 
     override fun attachViewBinding(): LockerActivityMainBinding {
-        return  LockerActivityMainBinding.inflate(layoutInflater)
+        return LockerActivityMainBinding.inflate(layoutInflater)
     }
 
     override fun initView(savedInstanceState: Bundle?) {
         initFragment()
         showFragment(mIndex)
-        initToolbar(mBinding.extToolbar.toolbar, mFragmentPageList[mIndex].mFragmentTitle,homeAsUpEnabled = false)
+        initToolbar(
+            mBinding.extToolbar.toolbar,
+            mFragmentPageList[mIndex].mFragmentTitle,
+            homeAsUpEnabled = false
+        )
         mBinding.bottomNavigation.run {
             //导航栏文字可见;原因：底部导航栏的类别多于三个了，多于三个就会不显示，解决方案如下~~~
             labelVisibilityMode = NavigationBarView.LABEL_VISIBILITY_LABELED
             //setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
-            setOnItemSelectedListener (onNavigationItemSelectedListener)
+            setOnItemSelectedListener(onNavigationItemSelectedListener)
         }
     }
 
@@ -66,8 +70,8 @@ class LockerMainActivity : BaseVmActivity<LockerActivityMainBinding, LockerViewM
      * 隐藏所有的Fragment
      */
     private fun hideFragments(transaction: FragmentTransaction) {
-        mFragmentPageList.forEach { mFragmentPage->
-            mFragmentPage.mFragment?.let{
+        mFragmentPageList.forEach { mFragmentPage ->
+            mFragmentPage.mFragment?.let {
                 transaction.hide(it)
             }
         }
@@ -83,11 +87,15 @@ class LockerMainActivity : BaseVmActivity<LockerActivityMainBinding, LockerViewM
         mIndex = index
 
         val toolbar = mBinding.extToolbar.toolbar
-        val mFragmentPage=mFragmentPageList[index]
+        val mFragmentPage = mFragmentPageList[index]
         if (mFragmentPage.mFragment == null) {
-            mBinding.bottomNavigation.menu[index].title=mFragmentPage.mFragmentTitle
-            mFragmentPage.mFragment=mFragmentPage.getFragment()
-            transaction.add(R.id.ext_container, mFragmentPage.mFragment!!, mFragmentPage.mFragmentTitle)
+            mBinding.bottomNavigation.menu[index].title = mFragmentPage.mFragmentTitle
+            mFragmentPage.mFragment = mFragmentPage.getFragment()
+            transaction.add(
+                R.id.ext_container,
+                mFragmentPage.mFragment!!,
+                mFragmentPage.mFragmentTitle
+            )
         } else {
             transaction.show(mFragmentPage.mFragment!!)
         }
@@ -134,8 +142,8 @@ class LockerMainActivity : BaseVmActivity<LockerActivityMainBinding, LockerViewM
     override fun recreate() {
         try {
             val fragmentTransaction = supportFragmentManager.beginTransaction()
-            mFragmentPageList.forEach { mFragmentPage->
-                mFragmentPage.mFragment?.let{
+            mFragmentPageList.forEach { mFragmentPage ->
+                mFragmentPage.mFragment?.let {
                     fragmentTransaction.remove(it)
                 }
             }
@@ -148,7 +156,7 @@ class LockerMainActivity : BaseVmActivity<LockerActivityMainBinding, LockerViewM
 
     override fun initColor() {
         super.initColor()
-       // mBinding.drawerNavView.getHeaderView(0).setBackgroundColor(mThemeColor)
+        // mBinding.drawerNavView.getHeaderView(0).setBackgroundColor(mThemeColor)
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
@@ -157,7 +165,7 @@ class LockerMainActivity : BaseVmActivity<LockerActivityMainBinding, LockerViewM
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    fun openDrawer(event : DrawerOpenEvent){
+    fun openDrawer(event: DrawerOpenEvent) {
         mBinding.drawerLayout.openDrawer(Gravity.LEFT)
     }
 

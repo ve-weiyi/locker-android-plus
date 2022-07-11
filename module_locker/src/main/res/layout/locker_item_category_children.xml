@@ -8,8 +8,8 @@
             android:id="@+id/cardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/list_padding_normal_v"
-            android:layout_marginHorizontal="@dimen/list_padding_normal_h"
+            android:layout_marginVertical="@dimen/list_padding_normal"
+            android:layout_marginHorizontal="@dimen/list_padding_big"
             android:paddingHorizontal="@dimen/dp_8"
             android:paddingVertical="@dimen/dp_8"
             android:background="@drawable/bg_round_pass">
@@ -42,7 +42,7 @@
         <TextView
                 app:layout_constraintStart_toEndOf="@id/iv_app_icon"
                 app:layout_constraintTop_toTopOf="parent"
-                android:id="@+id/tv_privacy_info_name"
+                android:id="@+id/tv_privacy_name"
                 android:paddingStart="@dimen/dp_8"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -58,11 +58,11 @@
 
         <TextView
                 android:visibility="gone"
-                app:layout_constraintStart_toStartOf="@id/tv_privacy_info_name"
-                app:layout_constraintTop_toBottomOf="@id/tv_privacy_info_name"
+                app:layout_constraintStart_toStartOf="@id/tv_privacy_name"
+                app:layout_constraintTop_toBottomOf="@id/tv_privacy_name"
                 android:layout_marginTop="@dimen/dp_4"
 
-                android:id="@+id/tv_privacy_info_account"
+                android:id="@+id/tv_privacy_account"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
@@ -73,12 +73,12 @@
 
         <LinearLayout
                 android:id="@+id/layout_desc"
-                app:layout_constraintStart_toStartOf="@id/tv_privacy_info_name"
+                app:layout_constraintStart_toStartOf="@id/tv_privacy_name"
                 app:layout_constraintEnd_toStartOf="@id/check_button"
                 android:layout_marginVertical="@dimen/dp_4"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/tv_privacy_info_account">
+                app:layout_constraintTop_toBottomOf="@+id/tv_privacy_account">
 
             <TextView
                     android:layout_weight="1"
@@ -104,19 +104,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 >
-
-
-
-            <TextView
-
-                    android:id="@+id/tv_privacy_info_create_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/tv_content_small"
-                    android:layout_marginEnd="@dimen/dp_10"
-                    android:singleLine="true"
-                    tools:text="2022-01-11 00:15:07"
-                    app:drawableStartCompat="@drawable/ic_time" />
 
 
             <TextView

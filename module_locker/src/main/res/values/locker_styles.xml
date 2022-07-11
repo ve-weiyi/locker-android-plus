@@ -75,10 +75,23 @@
 
     <!--    不可以编辑-->
     <style name="EditText.See" >
+        <item name="android:textColor">@color/color_text_gray</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:focusable">false</item>
         <item name="android:focusableInTouchMode">false</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:background">@drawable/shape_round_grey</item>
+    </style>
+
+    <!--    编辑-->
+    <style name="EditText.Edit" >
+        <item name="android:gravity">top</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:focusable">true</item>
+        <item name="android:focusableInTouchMode">true</item>
         <item name="android:padding">10dp</item>
         <item name="android:background">@drawable/shape_round_grey</item>
     </style>

@@ -18,9 +18,6 @@ data class PrivacySimpleInfo(
     //(varue = "隐私描述", notes = "标签描述", example = "床前明月光", position = 6)
     public var privacyDesc: String = "",
 
-    //(varue = "创建时间", notes = "标签创建时间,不用填", position = 7)
-    public var createTime: String = DateTimeUtil.dateAndTime,
-
     //(varue = "更新时间", notes = "标签更新时间,不用填", position = 8)
     public var updateTime: String = DateTimeUtil.dateAndTime,
 ) {

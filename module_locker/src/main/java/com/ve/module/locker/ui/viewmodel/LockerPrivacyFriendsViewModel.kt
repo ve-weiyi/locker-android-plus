@@ -1,7 +1,7 @@
 package com.ve.module.locker.ui.viewmodel
 
 import androidx.lifecycle.MutableLiveData
-import com.ve.module.locker.model.db.entity.PrivacyFriendsInfo
+import com.ve.module.locker.model.db.entity.PrivacyFriend
 import com.ve.module.locker.model.http.model.ConditionVO
 import org.litepal.LitePal
 
@@ -12,29 +12,28 @@ import org.litepal.LitePal
  */
 class LockerPrivacyFriendsViewModel : LockerViewModel() {
 
-    val privacyFriendsInfoList = MutableLiveData<MutableList<PrivacyFriendsInfo>>()
-    fun getPrivacyFriendsList(conditionVO: ConditionVO? = null) {
+    val privacyFriendsInfoList = MutableLiveData<MutableList<PrivacyFriend>>()
+    fun getPrivacyFriendsList(keyWords: String?=null) {
         launch(
             block = {
 
             },
             local = {
-                if (conditionVO == null) {
-                    privacyFriendsInfoList.value = LitePal.findAll(PrivacyFriendsInfo::class.java)
+                if (keyWords== null) {
+                    privacyFriendsInfoList.value = LitePal.findAll(PrivacyFriend::class.java)
                 } else {
                     privacyFriendsInfoList.value = LitePal.where(
                         "name like ? or nickname like ?",
-                        conditionVO.keyWords,
-                        conditionVO.keyWords
-                    ).find(PrivacyFriendsInfo::class.java)
+                        "%$keyWords%",
+                        "%$keyWords%",
+                    ).find(PrivacyFriend::class.java)
                 }
-
             }
         )
     }
 
-    val reslutSaveOrUpdate = MutableLiveData<Boolean>()
-    fun saveOrUpdatePrivacyFriends(privacyFriends: PrivacyFriendsInfo) {
+    val saveOrUpdateResult = MutableLiveData<Boolean>()
+    fun saveOrUpdatePrivacyFriends(privacyFriends: PrivacyFriend) {
         launch(
             block = {
 
@@ -42,13 +41,13 @@ class LockerPrivacyFriendsViewModel : LockerViewModel() {
             },
             local = {
                 val result = privacyFriends.saveOrUpdate("id= ?", privacyFriends.id.toString())
-                reslutSaveOrUpdate.value = result
+                saveOrUpdateResult .value = result
             }
         )
     }
 
     val deletePrivacyFriendsResult = MutableLiveData<Int>()
-    fun deletePrivacyFriends(privacyInfo: PrivacyFriendsInfo) {
+    fun deletePrivacyFriends(privacyInfo: PrivacyFriend) {
         launch(
             block = {
 
@@ -61,7 +60,7 @@ class LockerPrivacyFriendsViewModel : LockerViewModel() {
         )
     }
 
-    fun deletePrivacyFriends(privacyInfos: MutableList<PrivacyFriendsInfo>) {
+    fun deletePrivacyFriends(privacyInfos: MutableList<PrivacyFriend>) {
         launch(
             block = {
 

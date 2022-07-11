@@ -1,149 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/cardView"
-            android:layout_width="match_parent"
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/list_padding_small"
+        android:layout_marginHorizontal="@dimen/list_padding_big"
+        android:paddingHorizontal="@dimen/dimen_big"
+        android:paddingVertical="@dimen/dimen_enormous"
+        android:background="@drawable/bg_round_card">
+
+    <CheckBox
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/check_button"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/list_padding_normal_v"
-            android:layout_marginHorizontal="@dimen/list_padding_normal_h"
-            android:paddingHorizontal="@dimen/dp_16"
-            android:paddingVertical="@dimen/dp_8"
-            android:background="@drawable/bg_round_card"
+            android:focusable="true"
+            android:visibility="gone"
+            tools:visibility="gone" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+            app:shapeAppearanceOverlay="@style/roundImageView"
+            app:layout_constraintStart_toEndOf="@id/check_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/iv_app_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            tools:src="@tools:sample/avatars" />
+
+
+    <TextView
+            app:layout_constraintStart_toEndOf="@id/iv_app_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="@dimen/dimen_big"
+            android:id="@+id/tv_privacy_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            tools:text="中国银行储蓄卡"
+            style="@style/tv_title_normal"
+            android:textColor="@color/color_text_light"
+            android:textStyle="bold" />
+
+
+    <TextView
+            app:layout_constraintStart_toStartOf="@id/tv_privacy_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_privacy_name"
+            android:layout_marginTop="@dimen/dp_4"
+
+            android:id="@+id/tv_privacy_remark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            style="@style/tv_content_second"
+            tools:text="可转账、查询账单"
+            android:textColor="@color/color_text_light"
+            android:drawableTint="@color/windowColorBackground"
+            app:drawableStartCompat="@drawable/ic_id_card" />
+
+    <TextView
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_privacy_name"
+
+            android:id="@+id/tv_privacy_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            style="@style/tv_content_second"
+            tools:text="1234****6321"
+            android:textColor="@color/color_text_light"
+            android:drawableTint="@color/windowColorBackground"
+            app:drawableStartCompat="@drawable/ic_id_card" />
+
+
+    <LinearLayout
+            app:layout_constraintTop_toBottomOf="@id/tv_privacy_account"
+            app:layout_constraintEnd_toEndOf="@id/tv_privacy_account"
+            android:layout_marginTop="@dimen/dp_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
             >
 
         <TextView
-                android:visibility="gone"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:id="@+id/tv_privacy_folder"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_centerVertical="true"
-                android:gravity="center"
-                android:text="1"
-                android:backgroundTint="@color/light_blue"
-                android:backgroundTintMode="src_atop"
-                android:background="@drawable/ic_baseline_folder_24"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-                />
 
-        <CheckBox
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:id="@+id/check_button"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-
-                android:focusable="true"
-                android:visibility="visible"
-                tools:visibility="visible" />
-
-
-        <TextView
-                app:layout_constraintStart_toEndOf="@id/tv_privacy_folder"
-                app:layout_constraintEnd_toStartOf="@id/check_button"
-                app:layout_constraintTop_toTopOf="parent"
-                android:paddingStart="@dimen/dp_8"
-                android:id="@+id/tv_privacy_info_name"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:singleLine="true"
-                android:text="我的邮箱账号"
-                style="@style/tv_title_normal"
-                android:textColor="@color/color_text_light"
-                android:textStyle="bold"
-                />
-
-
-        <TextView
-                app:layout_constraintStart_toStartOf="@id/tv_privacy_info_name"
-                app:layout_constraintTop_toBottomOf="@id/tv_privacy_info_name"
-                android:layout_marginTop="@dimen/dp_4"
-
-                android:id="@+id/tv_privacy_info_account"
+                android:id="@+id/tv_privacy_edit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="1"
                 style="@style/tv_content_second"
-                android:text="791422171@qq.com"
+                tools:text="添加标签"
                 android:textColor="@color/color_text_light"
-                android:drawableTint="@color/windowColorBackground"
-                app:drawableStartCompat="@drawable/ic_id_card"
                 />
 
+        <TextView
+                android:layout_width="@dimen/dp_18"
+                android:layout_height="@dimen/dp_18"
+                android:background="@drawable/ic_edit_24dp"
+                android:backgroundTint="@color/colorOnBackground"
+                />
+    </LinearLayout>
 
-        <LinearLayout
-                android:id="@+id/layout_desc"
-                app:layout_constraintStart_toStartOf="@id/tv_privacy_info_name"
-                app:layout_constraintEnd_toStartOf="@id/check_button"
-                android:layout_marginVertical="@dimen/dp_4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/tv_privacy_info_account">
-
-            <TextView
-                    android:layout_weight="1"
-                    android:id="@+id/tv_privacy_info_desc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    style="@style/tv_content_second"
-                    android:textColor="@color/color_text_light"
-                    android:text="一个私密的邮箱账号，请不要告诉其他人哦"
-                    android:drawableTint="@color/windowColorBackground"
-                    app:drawableStartCompat="@drawable/ic_baseline_description_24"
-                    />
-
-
-        </LinearLayout>
-
-        <LinearLayout
-                android:visibility="gone"
-                app:layout_constraintTop_toBottomOf="@id/layout_desc"
-                app:layout_constraintStart_toStartOf="@id/layout_desc"
-                app:layout_constraintEnd_toStartOf="@id/check_button"
-                android:layout_marginVertical="@dimen/dp_4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                >
-
-
-
-            <TextView
-                    android:visibility="gone"
-                    android:id="@+id/tv_privacy_info_create_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/tv_content_small"
-                    android:layout_marginEnd="@dimen/dp_10"
-                    android:singleLine="true"
-                    android:text="2022-01-11 00:15:07"
-                    android:textColor="@color/color_text_light"
-                    app:drawableStartCompat="@drawable/ic_time" />
-
-
-            <TextView
-                    android:id="@+id/tv_privacy_info_update_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/tv_content_small"
-                    android:singleLine="true"
-                    android:text="2022-01-11 00:15:07"
-                    android:textColor="@color/color_text_light"
-                    app:drawableStartCompat="@drawable/ic_time" />
-        </LinearLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 

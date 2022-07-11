@@ -85,7 +85,7 @@ class LockerContainerActivity :BaseActivity<LockerActivityContainerBinding>(){
     /**
      * 如果需要把 title ,className 也传过去，可以transactionFragment(fragmentClassName,saveInstanceState)
      */
-    protected fun transactionFragment(fragmentClassName: String, bundle: Bundle? = null) {
+    private fun transactionFragment(fragmentClassName: String, bundle: Bundle? = null) {
         val fragmentClass = Class.forName(fragmentClassName) //完整类名
         val fragment = fragmentClass.newInstance() as Fragment
         fragment.arguments = bundle

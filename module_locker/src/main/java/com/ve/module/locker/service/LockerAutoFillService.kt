@@ -12,7 +12,7 @@ import android.view.inputmethod.EditorInfo
 import android.widget.RemoteViews
 import com.ve.lib.common.vutils.LogUtil
 import com.ve.module.locker.R
-import com.ve.module.locker.model.db.entity.PrivacyPassDetails
+import com.ve.module.locker.model.db.entity.PrivacyPass
 import com.ve.module.locker.service.model.ParsedStructure
 import com.ve.module.locker.service.model.SimpleUserData
 import com.ve.module.locker.utils.AndroidUtil
@@ -32,8 +32,8 @@ public class LockerAutoFillService : AutofillService() {
         val HINT_TYPE_COLLECTIONS: MutableList<String?> = ArrayList()
 
         //模拟数据库中的数据，实际应用中，应该将这个数据保存在数据库中
-        private var suggestions: MutableList<PrivacyPassDetails> =
-            LitePal.findAll(PrivacyPassDetails::class.java)
+        private var suggestions: MutableList<PrivacyPass> =
+            LitePal.findAll(PrivacyPass::class.java)
 
 
         init {

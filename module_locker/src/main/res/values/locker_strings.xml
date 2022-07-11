@@ -13,6 +13,8 @@
     <string name="locker_agree_rule">请点击同意《用户协议》和《隐私政策》《儿童隐私政策》</string>
     <string name="locker_exit_app_toast">"再按一次退出程序"</string>
 
+    <string name="locker_remark_tip">"快来添加一条备注信息吧ヾ(^▽^ヾ)~~\n备注信息可以是绑定手机号、密保问题等信息。"</string>
+
     <!-- 登录相关-->
     <string name="locker_input_correct_phone_number">"请输入十一位数字的手机号"</string>
     <string name="locker_capture_code_success">"验证码发送成功，请注意查收"</string>

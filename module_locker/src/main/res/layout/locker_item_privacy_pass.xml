@@ -1,131 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/cardView"
-            android:layout_width="match_parent"
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/list_padding_small"
+        android:layout_marginHorizontal="@dimen/list_padding_big"
+        android:paddingHorizontal="@dimen/dimen_big"
+        android:paddingVertical="@dimen/dimen_normal"
+        android:background="@drawable/bg_round_pass"
+        >
+
+    <CheckBox
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/check_button"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/list_padding_normal_v"
-            android:layout_marginHorizontal="@dimen/list_padding_normal_h"
-            android:paddingHorizontal="@dimen/dp_8"
-            android:paddingVertical="@dimen/dp_8"
-            android:background="@drawable/bg_round_pass">
+            android:focusable="true"
+            android:visibility="gone"
+            tools:visibility="gone" />
 
-        <com.google.android.material.imageview.ShapeableImageView
-                app:shapeAppearanceOverlay="@style/roundImageView"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:id="@+id/iv_app_icon"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                tools:src="@tools:sample/avatars"
-                />
-
-        <CheckBox
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                android:id="@+id/check_button"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-
-                android:focusable="true"
-                android:visibility="gone"
-                tools:visibility="gone" />
-
-
-        <TextView
-                app:layout_constraintStart_toEndOf="@id/iv_app_icon"
-                app:layout_constraintTop_toTopOf="parent"
-                android:id="@+id/tv_privacy_info_name"
-                android:paddingStart="@dimen/dp_8"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/dp_4"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:singleLine="true"
-                android:text="我的邮箱账号"
-                android:textStyle="bold"
-                style="@style/tv_title_normal"
-                />
-
-
-        <TextView
-                app:layout_constraintStart_toStartOf="@id/tv_privacy_info_name"
-                app:layout_constraintTop_toBottomOf="@id/tv_privacy_info_name"
-                android:layout_marginTop="@dimen/dp_4"
-
-                android:id="@+id/tv_privacy_info_account"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="1"
-                style="@style/tv_content_second"
-                android:text="791422171@qq.com"
-                app:drawableStartCompat="@drawable/ic_baseline_person_24" />
-
-        <LinearLayout
-                android:id="@+id/layout_desc"
-                app:layout_constraintStart_toStartOf="@id/tv_privacy_info_name"
-                app:layout_constraintEnd_toStartOf="@id/check_button"
-                android:layout_marginVertical="@dimen/dp_4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@+id/tv_privacy_info_account">
-
-            <TextView
-                    android:layout_weight="1"
-                    android:id="@+id/tv_privacy_info_desc"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ellipsize="end"
-                    android:maxLines="1"
-                    style="@style/tv_content_second"
-                    android:text="床前明月光，疑是地上霜。举头望明月，低头思故乡。"
-                    app:drawableStartCompat="@drawable/ic_baseline_description_24" />
-
-
-        </LinearLayout>
-
-
-        <LinearLayout
-                android:visibility="gone"
-                app:layout_constraintTop_toBottomOf="@id/layout_desc"
-                app:layout_constraintStart_toStartOf="@id/layout_desc"
-                app:layout_constraintEnd_toStartOf="@id/check_button"
-                android:layout_marginVertical="@dimen/dp_4"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                >
+    <com.google.android.material.imageview.ShapeableImageView
+            app:shapeAppearanceOverlay="@style/roundImageView"
+            app:layout_constraintStart_toEndOf="@id/check_button"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/iv_app_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            tools:src="@tools:sample/avatars" />
 
 
 
-            <TextView
-                    android:visibility="gone"
-                    android:id="@+id/tv_privacy_info_create_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/tv_content_small"
-                    android:layout_marginEnd="@dimen/dp_10"
-                    android:singleLine="true"
-                    android:text="2022-01-11 00:15:07"
-                    app:drawableStartCompat="@drawable/ic_time" />
+    <TextView
+            app:layout_constraintStart_toEndOf="@id/iv_app_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/tv_privacy_name"
+            android:paddingStart="@dimen/dp_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_4"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="我的邮箱账号"
+            android:textStyle="bold"
+            style="@style/tv_title_normal" />
 
 
-            <TextView
-                    android:id="@+id/tv_privacy_info_update_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/tv_content_small"
-                    android:singleLine="true"
-                    android:text="2022-01-11 00:15:07"
-                    app:drawableStartCompat="@drawable/ic_time" />
-        </LinearLayout>
+    <TextView
+            app:layout_constraintStart_toStartOf="@id/tv_privacy_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_privacy_name"
+            android:layout_marginTop="@dimen/dp_4"
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:id="@+id/tv_privacy_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            style="@style/tv_content_second"
+            android:text="791422171@qq.com"
+            app:drawableStartCompat="@drawable/ic_baseline_person_24" />
+
+    <TextView
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableEnd="@drawable/ic_arrow_right_24dp"
+            />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
 
