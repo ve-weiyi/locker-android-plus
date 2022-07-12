@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ve.lib.common.view.widget.multipleview.MultipleStatusView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/multiple_status_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:emptyView="@layout/layout_empty_view"
+        app:errorView="@layout/layout_error_view"
+        app:loadingView="@layout/layout_loading_view"
+        app:noNetworkView="@layout/layout_no_network_view">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorBackground"
+            android:orientation="vertical">
+
+        <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:tabTextColor="@color/color_purple"
+                app:tabGravity="fill"
+                app:tabMode="scrollable"
+                app:tabIndicatorColor="@color/red"
+                app:tabMinWidth="10dp"
+                app:tabPaddingEnd="5dp"
+                app:tabPaddingStart="5dp"
+                app:tabIndicatorFullWidth="false"
+                />
+
+        <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    </LinearLayout>
+
+</com.ve.lib.common.view.widget.multipleview.MultipleStatusView>

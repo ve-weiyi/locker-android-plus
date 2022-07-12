@@ -1,7 +1,7 @@
 ext {
     //android开发版本配置
     android = [
-            applicationId    : "com.ve.locker",
+            applicationId    : "com.ve",
             compileSdkVersion: 31,
             buildToolsVersion: "30.0.3",
             minSdkVersion    : 26,

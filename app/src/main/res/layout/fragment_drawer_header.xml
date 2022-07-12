@@ -139,7 +139,7 @@
             android:padding="@dimen/dp_5"
             >
 
-        <com.ve.lib.view.widget.view.VerticalItemView
+        <com.ve.lib.common.view.widget.view.VerticalItemView
                 android:id="@+id/icon_notification_msg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -159,7 +159,7 @@
                 app:tipTextColor="@color/white"
                 app:tipTextSize="7sp" />
 
-        <com.ve.lib.view.widget.view.VerticalItemView
+        <com.ve.lib.common.view.widget.view.VerticalItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -177,7 +177,7 @@
                 app:tipTextColor="@color/white"
                 app:tipTextSize="7sp" />
 
-        <com.ve.lib.view.widget.view.VerticalItemView
+        <com.ve.lib.common.view.widget.view.VerticalItemView
                 android:id="@+id/icon_notification_listen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -196,7 +196,7 @@
                 app:tipTextColor="@color/white"
                 app:tipTextSize="7sp" />
 
-        <com.ve.lib.view.widget.view.VerticalItemView
+        <com.ve.lib.common.view.widget.view.VerticalItemView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

@@ -59,7 +59,7 @@ object DialogUtil {
     fun getConfirmDialog(
         context: Context,
         message: String,
-        onOKClickListener: DialogInterface.OnClickListener,
+        onOKClickListener: DialogInterface.OnClickListener?=null,
 //        onOKClickListener: (dialog:DialogInterface, which:Int) -> Unit,
         onCancelClickListener: DialogInterface.OnClickListener? = null
     ): AlertDialog.Builder {

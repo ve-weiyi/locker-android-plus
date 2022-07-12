@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.ve.module.android">
+
+    <application
+            android:theme="@style/AppTheme"
+            >
+
+        <activity android:name=".ui.page.activity.AgentWebActivity"/>
+        <activity android:name=".ui.page.search.SearchActivity"/>
+        <activity android:name=".ui.page.activity.ShareActivity"/>
+        <activity android:name=".ui.page.todo.TodoActivity"/>
+        <activity android:name=".ui.page.setting.SettingsActivity" />
+        <activity android:name=".ui.page.activity.ScoreActivity"/>
+        <activity android:name=".ui.page.activity.RankActivity"/>
+        <activity android:name=".ui.page.user.LoginActivity"/>
+        <activity android:name=".ui.page.user.RegisterActivity"/>
+        <activity android:name=".ui.page.activity.ArticleDetailActivity" />
+        <activity android:name=".ui.page.activity.CommonActivity"/>
+
+    </application>
+
+</manifest>

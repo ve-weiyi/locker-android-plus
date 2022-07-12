@@ -1,7 +1,7 @@
 package com.ve.module.locker.model.db.vo
 
 import com.ve.lib.common.utils.CommonUtil
-import com.ve.lib.common.vutils.DateTimeUtil
+import com.ve.lib.common.vutils.TimeUtil
 
 /**
  * @Author  weiyi
@@ -19,7 +19,7 @@ data class PrivacySimpleInfo(
     public var privacyDesc: String = "",
 
     //(varue = "更新时间", notes = "标签更新时间,不用填", position = 8)
-    public var updateTime: String = DateTimeUtil.dateAndTime,
+    public var updateTime: String = TimeUtil.dateAndTime,
 ) {
 
 

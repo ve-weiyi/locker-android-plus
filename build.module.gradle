@@ -38,7 +38,6 @@ android {
             }
         }
 
-
         multiDexEnabled true
 //        ndk {
 //            abiFilters "armeabi", "x86"
@@ -55,21 +54,21 @@ android {
         }
     }
 
-//    sourceSets {
-//        main {
-//            // 1.单独调试与集成调试时使用不同的 AndroidManifest.xml 文件
-//            // 我们还可以根据不同工程配置不同的 Java 源代码、不同的 resource 资源文件等的
-//            jniLibs.srcDirs = ['libs']
-//            if (isModule.toBoolean()) {
-//                manifest.srcFile 'src/main/module/AndroidManifest.xml'
-//            } else {
-//                manifest.srcFile 'src/main/AndroidManifest.xml'
-//                java {
-//                    exclude 'debug/**'
-//                }
-//            }
-//        }
-//    }
+    sourceSets {
+        main {
+            // 1.单独调试与集成调试时使用不同的 AndroidManifest.xml 文件
+            // 我们还可以根据不同工程配置不同的 Java 源代码、不同的 resource 资源文件等的
+            jniLibs.srcDirs = ['libs']
+            if (isModule.toBoolean()) {
+                manifest.srcFile 'src/main/module/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+                java {
+                    exclude 'debug/**'
+                }
+            }
+        }
+    }
 
     packagingOptions {
         exclude 'META-INF/proguard/androidx-annotations.pro'

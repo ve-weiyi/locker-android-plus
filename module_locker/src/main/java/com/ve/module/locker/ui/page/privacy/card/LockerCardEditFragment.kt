@@ -16,7 +16,7 @@ import com.afollestad.materialdialogs.lifecycle.lifecycleOwner
 import com.afollestad.materialdialogs.list.listItems
 import com.ve.lib.common.base.view.vm.BaseVmFragment
 import com.ve.lib.common.view.widget.passwordGenerator.PasswordGeneratorDialog
-import com.ve.lib.common.vutils.DateTimeUtil
+import com.ve.lib.common.vutils.TimeUtil
 import com.ve.lib.common.vutils.LogUtil
 import com.ve.module.locker.R
 import com.ve.module.locker.common.event.RefreshDataEvent
@@ -260,7 +260,7 @@ class LockerCardEditFragment :
                 this.password = password
                 this.owner = owner
                 this.remark = remark
-                updateTime = DateTimeUtil.dateAndTime
+                updateTime = TimeUtil.dateAndTime
             }
 
             return true

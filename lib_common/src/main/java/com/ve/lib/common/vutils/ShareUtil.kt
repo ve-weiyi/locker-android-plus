@@ -3,8 +3,6 @@ package com.ve.lib.common.vutils
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import android.widget.Toast
-import androidx.core.content.ContextCompat.startActivity
 
 
 /**

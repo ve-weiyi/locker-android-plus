@@ -2,8 +2,7 @@ package com.ve.module.locker.model.db.entity
 
 import com.chad.library.adapter.base.entity.SectionEntity
 import com.ve.lib.common.utils.CommonUtil
-import com.ve.lib.common.vutils.DateTimeUtil
-import com.ve.module.locker.LockerApplication
+import com.ve.lib.common.vutils.TimeUtil
 import com.ve.module.locker.model.db.PrivacyEnum
 import com.ve.module.locker.model.db.vo.PrivacySimpleInfo
 import org.litepal.LitePal
@@ -40,7 +39,7 @@ data class PrivacyCard(
     var remark: String = "未设置备注",
 
     //(varue = "更新时间")
-    var updateTime: String = DateTimeUtil.dateAndTime,
+    var updateTime: String = TimeUtil.dateAndTime,
 
     //(varue = "文件夹id")
     @Column(index = true)

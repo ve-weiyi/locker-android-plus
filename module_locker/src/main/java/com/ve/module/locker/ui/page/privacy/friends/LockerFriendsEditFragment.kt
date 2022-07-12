@@ -9,7 +9,7 @@ import com.afollestad.materialdialogs.datetime.datePicker
 import com.afollestad.materialdialogs.lifecycle.lifecycleOwner
 import com.ve.lib.common.base.view.vm.BaseVmFragment
 import com.ve.lib.common.vutils.LogUtil
-import com.ve.lib.common.vutils.DateTimeUtil
+import com.ve.lib.common.vutils.TimeUtil
 import com.ve.module.locker.R
 import com.ve.module.locker.common.event.RefreshDataEvent
 import com.ve.module.locker.databinding.LockerFragmentEditFriendsBinding
@@ -67,7 +67,7 @@ class LockerFriendsEditFragment:
         mBinding.tvFriendsBirthday.setOnClickListener {
             MaterialDialog(mContext).show {
                 datePicker { dialog, datetime ->
-                    mBinding.tvFriendsBirthday.text= DateTimeUtil.formatDate(datetime.time)
+                    mBinding.tvFriendsBirthday.text= TimeUtil.formatDate(datetime.time)
                 }
                 lifecycleOwner(activity)
             }

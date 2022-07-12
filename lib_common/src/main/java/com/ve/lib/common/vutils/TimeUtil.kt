@@ -16,7 +16,7 @@ import java.util.*
  * GitHub : https://github.com/yechaoa
  * CSDN : http://blog.csdn.net/yechaoa
  */
-object DateTimeUtil {
+object TimeUtil {
     /**
      * 获取当前年月日
      */

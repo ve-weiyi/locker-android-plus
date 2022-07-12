@@ -1,7 +1,7 @@
 package com.ve.module.locker.model.db.entity
 
 import com.chad.library.adapter.base.entity.SectionEntity
-import com.ve.lib.common.vutils.DateTimeUtil
+import com.ve.lib.common.vutils.TimeUtil
 import com.ve.module.locker.model.db.vo.PrivacySimpleInfo
 import org.litepal.annotation.Column
 import org.litepal.annotation.Encrypt
@@ -26,7 +26,7 @@ data class PrivacyFriend(
     var sex:Int=1,
 
     @Encrypt(algorithm = AES)
-    var birthday:String=DateTimeUtil.date,
+    var birthday:String=TimeUtil.date,
 
     @Encrypt(algorithm = AES)
     var phone: String = "",
@@ -53,7 +53,7 @@ data class PrivacyFriend(
     var headerName: String = "",
 
 
-) : LitePalSupport(), Serializable, SectionEntity {
+    ) : LitePalSupport(), Serializable, SectionEntity {
     override val isHeader: Boolean
         get() = headerName.isNotEmpty()
 

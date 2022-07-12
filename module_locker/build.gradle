@@ -4,7 +4,7 @@ apply plugin: 'org.jetbrains.kotlin.android'
 android {
     defaultConfig {
         if (isModule.toBoolean()) {
-            applicationId rootProject.ext.android.applicationId
+            applicationId rootProject.ext.android.applicationId+".locker"
         }
         //设置了resourcePrefix值后，所有的资源名必须以指定的字符串做前缀，否则会报错。
         //但是resourcePrefix这个值只能限定xml里面的资源，并不能限定图片资源，所有图片资源仍然需要手动去修改资源名。
@@ -12,27 +12,11 @@ android {
 
     }
 
-    sourceSets {
-        main {
-            // 1.单独调试与集成调试时使用不同的 AndroidManifest.xml 文件
-            // 我们还可以根据不同工程配置不同的 Java 源代码、不同的 resource 资源文件等的
-            jniLibs.srcDirs = ['libs']
-            if (isModule.toBoolean()) {
-                manifest.srcFile 'src/main/module/AndroidManifest.xml'
-            } else {
-                manifest.srcFile 'src/main/AndroidManifest.xml'
-                java {
-                    exclude 'debug/**'
-                }
-            }
-        }
-    }
 }
 
 dependencies {
 //    implementation  project(':module_chat')
     implementation  project(':module_sunny')
-//    implementation "androidx.biometric:biometric:1.1.0"
     // Kotlin
     implementation "androidx.biometric:biometric-ktx:1.2.0-alpha04"
 

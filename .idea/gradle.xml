@@ -13,6 +13,8 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/lib_application" />
             <option value="$PROJECT_DIR$/lib_common" />
+            <option value="$PROJECT_DIR$/module_android" />
+            <option value="$PROJECT_DIR$/module_games" />
             <option value="$PROJECT_DIR$/module_locker" />
             <option value="$PROJECT_DIR$/module_sunny" />
           </set>

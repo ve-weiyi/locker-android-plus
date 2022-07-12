@@ -1,6 +1,6 @@
 package com.ve.module.locker
 
-import com.ve.lib.common.vutils.DateTimeUtil
+import com.ve.lib.common.vutils.TimeUtil
 import com.ve.module.locker.utils.PasswordUtils
 import org.junit.Test
 
@@ -36,7 +36,7 @@ class ExampleUnitTest {
                 " * test是单元测试类.运行在本地开发机上，可以脱离Android运行时环境,速度快.")
         val date=Date()
         println(date)
-        println(DateTimeUtil.formatDate(date))
-        println(DateTimeUtil.formatDate(date.toString()))
+        println(TimeUtil.formatDate(date))
+        println(TimeUtil.formatDate(date.toString()))
     }
 }

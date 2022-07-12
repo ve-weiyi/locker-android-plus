@@ -8,7 +8,7 @@ import com.chad.library.adapter.base.module.LoadMoreModule
 import com.chad.library.adapter.base.module.UpFetchModule
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.ve.lib.common.vutils.LogUtil
-import com.ve.lib.common.vutils.DateTimeUtil
+import com.ve.lib.common.vutils.TimeUtil
 import com.ve.module.locker.R
 import com.ve.module.locker.model.db.entity.PrivacyFriend
 
@@ -42,7 +42,7 @@ class PrivacyInfoFriendsAdapter :
             setText(R.id.tv_friends_address,item.address)
             setText(R.id.tv_friends_department,item.department)
             setText(R.id.tv_friends_remark,item.remark)
-            val age=DateTimeUtil.date.substring(0,4).toInt()-item.birthday.substring(0,4).toInt()
+            val age=TimeUtil.date.substring(0,4).toInt()-item.birthday.substring(0,4).toInt()
             setText(R.id.tv_friends_birthday,age.toString()+"岁")
 
             if(item.sex==0){

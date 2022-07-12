@@ -21,3 +21,5 @@ include ':lib_common'
 
 include ':module_locker'
 include ':module_sunny'
+include ':module_android'
+include ':module_games'
