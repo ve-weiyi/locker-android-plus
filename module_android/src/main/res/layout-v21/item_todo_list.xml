@@ -4,7 +4,9 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:sideVisibility="false"
+        >
 
     <RelativeLayout
             android:id="@+id/item_todo_content"
@@ -20,7 +22,8 @@
                 app:tiltMode="left_top_triangle"
                 app:tiltText="@string/priority_1"
                 app:tiltTextSize="@dimen/sp_8"
-                tools:visibility="visible" />
+                tools:visibility="visible"
+                />
 
         <TextView
                 android:id="@+id/tv_todo_title"
@@ -59,7 +62,7 @@
             android:layout_height="match_parent"
             android:background="@color/white">
 
-        <Button
+        <androidx.constraintlayout.utils.widget.MotionButton
                 android:id="@+id/btn_done"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
@@ -70,7 +73,7 @@
                 android:textColor="@color/white"
                 android:textSize="@dimen/sp_12" />
 
-        <Button
+        <androidx.constraintlayout.utils.widget.MotionButton
                 android:id="@+id/btn_delete"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"

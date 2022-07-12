@@ -5,7 +5,7 @@ import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.ve.lib.common.utils.ImageLoader
 import com.ve.lib.common.base.adapter.BaseSlideAdapter
 import com.ve.module.locker.R
-import com.ve.module.locker.model.db.entity.PrivacyFolder
+import com.ve.module.locker.respository.database.entity.PrivacyFolder
 
 
 /**

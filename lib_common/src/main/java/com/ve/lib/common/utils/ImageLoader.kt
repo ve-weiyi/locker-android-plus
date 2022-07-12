@@ -13,7 +13,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.CustomTarget
 import com.ve.lib.common.R
-import com.ve.lib.common.http.util.NetWorkUtil
+import com.ve.lib.common.network.util.NetWorkUtil
 import com.ve.lib.common.vutils.AppContextUtils
 import com.ve.lib.common.vutils.LogUtil
 

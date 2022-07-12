@@ -12,7 +12,7 @@ import com.ve.lib.common.utils.SettingUtil
 import com.ve.lib.common.vutils.AppContextUtils
 import com.ve.lib.common.vutils.LogUtil
 import com.ve.lib.common.vutils.SpUtil
-import com.ve.module.locker.model.db.AppDataBase
+import com.ve.module.locker.respository.database.AppDataBase
 import org.litepal.LitePal
 import java.util.*
 

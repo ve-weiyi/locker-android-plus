@@ -13,7 +13,7 @@ import com.ve.lib.common.ext.spanText
 import com.ve.lib.common.vutils.LogUtil
 import com.ve.lib.common.vutils.ToastUtil
 import com.ve.module.locker.R
-import com.ve.module.locker.model.db.entity.PrivacyPass
+import com.ve.module.locker.respository.database.entity.PrivacyPass
 import com.ve.module.locker.ui.page.container.LockerContainerActivity
 import com.ve.module.locker.ui.page.privacy.pass.LockerPassDetailsFragment
 import com.ve.module.locker.utils.AndroidUtil

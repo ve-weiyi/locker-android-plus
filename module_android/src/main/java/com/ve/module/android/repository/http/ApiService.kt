@@ -1,7 +1,7 @@
 package com.ve.module.android.repository.http
 
-import com.ve.lib.common.http.base.BaseBean
-import com.ve.module.android.repository.model.*
+import com.ve.lib.common.network.base.BaseBean
+import com.ve.module.android.repository.bean.*
 import retrofit2.http.*
 
 /**

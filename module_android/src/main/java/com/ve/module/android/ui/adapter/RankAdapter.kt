@@ -2,7 +2,7 @@ package com.ve.module.android.ui.adapter
 
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.ve.module.android.R
-import com.ve.module.android.repository.model.CoinInfo
+import com.ve.module.android.repository.bean.CoinInfo
 import com.ve.lib.common.base.adapter.BaseSlideAdapter
 
 /**

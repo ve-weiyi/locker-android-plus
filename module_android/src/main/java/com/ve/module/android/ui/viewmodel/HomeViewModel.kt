@@ -3,9 +3,9 @@ package com.ve.module.android.ui.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.ve.module.android.repository.WazRepository
-import com.ve.module.android.repository.model.Article
-import com.ve.module.android.repository.model.BannerBean
-import com.ve.module.android.repository.model.Project
+import com.ve.module.android.repository.bean.Article
+import com.ve.module.android.repository.bean.BannerBean
+import com.ve.module.android.repository.bean.Project
 import com.ve.lib.common.base.viewmodel.BaseViewModel
 
 class HomeViewModel : BaseViewModel() {

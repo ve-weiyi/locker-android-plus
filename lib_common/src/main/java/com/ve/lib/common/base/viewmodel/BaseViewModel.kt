@@ -6,8 +6,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.google.gson.Gson
 import com.google.gson.JsonParseException
-import com.ve.lib.common.http.exception.ApiException
-import com.ve.lib.common.http.util.NetWorkUtil
+import com.ve.lib.common.network.exception.ApiException
+import com.ve.lib.common.network.util.NetWorkUtil
 import com.ve.lib.common.vutils.ToastUtil
 import kotlinx.coroutines.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull

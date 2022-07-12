@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <declare-styleable name="SwipeItemLayout" tools:ignore="ResourceName">
+        <attr name="sideVisibility" format="boolean" />
+    </declare-styleable>
+
 
 
     <declare-styleable name="SlidingTabLayout">

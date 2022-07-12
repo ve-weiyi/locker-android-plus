@@ -9,7 +9,7 @@ import com.ve.lib.common.base.view.list.BaseVmListFragment
 import com.ve.lib.common.base.view.list.ListViewManager
 import com.ve.lib.common.vutils.LogUtil
 import com.ve.module.locker.databinding.LockerFragmentTagBinding
-import com.ve.module.locker.model.db.entity.PrivacyTag
+import com.ve.module.locker.respository.database.entity.PrivacyTag
 import com.ve.module.locker.ui.adapter.TagGridAdapter
 import com.ve.module.locker.ui.page.privacy.LockerGroupActivity
 import com.ve.module.locker.ui.viewmodel.LockerClassifyViewModel

@@ -4,7 +4,7 @@ import com.ve.lib.common.base.adapter.BaseSlideBindingAdapter
 import com.ve.lib.common.base.adapter.VBViewHolder
 import com.ve.module.locker.R
 import com.ve.module.locker.databinding.LockerItemSimpleListBinding
-import com.ve.module.locker.model.db.entity.PrivacyFolder
+import com.ve.module.locker.respository.database.entity.PrivacyFolder
 
 
 /**

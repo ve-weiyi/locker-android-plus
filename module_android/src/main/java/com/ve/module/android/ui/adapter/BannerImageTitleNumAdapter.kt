@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.ve.module.android.R
-import com.ve.module.android.repository.model.BannerBean
+import com.ve.module.android.repository.bean.BannerBean
 import com.youth.banner.adapter.BannerAdapter
 
 /**

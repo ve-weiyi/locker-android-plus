@@ -7,17 +7,17 @@ import android.text.TextUtils
 import android.util.AttributeSet
 import android.view.View
 import com.ve.lib.common.R
-
+import com.ve.lib.common.vutils.LogUtil
 
 
 /**
- * @author chenxz
- * @date 2018/9/19
- * @desc 倾斜的 TextView
- * 用于显示左上角「重要」标签
+ * @Description hello word!
+ * 倾斜的文字
+ * @Author weiyi
+ * @Date 2022/4/7
  */
-class TiltTextView : View {
-
+class TiltTextView(context: Context,attrs: AttributeSet?) : View(context, attrs) {
+    var TAG = " "
     private val MODE_LEFT_TOP = 0
     private val MODE_LEFT_TOP_TRIANGLE = 1
     private val MODE_LEFT_BOTTOM = 2
@@ -31,19 +31,19 @@ class TiltTextView : View {
 
     private var mPaint: Paint? = null
     private var mTextPaint: Paint? = null
-    private var mTiltBgColor = Color.TRANSPARENT
+    private var mTiltBgColor = Color.RED
     private var mTextColor = Color.WHITE
     private var mTextSize = 16f
     private var mTiltLength = 40f
-    private var mTiltText: String? = ""
-    private var mMode = MODE_LEFT_TOP
+    private var mTiltText: String? = "重要的"
+    private var mMode = MODE_LEFT_TOP_TRIANGLE
 
-    constructor(context: Context) : this(context, null)
-
-    constructor(context: Context, attrs: AttributeSet?) : this(context, attrs, -1)
-
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
-
+    /**
+     * 直接在xml中定义并显示，所以只实现该构造函数即可
+     * @param context
+     * @param attrs
+     */
+    init {
         val array = context.obtainStyledAttributes(attrs, R.styleable.TiltTextView)
         mTiltBgColor = array.getColor(R.styleable.TiltTextView_tiltBgColor, mTiltBgColor)
         mTextSize = array.getDimension(R.styleable.TiltTextView_tiltTextSize, mTextSize)
@@ -52,35 +52,48 @@ class TiltTextView : View {
         if (array.hasValue(R.styleable.TiltTextView_tiltText)) {
             mTiltText = array.getString(R.styleable.TiltTextView_tiltText)
         }
-        if (array.hasValue(R.styleable.TiltTextView_tiltMode)) {
-            mMode = array.getInt(R.styleable.TiltTextView_tiltMode, MODE_LEFT_TOP)
-        }
-        array.recycle()
 
+        mMode = array.getInt(R.styleable.TiltTextView_tiltMode, MODE_LEFT_TOP)
+        LogUtil.msg("mMode"+mMode.toString())
+        array.recycle()
         init()
     }
 
     private fun init() {
         mPaint = Paint()
+        mTextPaint = TextPaint(Paint.ANTI_ALIAS_FLAG)
+
+        if(isInEditMode){
+            // 测试环境
+        }
+
         mPaint?.style = Paint.Style.FILL
         mPaint?.xfermode = PorterDuffXfermode(PorterDuff.Mode.SRC_OVER)
         mPaint?.isAntiAlias = true
         mPaint?.color = mTiltBgColor
 
-        mTextPaint = TextPaint(Paint.ANTI_ALIAS_FLAG)
         mTextPaint?.isAntiAlias = true
         mTextPaint?.textSize = mTextSize
         mTextPaint?.color = mTextColor
-
     }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
-        if (!isInEditMode){
-            drawBg(canvas)
-            drawText(canvas)
-        }
+        drawBg(canvas)
+        drawText(canvas)
+//        /**
+//         * 第一次绘制：绘制矩形
+//         */
+//        canvas.drawRect(80f, 80f, 200f, 150f, mPaint!!) //通过draw方法，将内容显示在屏幕上，此次画布的任务已经完成
 
+//        /**
+//         * 第二次绘制：先平移到 (dx,dy)，再绘制圆
+//         */
+        //  canvas.translate(0f, 0f) //画布还是原来的画布，只是将它平移。内容是在屏幕上的，所以画布平移不影响第一次绘制的内容
+        // mPaint!!.color = Color.RED //改变画笔的颜色
+        //canvas.drawCircle(50f, 50f, 100f, mTextPaint!!) //通过draw方法，将内容显示在屏幕上，此次画布的任务已经完成。（这里的坐标多是相对画布而言）
+
+        // canvas.drawText(mTiltText!!, 50F, 50F, mTextPaint!!)
     }
 
     /**
@@ -88,14 +101,14 @@ class TiltTextView : View {
      */
     private fun drawBg(canvas: Canvas) {
         var path = Path()
+
         val w = width
         val h = height
 
-        if (w != h)
-        {
-            throw IllegalStateException("TiltTextView's width must equal to height")
+        if (w != h) {
+            //backgroundColor = Color.BLUE
+            // throw IllegalStateException("TiltTextView's width must equal to height")
         }
-
         when (mMode) {
             MODE_LEFT_TOP -> path = getModeLeftTopPath(path, w, h)
             MODE_LEFT_TOP_TRIANGLE -> path = getModeLeftTopTrianglePath(path, w, h)
@@ -110,6 +123,28 @@ class TiltTextView : View {
         path.close()
         canvas.drawPath(path, mPaint!!)
         canvas.save()
+    }
+
+
+    /**
+     * 绘制文字
+     */
+    private fun drawText(canvas: Canvas) {
+        val w = (canvas.width - mTiltLength / 2).toInt()
+        val h = (canvas.height - mTiltLength / 2).toInt()
+
+        val xy = calculateXY(canvas, w, h)
+
+        val toX = xy[0]
+        val toY = xy[1]
+        val centerX = xy[2]
+        val centerY = xy[3]
+        val angle = xy[4]
+
+        canvas.rotate(angle, centerX, centerY)
+
+        canvas.drawText(mTiltText!!, toX, toY, mTextPaint!!)
+        //canvas.save()
     }
 
     private fun getModeRightBottomTrianglePath(path: Path, w: Int, h: Int): Path {
@@ -167,24 +202,6 @@ class TiltTextView : View {
         return path
     }
 
-    /**
-     * 绘制文字
-     */
-    private fun drawText(canvas: Canvas) {
-        val w = (canvas.width - mTiltLength / 2).toInt()
-        val h = (canvas.height - mTiltLength / 2).toInt()
-        val xy = calculateXY(canvas, w, h)
-
-        val toX = xy[0]
-        val toY = xy[1]
-        val centerX = xy[2]
-        val centerY = xy[3]
-        val angle = xy[4]
-
-        canvas.rotate(angle, centerX, centerY)
-
-        canvas.drawText(mTiltText!!, toX, toY, mTextPaint!!)
-    }
 
     private fun calculateXY(canvas: Canvas, w: Int, h: Int): FloatArray {
         val xy = FloatArray(5)
@@ -210,7 +227,10 @@ class TiltTextView : View {
         return xy
     }
 
-    //================= API =====================
+
+
+
+//================= API =====================
 
     fun setText(text: String): TiltTextView {
         mTiltText = text
@@ -256,4 +276,5 @@ class TiltTextView : View {
         postInvalidate()
         return this
     }
+
 }

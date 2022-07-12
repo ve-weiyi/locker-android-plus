@@ -4,7 +4,7 @@ import android.widget.TextView
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.ve.module.android.R
-import com.ve.module.android.repository.model.TodoTypeBean
+import com.ve.module.android.repository.bean.TodoTypeBean
 
 /**
  * @author chenxz

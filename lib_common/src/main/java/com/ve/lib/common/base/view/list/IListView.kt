@@ -72,7 +72,6 @@ interface IListView<LD : Any> {
             .initListener(
                 refreshListener = {
                     mSwipeRefreshLayout?.postDelayed({
-                        mCurrentPage = 0
                         getRefreshData()
                         LogUtil.msg("refresh page at : " + javaClass.simpleName)
                     }, 1500)
@@ -82,7 +81,7 @@ interface IListView<LD : Any> {
                     mRecyclerView?.postDelayed({
                         //刷新视图是否应显示刷新进度，关闭刷新loading
                         mSwipeRefreshLayout?.isRefreshing = false
-                        mCurrentPage++
+
                         getMoreData()
                         LogUtil.msg("Load more at : " + javaClass.simpleName)
                     }, 500)

@@ -2,7 +2,7 @@ package com.ve.module.android.ui.page.fragment
 
 import com.ve.module.android.ui.adapter.BannerImageTitleNumAdapter
 import com.ve.module.android.databinding.FragmentBlank2Binding
-import com.ve.module.android.repository.model.BannerBean
+import com.ve.module.android.repository.bean.BannerBean
 import com.ve.module.android.ui.page.activity.ArticleDetailActivity
 import com.ve.module.android.ui.page.main.child.ProjectListFragment
 import com.ve.module.android.ui.viewmodel.HomeViewModel

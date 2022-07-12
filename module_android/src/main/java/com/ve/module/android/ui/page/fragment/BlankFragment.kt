@@ -3,8 +3,8 @@ package com.ve.module.android.ui.page.fragment
 import android.view.View
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.ve.module.android.databinding.FragmentBlankBinding
-import com.ve.module.android.repository.model.Article
-import com.ve.module.android.repository.model.BannerBean
+import com.ve.module.android.repository.bean.Article
+import com.ve.module.android.repository.bean.BannerBean
 import com.ve.module.android.ui.adapter.ArticleAdapter
 import com.ve.module.android.ui.adapter.BannerImageTitleNumAdapter
 import com.ve.module.android.ui.page.activity.ArticleDetailActivity

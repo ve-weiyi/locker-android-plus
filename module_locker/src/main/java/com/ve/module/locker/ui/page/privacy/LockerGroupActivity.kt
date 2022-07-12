@@ -6,9 +6,9 @@ import android.os.Bundle
 import com.ve.lib.common.base.view.vm.BaseVmActivity
 import com.ve.lib.common.vutils.LogUtil
 import com.ve.module.locker.databinding.LockerActivityClassifyGroupBinding
-import com.ve.module.locker.model.db.entity.PrivacyFolder
-import com.ve.module.locker.model.db.entity.PrivacyTag
-import com.ve.module.locker.model.http.model.ConditionVO
+import com.ve.module.locker.respository.database.entity.PrivacyFolder
+import com.ve.module.locker.respository.database.entity.PrivacyTag
+import com.ve.module.locker.respository.http.bean.ConditionVO
 import com.ve.module.locker.ui.adapter.CategoryGroupAdapter
 import com.ve.module.locker.ui.viewmodel.LockerClassifyViewModel
 import java.io.Serializable

@@ -10,7 +10,7 @@ import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.ve.lib.common.vutils.LogUtil
 import com.ve.lib.common.vutils.TimeUtil
 import com.ve.module.locker.R
-import com.ve.module.locker.model.db.entity.PrivacyFriend
+import com.ve.module.locker.respository.database.entity.PrivacyFriend
 
 /**
  * @Description hello word!

@@ -20,8 +20,8 @@ import com.ve.lib.common.vutils.LogUtil
 import com.ve.lib.common.vutils.SpUtil
 import com.ve.lib.common.vutils.ToastUtil
 import com.ve.module.locker.common.config.SettingConstant
-import com.ve.module.locker.model.db.AppDataBase
-import com.ve.module.locker.model.http.model.LoginVO
+import com.ve.module.locker.respository.database.AppDataBase
+import com.ve.module.locker.respository.http.bean.LoginVO
 import com.ve.module.locker.ui.page.container.LockerContainerActivity
 import com.ve.module.locker.ui.page.key.LockerKeyFragment
 import com.ve.module.locker.ui.page.user.LockerUserInfoActivity

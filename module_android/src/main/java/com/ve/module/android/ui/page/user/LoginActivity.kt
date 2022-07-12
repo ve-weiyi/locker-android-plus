@@ -14,7 +14,7 @@ import androidx.appcompat.widget.Toolbar
 import com.ve.module.android.R
 import com.ve.module.android.databinding.ActivityLoginBinding
 import com.ve.lib.common.event.LoginEvent
-import com.ve.module.android.repository.model.LoginData
+import com.ve.module.android.repository.bean.LoginData
 import com.ve.module.android.ui.viewmodel.LoginViewModel
 import com.ve.lib.common.base.view.vm.BaseVmActivity
 import com.ve.lib.common.ext.setOnclickNoRepeat

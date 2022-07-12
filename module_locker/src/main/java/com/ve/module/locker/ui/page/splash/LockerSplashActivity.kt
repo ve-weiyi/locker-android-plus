@@ -12,7 +12,7 @@ import com.ve.module.locker.common.config.LockerConstant
 import com.ve.module.locker.common.config.SettingConstant
 
 import com.ve.module.locker.databinding.LockerActivitySplashBinding
-import com.ve.module.locker.model.http.model.LoginVO
+import com.ve.module.locker.respository.http.bean.LoginVO
 import com.ve.module.locker.ui.page.auth.LockerAuthActivity
 import com.ve.module.locker.ui.page.auth.LockerLoginActivity
 

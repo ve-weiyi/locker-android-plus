@@ -1,14 +1,12 @@
 package com.ve.module.locker.ui.viewmodel
 
 import androidx.lifecycle.MutableLiveData
-import com.ve.module.locker.model.db.entity.PrivacyCard
-import com.ve.module.locker.model.respository.PrivacyFolderRepository
-import com.ve.module.locker.model.respository.PrivacyTagRepository
-import com.ve.module.locker.model.db.entity.PrivacyFolder
-import com.ve.module.locker.model.db.entity.PrivacyPass
-import com.ve.module.locker.model.db.entity.PrivacyTag
-import com.ve.module.locker.model.db.vo.PrivacySimpleInfo
-import com.ve.module.locker.model.http.model.ConditionVO
+import com.ve.module.locker.respository.database.entity.PrivacyCard
+import com.ve.module.locker.respository.database.entity.PrivacyFolder
+import com.ve.module.locker.respository.database.entity.PrivacyPass
+import com.ve.module.locker.respository.database.entity.PrivacyTag
+import com.ve.module.locker.respository.database.vo.PrivacySimpleInfo
+import com.ve.module.locker.respository.http.bean.ConditionVO
 import org.litepal.LitePal
 
 /**
@@ -19,10 +17,6 @@ import org.litepal.LitePal
 class LockerClassifyViewModel : LockerViewModel() {
 
 
-//    val localTagList= MutableLiveData<MutableList<PrivacyTag>>()
-//
-
-    private val privacyTagRepository = PrivacyTagRepository
     val tagList = MutableLiveData<MutableList<PrivacyTag>>()
 
     fun getTagList() {
@@ -92,7 +86,6 @@ class LockerClassifyViewModel : LockerViewModel() {
 
     /******************************* folder *******************************/
 
-    private val privacyFolderRepository = PrivacyFolderRepository
 
     val folderList: MutableLiveData<MutableList<PrivacyFolder>> =
         MutableLiveData<MutableList<PrivacyFolder>>()

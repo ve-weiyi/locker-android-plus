@@ -6,7 +6,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.ve.module.android.databinding.WazFragmentMainBinding
-import com.ve.module.android.repository.model.BannerBean
+import com.ve.module.android.repository.bean.BannerBean
 import com.ve.module.android.ui.adapter.BannerImageTitleNumAdapter
 import com.ve.module.android.ui.page.activity.ArticleDetailActivity
 import com.ve.module.android.ui.page.activity.CommonActivity
@@ -70,9 +70,9 @@ class WazMainFragment : BaseVmPager2Fragment<WazFragmentMainBinding, WanAndroidV
             mBinding.toolbar.title=""
             setSupportActionBar(mBinding.toolbar)
             //设置返回键可用
-            //supportActionBar?.setHomeButtonEnabled(false)
+            supportActionBar?.setHomeButtonEnabled(false)
             //左侧添加一个默认的返回图标
-            //supportActionBar?.setDisplayHomeAsUpEnabled(true)
+            supportActionBar?.setDisplayHomeAsUpEnabled(true)
         }
 
         mBinding.tvTitle.text="玩安卓"
@@ -81,7 +81,10 @@ class WazMainFragment : BaseVmPager2Fragment<WazFragmentMainBinding, WanAndroidV
                 EventBus.getDefault().post(DrawerOpenEvent(mViewName!!))
             }
         }
-        //mBinding.toolbar.setNavigationIcon(resources.getDrawable(R.mipmap.tiger64));
+        mBinding.toolbar.navigationIcon = resources.getDrawable(R.mipmap.ic_default_avatar);
+
+
+
         setHasOptionsMenu(true)
         mTabLayout=mBinding.tabContainer.tabLayout
         mViewPager2=mBinding.tabContainer.viewPager

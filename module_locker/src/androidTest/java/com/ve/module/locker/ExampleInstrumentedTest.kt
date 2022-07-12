@@ -3,17 +3,16 @@ package com.ve.module.locker
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.gson.JsonParseException
-import com.ve.lib.common.http.exception.ApiException
+import com.ve.lib.common.network.exception.ApiException
 import com.ve.lib.common.view.widget.passwordGenerator.PasswordGenerator
 import com.ve.lib.common.vutils.LogUtil
 import com.ve.lib.common.vutils.ToastUtil
 import com.ve.module.locker.common.config.LockerConstant
-import com.ve.module.locker.model.db.AppDataBase
-import com.ve.module.locker.model.db.entity.*
-import com.ve.module.locker.model.respository.AuthRepository
-import com.ve.module.locker.model.respository.PrivacyTagRepository
-import com.ve.module.locker.model.http.model.ConditionVO
-import com.ve.module.locker.model.http.api.LockerApiService
+import com.ve.module.locker.respository.database.AppDataBase
+import com.ve.module.locker.respository.database.entity.*
+import com.ve.module.locker.respository.AuthRepository
+import com.ve.module.locker.respository.http.bean.ConditionVO
+import com.ve.module.locker.respository.http.api.LockerApiService
 import com.ve.module.locker.utils.AESUtil
 import com.ve.module.locker.utils.PasswordUtils
 import com.ve.module.locker.utils.RSAUtils
@@ -136,33 +135,7 @@ class ExampleInstrumentedTest {
         LogUtil.e(" androidTest是整合测试。可以运行在设备或虛拟设备上.需要编译打包为APK在设备上运行，可以实时杏看细节.\n")
         LogUtil.e(" test是单元测试类.运行在本地开发机上，可以脱离Android运行时环境,速度快.")
 
-        val repository = PrivacyTagRepository.apiService
-        runBlocking {
-            val a = repository.loginLocker(
-                username = "791422171@qq.com",
-                password = "1234567",
-                code = "1234"
-            )
-            LogUtil.e(a.data().toString())
-        }
 
-//        runBlocking {
-//            try {
-//                LogUtil.e("协程运行")
-//                val a=repository.loginLocker(username = "weiyi", password = "123")
-//                LogUtil.e(a.errorMsg)
-//                LogUtil.e(a.data().toString())
-//            }catch (e: Exception) {
-//                //处理错误
-//                when (e) {
-//                    is CancellationException -> {
-//                    }
-//                    else -> {
-//                        onError(e, false)
-//                    }
-//                }
-//            }
-//        }
     }
 
 

@@ -59,6 +59,18 @@ object DialogUtil {
     fun getConfirmDialog(
         context: Context,
         message: String,
+        onOKClickListener: DialogInterface.OnClickListener,
+    ): AlertDialog.Builder {
+        val builder = getDialog(context)
+        builder.setMessage(message)
+        builder.setPositiveButton("确定", onOKClickListener)
+        builder.setNegativeButton("取消", null)
+        return builder
+    }
+
+    fun getConfirmDialog(
+        context: Context,
+        message: String,
         onOKClickListener: DialogInterface.OnClickListener?=null,
 //        onOKClickListener: (dialog:DialogInterface, which:Int) -> Unit,
         onCancelClickListener: DialogInterface.OnClickListener? = null

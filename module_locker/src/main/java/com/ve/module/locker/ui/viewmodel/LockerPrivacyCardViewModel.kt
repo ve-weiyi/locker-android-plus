@@ -1,8 +1,8 @@
 package com.ve.module.locker.ui.viewmodel
 
 import androidx.lifecycle.MutableLiveData
-import com.ve.module.locker.model.db.entity.*
-import com.ve.module.locker.model.db.vo.PrivacyCardInfo
+import com.ve.module.locker.respository.database.entity.*
+import com.ve.module.locker.respository.database.vo.PrivacyCardInfo
 import org.litepal.LitePal
 
 /**

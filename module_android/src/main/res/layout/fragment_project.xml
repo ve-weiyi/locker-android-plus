@@ -19,6 +19,7 @@
                 android:id="@+id/tabLayout"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:theme="@style/AppTheme.AppBarOverlay"
                 style="@style/TopTabLayoutStyle"
                 app:tabTextColor="@color/color_purple"
                 />

@@ -1,8 +1,8 @@
 package com.ve.module.locker.ui.viewmodel
 
 import androidx.lifecycle.MutableLiveData
-import com.ve.module.locker.model.http.model.LockerBaseBean
-import com.ve.module.locker.model.respository.AuthRepository
+import com.ve.module.locker.respository.http.bean.LockerBaseBean
+import com.ve.module.locker.respository.AuthRepository
 
 /**
  * @Description hello word!

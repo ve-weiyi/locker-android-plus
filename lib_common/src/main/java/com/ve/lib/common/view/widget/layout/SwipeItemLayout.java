@@ -1,8 +1,7 @@
 package com.ve.lib.common.view.widget.layout;
 
 import android.content.Context;
-import androidx.core.view.ViewCompat;
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
@@ -13,8 +12,17 @@ import android.view.ViewParent;
 import android.view.animation.Interpolator;
 import android.widget.Scroller;
 
+import androidx.core.view.ViewCompat;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.ve.lib.common.R;
+
+
 /**
- * Created by chenxz on 2018/8/8.
+ * @Description hello word!
+ * 可以向左滑动的布局，类似QQ聊天记录
+ * @Author weiyi
+ * @Date 2022/4/7
  */
 public class SwipeItemLayout extends ViewGroup {
     enum Mode {
@@ -33,6 +41,8 @@ public class SwipeItemLayout extends ViewGroup {
     private boolean mInLayout;
     private boolean mIsLaidOut;
 
+    private boolean mSideVisibility;
+
     public SwipeItemLayout(Context context) {
         this(context, null);
     }
@@ -43,6 +53,9 @@ public class SwipeItemLayout extends ViewGroup {
         mTouchMode = Mode.RESET;
         mScrollOffset = 0;
         mIsLaidOut = false;
+
+        TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.SwipeItemLayout);
+        mSideVisibility=a.getBoolean(R.styleable.SwipeItemLayout_sideVisibility,false);
 
         mScrollRunnable = new ScrollRunnable(context);
     }
@@ -141,11 +154,11 @@ public class SwipeItemLayout extends ViewGroup {
         return true;
     }
 
+
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        if (!ensureChildren())
-        {
-            //throw new RuntimeException("SwipeItemLayout的子视图不符合规定");
+        if (!ensureChildren()) {
+            // throw new RuntimeException("SwipeItemLayout的子视图不符合规定");
         }
 
         int widthMode = MeasureSpec.getMode(widthMeasureSpec);
@@ -153,22 +166,24 @@ public class SwipeItemLayout extends ViewGroup {
         int heightMode = MeasureSpec.getMode(heightMeasureSpec);
         int heightSize = MeasureSpec.getSize(heightMeasureSpec);
 
+
         MarginLayoutParams lp = null;
         int horizontalMargin, verticalMargin;
         int horizontalPadding = getPaddingLeft() + getPaddingRight();
         int verticalPadding = getPaddingTop() + getPaddingBottom();
 
         if (mMainView != null && mSideView != null) {
-            if (isInEditMode()) {
+
                 lp = (MarginLayoutParams) mMainView.getLayoutParams();
                 horizontalMargin = lp.leftMargin + lp.rightMargin;
                 verticalMargin = lp.topMargin + lp.bottomMargin;
                 measureChildWithMargins(mMainView,
                         widthMeasureSpec, horizontalMargin + horizontalPadding,
                         heightMeasureSpec, verticalMargin + verticalPadding);
-
+                // 子容器可以是声明大小内的任意大小
                 if (widthMode == MeasureSpec.AT_MOST)
                     widthSize = Math.min(widthSize, mMainView.getMeasuredWidth() + horizontalMargin + horizontalPadding);
+                //父容器对于子容器没有任何限制,子容器想要多大就多大. 所以完全取决于子view的大小
                 else if (widthMode == MeasureSpec.UNSPECIFIED)
                     widthSize = mMainView.getMeasuredWidth() + horizontalMargin + horizontalPadding;
 
@@ -177,25 +192,29 @@ public class SwipeItemLayout extends ViewGroup {
                 else if (heightMode == MeasureSpec.UNSPECIFIED)
                     heightSize = mMainView.getMeasuredHeight() + verticalMargin + verticalPadding;
 
+                //main layout 的宽度/高度设置为 swipeItemLayout的宽高
+                setMeasuredDimension(widthSize, heightSize);
 
-                //side layout大小为自身实际大小
+                //side layout 大小为自身实际大小,高度受到main layout限制
                 lp = (MarginLayoutParams) mSideView.getLayoutParams();
                 verticalMargin = lp.topMargin + lp.bottomMargin;
+                //宽度无限制，高度有限制
                 mSideView.measure(MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED),
                         MeasureSpec.makeMeasureSpec(getMeasuredHeight() - verticalMargin - verticalPadding, MeasureSpec.EXACTLY));
 
-            }
+        }else {
+            // 没有控件时，直接测量自身宽高
+            setMeasuredDimension(widthSize, heightSize);
         }
 
-        setMeasuredDimension(widthSize, heightSize);
     }
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        if (!ensureChildren())
-        {
+        if (!ensureChildren()) {
             //throw new RuntimeException("SwipeItemLayout的子视图不符合规定");
         }
+
         mInLayout = true;
 
         int pl = getPaddingLeft();
@@ -231,8 +250,16 @@ public class SwipeItemLayout extends ViewGroup {
                 mMaxScrollOffset = mSideView.getWidth() + sideParams.leftMargin + sideParams.rightMargin;
                 mScrollOffset = mScrollOffset < -mMaxScrollOffset / 2 ? -mMaxScrollOffset : 0;
                 offsetChildrenLeftAndRight(mScrollOffset);
+
+                if (isInEditMode()) {
+                    if(mSideVisibility==true){
+                        offsetChildrenLeftAndRight(-mMaxScrollOffset);
+                    }
+                }
             }
         }
+
+
         mInLayout = false;
         mIsLaidOut = true;
     }
@@ -791,6 +818,7 @@ public class SwipeItemLayout extends ViewGroup {
             }
         }
     }
+
 
 }
 

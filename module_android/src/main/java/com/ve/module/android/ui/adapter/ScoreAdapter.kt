@@ -4,7 +4,7 @@ import com.chad.library.adapter.base.module.DraggableModule
 import com.chad.library.adapter.base.module.LoadMoreModule
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.ve.module.android.R
-import com.ve.module.android.repository.model.UserScore
+import com.ve.module.android.repository.bean.UserScore
 import com.ve.lib.common.base.adapter.BaseSlideAdapter
 
 

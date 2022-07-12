@@ -1,8 +1,8 @@
 package com.ve.lib.common.base.repository
 
-import com.ve.lib.common.http.base.BaseResponse
-import com.ve.lib.common.http.constant.HttpErrorCode
-import com.ve.lib.common.http.exception.ApiException
+import com.ve.lib.common.network.base.BaseResponse
+import com.ve.lib.common.network.constant.HttpErrorCode
+import com.ve.lib.common.network.exception.ApiException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

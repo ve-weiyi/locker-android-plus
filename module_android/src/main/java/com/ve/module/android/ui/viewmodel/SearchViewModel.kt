@@ -3,8 +3,8 @@ package com.ve.module.android.ui.viewmodel
 import androidx.lifecycle.MutableLiveData
 import com.ve.module.android.repository.WazRepository
 import com.ve.module.android.repository.database.entity.SearchHistory
-import com.ve.module.android.repository.model.ArticleResponseBody
-import com.ve.module.android.repository.model.Hotkey
+import com.ve.module.android.repository.bean.ArticleResponseBody
+import com.ve.module.android.repository.bean.Hotkey
 import com.ve.lib.common.base.viewmodel.BaseViewModel
 import com.ve.lib.common.vutils.LogUtil
 import kotlinx.coroutines.flow.collect

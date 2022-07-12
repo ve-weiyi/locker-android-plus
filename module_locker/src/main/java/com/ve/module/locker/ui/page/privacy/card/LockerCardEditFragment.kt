@@ -21,7 +21,7 @@ import com.ve.lib.common.vutils.LogUtil
 import com.ve.module.locker.R
 import com.ve.module.locker.common.event.RefreshDataEvent
 import com.ve.module.locker.databinding.LockerFragmentEditCardBinding
-import com.ve.module.locker.model.db.entity.*
+import com.ve.module.locker.respository.database.entity.*
 import com.ve.module.locker.ui.adapter.FlowTagAdapter
 import com.ve.module.locker.ui.page.privacy.EditType
 import com.ve.module.locker.ui.viewmodel.LockerPrivacyCardViewModel

@@ -7,10 +7,10 @@ import android.view.View
 import com.ve.module.android.R
 import com.ve.module.android.config.Constant
 import com.ve.module.android.databinding.FragmentAddTodoBinding
-import com.ve.module.android.repository.model.TodoBean
+import com.ve.module.android.repository.bean.TodoBean
 import com.ve.module.android.ui.viewmodel.TodoViewModel
 import com.ve.lib.common.base.view.vm.BaseVmFragment
-import com.ve.lib.common.event.RefreshTodoEvent
+import com.ve.module.android.event.RefreshTodoEvent
 import com.ve.lib.common.ext.formatCurrentDate
 import com.ve.lib.common.ext.stringToCalendar
 import com.ve.lib.common.vutils.LogUtil

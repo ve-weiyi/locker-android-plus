@@ -3,7 +3,7 @@ package com.ve.module.android.ui.page.activity
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.ve.module.android.R
 import com.ve.module.android.databinding.ActivityRankBinding
-import com.ve.module.android.repository.model.CoinInfo
+import com.ve.module.android.repository.bean.CoinInfo
 import com.ve.module.android.ui.adapter.RankAdapter
 import com.ve.module.android.ui.viewmodel.RankViewModel
 import com.ve.lib.common.base.view.list.BaseVmListActivity

@@ -9,13 +9,13 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationBarView
 import com.ve.module.android.R
 import com.ve.module.android.databinding.ActivityTodoBinding
-import com.ve.module.android.repository.model.TodoTypeBean
+import com.ve.module.android.repository.bean.TodoTypeBean
 import com.ve.module.android.ui.adapter.TodoPopupAdapter
 import com.ve.module.android.ui.viewmodel.TodoViewModel
 import com.ve.lib.common.base.view.vm.BaseVmActivity
 import com.ve.module.android.config.Constant
-import com.ve.lib.common.event.TodoEvent
-import com.ve.lib.common.event.TodoTypeEvent
+import com.ve.module.android.event.TodoEvent
+import com.ve.module.android.event.TodoTypeEvent
 import com.ve.lib.common.utils.DisplayManager
 import org.greenrobot.eventbus.EventBus
 

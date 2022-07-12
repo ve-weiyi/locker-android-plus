@@ -4,7 +4,7 @@ import androidx.appcompat.widget.Toolbar
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.ve.module.android.R
 import com.ve.module.android.databinding.ActivityShareBinding
-import com.ve.module.android.repository.model.Article
+import com.ve.module.android.repository.bean.Article
 import com.ve.module.android.ui.adapter.ShareAdapter
 import com.ve.module.android.ui.viewmodel.ShareViewModel
 import com.ve.lib.common.base.view.list.BaseVmListActivity

@@ -16,7 +16,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-            <com.ve.module.locker.ui.view.TagTiltTextView
+            <com.ve.lib.common.view.widget.view.TagTiltTextView
                     android:id="@+id/tv_tilt"
                     android:layout_width="@dimen/dp_25"
                     android:layout_height="@dimen/dp_25"

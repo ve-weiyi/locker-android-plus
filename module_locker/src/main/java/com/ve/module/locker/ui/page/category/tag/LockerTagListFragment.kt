@@ -9,7 +9,7 @@ import com.ve.lib.common.vutils.LogUtil
 import com.ve.module.locker.R
 import com.ve.module.locker.common.event.RefreshDataEvent
 import com.ve.module.locker.databinding.LockerFragmentListCategoryBinding
-import com.ve.module.locker.model.db.entity.PrivacyTag
+import com.ve.module.locker.respository.database.entity.PrivacyTag
 import com.ve.module.locker.ui.adapter.TagListAdapter
 import com.ve.module.locker.ui.page.container.LockerContainerActivity
 import com.ve.module.locker.ui.page.privacy.EditType

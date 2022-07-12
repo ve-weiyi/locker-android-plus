@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.ve.module.android.databinding.FragmentCollectBinding
-import com.ve.module.android.repository.model.Collect
+import com.ve.module.android.repository.bean.Collect
 import com.ve.module.android.ui.adapter.CollectAdapter
 import com.ve.module.android.ui.page.todo.AddTodoFragment
 import com.ve.module.android.ui.viewmodel.WanAndroidViewModel

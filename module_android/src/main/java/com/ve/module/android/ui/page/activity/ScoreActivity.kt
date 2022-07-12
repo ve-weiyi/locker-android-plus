@@ -1,16 +1,15 @@
 package com.ve.module.android.ui.page.activity
 
 import android.view.View
-import androidx.appcompat.widget.Toolbar
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.ve.module.android.R
 import com.ve.module.android.databinding.ActivityScoreBinding
-import com.ve.module.android.repository.model.UserScore
+import com.ve.module.android.repository.bean.UserScore
 import com.ve.module.android.ui.adapter.ScoreAdapter
 import com.ve.module.android.ui.viewmodel.ScoreViewModel
 import com.ve.lib.common.base.view.list.BaseVmListActivity
 
-class ScoreActivity : BaseVmListActivity<ActivityScoreBinding, ScoreViewModel, UserScore>(){
+class ScoreActivity : BaseVmListActivity<ActivityScoreBinding, ScoreViewModel, UserScore>() {
 
 
     override fun attachAdapter(): BaseQuickAdapter<UserScore, *> {
@@ -22,13 +21,10 @@ class ScoreActivity : BaseVmListActivity<ActivityScoreBinding, ScoreViewModel, U
         mRecyclerView = mBinding.fragmentRefreshLayout.recyclerView
         mSwipeRefreshLayout = mBinding.fragmentRefreshLayout.swipeRefreshLayout
 
-        mToolbar=mBinding.extToolbar.toolbar
-        mTitle=getString(R.string.score_detail)
-        initToolbar(mToolbar,mTitle)
-    }
+        initToolbar(mBinding.extToolbar.toolbar, getString(R.string.score_detail))
 
-    lateinit var mToolbar: Toolbar
-    lateinit var mTitle: String
+        mCurrentPage = 1
+    }
 
 
     override fun attachViewBinding(): ActivityScoreBinding {
@@ -38,6 +34,7 @@ class ScoreActivity : BaseVmListActivity<ActivityScoreBinding, ScoreViewModel, U
     override fun attachViewModelClass(): Class<ScoreViewModel> {
         return ScoreViewModel::class.java
     }
+
     override fun initObserver() {
         mViewModel.userScore.observe(this) {
             hideLoading()
@@ -45,17 +42,21 @@ class ScoreActivity : BaseVmListActivity<ActivityScoreBinding, ScoreViewModel, U
         }
 
     }
+
     override fun initWebData() {
         showLoading()
+        mCurrentPage = 1
         mViewModel.getUserScore(mCurrentPage)
     }
 
     override fun getRefreshData() {
+        mCurrentPage = 1
         mViewModel.getUserScore(mCurrentPage)
     }
 
     override fun getMoreData() {
-        mViewModel.getUserScore(++mCurrentPage)
+        mCurrentPage++
+        mViewModel.getUserScore(mCurrentPage)
     }
 
     override fun onItemClickEvent(datas: MutableList<UserScore>, view: View, position: Int) {

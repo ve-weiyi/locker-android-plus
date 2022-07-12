@@ -3,7 +3,7 @@ package com.ve.module.android.ui.page.main
 import android.view.View
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.ve.module.android.databinding.FragmentRefreshLayoutBinding
-import com.ve.module.android.repository.model.Tree
+import com.ve.module.android.repository.bean.Tree
 import com.ve.module.android.ui.adapter.KnowledgeTreeAdapter
 import com.ve.module.android.ui.viewmodel.TreeViewModel
 import com.ve.lib.common.base.view.list.BaseVmListFragment

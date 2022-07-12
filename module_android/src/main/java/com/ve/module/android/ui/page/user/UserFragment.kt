@@ -14,7 +14,7 @@ import com.ve.module.android.config.Constant
 import com.ve.module.android.databinding.WazFragmentDrawerBinding
 import com.ve.lib.common.event.AppRecreateEvent
 import com.ve.lib.common.event.LoginEvent
-import com.ve.module.android.repository.model.UserInfoBody
+import com.ve.module.android.repository.bean.UserInfoBody
 import com.ve.module.android.ui.page.activity.CommonActivity
 import com.ve.module.android.ui.page.activity.RankActivity
 import com.ve.module.android.ui.page.activity.ScoreActivity

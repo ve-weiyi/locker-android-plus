@@ -19,13 +19,27 @@ import android.net.Uri
  */
 object ShareUtil {
 
+
+    /**
+     * 文本类型
+     */
+    const val SHARE_TYPE_TEXT = "text/plain"
+
+    const val SHARE_TYPE_APP = "application/*"
+    
+    const val SHARE_TYPE_IMAGE = "image/*"
+    
+    const val SHARE_TYPE_VIDEO = "video/*"
+    
+    const val SHARE_TYPE_AUDIO= "audio/*"
+    
     /**
      * 调用系统分享图片
      */
     fun shareImage(title: String, uri: Uri) {
         val intent = Intent()
         intent.action = Intent.ACTION_SEND
-        intent.type = "image/*"
+        intent.type = SHARE_TYPE_IMAGE
         intent.putExtra(Intent.EXTRA_STREAM, uri)
         ActivityUtil.currentActivity!!.startActivity(Intent.createChooser(intent, title))
     }
@@ -36,7 +50,7 @@ object ShareUtil {
     fun shareText(title: String, text: String) {
         val intent = Intent()
         intent.action = Intent.ACTION_SEND
-        intent.type = "text/plain"
+        intent.type = SHARE_TYPE_TEXT
         intent.putExtra(Intent.EXTRA_SUBJECT, title)
         intent.putExtra(Intent.EXTRA_TEXT, text)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK

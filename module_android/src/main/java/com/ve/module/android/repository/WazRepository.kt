@@ -1,6 +1,6 @@
 package com.ve.module.android.repository
 
-import com.ve.module.android.repository.http.WazRetrofitClient
+import com.ve.module.android.repository.http.WazApiService
 import com.ve.module.android.repository.database.HistoryDatabase
 import com.ve.module.android.repository.database.dao.HistoryDao
 import com.ve.module.android.repository.database.entity.SearchHistory
@@ -13,7 +13,7 @@ import com.ve.lib.common.vutils.TimeUtil
 
 open class WazRepository : BaseRepository() {
 
-    protected val apiService = WazRetrofitClient.service
+    protected val apiService = WazApiService.service
 
     private val mHistoryDao: HistoryDao by lazy {
         HistoryDatabase.getInstance(BaseApplication.mContext).historyDao()

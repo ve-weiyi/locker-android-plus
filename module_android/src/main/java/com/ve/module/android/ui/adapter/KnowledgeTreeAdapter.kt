@@ -4,7 +4,7 @@ import android.text.Html
 import com.chad.library.adapter.base.module.LoadMoreModule
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.ve.module.android.R
-import com.ve.module.android.repository.model.Tree
+import com.ve.module.android.repository.bean.Tree
 import com.ve.lib.common.base.adapter.BaseSlideAdapter
 
 /**

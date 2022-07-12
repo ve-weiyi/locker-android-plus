@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-    <com.ve.module.locker.ui.view.TagSwipeItemLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<com.ve.module.locker.ui.view.TagSwipeItemLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="@dimen/dp_4"
-            app:sideVisibility="false"
-            android:theme="@style/AppTheme"
-            >
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dp_4"
+        app:sideVisibility="true"
+        android:theme="@style/AppTheme">
+
     <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/item_layout_content"
             android:layout_width="match_parent"
@@ -27,8 +26,7 @@
                 android:id="@+id/iv_app_icon"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@drawable/ic_baseline_person_24"
-                />
+                android:src="@drawable/ic_baseline_person_24" />
 
         <CheckBox
                 app:layout_constraintEnd_toEndOf="parent"
@@ -56,8 +54,8 @@
                 android:singleLine="true"
                 tools:text="昵称"
                 tools:textStyle="bold"
-                style="@style/tv_title_normal"
-                />
+                style="@style/tv_title_normal" />
+
         <ImageView
                 android:id="@+id/iv_friends_sex"
                 app:layout_constraintStart_toEndOf="@id/tv_friends_nickname"
@@ -66,8 +64,7 @@
                 android:layout_marginStart="@dimen/dp_2"
                 android:layout_width="@dimen/dp_16"
                 android:layout_height="@dimen/dp_16"
-                android:background="@drawable/ic_male"
-                />
+                android:background="@drawable/ic_male" />
 
         <TextView
                 app:layout_constraintStart_toStartOf="@id/tv_friends_nickname"
@@ -104,8 +101,7 @@
                 app:layout_constraintEnd_toStartOf="@id/check_button"
                 android:layout_marginVertical="@dimen/dp_4"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                >
+                android:layout_height="wrap_content">
 
             <TextView
                     android:layout_weight="1"
@@ -141,8 +137,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                tools:visibility="visible"
-                >
+                tools:visibility="visible">
+
             <LinearLayout
                     android:id="@+id/layout_qq"
                     app:layout_constraintTop_toBottomOf="@id/layout_phone"
@@ -151,8 +147,7 @@
                     android:layout_marginVertical="@dimen/dp_4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingEnd="@dimen/dp_20"
-                    >
+                    android:paddingEnd="@dimen/dp_20">
 
                 <TextView
                         android:layout_weight="1"
@@ -183,8 +178,7 @@
                     app:layout_constraintEnd_toStartOf="@id/check_button"
                     android:layout_marginVertical="@dimen/dp_4"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
+                    android:layout_height="wrap_content">
 
                 <TextView
                         android:layout_weight="1"
@@ -206,8 +200,7 @@
                     app:layout_constraintEnd_toStartOf="@id/check_button"
                     android:layout_marginVertical="@dimen/dp_4"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
+                    android:layout_height="wrap_content">
 
                 <TextView
                         android:layout_weight="1"
@@ -230,8 +223,7 @@
                     app:layout_constraintEnd_toStartOf="@id/check_button"
                     android:layout_marginVertical="@dimen/dp_4"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
+                    android:layout_height="wrap_content">
 
                 <TextView
                         android:layout_weight="1"
@@ -248,41 +240,41 @@
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-        <LinearLayout
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary">
+
+
+        <com.google.android.material.button.MaterialButton
+                android:id="@+id/item_btn_edit"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:background="@color/colorPrimary"
-                >
 
+                android:background="@drawable/bg_done"
+                android:paddingLeft="@dimen/dp_6"
+                android:paddingRight="@dimen/dp_6"
+                android:text="编辑"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_12"
+                app:backgroundTint="@null"
+                app:rippleColor="@null"
+                app:backgroundTintMode="src_over"
+                />
 
-            <com.google.android.material.button.MaterialButton
-                    android:id="@+id/item_btn_edit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+        <Button
+                android:id="@+id/item_btn_delete"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_delete"
+                android:paddingLeft="@dimen/dp_6"
+                android:paddingRight="@dimen/dp_6"
+                android:text="@string/delete"
+                app:backgroundTint="@null"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_12" />
 
-                    android:background="@drawable/bg_done"
-                    android:paddingLeft="@dimen/dp_6"
-                    android:paddingRight="@dimen/dp_6"
-                    android:text="编辑"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/sp_12"
-                    app:backgroundTint="@null"
-                    app:rippleColor="@null"
-                    app:backgroundTintMode="src_over"
-                    />
+    </LinearLayout>
 
-            <Button
-                    android:id="@+id/item_btn_delete"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bg_delete"
-                    android:paddingLeft="@dimen/dp_6"
-                    android:paddingRight="@dimen/dp_6"
-                    android:text="@string/delete"
-                    app:backgroundTint="@null"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/sp_12" />
-
-        </LinearLayout>
-
-    </com.ve.module.locker.ui.view.TagSwipeItemLayout>
+</com.ve.module.locker.ui.view.TagSwipeItemLayout>

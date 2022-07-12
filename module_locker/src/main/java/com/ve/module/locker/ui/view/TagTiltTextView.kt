@@ -6,6 +6,7 @@ import android.text.TextPaint
 import android.text.TextUtils
 import android.util.AttributeSet
 import android.view.View
+import com.ve.lib.common.view.widget.view.TagTiltTextView
 import com.ve.lib.common.vutils.LogUtil
 
 import com.ve.module.locker.R
@@ -263,7 +264,7 @@ class TagTiltTextView(context: Context,attrs: AttributeSet?) : View(context, att
         return this
     }
 
-    fun setTextSize(size: Int): TagTiltTextView{
+    fun setTextSize(size: Int): TagTiltTextView {
         mTextSize = size.toFloat()
         mTextPaint!!.textSize = mTextSize
         postInvalidate()

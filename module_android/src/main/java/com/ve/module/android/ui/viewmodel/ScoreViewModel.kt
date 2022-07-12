@@ -2,7 +2,7 @@ package com.ve.module.android.ui.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import com.ve.module.android.repository.WazRepository
-import com.ve.module.android.repository.model.UserScore
+import com.ve.module.android.repository.bean.UserScore
 import com.ve.lib.common.base.viewmodel.BaseViewModel
 
 

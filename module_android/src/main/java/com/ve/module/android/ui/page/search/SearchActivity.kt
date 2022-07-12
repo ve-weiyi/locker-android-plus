@@ -10,14 +10,13 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.SearchView
-import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.ve.module.android.R
 import com.ve.module.android.config.Constant
 import com.ve.module.android.databinding.ActivitySearchBinding
 import com.ve.module.android.repository.database.entity.SearchHistory
-import com.ve.module.android.repository.model.Hotkey
+import com.ve.module.android.repository.bean.Hotkey
 import com.ve.module.android.ui.adapter.SearchHistoryAdapter
 import com.ve.module.android.ui.page.activity.CommonActivity
 import com.ve.module.android.ui.viewmodel.SearchViewModel
@@ -46,17 +45,17 @@ class SearchActivity: BaseVmListActivity<ActivitySearchBinding, SearchViewModel,
         return SearchHistoryAdapter()
     }
 
-
-    lateinit var mToolbar: Toolbar
-    lateinit var mTitle: String
-
     override fun initListView() {
         mRecyclerView = mBinding.rvHistorySearch
 
+    }
+
+    override fun initView(savedInstanceState: Bundle?) {
+        super.initView(savedInstanceState)
         mListAdapter.apply {
             setEmptyView(R.layout.search_empty_view)
         }
-        initToolbar(mToolbar,mTitle)
+        initToolbar(mBinding.extToolbar.toolbar,"搜索")
     }
     private lateinit var mKey: String
     private lateinit var mEditText: EditText

@@ -1,8 +1,7 @@
 package com.ve.module.locker.ui.viewmodel
 
 import androidx.lifecycle.MutableLiveData
-import com.ve.module.locker.model.db.entity.PrivacyFriend
-import com.ve.module.locker.model.http.model.ConditionVO
+import com.ve.module.locker.respository.database.entity.PrivacyFriend
 import org.litepal.LitePal
 
 /**

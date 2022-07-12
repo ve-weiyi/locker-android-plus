@@ -1,25 +1,23 @@
 package com.ve.module.android.ui.page.todo
 
-import android.content.Context
 import android.os.Bundle
 import android.view.View
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.ve.module.android.R
 import com.ve.module.android.config.Constant
 import com.ve.module.android.databinding.FragmentTodoBinding
-import com.ve.module.android.repository.model.TodoDataBean
-import com.ve.module.android.repository.model.TodoResponseBody
+import com.ve.module.android.repository.bean.TodoDataBean
+import com.ve.module.android.repository.bean.TodoResponseBody
 import com.ve.module.android.ui.adapter.TodoAdapter
 import com.ve.module.android.ui.page.activity.CommonActivity
 import com.ve.module.android.ui.viewmodel.TodoViewModel
 import com.ve.lib.common.view.widget.layout.SwipeItemLayout
 import com.ve.lib.application.BaseApplication
 import com.ve.lib.common.base.view.list.BaseVmListFragment
-import com.ve.lib.common.event.RefreshTodoEvent
-import com.ve.lib.common.event.TodoEvent
-import com.ve.lib.common.event.TodoTypeEvent
-import com.ve.lib.common.base.view.list.ListViewManager
-import com.ve.lib.common.http.util.NetWorkUtil
+import com.ve.module.android.event.RefreshTodoEvent
+import com.ve.module.android.event.TodoEvent
+import com.ve.module.android.event.TodoTypeEvent
+import com.ve.lib.common.network.util.NetWorkUtil
 import com.ve.lib.common.utils.DialogUtil
 import com.ve.lib.common.vutils.LogUtil
 import org.greenrobot.eventbus.Subscribe
@@ -70,7 +68,7 @@ class TodoFragment : BaseVmListFragment<FragmentTodoBinding, TodoViewModel, Todo
 
         mType = arguments?.getInt(Constant.TODO_TYPE) ?: 0
 
-        mRecyclerView?.addOnItemTouchListener(SwipeItemLayout.OnSwipeItemTouchListener(activity))
+        mRecyclerView!!.addOnItemTouchListener(SwipeItemLayout.OnSwipeItemTouchListener(activity))
     }
 
 
@@ -87,7 +85,6 @@ class TodoFragment : BaseVmListFragment<FragmentTodoBinding, TodoViewModel, Todo
     }
 
     override fun initWebData() {
-        LogUtil.e("todo 1111")
         mLayoutStatusView?.showLoading()
         mCurrentPage = 0
         if (bDone) {
@@ -148,7 +145,7 @@ class TodoFragment : BaseVmListFragment<FragmentTodoBinding, TodoViewModel, Todo
                 activity?.let {
                     DialogUtil.getConfirmDialog(
                         it,
-                        resources.getString(R.string.confirm_delete)
+                        resources.getString(R.string.confirm_delete),
                     ) { _, _ ->
                         mViewModel.deleteTodoById(data.id)
                         mListAdapter.removeAt(position)

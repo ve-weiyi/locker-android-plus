@@ -6,7 +6,7 @@ import android.widget.ImageView
 import com.chad.library.adapter.base.module.LoadMoreModule
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.ve.module.android.R
-import com.ve.module.android.repository.model.Collect
+import com.ve.module.android.repository.bean.Collect
 import com.ve.lib.application.BaseApplication.Companion.mContext
 import com.ve.lib.common.base.adapter.BaseSlideAdapter
 import com.ve.lib.common.utils.ImageLoader

@@ -5,7 +5,7 @@ import android.view.View
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.ve.module.android.config.Constant
 import com.ve.module.android.databinding.FragmentSearchListBinding
-import com.ve.module.android.repository.model.Article
+import com.ve.module.android.repository.bean.Article
 import com.ve.module.android.ui.adapter.ArticleAdapter
 import com.ve.module.android.ui.page.activity.ArticleDetailActivity
 import com.ve.module.android.ui.viewmodel.SearchViewModel

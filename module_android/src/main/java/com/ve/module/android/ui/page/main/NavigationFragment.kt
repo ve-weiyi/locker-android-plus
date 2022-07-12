@@ -8,8 +8,8 @@ import android.view.View
 import android.widget.TextView
 import com.ve.module.android.R
 import com.ve.module.android.databinding.FragmentNavigationBinding
-import com.ve.module.android.repository.model.Article
-import com.ve.module.android.repository.model.Navigation
+import com.ve.module.android.repository.bean.Article
+import com.ve.module.android.repository.bean.Navigation
 import com.ve.module.android.ui.page.activity.ArticleDetailActivity
 import com.ve.module.android.ui.viewmodel.TreeViewModel
 import com.ve.lib.common.base.view.vm.BaseVmFragment

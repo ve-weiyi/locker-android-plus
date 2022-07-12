@@ -7,8 +7,8 @@ import com.chad.library.adapter.base.BaseSectionQuickAdapter
 import com.chad.library.adapter.base.module.LoadMoreModule
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.ve.module.android.R
-import com.ve.module.android.repository.model.TodoBean
-import com.ve.module.android.repository.model.TodoDataBean
+import com.ve.module.android.repository.bean.TodoBean
+import com.ve.module.android.repository.bean.TodoDataBean
 import com.ve.lib.common.view.widget.view.TiltTextView
 
 /**

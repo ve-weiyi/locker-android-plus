@@ -2,7 +2,7 @@ package com.ve.module.android.ui.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import com.ve.module.android.repository.WazRepository
-import com.ve.module.android.repository.model.UserShare
+import com.ve.module.android.repository.bean.UserShare
 import com.ve.lib.common.base.viewmodel.BaseViewModel
 
 class ShareViewModel: BaseViewModel() {

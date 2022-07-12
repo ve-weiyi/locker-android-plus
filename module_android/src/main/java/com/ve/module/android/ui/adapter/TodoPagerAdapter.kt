@@ -3,7 +3,7 @@ package com.ve.module.android.ui.adapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
-import com.ve.module.android.repository.model.TodoTypeBean
+import com.ve.module.android.repository.bean.TodoTypeBean
 import com.ve.module.android.ui.page.todo.TodoFragment
 
 /**

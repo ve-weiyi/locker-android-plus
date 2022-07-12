@@ -20,7 +20,7 @@ import com.ve.module.locker.common.config.LockerConstant
 import com.ve.module.locker.common.config.LockerLifecycle
 
 import com.ve.module.locker.databinding.LockerFragmentDrawerBinding
-import com.ve.module.locker.model.http.model.LoginVO
+import com.ve.module.locker.respository.http.bean.LoginVO
 import com.ve.module.locker.ui.page.auth.LockerLoginActivity
 import com.ve.module.locker.ui.page.category.folder.LockerFolderListFragment
 import com.ve.module.locker.ui.page.category.tag.LockerTagListFragment

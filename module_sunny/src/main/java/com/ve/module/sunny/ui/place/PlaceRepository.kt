@@ -1,6 +1,6 @@
 package com.ve.module.sunny.ui.place
 
-import com.ve.lib.common.http.base.ApiServiceFactory
+import com.ve.lib.common.network.base.ApiServiceFactory
 import com.ve.module.sunny.logic.database.dao.PlaceDao
 import com.ve.module.sunny.logic.http.model.Place
 import com.ve.module.sunny.logic.http.network.ApiCaiyun

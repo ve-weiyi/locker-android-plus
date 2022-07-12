@@ -3,9 +3,9 @@ package com.ve.module.android.ui.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.ve.module.android.repository.WazRepository
-import com.ve.module.android.repository.model.LoginData
+import com.ve.module.android.repository.bean.LoginData
 import com.ve.lib.common.base.viewmodel.BaseViewModel
-import com.ve.lib.common.http.exception.ApiException
+import com.ve.lib.common.network.exception.ApiException
 
 import com.ve.lib.common.vutils.LogUtil
 

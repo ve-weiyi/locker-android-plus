@@ -7,7 +7,7 @@ import com.ve.lib.common.vutils.LogUtil
 import com.ve.lib.common.vutils.SpUtil
 import com.ve.module.locker.common.config.SettingConstant
 import com.ve.module.locker.databinding.LockerActivityUserinfoBinding
-import com.ve.module.locker.model.http.model.LoginVO
+import com.ve.module.locker.respository.http.bean.LoginVO
 
 /**
  * @Author  weiyi

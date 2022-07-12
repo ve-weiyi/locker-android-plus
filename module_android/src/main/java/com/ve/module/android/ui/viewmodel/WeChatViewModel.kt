@@ -2,8 +2,8 @@ package com.ve.module.android.ui.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import com.ve.module.android.repository.WazRepository
-import com.ve.module.android.repository.model.Article
-import com.ve.module.android.repository.model.WxChapters
+import com.ve.module.android.repository.bean.Article
+import com.ve.module.android.repository.bean.WxChapters
 import com.ve.lib.common.base.viewmodel.BaseViewModel
 
 
