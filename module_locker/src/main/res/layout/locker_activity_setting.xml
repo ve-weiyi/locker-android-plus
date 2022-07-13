@@ -17,7 +17,7 @@
 
         <include
                 android:id="@+id/ext_container"
-                layout="@layout/locker_container"
+                layout="@layout/container"
                 android:layout_margin="@dimen/dp_2"
                 android:layout_below="@id/ext_toolbar"
                 android:layout_width="match_parent"

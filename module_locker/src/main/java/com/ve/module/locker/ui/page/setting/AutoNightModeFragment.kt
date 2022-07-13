@@ -7,7 +7,7 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.ve.lib.common.utils.SettingUtil
 import com.ve.module.locker.R
-import com.ve.module.locker.common.config.SettingConstant
+import com.ve.module.locker.common.config.LockerSpKey
 
 /**
  * Created by chenxz on 2018/6/13.
@@ -26,8 +26,8 @@ class AutoNightModeFragment : PreferenceFragmentCompat() {
         setPreferencesFromResource(R.xml.locker_pref_setting_autonight, rootKey)
         setHasOptionsMenu(true)
 
-        autoNight = preferenceScreen.findPreference(SettingConstant.SP_KEY_AUTO_NIGHT_START)!!
-        autoDay = preferenceScreen.findPreference(SettingConstant.SP_KEY_AUTO_NIGHT_END)!!
+        autoNight = preferenceScreen.findPreference(LockerSpKey.SP_KEY_AUTO_NIGHT_START)!!
+        autoDay = preferenceScreen.findPreference(LockerSpKey.SP_KEY_AUTO_NIGHT_END)!!
 
         setDefaultText()
 

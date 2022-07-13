@@ -12,7 +12,7 @@ import com.ve.module.locker.common.event.RefreshDataEvent
 import com.ve.module.locker.databinding.LockerFragmentDetailsCardBinding
 import com.ve.module.locker.respository.database.entity.PrivacyCard
 import com.ve.module.locker.ui.page.container.LockerContainerActivity
-import com.ve.module.locker.ui.page.privacy.EditType
+import com.ve.module.locker.common.enums.EditTypeEnum
 import com.ve.module.locker.ui.viewmodel.LockerPrivacyCardViewModel
 import com.ve.module.locker.utils.StickUtils
 import org.greenrobot.eventbus.Subscribe
@@ -86,7 +86,7 @@ class LockerCardDetailsFragment :
              */
             R.id.btn_edit -> {
                 val bundle = Bundle()
-                bundle.putInt(LockerCardEditFragment.FRAGMENT_TYPE_KEY, EditType.EDIT_TAG_TYPE)
+                bundle.putInt(LockerCardEditFragment.FRAGMENT_TYPE_KEY, EditTypeEnum.EDIT_TAG_TYPE)
                 bundle.putSerializable(LockerCardEditFragment.FRAGMENT_DATA_KEY, mPrivacyInfo)
                 LockerContainerActivity.start(
                     mContext,

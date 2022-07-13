@@ -6,12 +6,8 @@ import com.franmontiel.persistentcookiejar.persistence.SharedPrefsCookiePersisto
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.ve.lib.application.BaseApplication
 import com.ve.lib.common.network.constant.HttpConstant
-import com.ve.lib.common.network.interceptor.CacheInterceptor
-import com.ve.lib.common.network.interceptor.CookieInterceptor
-import com.ve.lib.common.network.interceptor.HeaderInterceptor
-import com.ve.lib.common.network.interceptor.ResponseInterceptor
+import com.ve.lib.common.network.interceptor.*
 import okhttp3.Cache
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -67,7 +63,9 @@ object ApiServiceFactory {
             //缓存拦截器
             .addInterceptor(CacheInterceptor())
             //响应报文保存、添加 cookie
-            .addInterceptor(CookieInterceptor())
+            .addInterceptor(SaveCookieInterceptor())
+            //响应报文保存、添加 cookie
+            .addInterceptor(AddCookieInterceptor())
             //设置请求超时时间
             .callTimeout(HttpConstant.DEFAULT_TIMEOUT, TimeUnit.SECONDS)
             .connectTimeout(HttpConstant.DEFAULT_TIMEOUT, TimeUnit.SECONDS)

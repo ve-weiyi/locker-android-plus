@@ -13,7 +13,7 @@ import com.ve.lib.application.R
 import com.ve.module.android.ui.page.activity.ArticleDetailActivity
 import com.ve.module.android.ui.page.activity.CommonActivity
 import com.ve.module.android.ui.page.fragment.AboutFragment
-import com.ve.lib.common.view.widget.preference.IconPreference
+import com.ve.lib.common.widget.preference.IconPreference
 import com.ve.lib.common.event.RefreshHomeEvent
 import com.ve.lib.common.ext.showToast
 import com.ve.lib.common.utils.CacheDataUtil

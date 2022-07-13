@@ -13,7 +13,7 @@
             >
 
         <com.google.android.material.imageview.ShapeableImageView
-                app:shapeAppearanceOverlay="@style/roundImageView"
+                app:shapeAppearanceOverlay="@style/RoundImageStyle"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -29,7 +29,7 @@
                 android:id="@+id/tv_app_name"
                 app:layout_constraintStart_toEndOf= "@id/iv_app_icon"
                 app:layout_constraintTop_toTopOf="@id/iv_app_icon"
-                style="@style/tv_title_normal"
+                style="@style/tv_title_normal_primary"
                 android:layout_marginTop="@dimen/dp_8"
                 android:layout_marginStart="@dimen/dp_10"
                 android:layout_width="wrap_content"

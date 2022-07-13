@@ -12,7 +12,7 @@ import com.ve.lib.common.vutils.LogUtil
 import com.ve.module.locker.common.event.RefreshDataEvent
 import com.ve.module.locker.databinding.LockerFragmentDetailsTagBinding
 import com.ve.module.locker.respository.database.entity.PrivacyTag
-import com.ve.module.locker.ui.page.privacy.EditType
+import com.ve.module.locker.common.enums.EditTypeEnum
 import com.ve.module.locker.ui.viewmodel.LockerClassifyViewModel
 import java.util.*
 
@@ -43,7 +43,7 @@ class LockerTagDetailsFragment :
      * 查看,新增,编辑 三种状态
      * 查看，不可以修改，只显示
      */
-    private var mType = EditType.SEE_TAG_TYPE
+    private var mType = EditTypeEnum.SEE_TAG_TYPE
     private lateinit var mData: PrivacyTag
 
     private lateinit var tv_date: TextView
@@ -77,7 +77,7 @@ class LockerTagDetailsFragment :
 
 
         arguments?.let {
-            mType = it.getInt(FRAGMENT_TYPE_KEY, EditType.SEE_TAG_TYPE)
+            mType = it.getInt(FRAGMENT_TYPE_KEY, EditTypeEnum.SEE_TAG_TYPE)
             val data = it.getSerializable(FRAGMENT_DATA_KEY)
 
             if (data is PrivacyTag) {
@@ -101,16 +101,16 @@ class LockerTagDetailsFragment :
     private fun initTypeView(type: Int) {
         mBinding.etId.isEnabled = false
         when (mType) {
-            EditType.SEE_TAG_TYPE -> {
+            EditTypeEnum.SEE_TAG_TYPE -> {
                 mBinding.etTitle.isEnabled = false
                 mBinding.etContent.isEnabled = false
                 mBinding.btnSave.visibility = View.GONE
                 mBinding.ivArrowRight.visibility = View.GONE
             }
-            EditType.EDIT_TAG_TYPE -> {
+            EditTypeEnum.EDIT_TAG_TYPE -> {
 
             }
-            EditType.ADD_TAG_TYPE -> {
+            EditTypeEnum.ADD_TAG_TYPE -> {
                 mBinding.tvDate.text = mCurrentDate
             }
             else -> {
@@ -142,15 +142,15 @@ class LockerTagDetailsFragment :
             val tagDesc = et_content.text.toString()
 
             when (mType) {
-                EditType.SEE_TAG_TYPE -> {
+                EditTypeEnum.SEE_TAG_TYPE -> {
 
                 }
-                EditType.EDIT_TAG_TYPE -> {
+                EditTypeEnum.EDIT_TAG_TYPE -> {
                     val tagId: Long = mData.id
                     val privacyTag = PrivacyTag(tagId, tagName, tagCover, tagDesc)
                     mViewModel.tagUpdate(privacyTag)
                 }
-                EditType.ADD_TAG_TYPE -> {
+                EditTypeEnum.ADD_TAG_TYPE -> {
                     val privacyTag = PrivacyTag(-1, tagName, tagCover, tagDesc)
                     mViewModel.saveTag(privacyTag)
                 }

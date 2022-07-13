@@ -7,11 +7,9 @@ import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterF
 import com.ve.lib.application.BaseApplication
 import com.ve.lib.common.network.constant.HttpConstant
 import com.ve.lib.common.network.interceptor.CacheInterceptor
-import com.ve.lib.common.network.interceptor.CookieInterceptor
 import com.ve.lib.common.network.interceptor.HeaderInterceptor
 import com.ve.lib.common.network.interceptor.ResponseInterceptor
 import okhttp3.Cache
-import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -95,8 +93,6 @@ abstract class BaseApiService<T> {
             .addInterceptor(ResponseInterceptor())
             //缓存拦截器
             .addInterceptor(CacheInterceptor())
-            //响应报文保存、添加 cookie
-            .addInterceptor(CookieInterceptor())
             //设置请求超时时间
             .callTimeout(HttpConstant.DEFAULT_TIMEOUT, TimeUnit.SECONDS)
             .connectTimeout(HttpConstant.DEFAULT_TIMEOUT, TimeUnit.SECONDS)
@@ -109,7 +105,8 @@ abstract class BaseApiService<T> {
     }
 
     /**
-     * 修改设置，添加一些自定义拦截器
+     * 修改设置
+     * 添加一些自定义拦截器 cookie token
      */
     protected abstract fun handleBuilder(builder: OkHttpClient.Builder)
 }

@@ -4,7 +4,7 @@ import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.gson.JsonParseException
 import com.ve.lib.common.network.exception.ApiException
-import com.ve.lib.common.view.widget.passwordGenerator.PasswordGenerator
+import com.ve.lib.common.widget.passwordGenerator.PasswordGenerator
 import com.ve.lib.common.vutils.LogUtil
 import com.ve.lib.common.vutils.ToastUtil
 import com.ve.module.locker.common.config.LockerConstant
@@ -12,7 +12,6 @@ import com.ve.module.locker.respository.database.AppDataBase
 import com.ve.module.locker.respository.database.entity.*
 import com.ve.module.locker.respository.AuthRepository
 import com.ve.module.locker.respository.http.bean.ConditionVO
-import com.ve.module.locker.respository.http.api.LockerApiService
 import com.ve.module.locker.utils.AESUtil
 import com.ve.module.locker.utils.PasswordUtils
 import com.ve.module.locker.utils.RSAUtils

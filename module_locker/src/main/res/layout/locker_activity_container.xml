@@ -16,6 +16,6 @@
             android:id="@+id/ext_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:layout="@layout/locker_container" />
+            tools:layout="@layout/container" />
 
 </LinearLayout>

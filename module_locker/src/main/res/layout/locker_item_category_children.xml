@@ -16,7 +16,7 @@
 
         <com.google.android.material.imageview.ShapeableImageView
                 android:visibility="gone"
-                app:shapeAppearanceOverlay="@style/roundImageView"
+                app:shapeAppearanceOverlay="@style/RoundImageStyle"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -52,7 +52,7 @@
                 android:singleLine="true"
                 tools:text="我的邮箱账号"
                 tools:textStyle="bold"
-                style="@style/tv_title_normal"
+                style="@style/tv_title_normal_primary"
                 />
 
 

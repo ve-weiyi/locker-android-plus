@@ -37,7 +37,7 @@
         android:layout_gravity="bottom|right"
         android:layout_marginRight="@dimen/dp_20"
         android:layout_marginBottom="@dimen/dp_20"
-        app:layout_behavior="com.ve.lib.common.view.widget.behavior.ScaleDownShowBehavior"
+        app:layout_behavior="com.ve.lib.common.widget.behavior.ScaleDownShowBehavior"
         app:srcCompat="@drawable/ic_arrow_upward_white_24dp" />
 
     <androidx.viewpager2.widget.ViewPager2

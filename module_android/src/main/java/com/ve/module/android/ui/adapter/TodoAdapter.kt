@@ -9,7 +9,7 @@ import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.ve.module.android.R
 import com.ve.module.android.repository.bean.TodoBean
 import com.ve.module.android.repository.bean.TodoDataBean
-import com.ve.lib.common.view.widget.view.TiltTextView
+import com.ve.lib.common.widget.view.TiltTextView
 
 /**
  * Created by chenxz on 2018/8/8.

@@ -10,7 +10,9 @@ import com.ve.lib.common.base.view.vm.BaseVmActivity
 import com.ve.lib.common.event.AppRecreateEvent
 import com.ve.lib.common.event.DrawerOpenEvent
 import com.ve.lib.common.base.model.FragmentPage
+import com.ve.lib.common.vutils.LogUtil
 import com.ve.module.locker.databinding.LockerActivityMainBinding
+import com.ve.module.locker.ui.page.auth.LockerAuthActivity
 import com.ve.module.locker.ui.page.category.LockerClassifyFragment
 import com.ve.module.locker.ui.page.category.folder.LockerFolderGridFragment
 import com.ve.module.locker.ui.page.drawer.LockerMeFragment
@@ -31,6 +33,20 @@ class LockerMainActivity : BaseVmActivity<LockerActivityMainBinding, LockerViewM
     override fun enableNetworkTip(): Boolean {
         return false
     }
+
+    override fun onRestart() {
+        super.onRestart()
+    }
+
+
+    private fun goAuth() {
+        if (!isLogin) {
+            isLogin=true
+            LogUtil.msg()
+            startActivity(mContext, LockerAuthActivity::class.java, Bundle())
+        }
+    }
+
 
     private fun initFragment() {
         var pageCount = 0
@@ -169,4 +185,7 @@ class LockerMainActivity : BaseVmActivity<LockerActivityMainBinding, LockerViewM
         mBinding.drawerLayout.openDrawer(Gravity.LEFT)
     }
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+    }
 }

@@ -13,4 +13,5 @@ dependencies {
     api rootProject.ext.libARouter
 
     api project(':lib_application')
+
 }

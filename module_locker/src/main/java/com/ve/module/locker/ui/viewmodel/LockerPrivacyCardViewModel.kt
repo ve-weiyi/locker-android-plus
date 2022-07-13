@@ -19,7 +19,7 @@ class LockerPrivacyCardViewModel : LockerViewModel() {
             block = {
 
             },
-            local = {
+            then = {
                 getPrivacyCardListResult.value =
                     LitePal.order("name").find(PrivacyCard::class.java)
             }
@@ -31,7 +31,7 @@ class LockerPrivacyCardViewModel : LockerViewModel() {
             block = {
 
             },
-            local = {
+            then = {
                 //查找 名称、账号、备注符合的记录
                 val privacyList = LitePal.where(
                     "name like ? or account like ? or owner like ? or remark like ?",
@@ -52,7 +52,7 @@ class LockerPrivacyCardViewModel : LockerViewModel() {
             block = {
 
             },
-            local = {
+            then = {
                 var result = 0
                 privacyList.forEach { privacy ->
                     if (privacy.isSaved) {
@@ -70,7 +70,7 @@ class LockerPrivacyCardViewModel : LockerViewModel() {
             block = {
 
             },
-            local = {
+            then = {
                 var result = 0
                 privacyList.forEach { privacy ->
                     privacy.privacyFolderId = folder.id
@@ -95,7 +95,7 @@ class LockerPrivacyCardViewModel : LockerViewModel() {
 
 
             },
-            local = {
+            then = {
                 val pass = PrivacyCardInfo(privacy, folder, tagList)
                 val result = pass.save()
                 addPrivacyCardResult.value = result
@@ -110,7 +110,7 @@ class LockerPrivacyCardViewModel : LockerViewModel() {
 
 
             },
-            local = {
+            then = {
                 val result = privacy.delete()
                 deletePrivacyCardListResult.value = result
             }

@@ -20,7 +20,7 @@ class LockerPrivacyPassViewModel : LockerViewModel() {
             block = {
 
             },
-            local = {
+            then = {
                 getPrivacyPassListResult.value =
                     LitePal.order("name").find(PrivacyPass::class.java)
             }
@@ -34,7 +34,7 @@ class LockerPrivacyPassViewModel : LockerViewModel() {
             block = {
 
             },
-            local = {
+            then = {
                 //查找 名称、账号、备注符合的记录,由于被加密了，所以存储是密文
                 val privacyList = LitePal.where(
                     "name like ? or account like ? or url like ? or remark like ? ",
@@ -70,7 +70,7 @@ class LockerPrivacyPassViewModel : LockerViewModel() {
             block = {
 
             },
-            local = {
+            then = {
                 var result = 0
                 privacyList.forEach { privacy ->
                     if (privacy.isSaved) {
@@ -88,7 +88,7 @@ class LockerPrivacyPassViewModel : LockerViewModel() {
             block = {
 
             },
-            local = {
+            then = {
                 var result = 0
                 privacyList.forEach { privacy ->
                     privacy.privacyFolderId = folder.id
@@ -113,7 +113,7 @@ class LockerPrivacyPassViewModel : LockerViewModel() {
 
 
             },
-            local = {
+            then = {
                 val pass = PrivacyPassInfo(privacy, folder, tagList)
                 val result = pass.save()
                 addPrivacyPassResult.value = result
@@ -128,7 +128,7 @@ class LockerPrivacyPassViewModel : LockerViewModel() {
 
 
             },
-            local = {
+            then = {
                 val result = privacy.delete()
                 deletePrivacyPassListResult.value = result
             }

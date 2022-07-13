@@ -17,6 +17,7 @@ import com.ve.lib.common.vutils.LogUtil
 import com.ve.lib.common.vutils.SpUtil
 import com.ve.module.locker.R
 import com.ve.module.locker.common.config.LockerConstant
+import com.ve.module.locker.common.config.LockerSpKey
 import com.ve.module.locker.common.config.LockerLifecycle
 
 import com.ve.module.locker.databinding.LockerFragmentMeBinding
@@ -50,8 +51,8 @@ class LockerMeFragment : BaseVmFragment<LockerFragmentMeBinding, LockerDrawerVie
     var placeName:String?=null
 
     override fun initView(savedInstanceState: Bundle?) {
-        showHeather(SpUtil.getValue(LockerConstant.SP_KEY_LOGIN_STATE_KEY,false))
-        showUserInfo(SpUtil.getValue(LockerConstant.SP_KEY_LOGIN_DATA_KEY,LoginVO()))
+        showHeather(SpUtil.getValue(LockerSpKey.SP_KEY_LOGIN_STATE_KEY,false))
+        showUserInfo(SpUtil.getValue(LockerSpKey.SP_KEY_LOGIN_DATA_KEY, LoginVO()::class.java))
 
     }
 
@@ -76,14 +77,15 @@ class LockerMeFragment : BaseVmFragment<LockerFragmentMeBinding, LockerDrawerVie
         super.initObserver()
 
         LockerLifecycle.loginState.observe(this) {
-            SpUtil.setValue(LockerConstant.SP_KEY_LOGIN_STATE_KEY,it)
-            LogUtil.msg("$mViewName --$it---  "+ SpUtil.getValue(LockerConstant.SP_KEY_LOGIN_STATE_KEY,false))
+            SpUtil.setValue(LockerSpKey.SP_KEY_LOGIN_STATE_KEY,it)
+            LogUtil.msg("$mViewName --$it---  "+ SpUtil.getValue(LockerSpKey.SP_KEY_LOGIN_STATE_KEY,false))
             showHeather(it)
         }
 
         LockerLifecycle.loginData.observe(this) {
-            SpUtil.setValue(LockerConstant.SP_KEY_LOGIN_DATA_KEY,it)
-            LogUtil.msg("$mViewName --\n$it---  \n"+ SpUtil.getValue(LockerConstant.SP_KEY_LOGIN_DATA_KEY,LoginVO()))
+            SpUtil.setValue(LockerSpKey.SP_KEY_LOGIN_DATA_KEY, it)
+            LogUtil.msg("$mViewName --\n$it---  \n"+ SpUtil.getValue(LockerSpKey.SP_KEY_LOGIN_DATA_KEY, LoginVO::class.java)
+            )
             showUserInfo(it)
         }
 

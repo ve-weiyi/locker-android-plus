@@ -117,7 +117,7 @@
         <item name="md_color_button_text">#270E27</item>
     </style>
 
-    <style name="tv_user_left_text" parent="tv_title_normal">
+    <style name="tv_user_left_text" parent="tv_title_normal_primary">
 
     </style>
 

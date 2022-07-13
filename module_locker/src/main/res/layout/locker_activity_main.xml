@@ -23,7 +23,7 @@
 
         <include
                 android:id="@+id/ext_container"
-                layout="@layout/locker_container"
+                layout="@layout/container"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="?attr/actionBarSize"
@@ -44,7 +44,7 @@
                 app:elevation="@dimen/dp_16"
                 app:itemIconTint="@drawable/nav_item_color_state"
                 app:itemTextColor="@drawable/nav_item_color_state"
-                app:layout_behavior="com.ve.lib.common.view.widget.behavior.BottomNavigationBehavior"
+                app:layout_behavior="com.ve.lib.common.widget.behavior.BottomNavigationBehavior"
                 app:menu="@menu/locker_bottom_navigation" />
 
 

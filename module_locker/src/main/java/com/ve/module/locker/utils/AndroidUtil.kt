@@ -11,7 +11,7 @@ import android.graphics.PixelFormat
 import android.graphics.drawable.Drawable
 import android.os.Build
 import android.util.Log
-import com.ve.lib.common.vutils.AppContextUtils
+import com.ve.lib.common.vutils.AppContextUtil
 import com.ve.lib.common.vutils.LogUtil
 import java.io.Serializable
 import java.security.MessageDigest
@@ -49,7 +49,7 @@ object AndroidUtil {
         val packageManager: PackageManager = context.packageManager
         return try {
             val appInfo = context.packageManager.getApplicationInfo(packageName, PackageManager.GET_META_DATA)
-            LogUtil.msg(appInfo.packageName)
+//            LogUtil.msg(appInfo.packageName)
             return AppInfo(
                 appInfo.packageName,
                 appInfo.loadLabel(packageManager).toString(),
@@ -70,7 +70,7 @@ object AndroidUtil {
      */
     fun findAppsByName(name: String?, isAll: Boolean): ArrayList<AppInfo> {
         val result = ArrayList<AppInfo>()
-        val list = getAllAppInfo(AppContextUtils.mContext, isAll)
+        val list = getAllAppInfo(AppContextUtil.mContext, isAll)
         // 忽略大小写
         val pattern = Pattern.compile(name, Pattern.CASE_INSENSITIVE)
         for (i in list.indices) {

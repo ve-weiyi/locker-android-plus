@@ -14,7 +14,7 @@ import com.ve.module.locker.R
 import com.ve.module.locker.common.event.RefreshDataEvent
 import com.ve.module.locker.databinding.LockerFragmentEditFriendsBinding
 import com.ve.module.locker.respository.database.entity.PrivacyFriend
-import com.ve.module.locker.ui.page.privacy.EditType
+import com.ve.module.locker.common.enums.EditTypeEnum
 import com.ve.module.locker.ui.viewmodel.LockerPrivacyFriendsViewModel
 
 /**
@@ -41,14 +41,14 @@ class LockerFriendsEditFragment:
      * 查看,新增,编辑 三种状态
      * 查看，不可以修改，只显示
      */
-    private var mType = EditType.ADD_TAG_TYPE
+    private var mType = EditTypeEnum.ADD_TAG_TYPE
     private lateinit var mPrivacyInfo: PrivacyFriend
 
 
     override fun initView(savedInstanceState: Bundle?) {
         setHasOptionsMenu(true)
         arguments?.let {
-            mType = it.getInt(FRAGMENT_TYPE_KEY, EditType.ADD_TAG_TYPE)
+            mType = it.getInt(FRAGMENT_TYPE_KEY, EditTypeEnum.ADD_TAG_TYPE)
             val data = it.getSerializable(FRAGMENT_DATA_KEY)
             LogUtil.msg(mType.toString())
             LogUtil.msg(data.toString())

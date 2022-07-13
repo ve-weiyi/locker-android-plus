@@ -3,7 +3,7 @@ package com.ve.module.locker.respository.database
 import com.ve.lib.common.utils.CommonUtil
 import com.ve.lib.common.vutils.LogUtil
 import com.ve.lib.common.vutils.SpUtil
-import com.ve.module.locker.common.config.SettingConstant
+import com.ve.module.locker.common.config.LockerSpKey
 import com.ve.module.locker.respository.database.entity.*
 import com.ve.module.locker.respository.database.vo.PrivacyCardInfo
 import com.ve.module.locker.respository.database.vo.PrivacyPassInfo
@@ -21,7 +21,7 @@ object AppDataBase {
 //        LogUtil.msg(SpUtil.setValue(SettingConstant.SP_KEY_DATABASE_INIT,true))
 //        LogUtil.msg(SpUtil.getBoolean(SettingConstant.SP_KEY_DATABASE_INIT))
 
-        if (SpUtil.getValue(SettingConstant.SP_KEY_DATABASE_INIT, true)) {
+        if (SpUtil.getValue(LockerSpKey.SP_KEY_DATABASE_INIT, true)) {
             LogUtil.msg("data already init");
             return
         }
@@ -214,6 +214,6 @@ object AppDataBase {
 //        LogUtil.msg(LitePal.findAll(PrivacyPassInfo::class.java).toString())
 
 
-        SpUtil.setValue(SettingConstant.SP_KEY_DATABASE_INIT, false);
+        SpUtil.setValue(LockerSpKey.SP_KEY_DATABASE_INIT, false);
     }
 }

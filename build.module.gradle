@@ -49,8 +49,8 @@ android {
     buildTypes {
         debug {
             minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.debug
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
 
@@ -74,6 +74,15 @@ android {
         exclude 'META-INF/proguard/androidx-annotations.pro'
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+
     //开启viewBinding
     buildFeatures {
         viewBinding true
@@ -82,10 +91,6 @@ android {
 //    dataBinding {
 //        enabled = true
 //    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
-    }
 }
 
 dependencies {

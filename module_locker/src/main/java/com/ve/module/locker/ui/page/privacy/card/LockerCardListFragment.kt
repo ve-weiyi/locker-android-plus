@@ -76,7 +76,6 @@ class LockerCardListFragment :
     override fun initObserver() {
         super.initObserver()
         mViewModel.getPrivacyCardListResult.observe(this) {
-            LogUtil.msg("$mViewName ------ $it")
             showPrivacyList(it)
         }
         mViewModel.deletePrivacyCardListResult.observe(this) {

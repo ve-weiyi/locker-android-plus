@@ -17,7 +17,7 @@ class LockerPrivacyFriendsViewModel : LockerViewModel() {
             block = {
 
             },
-            local = {
+            then = {
                 if (keyWords== null) {
                     privacyFriendsInfoList.value = LitePal.findAll(PrivacyFriend::class.java)
                 } else {
@@ -38,7 +38,7 @@ class LockerPrivacyFriendsViewModel : LockerViewModel() {
 
 
             },
-            local = {
+            then = {
                 val result = privacyFriends.saveOrUpdate("id= ?", privacyFriends.id.toString())
                 saveOrUpdateResult .value = result
             }
@@ -52,7 +52,7 @@ class LockerPrivacyFriendsViewModel : LockerViewModel() {
 
 
             },
-            local = {
+            then = {
                 val result = privacyInfo.delete()
                 deletePrivacyFriendsResult.value = result
             }
@@ -65,7 +65,7 @@ class LockerPrivacyFriendsViewModel : LockerViewModel() {
 
 
             },
-            local = {
+            then = {
                 var result: Int = 0
                 privacyInfos.forEach { privacyInfo ->
                     result += privacyInfo.delete()

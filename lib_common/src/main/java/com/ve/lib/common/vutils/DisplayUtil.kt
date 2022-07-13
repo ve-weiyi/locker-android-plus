@@ -17,7 +17,7 @@ object DisplayUtil {
      * dp2px
      */
     fun dp2px(dp: Float): Int {
-        val density = AppContextUtils.getApp().resources.displayMetrics.density
+        val density = AppContextUtil.getApp().resources.displayMetrics.density
         return (dp * density + 0.5f).toInt()
     }
 
@@ -25,7 +25,7 @@ object DisplayUtil {
      * px2dp
      */
     fun px2dp(px: Int): Float {
-        val density = AppContextUtils.getApp().resources.displayMetrics.density
+        val density = AppContextUtil.getApp().resources.displayMetrics.density
         return px / density
     }
 
@@ -51,7 +51,7 @@ object DisplayUtil {
      * 获取状态栏高度 px
      */
     fun getStatusBarHeight(): Int {
-        val resources = AppContextUtils.getApp().resources
+        val resources = AppContextUtil.getApp().resources
         val resourceId = resources.getIdentifier("status_bar_height", "dimen", "android")
         return resources.getDimensionPixelSize(resourceId)
     }
@@ -61,8 +61,8 @@ object DisplayUtil {
      */
     fun getActionBarHeight(): Int {
         val tv = TypedValue()
-        return if (AppContextUtils.getApp().theme.resolveAttribute(android.R.attr.actionBarSize, tv, true)) {
-            TypedValue.complexToDimensionPixelSize(tv.data, AppContextUtils.getApp().resources.displayMetrics)
+        return if (AppContextUtil.getApp().theme.resolveAttribute(android.R.attr.actionBarSize, tv, true)) {
+            TypedValue.complexToDimensionPixelSize(tv.data, AppContextUtil.getApp().resources.displayMetrics)
         } else 0
     }
 
@@ -70,7 +70,7 @@ object DisplayUtil {
      * 获取导航栏高度 px
      */
     fun getNavBarHeight(): Int {
-        val res: Resources = AppContextUtils.getApp().resources
+        val res: Resources = AppContextUtil.getApp().resources
         val resourceId: Int = res.getIdentifier("navigation_bar_height", "dimen", "android")
         return if (resourceId != 0) {
             res.getDimensionPixelSize(resourceId)

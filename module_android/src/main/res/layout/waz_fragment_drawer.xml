@@ -30,7 +30,7 @@
                 android:layout_gravity="end"
                 app:srcCompat="@drawable/ic_rank_white_24dp" />
 
-        <com.ve.lib.common.view.widget.view.CircleImageView
+        <com.ve.lib.common.widget.view.CircleImageView
                 android:id="@+id/nav_header_icon"
                 android:layout_width="@dimen/avatar_width"
                 android:layout_height="@dimen/avatar_height"

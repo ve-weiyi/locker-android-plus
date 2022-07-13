@@ -50,6 +50,8 @@ class LockerContainerActivity :BaseActivity<LockerActivityContainerBinding>(){
                 context.startActivity(this,)
             }
         }
+
+        @Deprecated("已废弃，Intent 无法传递 class 类型", replaceWith = ReplaceWith("this.start(context,fragmentClass.name,title,fragmentBundle)"))
         fun start(context: Context, fragmentClass:Class<*>, title: String? = null, fragmentBundle: Bundle? = null) {
             val fragmentClassName=fragmentClass.name
             start(context, fragmentClassName, title, fragmentBundle)

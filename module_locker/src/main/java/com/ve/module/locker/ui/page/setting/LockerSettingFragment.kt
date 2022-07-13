@@ -15,11 +15,11 @@ import androidx.preference.SwitchPreference
 import com.ve.lib.common.event.RefreshHomeEvent
 import com.ve.lib.common.utils.ImageLoader
 import com.ve.lib.common.utils.DialogUtil
-import com.ve.lib.common.view.widget.preference.IconPreference
+import com.ve.lib.common.widget.preference.IconPreference
 import com.ve.lib.common.vutils.LogUtil
 import com.ve.lib.common.vutils.SpUtil
 import com.ve.lib.common.vutils.ToastUtil
-import com.ve.module.locker.common.config.SettingConstant
+import com.ve.module.locker.common.config.LockerSpKey
 import com.ve.module.locker.respository.database.AppDataBase
 import com.ve.module.locker.respository.http.bean.LoginVO
 import com.ve.module.locker.ui.page.container.LockerContainerActivity
@@ -45,13 +45,13 @@ class LockerSettingFragment : BaseSettingFragment() {
     }
 
     val spClickPreferenceKeyList = mutableListOf<String>(
-        SettingConstant.SP_KEY_ACCOUNT_SETTING,
-        SettingConstant.SP_KEY_STYLE_SETTING,
-        SettingConstant.SP_KEY_CACHE_SETTING,
-        SettingConstant.SP_KEY_ABOUT_SETTING,
-        SettingConstant.SP_KEY_AUTO_FILL,
-        SettingConstant.SP_KEY_RECRATE_DATABASE,
-        SettingConstant.SP_KEY_KEY_MANAGER
+        LockerSpKey.SP_KEY_ACCOUNT_SETTING,
+        LockerSpKey.SP_KEY_STYLE_SETTING,
+        LockerSpKey.SP_KEY_CACHE_SETTING,
+        LockerSpKey.SP_KEY_ABOUT_SETTING,
+        LockerSpKey.SP_KEY_AUTO_FILL,
+        LockerSpKey.SP_KEY_RECRATE_DATABASE,
+        LockerSpKey.SP_KEY_KEY_MANAGER
         )
 
     private lateinit var startActivityLaunch: ActivityResultLauncher<Intent>
@@ -64,9 +64,9 @@ class LockerSettingFragment : BaseSettingFragment() {
                 findPreference<Preference>(key)?.onPreferenceClickListener = this
             }
         }
-        val userinfo=SpUtil.getValue(SettingConstant.SP_KEY_LOGIN_DATA_KEY, LoginVO())
+        val userinfo=SpUtil.getValue(LockerSpKey.SP_KEY_LOGIN_DATA_KEY, LoginVO())
 
-        findPreference<Preference>(SettingConstant.SP_KEY_ACCOUNT_SETTING)?.apply {
+        findPreference<Preference>(LockerSpKey.SP_KEY_ACCOUNT_SETTING)?.apply {
 
             CoroutineScope(Dispatchers.IO).launch {
                 val avatar=ImageLoader.loadPicture(mContext,userinfo.userDetailDTO.avatar)
@@ -89,7 +89,7 @@ class LockerSettingFragment : BaseSettingFragment() {
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
         LogUtil.msg("sharedPreferences $key")
         when (key) {
-            SettingConstant.SP_KEY_SHOW_TOP -> {
+            LockerSpKey.SP_KEY_SHOW_TOP -> {
                 val mainThreadHandler: Handler = Handler(Looper.getMainLooper())
                 // 通知首页刷新数据
                 // 延迟发送通知：为了保证刷新数据时 SettingUtil.getIsShowTopArticle() 得到最新的值
@@ -97,7 +97,7 @@ class LockerSettingFragment : BaseSettingFragment() {
                     EventBus.getDefault().post(RefreshHomeEvent(true))
                 }, 100)
             }
-            SettingConstant.SP_KEY_BIOMETRICS->{
+            LockerSpKey.SP_KEY_BIOMETRICS->{
                 val switchPreference=findPreference<SwitchPreference>(key)!!
                 val executor = ContextCompat.getMainExecutor(mContext)
                 val biometricPrompt = BiometricPrompt(this, executor,
@@ -140,34 +140,34 @@ class LockerSettingFragment : BaseSettingFragment() {
     override fun onPreferenceClick(preference: Preference?): Boolean {
         LogUtil.msg("sharedPreferences ${preference?.key}")
         when (preference?.key) {
-            SettingConstant.SP_KEY_KEY_MANAGER->{
+            LockerSpKey.SP_KEY_KEY_MANAGER->{
                 LockerContainerActivity.start(mContext,LockerKeyFragment::class.java,"秘钥管理")
             }
-            SettingConstant.SP_KEY_RECRATE_DATABASE->{
+            LockerSpKey.SP_KEY_RECRATE_DATABASE->{
                 DialogUtil.getConfirmDialog(
                     mContext,
                     "是否重置应用数据，该过程会删除已保存的密码和卡片。请在备份后谨慎操作。",
                     onOKClickListener = {
                         d,w->
-                        SpUtil.setValue(SettingConstant.SP_KEY_DATABASE_INIT,false)
+                        SpUtil.setValue(LockerSpKey.SP_KEY_DATABASE_INIT,false)
                         AppDataBase.initDataBase()
                     },
                     onCancelClickListener = null
                 ).show()
             }
-            SettingConstant.SP_KEY_STYLE_SETTING -> {
+            LockerSpKey.SP_KEY_STYLE_SETTING -> {
                 LockerSettingActivity.start(mContext, StyleSettingFragment::class.java.name, "主题设置")
             }
-            SettingConstant.SP_KEY_CACHE_SETTING -> {
+            LockerSpKey.SP_KEY_CACHE_SETTING -> {
                 LockerSettingActivity.start(mContext, CacheSettingFragment::class.java.name, "缓存设置")
             }
-            SettingConstant.SP_KEY_ACCOUNT_SETTING -> {
+            LockerSpKey.SP_KEY_ACCOUNT_SETTING -> {
                 startActivity(mContext,LockerUserInfoActivity::class.java)
             }
-            SettingConstant.SP_KEY_ABOUT_SETTING -> {
+            LockerSpKey.SP_KEY_ABOUT_SETTING -> {
                 LockerSettingActivity.start(mContext, AboutSettingFragment::class.java.name, "关于")
             }
-            SettingConstant.SP_KEY_AUTO_FILL->{
+            LockerSpKey.SP_KEY_AUTO_FILL->{
                 //打开自动填充服务设置界面
                 val intent = Intent(Settings.ACTION_REQUEST_SET_AUTOFILL_SERVICE)
                 intent.data = Uri.parse("package:com.android.settings")

@@ -6,6 +6,7 @@ import android.content.pm.ActivityInfo
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.WindowManager
@@ -13,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.viewbinding.ViewBinding
 import com.ve.lib.common.event.ColorEvent
+import com.ve.lib.common.ext.getMethodName
 import com.ve.lib.common.receiver.NetworkChangeReceiver
 import com.ve.lib.common.utils.KeyBoardUtil
 import com.ve.lib.common.utils.SettingUtil
@@ -189,5 +191,44 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity(), IView<VB> {
         ToastUtil.release()
     }
 
+    /**
+     * 当activity有可能被系统回收的情况下，而且是在onStop()之前。注意是有可能，
+     * 如果是已经确定会被销毁，比如用户按下了返回键，或者调用了finish()方法销毁activity，则onSaveInstanceState不会被调用。
+     *
+        总结下，onSaveInstanceState(Bundle outState)会在以下情况被调用：
+        1、当用户按下HOME键时。
+        2、从最近应用中选择运行其他的程序时。
+        3、按下电源按键（关闭屏幕显示）时。
+        4、从当前activity启动一个新的activity时。
+        5、屏幕方向切换时(无论竖屏切横屏还是横屏切竖屏都会调用)。
+    在前4种情况下，当前activity的生命周期为：
+    onPause -> onSaveInstanceState -> onStop。
+    比如第5种情况屏幕方向切换时，activity生命周期如下：
+    onPause -> onSaveInstanceState -> onStop -> onDestroy -> onCreate -> onStart -> onRestoreInstanceState -> onResume
 
+    而按HOME键返回桌面，又马上点击应用图标回到原来页面时，activity生命周期如下：
+    onPause -> onSaveInstanceState -> onStop -> onRestart -> onStart -> onResume
+    因为activity没有被系统回收，因此onRestoreInstanceState没有被调用。
+     */
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+    }
+
+    /**
+     * onRestoreInstanceState什么时机被调用？
+     * onRestoreInstanceState(Bundle savedInstanceState)只有在activity确实是被系统回收，重新创建activity的情况下才会被调用。
+
+    三、onCreate()里也有Bundle参数，可以用来恢复数据，它和onRestoreInstanceState有什么区别？
+    因为onSaveInstanceState 不一定会被调用，所以onCreate()里的Bundle参数可能为空，如果使用onCreate()来恢复数据，一定要做非空判断。
+    而onRestoreInstanceState的Bundle参数一定不会是空值，因为它只有在上次activity被回收了才会调用。
+    而且onRestoreInstanceState是在onStart()之后被调用的。有时候我们需要onCreate()中做的一些初始化完成之后再恢复数据，用onRestoreInstanceState会比较方便。
+     */
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+    }
+
+    override fun onRestart() {
+        LogUtil.msg(mViewName+ getMethodName(3))
+        super.onRestart()
+    }
 }

@@ -3,6 +3,7 @@ package com.ve.lib.common.vutils
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
+import com.alibaba.fastjson.JSONObject
 import java.io.*
 import java.lang.Exception
 
@@ -22,7 +23,7 @@ object SpUtil {
      * 文件创建模式：默认模式，其中创建的文件只能由调用应用程序（或共享相同用户ID的所有应用程序）访问。
      */
     private val sp: SharedPreferences by lazy {
-        AppContextUtils.getApp().getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE)
+        AppContextUtil.getApp().getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE)
     }
 
     /**
@@ -105,8 +106,6 @@ object SpUtil {
 
 
 
-
-
     /**
      * 删除全部数据
      */
@@ -142,8 +141,60 @@ object SpUtil {
     }
 
 
-    fun <T>getValue(key: String, defaultValue: T): T {
+    @SuppressLint("CommitPrefEdits")
+    fun <T>setValue(key: String, value :T){
+        when (value) {
+            is Long -> setLong(key, value)
+            is String -> setString(key, value)
+            is Int -> setInt(key, value)
+            is Boolean -> setBoolean(key, value)
+            is Float -> setFloat(key, value)
+            else -> setString(key,JSONObject.toJSONString(value))
+        }
+    }
 
+    fun <T> getValue(key: String, clazz: Class<T>): T {
+        try {
+            return JSONObject.parseObject(getString(key), clazz)
+        }catch (e:Exception){
+            LogUtil.msg(e.message!!)
+            LogUtil.msg(clazz.newInstance().toString())
+            e.printStackTrace()
+            return clazz.newInstance()
+        }finally {
+
+        }
+    }
+
+    @Suppress("UNCHECKED_CAST")
+    fun <T>getValue(key: String, defaultValue: T): T {
+        try{
+            val res: Any = when (defaultValue) {
+                is Long -> getLong(key, defaultValue)
+                is String -> getString(key, defaultValue)
+                is Int -> getInt(key, defaultValue)
+                is Boolean -> getBoolean(key, defaultValue)
+                is Float -> getFloat(key, defaultValue)
+                else -> getValue(key, defaultValue!!::class.java)
+            }
+            return res as T
+        }catch (e : Exception){
+            LogUtil.msg(e.message!!)
+            return defaultValue
+        }finally {
+
+        }
+    }
+
+    @Deprecated("在存储时要求对象实现序列号接口，新的方法将对象保存为JSON形式存储", replaceWith = ReplaceWith("this.setObject(key,value)"))
+    @SuppressLint("CommitPrefEdits")
+    fun <T> setSerialize(key: String, value :T ) {
+        putSharedPreferences(key,value)
+    }
+
+
+    @Deprecated("已废弃", replaceWith = ReplaceWith("this.getObject(key,defaultValue::class.java)"))
+    fun <T> getSerialize(key: String, defaultValue: T): T {
         try{
             return getSharedPreferences(key,defaultValue)
         }catch (e : Exception){
@@ -155,42 +206,35 @@ object SpUtil {
     }
 
     @SuppressLint("CommitPrefEdits")
-    fun <T>setValue(key: String, value :T ) {
-        putSharedPreferences(key,value)
-    }
-
-    @SuppressLint("CommitPrefEdits")
-    private fun <T> putSharedPreferences(name: String, value: T) = with(sp.edit()) {
+    private fun <T> putSharedPreferences(key: String, value: T) = with(sp.edit()) {
         when (value) {
-            is Long -> putLong(name, value)
-            is String -> putString(name, value)
-            is Int -> putInt(name, value)
-            is Boolean -> putBoolean(name, value)
-            is Float -> putFloat(name, value)
-            else -> putString(name, serialize(value))
+            is Long -> putLong(key, value)
+            is String -> putString(key, value)
+            is Int -> putInt(key, value)
+            is Boolean -> putBoolean(key, value)
+            is Float -> putFloat(key, value)
+            else -> putString(key, serialize(value))
         }.apply()
     }
 
     @Suppress("UNCHECKED_CAST")
-    private fun <T> getSharedPreferences(name: String, default: T): T = with(sp) {
+    private fun <T> getSharedPreferences(key: String, default: T): T = with(sp) {
         val res: Any = when (default) {
-            is Long -> getLong(name, default)
-            is String -> getString(name, default) ?: ""
-            is Int -> getInt(name, default)
-            is Boolean -> getBoolean(name, default)
-            is Float -> getFloat(name, default)
-            else -> deSerialization(getString(name, serialize(default)) ?: "")
+            is Long -> getLong(key, default)
+            is String -> getString(key, default) ?: ""
+            is Int -> getInt(key, default)
+            is Boolean -> getBoolean(key, default)
+            is Float -> getFloat(key, default)
+            else -> deSerialization(getString(key, serialize(default)) ?: "")
         }
         return res as T
     }
 
+
     /**
      * 序列化对象
-
      * @param person
-     * *
      * @return
-     * *
      * @throws IOException
      */
     @Throws(IOException::class)
@@ -209,13 +253,9 @@ object SpUtil {
 
     /**
      * 反序列化对象
-
      * @param str
-     * *
      * @return
-     * *
      * @throws IOException
-     * *
      * @throws ClassNotFoundException
      */
     @Suppress("UNCHECKED_CAST")

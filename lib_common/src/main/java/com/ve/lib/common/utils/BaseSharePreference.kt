@@ -3,7 +3,7 @@ package com.ve.lib.common.utils
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
-import com.ve.lib.common.vutils.AppContextUtils
+import com.ve.lib.common.vutils.AppContextUtil
 import com.ve.lib.common.vutils.LogUtil
 import java.io.*
 import java.lang.Exception
@@ -26,7 +26,7 @@ abstract class BaseSharePreference {
 
     fun init(){
         file_name=attachFileName()
-        sp=attachSharedPreferences(AppContextUtils.mContext)
+        sp=attachSharedPreferences(AppContextUtil.mContext)
     }
 
     abstract fun attachFileName():String

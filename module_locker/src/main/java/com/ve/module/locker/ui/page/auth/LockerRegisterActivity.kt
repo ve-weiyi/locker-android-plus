@@ -6,7 +6,7 @@ import android.view.View
 import com.ve.lib.common.base.view.vm.BaseVmActivity
 import com.ve.lib.common.ext.setOnclickNoRepeatListener
 import com.ve.lib.common.utils.DialogUtil
-import com.ve.module.locker.common.config.SettingConstant
+import com.ve.module.locker.common.config.LockerSpKey
 import com.ve.module.locker.databinding.LockerActivityRegisterBinding
 import com.ve.module.locker.ui.viewmodel.LockerRegisterViewModel
 import com.ve.module.locker.utils.PasswordUtils
@@ -33,7 +33,7 @@ class LockerRegisterActivity :
 
     override fun initView(savedInstanceState: Bundle?) {
         initToolbar(mBinding.extToolbar.toolbar, "注册")
-        if(SettingConstant.isDebug){
+        if(LockerSpKey.isDebug){
             mBinding.etUsername.editText!!.setText("791422171@qq.com")
             mBinding.etPassword.editText!!.setText("1234567")
             mBinding.etPassword2.editText!!.setText("1234567")

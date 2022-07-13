@@ -45,7 +45,7 @@ object ToastUtil {
     @SuppressLint("ShowToast")
     private fun createToast(msg: String) {
         if (null == toast) {
-            toast = Toast.makeText(AppContextUtils.getApp().applicationContext, msg, Toast.LENGTH_SHORT)
+            toast = Toast.makeText(AppContextUtil.getApp().applicationContext, msg, Toast.LENGTH_SHORT)
         } else {
             toast?.setText(msg)
         }
@@ -73,7 +73,7 @@ object ToastUtil {
     @SuppressLint("ShowToast")
     private fun createCenterToast(msg: String) {
         if (null == toast) {
-            toast = Toast.makeText(AppContextUtils.getApp().applicationContext, msg, Toast.LENGTH_SHORT)
+            toast = Toast.makeText(AppContextUtil.getApp().applicationContext, msg, Toast.LENGTH_SHORT)
         } else {
             toast?.setText(msg)
         }

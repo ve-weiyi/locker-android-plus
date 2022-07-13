@@ -2,19 +2,26 @@ package com.ve.module.locker
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.lifecycle.ProcessLifecycleOwner
 import com.alibaba.android.arouter.launcher.ARouter
 import com.tencent.bugly.Bugly
 import com.ve.lib.application.BaseApplication
 import com.ve.lib.application.BuildConfig
 import com.ve.lib.common.config.AppConfig
+import com.ve.lib.common.ext.startActivity
 import com.ve.lib.common.utils.SettingUtil
-import com.ve.lib.common.vutils.AppContextUtils
+import com.ve.lib.common.vutils.ActivityUtil
+import com.ve.lib.common.vutils.AppContextUtil
 import com.ve.lib.common.vutils.LogUtil
 import com.ve.lib.common.vutils.SpUtil
 import com.ve.module.locker.respository.database.AppDataBase
+import com.ve.module.locker.ui.page.auth.LockerAuthActivity
 import org.litepal.LitePal
 import java.util.*
+
 
 /**
  * @Description hello word!
@@ -45,13 +52,25 @@ class LockerApplication:BaseApplication() {
         }
         ARouter.init(this); // 尽可能早，推荐在Application中初始化
         LitePal.initialize(this);
-        AppContextUtils.init(this)
+        AppContextUtil.init(this)
+        //监听应用程序的生命周期
+        ProcessLifecycleOwner.get().lifecycle.addObserver(object : ActivityUtil.ApplicationObserver() {
+            override fun onResume() {
+                if(!onForeground){
+                    ActivityUtil.currentActivity?.let {
+                        val appCompatActivity=it as AppCompatActivity
+//                        startActivity(Intent(appCompatActivity,LockerAuthActivity::class.java))
+                        startActivity(appCompatActivity,LockerAuthActivity::class.java)
+                    }
+                }
+                super.onResume()
+            }
+        })
+
         initTheme()
 
         Bugly.init(applicationContext, AppConfig.BUGLY_ID, false)
 
-
-        LogUtil.e("Application init ")
         SpUtil.getAll().forEach{
             map->
             LogUtil.msg(map.toString())

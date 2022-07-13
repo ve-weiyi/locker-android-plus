@@ -40,7 +40,7 @@
                 app:elevation="@dimen/dp_16"
                 app:itemIconTint="@drawable/nav_item_color_state"
                 app:itemTextColor="@drawable/nav_item_color_state"
-                app:layout_behavior="com.ve.lib.common.view.widget.behavior.BottomNavigationBehavior"
+                app:layout_behavior="com.ve.lib.common.widget.behavior.BottomNavigationBehavior"
                 app:menu="@menu/bottom_navigation_android" />
 
 
@@ -48,7 +48,7 @@
 
     <androidx.fragment.app.FragmentContainerView
             android:id="@+id/drawer_fragment"
-            android:name="com.ve.module.android.ui.page.user.UserFragment"
+            android:name="com.ve.module.android.ui.page.user.DrawerFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"

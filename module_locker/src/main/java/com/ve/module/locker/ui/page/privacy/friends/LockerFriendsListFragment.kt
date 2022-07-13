@@ -20,7 +20,7 @@ import com.ve.module.locker.respository.database.entity.PrivacyFolder
 import com.ve.module.locker.respository.database.entity.PrivacyFriend
 import com.ve.module.locker.ui.adapter.PrivacyInfoFriendsAdapter
 import com.ve.module.locker.ui.page.container.LockerContainerActivity
-import com.ve.module.locker.ui.view.TagSwipeItemLayout
+import com.ve.lib.common.widget.layout.SwipeItemLayout
 import com.ve.module.locker.ui.viewmodel.LockerPrivacyFriendsViewModel
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -68,7 +68,7 @@ class LockerFriendsListFragment :
         super.initListener()
         mBinding.tvSearchText.addTextChangedListener(textWatcher)
 
-        mRecyclerView!!.addOnItemTouchListener(TagSwipeItemLayout.OnSwipeItemTouchListener(activity))
+        mRecyclerView!!.addOnItemTouchListener(SwipeItemLayout.OnSwipeItemTouchListener(activity))
         mBinding.floatingActionBtnAdd.setOnclickNoRepeatListener {
             LockerContainerActivity.start(
                 mContext,

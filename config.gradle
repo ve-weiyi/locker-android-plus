@@ -7,7 +7,7 @@ ext {
             minSdkVersion    : 26,
             targetSdkVersion : 31,
             versionCode      : 1,
-            versionName      : "1.0.1"
+            versionName      : "2.0.1"
     ]
     //version配置
     versions = [
@@ -32,9 +32,11 @@ ext {
             "preference"       : "androidx.preference:preference-ktx:1.1.1",
             "swiperefreshlayou": "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0",
             //google 原生数据库
-            "roomRuntime"      : "androidx.room:room-runtime:${versions.room}",
+            "room-runtime"     : "androidx.room:room-runtime:${versions.room}",
             // optional - Kotlin Extensions and Coroutines support for Room
-            "roomTesting"      : "androidx.room:room-ktx:${versions.room}",
+            "room-kotlin"      : "androidx.room:room-ktx:${versions.room}",
+            //监听应用生命周期
+            "lifecycle-process": "androidx.lifecycle:lifecycle-process:2.3.1"
     ]
 
     retrofit = [
@@ -106,6 +108,8 @@ ext {
 
             //动态权限申请
             "permissionx"      : 'com.guolindev.permissionx:permissionx:1.6.1',
+            //Json 工具类
+            "fastjson"         : 'com.alibaba:fastjson:1.2.69',
     ]
     //    kapt、annotationProcessor 运行时注解
     annotationProcessorDeps = [

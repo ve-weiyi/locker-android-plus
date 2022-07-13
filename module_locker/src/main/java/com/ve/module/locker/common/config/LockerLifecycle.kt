@@ -11,6 +11,7 @@ import com.ve.module.locker.respository.http.bean.LoginVO
 object LockerLifecycle {
 
     val loginState= MutableLiveData<Boolean>()
+
     val loginData= MutableLiveData<LoginVO>()
 
 }

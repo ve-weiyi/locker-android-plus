@@ -11,7 +11,7 @@
         >
 
     <com.google.android.material.imageview.ShapeableImageView
-            app:shapeAppearanceOverlay="@style/roundImageView"
+            app:shapeAppearanceOverlay="@style/RoundImageStyle"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -39,10 +39,11 @@
         <TextView
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
+
                 style="@style/tv_title_big"
                 android:layout_width="0dp"
                 android:id="@+id/tv_nickname"
+            android:layout_marginTop="@dimen/dimen_giant"
                 android:layout_marginStart="@dimen/dimen_giant"
                 android:gravity="center_vertical"
                 android:ellipsize="end"
@@ -50,6 +51,18 @@
                 android:maxLines="1"
                 android:text="点击登录" />
 
+        <TextView
+                app:layout_constraintStart_toStartOf="@id/tv_nickname"
+                app:layout_constraintTop_toBottomOf="@id/tv_nickname"
+
+                style="@style/tv_content_second"
+                android:layout_width="0dp"
+                android:id="@+id/tv_login_tip"
+                android:gravity="center_vertical"
+                android:ellipsize="end"
+                android:maxWidth="150dp"
+                android:maxLines="1"
+                android:text="登录之后可以同步数据" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

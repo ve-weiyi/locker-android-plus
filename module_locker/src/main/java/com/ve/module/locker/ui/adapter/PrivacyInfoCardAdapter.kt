@@ -110,7 +110,7 @@ class PrivacyInfoCardAdapter :
 
 
     override fun convertHeader(helper: BaseViewHolder, item: PrivacyCard) {
-        LogUtil.msg("head " + item.headerName)
+//        LogUtil.msg("head " + item.headerName)
         helper.setText(com.ve.lib.common.R.id.tv_header, item.headerName)
         helper.setEnabled(com.ve.lib.common.R.id.tv_header, false)
     }

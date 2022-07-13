@@ -44,7 +44,7 @@
                     tools:text="@string/text_content"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
-            <com.ve.lib.common.view.widget.view.CircleImageView
+            <com.ve.lib.common.widget.view.CircleImageView
                     android:id="@android:id/icon"
                     android:layout_weight="1"
                     android:layout_width="0dp"

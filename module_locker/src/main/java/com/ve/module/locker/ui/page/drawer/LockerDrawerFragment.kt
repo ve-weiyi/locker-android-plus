@@ -18,6 +18,7 @@ import com.ve.lib.common.vutils.SpUtil
 import com.ve.module.locker.R
 import com.ve.module.locker.common.config.LockerConstant
 import com.ve.module.locker.common.config.LockerLifecycle
+import com.ve.module.locker.common.config.LockerSpKey
 
 import com.ve.module.locker.databinding.LockerFragmentDrawerBinding
 import com.ve.module.locker.respository.http.bean.LoginVO
@@ -53,9 +54,8 @@ class LockerDrawerFragment : BaseVmFragment<LockerFragmentDrawerBinding, LockerD
     var placeName:String?=null
 
     override fun initView(savedInstanceState: Bundle?) {
-        showHeather(SpUtil.getValue(LockerConstant.SP_KEY_LOGIN_STATE_KEY,false))
-        showUserInfo(SpUtil.getValue(LockerConstant.SP_KEY_LOGIN_DATA_KEY,LoginVO()))
-
+        showHeather(SpUtil.getValue(LockerSpKey.SP_KEY_LOGIN_STATE_KEY,false))
+        showUserInfo(SpUtil.getValue(LockerSpKey.SP_KEY_LOGIN_DATA_KEY, LoginVO::class.java))
     }
 
     override fun initWebData() {
@@ -79,14 +79,18 @@ class LockerDrawerFragment : BaseVmFragment<LockerFragmentDrawerBinding, LockerD
 
         LockerLifecycle.loginState.observe(this) {
 
-            SpUtil.setValue(LockerConstant.SP_KEY_LOGIN_STATE_KEY,it)
-            LogUtil.msg("$mViewName --$it---  "+ SpUtil.getValue(LockerConstant.SP_KEY_LOGIN_STATE_KEY,false))
+            SpUtil.setValue(LockerSpKey.SP_KEY_LOGIN_STATE_KEY,it)
+            LogUtil.msg("$mViewName --$it---  "+ SpUtil.getValue(LockerSpKey.SP_KEY_LOGIN_STATE_KEY,false))
             showHeather(it)
         }
 
         LockerLifecycle.loginData.observe(this) {
-            SpUtil.setValue(LockerConstant.SP_KEY_LOGIN_DATA_KEY,it)
-            LogUtil.msg("$mViewName --\n$it---  \n"+ SpUtil.getValue(LockerConstant.SP_KEY_LOGIN_DATA_KEY,LoginVO()))
+            SpUtil.setValue(LockerSpKey.SP_KEY_LOGIN_DATA_KEY, it)
+            LogUtil.msg("$mViewName --\n$it---  \n"+ SpUtil.getValue(
+                LockerSpKey.SP_KEY_LOGIN_DATA_KEY,
+                LoginVO()::class.java
+            )
+            )
             showUserInfo(it)
         }
 
@@ -214,6 +218,7 @@ class LockerDrawerFragment : BaseVmFragment<LockerFragmentDrawerBinding, LockerD
     }
 
     private fun showUserInfo(it :LoginVO){
+//        LogUtil.msg(it)
         mBinding.layoutUserinfo.apply {
             val item = it.userDetailDTO
             ImageLoader.load(mContext, item?.avatar, ivAvatarIcon)

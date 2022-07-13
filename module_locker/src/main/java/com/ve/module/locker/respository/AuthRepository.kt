@@ -11,7 +11,7 @@ import com.ve.module.locker.respository.http.bean.LockerBaseBean
  * @Author  weiyi
  * @Date 2022/4/9
  */
-object AuthRepository : BaseLockerRepository(){
+object AuthRepository : LockerRepository(){
 
     private val apiService = LockerApiService.getApiService()
 

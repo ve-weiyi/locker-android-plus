@@ -9,7 +9,7 @@
         android:padding="@dimen/dp_10"
         >
 
-    <com.ve.lib.common.view.widget.multipleview.MultipleStatusView
+    <com.ve.lib.common.widget.multipleview.MultipleStatusView
             android:id="@+id/multiple_status_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -32,5 +32,5 @@
 
         </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-    </com.ve.lib.common.view.widget.multipleview.MultipleStatusView>
+    </com.ve.lib.common.widget.multipleview.MultipleStatusView>
 </LinearLayout>

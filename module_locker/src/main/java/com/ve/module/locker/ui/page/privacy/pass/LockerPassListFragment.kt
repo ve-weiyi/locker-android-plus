@@ -76,7 +76,6 @@ class LockerPassListFragment :
     override fun initObserver() {
         super.initObserver()
         mViewModel.getPrivacyPassListResult.observe(this) {
-            LogUtil.msg("$mViewName ------ $it")
             showPrivacyList(it)
         }
         mViewModel.deletePrivacyPassListResult.observe(this) {

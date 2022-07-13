@@ -122,7 +122,7 @@
                         android:id="@+id/tv_service_agreement"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="登录即表示同意"
+                        android:text="已阅读并同意"
                         android:textColor="#757575"
                         android:textSize="@dimen/sp_14" />
             </LinearLayout>
@@ -136,7 +136,7 @@
                     android:layout_marginBottom="@dimen/dp_24"
                     android:gravity="right"
                     android:text="@string/no_account"
-                    style="@style/tv_title_normal_gray"
+                    style="@style/tv_title_normal_primary"
                     />
 
         </LinearLayout>

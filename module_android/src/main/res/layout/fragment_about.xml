@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <com.ve.lib.common.view.widget.view.CircleImageView
+        <com.ve.lib.common.widget.view.CircleImageView
             android:id="@+id/iv_logo"
             android:layout_width="@dimen/dp_80"
             android:layout_height="@dimen/dp_80"

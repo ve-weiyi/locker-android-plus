@@ -10,7 +10,7 @@ import com.ve.lib.common.event.RefreshHomeEvent
 import com.ve.lib.common.utils.CacheDataUtil
 
 import com.ve.module.locker.R
-import com.ve.module.locker.common.config.SettingConstant
+import com.ve.module.locker.common.config.LockerSpKey
 import org.greenrobot.eventbus.EventBus
 
 /**
@@ -26,9 +26,9 @@ class CacheSettingFragment :  BaseSettingFragment(){
     override fun initPreferenceView() {
         setDefaultText()
 
-        findPreference<Preference>(SettingConstant.SP_KEY_SHOW_TOP)?.onPreferenceClickListener = this
-        findPreference<Preference>(SettingConstant.SP_KEY_NO_PHOTO)?.onPreferenceClickListener = this
-        findPreference<Preference>(SettingConstant.SP_KEY_CLEAR_CACHE)?.onPreferenceClickListener = this
+        findPreference<Preference>(LockerSpKey.SP_KEY_SHOW_TOP)?.onPreferenceClickListener = this
+        findPreference<Preference>(LockerSpKey.SP_KEY_NO_PHOTO)?.onPreferenceClickListener = this
+        findPreference<Preference>(LockerSpKey.SP_KEY_CLEAR_CACHE)?.onPreferenceClickListener = this
 
     }
 
@@ -36,7 +36,7 @@ class CacheSettingFragment :  BaseSettingFragment(){
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
         when (key) {
-            SettingConstant.SP_KEY_SHOW_TOP-> {
+            LockerSpKey.SP_KEY_SHOW_TOP-> {
                 val mainThreadHandler: Handler =Handler(Looper.getMainLooper())
                 // 通知首页刷新数据
                 // 延迟发送通知：为了保证刷新数据时 SettingUtil.getIsShowTopArticle() 得到最新的值
@@ -52,7 +52,7 @@ class CacheSettingFragment :  BaseSettingFragment(){
 
     override fun onPreferenceClick(preference: Preference?): Boolean {
         when (preference?.key) {
-            SettingConstant.SP_KEY_CLEAR_CACHE -> {
+            LockerSpKey.SP_KEY_CLEAR_CACHE -> {
                 CacheDataUtil.clearAllCache(mContext)
                 showMsg(getString(com.ve.lib.application.R.string.clear_cache_successfully))
                 setDefaultText()
@@ -66,7 +66,7 @@ class CacheSettingFragment :  BaseSettingFragment(){
 
     private fun setDefaultText() {
         try {
-            findPreference<Preference>(SettingConstant.SP_KEY_CLEAR_CACHE)?.summary=
+            findPreference<Preference>(LockerSpKey.SP_KEY_CLEAR_CACHE)?.summary=
                 CacheDataUtil.getTotalCacheSize(requireContext())
         } catch (e: Exception) {
             e.printStackTrace()

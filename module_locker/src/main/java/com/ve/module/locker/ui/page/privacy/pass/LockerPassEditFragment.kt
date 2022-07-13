@@ -18,7 +18,7 @@ import com.afollestad.materialdialogs.lifecycle.lifecycleOwner
 import com.afollestad.materialdialogs.list.customListAdapter
 import com.afollestad.materialdialogs.list.listItems
 import com.ve.lib.common.base.view.vm.BaseVmFragment
-import com.ve.lib.common.view.widget.passwordGenerator.PasswordGeneratorDialog
+import com.ve.lib.common.widget.passwordGenerator.PasswordGeneratorDialog
 import com.ve.lib.common.vutils.TimeUtil
 import com.ve.lib.common.vutils.LogUtil
 import com.ve.module.locker.R
@@ -27,7 +27,7 @@ import com.ve.module.locker.databinding.LockerFragmentEditPassBinding
 import com.ve.module.locker.respository.database.entity.*
 import com.ve.module.locker.ui.adapter.AppAdapter
 import com.ve.module.locker.ui.adapter.FlowTagAdapter
-import com.ve.module.locker.ui.page.privacy.EditType
+import com.ve.module.locker.common.enums.EditTypeEnum
 import com.ve.module.locker.ui.viewmodel.LockerPrivacyPassViewModel
 import com.ve.module.locker.utils.AndroidUtil
 import kotlinx.coroutines.Dispatchers
@@ -61,7 +61,7 @@ class LockerPassEditFragment :
      * 查看,新增,编辑 三种状态
      * 查看，不可以修改，只显示
      */
-    private var mType = EditType.ADD_TAG_TYPE
+    private var mType = EditTypeEnum.ADD_TAG_TYPE
     
     private lateinit var mPrivacyPass: PrivacyPass
     private lateinit var mPrivacyFolder: PrivacyFolder
@@ -94,10 +94,10 @@ class LockerPassEditFragment :
         //拿数据
         arguments?.let {
             mType =
-                it.getInt(FRAGMENT_TYPE_KEY, EditType.ADD_TAG_TYPE)
+                it.getInt(FRAGMENT_TYPE_KEY, EditTypeEnum.ADD_TAG_TYPE)
             val data = it.getSerializable(FRAGMENT_DATA_KEY)
 
-            if (mType== EditType.EDIT_TAG_TYPE && data is PrivacyPass) {
+            if (mType== EditTypeEnum.EDIT_TAG_TYPE && data is PrivacyPass) {
                 mPrivacyPass = data
                 mPrivacyFolder = data.getPrivacyFolder()
                 mPrivacyTagList = data.getPrivacyTags()
@@ -327,10 +327,10 @@ class LockerPassEditFragment :
     private fun doSaveOrUpdate() {
         LogUtil.msg(mType.toString())
         when (mType) {
-            EditType.ADD_TAG_TYPE -> {
+            EditTypeEnum.ADD_TAG_TYPE -> {
                 mViewModel.addPrivacyPass(mPrivacyPass,mPrivacyFolder,mPrivacyTagList)
             }
-            EditType.EDIT_TAG_TYPE -> {
+            EditTypeEnum.EDIT_TAG_TYPE -> {
                 mViewModel.addPrivacyPass(mPrivacyPass,mPrivacyFolder,mPrivacyTagList)
             }
             else -> {

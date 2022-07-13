@@ -2,7 +2,9 @@ package com.ve.lib.common.ext
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
+import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebChromeClient
@@ -18,7 +20,7 @@ import com.just.agentweb.DefaultWebClient
 import com.ve.lib.application.BaseApplication
 
 import com.ve.lib.common.R
-import com.ve.lib.common.view.widget.CustomToast
+import com.ve.lib.common.widget.CustomToast
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -28,6 +30,22 @@ import java.util.*
 /**
  * Log
  */
+
+
+
+fun startActivity(context: Context,activityClass: Class<*>,bundle: Bundle?=null){
+    val intent = Intent(context,activityClass)
+    if (bundle != null) {
+        intent.putExtras(bundle)
+    }
+    /**
+     * 启动的standard模式下的activity需要在启动它的Activity的task（任务栈）里面执行
+     * 但是由于非Activity类型的Context并没有所谓的任务栈,并且这个时候Activity是以singleTask模式启动的，
+     */
+    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK )
+
+    context.startActivity(intent)
+}
 
 fun showToast(content: String) {
     CustomToast(BaseApplication.mContext, content).show()
@@ -65,6 +83,8 @@ fun Fragment.getInstance() :Fragment{
 fun Fragment.newInstance() :Fragment{
     return javaClass.newInstance()
 }
+
+
 
 // 扩展点击事件属性(重复点击时长)
 var <T : View> T.lastClickTime: Long

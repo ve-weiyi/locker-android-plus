@@ -9,9 +9,9 @@ import com.afollestad.materialdialogs.color.colorChooser
 import com.afollestad.materialdialogs.lifecycle.lifecycleOwner
 import com.ve.lib.common.event.ColorEvent
 import com.ve.lib.common.utils.SettingUtil
-import com.ve.lib.common.view.widget.preference.IconPreference
+import com.ve.lib.common.widget.preference.IconPreference
 import com.ve.module.locker.R
-import com.ve.module.locker.common.config.SettingConstant
+import com.ve.module.locker.common.config.LockerSpKey
 import org.greenrobot.eventbus.EventBus
 
 /**
@@ -29,15 +29,15 @@ class StyleSettingFragment :  BaseSettingFragment(){
 
     override fun initPreferenceView() {
 
-        colorPreview=findPreference<IconPreference>(SettingConstant.SP_KEY_THEME_COLOR)!!
+        colorPreview=findPreference<IconPreference>(LockerSpKey.SP_KEY_THEME_COLOR)!!
 
-        findPreference<Preference>(SettingConstant.SP_KEY_NIGHT_MODE)?.onPreferenceClickListener = this
+        findPreference<Preference>(LockerSpKey.SP_KEY_NIGHT_MODE)?.onPreferenceClickListener = this
 
-        findPreference<Preference>(SettingConstant.SP_KEY_AUTO_NIGHT_MODE)?.onPreferenceClickListener = this
+        findPreference<Preference>(LockerSpKey.SP_KEY_AUTO_NIGHT_MODE)?.onPreferenceClickListener = this
 
-        findPreference<Preference>(SettingConstant.SP_KEY_TEXT_SIZE)?.onPreferenceClickListener = this
-        findPreference<Preference>(SettingConstant.SP_KEY_THEME_COLOR)?.onPreferenceClickListener = this
-        findPreference<Preference>(SettingConstant.SP_KEY_NAV_COLOR)?.onPreferenceClickListener = this
+        findPreference<Preference>(LockerSpKey.SP_KEY_TEXT_SIZE)?.onPreferenceClickListener = this
+        findPreference<Preference>(LockerSpKey.SP_KEY_THEME_COLOR)?.onPreferenceClickListener = this
+        findPreference<Preference>(LockerSpKey.SP_KEY_NAV_COLOR)?.onPreferenceClickListener = this
 
         setDefaultText()
     }
@@ -58,7 +58,7 @@ class StyleSettingFragment :  BaseSettingFragment(){
             /**
              * 其他设置
              */
-            SettingConstant.SP_KEY_THEME_COLOR -> {
+            LockerSpKey.SP_KEY_THEME_COLOR -> {
                 MaterialDialog(mContext).show {
                     title(text = "主题颜色")
                     colorChooser(
@@ -86,7 +86,7 @@ class StyleSettingFragment :  BaseSettingFragment(){
 //                    .show()
                 false
             }
-            SettingConstant.SP_KEY_AUTO_NIGHT_MODE -> {
+            LockerSpKey.SP_KEY_AUTO_NIGHT_MODE -> {
                 LockerSettingActivity.start(mContext,AutoNightModeFragment::class.java.name)
             }
             else->{
@@ -98,7 +98,7 @@ class StyleSettingFragment :  BaseSettingFragment(){
 
     private fun setDefaultText() {
         try {
-            colorPreview = findPreference<IconPreference>(SettingConstant.SP_KEY_THEME_COLOR)!!
+            colorPreview = findPreference<IconPreference>(LockerSpKey.SP_KEY_THEME_COLOR)!!
             colorPreview.setView()
             val version = context?.resources?.getString(com.ve.lib.application.R.string.current_version).toString()
                 .plus(

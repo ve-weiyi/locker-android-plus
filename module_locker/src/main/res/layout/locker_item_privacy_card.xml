@@ -24,7 +24,7 @@
             tools:visibility="gone" />
 
     <com.google.android.material.imageview.ShapeableImageView
-            app:shapeAppearanceOverlay="@style/roundImageView"
+            app:shapeAppearanceOverlay="@style/RoundImageStyle"
             app:layout_constraintStart_toEndOf="@id/check_button"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -46,7 +46,7 @@
             android:maxLines="1"
             android:singleLine="true"
             tools:text="中国银行储蓄卡"
-            style="@style/tv_title_normal"
+            style="@style/tv_title_normal_primary"
             android:textColor="@color/color_text_light"
             android:textStyle="bold" />
 

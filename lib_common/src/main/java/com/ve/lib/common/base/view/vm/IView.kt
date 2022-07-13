@@ -5,7 +5,11 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.viewbinding.ViewBinding
 import com.ve.lib.common.vutils.ToastUtil
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
+
 
 /**
  * @author chenxz
@@ -65,15 +69,13 @@ interface IView <VB : ViewBinding> {
         context.startActivity(intent)
     }
 
+
+
     fun launchOnBackground(function:suspend () -> Unit): Job {
-        return coroutineScope.launch {
+        return CoroutineScope(Dispatchers.IO).launch {
             function.invoke()
         }
     }
 
 
-}
-
-private val coroutineScope by lazy {
-    CoroutineScope(Dispatchers.IO)
 }

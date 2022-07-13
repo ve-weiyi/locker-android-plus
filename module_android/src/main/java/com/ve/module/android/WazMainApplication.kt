@@ -9,7 +9,7 @@ import com.ve.lib.application.BaseApplication
 import com.ve.lib.application.BuildConfig
 import com.ve.lib.common.config.AppConfig
 import com.ve.lib.common.utils.SettingUtil
-import com.ve.lib.common.vutils.AppContextUtils
+import com.ve.lib.common.vutils.AppContextUtil
 import com.ve.lib.common.vutils.LogUtil
 import com.ve.lib.common.vutils.SpUtil
 import java.util.*
@@ -43,16 +43,14 @@ class WazMainApplication:BaseApplication() {
         }
         ARouter.init(this); // 尽可能早，推荐在Application中初始化
 
-        AppContextUtils.init(this)
+        AppContextUtil.init(this)
         initTheme()
 
         Bugly.init(applicationContext, AppConfig.BUGLY_ID, false)
 
         LogUtil.e("Application init ")
-
         SpUtil.getAll().forEach{
-            map->
-            LogUtil.msg(map.toString())
+            map-> LogUtil.msg(map.toString())
         }
     }
 

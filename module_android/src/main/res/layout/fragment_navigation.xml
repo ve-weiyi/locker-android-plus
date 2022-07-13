@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.ve.lib.common.view.widget.multipleview.MultipleStatusView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.ve.lib.common.widget.multipleview.MultipleStatusView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/multiple_status_view"
@@ -51,4 +51,4 @@
 
     </LinearLayout>
 
-</com.ve.lib.common.view.widget.multipleview.MultipleStatusView>
+</com.ve.lib.common.widget.multipleview.MultipleStatusView>

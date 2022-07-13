@@ -1,6 +1,8 @@
 package com.ve.lib.common.network.interceptor
 
+import com.ve.lib.common.vutils.SpUtil
 import okhttp3.Interceptor
+import okhttp3.Request
 import okhttp3.Response
 
 /**
@@ -22,6 +24,8 @@ class HeaderInterceptor : Interceptor {
 
         val domain = request.url.host
         val url = request.url.toString()
+
+
 
         return chain.proceed(builder.build())
     }

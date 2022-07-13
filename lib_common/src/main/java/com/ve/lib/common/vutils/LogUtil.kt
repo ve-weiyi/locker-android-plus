@@ -1,6 +1,7 @@
 package com.ve.lib.common.vutils
 
 import android.util.Log
+import com.ve.lib.common.ext.getMethodName
 import kotlin.math.min
 
 
@@ -50,6 +51,16 @@ object LogUtil {
         }else{
             logFun.invoke(TAG,message,info)
         }
+    }
+    @JvmStatic
+    fun msg() {
+        logMsg(
+            msg=ActivityUtil.currentActivityName + getMethodName(4),
+            info = autoJumpLogInfo(4),
+            logFun = { tag,msg,info->
+                Log.e(tag, info[1] + info[2] + " --->> " + msg)
+            }
+        )
     }
 
     @JvmStatic
@@ -140,13 +151,16 @@ object LogUtil {
 
     /**
      * 获取打印信息所在方法名，行号等信息
+     * stacktrace[0].getMethodName() 是 getStackTrace，
+     * stacktrace[1].getMethodName() 是 getMethodName，
+     * stacktrace[2].getMethodName() 才是调用 getMethodName 的函数的函数名。
      */
     private fun autoJumpLogInfo(stackCount :Int):Array<String>{
         val infos = arrayOf("", "", "")
-        val elements = Thread.currentThread().stackTrace
-        infos[0] = elements[stackCount].className.substring(elements[stackCount].className.lastIndexOf(".") + 1)
-        infos[1] = elements[stackCount].methodName
-        infos[2] = "(" + elements[stackCount].fileName + ":" + elements[stackCount].lineNumber + ")"
+        val stackTrace = Thread.currentThread().stackTrace
+        infos[0] = stackTrace[stackCount].className.substring(stackTrace[stackCount].className.lastIndexOf(".") + 1)
+        infos[1] = stackTrace[stackCount].methodName
+        infos[2] = "(" + stackTrace[stackCount].fileName + ":" + stackTrace[stackCount].lineNumber + ")"
         return infos
     }
 

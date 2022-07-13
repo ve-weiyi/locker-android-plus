@@ -276,7 +276,7 @@
                             />
 
                     <com.google.android.material.imageview.ShapeableImageView
-                            app:shapeAppearanceOverlay="@style/roundImageView"
+                            app:shapeAppearanceOverlay="@style/RoundImageStyle"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"

@@ -6,4 +6,6 @@ package com.ve
  * @Description  current project locker-android
  */
 class MainActivity {
+
+
 }

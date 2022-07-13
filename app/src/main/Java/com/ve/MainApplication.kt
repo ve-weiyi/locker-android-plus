@@ -16,7 +16,7 @@ import com.ve.lib.common.config.AppConfig
 import com.ve.lib.common.ext.showToast
 import com.ve.lib.common.utils.CommonUtil
 import com.ve.lib.common.utils.SettingUtil
-import com.ve.lib.common.vutils.AppContextUtils
+import com.ve.lib.common.vutils.AppContextUtil
 import java.util.*
 
 /**
@@ -33,7 +33,7 @@ class MainApplication : BaseApplication(){
         }
         ARouter.init(this); // 尽可能早，推荐在Application中初始化
 
-        AppContextUtils.init(this)
+        AppContextUtil.init(this)
 
         initTheme()
         initBugly()

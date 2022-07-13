@@ -8,7 +8,7 @@ import androidx.viewbinding.ViewBinding
 import com.ve.lib.common.base.viewmodel.BaseViewModel
 import com.ve.lib.common.config.AppConfig
 import com.ve.lib.common.event.NetworkChangeEvent
-import com.ve.lib.common.view.widget.multipleview.MultipleStatusView
+import com.ve.lib.common.widget.multipleview.MultipleStatusView
 import com.ve.lib.common.utils.PreferenceUtil
 import com.ve.lib.common.vutils.LogUtil
 import com.ve.lib.common.vutils.ToastUtil

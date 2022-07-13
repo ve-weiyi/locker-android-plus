@@ -19,12 +19,19 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <!--    标题-->
+    <!--    标题 不加粗-->
     <style name="tv_title_normal" parent="tv_text_layout">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:textColor">@color/color_text_normal</item>
+    </style>
+
+    <!--    标题 加粗-->
+    <style name="tv_title_normal_primary" parent="tv_text_layout">
         <item name="android:textSize">@dimen/text_normal</item>
         <item name="android:textColor">@color/color_text_normal</item>
         <item name="android:textStyle">bold</item>
     </style>
+
 
     <style name="tv_title_normal_gray" parent="tv_text_layout">
         <item name="android:textSize">@dimen/text_normal</item>
@@ -70,8 +77,6 @@
     <dimen name="dimen_giant">16dp</dimen>
     <dimen name="dimen_enormous">16dp</dimen>
     <dimen name="dimen_max">32dp</dimen>
-
-
 
 
     <!-- 键盘字体 -->

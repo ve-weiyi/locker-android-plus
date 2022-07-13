@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary">
 
-    <com.ve.lib.common.view.widget.view.CircleImageView
+    <com.ve.lib.common.widget.view.CircleImageView
         android:id="@+id/iv_logo"
         android:layout_width="@dimen/dp_110"
         android:layout_height="@dimen/dp_110"

@@ -27,7 +27,7 @@ class LockerClassifyViewModel : LockerViewModel() {
 //                LitePal.saveAll(result)
 //                tagList.value = result
             },
-            local = {
+            then = {
                 tagList.value = LitePal.findAll(PrivacyTag::class.java)
             }
         )
@@ -39,7 +39,7 @@ class LockerClassifyViewModel : LockerViewModel() {
             block = {
 
             },
-            local = {
+            then = {
                 val result = privacyTag.save()
                 if (result) {
                     tagAddMsg.value = "保存成功！"
@@ -56,7 +56,7 @@ class LockerClassifyViewModel : LockerViewModel() {
             block = {
 
             },
-            local = {
+            then = {
                 val result = LitePal.delete(PrivacyTag::class.java, privacyTagId.toLong())
                 if (result > 0) {
                     tagDeleteMsg.value = "删除成功！" + result
@@ -73,7 +73,7 @@ class LockerClassifyViewModel : LockerViewModel() {
             block = {
 
             },
-            local = {
+            then = {
                 val result = privacyTag.update(privacyTag.id.toLong())
                 if (result > 0) {
                     tagUpdateMsg.value = "保存成功！" + result
@@ -95,7 +95,7 @@ class LockerClassifyViewModel : LockerViewModel() {
             block = {
 
             },
-            local = {
+            then = {
                 folderList.value = LitePal.findAll(PrivacyFolder::class.java)
             }
         )
@@ -107,7 +107,7 @@ class LockerClassifyViewModel : LockerViewModel() {
             block = {
 
             },
-            local = {
+            then = {
                 val result = privacyFolder.save()
                 if (result) {
                     folderAddMsg.value = "操作成功！" + result
@@ -124,7 +124,7 @@ class LockerClassifyViewModel : LockerViewModel() {
             block = {
 
             },
-            local = {
+            then = {
                 val result = LitePal.delete(PrivacyFolder::class.java, privacyFolderId.toLong())
                 if (result > 0) {
                     folderDeleteMsg.value = "操作成功！" + result
@@ -141,7 +141,7 @@ class LockerClassifyViewModel : LockerViewModel() {
             block = {
 
             },
-            local = {
+            then = {
                 val result = privacyFolder.update(privacyFolder.id.toLong())
                 if (result > 0) {
                     folderUpdateMsg.value = "操作成功！" + result
@@ -158,7 +158,7 @@ class LockerClassifyViewModel : LockerViewModel() {
             block = {
 
             },
-            local = {
+            then = {
                 val result = mutableListOf<Pair<String, MutableList<PrivacySimpleInfo>>>()
                 val passGroup = mutableListOf<PrivacySimpleInfo>()
                 val cardGroup = mutableListOf<PrivacySimpleInfo>()

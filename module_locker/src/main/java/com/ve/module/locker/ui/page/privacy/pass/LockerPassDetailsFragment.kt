@@ -12,7 +12,7 @@ import com.ve.module.locker.common.event.RefreshDataEvent
 import com.ve.module.locker.databinding.LockerFragmentDetailsPassBinding
 import com.ve.module.locker.respository.database.entity.PrivacyPass
 import com.ve.module.locker.ui.page.container.LockerContainerActivity
-import com.ve.module.locker.ui.page.privacy.EditType
+import com.ve.module.locker.common.enums.EditTypeEnum
 import com.ve.module.locker.ui.viewmodel.LockerPrivacyPassViewModel
 import com.ve.module.locker.utils.AndroidUtil
 import com.ve.module.locker.utils.StickUtils
@@ -46,9 +46,9 @@ class LockerPassDetailsFragment :
     override fun initView(savedInstanceState: Bundle?) {
 
         mPrivacyInfo = arguments?.getSerializable(PRIVACY_DATA_KEY) as PrivacyPass
-        LogUtil.msg(mPrivacyInfo.toString())
-        LogUtil.msg(mPrivacyInfo!!.getPrivacyTags().toString())
-        LogUtil.msg(mPrivacyInfo!!.getPrivacyFolder().toString())
+//        LogUtil.msg(mPrivacyInfo.toString())
+//        LogUtil.msg(mPrivacyInfo!!.getPrivacyTags().toString())
+//        LogUtil.msg(mPrivacyInfo!!.getPrivacyFolder().toString())
 
         if (mPrivacyInfo != null) {
             showPrivacyInfo(mPrivacyInfo!!)
@@ -88,7 +88,7 @@ class LockerPassDetailsFragment :
              */
             R.id.btn_edit -> {
                 val bundle = Bundle()
-                bundle.putInt(LockerPassEditFragment.FRAGMENT_TYPE_KEY, EditType.EDIT_TAG_TYPE)
+                bundle.putInt(LockerPassEditFragment.FRAGMENT_TYPE_KEY, EditTypeEnum.EDIT_TAG_TYPE)
                 bundle.putSerializable(LockerPassEditFragment.FRAGMENT_DATA_KEY, mPrivacyInfo)
                 LockerContainerActivity.start(
                     mContext,

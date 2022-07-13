@@ -14,5 +14,7 @@ android {
 
 dependencies {
 
-
+    //引用appliication 模块的资源，如color
+    api project(':lib_common')
+    implementation rootProject.ext.libARouter
 }

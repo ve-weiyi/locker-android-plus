@@ -3,7 +3,7 @@ package com.ve.lib.common.utils
 
 import android.graphics.Color
 import androidx.preference.PreferenceManager
-import com.ve.lib.common.vutils.AppContextUtils
+import com.ve.lib.common.vutils.AppContextUtil
 
 
 /**
@@ -11,7 +11,7 @@ import com.ve.lib.common.vutils.AppContextUtils
  */
 object SettingUtil {
 
-    private val setting = PreferenceManager.getDefaultSharedPreferences(AppContextUtils.mContext)
+    private val setting = PreferenceManager.getDefaultSharedPreferences(AppContextUtil.mContext)
 
     /**
      * 获取是否开启无图模式
@@ -32,7 +32,7 @@ object SettingUtil {
      * 获取主题颜色
      */
     fun getColor(): Int {
-        val defaultColor = AppContextUtils.mContext.resources.getColor(com.ve.lib.application.R.color.colorPrimary)
+        val defaultColor = AppContextUtil.mContext.resources.getColor(com.ve.lib.application.R.color.colorPrimary)
         val color = setting.getInt("color", defaultColor)
         return if (color != 0 && Color.alpha(color) != 255) {
             defaultColor

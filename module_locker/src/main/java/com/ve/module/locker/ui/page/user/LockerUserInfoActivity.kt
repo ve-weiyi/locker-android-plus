@@ -5,7 +5,7 @@ import com.ve.lib.common.base.view.vm.BaseActivity
 import com.ve.lib.common.utils.ImageLoader
 import com.ve.lib.common.vutils.LogUtil
 import com.ve.lib.common.vutils.SpUtil
-import com.ve.module.locker.common.config.SettingConstant
+import com.ve.module.locker.common.config.LockerSpKey
 import com.ve.module.locker.databinding.LockerActivityUserinfoBinding
 import com.ve.module.locker.respository.http.bean.LoginVO
 
@@ -21,7 +21,7 @@ class LockerUserInfoActivity:BaseActivity<LockerActivityUserinfoBinding>() {
 
     override fun initialize(saveInstanceState: Bundle?) {
         initToolbar(mBinding.extToolbar.toolbar,"账号资料")
-        val userinfo=SpUtil.getValue(SettingConstant.SP_KEY_LOGIN_DATA_KEY,LoginVO())
+        val userinfo= SpUtil.getValue(LockerSpKey.SP_KEY_LOGIN_DATA_KEY, LoginVO::class.java)
         LogUtil.msg(userinfo)
         if(!userinfo.accessToken.isEmpty()){
             showUserInfo(userinfo)

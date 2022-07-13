@@ -10,8 +10,6 @@ object AppConfig {
 
     const val IS_LOGIN = "isLogin"
 
-    const val COOKIE = "cookie"
-
     const val vePassName = "ve-weiyi"
     const val vePassWord = "waz791422171"
 

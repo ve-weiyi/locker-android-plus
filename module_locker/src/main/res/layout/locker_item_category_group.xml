@@ -10,7 +10,7 @@
     <TextView
             android:layout_gravity="center"
             android:id="@+id/tv_header"
-            style="@style/tv_title_normal"
+            style="@style/tv_title_normal_primary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingVertical="@dimen/dp_8"

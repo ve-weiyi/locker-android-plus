@@ -57,7 +57,7 @@ open class BaseViewModel : ViewModel(), LifecycleObserver {
      */
     protected fun launch(
         block: suspend CoroutineScope.() -> Unit,
-        local: (suspend CoroutineScope.() -> Unit)? = null,
+        then: (suspend CoroutineScope.() -> Unit)? = null,
         error: (suspend (Exception) -> Unit)? = null,
         cancel: (suspend (Exception) -> Unit)? = null,
         showErrorToast: Boolean = true
@@ -65,13 +65,7 @@ open class BaseViewModel : ViewModel(), LifecycleObserver {
         return viewModelScope.launch {
             try {
                 //apiCall,返回BaseResponse
-                if (NetWorkUtil.isConnected()) {
-                    block.invoke(this)
-                }else{
-                    if(local==null){
-                        throw ApiException(404,"请检查当前网络状态再重试！")
-                    }
-                }
+                block.invoke(this)
             } catch (e: Exception) {
                 //处理错误
                 when (e) {
@@ -83,8 +77,8 @@ open class BaseViewModel : ViewModel(), LifecycleObserver {
                         error?.invoke(e)
                     }
                 }
-            }finally {
-                local?.invoke(this)
+            } finally {
+                then?.invoke(this)
             }
         }
     }

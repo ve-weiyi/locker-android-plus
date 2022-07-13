@@ -4,7 +4,7 @@
         android:layout_width="48dp"
         android:layout_height="48dp">
 
-    <com.ve.lib.common.view.widget.view.CircleView
+    <com.ve.lib.common.widget.view.CircleView
             android:id="@+id/iv_preview"
             android:layout_width="44dp"
             android:layout_height="44dp"

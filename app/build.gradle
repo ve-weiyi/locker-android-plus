@@ -17,4 +17,5 @@ dependencies {
 
     implementation project(':lib_application')
     implementation project(':module_locker')
+    implementation project(':module_android')
 }

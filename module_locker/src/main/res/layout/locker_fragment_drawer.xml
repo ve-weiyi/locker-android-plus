@@ -100,7 +100,7 @@
                     android:background="@drawable/bg_round_white_8dp"
                     android:padding="@dimen/dp_5">
 
-                <com.ve.lib.common.view.widget.view.VerticalItemView
+                <com.ve.lib.common.widget.view.VerticalItemView
                         android:id="@+id/icon_folder"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -120,7 +120,7 @@
                         app:tipTextColor="@color/white"
                         app:tipTextSize="7sp" />
 
-                <com.ve.lib.common.view.widget.view.VerticalItemView
+                <com.ve.lib.common.widget.view.VerticalItemView
                         android:id="@+id/icon_tag"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -156,7 +156,7 @@
                         android:orientation="vertical"
                         android:background="@drawable/bg_round_white_8dp">
 
-                    <com.ve.lib.common.view.widget.view.HorizontalItemView
+                    <com.ve.lib.common.widget.view.HorizontalItemView
                             android:id="@+id/action_today_weather"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -179,7 +179,7 @@
                             app:tileText="今日天气" />
 
 
-                    <com.ve.lib.common.view.widget.view.HorizontalItemView
+                    <com.ve.lib.common.widget.view.HorizontalItemView
                             android:id="@+id/action_night_model"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -191,7 +191,7 @@
                             app:tileText="夜间模式" />
 
 
-                    <com.ve.lib.common.view.widget.view.HorizontalItemView
+                    <com.ve.lib.common.widget.view.HorizontalItemView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/action_share"
@@ -202,7 +202,7 @@
                             app:paddingRight="30dp"
                             app:tileText="分享应用" />
 
-                    <com.ve.lib.common.view.widget.view.HorizontalItemView
+                    <com.ve.lib.common.widget.view.HorizontalItemView
                             android:id="@+id/action_feedback"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -213,7 +213,7 @@
                             app:paddingRight="30dp"
                             app:tileText="意见反馈" />
 
-                    <com.ve.lib.common.view.widget.view.HorizontalItemView
+                    <com.ve.lib.common.widget.view.HorizontalItemView
                             android:id="@+id/action_check_update_view"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -224,7 +224,7 @@
                             app:paddingRight="30dp"
                             app:tileText="检查更新" />
 
-                    <com.ve.lib.common.view.widget.view.HorizontalItemView
+                    <com.ve.lib.common.widget.view.HorizontalItemView
                             android:id="@+id/action_system_setting"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -260,7 +260,7 @@
                             android:background="#dddddd" />
 
 
-                    <com.ve.lib.common.view.widget.view.HorizontalItemView
+                    <com.ve.lib.common.widget.view.HorizontalItemView
                             android:id="@+id/action_blog"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -271,7 +271,7 @@
                             app:paddingRight="30dp"
                             app:tileText="我的博客" />
 
-                    <com.ve.lib.common.view.widget.view.HorizontalItemView
+                    <com.ve.lib.common.widget.view.HorizontalItemView
                             android:id="@+id/action_github"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -282,7 +282,7 @@
                             app:paddingRight="30dp"
                             app:tileText="GitHub" />
 
-                    <com.ve.lib.common.view.widget.view.HorizontalItemView
+                    <com.ve.lib.common.widget.view.HorizontalItemView
                             android:id="@+id/action_about"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -293,7 +293,7 @@
                             app:paddingRight="30dp"
                             app:tileText="关于" />
 
-                    <com.ve.lib.common.view.widget.view.HorizontalItemView
+                    <com.ve.lib.common.widget.view.HorizontalItemView
 
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -304,7 +304,7 @@
                             app:paddingRight="30dp"
                             app:tileText="关于" />
 
-                    <com.ve.lib.common.view.widget.view.HorizontalItemView
+                    <com.ve.lib.common.widget.view.HorizontalItemView
 
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -315,7 +315,7 @@
                             app:paddingRight="30dp"
                             app:tileText="关于" />
 
-                    <com.ve.lib.common.view.widget.view.HorizontalItemView
+                    <com.ve.lib.common.widget.view.HorizontalItemView
 
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

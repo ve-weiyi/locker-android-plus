@@ -12,9 +12,9 @@ import com.ve.module.locker.databinding.LockerFragmentListCategoryBinding
 import com.ve.module.locker.respository.database.entity.PrivacyFolder
 import com.ve.module.locker.ui.adapter.FolderListAdapter
 import com.ve.module.locker.ui.page.container.LockerContainerActivity
-import com.ve.module.locker.ui.page.privacy.EditType
+import com.ve.module.locker.common.enums.EditTypeEnum
 import com.ve.module.locker.ui.viewmodel.LockerClassifyViewModel
-import com.ve.module.locker.ui.view.TagSwipeItemLayout
+import com.ve.lib.common.widget.layout.SwipeItemLayout
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
@@ -61,7 +61,7 @@ class LockerFolderListFragment :
 
     override fun initListener() {
         super.initListener()
-        mRecyclerView!!.addOnItemTouchListener(TagSwipeItemLayout.OnSwipeItemTouchListener(activity))
+        mRecyclerView!!.addOnItemTouchListener(SwipeItemLayout.OnSwipeItemTouchListener(activity))
         mBinding.floatingActionBtn.setOnclickNoRepeatListener  {
             addPrivacyFolder()
         }
@@ -81,7 +81,7 @@ class LockerFolderListFragment :
         when (view.id) {
             R.id.item_layout_content -> {
                 val bundle = Bundle()
-                bundle.putInt(LockerFolderDetailsFragment.FRAGMENT_TYPE_KEY, EditType.SEE_TAG_TYPE)
+                bundle.putInt(LockerFolderDetailsFragment.FRAGMENT_TYPE_KEY, EditTypeEnum.SEE_TAG_TYPE)
                 bundle.putSerializable(LockerFolderDetailsFragment.FRAGMENT_DATA_KEY, item)
                 LockerContainerActivity.start(mContext, LockerFolderDetailsFragment::class.java.name, "查看文件夹 "+item.folderName,bundle )
 
@@ -89,7 +89,7 @@ class LockerFolderListFragment :
             }
             R.id.item_btn_edit -> {
                 val bundle = Bundle()
-                bundle.putInt(LockerFolderDetailsFragment.FRAGMENT_TYPE_KEY, EditType.EDIT_TAG_TYPE)
+                bundle.putInt(LockerFolderDetailsFragment.FRAGMENT_TYPE_KEY, EditTypeEnum.EDIT_TAG_TYPE)
                 bundle.putSerializable(LockerFolderDetailsFragment.FRAGMENT_DATA_KEY, item)
                 LockerContainerActivity.start(mContext, LockerFolderDetailsFragment::class.java.name, "编辑文件夹 "+item.folderName, bundle)
                 showMsg("编辑")
@@ -103,7 +103,7 @@ class LockerFolderListFragment :
 
     private fun addPrivacyFolder() {
         val bundle = Bundle()
-        bundle.putInt(LockerFolderDetailsFragment.FRAGMENT_TYPE_KEY, EditType.ADD_TAG_TYPE)
+        bundle.putInt(LockerFolderDetailsFragment.FRAGMENT_TYPE_KEY, EditTypeEnum.ADD_TAG_TYPE)
         LockerContainerActivity.start(mContext, LockerFolderDetailsFragment::class.java.name, "添加文件夹",bundle)
         showMsg("添加")
     }

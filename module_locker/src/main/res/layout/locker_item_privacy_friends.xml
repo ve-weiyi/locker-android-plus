@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<com.ve.module.locker.ui.view.TagSwipeItemLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.ve.lib.common.widget.layout.SwipeItemLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:background="@drawable/bg_round_pass">
 
         <com.google.android.material.imageview.ShapeableImageView
-                app:shapeAppearanceOverlay="@style/roundImageView"
+                app:shapeAppearanceOverlay="@style/RoundImageStyle"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -54,7 +54,7 @@
                 android:singleLine="true"
                 tools:text="昵称"
                 tools:textStyle="bold"
-                style="@style/tv_title_normal" />
+                style="@style/tv_title_normal_primary" />
 
         <ImageView
                 android:id="@+id/iv_friends_sex"
@@ -277,4 +277,4 @@
 
     </LinearLayout>
 
-</com.ve.module.locker.ui.view.TagSwipeItemLayout>
+</com.ve.lib.common.widget.layout.SwipeItemLayout>

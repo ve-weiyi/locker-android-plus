@@ -16,14 +16,14 @@ import com.ve.lib.common.base.view.vm.BaseVmActivity
 import com.ve.lib.common.ext.setOnclickNoRepeat
 import com.ve.lib.common.utils.DialogUtil
 import com.ve.lib.common.utils.PreferenceUtil
-import com.ve.lib.common.view.widget.passwordGenerator.PasswordGeneratorDialog
+import com.ve.lib.common.widget.passwordGenerator.PasswordGeneratorDialog
 import com.ve.lib.common.vutils.LogUtil
 import com.ve.lib.common.vutils.SpUtil
 import com.ve.module.locker.LockerMainActivity
 import com.ve.module.locker.R
 import com.ve.module.locker.common.config.LockerConstant
+import com.ve.module.locker.common.config.LockerSpKey
 import com.ve.module.locker.common.config.LockerLifecycle
-import com.ve.module.locker.common.config.SettingConstant
 
 import com.ve.module.locker.databinding.LockerActivityLoginBinding
 import com.ve.module.locker.ui.viewmodel.LockerLoginViewModel
@@ -40,7 +40,7 @@ class LockerLoginActivity: BaseVmActivity<LockerActivityLoginBinding, LockerLogi
         initToolbar(mBinding.extToolbar.toolbar, "登录", true)
 
         setText()
-        if(SettingConstant.isDebug){
+        if(LockerSpKey.isDebug){
             et_username.setText(LockerConstant.username)
             et_password.setText(LockerConstant.password)
         }
@@ -57,15 +57,15 @@ class LockerLoginActivity: BaseVmActivity<LockerActivityLoginBinding, LockerLogi
     /**
      * local username 从内存中读取
      */
-    private var user: String by PreferenceUtil(LockerConstant.USERNAME_KEY, "")
+    private var user: String by PreferenceUtil(LockerSpKey.USERNAME_KEY, "")
     /**
      * local password
      */
-    private var pwd: String by PreferenceUtil(LockerConstant.PASSWORD_KEY, "")
+    private var pwd: String by PreferenceUtil(LockerSpKey.PASSWORD_KEY, "")
     /**
      * token
      */
-    private var token: String by PreferenceUtil(LockerConstant.TOKEN_KEY, "")
+    private var token: String by PreferenceUtil(LockerSpKey.TOKEN_KEY, "")
 
 
     private val et_username by lazy { mBinding.etUsername }
@@ -97,9 +97,9 @@ class LockerLoginActivity: BaseVmActivity<LockerActivityLoginBinding, LockerLogi
 
         mViewModel.loginData.observe(this) {
             LockerLifecycle.loginData.value=it
-            SpUtil.setValue(LockerConstant.TOKEN_KEY,it.accessToken)
+            SpUtil.setValue(LockerSpKey.TOKEN_KEY, it.accessToken)
             LogUtil.msg(mViewName+"\n--${it.accessToken}\n--"+ SpUtil.getValue(
-                LockerConstant.TOKEN_KEY,"---")!!)
+                LockerSpKey.TOKEN_KEY,"---")!!)
             if(it!=null) {
                 loginSuccess()
             }else{

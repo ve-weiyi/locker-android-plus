@@ -13,7 +13,7 @@ import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.ve.lib.common.R
 import com.ve.lib.common.exception.BizException
-import com.ve.lib.common.view.widget.SpaceItemDecoration
+import com.ve.lib.common.widget.SpaceItemDecoration
 import com.ve.lib.common.vutils.LogUtil
 import com.ve.lib.common.vutils.ToastUtil
 
@@ -378,8 +378,8 @@ open class ListViewManager<LD> {
      * @param data List<T>  数据集合
      */
     open fun showAtAdapter(isSetNewData: Boolean, data: MutableList<LD>?) {
-        LogUtil.e("isNewData:$isSetNewData ")
-        LogUtil.e("data:$data ")
+//        LogUtil.e("isNewData:$isSetNewData ")
+//        LogUtil.e("data:$data ")
 
         if (mRecyclerView == null) {
             throw BizException(" mRecyclerView 未初始化，无法执行 showAtAdapter")
@@ -399,7 +399,7 @@ open class ListViewManager<LD> {
                 }
             }
 
-            LogUtil.msg("加载更多 " + mConfig.enableLoadMore)
+//            LogUtil.msg("加载更多 " + mConfig.enableLoadMore)
 
             if (mConfig.enableLoadMore) {
 

@@ -35,11 +35,26 @@
         <item name="android:backgroundDimEnabled">true</item>
     </style>
 
-    <style name="roundImageView">
+    <!-- 圆角图片 -->
+    <style name="CornerImageStyle">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">5dp</item>
+    </style>
+
+    <!-- 圆形图片 -->
+    <style name="RoundImageStyle">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
         <item name="android:layout_width">50dp</item>
         <item name="android:layout_height">50dp</item>
+    </style>
+
+    <!--实现BottomSheetDialog圆角效果-->
+    <style name="BottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/bottomSheetStyleWrapper</item>
+    </style>
+    <style name="bottomSheetStyleWrapper" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
     </style>
 
 </resources>

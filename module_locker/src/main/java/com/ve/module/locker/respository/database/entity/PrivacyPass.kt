@@ -2,7 +2,7 @@ package com.ve.module.locker.respository.database.entity
 
 import com.chad.library.adapter.base.entity.SectionEntity
 import com.ve.lib.common.utils.CommonUtil
-import com.ve.lib.common.vutils.AppContextUtils
+import com.ve.lib.common.vutils.AppContextUtil
 import com.ve.lib.common.vutils.TimeUtil
 import com.ve.module.locker.LockerApplication
 import com.ve.module.locker.respository.database.PrivacyEnum
@@ -88,7 +88,7 @@ data class PrivacyPass(
     }
 
     fun getAppInfo(): AndroidUtil.AppInfo? {
-        return AndroidUtil.getAppInfo(AppContextUtils.mContext,appPackageName)
+        return AndroidUtil.getAppInfo(AppContextUtil.mContext,appPackageName)
     }
     /**
      * 删除操作，先删除tagLinks

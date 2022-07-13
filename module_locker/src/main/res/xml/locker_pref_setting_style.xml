@@ -8,7 +8,7 @@
             app:iconSpaceReserved="false"
             android:title="个性设置">
 
-        <com.ve.lib.common.view.widget.preference.IconPreference
+        <com.ve.lib.common.widget.preference.IconPreference
                 android:key="@string/sp_key_theme_color"
                 android:layout="@layout/custom_preference_layout"
                 android:summary="@string/choose_theme_color_summary"

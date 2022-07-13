@@ -116,7 +116,7 @@ class PrivacyInfoPassAdapter :
 
 
     override fun convertHeader(helper: BaseViewHolder, item: PrivacyPass) {
-        LogUtil.msg("head " + item.headerName)
+//        LogUtil.msg("head " + item.headerName)
         helper.setText(com.ve.lib.common.R.id.tv_header, item.headerName)
         helper.setEnabled(com.ve.lib.common.R.id.tv_header, false)
     }
