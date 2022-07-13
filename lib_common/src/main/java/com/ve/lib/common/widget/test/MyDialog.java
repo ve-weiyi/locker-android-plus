@@ -12,7 +12,7 @@ import com.ve.lib.common.R;
 /**
  * @Author weiyi
  * @Date 2022/4/21
- * @Description current project locker-android
+ * @Description current project lockit-android
  */
 public class MyDialog extends Dialog {
 

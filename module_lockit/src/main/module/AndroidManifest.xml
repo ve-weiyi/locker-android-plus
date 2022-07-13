@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        package="com.ve.module.lockit">
+
+    <permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE"/>
+
+    <application
+            android:name=".LockitApplication"
+            android:allowBackup="true"
+            android:icon="@mipmap/lockit_ic_launcher"
+            android:label="@string/lockit_app_name"
+            android:networkSecurityConfig="@xml/network_security_config"
+            android:roundIcon="@mipmap/lockit_ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/AppTheme"
+            tools:replace="android:theme"
+            android:usesCleartextTraffic="true"
+            tools:targetApi="n">
+        <activity
+                android:name=".ui.page.auth.LockitAuthActivity"
+                android:exported="false"
+                />
+
+        <activity
+                android:name=".ui.page.splash.LockitSplashActivity"
+                android:exported="true"
+
+                >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+
+        <activity
+                android:name=".LockitMainActivity"
+                android:launchMode="singleTask"
+                android:exported="true"
+                >
+
+        </activity>
+        <activity android:name=".ui.page.user.LockitUserInfoActivity"/>
+        <activity android:name=".ui.page.auth.LockitLoginActivity" />
+        <activity android:name=".ui.page.auth.LockitRegisterActivity" />
+        <activity android:name=".ui.page.about.LockitAboutActivity" />
+        <activity android:name=".ui.page.feedback.LockitFeedBackActivity" />
+        <activity android:name=".ui.page.container.LockitContainerActivity" />
+        <activity android:name=".ui.page.container.LockitWebContainerActivity" />
+        <activity android:name=".ui.page.setting.LockitSettingActivity" />
+        <activity android:name=".ui.page.privacy.LockitGroupActivity"/>
+
+        <service
+                android:name=".common.service.LockitAutoFillService"
+                android:label="lockit自动填充"
+                android:permission="android.permission.BIND_AUTOFILL_SERVICE"
+                android:exported="true">
+            <intent-filter>
+                <action android:name="android.service.autofill.AutofillService" />
+            </intent-filter>
+            <meta-data
+                    android:name="android.autofill"
+                    android:resource="@xml/lockit_service_configuration" />
+        </service>
+    </application>
+
+</manifest>

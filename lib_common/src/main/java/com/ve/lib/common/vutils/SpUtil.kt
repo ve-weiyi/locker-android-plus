@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 import com.alibaba.fastjson.JSONObject
+import com.ve.lib.common.exception.BizException
 import java.io.*
 import java.lang.Exception
 
@@ -104,8 +105,6 @@ object SpUtil {
     }
 
 
-
-
     /**
      * 删除全部数据
      */
@@ -140,35 +139,47 @@ object SpUtil {
         return sp.all
     }
 
-
+    /**
+     * 空值会出错
+     */
     @SuppressLint("CommitPrefEdits")
-    fun <T>setValue(key: String, value :T){
+    fun <T> setValue(key: String, value: T) {
+        if (value == null) {
+//            throw BizException("value can not be null")
+            LogUtil.msg("value can not be null")
+            return
+        }
         when (value) {
             is Long -> setLong(key, value)
             is String -> setString(key, value)
             is Int -> setInt(key, value)
             is Boolean -> setBoolean(key, value)
             is Float -> setFloat(key, value)
-            else -> setString(key,JSONObject.toJSONString(value))
+            else -> setString(key, JSONObject.toJSONString(value))
         }
     }
 
     fun <T> getValue(key: String, clazz: Class<T>): T {
         try {
-            return JSONObject.parseObject(getString(key), clazz)
-        }catch (e:Exception){
+            var target = JSONObject.parseObject(getString(key), clazz)
+            if (target == null) {
+                return clazz.newInstance()
+            } else {
+                return target
+            }
+        } catch (e: Exception) {
             LogUtil.msg(e.message!!)
             LogUtil.msg(clazz.newInstance().toString())
             e.printStackTrace()
             return clazz.newInstance()
-        }finally {
+        } finally {
 
         }
     }
 
     @Suppress("UNCHECKED_CAST")
-    fun <T>getValue(key: String, defaultValue: T): T {
-        try{
+    fun <T> getValue(key: String, defaultValue: T): T {
+        try {
             val res: Any = when (defaultValue) {
                 is Long -> getLong(key, defaultValue)
                 is String -> getString(key, defaultValue)
@@ -178,29 +189,32 @@ object SpUtil {
                 else -> getValue(key, defaultValue!!::class.java)
             }
             return res as T
-        }catch (e : Exception){
+        } catch (e: Exception) {
             LogUtil.msg(e.message!!)
             return defaultValue
-        }finally {
+        } finally {
 
         }
     }
 
-    @Deprecated("在存储时要求对象实现序列号接口，新的方法将对象保存为JSON形式存储", replaceWith = ReplaceWith("this.setObject(key,value)"))
+    @Deprecated(
+        "在存储时要求对象实现序列号接口，新的方法将对象保存为JSON形式存储",
+        replaceWith = ReplaceWith("this.setObject(key,value)")
+    )
     @SuppressLint("CommitPrefEdits")
-    fun <T> setSerialize(key: String, value :T ) {
-        putSharedPreferences(key,value)
+    fun <T> setSerialize(key: String, value: T) {
+        putSharedPreferences(key, value)
     }
 
 
     @Deprecated("已废弃", replaceWith = ReplaceWith("this.getObject(key,defaultValue::class.java)"))
     fun <T> getSerialize(key: String, defaultValue: T): T {
-        try{
-            return getSharedPreferences(key,defaultValue)
-        }catch (e : Exception){
+        try {
+            return getSharedPreferences(key, defaultValue)
+        } catch (e: Exception) {
             LogUtil.msg(e.message!!)
             return defaultValue
-        }finally {
+        } finally {
 
         }
     }

@@ -10,7 +10,7 @@ import com.ve.lib.common.R
 /**
  * @Author  weiyi
  * @Date 2022/4/21
- * @Description  current project locker-android
+ * @Description  current project lockit-android
  */
 class PasswordGeneratorDialog : Dialog {
     companion object {

@@ -10,7 +10,7 @@ import com.ve.lib.common.R
 /**
  * @Author weiyi
  * @Date 2022/4/13
- * @Description current project locker-android
+ * @Description current project lockit-android
  * Android自定义控件——自定义Preference
  * https://www.cnblogs.com/gmm283029/p/4498933.html
  */

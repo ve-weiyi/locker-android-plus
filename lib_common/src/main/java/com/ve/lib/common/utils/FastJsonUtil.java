@@ -3,7 +3,7 @@ package com.ve.lib.common.utils;
 /**
  * @Author weiyi
  * @Date 2022/7/13
- * @Description current project locker-android
+ * @Description current project lockit-android
  * Android fastjson封装工具
  * https://www.jianshu.com/p/52ba5efb031f
  */

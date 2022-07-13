@@ -8,6 +8,7 @@ import com.google.gson.Gson
 import com.google.gson.JsonParseException
 import com.ve.lib.common.network.exception.ApiException
 import com.ve.lib.common.network.util.NetWorkUtil
+import com.ve.lib.common.vutils.LogUtil
 import com.ve.lib.common.vutils.ToastUtil
 import kotlinx.coroutines.*
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -63,6 +64,7 @@ open class BaseViewModel : ViewModel(), LifecycleObserver {
         showErrorToast: Boolean = true
     ): Job {
         return viewModelScope.launch {
+            block.invoke(this)
             try {
                 //apiCall,返回BaseResponse
                 block.invoke(this)
@@ -137,6 +139,7 @@ open class BaseViewModel : ViewModel(), LifecycleObserver {
      * @param showErrorToast 是否显示错误吐司
      */
     private fun onError(e: Exception, showErrorToast: Boolean) {
+        e.message?.let { LogUtil.msg(it) }
         when (e) {
             is ApiException -> {
                 when (e.errorCode) {

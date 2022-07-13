@@ -20,6 +20,8 @@ public class BizException extends RuntimeException {
      */
     private String message ="系统错误";
 
+
+
     public BizException(String message) {
         this.message = message;
     }

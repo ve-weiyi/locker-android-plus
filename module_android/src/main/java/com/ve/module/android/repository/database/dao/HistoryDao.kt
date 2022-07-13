@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.distinctUntilChanged
 /**
  * @Author  weiyi
  * @Date 2022/4/14
- * @Description  current project locker-android
+ * @Description  current project lockit-android
  * 用于展示 Room 的一些操作
  *
  * 有小伙伴说看不懂 LiveData、Flow、Channel，跟我走

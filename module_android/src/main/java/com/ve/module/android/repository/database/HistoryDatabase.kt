@@ -10,7 +10,7 @@ import com.ve.module.android.repository.database.entity.SearchHistory
 /**
  * @Author  weiyi
  * @Date 2022/4/14
- * @Description  current project locker-android
+ * @Description  current project lockit-android
  *
  * ！！！ 使用room数据库：
  * 不这么写apt不会工作生成_Impl类，导致运行时找不到此类。

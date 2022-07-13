@@ -9,7 +9,7 @@ import kotlinx.coroutines.withContext
 /**
  * @Author  weiyi
  * @Date 2022/4/13
- * @Description  current project locker-android
+ * @Description  current project lockit-android
  *
  * Repository 获取网络数据
  * Dao 处理本地数据库数据

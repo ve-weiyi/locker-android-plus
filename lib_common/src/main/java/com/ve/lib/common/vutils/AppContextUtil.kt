@@ -36,21 +36,11 @@ object AppContextUtil {
 
     private var yLoadingDialog: YLoadingDialog? = null
 
-    @Deprecated("简化调用，使用init(app)即可", ReplaceWith("YUtils.init(app)"))
-    fun initialize(app: Application) {
-        mContext = app
-        app.registerActivityLifecycleCallbacks(ActivityUtil.activityLifecycleCallbacks)
-    }
-
     fun init(app: Application) {
         mContext = app
         app.registerActivityLifecycleCallbacks(ActivityUtil.activityLifecycleCallbacks)
     }
 
-    @Deprecated("简化调用，使用getApp()即可", ReplaceWith("YUtils.getApp()"))
-    fun getApplication(): Application {
-        return mContext
-    }
 
     fun getApp(): Application {
         if (this::mContext.isInitialized) {
@@ -60,29 +50,6 @@ object AppContextUtil {
         }
     }
 
-    fun getAppContext(): Context {
-        return getApp().applicationContext
-    }
-
-    /**
-     * 获取屏幕宽度
-     */
-    @Deprecated("拆分处理，使用DisplayUtil.getScreenWidth()即可", ReplaceWith("DisplayUtil.getScreenWidth()"))
-    fun getScreenWidth(): Int {
-        val dm = DisplayMetrics()
-        ActivityUtil.currentActivity!!.windowManager.defaultDisplay.getMetrics(dm)
-        return dm.widthPixels
-    }
-
-    /**
-     * 获取屏幕高度
-     */
-    @Deprecated("拆分处理，使用DisplayUtil.getScreenHeight()即可", ReplaceWith("DisplayUtil.getScreenHeight()"))
-    fun getScreenHeight(): Int {
-        val dm = DisplayMetrics()
-        ActivityUtil.currentActivity!!.windowManager.defaultDisplay.getMetrics(dm)
-        return dm.heightPixels
-    }
 
     /**
      * Loading加载框

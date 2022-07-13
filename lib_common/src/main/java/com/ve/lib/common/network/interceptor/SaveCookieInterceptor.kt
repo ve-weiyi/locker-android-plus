@@ -9,7 +9,7 @@ import java.io.IOException
 /**
  * @Author  weiyi
  * @Date 2022/7/13
- * @Description  current project locker-android
+ * @Description  current project lockit-android
  * 从响应头里拿到cookie并存起来，后面的每次请求再添加到请求头里
  */
 class SaveCookieInterceptor(

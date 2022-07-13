@@ -1,4 +1,4 @@
-package com.ve.locker
+package com.ve.lockit
 
 import org.junit.Test
 

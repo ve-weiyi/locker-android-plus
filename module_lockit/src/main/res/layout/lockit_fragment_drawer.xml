@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/windowColorBackground"
+        android:padding="@dimen/dp_10">
+
+    <androidx.core.widget.NestedScrollView
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/operator_view"
+            android:id="@+id/login_scrollview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+
+            android:layout_marginBottom="@dimen/dp_8"
+            android:scrollbars="none">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <RelativeLayout
+                    android:foreground="?attr/selectableItemBackground"
+                    android:background="@drawable/bg_round_white_8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/dp_5">
+
+                <!--登录用户信息-->
+                <include
+                        android:id="@+id/layout_userinfo"
+                        layout="@layout/lockit_layout_userinfo"
+                        android:visibility="gone" />
+
+                <!--用户未登录-->
+                <LinearLayout
+                        android:id="@+id/layout_un_login"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingVertical="@dimen/dp_15"
+                        android:orientation="vertical"
+                        android:visibility="visible">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/lockit_login_tip"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="13sp" />
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:gravity="center"
+                            android:text="@string/lockit_login_tip_2"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="13sp" />
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:gravity="center"
+                            android:text="(若您使用离线模式，lockit将不会同步您的信息)"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="13sp" />
+
+                    <TextView
+                            android:id="@+id/lockit_login_now"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/bg_home_login"
+                            android:paddingStart="40dp"
+                            android:paddingTop="5dp"
+                            android:paddingEnd="40dp"
+                            android:paddingBottom="5dp"
+
+                            android:text="@string/lockit_login"
+                            android:textColor="@color/white"
+                            android:textSize="15sp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+
+            <!--图标-->
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginVertical="10dp"
+                    android:background="@drawable/bg_round_white_8dp"
+                    android:padding="@dimen/dp_5">
+
+                <com.ve.lib.common.widget.view.VerticalItemView
+                        android:id="@+id/icon_folder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:icon="@drawable/folder"
+                        app:iconHeight="32dp"
+                        app:iconWidth="32dp"
+                        app:infoText="文件夹管理"
+                        app:infoTextColor="@color/colorPrimary"
+                        app:infoTextMarginTop="5dp"
+                        app:infoTextSize="11sp"
+                        app:tipBg="@drawable/bg_circle_red"
+                        app:tipPaddingRight="2dp"
+                        app:tipPaddingTop="2dp"
+                        app:tipText="1"
+
+                        app:tipTextColor="@color/white"
+                        app:tipTextSize="7sp" />
+
+                <com.ve.lib.common.widget.view.VerticalItemView
+                        android:id="@+id/icon_tag"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        app:icon="@drawable/tags"
+                        app:iconHeight="32dp"
+                        app:iconWidth="32dp"
+                        app:infoText="标签管理"
+                        app:infoTextColor="@color/colorPrimary"
+                        app:infoTextMarginTop="5dp"
+                        app:infoTextSize="11sp"
+                        app:tipBg="@drawable/bg_circle_red"
+                        app:tipPaddingRight="2dp"
+                        app:tipPaddingTop="2dp"
+                        app:tipText="1"
+
+                        app:tipTextColor="@color/white"
+                        app:tipTextSize="7sp" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                <!--设置-->
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_round_white_8dp">
+
+                    <com.ve.lib.common.widget.view.HorizontalItemView
+                            android:id="@+id/action_today_weather"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:tileTextColor="@color/color_text_normal"
+                            app:hIcon="@drawable/ic_cloud"
+
+                            app:hTipTextSize="@dimen/dp_12"
+                            app:hTipTextColor="@color/light_red"
+                            app:hTipText="hot"
+                            app:hTipVisiblity="true"
+                            app:hTipPaddingLeft="@dimen/dp_8"
+
+                            app:rightText="20°C"
+                            app:rightIcon="@drawable/ic_change_skin"
+                            app:rightIconHeight="20dp"
+                            app:rightIconWidth="20dp"
+
+                            app:paddingLeft="20dp"
+                            app:paddingRight="30dp"
+                            app:tileText="今日天气" />
+
+
+                    <com.ve.lib.common.widget.view.HorizontalItemView
+                            android:id="@+id/action_night_model"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:hIcon="@drawable/ic_night_24dp"
+                            app:hTipVisiblity="false"
+                            app:tileTextColor="@color/color_text_normal"
+                            app:paddingLeft="20dp"
+                            app:paddingRight="30dp"
+                            app:tileText="夜间模式" />
+
+
+                    <com.ve.lib.common.widget.view.HorizontalItemView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/action_share"
+                            app:hIcon="@drawable/ic_baseline_share_24"
+                            app:hTipVisiblity="false"
+                            app:tileTextColor="@color/color_text_normal"
+                            app:paddingLeft="20dp"
+                            app:paddingRight="30dp"
+                            app:tileText="分享应用" />
+
+                    <com.ve.lib.common.widget.view.HorizontalItemView
+                            android:id="@+id/action_feedback"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:hIcon="@drawable/ic_about_us_white_24dp"
+                            app:tileTextColor="@color/color_text_normal"
+                            app:hTipVisiblity="false"
+                            app:paddingLeft="20dp"
+                            app:paddingRight="30dp"
+                            app:tileText="意见反馈" />
+
+                    <com.ve.lib.common.widget.view.HorizontalItemView
+                            android:id="@+id/action_check_update_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:tileTextColor="@color/color_text_normal"
+                            app:hIcon="@drawable/ic_sun"
+                            app:hTipVisiblity="false"
+                            app:paddingLeft="20dp"
+                            app:paddingRight="30dp"
+                            app:tileText="检查更新" />
+
+                    <com.ve.lib.common.widget.view.HorizontalItemView
+                            android:id="@+id/action_system_setting"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:hIcon="@drawable/ic_setting_24dp"
+                            app:tileTextColor="@color/color_text_normal"
+                            app:hTipVisiblity="false"
+                            app:paddingLeft="20dp"
+                            app:paddingRight="30dp"
+                            app:tileText="系统设置" />
+
+
+                </LinearLayout>
+
+                <!--其他-->
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:orientation="vertical"
+                        android:background="@drawable/bg_round_white_8dp">
+
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="其他"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:paddingStart="20dp" />
+
+                    <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_margin="5dp"
+                            android:background="#dddddd" />
+
+
+                    <com.ve.lib.common.widget.view.HorizontalItemView
+                            android:id="@+id/action_blog"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:hIcon="@drawable/ic_alarm"
+                            app:tileTextColor="@color/color_text_normal"
+                            app:hTipVisiblity="false"
+                            app:paddingLeft="20dp"
+                            app:paddingRight="30dp"
+                            app:tileText="我的博客" />
+
+                    <com.ve.lib.common.widget.view.HorizontalItemView
+                            android:id="@+id/action_github"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:hIcon="@drawable/ic_free_flow"
+                            app:tileTextColor="@color/color_text_normal"
+                            app:hTipVisiblity="false"
+                            app:paddingLeft="20dp"
+                            app:paddingRight="30dp"
+                            app:tileText="GitHub" />
+
+                    <com.ve.lib.common.widget.view.HorizontalItemView
+                            android:id="@+id/action_about"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:tileTextColor="@color/color_text_normal"
+                            app:hIcon="@drawable/ic_cloud"
+                            app:hTipVisiblity="false"
+                            app:paddingLeft="20dp"
+                            app:paddingRight="30dp"
+                            app:tileText="关于" />
+
+                    <com.ve.lib.common.widget.view.HorizontalItemView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:tileTextColor="@color/color_text_normal"
+                            app:hIcon="@drawable/ic_cloud"
+                            app:hTipVisiblity="false"
+                            app:paddingLeft="20dp"
+                            app:paddingRight="30dp"
+                            app:tileText="关于" />
+
+                    <com.ve.lib.common.widget.view.HorizontalItemView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:tileTextColor="@color/color_text_normal"
+                            app:hIcon="@drawable/ic_cloud"
+                            app:hTipVisiblity="false"
+                            app:paddingLeft="20dp"
+                            app:paddingRight="30dp"
+                            app:tileText="关于" />
+
+                    <com.ve.lib.common.widget.view.HorizontalItemView
+
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:tileTextColor="@color/color_text_normal"
+                            app:hIcon="@drawable/ic_cloud"
+                            app:hTipVisiblity="false"
+                            app:paddingLeft="20dp"
+                            app:paddingRight="30dp"
+                            app:tileText="关于" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <LinearLayout
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/operator_view"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bg_round_white_8dp"
+            android:orientation="horizontal">
+
+        <LinearLayout
+                android:id="@+id/exit_layout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+            <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_dialog_more" />
+
+            <TextView
+                    android:id="@+id/btn_exit_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="退出登录"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

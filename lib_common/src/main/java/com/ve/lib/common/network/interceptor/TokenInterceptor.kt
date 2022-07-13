@@ -32,8 +32,7 @@ class TokenInterceptor(
 
         token = SpUtil.getValue(spTokenKey, "Authorization is null")
 
-        LogUtil.d("tokenName $tokenName")
-        LogUtil.d("token $token")
+        LogUtil.d("$tokenName $token")
 
         builder.header(tokenName, token)
 

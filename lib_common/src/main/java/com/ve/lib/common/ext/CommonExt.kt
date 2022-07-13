@@ -1,11 +1,13 @@
 package com.ve.lib.common.ext
 
 import com.ve.lib.common.vutils.LogUtil
+import java.text.SimpleDateFormat
+import java.util.*
 
 /**
  * @Author  weiyi
  * @Date 2022/7/13
- * @Description  current project locker-android
+ * @Description  current project lockit-android
  */
 
 
@@ -21,3 +23,21 @@ fun getMethodName(deep: Int=3): String? {
     return " "+e.methodName
 }
 
+/**
+ * 格式化当前日期
+ */
+fun formatCurrentDate(): String {
+    val sdf = SimpleDateFormat("yyyy-MM-dd")
+    return sdf.format(Date())
+}
+
+/**
+ * String 转 Calendar
+ */
+fun String.stringToCalendar(): Calendar {
+    val sdf = SimpleDateFormat("yyyy-MM-dd")
+    val date = sdf.parse(this)
+    val calendar = Calendar.getInstance()
+    calendar.time = date
+    return calendar
+}

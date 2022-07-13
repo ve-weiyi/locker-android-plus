@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorBackground"
+        android:fitsSystemWindows="true">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <include
+                android:id="@+id/ext_toolbar"
+                layout="@layout/lockit_toolbar" />
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingHorizontal="40dp"
+                android:paddingTop="@dimen/dp_50"
+                >
+
+            <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_password_logo" />
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:gravity="center"
+                    android:text="登录 lockit"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_text_normal"
+                    android:textSize="@dimen/sp_20" />
+
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_6"
+                    android:gravity="center"
+                    android:text="请使用 lockit 账号登录"
+                    android:textSize="@dimen/sp_14" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginBottom="@dimen/dp_8"
+                    android:focusable="true"
+                    style="@style/InputTextLayoutStyle"
+                    android:focusableInTouchMode="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                        android:background="@drawable/shape_round_grey_tag"
+                        android:id="@+id/et_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:padding="@dimen/dp_10"
+                        android:hint="@string/username"
+                        android:inputType="textEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:layout_marginBottom="@dimen/dp_8"
+                    style="@style/InputTextLayoutStyle.Bound"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                <EditText
+
+                        android:id="@+id/et_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:padding="@dimen/dp_10"
+                        android:hint="@string/password"
+                        android:background="@drawable/shape_round_grey_tag"
+                        android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    style="@style/MenuButtonsStyle"
+                    android:layout_marginTop="@dimen/dp_24"
+                    android:layout_marginBottom="@dimen/dp_24"
+                    android:background="@drawable/btn_login_bg"
+                    android:gravity="center"
+                    android:text="@string/login"
+                    android:textColor="@color/white" />
+
+            <LinearLayout
+                    android:id="@+id/ll_agreement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn_login">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/cb_service_agreement"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:textSize="@dimen/sp_14" />
+
+                <TextView
+                        android:id="@+id/tv_service_agreement"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="已阅读并同意"
+                        android:textColor="#757575"
+                        android:textSize="@dimen/sp_14" />
+            </LinearLayout>
+
+            <TextView
+                    android:id="@+id/tv_sign_up"
+                    android:layout_marginTop="50dp"
+                    android:paddingVertical="@dimen/dp_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_24"
+                    android:gravity="right"
+                    android:text="@string/no_account"
+                    style="@style/tv_title_normal_primary"
+                    />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

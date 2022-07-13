@@ -3,7 +3,7 @@ package com.ve.lib.common.base.view.list
 /**
  * @Author  weiyi
  * @Date 2022/4/13
- * @Description  current project locker-android
+ * @Description  current project lockit-android
  * 开启拖拽、侧滑、加载更多、自动加载
  * 否则可能会崩溃
  */

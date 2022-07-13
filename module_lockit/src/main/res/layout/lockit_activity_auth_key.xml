@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        <LinearLayout
+                android:padding="@dimen/dp_30"
+                android:id="@+id/layout_auth"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="230dp"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+            <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/color_text_normal"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:text="登录lockit" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_marginTop="32dp"
+                    android:layout_marginBottom="@dimen/dp_8"
+                    android:background="@drawable/shape_round_grey_tag"
+                    android:id="@+id/et_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:padding="@dimen/dp_10"
+                    android:gravity="center"
+                    android:hint="在此处输入秘钥"
+                    android:inputType="textEmailAddress" />
+
+            <TextView
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    style="@style/tv_content_second"
+                    android:text="您需要输入秘钥以验证身份" />
+        </LinearLayout>
+
+        <TextView
+                android:id="@+id/tv_login_use_password"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:padding="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="使用密码登录"
+                android:textColor="@color/black" />
+    </androidx.constraintlayout.widget.ConstraintLayout>

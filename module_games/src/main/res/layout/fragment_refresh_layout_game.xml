@@ -9,7 +9,7 @@
         app:emptyView="@layout/layout_empty_view"
         app:errorView="@layout/layout_error_view"
         app:loadingView="@layout/layout_loading_view"
-        app:noNetworkView="@layout/layout_network_view">
+        app:noNetworkView="@layout/layout_no_network_view">
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/swipeRefreshLayout"

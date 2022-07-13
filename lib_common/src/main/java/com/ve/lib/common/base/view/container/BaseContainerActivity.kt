@@ -11,7 +11,7 @@ import com.ve.lib.common.vutils.LogUtil
 /**
  * @Author  weiyi
  * @Date 2022/4/13
- * @Description  current project locker-android
+ * @Description  current project lockit-android
  */
 abstract class BaseContainerActivity<VB : ViewBinding> : BaseActivity<VB>() {
 
