@@ -9,6 +9,7 @@
         android:paddingBottom="@dimen/dimen_small"
         android:paddingHorizontal="@dimen/dimen_small"
         android:orientation="vertical"
+        android:background="@color/windowColorBackground"
         >
     <!--登录用户信息-->
     <include

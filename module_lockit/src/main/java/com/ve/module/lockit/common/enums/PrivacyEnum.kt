@@ -1,4 +1,4 @@
-package com.ve.module.lockit.respository.database
+package com.ve.module.lockit.common.enums
 
 /**
  * @Author weiyi

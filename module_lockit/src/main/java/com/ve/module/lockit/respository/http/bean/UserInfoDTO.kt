@@ -82,5 +82,5 @@ data class UserInfoDTO (
     /**
      * 最近登录时间
      */
-    val lastLoginTime: LocalDateTime? = null,
+    val lastLoginTime: String? = null,
 )

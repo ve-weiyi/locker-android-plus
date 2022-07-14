@@ -52,12 +52,12 @@
 
     <androidx.fragment.app.FragmentContainerView
             android:id="@+id/drawer_fragment"
-            android:name="com.ve.module.lockit.ui.page.drawer.LockitDrawerFragment"
+            android:name="com.ve.module.lockit.ui.page.drawer.LockitMeFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="start"
             android:background="@color/windowColorBackground"
             android:fitsSystemWindows="true"
-            tools:layout="@layout/lockit_fragment_drawer" />
+            tools:layout="@layout/lockit_fragment_me" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

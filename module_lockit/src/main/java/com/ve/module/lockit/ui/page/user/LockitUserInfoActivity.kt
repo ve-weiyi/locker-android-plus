@@ -23,7 +23,7 @@ class LockitUserInfoActivity:BaseActivity<LockitActivityUserinfoBinding>() {
         initToolbar(mBinding.extToolbar.toolbar,"账号资料")
         val userinfo= SpUtil.getValue(LockitSpKey.SP_KEY_LOGIN_DATA_KEY, LoginVO::class.java)
         LogUtil.msg(userinfo)
-        if(!userinfo.accessToken.isEmpty()){
+        if(!userinfo.token.isEmpty()){
             showUserInfo(userinfo)
         }else{
             showMsg("您还未登录哦")
@@ -31,12 +31,12 @@ class LockitUserInfoActivity:BaseActivity<LockitActivityUserinfoBinding>() {
     }
 
     private fun showUserInfo(userinfo: LoginVO) {
-        val userDetail=userinfo.userDetailDTO
+        val userDetail=userinfo.userInfoDTO
         mBinding.apply {
             ImageLoader.loadView(mContext,userDetail.avatar,ivAvatar)
-            tvUsername.text=userinfo.userDetailDTO.username
+            tvUsername.text=userDetail.username
             tvNickname.text=userDetail.nickname
-            tvRole.text=userDetail.roleList.toString()
+//            tvRole.text=userDetail.roleList.toString()
             tvEmail.text=userDetail.email
             tvIntro.text=userDetail.intro
             tvWebsite.text=userDetail.webSite

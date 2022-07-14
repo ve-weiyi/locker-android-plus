@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="module_lockit/src/main/res/layout/lockit_activity_auth.xml" value="0.30833333333333335" />
+        <entry key="module_lockit/src/main/res/layout/lockit_activity_main.xml" value="0.15789473684210525" />
         <entry key="module_lockit/src/main/res/layout/lockit_fragment_drawer.xml" value="0.15217391304347827" />
         <entry key="module_lockit/src/main/res/layout/lockit_fragment_me.xml" value="0.30833333333333335" />
         <entry key="module_lockit/src/main/res/layout/lockit_item_privacy_pass.xml" value="0.30833333333333335" />

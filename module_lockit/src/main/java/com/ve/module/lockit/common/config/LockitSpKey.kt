@@ -27,6 +27,8 @@ object LockitSpKey {
     const val TOKEN_KEY = "lockit_token"
     const val COOKIE_KEY = "lockit_cookie"
 
+    const val APP_FIRST_START_KEY = "app_first_start"
+
 
     const val SP_KEY_LOGIN_STATE_KEY = "lockit_login_state"
     const val SP_KEY_LOGIN_DATA_KEY = "lockit_login_data"

@@ -11,12 +11,11 @@ import java.io.Serializable
  * @since 1.0.0
  */
 data class LoginVO (
-    val tokenHead: String,
-    val accessToken: String,
-    val userDetailDTO: UserDetailDTO,
+    val token: String,
+    val userInfoDTO: UserInfoDTO
 ) :Serializable{
 
-    constructor() : this("","", UserDetailDTO()) {
+    constructor() : this("", UserInfoDTO()) {
 
     }
 

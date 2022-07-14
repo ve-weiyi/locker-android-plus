@@ -69,7 +69,7 @@ class LockitSettingFragment : BaseSettingFragment() {
         findPreference<Preference>(LockitSpKey.SP_KEY_ACCOUNT_SETTING)?.apply {
 
             CoroutineScope(Dispatchers.IO).launch {
-                val avatar=ImageLoader.loadPicture(mContext,userinfo.userDetailDTO.avatar)
+                val avatar=ImageLoader.loadPicture(mContext,userinfo.userInfoDTO.avatar)
                 withContext(Dispatchers.Main) {
                     icon=avatar
                 }
@@ -80,7 +80,7 @@ class LockitSettingFragment : BaseSettingFragment() {
 //                    icon=ImageLoader.loadPicture(mContext,userinfo.userDetailDTO.avatar)
 //                }
 //            }
-            summary=userinfo.userDetailDTO.nickname
+            summary=userinfo.userInfoDTO.nickname
         }
     }
 

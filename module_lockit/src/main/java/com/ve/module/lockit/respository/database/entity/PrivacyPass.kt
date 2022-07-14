@@ -5,7 +5,7 @@ import com.ve.lib.common.utils.CommonUtil
 import com.ve.lib.common.vutils.AppContextUtil
 import com.ve.lib.common.vutils.TimeUtil
 import com.ve.module.lockit.LockitApplication
-import com.ve.module.lockit.respository.database.PrivacyEnum
+import com.ve.module.lockit.common.enums.PrivacyEnum
 import com.ve.module.lockit.respository.database.vo.PrivacySimpleInfo
 import com.ve.module.lockit.utils.AndroidUtil
 import org.litepal.LitePal
@@ -78,7 +78,7 @@ data class PrivacyPass(
      * 多对多,额外表存映射
      */
     fun getPrivacyTags(): MutableList<PrivacyTag> {
-        val tagLinks = LitePal.where("privacyId=? and type=?", "$id",PrivacyEnum.PASS.type.toString()).find(TagLink::class.java)
+        val tagLinks = LitePal.where("privacyId=? and type=?", "$id", PrivacyEnum.PASS.type.toString()).find(TagLink::class.java)
 
         val tags = mutableListOf<PrivacyTag>()
         tagLinks.forEach { it ->
@@ -94,7 +94,7 @@ data class PrivacyPass(
      * 删除操作，先删除tagLinks
      */
     override fun delete(): Int {
-        LitePal.deleteAll(TagLink::class.java,"privacyId=? and type=?", "$id",PrivacyEnum.PASS.type.toString())
+        LitePal.deleteAll(TagLink::class.java,"privacyId=? and type=?", "$id", PrivacyEnum.PASS.type.toString())
         return super.delete()
     }
 

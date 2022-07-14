@@ -101,10 +101,10 @@ object LogUtil {
         }
     }
     @JvmStatic
-    fun d(msg: String) {
+    fun d(obj: Any)  {
         if (IS_LOG) {
             logMsg(
-                msg=msg,
+                msg=obj.toString(),
                 info = autoJumpLogInfo(4),
                 logFun = { tag,msg,info->
                     Log.d(tag, info[1] + info[2] + " --->> " + msg)

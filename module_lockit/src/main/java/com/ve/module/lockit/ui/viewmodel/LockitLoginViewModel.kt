@@ -3,6 +3,7 @@ package com.ve.module.lockit.ui.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.ve.lib.common.network.exception.ApiException
+import com.ve.lib.common.vutils.LogUtil
 import com.ve.module.lockit.respository.AuthRepository
 import com.ve.module.lockit.respository.http.bean.LoginVO
 
@@ -30,7 +31,7 @@ class LockitLoginViewModel:LockitViewModel() {
         val job = launch(
             block = {
                 val loginVO = loginRepository.loginlockit(username, password)
-
+                LogUtil.msg(loginVO)
                 _loginState.value = loginVO.flag
                 _loginData.value= loginVO.data()
             },

@@ -78,7 +78,7 @@ https://blog.csdn.net/fenggering/article/details/53907654
 文件上传
 文件导出
 文件导入
-记住密码
-返回验证
-bugly热更新、监控
+记住密码 √
+返回验证 √
+bugly热更新、监控   暂时不做
 第三方登录

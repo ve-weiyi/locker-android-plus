@@ -18,7 +18,6 @@ import com.ve.lib.common.vutils.SpUtil
 import com.ve.module.lockit.R
 import com.ve.module.lockit.common.config.LockitConstant
 import com.ve.module.lockit.common.config.LockitSpKey
-import com.ve.module.lockit.common.config.LockitLifecycle
 import com.ve.module.lockit.common.event.RefreshDataEvent
 
 import com.ve.module.lockit.databinding.LockitFragmentMeBinding
@@ -123,8 +122,7 @@ class LockitMeFragment : BaseVmFragment<LockitFragmentMeBinding, LockitDrawerVie
         LogUtil.msg("click view ")
         when (v?.id) {
             R.id.exit_layout -> {
-                LockitLifecycle.loginState.value = false
-                LockitLifecycle.loginData.value = LoginVO()
+                EventBus.getDefault().post(RefreshDataEvent(LoginVO::class.java.name,null))
                 showMsg("退出登录成功")
             }
 
@@ -182,15 +180,17 @@ class LockitMeFragment : BaseVmFragment<LockitFragmentMeBinding, LockitDrawerVie
 
 
     private fun showUserInfo(it: LoginVO?){
+        LogUtil.d(it.toString())
         if(it==null){
-            mBinding.layoutUserinfo.layoutMain.visibility = View.VISIBLE
-            mBinding.layoutUnLogin.layoutMain.visibility = View.GONE
-        }else{
             mBinding.layoutUserinfo.layoutMain.visibility = View.GONE
             mBinding.layoutUnLogin.layoutMain.visibility = View.VISIBLE
+        }else{
+
+            mBinding.layoutUserinfo.layoutMain.visibility = View.VISIBLE
+            mBinding.layoutUnLogin.layoutMain.visibility = View.GONE
 
             mBinding.layoutUserinfo.apply {
-                val item = it.userDetailDTO
+                val item = it.userInfoDTO
                 ImageLoader.load(mContext, item?.avatar, ivAvatarIcon)
                 tvNickname.text = item?.nickname
                 itemTvUserIntro.text = item?.intro

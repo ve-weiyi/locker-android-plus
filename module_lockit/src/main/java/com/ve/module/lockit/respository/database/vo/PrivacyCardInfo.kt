@@ -1,6 +1,6 @@
 package com.ve.module.lockit.respository.database.vo
 
-import com.ve.module.lockit.respository.database.PrivacyEnum
+import com.ve.module.lockit.common.enums.PrivacyEnum
 import com.ve.module.lockit.respository.database.entity.*
 import org.litepal.LitePal
 

@@ -21,7 +21,7 @@ object AppDataBase {
 //        LogUtil.msg(SpUtil.setValue(SettingConstant.SP_KEY_DATABASE_INIT,true))
 //        LogUtil.msg(SpUtil.getBoolean(SettingConstant.SP_KEY_DATABASE_INIT))
 
-        if (SpUtil.getValue(LockitSpKey.SP_KEY_DATABASE_INIT, true)) {
+        if (SpUtil.getValue(LockitSpKey.SP_KEY_DATABASE_INIT, false)) {
             LogUtil.msg("data already init");
             return
         }
@@ -214,6 +214,6 @@ object AppDataBase {
 //        LogUtil.msg(LitePal.findAll(PrivacyPassInfo::class.java).toString())
 
 
-        SpUtil.setValue(LockitSpKey.SP_KEY_DATABASE_INIT, false);
+        SpUtil.setValue(LockitSpKey.SP_KEY_DATABASE_INIT, true);
     }
 }

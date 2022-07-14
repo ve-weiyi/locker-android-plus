@@ -34,7 +34,7 @@ interface LockitService {
      * @param username
      * @param password
      */
-    @POST("/api/login")
+    @POST("/api/user/login")
     @FormUrlEncoded
     suspend fun loginlockit(
         @Field("username") username: String?,
@@ -46,7 +46,7 @@ interface LockitService {
      *
      * 注册账号
      */
-    @POST("/api/register")
+    @POST("/api/user/register")
     @FormUrlEncoded
     suspend fun registerlockit(
         @Field("username") username: String?,
@@ -57,7 +57,7 @@ interface LockitService {
      *
      * 发送邮箱验证码
      */
-    @GET("/api/users/code")
+    @GET("/api/user/code")
     suspend fun sendCode(@Query("username") username: String?): LockitBaseBean<Any>
 
 

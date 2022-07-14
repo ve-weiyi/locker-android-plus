@@ -15,6 +15,7 @@ import com.afollestad.materialdialogs.lifecycle.lifecycleOwner
 import com.ve.lib.common.base.view.vm.BaseVmActivity
 import com.ve.lib.common.ext.setOnclickNoRepeat
 import com.ve.lib.common.utils.DialogUtil
+import com.ve.lib.common.vutils.LogUtil
 import com.ve.lib.common.widget.passwordGenerator.PasswordGeneratorDialog
 import com.ve.lib.common.vutils.SpUtil
 import com.ve.module.lockit.LockitMainActivity
@@ -96,6 +97,7 @@ class LockitLoginActivity: BaseVmActivity<LockitActivityLoginBinding, LockitLogi
         }
 
         mViewModel.loginData.observe(this) {
+            LogUtil.msg(it)
             if(it!=null) {
                 loginSuccess(it)
             }else{
@@ -143,7 +145,8 @@ class LockitLoginActivity: BaseVmActivity<LockitActivityLoginBinding, LockitLogi
 
     private fun loginSuccess(it: LoginVO?) {
         EventBus.getDefault().post(RefreshDataEvent(LoginVO::class.java.name,it))
-        SpUtil.setValue(LockitSpKey.TOKEN_KEY, it?.accessToken)
+        SpUtil.setValue(LockitSpKey.TOKEN_KEY, it?.token)
+        SpUtil.setValue(LockitSpKey.SP_KEY_LOGIN_DATA_KEY, it)
 
         val username=et_username.text.toString()
         val password=et_password.text.toString()

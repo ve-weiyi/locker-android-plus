@@ -3,7 +3,7 @@ package com.ve.module.lockit.respository.database.entity
 import com.chad.library.adapter.base.entity.SectionEntity
 import com.ve.lib.common.utils.CommonUtil
 import com.ve.lib.common.vutils.TimeUtil
-import com.ve.module.lockit.respository.database.PrivacyEnum
+import com.ve.module.lockit.common.enums.PrivacyEnum
 import com.ve.module.lockit.respository.database.vo.PrivacySimpleInfo
 import org.litepal.LitePal
 import org.litepal.annotation.Column
@@ -80,7 +80,7 @@ data class PrivacyCard(
      * 删除操作，先删除tagLinks
      */
     override fun delete(): Int {
-        LitePal.deleteAll(TagLink::class.java,"privacyId=? and type=?", "$id",PrivacyEnum.CARD.type.toString())
+        LitePal.deleteAll(TagLink::class.java,"privacyId=? and type=?", "$id", PrivacyEnum.CARD.type.toString())
         return super.delete()
     }
 
