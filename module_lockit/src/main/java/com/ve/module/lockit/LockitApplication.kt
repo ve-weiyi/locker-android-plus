@@ -8,6 +8,8 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.ProcessLifecycleOwner
 import com.alibaba.android.arouter.launcher.ARouter
 import com.tencent.bugly.Bugly
+import com.tencent.mmkv.MMKV
+import com.tencent.tauth.Tencent
 import com.ve.lib.application.BaseApplication
 import com.ve.lib.application.BuildConfig
 import com.ve.lib.common.config.AppConfig
@@ -39,6 +41,7 @@ class LockitApplication:BaseApplication() {
     companion object {
         @SuppressLint("StaticFieldLeak")
         lateinit var context: Context
+        lateinit var  mTencent: Tencent
     }
 
     override fun onCreate() {
@@ -68,6 +71,7 @@ class LockitApplication:BaseApplication() {
 
         initTheme()
 
+        MMKV.initialize(context)
         Bugly.init(applicationContext, AppConfig.BUGLY_ID, false)
 
         SpUtil.getAll().forEach{

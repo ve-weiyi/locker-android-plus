@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools" translatable="false">
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="ResourceName" translatable="false">
 
     <string name="lockit_app_name">lock it</string>
 
@@ -59,4 +59,12 @@
         <p>    如果您使用过lockit进行云端数据库备份，那么密钥更新后旧的备份文件无法再使用！（本机数据不受影响）</p>
         <p>    为了安全保证，仍建议在升级前通过“导出为csv”的方式进行备份！</p>
     ]]></string>
+
+
+    <string name="add_record_ib_desc_qq">QQ登录</string>
+    <string name="add_record_ib_desc_wechat">微信登陆</string>
+    <string name="add_record_ib_desc_tele">手机号登录</string>
+    <string name="add_record_ib_desc_weibo">微博登录</string>
+    <string name="add_record_ib_desc_email">邮箱登录</string>
+    <string name="add_record_ib_desc_alipay">支付宝登录</string>
 </resources>

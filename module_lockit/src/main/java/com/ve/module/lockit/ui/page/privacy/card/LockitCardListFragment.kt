@@ -6,7 +6,7 @@ import android.view.MenuItem
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.ve.lib.common.base.view.list.BaseVmListFragment
 import com.ve.lib.common.ext.setOnclickNoRepeatListener
-import com.ve.lib.common.utils.DialogUtil
+import com.ve.lib.common.vutils.DialogUtil
 import com.ve.lib.common.vutils.LogUtil
 import com.ve.module.lockit.R
 import com.ve.module.lockit.common.event.RefreshDataEvent

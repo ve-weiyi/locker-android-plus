@@ -2,6 +2,7 @@ package com.ve.module.lockit.ui.page.auth
 
 import android.content.Intent
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.SpannableStringBuilder
@@ -12,12 +13,21 @@ import android.text.style.ForegroundColorSpan
 import android.view.View
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.lifecycle.lifecycleOwner
+import com.google.gson.Gson
+import com.tencent.connect.common.Constants
+import com.tencent.mmkv.MMKV
+import com.tencent.tauth.DefaultUiListener
+import com.tencent.tauth.Tencent
+import com.tencent.tauth.UiError
+import com.ve.lib.application.BaseApplication
 import com.ve.lib.common.base.view.vm.BaseVmActivity
 import com.ve.lib.common.ext.setOnclickNoRepeat
-import com.ve.lib.common.utils.DialogUtil
+import com.ve.lib.common.ext.showToast
 import com.ve.lib.common.vutils.LogUtil
 import com.ve.lib.common.widget.passwordGenerator.PasswordGeneratorDialog
 import com.ve.lib.common.vutils.SpUtil
+import com.ve.module.lockit.LockitApplication
+import com.ve.module.lockit.LockitApplication.Companion.mTencent
 import com.ve.module.lockit.LockitMainActivity
 import com.ve.module.lockit.R
 import com.ve.module.lockit.common.config.LockitConstant
@@ -26,8 +36,12 @@ import com.ve.module.lockit.common.event.RefreshDataEvent
 
 import com.ve.module.lockit.databinding.LockitActivityLoginBinding
 import com.ve.module.lockit.respository.http.bean.LoginVO
+import com.ve.module.lockit.ui.page.auth.strategy.qq.BaseUiListener
+import com.ve.module.lockit.ui.page.auth.strategy.qq.QQLogin
+import com.ve.module.lockit.ui.page.auth.strategy.qq.QQLoginStrategy
 import com.ve.module.lockit.ui.viewmodel.LockitLoginViewModel
 import org.greenrobot.eventbus.EventBus
+import org.json.JSONObject
 
 /**
  * https://www.wanandroid.com/user/login
@@ -37,15 +51,6 @@ import org.greenrobot.eventbus.EventBus
  */
 class LockitLoginActivity: BaseVmActivity<LockitActivityLoginBinding, LockitLoginViewModel>(){
 
-    override fun initView(savedInstanceState: Bundle?) {
-        initToolbar(mBinding.extToolbar.toolbar, "登录", true)
-
-        setText()
-        if(LockitSpKey.isDebug){
-            et_username.setText(user)
-            et_password.setText(pwd)
-        }
-    }
 
     override fun attachViewBinding(): LockitActivityLoginBinding {
         return LockitActivityLoginBinding.inflate(layoutInflater)
@@ -55,6 +60,11 @@ class LockitLoginActivity: BaseVmActivity<LockitActivityLoginBinding, LockitLogi
     }
     override fun useEventBus(): Boolean = false
 
+
+    private val et_username by lazy { mBinding.etUsername }
+    private val et_password by lazy { mBinding.etPassword }
+    private val btn_login by lazy { mBinding.btnLogin }
+    private val tv_sign_up by lazy { mBinding.tvSignUp }
     /**
      * local username 从内存中读取
      */
@@ -69,33 +79,29 @@ class LockitLoginActivity: BaseVmActivity<LockitActivityLoginBinding, LockitLogi
         SpUtil.getValue( LockitSpKey.PASSWORD_KEY, LockitConstant.password)
     }
 
+    private val kv = MMKV.defaultMMKV()
+    private lateinit var  iu: BaseUiListener
+    
+    override fun initView(savedInstanceState: Bundle?) {
+        initToolbar(mBinding.extToolbar.toolbar, "登录", true)
 
-    private val et_username by lazy { mBinding.etUsername }
-    private val et_password by lazy { mBinding.etPassword }
-    private val btn_login by lazy { mBinding.btnLogin }
-    private val tv_sign_up by lazy { mBinding.tvSignUp }
-
-    private val mDialog by lazy {
-        DialogUtil.getWaitDialog(this, "正在登录...")
-    }
-
-    override fun showLoading() {
-        // mDialog.show()
-    }
-
-    override fun hideLoading() {
-        // mDialog.dismiss()
-    }
-
-    override fun initObserver() {
-        mViewModel.loginState.observe(this) {
-            if (it) {
-
-            } else {
-
-            }
+        setText()
+        if(LockitSpKey.isDebug){
+            et_username.setText(user)
+            et_password.setText(pwd)
         }
+        QQLoginStrategy.init()
+        QQLoginStrategy.checkLogin(this)
+    }
 
+    //这个回调改不了，只能等腾讯api更新了再改
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        //腾讯QQ回调
+        QQLoginStrategy.onLoginResult(requestCode, resultCode, data)
+    }
+    
+    override fun initObserver() {
         mViewModel.loginData.observe(this) {
             LogUtil.msg(it)
             if(it!=null) {
@@ -108,6 +114,10 @@ class LockitLoginActivity: BaseVmActivity<LockitActivityLoginBinding, LockitLogi
 
     override fun initListener() {
         super.initListener()
+        mBinding.ibQq.setOnClickListener {
+            QQLoginStrategy.doLogin(this)
+        }
+
         btn_login.apply {
             setOnclickNoRepeat {
                 if (!mBinding.cbServiceAgreement.isChecked) {

@@ -5,10 +5,22 @@ import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
 import android.widget.TextView
+import android.widget.Toast
 import androidx.annotation.ColorInt
+import com.ve.lib.application.BaseApplication
 import java.math.RoundingMode
 import java.text.DecimalFormat
 import java.util.*
+
+
+//对于Toast的一个简单封装，也用到了扩展函数
+fun String.showToast(duration:Int = Toast.LENGTH_SHORT){
+    Toast.makeText(BaseApplication.context,this,duration).show()
+}
+
+fun Int.showToast(duration: Int = Toast.LENGTH_SHORT){
+    Toast.makeText(BaseApplication.context,this,duration).show()
+}
 
 /**
  * 随机Color 避免纯色没有从255取值

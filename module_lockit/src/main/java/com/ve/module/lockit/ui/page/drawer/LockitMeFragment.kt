@@ -122,6 +122,7 @@ class LockitMeFragment : BaseVmFragment<LockitFragmentMeBinding, LockitDrawerVie
         LogUtil.msg("click view ")
         when (v?.id) {
             R.id.exit_layout -> {
+                SpUtil.clearPreference(LockitSpKey.SP_KEY_LOGIN_DATA_KEY)
                 EventBus.getDefault().post(RefreshDataEvent(LoginVO::class.java.name,null))
                 showMsg("退出登录成功")
             }

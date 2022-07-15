@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <LinearLayout
+            android:id="@+id/temp_layout_3"
+            style="@style/cardView_linearlayout"
+            android:orientation="horizontal"
+            android:padding="6dp">
+
+        <ImageButton
+                android:id="@+id/phone"
+                style="@style/ib_login_way"
+                android:contentDescription="@string/add_record_ib_desc_tele"
+                android:src="@drawable/ic_phone_round_28" />
+
+        <ImageButton
+                android:id="@+id/qq"
+                style="@style/ib_login_way"
+                android:contentDescription="@string/add_record_ib_desc_qq"
+                android:src="@drawable/ic_qq_28"
+                />
+
+        <ImageButton
+                android:id="@+id/wechat"
+                style="@style/ib_login_way"
+                android:contentDescription="@string/add_record_ib_desc_wechat"
+                android:src="@drawable/ic_wechat_28" />
+
+        <ImageButton
+                android:id="@+id/email"
+                style="@style/ib_login_way"
+                android:contentDescription="@string/add_record_ib_desc_email"
+                android:src="@drawable/ic_email_round_28" />
+
+        <ImageButton
+                android:id="@+id/weibo"
+                style="@style/ib_login_way"
+                android:background="@null"
+                android:contentDescription="@string/add_record_ib_desc_weibo"
+                android:src="@drawable/ic_weibo_28" />
+
+        <ImageButton
+                android:id="@+id/alipay"
+                style="@style/ib_login_way"
+                android:contentDescription="@string/add_record_ib_desc_alipay"
+                android:src="@drawable/ic_alipay_28" />
+
+
+        <!--        <ImageButton-->
+        <!--            android:id="@+id/addLoginWay"-->
+        <!--            style="@style/ib_login_way"-->
+        <!--            android:contentDescription="@string/add_record_ib_desc_weibo"-->
+        <!--            android:src="@drawable/ic_add_round_28" />-->
+
+    </LinearLayout>
+
+</LinearLayout>

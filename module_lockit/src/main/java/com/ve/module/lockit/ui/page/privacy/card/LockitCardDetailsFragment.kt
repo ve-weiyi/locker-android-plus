@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import com.ve.lib.common.base.view.vm.BaseVmFragment
 import com.ve.lib.common.ext.setOnclickNoRepeatListener
-import com.ve.lib.common.utils.DialogUtil
+import com.ve.lib.common.vutils.DialogUtil
 import com.ve.lib.common.vutils.LogUtil
 import com.ve.lib.common.vutils.ShareUtil
 import com.ve.module.lockit.R
@@ -110,7 +110,7 @@ class LockitCardDetailsFragment :
 
             }
             R.id.btn_copy -> {
-                StickUtils.copy(mContext, "账号:$account\n密码:$password")
+                StickUtils.copyToClipboard(mContext, "账号:$account\n密码:$password")
             }
             R.id.iv_browser -> {
                 ShareUtil.goUrl(mContext,url)

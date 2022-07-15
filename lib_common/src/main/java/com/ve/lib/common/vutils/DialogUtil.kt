@@ -1,10 +1,12 @@
-package com.ve.lib.common.utils
+package com.ve.lib.common.vutils
 
+import android.app.Activity
 import android.app.ProgressDialog
 import android.content.Context
 import android.content.DialogInterface
 import android.text.TextUtils
 import androidx.appcompat.app.AlertDialog
+import com.ve.lib.common.vutils.widget.YLoadingDialog
 
 /**
  * Created by chenxz on 2018/6/9.
@@ -35,6 +37,13 @@ object DialogUtil {
             waitDialog.setMessage(message)
         }
         return waitDialog
+    }
+
+    /**
+     * Loading加载框
+     */
+    fun getLoadingDialog(activity: Activity, msg: String, cancelable: Boolean = true, cancelListener: (() -> Unit)? = null): YLoadingDialog {
+        return YLoadingDialog(activity, msg, cancelable, cancelListener = cancelListener)
     }
 
     /**

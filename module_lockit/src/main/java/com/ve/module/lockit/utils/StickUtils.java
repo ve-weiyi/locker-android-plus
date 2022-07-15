@@ -4,6 +4,7 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 
+import com.ve.lib.common.vutils.AppContextUtil;
 import com.ve.lib.common.vutils.ToastUtil;
 
 /**
@@ -17,9 +18,8 @@ public class StickUtils {
      * 实现文本复制到粘贴板功能
      * add by wangqianzhou
      * @param content
-
      */
-    public static void copy(Context context,String content )
+    public static void copyToClipboard(Context context, String content )
     {
         if(content.isEmpty()){
             ToastUtil.INSTANCE.showCenter("数据为空");
@@ -29,7 +29,7 @@ public class StickUtils {
         ClipboardManager cmb =(ClipboardManager)context.getSystemService(Context.CLIPBOARD_SERVICE);
         //第一个参数只是一个标记，随便传入。
         //第二个参数是要复制到剪贴版的内容
-        ClipData clip = ClipData.newPlainText("lockit", content.trim());
+        ClipData clip = ClipData.newPlainText(AppContextUtil.mContext.getPackageName(), content.trim());
         ToastUtil.INSTANCE.showCenter("已复制到粘贴板\n"+content);
         cmb.setPrimaryClip(clip);
     }

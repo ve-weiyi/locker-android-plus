@@ -20,6 +20,34 @@ import kotlin.experimental.and
 
 object AndroidUtil {
 
+    /**
+     * 获取版本名
+     */
+    fun getVersionName(): String {
+        return try {
+            val packageManager = AppContextUtil.getApp().packageManager
+            val packageInfo = packageManager.getPackageInfo(AppContextUtil.getApp().packageName, 0)
+            packageInfo.versionName
+        } catch (e: PackageManager.NameNotFoundException) {
+            e.printStackTrace()
+            ""
+        }
+    }
+
+    /**
+     * 获取版本号
+     */
+    fun getVersionCode(): Int {
+        return try {
+            val packageManager = AppContextUtil.getApp().packageManager
+            val packageInfo = packageManager.getPackageInfo(AppContextUtil.getApp().packageName, 0)
+            packageInfo.versionCode
+        } catch (e: PackageManager.NameNotFoundException) {
+            e.printStackTrace()
+            0
+        }
+    }
+
     fun getAppIcon(context: Context, appId: String): Bitmap? {
         return try {
             val drawable = context.packageManager.getApplicationIcon(appId)

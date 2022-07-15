@@ -13,6 +13,7 @@ ext {
     versions = [
             // supportSdkVersion: "28.0.0",
             retrofit : "2.9.0",
+            okhttp   : "5.0.0-alpha.6",
             glide    : "4.12.0",
             rxJava   : "2.2.2",
             rxAndroid: "2.1.0",
@@ -43,13 +44,13 @@ ext {
             "retrofit"                : "com.squareup.retrofit2:retrofit:${versions.retrofit}",
             "retrofitConverterGson"   : "com.squareup.retrofit2:converter-gson:${versions.retrofit}",
             "retrofitAdapterRxjava2"  : "com.squareup.retrofit2:adapter-rxjava2:${versions.retrofit}",
+            "okhttp3"                 : 'com.squareup.okhttp3:okhttp:4.0.0',
             "okhttp3LoggerInterceptor": "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.6",
             //解析数据@JSON
             "retrofitConverterMoshi"  : "com.squareup.retrofit2:converter-moshi:2.4.0",
             "retrofitKotlinMoshi"     : "com.squareup.moshi:moshi-kotlin:1.7.0",
             //
             "coroutinesAdapter"       : "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2",
-            "logInterceptor"          : "com.squareup.okhttp3:logging-interceptor:3.10.0",
             "persistentCookieJar"     : "com.github.franmontiel:PersistentCookieJar:v1.0.1",
     ]
 
@@ -75,8 +76,12 @@ ext {
             "fab"              : "com.github.clans:fab:1.6.4",
             //"bugly"           : "com.tencent.bugly:crashreport:3.1.0",
             "bugly-crash-up"   : "com.tencent.bugly:crashreport_upgrade:1.5.23",
-            // 指定tinker依赖版本（注：应用升级1.3.5版本起，不再内置tinker）
+            // Tencent热更新框架，免费后台 bugly。 指定tinker依赖版本（注：应用升级1.3.5版本起，不再内置tinker）
             "tinker"           : "com.tencent.tinker:tinker-android-lib:1.9.14.16",
+            //mmkv数据存储
+            "mmkv"             : "com.tencent:mmkv-static:1.2.10",
+
+
             "agentweb"         : "com.just.agentweb:agentweb:4.0.2",
             //第三方加载动画
             "spinkit"          : "com.github.ybq:Android-SpinKit:1.4.0",
@@ -85,8 +90,7 @@ ext {
             //颜色选择器
 //            "material-dialogs" : "com.afollestad.material-dialogs:commons:0.9.4.4",
             "gson"             : "com.google.code.gson:gson:2.8.9",
-            //mmkv数据存储
-            "mmkv"             : "com.tencent:mmkv-static:1.2.10",
+
             //横幅
             "banner"           : "com.youth.banner:banner:2.1.0",
             //cvbanner           : "com.bigkoo:convenientbanner:2.0.5",

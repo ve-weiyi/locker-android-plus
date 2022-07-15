@@ -5,7 +5,7 @@ import android.os.CountDownTimer
 import android.view.View
 import com.ve.lib.common.base.view.vm.BaseVmActivity
 import com.ve.lib.common.ext.setOnclickNoRepeatListener
-import com.ve.lib.common.utils.DialogUtil
+import com.ve.lib.common.vutils.DialogUtil
 import com.ve.module.lockit.common.config.LockitSpKey
 import com.ve.module.lockit.databinding.LockitActivityRegisterBinding
 import com.ve.module.lockit.ui.viewmodel.LockitRegisterViewModel

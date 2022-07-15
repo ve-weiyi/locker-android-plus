@@ -9,9 +9,7 @@ import com.ve.lib.common.base.view.vm.BaseVmActivity
 import com.ve.lib.common.event.AppRecreateEvent
 import com.ve.lib.common.event.DrawerOpenEvent
 import com.ve.lib.common.base.model.FragmentPage
-import com.ve.lib.common.vutils.LogUtil
 import com.ve.module.lockit.databinding.LockitActivityMainBinding
-import com.ve.module.lockit.ui.page.auth.LockitAuthActivity
 import com.ve.module.lockit.ui.page.category.LockitClassifyFragment
 import com.ve.module.lockit.ui.page.drawer.LockitMeFragment
 import com.ve.module.lockit.ui.page.privacy.card.LockitCardListFragment

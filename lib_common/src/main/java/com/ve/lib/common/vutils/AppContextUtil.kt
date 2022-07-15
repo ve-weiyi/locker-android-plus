@@ -34,8 +34,6 @@ object AppContextUtil {
 
     lateinit var mContext: Application
 
-    private var yLoadingDialog: YLoadingDialog? = null
-
     fun init(app: Application) {
         mContext = app
         app.registerActivityLifecycleCallbacks(ActivityUtil.activityLifecycleCallbacks)
@@ -51,35 +49,6 @@ object AppContextUtil {
     }
 
 
-    /**
-     * Loading加载框
-     */
-    fun showLoading(activity: Activity, msg: String, cancelable: Boolean = true, cancelListener: (() -> Unit)? = null) {
-        yLoadingDialog = YLoadingDialog(activity, msg, cancelable, cancelListener = cancelListener)
-        yLoadingDialog?.show()
-    }
-
-    /**
-     * dismissLoading
-     */
-    fun hideLoading() {
-        if (null != yLoadingDialog && yLoadingDialog?.isShowing!!) {
-            yLoadingDialog?.dismiss()
-            yLoadingDialog = null
-        }
-    }
-
-    /**
-     * getLoadingDialog
-     */
-    fun getLoadingDialog(): YLoadingDialog? {
-        return yLoadingDialog
-    }
-
-    /**
-     * loading是否显示，需在showLoading()之后调用，否则为null
-     */
-    fun loadingIsShowing(): Boolean? = yLoadingDialog?.isShowing
 
     /**
      * 根据时间休眠然后关闭当前页面
@@ -127,18 +96,7 @@ object AppContextUtil {
         }
     }
 
-    /**
-     * 检验手机号
-     */
-    fun checkPhoneNumber(number: String): Boolean {
-        var p: Pattern? = null
-        var m: Matcher? = null
-        var b = false
-        p = Pattern.compile("^[1][3,4,5,6,7,8,9][0-9]{9}$")
-        m = p.matcher(number)
-        b = m.matches()
-        return b
-    }
+
 
     /**
      * MD5加密
@@ -155,31 +113,6 @@ object AppContextUtil {
         return Base64.encodeToString(m, Base64.DEFAULT)
     }
 
-    /**
-     * dp2px
-     */
-    @Deprecated("拆分处理，使用DisplayUtil.dp2px()即可", ReplaceWith("DisplayUtil.dp2px(dp)"))
-    fun dp2px(dp: Float): Int {
-        val density = getApp().resources.displayMetrics.density
-        return (dp * density + 0.5f).toInt()
-    }
-
-    /**
-     * px2dp
-     */
-    @Deprecated("拆分处理，使用DisplayUtil.px2dp()即可", ReplaceWith("DisplayUtil.px2dp(px)"))
-    fun px2dp(px: Int): Float {
-        val density = getApp().resources.displayMetrics.density
-        return px / density
-    }
-
-    /**
-     * 复制文本到粘贴板
-     */
-    fun copyToClipboard(text: String?) {
-        val cm = getApp().getSystemService(Activity.CLIPBOARD_SERVICE) as ClipboardManager
-        cm.setPrimaryClip(ClipData.newPlainText(getApp().packageName, text))
-    }
 
     /**
      * 字体高亮

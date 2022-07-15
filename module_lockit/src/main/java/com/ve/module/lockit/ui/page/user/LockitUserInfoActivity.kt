@@ -23,7 +23,7 @@ class LockitUserInfoActivity:BaseActivity<LockitActivityUserinfoBinding>() {
         initToolbar(mBinding.extToolbar.toolbar,"账号资料")
         val userinfo= SpUtil.getValue(LockitSpKey.SP_KEY_LOGIN_DATA_KEY, LoginVO::class.java)
         LogUtil.msg(userinfo)
-        if(!userinfo.token.isEmpty()){
+        if(userinfo!=null){
             showUserInfo(userinfo)
         }else{
             showMsg("您还未登录哦")

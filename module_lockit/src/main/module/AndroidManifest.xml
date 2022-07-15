@@ -3,7 +3,8 @@
         xmlns:tools="http://schemas.android.com/tools"
         package="com.ve.module.lockit">
 
-    <permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE"/>
+    <!--    指纹识别-->
+    <permission android:name="android.permission.BIND_ACCESSIBILITY_SERVICE" />
 
     <application
             android:name=".LockitApplication"
@@ -19,8 +20,7 @@
             tools:targetApi="n">
         <activity
                 android:name=".ui.page.auth.LockitAuthActivity"
-                android:exported="false"
-                />
+                android:exported="false" />
 
         <activity
                 android:name=".ui.page.splash.LockitSplashActivity"
@@ -39,11 +39,10 @@
         <activity
                 android:name=".LockitMainActivity"
                 android:launchMode="singleTask"
-                android:exported="true"
-                >
+                android:exported="true">
 
         </activity>
-        <activity android:name=".ui.page.user.LockitUserInfoActivity"/>
+        <activity android:name=".ui.page.user.LockitUserInfoActivity" />
         <activity android:name=".ui.page.auth.LockitLoginActivity" />
         <activity android:name=".ui.page.auth.LockitRegisterActivity" />
         <activity android:name=".ui.page.about.LockitAboutActivity" />
@@ -51,7 +50,8 @@
         <activity android:name=".ui.page.container.LockitContainerActivity" />
         <activity android:name=".ui.page.container.LockitWebContainerActivity" />
         <activity android:name=".ui.page.setting.LockitSettingActivity" />
-        <activity android:name=".ui.page.privacy.LockitGroupActivity"/>
+        <activity android:name=".ui.page.privacy.LockitGroupActivity" />
+
 
         <service
                 android:name=".common.service.LockitAutoFillService"
@@ -65,6 +65,39 @@
                     android:name="android.autofill"
                     android:resource="@xml/lockit_service_configuration" />
         </service>
+
+
+
+        <activity
+                android:name="com.tencent.tauth.AuthActivity"
+                android:exported="true"
+                android:launchMode="singleTask"
+                android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!--注意，这里的tencent222222要换成app自己的appid-->
+                <data android:scheme="tencent102017330" />
+                <!-- 100380359 100381104 222222 -->
+            </intent-filter>
+        </activity>
+        <activity
+                android:name="com.tencent.connect.common.AssistActivity"
+                android:configChanges="orientation|keyboardHidden"
+                android:screenOrientation="behind"
+                android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <provider
+                android:name="androidx.core.content.FileProvider"
+                android:authorities="com.tencent.login.fileprovider"
+                android:exported="false"
+                android:grantUriPermissions="true">
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/lockit_file_paths" />
+        </provider>
     </application>
 
 </manifest>

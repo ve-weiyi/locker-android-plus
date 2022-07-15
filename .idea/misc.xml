@@ -3,15 +3,28 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="lib_application/src/main/res/drawable/ic_apple.xml" value="0.133" />
+        <entry key="lib_application/src/main/res/drawable/ic_apps_black_24dp.xml" value="0.133" />
+        <entry key="lib_application/src/main/res/drawable/ic_qq.xml" value="0.133" />
+        <entry key="lib_application/src/main/res/drawable/ic_wechat.xml" value="0.133" />
+        <entry key="module_lockit/src/main/res/drawable-v25/ic_alipay_28.xml" value="0.1" />
+        <entry key="module_lockit/src/main/res/drawable-v25/ic_email_round_28.xml" value="0.1" />
+        <entry key="module_lockit/src/main/res/drawable-v25/ic_phone_round_28.xml" value="0.1" />
+        <entry key="module_lockit/src/main/res/drawable-v25/ic_qq_28.xml" value="0.1" />
+        <entry key="module_lockit/src/main/res/drawable-v25/ic_refresh_48.xml" value="0.1" />
+        <entry key="module_lockit/src/main/res/drawable-v25/ic_wechat_28.xml" value="0.1" />
         <entry key="module_lockit/src/main/res/layout/lockit_activity_auth.xml" value="0.30833333333333335" />
+        <entry key="module_lockit/src/main/res/layout/lockit_activity_login.xml" value="0.184375" />
         <entry key="module_lockit/src/main/res/layout/lockit_activity_main.xml" value="0.15789473684210525" />
         <entry key="module_lockit/src/main/res/layout/lockit_fragment_drawer.xml" value="0.15217391304347827" />
         <entry key="module_lockit/src/main/res/layout/lockit_fragment_me.xml" value="0.30833333333333335" />
         <entry key="module_lockit/src/main/res/layout/lockit_item_privacy_pass.xml" value="0.30833333333333335" />
         <entry key="module_lockit/src/main/res/layout/lockit_item_tag.xml" value="0.30833333333333335" />
+        <entry key="module_lockit/src/main/res/layout/lockit_layout_login_type.xml" value="0.184375" />
         <entry key="module_lockit/src/main/res/layout/lockit_layout_userinfo_null.xml" value="0.30833333333333335" />
         <entry key="module_lockit/src/main/res/layout/lockit_toolbar.xml" value="0.30833333333333335" />
         <entry key="module_lockit/src/main/res/menu/lockit_menu_classify.xml" value="0.30833333333333335" />
+        <entry key="module_lockit/src/main/res/xml/file_path.xml" value="0.22447916666666667" />
         <entry key="module_lockit/src/main/res/xml/lockit_pref_setting_autonight.xml" value="0.30833333333333335" />
       </map>
     </option>

@@ -147,6 +147,7 @@ object SpUtil {
         if (value == null) {
 //            throw BizException("value can not be null")
             LogUtil.msg("value can not be null")
+            clearPreference(key)
             return
         }
         when (value) {
@@ -159,11 +160,11 @@ object SpUtil {
         }
     }
 
-    fun <T> getValue(key: String, clazz: Class<T>): T {
+    fun <T> getValue(key: String, clazz: Class<T>): T? {
         try {
             var target = JSONObject.parseObject(getString(key), clazz)
             if (target == null) {
-                return clazz.newInstance()
+                return null
             } else {
                 return target
             }
@@ -186,7 +187,14 @@ object SpUtil {
                 is Int -> getInt(key, defaultValue)
                 is Boolean -> getBoolean(key, defaultValue)
                 is Float -> getFloat(key, defaultValue)
-                else -> getValue(key, defaultValue!!::class.java)
+                else -> {
+                    val res=getValue(key, defaultValue!!::class.java)
+                    if(res==null){
+                        return defaultValue
+                    }else{
+                        return res
+                    }
+                }
             }
             return res as T
         } catch (e: Exception) {

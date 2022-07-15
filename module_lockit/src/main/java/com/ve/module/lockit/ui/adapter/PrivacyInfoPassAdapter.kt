@@ -36,7 +36,7 @@ class PrivacyInfoPassAdapter :
     init {
         setOnItemLongClickListener { adapter, view, position ->
             ToastUtil.showCenter("已复制密码")
-            StickUtils.copy(context, data[position].password)
+            StickUtils.copyToClipboard(context, data[position].password)
             true
         }
     }

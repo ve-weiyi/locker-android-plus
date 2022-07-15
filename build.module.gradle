@@ -94,6 +94,7 @@ android {
 }
 
 dependencies {
+    //引入自定义的lib
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
     testImplementation 'junit:junit:4.13.2'

@@ -11,9 +11,9 @@ import com.ve.lib.common.network.util.NetWorkUtil
 import com.ve.lib.common.vutils.LogUtil
 import com.ve.lib.common.vutils.ToastUtil
 import kotlinx.coroutines.*
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
+
 import okhttp3.RequestBody
-import okhttp3.RequestBody.Companion.toRequestBody
+
 import java.net.ConnectException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
@@ -176,8 +176,8 @@ open class BaseViewModel : ViewModel(), LifecycleObserver {
     /**
      * json提交 转RequestBody （表单提交 @FieldMap）
      */
-    protected fun toRequestBody(params: Any?): RequestBody {
-        return Gson().toJson(params).toRequestBody("application/json".toMediaTypeOrNull())
-    }
+//    protected fun toRequestBody(params: Any?): RequestBody {
+//        return Gson().toJson(params).toRequestBody("application/json".toMediaTypeOrNull())
+//    }
     /**********************************/
 }

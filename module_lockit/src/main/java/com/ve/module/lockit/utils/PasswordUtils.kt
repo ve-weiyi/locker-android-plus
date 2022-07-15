@@ -1,6 +1,7 @@
 package com.ve.module.lockit.utils
 
 import com.ve.module.lockit.common.enums.PasswordEnum
+import java.util.regex.Matcher
 import java.util.regex.Pattern
 
 /**
@@ -46,6 +47,19 @@ object PasswordUtils {
         val m = p.matcher(username)
         //进行正则匹配
         return m.matches()
+    }
+
+    /**
+     * 检验手机号
+     */
+    fun checkPhoneNumber(number: String): Boolean {
+        var p: Pattern? = null
+        var m: Matcher? = null
+        var b = false
+        p = Pattern.compile("^[1][3,4,5,6,7,8,9][0-9]{9}$")
+        m = p.matcher(number)
+        b = m.matches()
+        return b
     }
 
     /**
