@@ -1,3 +1,7 @@
+v ic
+v21 baseline
+v24 bg shape
+
 二、Activity启动模式：
 1.默认启动模式——standard
 Activity的默认模式就是standard。在该模式下，启动的Activity会依照启动顺序被依次压入Task中：

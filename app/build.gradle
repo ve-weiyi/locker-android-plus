@@ -18,4 +18,5 @@ dependencies {
     implementation project(':lib_application')
     implementation project(':module_lockit')
     implementation project(':module_android')
+    implementation project(':module_games')
 }

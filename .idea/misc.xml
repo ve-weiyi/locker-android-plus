@@ -3,16 +3,40 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="lib_application/src/main/res/drawable-v21/ic_baseline_code_24.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable-v24/bg_done.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable-v24/fab_label_background.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable-v24/shape_oval_blue.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable-v24/shape_oval_primary.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable-v24/shape_round_blue.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable-v24/shape_round_green.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable-v24/shape_round_grey.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable-v24/shape_round_grey_search.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable-v24/shape_round_grey_tag.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable-v24/shape_round_primary.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable-v24/state_item_check.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable/bg_delete.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable/bg_done.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable/bg_logo.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable/ic_apple.xml" value="0.133" />
         <entry key="lib_application/src/main/res/drawable/ic_apps_black_24dp.xml" value="0.133" />
         <entry key="lib_application/src/main/res/drawable/ic_qq.xml" value="0.133" />
         <entry key="lib_application/src/main/res/drawable/ic_wechat.xml" value="0.133" />
+        <entry key="module_lockit/src/main/res/drawable-v21/bg_dialog_sheet_header.xml" value="0.1" />
+        <entry key="module_lockit/src/main/res/drawable-v21/ic_baseline_warning_24.xml" value="0.1" />
+        <entry key="module_lockit/src/main/res/drawable-v21/ic_edit.xml" value="0.1" />
+        <entry key="module_lockit/src/main/res/drawable-v21/ic_vip_sun.xml" value="0.1" />
+        <entry key="module_lockit/src/main/res/drawable-v21/ripple_ani.xml" value="0.1" />
+        <entry key="module_lockit/src/main/res/drawable-v24/bg_dialog_border_white.xml" value="0.1" />
         <entry key="module_lockit/src/main/res/drawable-v25/ic_alipay_28.xml" value="0.1" />
         <entry key="module_lockit/src/main/res/drawable-v25/ic_email_round_28.xml" value="0.1" />
         <entry key="module_lockit/src/main/res/drawable-v25/ic_phone_round_28.xml" value="0.1" />
         <entry key="module_lockit/src/main/res/drawable-v25/ic_qq_28.xml" value="0.1" />
         <entry key="module_lockit/src/main/res/drawable-v25/ic_refresh_48.xml" value="0.1" />
         <entry key="module_lockit/src/main/res/drawable-v25/ic_wechat_28.xml" value="0.1" />
+        <entry key="module_lockit/src/main/res/drawable/border_radio_subscribed.xml" value="0.1" />
+        <entry key="module_lockit/src/main/res/drawable/ic_baseline_account_box_24.xml" value="0.1" />
         <entry key="module_lockit/src/main/res/layout/lockit_activity_auth.xml" value="0.30833333333333335" />
         <entry key="module_lockit/src/main/res/layout/lockit_activity_login.xml" value="0.184375" />
         <entry key="module_lockit/src/main/res/layout/lockit_activity_main.xml" value="0.15789473684210525" />

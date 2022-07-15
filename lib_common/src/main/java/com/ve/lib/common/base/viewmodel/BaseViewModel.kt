@@ -64,7 +64,6 @@ open class BaseViewModel : ViewModel(), LifecycleObserver {
         showErrorToast: Boolean = true
     ): Job {
         return viewModelScope.launch {
-            block.invoke(this)
             try {
                 //apiCall,返回BaseResponse
                 block.invoke(this)

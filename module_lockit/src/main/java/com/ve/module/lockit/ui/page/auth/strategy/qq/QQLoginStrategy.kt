@@ -58,6 +58,7 @@ object QQLoginStrategy  : AbstractLoginStrategy {
                         "登录失败".showToast()
 
                     } else {
+                        "登录成功".showToast()
                         LogUtil.msg()
                     }
                 } else {
