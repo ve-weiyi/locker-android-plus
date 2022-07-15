@@ -22,8 +22,8 @@
         android:layout_gravity="bottom"
         android:background="@color/colorBackground"
         app:elevation="@dimen/dp_16"
-        app:itemIconTint="@drawable/nav_item_color_state"
-        app:itemTextColor="@drawable/nav_item_color_state"
+        app:itemIconTint="@drawable/state_nav_item_color"
+        app:itemTextColor="@drawable/state_nav_item_color"
         app:layout_behavior="com.ve.lib.common.widget.behavior.BottomNavigationBehavior"
         app:menu="@menu/bottom_navigation_todo" />
 

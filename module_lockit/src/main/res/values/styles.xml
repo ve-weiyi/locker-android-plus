@@ -7,7 +7,7 @@
         <item name="android:paddingTop">0dp</item>
         <item name="android:focusable">true</item>
         <item name="android:focusableInTouchMode">true</item>
-        <item name="background">@drawable/shape_round_grey</item>
+        <item name="background">@drawable/bg_grey_rect_10dp</item>
         <item name="boxBackgroundMode">none</item>
         <!--        &lt;!&ndash;        右边小眼睛&ndash;&gt;-->
         <!--        <item name="passwordToggleEnabled">true</item>-->
@@ -81,7 +81,7 @@
         <item name="android:focusable">false</item>
         <item name="android:focusableInTouchMode">false</item>
         <item name="android:padding">10dp</item>
-        <item name="android:background">@drawable/shape_round_grey</item>
+        <item name="android:background">@drawable/bg_grey_rect_10dp</item>
     </style>
 
     <!--    编辑-->
@@ -93,12 +93,12 @@
         <item name="android:focusable">true</item>
         <item name="android:focusableInTouchMode">true</item>
         <item name="android:padding">10dp</item>
-        <item name="android:background">@drawable/shape_round_grey</item>
+        <item name="android:background">@drawable/bg_grey_rect_10dp</item>
     </style>
 
     <style name="EditText">
         <item name="android:padding">8dp</item>
-        <item name="android:background">@drawable/shape_round_grey</item>
+        <item name="android:background">@drawable/bg_grey_rect_10dp</item>
         <!--        <item name="android:inputType">text|textPassword</item>-->
     </style>
 

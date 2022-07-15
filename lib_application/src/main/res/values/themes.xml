@@ -153,7 +153,7 @@
     </style>
 
     <style name="MenuLabelsStyle">
-        <item name="android:background">@drawable/fab_label_background</item>
+        <item name="android:background">@drawable/state_fab_label</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:textSize">@dimen/sp_14</item>
         <item name="android:maxLines">2</item>

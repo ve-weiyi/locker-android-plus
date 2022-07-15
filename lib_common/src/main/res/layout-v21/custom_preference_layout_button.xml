@@ -68,7 +68,7 @@
                     android:layout_gravity="center_vertical"
                     android:adjustViewBounds="true"
                     android:visibility="gone"
-                    android:background="@drawable/shape_oval_gray_tag" />
+                    android:background="@drawable/bg_gray_circle_tag" />
 
         </LinearLayout>
 

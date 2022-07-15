@@ -14,7 +14,7 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="@color/colorPrimary"
-            android:background="@drawable/shape_round_green"
+            android:background="@drawable/bg_green_rect_8dp"
             />
 
 </RelativeLayout>

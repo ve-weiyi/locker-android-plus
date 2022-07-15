@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_marginStart="15dp"
     android:layout_marginTop="15dp"
-    android:background="@drawable/shape_oval_gray_tag"
+    android:background="@drawable/bg_gray_circle_tag"
     android:foreground="?android:attr/selectableItemBackground"
     android:paddingHorizontal="15dp"
     android:paddingVertical="@dimen/dp_8"

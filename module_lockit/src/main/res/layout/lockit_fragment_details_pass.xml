@@ -27,7 +27,7 @@
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/bg_round_white_8dp"
+                    android:background="@drawable/bg_white_rect_8dp"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -116,7 +116,7 @@
                     android:layout_marginHorizontal="@dimen/dimen_giant"
                     android:layout_marginVertical="@dimen/dimen_normal"
 
-                    android:background="@drawable/bg_round_white_8dp"
+                    android:background="@drawable/bg_white_rect_8dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
@@ -199,7 +199,7 @@
                     android:layout_marginHorizontal="@dimen/dimen_giant"
                     android:layout_marginVertical="@dimen/dimen_normal"
 
-                    android:background="@drawable/bg_round_white_8dp"
+                    android:background="@drawable/bg_white_rect_8dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
@@ -304,7 +304,7 @@
                     android:layout_marginHorizontal="@dimen/dimen_giant"
                     android:layout_marginVertical="@dimen/dimen_normal"
 
-                    android:background="@drawable/bg_round_white_8dp"
+                    android:background="@drawable/bg_white_rect_8dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
@@ -334,7 +334,7 @@
                     android:layout_marginHorizontal="@dimen/dimen_giant"
                     android:layout_marginVertical="@dimen/dimen_normal"
 
-                    android:background="@drawable/bg_round_white_8dp"
+                    android:background="@drawable/bg_white_rect_8dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
@@ -418,7 +418,7 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:src="@drawable/ic_baseline_edit_24"
-                android:background="@drawable/shape_oval_blue" />
+                android:background="@drawable/bg_blue_circle" />
 
         <ImageView
                 android:id="@+id/btn_copy"
@@ -427,7 +427,7 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:src="@drawable/ic_baseline_content_copy_24"
-                android:background="@drawable/shape_oval_green" />
+                android:background="@drawable/bg_green_oval" />
 
         <ImageView
                 android:id="@+id/btn_delete"
@@ -436,6 +436,6 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:src="@drawable/ic_baseline_delete_24"
-                android:background="@drawable/bg_circle_red" />
+                android:background="@drawable/bg_red_circle" />
     </LinearLayout>
 </RelativeLayout>

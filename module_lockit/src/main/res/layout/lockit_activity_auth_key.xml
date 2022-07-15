@@ -34,7 +34,7 @@
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_marginTop="32dp"
                     android:layout_marginBottom="@dimen/dp_8"
-                    android:background="@drawable/shape_round_grey_tag"
+                    android:background="@drawable/bg_grey_tag"
                     android:id="@+id/et_username"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
