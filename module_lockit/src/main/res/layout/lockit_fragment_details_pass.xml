@@ -276,7 +276,7 @@
                             />
 
                     <com.google.android.material.imageview.ShapeableImageView
-                            app:shapeAppearanceOverlay="@style/RoundImageStyle"
+                            app:shapeAppearanceOverlay="@style/CircleImageStyle"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -418,7 +418,7 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:src="@drawable/ic_baseline_edit_24"
-                android:background="@drawable/bg_blue_circle" />
+                android:background="@drawable/bg_blue_oval" />
 
         <ImageView
                 android:id="@+id/btn_copy"

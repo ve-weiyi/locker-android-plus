@@ -46,7 +46,7 @@
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <com.google.android.material.imageview.ShapeableImageView
-                    app:shapeAppearanceOverlay="@style/RoundImageStyle"
+                    app:shapeAppearanceOverlay="@style/CircleImageStyle"
                     android:id="@android:id/icon"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"

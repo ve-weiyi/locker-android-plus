@@ -21,7 +21,7 @@ import com.ve.lib.common.vutils.SpUtil
 import com.ve.lib.common.vutils.ToastUtil
 import com.ve.module.lockit.common.config.LockitSpKey
 import com.ve.module.lockit.respository.database.AppDataBase
-import com.ve.module.lockit.respository.http.bean.LoginVO
+import com.ve.module.lockit.respository.http.bean.LoginDTO
 import com.ve.module.lockit.ui.page.container.LockitContainerActivity
 import com.ve.module.lockit.ui.page.key.LockitKeyFragment
 import com.ve.module.lockit.ui.page.user.LockitUserInfoActivity
@@ -64,7 +64,7 @@ class LockitSettingFragment : BaseSettingFragment() {
                 findPreference<Preference>(key)?.onPreferenceClickListener = this
             }
         }
-        val userinfo=SpUtil.getValue(LockitSpKey.SP_KEY_LOGIN_DATA_KEY, LoginVO())
+        val userinfo=SpUtil.getValue(LockitSpKey.SP_KEY_LOGIN_DATA_KEY, LoginDTO())
 
         findPreference<Preference>(LockitSpKey.SP_KEY_ACCOUNT_SETTING)?.apply {
 

@@ -10,7 +10,7 @@ import java.io.Serializable
  * @date 2021/06/14
  * @since 1.0.0
  */
-data class LoginVO (
+data class LoginDTO (
     val token: String,
     val userInfoDTO: UserInfoDTO
 ) :Serializable{

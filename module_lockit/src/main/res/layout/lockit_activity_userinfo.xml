@@ -43,7 +43,7 @@
                     />
 
             <com.google.android.material.imageview.ShapeableImageView
-                    app:shapeAppearanceOverlay="@style/RoundImageStyle"
+                    app:shapeAppearanceOverlay="@style/CircleImageStyle"
                     app:layout_constraintEnd_toStartOf="@id/tv_right_avatar"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"

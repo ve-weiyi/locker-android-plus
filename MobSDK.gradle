@@ -1,0 +1,44 @@
+apply plugin: 'com.mob.sdk'
+
+try {
+    String tmpParams = getProperty("custom_params")
+    String[] params = tmpParams.split(",")
+    params.each {item->
+        MobSDK[item] = true
+    }
+} catch(Throwable t) {}
+
+
+MobSDK {
+    //lockit
+    appKey "3651f66c7dccf"
+    appSecret "aa32bad943c6cf92826639eeb8f1a677"
+    appBundleMode true
+
+
+    ShareSDK {
+        loopShare true
+        //平台配置信息
+        devInfo {
+//          腾讯应用开发平台https://app.open.qq.com/  与QQ互联平台不同
+            //lockit
+            QQ {
+                id 7
+                sortId 7
+                appId "102017330"
+                appKey "WwBD2d1B8rMdfS1L"
+                shareByAppClient true
+                bypassApproval false
+                enable true
+            }
+        }
+    }
+}
+
+try {
+    String tmpParams = getProperty("custom_params")
+    String[] params = tmpParams.split(",")
+    params.each {item->
+        MobSDK[item] = true
+    }
+} catch(Throwable t) {}

@@ -21,7 +21,7 @@ import com.ve.module.lockit.common.config.LockitSpKey
 import com.ve.module.lockit.common.event.RefreshDataEvent
 
 import com.ve.module.lockit.databinding.LockitFragmentMeBinding
-import com.ve.module.lockit.respository.http.bean.LoginVO
+import com.ve.module.lockit.respository.http.bean.LoginDTO
 import com.ve.module.lockit.ui.page.auth.LockitLoginActivity
 import com.ve.module.lockit.ui.page.container.LockitWebContainerActivity
 import com.ve.module.lockit.ui.page.feedback.LockitFeedBackActivity
@@ -55,7 +55,7 @@ class LockitMeFragment : BaseVmFragment<LockitFragmentMeBinding, LockitDrawerVie
     var placeName: String? = null
 
     override fun initView(savedInstanceState: Bundle?) {
-        showUserInfo(SpUtil.getValue(LockitSpKey.SP_KEY_LOGIN_DATA_KEY, LoginVO()::class.java))
+        showUserInfo(SpUtil.getValue(LockitSpKey.SP_KEY_LOGIN_DATA_KEY, LoginDTO()::class.java))
     }
 
     override fun initWebData() {
@@ -123,7 +123,7 @@ class LockitMeFragment : BaseVmFragment<LockitFragmentMeBinding, LockitDrawerVie
         when (v?.id) {
             R.id.exit_layout -> {
                 SpUtil.clearPreference(LockitSpKey.SP_KEY_LOGIN_DATA_KEY)
-                EventBus.getDefault().post(RefreshDataEvent(LoginVO::class.java.name,null))
+                EventBus.getDefault().post(RefreshDataEvent(LoginDTO::class.java.name,null))
                 showMsg("退出登录成功")
             }
 
@@ -180,7 +180,7 @@ class LockitMeFragment : BaseVmFragment<LockitFragmentMeBinding, LockitDrawerVie
     }
 
 
-    private fun showUserInfo(it: LoginVO?){
+    private fun showUserInfo(it: LoginDTO?){
         LogUtil.d(it.toString())
         if(it==null){
             mBinding.layoutUserinfo.layoutMain.visibility = View.GONE
@@ -204,9 +204,9 @@ class LockitMeFragment : BaseVmFragment<LockitFragmentMeBinding, LockitDrawerVie
      */
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun onRefreshDataEvent(event: RefreshDataEvent) {
-        if (LoginVO::class.java.name == event.dataClassName) {
+        if (LoginDTO::class.java.name == event.dataClassName) {
             LogUtil.d("$mViewName receiver event " + event.dataClassName)
-            if (event.data is LoginVO) {
+            if (event.data is LoginDTO) {
                 showUserInfo(event.data)
             }else{
                 showUserInfo(null)

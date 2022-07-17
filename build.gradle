@@ -1,5 +1,12 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
+buildscript {
+    dependencies {
+        // 2.注册MobSDK
+        classpath "com.mob.sdk:MobSDK:+"
+    }
+}
+
 plugins {
     id 'com.android.application' version '7.1.2' apply false
     id 'com.android.library' version '7.1.2' apply false

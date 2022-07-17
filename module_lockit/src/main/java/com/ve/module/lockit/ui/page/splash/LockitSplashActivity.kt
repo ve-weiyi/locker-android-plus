@@ -11,7 +11,7 @@ import com.ve.module.lockit.LockitMainActivity
 import com.ve.module.lockit.common.config.LockitSpKey
 
 import com.ve.module.lockit.databinding.LockitActivitySplashBinding
-import com.ve.module.lockit.respository.http.bean.LoginVO
+import com.ve.module.lockit.respository.http.bean.LoginDTO
 import com.ve.module.lockit.ui.page.auth.LockitAuthActivity
 import com.ve.module.lockit.ui.page.auth.LockitLoginActivity
 
@@ -59,7 +59,7 @@ class LockitSplashActivity : BaseActivity<LockitActivitySplashBinding>() {
     override fun initialize(saveInstanceState: Bundle?) {
         val biometric=SpUtil.getBoolean(LockitSpKey.SP_KEY_BIOMETRICS)
         var isLogin=SpUtil.getValue(LockitSpKey.SP_KEY_LOGIN_STATE_KEY,false)
-        val data=SpUtil.getValue(LockitSpKey.SP_KEY_LOGIN_DATA_KEY,LoginVO::class.java)
+        val data=SpUtil.getValue(LockitSpKey.SP_KEY_LOGIN_DATA_KEY,LoginDTO::class.java)
 
         LogUtil.msg(data.toString())
         alphaAnimation = AlphaAnimation(0.1F, 1.0F)
@@ -83,6 +83,7 @@ class LockitSplashActivity : BaseActivity<LockitActivitySplashBinding>() {
 //                        jumpToMain()
 //                    }
                     jumpToMain()
+//                    jumpToLogin()
 //                    LockitAuthActivity.start(mContext,LockitMainActivity::class.java.name)
                 }
 

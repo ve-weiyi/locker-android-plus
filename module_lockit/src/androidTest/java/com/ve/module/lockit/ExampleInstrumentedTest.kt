@@ -11,7 +11,7 @@ import com.ve.module.lockit.common.config.LockitConstant
 import com.ve.module.lockit.respository.database.AppDataBase
 import com.ve.module.lockit.respository.database.entity.*
 import com.ve.module.lockit.respository.AuthRepository
-import com.ve.module.lockit.respository.http.bean.ConditionVO
+import com.ve.module.lockit.respository.http.model.ConditionVO
 import com.ve.module.lockit.utils.AESUtil
 import com.ve.module.lockit.utils.PasswordUtils
 import com.ve.module.lockit.utils.RSAUtils
@@ -123,7 +123,7 @@ class ExampleInstrumentedTest {
         val repository = AuthRepository
 
         runBlocking {
-            val result = repository.loginlockit(LockitConstant.username, LockitConstant.password)
+            val result = repository.loginLockit(LockitConstant.username, LockitConstant.password)
             LogUtil.e(result.data().toString())
         }
     }

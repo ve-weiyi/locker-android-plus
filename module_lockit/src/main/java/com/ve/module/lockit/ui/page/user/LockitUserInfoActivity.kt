@@ -7,7 +7,7 @@ import com.ve.lib.common.vutils.LogUtil
 import com.ve.lib.common.vutils.SpUtil
 import com.ve.module.lockit.common.config.LockitSpKey
 import com.ve.module.lockit.databinding.LockitActivityUserinfoBinding
-import com.ve.module.lockit.respository.http.bean.LoginVO
+import com.ve.module.lockit.respository.http.bean.LoginDTO
 
 /**
  * @Author  weiyi
@@ -21,7 +21,7 @@ class LockitUserInfoActivity:BaseActivity<LockitActivityUserinfoBinding>() {
 
     override fun initialize(saveInstanceState: Bundle?) {
         initToolbar(mBinding.extToolbar.toolbar,"账号资料")
-        val userinfo= SpUtil.getValue(LockitSpKey.SP_KEY_LOGIN_DATA_KEY, LoginVO::class.java)
+        val userinfo= SpUtil.getValue(LockitSpKey.SP_KEY_LOGIN_DATA_KEY, LoginDTO::class.java)
         LogUtil.msg(userinfo)
         if(userinfo!=null){
             showUserInfo(userinfo)
@@ -30,7 +30,7 @@ class LockitUserInfoActivity:BaseActivity<LockitActivityUserinfoBinding>() {
         }
     }
 
-    private fun showUserInfo(userinfo: LoginVO) {
+    private fun showUserInfo(userinfo: LoginDTO) {
         val userDetail=userinfo.userInfoDTO
         mBinding.apply {
             ImageLoader.loadView(mContext,userDetail.avatar,ivAvatar)

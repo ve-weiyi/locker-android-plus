@@ -1,4 +1,4 @@
-package com.ve.module.lockit.respository.http.bean
+package com.ve.module.lockit.respository.http.model
 
 
 /**

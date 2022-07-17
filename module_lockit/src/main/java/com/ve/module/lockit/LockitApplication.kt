@@ -12,6 +12,7 @@ import com.tencent.mmkv.MMKV
 import com.tencent.tauth.Tencent
 import com.ve.lib.application.BaseApplication
 import com.ve.lib.application.BuildConfig
+import com.ve.lib.auth.AuthApplication
 import com.ve.lib.common.config.AppConfig
 import com.ve.lib.common.ext.startActivity
 import com.ve.lib.common.utils.SettingUtil
@@ -44,9 +45,12 @@ class LockitApplication:BaseApplication() {
         lateinit var  mTencent: Tencent
     }
 
+    override fun getModulesApplicationName(): List<String> {
+        return mutableListOf(AuthApplication::class.java.name)
+    }
+
     override fun onCreate() {
         super.onCreate()
-
         context = applicationContext
 
         if (BuildConfig.DEBUG) {

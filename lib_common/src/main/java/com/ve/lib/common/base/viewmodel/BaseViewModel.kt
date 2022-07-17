@@ -68,6 +68,7 @@ open class BaseViewModel : ViewModel(), LifecycleObserver {
                 //apiCall,返回BaseResponse
                 block.invoke(this)
             } catch (e: Exception) {
+                LogUtil.msg(e.message)
                 //处理错误
                 when (e) {
                     is CancellationException -> {
@@ -138,7 +139,6 @@ open class BaseViewModel : ViewModel(), LifecycleObserver {
      * @param showErrorToast 是否显示错误吐司
      */
     private fun onError(e: Exception, showErrorToast: Boolean) {
-        e.message?.let { LogUtil.msg(it) }
         when (e) {
             is ApiException -> {
                 when (e.errorCode) {

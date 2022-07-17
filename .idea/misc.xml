@@ -4,16 +4,24 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="lib_application/src/main/res/drawable-v21/ic_baseline_code_24.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable-v24/bg_blue_circle.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable-v24/bg_blue_oval.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable-v24/bg_done.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable-v24/bg_gray_border.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable-v24/bg_gray_circle_tag.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable-v24/bg_green_rect.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable-v24/bg_grey_rect_10dp.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable-v24/bg_grey_rect_search.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable-v24/bg_logo.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable-v24/bg_red_circle.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable-v24/bg_round_card.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable-v24/bg_round_red.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable-v24/bg_round_white_8dp.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable-v24/bg_tag.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable-v24/bg_tag_one.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable-v24/bg_toast_custom.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable-v24/bg_white_circle.xml" value="0.127" />
+        <entry key="lib_application/src/main/res/drawable-v24/bg_white_rect_8dp.xml" value="0.127" />
         <entry key="lib_application/src/main/res/drawable-v24/btn_login_bg.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable-v24/fab_label_background.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
@@ -31,6 +39,7 @@
         <entry key="lib_application/src/main/res/drawable-v24/shape_round_grey_search.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable-v24/shape_round_grey_tag.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable-v24/shape_round_primary.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable-v24/state_back_arrow_bg.xml" value="0.127" />
         <entry key="lib_application/src/main/res/drawable-v24/state_item_check.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable/bg_delete.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable/bg_done.xml" value="0.1" />
@@ -39,6 +48,10 @@
         <entry key="lib_application/src/main/res/drawable/ic_apps_black_24dp.xml" value="0.133" />
         <entry key="lib_application/src/main/res/drawable/ic_qq.xml" value="0.133" />
         <entry key="lib_application/src/main/res/drawable/ic_wechat.xml" value="0.133" />
+        <entry key="lib_application/src/main/res/drawable/shape_seekbar_btn.xml" value="0.127" />
+        <entry key="lib_auth/src/main/res/drawable/privacy_button_cancel.xml" value="0.1" />
+        <entry key="lib_auth/src/main/res/layout/normal_authorization_layout.xml" value="0.25729166666666664" />
+        <entry key="lib_auth/src/main/res/layout/privacy_dialog.xml" value="0.1814814814814815" />
         <entry key="module_lockit/src/main/res/drawable-v21/bg_dialog_sheet_header.xml" value="0.1" />
         <entry key="module_lockit/src/main/res/drawable-v21/ic_baseline_account_box_24.xml" value="0.1" />
         <entry key="module_lockit/src/main/res/drawable-v21/ic_baseline_cloud_24.xml" value="0.1" />
@@ -63,6 +76,7 @@
         <entry key="module_lockit/src/main/res/drawable-v24/bg_home_login.xml" value="0.1" />
         <entry key="module_lockit/src/main/res/drawable-v24/bg_song_list_header.xml" value="0.1" />
         <entry key="module_lockit/src/main/res/drawable-v24/bg_user_detail_followed.xml" value="0.1" />
+        <entry key="module_lockit/src/main/res/drawable-v24/ic_add_round_28.xml" value="0.1415" />
         <entry key="module_lockit/src/main/res/drawable-v24/shape_comment.xml" value="0.1" />
         <entry key="module_lockit/src/main/res/drawable-v24/shape_comment_event.xml" value="0.1" />
         <entry key="module_lockit/src/main/res/drawable-v24/shape_comment_like.xml" value="0.1" />
@@ -75,17 +89,25 @@
         <entry key="module_lockit/src/main/res/drawable-v25/ic_qq_28.xml" value="0.1" />
         <entry key="module_lockit/src/main/res/drawable-v25/ic_refresh_48.xml" value="0.1" />
         <entry key="module_lockit/src/main/res/drawable-v25/ic_wechat_28.xml" value="0.1" />
+        <entry key="module_lockit/src/main/res/drawable-v25/ic_weibo_28.xml" value="0.1" />
         <entry key="module_lockit/src/main/res/drawable/border_radio_subscribed.xml" value="0.1" />
         <entry key="module_lockit/src/main/res/drawable/ic_baseline_account_box_24.xml" value="0.1" />
         <entry key="module_lockit/src/main/res/layout/lockit_activity_auth.xml" value="0.30833333333333335" />
-        <entry key="module_lockit/src/main/res/layout/lockit_activity_login.xml" value="0.184375" />
+        <entry key="module_lockit/src/main/res/layout/lockit_activity_auth_key.xml" value="0.21354166666666666" />
+        <entry key="module_lockit/src/main/res/layout/lockit_activity_login.xml" value="0.25" />
         <entry key="module_lockit/src/main/res/layout/lockit_activity_main.xml" value="0.15789473684210525" />
         <entry key="module_lockit/src/main/res/layout/lockit_activity_phone_login.xml" value="0.17552083333333332" />
+        <entry key="module_lockit/src/main/res/layout/lockit_activity_register.xml" value="0.21354166666666666" />
+        <entry key="module_lockit/src/main/res/layout/lockit_fragment_details_card.xml" value="0.1" />
+        <entry key="module_lockit/src/main/res/layout/lockit_fragment_details_pass.xml" value="0.1" />
         <entry key="module_lockit/src/main/res/layout/lockit_fragment_drawer.xml" value="0.15217391304347827" />
         <entry key="module_lockit/src/main/res/layout/lockit_fragment_me.xml" value="0.30833333333333335" />
+        <entry key="module_lockit/src/main/res/layout/lockit_item_folder.xml" value="0.1" />
         <entry key="module_lockit/src/main/res/layout/lockit_item_privacy_pass.xml" value="0.30833333333333335" />
         <entry key="module_lockit/src/main/res/layout/lockit_item_tag.xml" value="0.30833333333333335" />
+        <entry key="module_lockit/src/main/res/layout/lockit_item_type.xml" value="0.1" />
         <entry key="module_lockit/src/main/res/layout/lockit_layout_login_type.xml" value="0.184375" />
+        <entry key="module_lockit/src/main/res/layout/lockit_layout_userinfo.xml" value="0.2682291666666667" />
         <entry key="module_lockit/src/main/res/layout/lockit_layout_userinfo_null.xml" value="0.30833333333333335" />
         <entry key="module_lockit/src/main/res/layout/lockit_toolbar.xml" value="0.30833333333333335" />
         <entry key="module_lockit/src/main/res/menu/lockit_menu_classify.xml" value="0.30833333333333335" />

@@ -152,7 +152,7 @@
                             style="@style/tv_content_primary" />
 
                     <com.google.android.material.imageview.ShapeableImageView
-                            app:shapeAppearanceOverlay="@style/RoundImageStyle"
+                            app:shapeAppearanceOverlay="@style/CircleImageStyle"
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"

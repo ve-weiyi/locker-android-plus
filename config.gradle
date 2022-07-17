@@ -45,7 +45,7 @@ ext {
             "retrofitConverterGson"   : "com.squareup.retrofit2:converter-gson:${versions.retrofit}",
             "retrofitAdapterRxjava2"  : "com.squareup.retrofit2:adapter-rxjava2:${versions.retrofit}",
             "okhttp3"                 : 'com.squareup.okhttp3:okhttp:4.0.0',
-            "okhttp3LoggerInterceptor": "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.6",
+            "okhttp3LoggerInterceptor": "com.squareup.okhttp3:logging-interceptor:4.0.0",
             //解析数据@JSON
             "retrofitConverterMoshi"  : "com.squareup.retrofit2:converter-moshi:2.4.0",
             "retrofitKotlinMoshi"     : "com.squareup.moshi:moshi-kotlin:1.7.0",

@@ -37,12 +37,12 @@ data class UserInfoDTO (
     /**
      * 用户昵称
      */
-    val nickname: String? = null,
+    var nickname: String? = null,
 
     /**
      * 用户头像
      */
-    val avatar: String? = null,
+    var avatar: String? = null,
 
     /**
      * 用户简介

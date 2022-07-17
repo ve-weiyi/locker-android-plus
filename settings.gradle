@@ -3,21 +3,33 @@ pluginManagement {
         gradlePluginPortal()
         google()
         mavenCentral()
+        // 1.添加MobSDK Maven地址
+        maven {
+            url "https://mvn.mob.com/android"
+        }
     }
 }
 dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
     repositories {
         google()
         mavenCentral()
         maven { url "https://jitpack.io" }
+        // 1.添加MobSDK Maven地址
+        maven {
+            url "https://mvn.mob.com/android"
+            //http 需要设置
+            //allowInsecureProtocol = true
+        }
         jcenter()
     }
 }
+
 rootProject.name = "lockit-android"
 include ':app'
 include ':lib_application'
 include ':lib_common'
+include ':lib_auth'
 
 include ':module_lockit'
 include ':module_sunny'

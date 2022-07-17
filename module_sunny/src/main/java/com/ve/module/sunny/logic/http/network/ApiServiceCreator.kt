@@ -22,7 +22,7 @@ object ApiServiceCreator {
 
 
     fun getApiCaiyun(): ApiCaiyun {
-        val httpLoggingInterceptor = HttpLoggingInterceptor { Log.d("httpLog", it) }
+        val httpLoggingInterceptor = HttpLoggingInterceptor()
         httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
 
         //从响应头里拿到cookie并存起来，后面的每次请求再添加到请求头里

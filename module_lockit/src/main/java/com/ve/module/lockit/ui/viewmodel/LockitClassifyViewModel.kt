@@ -6,7 +6,7 @@ import com.ve.module.lockit.respository.database.entity.PrivacyFolder
 import com.ve.module.lockit.respository.database.entity.PrivacyPass
 import com.ve.module.lockit.respository.database.entity.PrivacyTag
 import com.ve.module.lockit.respository.database.vo.PrivacySimpleInfo
-import com.ve.module.lockit.respository.http.bean.ConditionVO
+import com.ve.module.lockit.respository.http.model.ConditionVO
 import org.litepal.LitePal
 
 /**

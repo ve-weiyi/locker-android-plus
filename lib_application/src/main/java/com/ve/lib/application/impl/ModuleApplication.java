@@ -7,10 +7,10 @@ import com.ve.lib.application.BaseApplication;
  * @Author weiyi
  * @Date 2022/3/24
  */
-public interface ApplicationImpl {
+public interface ModuleApplication {
     /**
      * Module`s Application onCreate
      * @param application
      */
-    void onCreate(BaseApplication application);
+    void onModuleCreate(BaseApplication application);
 }

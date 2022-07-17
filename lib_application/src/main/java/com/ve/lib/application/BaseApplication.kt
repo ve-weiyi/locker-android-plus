@@ -7,9 +7,7 @@ import android.content.Context
 import android.content.res.Configuration
 import android.os.Bundle
 import android.util.Log
-import com.alibaba.android.arouter.launcher.ARouter
-import com.ve.lib.application.impl.ApplicationImpl
-import com.ve.lib.application.impl.ModuleConfig
+import com.ve.lib.application.impl.ModuleApplication
 
 /**
  * @Description
@@ -17,11 +15,14 @@ import com.ve.lib.application.impl.ModuleConfig
  * @Author  weiyi
  * @Date 2022/3/23
  */
-open class BaseApplication : Application() {
+abstract class BaseApplication : Application() {
+
+
 
     companion object {
         const val isDebug =true
         const val TAG = "app"
+        lateinit var modulesClassName:List<String>
 
         //注释 忽略内存泄露警告
         @SuppressLint("StaticFieldLeak")
@@ -38,8 +39,34 @@ open class BaseApplication : Application() {
         super.onCreate()
         mContext = applicationContext
         context = applicationContext
+        modulesApplicationInit()
 
         registerActivityLifecycleCallbacks(mActivityLifecycleCallbacks)
+    }
+
+
+    open fun getModulesApplicationName():List<String>{
+        return mutableListOf()
+    }
+
+    open fun modulesApplicationInit() {
+        modulesClassName=getModulesApplicationName()
+        for (moduleImpl in modulesClassName) {
+            try {
+                val clazz = Class.forName(moduleImpl)
+                val obj = clazz.newInstance()
+                if (obj is ModuleApplication) {
+                    obj.onModuleCreate(this)
+                    Log.e(TAG, "$moduleImpl is init")
+                }
+            } catch (e: ClassNotFoundException) {
+                e.printStackTrace()
+            } catch (e: IllegalAccessException) {
+                e.printStackTrace()
+            } catch (e: InstantiationException) {
+                e.printStackTrace()
+            }
+        }
     }
 
     /**
@@ -71,7 +98,6 @@ open class BaseApplication : Application() {
         super.registerActivityLifecycleCallbacks(callback)
     }
 
-
     protected val mActivityLifecycleCallbacks = object : ActivityLifecycleCallbacks {
         override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
             Log.d(TAG, "onCreated: " + activity.componentName.className)
@@ -99,24 +125,6 @@ open class BaseApplication : Application() {
 
         override fun onActivityDestroyed(activity: Activity) {
             Log.d(TAG, "onDestroy: " + activity.componentName.className)
-        }
-    }
-
-    open fun modulesApplicationInit() {
-        for (moduleImpl in ModuleConfig.MODULESLIST) {
-            try {
-                val clazz = Class.forName(moduleImpl)
-                val obj = clazz.newInstance()
-                if (obj is ApplicationImpl) {
-                    obj.onCreate(this)
-                }
-            } catch (e: ClassNotFoundException) {
-                e.printStackTrace()
-            } catch (e: IllegalAccessException) {
-                e.printStackTrace()
-            } catch (e: InstantiationException) {
-                e.printStackTrace()
-            }
         }
     }
 }

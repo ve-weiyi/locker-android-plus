@@ -42,7 +42,7 @@
     </style>
 
     <!-- 圆形图片 -->
-    <style name="RoundImageStyle">
+    <style name="CircleImageStyle">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
         <item name="android:layout_width">50dp</item>

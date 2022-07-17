@@ -15,13 +15,13 @@ class LockitRegisterViewModel : LockitViewModel() {
     val registerState = MutableLiveData<LockitBaseBean<Any>>()
 
     fun register(
-        username: String?,
-        password: String?,
+        username: String,
+        password: String,
         code: String?,
     ) {
         launch(
             block = {
-                val result = authRepository.registerlockit(username, password, code)
+                val result = authRepository.registerLockit(username, password, code)
                 registerState.value=result
             }
         )

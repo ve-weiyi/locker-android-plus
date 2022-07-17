@@ -8,7 +8,7 @@ import com.ve.lib.common.vutils.LogUtil
 import com.ve.module.lockit.databinding.LockitActivityClassifyGroupBinding
 import com.ve.module.lockit.respository.database.entity.PrivacyFolder
 import com.ve.module.lockit.respository.database.entity.PrivacyTag
-import com.ve.module.lockit.respository.http.bean.ConditionVO
+import com.ve.module.lockit.respository.http.model.ConditionVO
 import com.ve.module.lockit.ui.adapter.CategoryGroupAdapter
 import com.ve.module.lockit.ui.viewmodel.LockitClassifyViewModel
 import java.io.Serializable

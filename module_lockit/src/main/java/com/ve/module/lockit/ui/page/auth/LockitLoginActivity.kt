@@ -2,7 +2,6 @@ package com.ve.module.lockit.ui.page.auth
 
 import android.content.Intent
 import android.graphics.Color
-import android.os.Build
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.SpannableStringBuilder
@@ -13,35 +12,31 @@ import android.text.style.ForegroundColorSpan
 import android.view.View
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.lifecycle.lifecycleOwner
-import com.google.gson.Gson
-import com.tencent.connect.common.Constants
-import com.tencent.mmkv.MMKV
-import com.tencent.tauth.DefaultUiListener
-import com.tencent.tauth.Tencent
-import com.tencent.tauth.UiError
-import com.ve.lib.application.BaseApplication
+import com.tencent.connect.UserInfo
+import com.ve.lib.auth.QQAuthorization
 import com.ve.lib.common.base.view.vm.BaseVmActivity
 import com.ve.lib.common.ext.setOnclickNoRepeat
-import com.ve.lib.common.ext.showToast
 import com.ve.lib.common.vutils.LogUtil
 import com.ve.lib.common.widget.passwordGenerator.PasswordGeneratorDialog
 import com.ve.lib.common.vutils.SpUtil
-import com.ve.module.lockit.LockitApplication
-import com.ve.module.lockit.LockitApplication.Companion.mTencent
 import com.ve.module.lockit.LockitMainActivity
 import com.ve.module.lockit.R
 import com.ve.module.lockit.common.config.LockitConstant
 import com.ve.module.lockit.common.config.LockitSpKey
+import com.ve.module.lockit.common.enums.LoginTypeEnum
 import com.ve.module.lockit.common.event.RefreshDataEvent
 
 import com.ve.module.lockit.databinding.LockitActivityLoginBinding
-import com.ve.module.lockit.respository.http.bean.LoginVO
-import com.ve.module.lockit.ui.page.auth.strategy.qq.BaseUiListener
+import com.ve.module.lockit.respository.AuthRepository
+import com.ve.module.lockit.respository.http.bean.LoginDTO
+import com.ve.module.lockit.respository.http.model.QQLoginVO
+import com.ve.module.lockit.respository.http.model.UserInfoVO
 import com.ve.module.lockit.ui.page.auth.strategy.qq.QQLogin
+import com.ve.module.lockit.ui.page.auth.strategy.qq.QQUiListener
 import com.ve.module.lockit.ui.page.auth.strategy.qq.QQLoginStrategy
+import com.ve.module.lockit.ui.page.auth.strategy.qq.QQUserInfo
 import com.ve.module.lockit.ui.viewmodel.LockitLoginViewModel
 import org.greenrobot.eventbus.EventBus
-import org.json.JSONObject
 
 /**
  * https://www.wanandroid.com/user/login
@@ -79,9 +74,8 @@ class LockitLoginActivity: BaseVmActivity<LockitActivityLoginBinding, LockitLogi
         SpUtil.getValue( LockitSpKey.PASSWORD_KEY, LockitConstant.password)
     }
 
-    private val kv = MMKV.defaultMMKV()
-    private lateinit var  iu: BaseUiListener
-    
+    private var loginType:Int=LoginTypeEnum.ACCOUNT.type
+
     override fun initView(savedInstanceState: Bundle?) {
         initToolbar(mBinding.extToolbar.toolbar, "登录", true)
 
@@ -90,8 +84,7 @@ class LockitLoginActivity: BaseVmActivity<LockitActivityLoginBinding, LockitLogi
             et_username.setText(user)
             et_password.setText(pwd)
         }
-        QQLoginStrategy.init()
-        QQLoginStrategy.checkLogin(this)
+//        QQLoginStrategy.init()
     }
 
     //这个回调改不了，只能等腾讯api更新了再改
@@ -100,22 +93,39 @@ class LockitLoginActivity: BaseVmActivity<LockitActivityLoginBinding, LockitLogi
         //腾讯QQ回调
         QQLoginStrategy.onLoginResult(requestCode, resultCode, data)
     }
-    
+
+
+    var qqInfo: QQUserInfo?=null
     override fun initObserver() {
         mViewModel.loginData.observe(this) {
             LogUtil.msg(it)
             if(it!=null) {
+                if(loginType==LoginTypeEnum.QQ.type){
+                    it.userInfoDTO.nickname=qqInfo!!.nickname
+                    it.userInfoDTO.avatar=qqInfo!!.figureurl_qq
+                }
                 loginSuccess(it)
             }else{
                 loginFail()
             }
         }
     }
-
     override fun initListener() {
         super.initListener()
-        mBinding.ibQq.setOnClickListener {
-            QQLoginStrategy.doLogin(this)
+        mBinding.layoutLoginType.ibWechat.setOnClickListener {
+            QQAuthorization.login()
+        }
+        mBinding.layoutLoginType.ibQq.setOnClickListener {
+            loginType=LoginTypeEnum.QQ.type
+            QQLoginStrategy.doLogin(this,object : QQUiListener(){
+                override fun afterGetUserInfo(info: QQLogin) {
+                    LogUtil.msg(info)
+                    QQLoginStrategy.getQQInfo(info) { qqUserInfo ->
+                        qqInfo = qqUserInfo
+                        mViewModel.qqLogin(QQLoginVO(info.openid, info.access_token))
+                    }
+                }
+            })
         }
 
         btn_login.apply {
@@ -153,8 +163,8 @@ class LockitLoginActivity: BaseVmActivity<LockitActivityLoginBinding, LockitLogi
     }
 
 
-    private fun loginSuccess(it: LoginVO?) {
-        EventBus.getDefault().post(RefreshDataEvent(LoginVO::class.java.name,it))
+    private fun loginSuccess(it: LoginDTO?) {
+        EventBus.getDefault().post(RefreshDataEvent(LoginDTO::class.java.name,it))
         SpUtil.setValue(LockitSpKey.TOKEN_KEY, it?.token)
         SpUtil.setValue(LockitSpKey.SP_KEY_LOGIN_DATA_KEY, it)
 
