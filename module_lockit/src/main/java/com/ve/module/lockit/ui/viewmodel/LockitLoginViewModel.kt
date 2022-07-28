@@ -30,6 +30,7 @@ class LockitLoginViewModel:LockitViewModel() {
     fun login(username: String?, password: String?) {
         val job = launch(
             block = {
+                LogUtil.msg(username+" "+password)
                 val loginVO = AuthRepository.loginLockit(username, password)
                 LogUtil.msg(loginVO)
                 _loginState.value = loginVO.flag

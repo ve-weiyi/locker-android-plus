@@ -7,7 +7,7 @@ import okhttp3.OkHttpClient
 
 object WazApiService : BaseApiService<ApiService>() {
 
-    val service by lazy {
+    val apiService by lazy {
         getApiService()
 //        ApiServiceFactory.getService(ApiService::class.java, ApiService.BASE_URL)
     }

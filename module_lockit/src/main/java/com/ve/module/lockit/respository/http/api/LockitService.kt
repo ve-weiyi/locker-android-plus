@@ -21,7 +21,7 @@ interface LockitService {
          * 本地测试地址 只能填服务器的地址+端口，并且以/结尾
          * 本地调试不要用证书
          */
-        const val BASE_URL = "http://192.168.100.26:8084/"
+        const val BASE_URL = "http://192.168.2.101:8084/"
 
         //模拟器连接地址
 //        const val BASE_URL = "http://10.0.2.2:8084/"
@@ -37,7 +37,7 @@ interface LockitService {
     @POST("/api/user/login")
     @FormUrlEncoded
     suspend fun loginLockit(
-        @Field("openId") username: String?,
+        @Field("username") username: String?,
         @Field("password") password: String?,
         @Field("code") code: String?="1234",
     ): LockitBaseBean<LoginDTO>
@@ -77,4 +77,8 @@ interface LockitService {
     suspend fun updateUserInfo(
         @Body userInfoDTO: UserInfoVO
     ): LockitBaseBean<Any>
+
+    @GET("/api")
+    suspend fun report(): LockitBaseBean<Any>
+
 }

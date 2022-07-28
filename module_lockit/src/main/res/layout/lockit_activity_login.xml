@@ -56,7 +56,7 @@
                 style="@style/InputTextLayoutStyle"
                 android:focusableInTouchMode="true">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <EditText
                     android:background="@drawable/bg_grey_tag"
                     android:id="@+id/et_username"
                     android:layout_width="match_parent"

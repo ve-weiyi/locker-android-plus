@@ -1,6 +1,7 @@
 package com.ve.module.lockit.ui.viewmodel
 
 import com.ve.lib.common.base.viewmodel.BaseViewModel
+import com.ve.module.lockit.respository.AuthRepository
 
 
 /**
@@ -10,11 +11,13 @@ import com.ve.lib.common.base.viewmodel.BaseViewModel
  */
 open class LockitViewModel: BaseViewModel() {
 
-    //val privacyRepository=PrivacyRepository
+    fun report(){
+        launch(
+            block = {
 
-//    val appDatabase= lockitDatabase.getInstance(AppContextUtils.mContext)
-   // var liteDatabase = LitePal.getDatabase()
-
+            }
+        )
+    }
 
 
 }

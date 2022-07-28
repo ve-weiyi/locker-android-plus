@@ -73,6 +73,7 @@ https://blog.csdn.net/fenggering/article/details/53907654
 问题3：自定义view问题
 
 
+
 问题4：coodinglayout和 swipelayout滑动冲突问题，在swipelayout滑动是，不能吸附banner
 需求是先吸附banner之后再滑动swipelayout
 
@@ -85,4 +86,5 @@ https://blog.csdn.net/fenggering/article/details/53907654
 记住密码 √
 返回验证 √
 bugly热更新、监控   暂时不做
-第三方登录  wanAndroid 网站  https://github.com/xyh-fu/QQLoginTest
+第三方登录  wanAndroid 网站  
+https://github.com/xyh-fu/QQLoginTest

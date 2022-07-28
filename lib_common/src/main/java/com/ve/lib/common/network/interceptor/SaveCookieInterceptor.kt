@@ -1,5 +1,6 @@
 package com.ve.lib.common.network.interceptor
 
+import com.ve.lib.common.vutils.LogUtil
 import com.ve.lib.common.vutils.SpUtil
 import okhttp3.Interceptor
 import okhttp3.Request
@@ -30,6 +31,7 @@ class SaveCookieInterceptor(
             val cookies: HashSet<String> = HashSet()
             for (header in response.headers("Set-Cookie")) {
                 cookies.add(header)
+                LogUtil.msg(header)
             }
             SpUtil.setStringSet(spCookieKey, cookies)
         }

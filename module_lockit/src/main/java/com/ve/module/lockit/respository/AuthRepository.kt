@@ -31,4 +31,7 @@ object AuthRepository : LockitRepository() {
     suspend fun sendCode(username: String?) = apiService.sendCode(username)
 
     suspend fun updateUserInfo(userInfoVO: UserInfoVO)= apiService.updateUserInfo(userInfoVO)
+
+    suspend fun api()= apiService.report()
+
 }

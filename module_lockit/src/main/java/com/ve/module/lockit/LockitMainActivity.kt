@@ -52,6 +52,7 @@ class LockitMainActivity : BaseVmActivity<LockitActivityMainBinding, LockitViewM
     }
 
     override fun initView(savedInstanceState: Bundle?) {
+        mViewModel.report()
         initFragment()
         showFragment(mIndex)
         initToolbar(

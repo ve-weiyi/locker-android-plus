@@ -12,10 +12,9 @@ import android.text.style.ForegroundColorSpan
 import android.view.View
 import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.lifecycle.lifecycleOwner
-import com.tencent.connect.UserInfo
-import com.ve.lib.auth.QQAuthorization
 import com.ve.lib.common.base.view.vm.BaseVmActivity
 import com.ve.lib.common.ext.setOnclickNoRepeat
+import com.ve.lib.common.vutils.DialogUtil
 import com.ve.lib.common.vutils.LogUtil
 import com.ve.lib.common.widget.passwordGenerator.PasswordGeneratorDialog
 import com.ve.lib.common.vutils.SpUtil
@@ -75,7 +74,7 @@ class LockitLoginActivity: BaseVmActivity<LockitActivityLoginBinding, LockitLogi
     }
 
     private var loginType:Int=LoginTypeEnum.ACCOUNT.type
-
+    private val loadingDialog by lazy { DialogUtil.getLoadingDialog(this,"正在登录",true) }
     override fun initView(savedInstanceState: Bundle?) {
         initToolbar(mBinding.extToolbar.toolbar, "登录", true)
 
@@ -113,7 +112,7 @@ class LockitLoginActivity: BaseVmActivity<LockitActivityLoginBinding, LockitLogi
     override fun initListener() {
         super.initListener()
         mBinding.layoutLoginType.ibWechat.setOnClickListener {
-            QQAuthorization.login()
+
         }
         mBinding.layoutLoginType.ibQq.setOnClickListener {
             loginType=LoginTypeEnum.QQ.type
@@ -134,9 +133,9 @@ class LockitLoginActivity: BaseVmActivity<LockitActivityLoginBinding, LockitLogi
                     showMsg("同意服务协议与隐私政策后才能登录")
                     return@setOnclickNoRepeat
                 }
+                loginType=LoginTypeEnum.ACCOUNT.type
                 login()
             }
-            setBackgroundColor(mThemeColor)
         }
 
         tv_sign_up.setOnClickListener{
@@ -150,6 +149,7 @@ class LockitLoginActivity: BaseVmActivity<LockitActivityLoginBinding, LockitLogi
      * Login
      */
     private fun login() {
+        loadingDialog.show()
         if (validate()) {
             val username=et_username.text.toString()
             val password=et_password.text.toString()
@@ -164,6 +164,7 @@ class LockitLoginActivity: BaseVmActivity<LockitActivityLoginBinding, LockitLogi
 
 
     private fun loginSuccess(it: LoginDTO?) {
+        loadingDialog.dismiss()
         EventBus.getDefault().post(RefreshDataEvent(LoginDTO::class.java.name,it))
         SpUtil.setValue(LockitSpKey.TOKEN_KEY, it?.token)
         SpUtil.setValue(LockitSpKey.SP_KEY_LOGIN_DATA_KEY, it)
@@ -176,7 +177,7 @@ class LockitLoginActivity: BaseVmActivity<LockitActivityLoginBinding, LockitLogi
         finish()
     }
     private fun loginFail() {
-
+        loadingDialog.dismiss()
     }
 
     /**

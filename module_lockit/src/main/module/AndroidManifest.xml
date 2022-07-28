@@ -25,20 +25,7 @@
         <activity
                 android:name=".ui.page.splash.LockitSplashActivity"
                 android:exported="true"
-
                 >
-
-        </activity>
-
-        <activity
-                android:name=".LockitMainActivity"
-                android:launchMode="singleTask"
-                android:exported="true">
-
-        </activity>
-        <activity android:name=".ui.page.user.LockitUserInfoActivity" />
-        <activity android:name=".ui.page.auth.LockitLoginActivity"
-                android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -47,7 +34,19 @@
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
+
+        <activity
+                android:name=".LockitMainActivity"
+                android:launchMode="singleTask"
+                android:exported="true">
+
+        </activity>
+        <activity android:name=".ui.page.auth.LockitLoginActivity"
+                android:exported="true">
+
+        </activity>
         <activity android:name=".ui.page.auth.LockitRegisterActivity" />
+        <activity android:name=".ui.page.user.LockitUserInfoActivity" />
         <activity android:name=".ui.page.about.LockitAboutActivity" />
         <activity android:name=".ui.page.feedback.LockitFeedBackActivity" />
         <activity android:name=".ui.page.container.LockitContainerActivity" />
