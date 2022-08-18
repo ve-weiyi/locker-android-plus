@@ -3,7 +3,7 @@ package com.ve.module.lockit.ui.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
-import com.ve.lib.common.utils.CommonUtil
+import com.ve.lib.common.utils.color.ColorUtil
 import com.ve.module.lockit.R
 import com.ve.module.lockit.respository.database.entity.PrivacyTag
 import com.zhy.view.flowlayout.FlowLayout
@@ -24,7 +24,7 @@ class FlowTagAdapter( data:List<PrivacyTag>?=null):TagAdapter<PrivacyTag>(data) 
         ) as TextView
 
         tv.text = t.tagName
-        tv.setTextColor(CommonUtil.randomColor())
+        tv.setTextColor(ColorUtil.randomColor())
         return tv
     }
 

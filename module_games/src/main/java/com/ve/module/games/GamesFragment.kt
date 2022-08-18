@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.ve.lib.common.base.viewmodel.BaseViewModel
 import com.ve.lib.common.base.view.list.BaseVmListFragment
-import com.ve.lib.common.vutils.ToastUtil
+import com.ve.lib.common.utils.view.ToastUtil
 import com.ve.module.games.aircraftbattle.ui.AircraftBattleActivity
 import com.ve.module.games.databinding.FragmentGamesBinding
 

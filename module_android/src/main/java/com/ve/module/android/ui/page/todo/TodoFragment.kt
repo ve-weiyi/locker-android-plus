@@ -18,8 +18,8 @@ import com.ve.module.android.event.RefreshTodoEvent
 import com.ve.module.android.event.TodoEvent
 import com.ve.module.android.event.TodoTypeEvent
 import com.ve.lib.common.network.util.NetWorkUtil
-import com.ve.lib.common.vutils.DialogUtil
-import com.ve.lib.common.vutils.LogUtil
+import com.ve.lib.common.utils.view.DialogUtil
+import com.ve.lib.common.utils.log.LogUtil
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 

@@ -1,13 +1,13 @@
 package com.ve.module.lockit.respository.database.entity
 
 import com.chad.library.adapter.base.entity.SectionEntity
-import com.ve.lib.common.utils.CommonUtil
-import com.ve.lib.common.vutils.AppContextUtil
-import com.ve.lib.common.vutils.TimeUtil
+import com.ve.lib.common.utils.color.ColorUtil
+import com.ve.lib.common.utils.AppContextUtil
+import com.ve.lib.common.utils.date.TimeUtil
 import com.ve.module.lockit.LockitApplication
 import com.ve.module.lockit.common.enums.PrivacyEnum
 import com.ve.module.lockit.respository.database.vo.PrivacySimpleInfo
-import com.ve.module.lockit.utils.AndroidUtil
+import com.ve.lib.common.utils.system.AndroidUtil
 import org.litepal.LitePal
 import org.litepal.annotation.Column
 import org.litepal.annotation.Encrypt
@@ -99,7 +99,7 @@ data class PrivacyPass(
     }
 
     fun toSimpleInfo(): PrivacySimpleInfo {
-        return PrivacySimpleInfo(privacyName = name, CommonUtil.randomColor().toString(),remark, updateTime)
+        return PrivacySimpleInfo(privacyName = name, ColorUtil.randomColor().toString(),remark, updateTime)
     }
 
     companion object {

@@ -4,6 +4,10 @@
 
     <!--    colorPrimary：您的应用的主要品牌颜色，主要用于主题-->
     <color name="colorPrimary">@color/blue</color>
+    <!--    顶部标题栏颜色-->
+    <color name="colorPrimaryDark">@color/deep_blue</color>
+    <!--    图标填充颜色  check box按钮填充色-->
+    <color name="colorAccent">@color/colorPrimary</color>
     <!--    colorPrimaryVariant：您的主要品牌颜色的较浅/较暗变体，在主题中很少使用-->
     <color name="colorPrimaryVariant">#512DA8</color>
     <!--colorOnPrimary：用于显示在原色上方的元素的颜色（例如，文本和图标，根据可访问性，通常为白色或半透明的黑色）-->
@@ -26,10 +30,6 @@
     <color name="colorBackground">@color/grey100</color>
     <!--    colorOnBackground：用于显示在背景色上方的元素的颜色()-->
     <color name="colorOnBackground">@color/white</color>
-    <!--    顶部标题栏颜色-->
-    <color name="colorPrimaryDark">@color/deep_blue</color>
-    <!--    图标填充颜色  check box按钮填充色-->
-    <color name="colorAccent">@color/colorPrimary</color>
 
     <!--    比背景色深一点-->
     <color name="windowColorBackground">@color/grey150</color>

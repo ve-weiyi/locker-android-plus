@@ -1,6 +1,6 @@
 package com.ve.module.lockit
 
-import com.ve.lib.common.vutils.TimeUtil
+import com.ve.lib.common.utils.date.TimeUtil
 import com.ve.module.lockit.utils.PasswordUtils
 import org.junit.Test
 

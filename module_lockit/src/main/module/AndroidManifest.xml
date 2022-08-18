@@ -23,7 +23,7 @@
                 android:exported="false" />
 
         <activity
-                android:name=".ui.page.splash.LockitSplashActivity"
+                android:name=".ui.page.LockitSplashActivity"
                 android:exported="true"
                 >
             <intent-filter>

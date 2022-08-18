@@ -1,7 +1,7 @@
 package com.ve.lib.common.network.interceptor
 
-import com.ve.lib.common.vutils.LogUtil
-import com.ve.lib.common.vutils.SpUtil
+import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.sp.SpUtil
 import okhttp3.Interceptor
 import okhttp3.Response
 

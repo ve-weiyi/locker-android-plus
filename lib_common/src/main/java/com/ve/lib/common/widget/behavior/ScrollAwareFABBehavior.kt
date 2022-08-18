@@ -7,7 +7,7 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.ViewPropertyAnimatorListener
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.ve.lib.common.utils.AnimatorUtil
+import com.ve.lib.common.utils.ui.AnimatorUtil
 
 /**
  * Created by chenxz on 2018/5/13.

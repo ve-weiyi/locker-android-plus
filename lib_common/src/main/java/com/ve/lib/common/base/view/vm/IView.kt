@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.viewbinding.ViewBinding
-import com.ve.lib.common.vutils.ToastUtil
+import com.ve.lib.common.utils.view.ToastUtil
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

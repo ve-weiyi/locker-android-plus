@@ -1,7 +1,7 @@
 package com.ve.module.lockit.respository.database.entity
 
 import com.chad.library.adapter.base.entity.SectionEntity
-import com.ve.lib.common.vutils.TimeUtil
+import com.ve.lib.common.utils.date.TimeUtil
 import com.ve.module.lockit.respository.database.vo.PrivacySimpleInfo
 import org.litepal.annotation.Column
 import org.litepal.annotation.Encrypt
@@ -26,7 +26,7 @@ data class PrivacyFriend(
     var sex:Int=1,
 
     @Encrypt(algorithm = AES)
-    var birthday:String=TimeUtil.date,
+    var birthday:String= TimeUtil.date,
 
     @Encrypt(algorithm = AES)
     var phone: String = "",

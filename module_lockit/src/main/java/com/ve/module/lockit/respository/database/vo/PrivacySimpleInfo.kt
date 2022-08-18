@@ -1,7 +1,7 @@
 package com.ve.module.lockit.respository.database.vo
 
-import com.ve.lib.common.utils.CommonUtil
-import com.ve.lib.common.vutils.TimeUtil
+import com.ve.lib.common.utils.color.ColorUtil
+import com.ve.lib.common.utils.date.TimeUtil
 
 /**
  * @Author  weiyi
@@ -13,7 +13,7 @@ data class PrivacySimpleInfo(
     public var privacyName: String = "",
 
     //( varue = "隐私图标", notes = "标签的覆盖图标", example = "https://ve77.cn/blog/favicon.ico", position = 5 )
-    public var privacyCover: String = CommonUtil.randomColor().toString(),
+    public var privacyCover: String = ColorUtil.randomColor().toString(),
 
     //(varue = "隐私描述", notes = "标签描述", example = "床前明月光", position = 6)
     public var privacyDesc: String = "",

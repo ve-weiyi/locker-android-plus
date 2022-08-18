@@ -4,7 +4,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.ve.lib.common.base.view.list.BaseVmListFragment
-import com.ve.lib.common.vutils.LogUtil
+import com.ve.lib.common.utils.log.LogUtil
 import com.ve.module.lockit.databinding.LockitFragmentListPrivacySearchBinding
 import com.ve.module.lockit.respository.database.entity.PrivacyPass
 import com.ve.module.lockit.ui.adapter.PrivacyInfoPassAdapter

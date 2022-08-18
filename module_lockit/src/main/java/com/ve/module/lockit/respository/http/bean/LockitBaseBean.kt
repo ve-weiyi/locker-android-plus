@@ -1,7 +1,7 @@
 package com.ve.module.lockit.respository.http.bean
 
 import com.ve.lib.common.network.exception.ApiException
-import com.ve.lib.common.vutils.ToastUtil
+import com.ve.lib.common.utils.view.ToastUtil
 
 /**
  * @author admin

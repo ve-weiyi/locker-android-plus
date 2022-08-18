@@ -13,7 +13,7 @@ import androidx.viewbinding.ViewBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.ve.lib.common.R
-import com.ve.lib.common.vutils.DisplayUtil
+import com.ve.lib.common.utils.ui.DisplayUtil
 
 
 /**

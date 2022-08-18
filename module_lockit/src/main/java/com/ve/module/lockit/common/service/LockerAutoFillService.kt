@@ -10,12 +10,12 @@ import android.view.autofill.AutofillId
 import android.view.autofill.AutofillValue
 import android.view.inputmethod.EditorInfo
 import android.widget.RemoteViews
-import com.ve.lib.common.vutils.LogUtil
+import com.ve.lib.common.utils.log.LogUtil
 import com.ve.module.lockit.R
 import com.ve.module.lockit.respository.database.entity.PrivacyPass
 import com.ve.module.lockit.common.service.model.ParsedStructure
 import com.ve.module.lockit.common.service.model.SimpleUserData
-import com.ve.module.lockit.utils.AndroidUtil
+import com.ve.lib.common.utils.system.AndroidUtil
 import org.json.JSONObject
 import org.litepal.LitePal
 

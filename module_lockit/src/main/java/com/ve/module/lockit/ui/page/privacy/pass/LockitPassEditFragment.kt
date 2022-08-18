@@ -19,8 +19,8 @@ import com.afollestad.materialdialogs.list.customListAdapter
 import com.afollestad.materialdialogs.list.listItems
 import com.ve.lib.common.base.view.vm.BaseVmFragment
 import com.ve.lib.common.widget.passwordGenerator.PasswordGeneratorDialog
-import com.ve.lib.common.vutils.TimeUtil
-import com.ve.lib.common.vutils.LogUtil
+import com.ve.lib.common.utils.date.TimeUtil
+import com.ve.lib.common.utils.log.LogUtil
 import com.ve.module.lockit.R
 import com.ve.module.lockit.common.event.RefreshDataEvent
 import com.ve.module.lockit.databinding.LockitFragmentEditPassBinding
@@ -29,7 +29,7 @@ import com.ve.module.lockit.ui.adapter.AppAdapter
 import com.ve.module.lockit.ui.adapter.FlowTagAdapter
 import com.ve.module.lockit.common.enums.EditTypeEnum
 import com.ve.module.lockit.ui.viewmodel.LockitPrivacyPassViewModel
-import com.ve.module.lockit.utils.AndroidUtil
+import com.ve.lib.common.utils.system.AndroidUtil
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.suspendCancellableCoroutine

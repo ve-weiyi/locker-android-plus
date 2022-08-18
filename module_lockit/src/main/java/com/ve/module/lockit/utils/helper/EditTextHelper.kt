@@ -3,7 +3,7 @@ package com.ve.module.lockit.utils.helper
 import android.text.Editable
 import android.text.TextWatcher
 import android.widget.EditText
-import com.ve.lib.common.vutils.LogUtil
+import com.ve.lib.common.utils.log.LogUtil
 
 
 /**

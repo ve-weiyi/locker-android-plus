@@ -9,12 +9,11 @@ import com.google.gson.Gson
 import com.tencent.connect.UserInfo
 import com.tencent.connect.common.Constants
 import com.tencent.mmkv.MMKV
-import com.tencent.tauth.DefaultUiListener
 import com.tencent.tauth.IUiListener
 import com.tencent.tauth.Tencent
 import com.ve.lib.application.BaseApplication
 import com.ve.lib.common.ext.showToast
-import com.ve.lib.common.vutils.LogUtil
+import com.ve.lib.common.utils.log.LogUtil
 
 /**
  * @Author  weiyi

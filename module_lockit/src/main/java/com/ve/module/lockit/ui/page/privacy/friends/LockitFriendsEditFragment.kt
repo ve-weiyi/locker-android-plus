@@ -8,8 +8,8 @@ import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.datetime.datePicker
 import com.afollestad.materialdialogs.lifecycle.lifecycleOwner
 import com.ve.lib.common.base.view.vm.BaseVmFragment
-import com.ve.lib.common.vutils.LogUtil
-import com.ve.lib.common.vutils.TimeUtil
+import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.date.TimeUtil
 import com.ve.module.lockit.R
 import com.ve.module.lockit.common.event.RefreshDataEvent
 import com.ve.module.lockit.databinding.LockitFragmentEditFriendsBinding

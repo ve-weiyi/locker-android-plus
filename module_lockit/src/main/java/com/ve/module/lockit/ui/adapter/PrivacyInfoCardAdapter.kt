@@ -10,14 +10,14 @@ import com.chad.library.adapter.base.module.LoadMoreModule
 import com.chad.library.adapter.base.module.UpFetchModule
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.ve.lib.common.ext.spanText
-import com.ve.lib.common.vutils.LogUtil
-import com.ve.lib.common.vutils.ToastUtil
+import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.view.ToastUtil
 import com.ve.module.lockit.R
 import com.ve.module.lockit.respository.database.entity.PrivacyCard
 import com.ve.module.lockit.ui.page.container.LockitContainerActivity
 
 import com.ve.module.lockit.ui.page.privacy.card.LockitCardDetailsFragment
-import com.ve.module.lockit.utils.StickUtils
+import com.ve.lib.common.utils.system.StickUtils
 
 /**
  * @Description hello word!

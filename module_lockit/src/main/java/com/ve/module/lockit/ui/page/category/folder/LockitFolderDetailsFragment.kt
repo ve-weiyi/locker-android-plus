@@ -5,10 +5,10 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import com.ve.lib.common.base.view.vm.BaseVmFragment
-import com.ve.lib.common.utils.ImageLoader
+import com.ve.lib.common.utils.file.ImageLoader
 import com.ve.lib.common.ext.formatCurrentDate
 import com.ve.lib.common.ext.setOnclickNoRepeatListener
-import com.ve.lib.common.vutils.LogUtil
+import com.ve.lib.common.utils.log.LogUtil
 import com.ve.module.lockit.common.event.RefreshDataEvent
 import com.ve.module.lockit.databinding.LockitFragmentDetailsFolderBinding
 import com.ve.module.lockit.respository.database.entity.PrivacyFolder

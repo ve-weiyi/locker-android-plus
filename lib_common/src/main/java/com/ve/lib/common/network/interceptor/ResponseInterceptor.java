@@ -1,7 +1,7 @@
 package com.ve.lib.common.network.interceptor;
 
 
-import com.ve.lib.common.vutils.LogUtil;
+import com.ve.lib.common.utils.log.LogUtil;
 
 import java.io.IOException;
 import java.nio.charset.Charset;

@@ -16,7 +16,7 @@ import com.ve.module.android.ui.page.main.*
 import com.ve.module.android.ui.viewmodel.WanAndroidViewModel
 import com.ve.lib.common.base.view.pager.BaseVmPager2Fragment
 import com.ve.lib.common.event.DrawerOpenEvent
-import com.ve.lib.common.vutils.DisplayUtil
+import com.ve.lib.common.utils.ui.DisplayUtil
 import com.youth.banner.indicator.CircleIndicator
 import com.youth.banner.listener.OnBannerListener
 import com.youth.banner.transformer.AlphaPageTransformer

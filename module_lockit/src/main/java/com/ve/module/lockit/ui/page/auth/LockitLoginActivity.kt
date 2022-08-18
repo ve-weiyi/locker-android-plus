@@ -14,10 +14,10 @@ import com.afollestad.materialdialogs.MaterialDialog
 import com.afollestad.materialdialogs.lifecycle.lifecycleOwner
 import com.ve.lib.common.base.view.vm.BaseVmActivity
 import com.ve.lib.common.ext.setOnclickNoRepeat
-import com.ve.lib.common.vutils.DialogUtil
-import com.ve.lib.common.vutils.LogUtil
+import com.ve.lib.common.utils.view.DialogUtil
+import com.ve.lib.common.utils.log.LogUtil
 import com.ve.lib.common.widget.passwordGenerator.PasswordGeneratorDialog
-import com.ve.lib.common.vutils.SpUtil
+import com.ve.lib.common.utils.sp.SpUtil
 import com.ve.module.lockit.LockitMainActivity
 import com.ve.module.lockit.R
 import com.ve.module.lockit.common.config.LockitConstant
@@ -26,10 +26,8 @@ import com.ve.module.lockit.common.enums.LoginTypeEnum
 import com.ve.module.lockit.common.event.RefreshDataEvent
 
 import com.ve.module.lockit.databinding.LockitActivityLoginBinding
-import com.ve.module.lockit.respository.AuthRepository
 import com.ve.module.lockit.respository.http.bean.LoginDTO
 import com.ve.module.lockit.respository.http.model.QQLoginVO
-import com.ve.module.lockit.respository.http.model.UserInfoVO
 import com.ve.module.lockit.ui.page.auth.strategy.qq.QQLogin
 import com.ve.module.lockit.ui.page.auth.strategy.qq.QQUiListener
 import com.ve.module.lockit.ui.page.auth.strategy.qq.QQLoginStrategy
@@ -74,7 +72,7 @@ class LockitLoginActivity: BaseVmActivity<LockitActivityLoginBinding, LockitLogi
     }
 
     private var loginType:Int=LoginTypeEnum.ACCOUNT.type
-    private val loadingDialog by lazy { DialogUtil.getLoadingDialog(this,"正在登录",true) }
+    private val loadingDialog by lazy { DialogUtil.getWaitDialog(this,"正在登录") }
     override fun initView(savedInstanceState: Bundle?) {
         initToolbar(mBinding.extToolbar.toolbar, "登录", true)
 

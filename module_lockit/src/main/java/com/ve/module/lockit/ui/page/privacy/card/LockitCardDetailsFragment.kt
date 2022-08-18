@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.view.View
 import com.ve.lib.common.base.view.vm.BaseVmFragment
 import com.ve.lib.common.ext.setOnclickNoRepeatListener
-import com.ve.lib.common.vutils.DialogUtil
-import com.ve.lib.common.vutils.LogUtil
-import com.ve.lib.common.vutils.ShareUtil
+import com.ve.lib.common.utils.view.DialogUtil
+import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.provider.ShareUtil
 import com.ve.module.lockit.R
 import com.ve.module.lockit.common.event.RefreshDataEvent
 import com.ve.module.lockit.databinding.LockitFragmentDetailsCardBinding
@@ -14,7 +14,7 @@ import com.ve.module.lockit.respository.database.entity.PrivacyCard
 import com.ve.module.lockit.ui.page.container.LockitContainerActivity
 import com.ve.module.lockit.common.enums.EditTypeEnum
 import com.ve.module.lockit.ui.viewmodel.LockitPrivacyCardViewModel
-import com.ve.module.lockit.utils.StickUtils
+import com.ve.lib.common.utils.system.StickUtils
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode

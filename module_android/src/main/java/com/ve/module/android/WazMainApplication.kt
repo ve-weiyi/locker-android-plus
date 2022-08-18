@@ -9,9 +9,9 @@ import com.ve.lib.application.BaseApplication
 import com.ve.lib.application.BuildConfig
 import com.ve.lib.common.config.AppConfig
 import com.ve.lib.common.utils.SettingUtil
-import com.ve.lib.common.vutils.AppContextUtil
-import com.ve.lib.common.vutils.LogUtil
-import com.ve.lib.common.vutils.SpUtil
+import com.ve.lib.common.utils.AppContextUtil
+import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.sp.SpUtil
 import java.util.*
 
 /**

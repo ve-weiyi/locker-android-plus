@@ -64,10 +64,10 @@
 
     <style name="AppTheme" parent="BaseAppTheme.NoActionBar" />
 
-    <style name="SplashTheme" parent="BaseAppTheme.NoActionBar">
+    <style name="SplashTheme" parent="AppTheme">
         <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
         <item name="android:windowLayoutInDisplayCutoutMode" tools:ignore="NewApi">shortEdges</item>
-
+        <item name="android:windowActionBarOverlay">true</item>
         <item name="android:windowFullscreen">true</item>
         <!--将顶部状态栏设置为透明，并将界面内容布局上边界上提至状态栏顶部-->
         <item name="android:windowTranslucentStatus">true</item>

@@ -9,7 +9,7 @@ import com.ve.module.android.databinding.FragmentShareArticleBinding
 import com.ve.module.android.ui.viewmodel.WanAndroidViewModel
 import com.ve.lib.common.base.view.vm.BaseVmFragment
 import com.ve.lib.common.event.RefreshShareEvent
-import com.ve.lib.common.vutils.DialogUtil
+import com.ve.lib.common.utils.view.DialogUtil
 import org.greenrobot.eventbus.EventBus
 
 /**

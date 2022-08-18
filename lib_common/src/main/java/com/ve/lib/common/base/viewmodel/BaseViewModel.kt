@@ -4,15 +4,11 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.google.gson.Gson
 import com.google.gson.JsonParseException
 import com.ve.lib.common.network.exception.ApiException
-import com.ve.lib.common.network.util.NetWorkUtil
-import com.ve.lib.common.vutils.LogUtil
-import com.ve.lib.common.vutils.ToastUtil
+import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.view.ToastUtil
 import kotlinx.coroutines.*
-
-import okhttp3.RequestBody
 
 import java.net.ConnectException
 import java.net.SocketTimeoutException

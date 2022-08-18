@@ -7,7 +7,7 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.ve.lib.common.base.view.vm.BaseFragment
-import com.ve.lib.common.vutils.LogUtil
+import com.ve.lib.common.utils.log.LogUtil
 import com.ve.module.lockit.R
 import com.ve.module.lockit.databinding.LockitFragmentClassifyBinding
 import com.ve.module.lockit.ui.page.category.folder.LockitFolderGridFragment

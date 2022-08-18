@@ -9,7 +9,7 @@ import com.ve.module.android.R
 import com.ve.module.android.repository.bean.Collect
 import com.ve.lib.application.BaseApplication.Companion.mContext
 import com.ve.lib.common.base.adapter.BaseSlideAdapter
-import com.ve.lib.common.utils.ImageLoader
+import com.ve.lib.common.utils.file.ImageLoader
 
 
 /**

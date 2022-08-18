@@ -1,7 +1,7 @@
 package com.ve.module.sunny.ui.weather
 
 import com.ve.lib.common.network.base.ApiServiceFactory
-import com.ve.lib.common.vutils.LogUtil
+import com.ve.lib.common.utils.log.LogUtil
 import com.ve.module.sunny.logic.http.model.Weather
 import com.ve.module.sunny.logic.http.network.ApiCaiyun
 

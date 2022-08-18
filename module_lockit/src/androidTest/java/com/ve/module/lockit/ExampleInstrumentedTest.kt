@@ -5,16 +5,16 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.gson.JsonParseException
 import com.ve.lib.common.network.exception.ApiException
 import com.ve.lib.common.widget.passwordGenerator.PasswordGenerator
-import com.ve.lib.common.vutils.LogUtil
-import com.ve.lib.common.vutils.ToastUtil
+import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.view.ToastUtil
 import com.ve.module.lockit.common.config.LockitConstant
 import com.ve.module.lockit.respository.database.AppDataBase
 import com.ve.module.lockit.respository.database.entity.*
 import com.ve.module.lockit.respository.AuthRepository
 import com.ve.module.lockit.respository.http.model.ConditionVO
-import com.ve.module.lockit.utils.AESUtil
+import com.ve.lib.common.utils.encrypt.AESUtil
 import com.ve.module.lockit.utils.PasswordUtils
-import com.ve.module.lockit.utils.RSAUtils
+import com.ve.lib.common.utils.encrypt.RSAUtil
 import kotlinx.coroutines.*
 
 import org.junit.Test
@@ -112,7 +112,7 @@ class ExampleInstrumentedTest {
 
     @Test
     fun rsa() {
-        RSAUtils.main(null)
+        RSAUtil.main(null)
         AESUtil.main(null)
     }
 

@@ -4,7 +4,7 @@ package com.ve.module.lockit.ui.page.setting
 import android.content.SharedPreferences
 
 import androidx.preference.Preference
-import com.ve.lib.common.utils.CacheDataUtil
+import com.ve.lib.common.utils.system.CacheDataUtil
 
 import com.ve.module.lockit.R
 import com.ve.module.lockit.common.config.LockitSpKey

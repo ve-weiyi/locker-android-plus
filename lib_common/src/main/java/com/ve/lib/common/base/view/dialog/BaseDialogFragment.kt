@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.fragment.app.DialogFragment
 import androidx.viewbinding.ViewBinding
-import com.ve.lib.common.vutils.DisplayUtil
+import com.ve.lib.common.utils.ui.DisplayUtil
 
 /**
  * Created by yechao on 2020/2/4.

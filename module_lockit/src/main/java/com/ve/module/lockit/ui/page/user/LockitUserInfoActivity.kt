@@ -2,9 +2,9 @@ package com.ve.module.lockit.ui.page.user
 
 import android.os.Bundle
 import com.ve.lib.common.base.view.vm.BaseActivity
-import com.ve.lib.common.utils.ImageLoader
-import com.ve.lib.common.vutils.LogUtil
-import com.ve.lib.common.vutils.SpUtil
+import com.ve.lib.common.utils.file.ImageLoader
+import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.sp.SpUtil
 import com.ve.module.lockit.common.config.LockitSpKey
 import com.ve.module.lockit.databinding.LockitActivityUserinfoBinding
 import com.ve.module.lockit.respository.http.bean.LoginDTO

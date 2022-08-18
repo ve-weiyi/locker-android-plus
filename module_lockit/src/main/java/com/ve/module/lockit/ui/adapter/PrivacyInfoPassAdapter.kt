@@ -10,14 +10,14 @@ import com.chad.library.adapter.base.module.LoadMoreModule
 import com.chad.library.adapter.base.module.UpFetchModule
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.ve.lib.common.ext.spanText
-import com.ve.lib.common.vutils.LogUtil
-import com.ve.lib.common.vutils.ToastUtil
+import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.view.ToastUtil
 import com.ve.module.lockit.R
 import com.ve.module.lockit.respository.database.entity.PrivacyPass
 import com.ve.module.lockit.ui.page.container.LockitContainerActivity
 import com.ve.module.lockit.ui.page.privacy.pass.LockitPassDetailsFragment
-import com.ve.module.lockit.utils.AndroidUtil
-import com.ve.module.lockit.utils.StickUtils
+import com.ve.lib.common.utils.system.AndroidUtil
+import com.ve.lib.common.utils.system.StickUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -60,7 +60,7 @@ class PrivacyInfoPassAdapter :
          * Dispatchers.Default：非主线程，用于 CPU 密集型操作。例如，list 排序，及 JSON 解析。
          */
         CoroutineScope(Dispatchers.IO).launch {
-            val app=AndroidUtil.getAppInfo(context,item.appPackageName)
+            val app= AndroidUtil.getAppInfo(context,item.appPackageName)
             withContext(Dispatchers.Main) {
                 holder.setImageDrawable(R.id.iv_app_icon,app?.icon)
             }

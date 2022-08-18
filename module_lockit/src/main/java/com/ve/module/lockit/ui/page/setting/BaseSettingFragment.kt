@@ -7,7 +7,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
-import com.ve.lib.common.vutils.ToastUtil
+import com.ve.lib.common.utils.view.ToastUtil
 
 /**
  * @Author  weiyi

@@ -7,7 +7,7 @@ import android.util.AttributeSet
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.core.content.ContextCompat
 
-import com.ve.lib.common.utils.ColorUtil
+import com.ve.lib.common.utils.color.ColorUtil
 import com.ve.lib.common.utils.SettingUtil
 
 

@@ -7,8 +7,8 @@ import com.ve.module.android.repository.database.entity.SearchHistory
 import com.ve.lib.application.BaseApplication
 import com.ve.lib.common.base.repository.BaseRepository
 
-import com.ve.lib.common.vutils.LogUtil
-import com.ve.lib.common.vutils.TimeUtil
+import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.date.TimeUtil
 
 
 open class WazRepository : BaseRepository() {

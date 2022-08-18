@@ -16,7 +16,7 @@ import com.ve.lib.common.base.view.vm.BaseVmActivity
 import com.ve.module.android.config.Constant
 import com.ve.module.android.event.TodoEvent
 import com.ve.module.android.event.TodoTypeEvent
-import com.ve.lib.common.utils.DisplayManager
+import com.ve.lib.common.utils.ui.DisplayManager
 import org.greenrobot.eventbus.EventBus
 
 /**

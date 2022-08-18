@@ -14,8 +14,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.ve.lib.common.R
 import com.ve.lib.common.exception.BizException
 import com.ve.lib.common.widget.SpaceItemDecoration
-import com.ve.lib.common.vutils.LogUtil
-import com.ve.lib.common.vutils.ToastUtil
+import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.view.ToastUtil
 
 /**
  * @Description hello word!

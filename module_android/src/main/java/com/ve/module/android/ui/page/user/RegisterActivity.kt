@@ -11,8 +11,8 @@ import com.ve.module.android.repository.bean.LoginData
 import com.ve.module.android.ui.viewmodel.RegisterViewModel
 import com.ve.lib.common.base.view.vm.BaseVmActivity
 import com.ve.module.android.config.Constant
-import com.ve.lib.common.vutils.DialogUtil
-import com.ve.lib.common.utils.PreferenceUtil
+import com.ve.lib.common.utils.view.DialogUtil
+import com.ve.lib.common.utils.sp.PreferenceUtil
 import org.greenrobot.eventbus.EventBus
 
 /**

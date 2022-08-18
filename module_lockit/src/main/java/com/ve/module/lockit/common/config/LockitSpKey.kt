@@ -1,7 +1,7 @@
 package com.ve.module.lockit.common.config
 
 import android.app.Application
-import com.ve.lib.common.vutils.AppContextUtil
+import com.ve.lib.common.utils.AppContextUtil
 import com.ve.module.lockit.BuildConfig
 import com.ve.module.lockit.R
 

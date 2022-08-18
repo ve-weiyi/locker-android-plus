@@ -13,12 +13,12 @@ import androidx.core.content.ContextCompat
 import androidx.preference.Preference
 import androidx.preference.SwitchPreference
 import com.ve.lib.common.event.RefreshHomeEvent
-import com.ve.lib.common.utils.ImageLoader
-import com.ve.lib.common.vutils.DialogUtil
+import com.ve.lib.common.utils.file.ImageLoader
+import com.ve.lib.common.utils.view.DialogUtil
 import com.ve.lib.common.widget.preference.IconPreference
-import com.ve.lib.common.vutils.LogUtil
-import com.ve.lib.common.vutils.SpUtil
-import com.ve.lib.common.vutils.ToastUtil
+import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.sp.SpUtil
+import com.ve.lib.common.utils.view.ToastUtil
 import com.ve.module.lockit.common.config.LockitSpKey
 import com.ve.module.lockit.respository.database.AppDataBase
 import com.ve.module.lockit.respository.http.bean.LoginDTO
@@ -64,12 +64,12 @@ class LockitSettingFragment : BaseSettingFragment() {
                 findPreference<Preference>(key)?.onPreferenceClickListener = this
             }
         }
-        val userinfo=SpUtil.getValue(LockitSpKey.SP_KEY_LOGIN_DATA_KEY, LoginDTO())
+        val userinfo= SpUtil.getValue(LockitSpKey.SP_KEY_LOGIN_DATA_KEY, LoginDTO())
 
         findPreference<Preference>(LockitSpKey.SP_KEY_ACCOUNT_SETTING)?.apply {
 
             CoroutineScope(Dispatchers.IO).launch {
-                val avatar=ImageLoader.loadPicture(mContext,userinfo.userInfoDTO.avatar)
+                val avatar= ImageLoader.loadPicture(mContext,userinfo.userInfoDTO.avatar)
                 withContext(Dispatchers.Main) {
                     icon=avatar
                 }

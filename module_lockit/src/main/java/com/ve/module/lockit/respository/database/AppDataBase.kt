@@ -1,8 +1,8 @@
 package com.ve.module.lockit.respository.database
 
-import com.ve.lib.common.utils.CommonUtil
-import com.ve.lib.common.vutils.LogUtil
-import com.ve.lib.common.vutils.SpUtil
+import com.ve.lib.common.utils.color.ColorUtil
+import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.sp.SpUtil
 import com.ve.module.lockit.common.config.LockitSpKey
 import com.ve.module.lockit.respository.database.entity.*
 import com.ve.module.lockit.respository.database.vo.PrivacyCardInfo
@@ -29,12 +29,12 @@ object AppDataBase {
         LitePal.deleteDatabase("lockit")
 
         val folderList = mutableListOf(
-            PrivacyFolder(folderName = "默认", folderCover = CommonUtil.randomColor().toString()),
-            PrivacyFolder(folderName = "社交", folderCover = CommonUtil.randomColor().toString()),
-            PrivacyFolder(folderName = "娱乐", folderCover = CommonUtil.randomColor().toString()),
-            PrivacyFolder(folderName = "教育", folderCover = CommonUtil.randomColor().toString()),
-            PrivacyFolder(folderName = "论坛", folderCover = CommonUtil.randomColor().toString()),
-            PrivacyFolder(folderName = "办公", folderCover = CommonUtil.randomColor().toString()),
+            PrivacyFolder(folderName = "默认", folderCover = ColorUtil.randomColor().toString()),
+            PrivacyFolder(folderName = "社交", folderCover = ColorUtil.randomColor().toString()),
+            PrivacyFolder(folderName = "娱乐", folderCover = ColorUtil.randomColor().toString()),
+            PrivacyFolder(folderName = "教育", folderCover = ColorUtil.randomColor().toString()),
+            PrivacyFolder(folderName = "论坛", folderCover = ColorUtil.randomColor().toString()),
+            PrivacyFolder(folderName = "办公", folderCover = ColorUtil.randomColor().toString()),
         )
 
 
@@ -58,7 +58,7 @@ object AppDataBase {
                     remark = "我的QQ账号。"
                 ),
 
-                PrivacyFolder(folderName = "默认", folderCover = CommonUtil.randomColor().toString()),
+                PrivacyFolder(folderName = "默认", folderCover = ColorUtil.randomColor().toString()),
                 mutableListOf(PrivacyTag(tagName = "测试标签"), PrivacyTag(tagName = "QQ账号"))
             ),
             PrivacyPassInfo(
@@ -70,7 +70,7 @@ object AppDataBase {
                     remark = "我的QQ账号。"
                 ),
 
-                PrivacyFolder(folderName = "默认", folderCover = CommonUtil.randomColor().toString()),
+                PrivacyFolder(folderName = "默认", folderCover = ColorUtil.randomColor().toString()),
                 mutableListOf(PrivacyTag(tagName = "测试标签"), PrivacyTag(tagName = "QQ账号"))
             ),
             PrivacyPassInfo(
@@ -81,7 +81,7 @@ object AppDataBase {
                     appPackageName = "com.tencent.androidqqmail",
                     remark = "我的邮箱账号。"
                 ),
-                PrivacyFolder(folderName = "社交", folderCover = CommonUtil.randomColor().toString()),
+                PrivacyFolder(folderName = "社交", folderCover = ColorUtil.randomColor().toString()),
                 mutableListOf(PrivacyTag(tagName = "测试标签"), PrivacyTag(tagName = "邮箱账号"))
             ),
             PrivacyPassInfo(
@@ -92,7 +92,7 @@ object AppDataBase {
                     appPackageName = "com.tencent.mm",
                     remark = "我的微信账号。"
                 ),
-                PrivacyFolder(folderName = "社交", folderCover = CommonUtil.randomColor().toString()),
+                PrivacyFolder(folderName = "社交", folderCover = ColorUtil.randomColor().toString()),
                 mutableListOf(PrivacyTag(tagName = "测试标签"), PrivacyTag(tagName = "微信账号"))
             ),
             PrivacyPassInfo(
@@ -103,7 +103,7 @@ object AppDataBase {
                     appPackageName = "",
                     remark = "我的个人博客。"
                 ),
-                PrivacyFolder(folderName = "社交", folderCover = CommonUtil.randomColor().toString()),
+                PrivacyFolder(folderName = "社交", folderCover = ColorUtil.randomColor().toString()),
                 mutableListOf(PrivacyTag(tagName = "测试标签"), PrivacyTag(tagName = "个人博客"))
             ),
         )
@@ -116,7 +116,7 @@ object AppDataBase {
                     name ="华中科技大学",
                     remark = "华中科技大学校园卡"
                 ),
-                PrivacyFolder(folderName = "教育", folderCover = CommonUtil.randomColor().toString()),
+                PrivacyFolder(folderName = "教育", folderCover = ColorUtil.randomColor().toString()),
                 mutableListOf(PrivacyTag(tagName = "测试标签"), PrivacyTag(tagName = "校园卡"))
             ),
             PrivacyCardInfo(
@@ -126,7 +126,7 @@ object AppDataBase {
                     name ="中华人民共和国",
                     remark = "身份证"
                 ),
-                PrivacyFolder(folderName = "论坛", folderCover = CommonUtil.randomColor().toString()),
+                PrivacyFolder(folderName = "论坛", folderCover = ColorUtil.randomColor().toString()),
                 mutableListOf(PrivacyTag(tagName = "测试标签"), PrivacyTag(tagName = "身份证"))
             ),
             PrivacyCardInfo(
@@ -136,7 +136,7 @@ object AppDataBase {
                     name ="中国银行储蓄卡",
                     remark = "中国银行银行卡"
                 ),
-                PrivacyFolder(folderName = "论坛", folderCover = CommonUtil.randomColor().toString()),
+                PrivacyFolder(folderName = "论坛", folderCover = ColorUtil.randomColor().toString()),
                 mutableListOf(PrivacyTag(tagName = "测试标签"), PrivacyTag(tagName = "银行卡"))
             ),
         )

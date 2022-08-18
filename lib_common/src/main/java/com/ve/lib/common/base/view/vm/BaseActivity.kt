@@ -6,7 +6,6 @@ import android.content.pm.ActivityInfo
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.WindowManager
@@ -16,11 +15,11 @@ import androidx.viewbinding.ViewBinding
 import com.ve.lib.common.event.ColorEvent
 import com.ve.lib.common.ext.getMethodName
 import com.ve.lib.common.receiver.NetworkChangeReceiver
-import com.ve.lib.common.utils.KeyBoardUtil
+import com.ve.lib.common.utils.system.KeyBoardUtil
 import com.ve.lib.common.utils.SettingUtil
-import com.ve.lib.common.utils.StatusBarUtil
-import com.ve.lib.common.vutils.LogUtil
-import com.ve.lib.common.vutils.ToastUtil
+import com.ve.lib.common.utils.ui.StatusBarUtil
+import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.view.ToastUtil
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -187,7 +186,7 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity(), IView<VB> {
             EventBus.getDefault().unregister(this)
         }
 
-        //CommonUtil.fixInputMethodManagerLeak(this)
+        //ColorUtil.fixInputMethodManagerLeak(this)
         ToastUtil.release()
     }
 

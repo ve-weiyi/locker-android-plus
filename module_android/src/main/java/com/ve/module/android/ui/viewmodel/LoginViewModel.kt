@@ -7,7 +7,7 @@ import com.ve.module.android.repository.bean.LoginData
 import com.ve.lib.common.base.viewmodel.BaseViewModel
 import com.ve.lib.common.network.exception.ApiException
 
-import com.ve.lib.common.vutils.LogUtil
+import com.ve.lib.common.utils.log.LogUtil
 
 class LoginViewModel : BaseViewModel() {
 

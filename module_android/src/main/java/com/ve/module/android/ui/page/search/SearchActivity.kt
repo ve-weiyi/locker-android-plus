@@ -21,9 +21,9 @@ import com.ve.module.android.ui.adapter.SearchHistoryAdapter
 import com.ve.module.android.ui.page.activity.CommonActivity
 import com.ve.module.android.ui.viewmodel.SearchViewModel
 import com.ve.lib.common.base.view.list.BaseVmListActivity
-import com.ve.lib.common.utils.CommonUtil
-import com.ve.lib.common.utils.DisplayManager
-import com.ve.lib.common.vutils.LogUtil
+import com.ve.lib.common.utils.color.ColorUtil
+import com.ve.lib.common.utils.ui.DisplayManager
+import com.ve.lib.common.utils.log.LogUtil
 import com.zhy.view.flowlayout.FlowLayout
 import com.zhy.view.flowlayout.TagAdapter
 
@@ -163,7 +163,7 @@ class SearchActivity: BaseVmListActivity<ActivitySearchBinding, SearchViewModel,
                 val padding: Int = DisplayManager.dip2px(10F)
                 tv.setPadding(padding, padding, padding, padding)
                 tv.text = Hotkey?.name
-                tv.setTextColor(CommonUtil.randomColor())
+                tv.setTextColor(ColorUtil.randomColor())
                 tv.setBackgroundColor(Color.LTGRAY)
                 return tv
             }

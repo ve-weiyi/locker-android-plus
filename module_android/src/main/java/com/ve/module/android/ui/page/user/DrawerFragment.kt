@@ -23,10 +23,10 @@ import com.ve.module.android.ui.page.setting.SettingsActivity
 import com.ve.module.android.ui.page.todo.TodoActivity
 import com.ve.module.android.ui.viewmodel.WanAndroidViewModel
 import com.ve.lib.common.base.view.vm.BaseVmFragment
-import com.ve.lib.common.vutils.DialogUtil
-import com.ve.lib.common.utils.PreferenceUtil
+import com.ve.lib.common.utils.view.DialogUtil
+import com.ve.lib.common.utils.sp.PreferenceUtil
 import com.ve.lib.common.utils.SettingUtil
-import com.ve.lib.common.vutils.LogUtil
+import com.ve.lib.common.utils.log.LogUtil
 import com.ve.module.android.ui.page.fragment.CollectFragment
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe

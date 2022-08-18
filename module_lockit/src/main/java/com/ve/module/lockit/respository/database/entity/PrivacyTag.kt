@@ -1,6 +1,6 @@
 package com.ve.module.lockit.respository.database.entity
 
-import com.ve.lib.common.utils.CommonUtil
+import com.ve.lib.common.utils.color.ColorUtil
 import org.litepal.LitePal
 import org.litepal.annotation.Column
 import org.litepal.crud.LitePalSupport
@@ -29,7 +29,7 @@ data class PrivacyTag(
     @Column(index = true, unique = true)
     var tagName: String,
 
-    var tagCover: String=CommonUtil.randomColor().toString(),
+    var tagCover: String= ColorUtil.randomColor().toString(),
 
     var tagDesc: String? = null,
 

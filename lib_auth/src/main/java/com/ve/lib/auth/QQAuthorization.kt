@@ -7,7 +7,7 @@ import cn.sharesdk.framework.PlatformDb
 import cn.sharesdk.framework.ShareSDK
 import cn.sharesdk.tencent.qq.QQ
 import com.mob.MobSDK
-import com.ve.lib.common.vutils.LogUtil
+import com.ve.lib.common.utils.log.LogUtil
 
 /**
  * @Author  weiyi

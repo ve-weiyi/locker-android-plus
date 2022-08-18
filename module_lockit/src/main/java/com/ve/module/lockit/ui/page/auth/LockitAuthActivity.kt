@@ -8,10 +8,10 @@ import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
 import com.ve.lib.common.base.view.vm.BaseActivity
 import com.ve.lib.common.ext.setOnclickNoRepeatListener
-import com.ve.lib.common.utils.StatusBarUtil
-import com.ve.lib.common.vutils.LogUtil
-import com.ve.lib.common.vutils.SpUtil
-import com.ve.lib.common.vutils.ToastUtil
+import com.ve.lib.common.utils.ui.StatusBarUtil
+import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.sp.SpUtil
+import com.ve.lib.common.utils.view.ToastUtil
 import com.ve.module.lockit.LockitMainActivity
 import com.ve.module.lockit.common.config.LockitSpKey
 import com.ve.module.lockit.databinding.LockitActivityAuthBinding
