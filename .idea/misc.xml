@@ -4,7 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../../layout/custom_preview.xml" value="0.17135416666666667" />
+        <entry key="..\:/Users/anker/StudioProjects/lockit-android/module_lockit/src/main/res/drawable/bg_device_info.xml" value="0.1" />
+        <entry key="..\:/Users/anker/StudioProjects/lockit-android/module_lockit/src/main/res/layout/lockit_activity_about.xml" value="0.1" />
+        <entry key="..\:/Users/anker/StudioProjects/lockit-android/module_lockit/src/main/res/layout/lockit_activity_auth.xml" value="0.1" />
+        <entry key="..\:/Users/anker/StudioProjects/lockit-android/module_lockit/src/main/res/layout/lockit_activity_device_info.xml" value="0.1" />
+        <entry key="..\:/Users/anker/StudioProjects/lockit-android/module_lockit/src/main/res/layout/lockit_activity_feedback.xml" value="0.1" />
         <entry key="..\:/Users/anker/StudioProjects/lockit-android/module_lockit/src/main/res/layout/lockit_activity_splash.xml" value="0.1" />
+        <entry key="..\:/Users/anker/StudioProjects/lockit-android/module_lockit/src/main/res/layout/lockit_device_info.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable-v21/ic_baseline_code_24.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable-v24/bg_blue_circle.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable-v24/bg_blue_oval.xml" value="0.1" />

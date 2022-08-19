@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <color name="wetdry_device_information_bg">#F0F4F7</color>
+
     <!--    透明-->
     <color name="transparent">#00000000</color><!--透明色 -->
     <color name="transparent_gray">#BFffffff</color>
@@ -63,4 +66,18 @@
     <color name="orange">#ff9800</color>
     <color name="brown">#795548</color>
     <color name="blue_grey">#607d8b</color>
+
+
+    <color name="t1_light">#333333</color>
+    <color name="t2_dark">#999999</color>
+    <color name="t2_light">#666666</color>
+    <color name="t3_dark">#666666</color>
+    <color name="t3_light">#999999</color>
+    <color name="t4_dark">#333333</color>
+    <color name="t4_light">#cccccc</color>
+    <color name="c1_dark">#121212</color>
+    <color name="c1_light">#f3f5f5</color>
+    <color name="c2_dark">#1e1e1e</color>
+    <color name="c2_mask">#171717</color>
+    <color name="c2_light">#ffffff</color>
 </resources>

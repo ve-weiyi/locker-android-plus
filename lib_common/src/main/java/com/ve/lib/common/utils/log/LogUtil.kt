@@ -154,7 +154,10 @@ object LogUtil {
      * 获取打印信息所在方法名，行号等信息
      * stacktrace[0].getMethodName() 是 getStackTrace，
      * stacktrace[1].getMethodName() 是 getMethodName，
-     * stacktrace[2].getMethodName() 才是调用 getMethodName 的函数的函数名。
+     * stacktrace[2].getMethodName() 是 autoJumpLogInfo。
+     * stacktrace[3].getMethodName() 是 LogUtil.e。
+     * stacktrace[4].getMethodName() 才是调用此的函数的函数名 。
+     * 每次迭代调用，层数+1
      */
     private fun autoJumpLogInfo(stackCount :Int):Array<String>{
         val infos = arrayOf("", "", "")

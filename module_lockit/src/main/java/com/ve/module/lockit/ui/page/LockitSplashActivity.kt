@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
+import com.chad.library.adapter.base.BaseBinderAdapter
 import com.ve.lib.common.base.view.vm.BaseActivity
 import com.ve.lib.common.utils.log.LogUtil
 import com.ve.lib.common.utils.sp.SpUtil
@@ -29,7 +30,6 @@ class LockitSplashActivity : BaseActivity<LockitActivitySplashBinding>() {
 
 //        layout_splash.setBackgroundColor(mThemeColor)
         mBinding.ivLogo.setColorFilter(mThemeColor)
-
     }
 
     fun jumpToMain() {

@@ -15,10 +15,10 @@ import androidx.viewbinding.ViewBinding
 import com.ve.lib.common.event.ColorEvent
 import com.ve.lib.common.ext.getMethodName
 import com.ve.lib.common.receiver.NetworkChangeReceiver
-import com.ve.lib.common.utils.system.KeyBoardUtil
 import com.ve.lib.common.utils.SettingUtil
-import com.ve.lib.common.utils.ui.StatusBarUtil
 import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.system.KeyBoardUtil
+import com.ve.lib.common.utils.ui.StatusBarUtil
 import com.ve.lib.common.utils.view.ToastUtil
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
@@ -48,6 +48,7 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity(), IView<VB> {
      */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        window.decorView.isForceDarkAllowed = false
         LogUtil.d("$mViewName onCreate")
         /**************************/
         //设置窗口软键盘的交互模式,保证用户要进行输入的输入框肯定在用户的视野范围里面
