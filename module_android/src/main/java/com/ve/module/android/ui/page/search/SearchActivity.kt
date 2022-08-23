@@ -50,8 +50,8 @@ class SearchActivity: BaseVmListActivity<ActivitySearchBinding, SearchViewModel,
 
     }
 
-    override fun initView(savedInstanceState: Bundle?) {
-        super.initView(savedInstanceState)
+    override fun initView() {
+        super.initView()
         mListAdapter.apply {
             setEmptyView(R.layout.search_empty_view)
         }

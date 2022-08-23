@@ -1,12 +1,9 @@
 package com.ve.module.android
 
 import android.content.Intent
-import android.os.Bundle
 import android.view.Gravity
 import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
-import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.core.view.get
 import androidx.fragment.app.FragmentTransaction
@@ -21,7 +18,6 @@ import com.ve.module.android.ui.page.fragment.ShareArticleFragment
 import com.ve.module.android.ui.page.main.*
 import com.ve.module.android.ui.page.search.SearchActivity
 import com.ve.module.android.ui.viewmodel.WanAndroidViewModel
-import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
@@ -50,7 +46,7 @@ class WazMainActivity : BaseVmActivity<WazActivityMainBinding, WanAndroidViewMod
         return WazActivityMainBinding.inflate(layoutInflater)
     }
 
-    override fun initView(savedInstanceState: Bundle?) {
+    override fun initView() {
         initFragment()
         showFragment(mIndex)
         initToolbar(

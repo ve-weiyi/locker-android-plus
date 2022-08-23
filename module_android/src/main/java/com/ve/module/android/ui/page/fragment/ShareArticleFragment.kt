@@ -1,6 +1,5 @@
 package com.ve.module.android.ui.page.fragment
 
-import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -26,7 +25,7 @@ class ShareArticleFragment: BaseVmFragment<FragmentShareArticleBinding, WanAndro
         return WanAndroidViewModel::class.java
     }
 
-    override fun initView(savedInstanceState: Bundle?) {
+    override fun initView() {
         // 在fragment中使用 onCreateOptionsMenu 时需要在 onCrateView 中添加此方法，否则不会调用
         setHasOptionsMenu(true)
     }

@@ -2,7 +2,6 @@ package com.ve.module.lockit.ui.page.auth
 
 import android.content.Intent
 import android.graphics.Color
-import android.os.Bundle
 import android.text.SpannableString
 import android.text.SpannableStringBuilder
 import android.text.Spanned
@@ -73,7 +72,7 @@ class LockitLoginActivity: BaseVmActivity<LockitActivityLoginBinding, LockitLogi
 
     private var loginType:Int=LoginTypeEnum.ACCOUNT.type
     private val loadingDialog by lazy { DialogUtil.getWaitDialog(this,"正在登录") }
-    override fun initView(savedInstanceState: Bundle?) {
+    override fun initView() {
         initToolbar(mBinding.extToolbar.toolbar, "登录", true)
 
         setText()

@@ -197,7 +197,6 @@ class AgentWebActivity : BaseActivity<ActivityAgentWebBinding>() {
         override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
             //获取url
             val uri = request!!.url
-            LogUtil.i(uri.toString())
             /**
              * 一个URL通常由以下几个部分构成：协议、域名、端口、路径和URL地址参数。
              * https://baike.baidu.com/item/android/60243
@@ -213,12 +212,12 @@ class AgentWebActivity : BaseActivity<ActivityAgentWebBinding>() {
 
         override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
             super.onPageStarted(view, url, favicon)
-            LogUtil.i("url---$url")
+            LogUtil.d("url---$url")
         }
 
         override fun onPageFinished(view: WebView?, url: String?) {
             super.onPageFinished(view, url)
-            LogUtil.i("url---$url")
+            LogUtil.d("url---$url")
         }
     }
 

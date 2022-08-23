@@ -1,7 +1,6 @@
 package com.ve.module.sunny.ui.weather
 
 import android.content.Context
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -57,7 +56,7 @@ class WeatherActivity : BaseVmActivity<ActivityWeatherBinding, WeatherViewModel>
         })
     }
 
-    override fun initView(savedInstanceState: Bundle?) {
+    override fun initView() {
 
         nowBinding = mBinding.weatherNow
         forecastBinding = mBinding.weatherForecast

@@ -3,7 +3,6 @@ package com.ve.module.android.ui.page.user
 import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.drawable.ColorDrawable
-import android.os.Bundle
 import android.view.Gravity
 import android.widget.ImageView
 import android.widget.TextView
@@ -79,7 +78,7 @@ class DrawerFragment : BaseVmFragment<WazFragmentDrawerBinding, WanAndroidViewMo
     private var nav_rank: ImageView? = null
     private var nav_header_icon: ImageView?=null
 
-    override fun initView(savedInstanceState: Bundle?) {
+    override fun initView() {
         nav_username=mBinding.tvUsername
         nav_user_id=mBinding.tvUserId
         nav_user_rank=mBinding.tvUserRank

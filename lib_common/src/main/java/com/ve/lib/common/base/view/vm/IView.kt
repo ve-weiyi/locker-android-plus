@@ -70,12 +70,10 @@ interface IView <VB : ViewBinding> {
     }
 
 
-
     fun launchOnBackground(function:suspend () -> Unit): Job {
         return CoroutineScope(Dispatchers.IO).launch {
             function.invoke()
         }
     }
-
 
 }

@@ -15,6 +15,7 @@ import kotlin.math.min
  */
 object LogUtil {
     private var TAG = "LogUtil"
+    private var tag = "LogUtil"
     private var IS_LOG = true
     private const val MAX_LENGTH = 2000
 
@@ -30,123 +31,59 @@ object LogUtil {
         IS_LOG = isLog
     }
 
-    @JvmStatic
-    fun msg(tag: String?,msg: String) {
-        logMsg(
-            tag=tag,
-            msg=msg,
-            info = autoJumpLogInfo(4),
-            logFun = { tag,msg,info->
-                Log.e(tag, info[1] + info[2] + " --->> " + msg)
-            }
-        )
-    }
 
-    private fun logMsg(tag: String?=null,msg: String,info :Array<String>,logFun: (String,String, Array<String> ) -> Int) {
+    private fun logMsg(
+        tag: String ?= TAG, msg: String, info: Array<String>,
+        logFun: (String?, String, Array<String>) -> Int
+    ) {
         val start = 0
         val end = min(msg.length, MAX_LENGTH)
-        val message=msg.substring(start, end)
+        val message = msg.substring(start, end)
 
-        if (tag != null) {
-            logFun.invoke(tag,message,info)
-        }else{
-            logFun.invoke(TAG,message,info)
-        }
+        logFun.invoke(tag, message, info)
     }
+
+
     @JvmStatic
     fun msg() {
-        logMsg(
-            msg= ActivityController.currentActivityName + getMethodName(4),
-            info = autoJumpLogInfo(4),
-            logFun = { tag,msg,info->
-                Log.e(tag, info[1] + info[2] + " --->> " + msg)
-            }
-        )
+        Log.e(tag, covertMessage())
     }
 
     @JvmStatic
     fun msg(obj: Any?) {
-        logMsg(
-            msg=obj.toString(),
-            info = autoJumpLogInfo(4),
-            logFun = { tag,msg,info->
-                Log.e(tag, info[1] + info[2] + " --->> " + msg)
-            }
-        )
-    }
-
-
-    @JvmStatic
-    fun i(msg: String) {
-        if (IS_LOG) {
-            logMsg(
-                msg=msg,
-                info = autoJumpLogInfo(4),
-                logFun = { tag,msg,info->
-                    Log.e(tag, info[1] + info[2] + " --->> " + msg)
-                }
-            )
-        }
+        Log.e(tag, covertMessage(obj.toString()))
     }
 
     @JvmStatic
-    fun i(tag: String?, msg: String) {
-        if (IS_LOG) {
-            logMsg(
-                msg=msg,
-                info = autoJumpLogInfo(4),
-                logFun = { tag,msg,info->
-                    Log.e(tag, info[1] + info[2] + " --->> " + msg)
-                }
-            )
-        }
+    fun msg(tag: String?, msg: String) {
+        Log.e(tag, covertMessage(msg))
     }
+
     @JvmStatic
-    fun d(obj: Any)  {
+    fun d(obj: Any) {
         if (IS_LOG) {
-            logMsg(
-                msg=obj.toString(),
-                info = autoJumpLogInfo(4),
-                logFun = { tag,msg,info->
-                    Log.d(tag, info[1] + info[2] + " --->> " + msg)
-                }
-            )
+            Log.e(tag, covertMessage(obj.toString()))
         }
     }
+
     @JvmStatic
     fun d(tag: String, msg: String) {
         if (IS_LOG) {
-            logMsg(
-                msg=msg,
-                info = autoJumpLogInfo(4),
-                logFun = { tag,msg,info->
-                    Log.d(tag, info[1] + info[2] + " --->> " + msg)
-                }
-            )
+            Log.e(tag, covertMessage(msg))
         }
     }
+
     @JvmStatic
     fun e(msg: String) {
         if (IS_LOG) {
-            logMsg(
-                msg=msg,
-                info = autoJumpLogInfo(4),
-                logFun = { tag,msg,info->
-                    Log.e(tag, info[1] + info[2] + " --->> " + msg)
-                }
-            )
+            Log.e(tag, covertMessage(msg))
         }
     }
+
     @JvmStatic
     fun e(tag: String?, msg: String) {
         if (IS_LOG) {
-            logMsg(
-                msg=msg,
-                info = autoJumpLogInfo(4),
-                logFun = { tag,msg,info->
-                    Log.e(tag, info[1] + info[2] + " --->> " + msg)
-                }
-            )
+            Log.e(tag, covertMessage(msg))
         }
     }
 
@@ -159,7 +96,7 @@ object LogUtil {
      * stacktrace[4].getMethodName() 才是调用此的函数的函数名 。
      * 每次迭代调用，层数+1
      */
-    private fun autoJumpLogInfo(stackCount :Int):Array<String>{
+    private fun autoJumpLogInfo(stackCount: Int): Array<String> {
         val infos = arrayOf("", "", "")
         val stackTrace = Thread.currentThread().stackTrace
         infos[0] = stackTrace[stackCount].className.substring(stackTrace[stackCount].className.lastIndexOf(".") + 1)
@@ -168,15 +105,23 @@ object LogUtil {
         return infos
     }
 
+    /**
+     * 转换 message
+     */
+    private fun covertMessage(msg: String?=null): String {
+        if(msg==null){
+            return ActivityController.currentActivityName + getMethodName(4)
+        }
+
+        val info= autoJumpLogInfo(4)
+        return info[1] + info[2] + " --->> " + msg
+    }
+
     @JvmStatic
     open fun error(msg: String?, vararg obj: Any?) {
-        logMsg(
-            msg=msg+obj,
-            info = autoJumpLogInfo(4),
-            logFun = { tag,msg,info->
-                Log.e(tag, info[1] + info[2] + " --->> " + msg)
-            }
-        )
+        if (IS_LOG) {
+            Log.e(tag, covertMessage(msg+obj))
+        }
     }
 
 

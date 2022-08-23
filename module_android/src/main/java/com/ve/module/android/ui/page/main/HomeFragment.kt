@@ -1,6 +1,5 @@
 package com.ve.module.android.ui.page.main
 
-import android.os.Bundle
 import android.view.View
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.ve.module.android.databinding.FragmentHomeBinding
@@ -116,8 +115,8 @@ class HomeFragment() : BaseVmListFragment<FragmentHomeBinding, HomeViewModel, Ar
         mFloatingActionBtn=mBinding.fragmentRefreshLayout.floatingActionBtn
     }
 
-    override fun initView(savedInstanceState: Bundle?) {
-        super.initView(savedInstanceState)
+    override fun initView() {
+        super.initView()
         mHomeHeaderView = ItemHomeBannerBinding.inflate(layoutInflater)
         mListAdapter.addHeaderView(mHomeHeaderView.root)
     }

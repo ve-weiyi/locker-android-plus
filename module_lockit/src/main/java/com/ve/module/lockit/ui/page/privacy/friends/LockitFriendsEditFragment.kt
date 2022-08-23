@@ -1,6 +1,5 @@
 package com.ve.module.lockit.ui.page.privacy.friends
 
-import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -46,7 +45,7 @@ class LockitFriendsEditFragment:
     private lateinit var mPrivacyInfo: PrivacyFriend
 
 
-    override fun initView(savedInstanceState: Bundle?) {
+    override fun initView() {
         setHasOptionsMenu(true)
         arguments?.let {
             mType = it.getInt(FRAGMENT_TYPE_KEY, EditTypeEnum.ADD_TAG_TYPE)

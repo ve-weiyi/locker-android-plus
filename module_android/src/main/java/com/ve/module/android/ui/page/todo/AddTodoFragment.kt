@@ -86,7 +86,7 @@ class AddTodoFragment : BaseVmFragment<FragmentAddTodoBinding, TodoViewModel>(){
             activity?.finish()
         }
     }
-    override fun initView(savedInstanceState: Bundle?) {
+    override fun initView() {
         mType = arguments?.getInt(Constant.TODO_TYPE) ?: 0
         mTypeKey = arguments?.getString(Constant.TYPE_KEY) ?: Constant.Type.ADD_TODO_TYPE_KEY
         var bundle: Bundle? = arguments //从bundle中取出数据

@@ -13,7 +13,7 @@ import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.ve.lib.common.R
 import com.ve.lib.common.exception.BizException
-import com.ve.lib.common.widget.SpaceItemDecoration
+import com.ve.lib.common.widget.divider.SpaceItemDecoration
 import com.ve.lib.common.utils.log.LogUtil
 import com.ve.lib.common.utils.view.ToastUtil
 

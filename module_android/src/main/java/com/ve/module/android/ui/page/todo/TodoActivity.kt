@@ -1,7 +1,6 @@
 package com.ve.module.android.ui.page.todo
 
 import android.os.Build
-import android.os.Bundle
 import android.view.*
 import android.widget.PopupWindow
 import androidx.appcompat.widget.Toolbar
@@ -44,11 +43,8 @@ class TodoActivity : BaseVmActivity<ActivityTodoBinding, TodoViewModel>(){
         return list
     }
 
-    override fun initViewData() {
+    override fun initView() {
         datas=getTypeData()
-    }
-
-    override fun initView(savedInstanceState: Bundle?) {
         mToolbar=mBinding.extToolbar.toolbar
         initToolbar(mBinding.extToolbar.toolbar, "TODO", true)
 

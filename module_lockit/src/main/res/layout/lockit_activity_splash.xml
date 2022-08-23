@@ -5,8 +5,8 @@
         android:id="@+id/layout_splash"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
-        >
+        android:theme="@style/SplashTheme"
+    >
 
     <com.ve.lib.common.widget.view.CircleImageView
             android:id="@+id/iv_logo"

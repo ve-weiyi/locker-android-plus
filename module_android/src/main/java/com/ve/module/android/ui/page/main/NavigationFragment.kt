@@ -2,7 +2,6 @@ package com.ve.module.android.ui.page.main
 
 import android.content.Intent
 import android.graphics.Color
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
@@ -60,7 +59,7 @@ class NavigationFragment : BaseVmFragment<FragmentNavigationBinding, TreeViewMod
         }
     }
 
-    override fun initView(savedInstanceState: Bundle?) {
+    override fun initView() {
         mLayoutStatusView = mBinding.multipleStatusView
     }
 

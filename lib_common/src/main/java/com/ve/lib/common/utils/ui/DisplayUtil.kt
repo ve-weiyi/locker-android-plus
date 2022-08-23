@@ -18,6 +18,7 @@ object DisplayUtil {
     /**
      * dp to px
      */
+    @JvmStatic
     fun dp2px(dp: Float): Int {
         val density = AppContextUtil.getApp().resources.displayMetrics.density
         return (dp * density + 0.5f).toInt()

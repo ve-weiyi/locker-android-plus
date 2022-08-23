@@ -25,14 +25,14 @@ import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
 /**
- * @author chenxz
- * @date 2018/11/19
+ * @author Waynie
+ * @date 2022/8/23
  * @desc BaseActivity 泛型实化 ，内部存有binding对象
  */
 abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity(), IView<VB> {
 
     lateinit var mBinding: VB
-    protected open var mViewName: String? = this.javaClass.simpleName
+    protected var mViewName: String = this.javaClass.simpleName
 
     protected var mNetworkChangeReceiver: NetworkChangeReceiver? = null
     protected var mThemeColor: Int = SettingUtil.getColor()
