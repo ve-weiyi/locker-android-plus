@@ -5,10 +5,9 @@
         android:id="@+id/layout_splash"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         >
 
-    <com.ve.lib.common.widget.view.CircleImageView
+    <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/iv_logo"
             android:layout_width="@dimen/dp_110"
             android:layout_height="@dimen/dp_110"

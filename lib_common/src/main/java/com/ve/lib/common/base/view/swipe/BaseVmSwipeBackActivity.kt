@@ -1,6 +1,5 @@
 package com.ve.lib.common.base.view.swipe
 
-import android.os.Bundle
 import androidx.viewbinding.ViewBinding
 import com.ve.lib.common.base.viewmodel.BaseViewModel
 import com.ve.lib.common.base.view.vm.BaseVmActivity
@@ -15,7 +14,7 @@ import com.ve.lib.common.base.view.vm.BaseVmActivity
 
     override lateinit var swipeBackManager: SwipeBackManager
 
-    override fun initView(savedInstanceState: Bundle?) {
+    override fun initView() {
         swipeBackManager=attachSwipeManager()
     }
 

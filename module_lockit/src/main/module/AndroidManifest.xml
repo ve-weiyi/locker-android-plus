@@ -24,6 +24,7 @@
 
         <activity
                 android:name=".ui.page.LockitSplashActivity"
+            android:theme="@style/SplashTheme"
                 android:exported="true"
                 >
             <intent-filter>

@@ -52,8 +52,8 @@ abstract class BaseVmFragment<VB : ViewBinding, VM : BaseViewModel> : BaseFragme
         }
 
         initObserver()
-        initViewData()
-        initView(saveInstanceState)
+        initData()
+        initView()
         initListener()
 
 //        arguments?.let {
@@ -91,7 +91,7 @@ abstract class BaseVmFragment<VB : ViewBinding, VM : BaseViewModel> : BaseFragme
     /**
      * step 2.初始化view相关数据, 需要在view初始化之前完成
      */
-    override fun initViewData() {
+    override fun initData() {
 
     }
 

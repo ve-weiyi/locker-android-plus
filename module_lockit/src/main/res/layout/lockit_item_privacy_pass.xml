@@ -6,9 +6,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="@dimen/list_padding_small"
-        android:layout_marginHorizontal="@dimen/list_padding_big"
+        android:layout_marginHorizontal="@dimen/list_padding_normal"
         android:paddingHorizontal="@dimen/dimen_big"
-        android:paddingVertical="@dimen/dimen_normal"
+        android:paddingVertical="@dimen/dimen_mid"
         android:background="@drawable/bg_round_pass"
         >
 

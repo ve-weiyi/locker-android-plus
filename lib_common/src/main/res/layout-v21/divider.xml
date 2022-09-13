@@ -2,7 +2,7 @@
 <ImageView
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="@dimen/dimen_normal"
+        android:layout_margin="@dimen/dimen_mid"
         android:id="@+id/divider"
         android:layout_width="match_parent"
         android:layout_height="0.6dp"

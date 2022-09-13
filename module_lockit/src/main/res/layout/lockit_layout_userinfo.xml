@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingHorizontal="@dimen/dimen_normal"
+        android:paddingHorizontal="@dimen/dimen_mid"
         android:paddingVertical="@dimen/dimen_giant"
         >
 
@@ -18,7 +18,7 @@
             android:id="@+id/iv_avatar_icon"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:padding="@dimen/dimen_normal"
+            android:padding="@dimen/dimen_mid"
             tools:src="@tools:sample/avatars" />
 
 
@@ -100,7 +100,7 @@
         <LinearLayout
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/layout_level"
-                android:layout_marginTop="@dimen/dimen_normal"
+                android:layout_marginTop="@dimen/dimen_mid"
                 android:layout_below="@id/layout_level"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

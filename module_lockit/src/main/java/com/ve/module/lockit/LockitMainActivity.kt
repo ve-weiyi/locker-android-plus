@@ -51,7 +51,7 @@ class LockitMainActivity : BaseVmActivity<LockitActivityMainBinding, LockitViewM
         return LockitActivityMainBinding.inflate(layoutInflater)
     }
 
-    override fun initView(savedInstanceState: Bundle?) {
+    override fun initView() {
         mViewModel.report()
         initFragment()
         showFragment(mIndex)

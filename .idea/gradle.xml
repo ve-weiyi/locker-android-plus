@@ -7,7 +7,7 @@
         <option name="testRunner" value="GRADLE" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="gradleJvm" value="Embedded JDK" />
+        <option name="gradleJvm" value="11" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/lib_application" />
             <option value="$PROJECT_DIR$/lib_auth" />
             <option value="$PROJECT_DIR$/lib_common" />
+            <option value="$PROJECT_DIR$/lockit_plus" />
             <option value="$PROJECT_DIR$/module_android" />
             <option value="$PROJECT_DIR$/module_games" />
             <option value="$PROJECT_DIR$/module_lockit" />

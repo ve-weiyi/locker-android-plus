@@ -1,7 +1,6 @@
 package com.ve.module.lockit.ui.page.category.tag
 
 import android.app.DatePickerDialog
-import android.os.Bundle
 import android.view.View
 import android.widget.*
 import com.ve.lib.common.base.view.vm.BaseVmFragment
@@ -63,7 +62,7 @@ class LockitTagDetailsFragment :
      */
     private var mCurrentDate = formatCurrentDate()
 
-    override fun initView(savedInstanceState: Bundle?) {
+    override fun initView() {
 
         tv_date = mBinding.tvDate
         et_id = mBinding.etId

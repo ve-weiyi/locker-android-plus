@@ -1,7 +1,6 @@
 package com.ve.module.android.ui.page.user
 
 import android.content.Intent
-import android.os.Bundle
 import android.view.View
 import androidx.appcompat.widget.Toolbar
 import com.ve.module.android.R
@@ -26,7 +25,7 @@ class RegisterActivity : BaseVmActivity<ActivityRegisterBinding, RegisterViewMod
 
     lateinit var mToolbar: Toolbar
     lateinit var mTitle: String
-    override fun initView(savedInstanceState: Bundle?) {
+    override fun initView() {
         mToolbar=mBinding.extToolbar.toolbar
         mTitle=getString(R.string.register)
         initToolbar(mToolbar,mTitle)

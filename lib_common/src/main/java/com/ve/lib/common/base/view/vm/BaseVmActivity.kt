@@ -53,8 +53,8 @@ abstract class BaseVmActivity<VB : ViewBinding, VM : BaseViewModel> : BaseActivi
 
         initTipView()
         initObserver()
-        initViewData()
-        initView(saveInstanceState)
+        initData()
+        initView()
         initListener()
         mLayoutStatusView?.setOnClickListener(mRetryClickListener)
         checkNetwork(NetWorkUtil.isConnected())
@@ -77,7 +77,7 @@ abstract class BaseVmActivity<VB : ViewBinding, VM : BaseViewModel> : BaseActivi
     /**
      * step 2.初始化需要在view初始化时使用的数据，在view初始化之前完成
      */
-    override fun initViewData(){
+    override fun initData(){
 
     }
 

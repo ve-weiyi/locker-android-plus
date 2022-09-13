@@ -8,8 +8,8 @@
             android:id="@+id/cardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/list_padding_normal"
-            android:layout_marginHorizontal="@dimen/list_padding_big"
+            android:layout_marginVertical="@dimen/list_padding_mid"
+            android:layout_marginHorizontal="@dimen/list_padding_normal"
             android:paddingHorizontal="@dimen/dp_8"
             android:paddingVertical="@dimen/dp_8"
             android:background="@drawable/bg_round_pass">

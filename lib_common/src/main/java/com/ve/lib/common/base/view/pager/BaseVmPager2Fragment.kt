@@ -4,7 +4,6 @@ import android.R
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.Typeface
-import android.os.Bundle
 import android.widget.TextView
 import androidx.core.graphics.ColorUtils
 import androidx.fragment.app.Fragment
@@ -55,7 +54,7 @@ abstract class BaseVmPager2Fragment<VB : ViewBinding, VM : BaseViewModel>() :
         return ViewPager2Adapter(this.requireActivity(), mTitleList, mFragmentList)
     }
 
-    override fun initView(savedInstanceState: Bundle?) {
+    override fun initView() {
         initPagerView()
     }
 

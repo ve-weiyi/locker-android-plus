@@ -1,6 +1,5 @@
 package com.ve.module.lockit.ui.page.auth
 
-import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.View
 import com.ve.lib.common.base.view.vm.BaseVmActivity
@@ -31,7 +30,7 @@ class LockitRegisterActivity :
         DialogUtil.getWaitDialog(this, "注册中")
     }
 
-    override fun initView(savedInstanceState: Bundle?) {
+    override fun initView() {
         initToolbar(mBinding.extToolbar.toolbar, "注册")
         if(LockitSpKey.isDebug){
             mBinding.etUsername.editText!!.setText("791422171@qq.com")

@@ -42,7 +42,7 @@ class LockitCardDetailsFragment :
 
     var mPrivacyInfo: PrivacyCard? = null
 
-    override fun initView(savedInstanceState: Bundle?) {
+    override fun initView() {
 
         mPrivacyInfo = arguments?.getSerializable(PRIVACY_DATA_KEY) as PrivacyCard
         LogUtil.msg(mPrivacyInfo.toString())

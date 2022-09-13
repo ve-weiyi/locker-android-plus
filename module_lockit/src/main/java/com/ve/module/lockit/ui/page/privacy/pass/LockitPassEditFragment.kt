@@ -1,7 +1,6 @@
 package com.ve.module.lockit.ui.page.privacy.pass
 
 import android.annotation.SuppressLint
-import android.os.Bundle
 import android.text.InputType
 import android.view.Menu
 import android.view.MenuInflater
@@ -81,7 +80,7 @@ class LockitPassEditFragment :
     private var mAppInfoList: MutableList<AndroidUtil.AppInfo>? = null
     private val mAppDialog by lazy { MaterialDialog(mContext) }
 
-    override fun initView(savedInstanceState: Bundle?) {
+    override fun initView() {
         setHasOptionsMenu(true)
 
         mFolderSpinner = mBinding.spacerFolder

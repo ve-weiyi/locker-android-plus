@@ -114,7 +114,7 @@
             <LinearLayout
                     android:paddingHorizontal="@dimen/dimen_giant"
                     android:layout_marginHorizontal="@dimen/dimen_giant"
-                    android:layout_marginVertical="@dimen/dimen_normal"
+                    android:layout_marginVertical="@dimen/dimen_mid"
 
                     android:background="@drawable/bg_white_rect_8dp"
                     android:layout_width="match_parent"
@@ -197,7 +197,7 @@
             <LinearLayout
                     android:paddingHorizontal="@dimen/dimen_giant"
                     android:layout_marginHorizontal="@dimen/dimen_giant"
-                    android:layout_marginVertical="@dimen/dimen_normal"
+                    android:layout_marginVertical="@dimen/dimen_mid"
 
                     android:background="@drawable/bg_white_rect_8dp"
                     android:layout_width="match_parent"
@@ -302,7 +302,7 @@
             <LinearLayout
                     android:paddingHorizontal="@dimen/dimen_giant"
                     android:layout_marginHorizontal="@dimen/dimen_giant"
-                    android:layout_marginVertical="@dimen/dimen_normal"
+                    android:layout_marginVertical="@dimen/dimen_mid"
 
                     android:background="@drawable/bg_white_rect_8dp"
                     android:layout_width="match_parent"
@@ -332,7 +332,7 @@
                     android:paddingHorizontal="@dimen/dimen_giant"
 
                     android:layout_marginHorizontal="@dimen/dimen_giant"
-                    android:layout_marginVertical="@dimen/dimen_normal"
+                    android:layout_marginVertical="@dimen/dimen_mid"
 
                     android:background="@drawable/bg_white_rect_8dp"
                     android:layout_width="match_parent"
@@ -356,7 +356,7 @@
                         android:layout_height="wrap_content"
                         style="@style/tv_title_normal_gray"
                         android:text="重复使用的密码"
-                        android:padding="@dimen/dimen_normal" />
+                        android:padding="@dimen/dimen_mid" />
 
                 <TextView
                         app:layout_constraintStart_toStartOf="@id/tv_tip_title"
@@ -367,14 +367,14 @@
                         android:layout_height="wrap_content"
                         style="@style/tv_content_second"
                         android:text="您在其他网站上也使用了此密码，包括 bilibili、QQ 和其他6个网站，若其中有一个账户泄漏，会增加此账户的风险"
-                        android:padding="@dimen/dimen_normal" />
+                        android:padding="@dimen/dimen_mid" />
 
 
                 <ImageView
                         app:layout_constraintTop_toBottomOf="@id/tv_tip_content"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        android:layout_margin="@dimen/dimen_normal"
+                        android:layout_margin="@dimen/dimen_mid"
                         android:id="@+id/divider"
                         android:layout_width="match_parent"
                         android:layout_height="0.8dp"
@@ -382,7 +382,7 @@
 
 
                 <TextView
-                        android:layout_marginVertical="@dimen/dimen_normal"
+                        android:layout_marginVertical="@dimen/dimen_mid"
                         app:layout_constraintTop_toBottomOf="@id/divider"
                         app:layout_constraintStart_toStartOf="parent"
                         android:layout_centerVertical="true"

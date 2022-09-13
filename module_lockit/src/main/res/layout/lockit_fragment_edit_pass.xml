@@ -21,7 +21,7 @@
             <LinearLayout
                     android:paddingHorizontal="@dimen/dimen_giant"
                     android:layout_marginHorizontal="@dimen/dimen_giant"
-                    android:layout_marginVertical="@dimen/dimen_normal"
+                    android:layout_marginVertical="@dimen/dimen_mid"
 
                     android:background="@drawable/bg_white_rect_8dp"
                     android:layout_width="match_parent"
@@ -181,7 +181,7 @@
         <LinearLayout
                 android:paddingHorizontal="@dimen/dimen_giant"
                 android:layout_marginHorizontal="@dimen/dimen_giant"
-                android:layout_marginVertical="@dimen/dimen_normal"
+                android:layout_marginVertical="@dimen/dimen_mid"
 
                 android:background="@drawable/bg_white_rect_8dp"
                 android:layout_width="match_parent"
@@ -207,7 +207,7 @@
         <LinearLayout
                 android:paddingHorizontal="@dimen/dimen_giant"
                 android:layout_marginHorizontal="@dimen/dimen_giant"
-                android:layout_marginVertical="@dimen/dimen_normal"
+                android:layout_marginVertical="@dimen/dimen_mid"
 
                 android:background="@drawable/bg_white_rect_8dp"
                 android:layout_width="match_parent"

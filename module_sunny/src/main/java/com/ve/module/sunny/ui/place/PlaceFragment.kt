@@ -1,7 +1,6 @@
 package com.ve.module.sunny.ui.place
 
 import android.content.Intent
-import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.core.view.GravityCompat
@@ -70,7 +69,7 @@ class PlaceFragment : BaseVmFragment<FragmentPlaceBinding, PlaceViewModel>() {
     /**
      * 初始化view相关
      */
-    override fun initView(savedInstanceState: Bundle?) {
+    override fun initView() {
         initPlace()
     }
 

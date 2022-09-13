@@ -55,7 +55,7 @@ class LockitGroupActivity:
     var data: Serializable?=null
     private val mGroupAdapter by lazy { CategoryGroupAdapter() }
 
-    override fun initView(savedInstanceState: Bundle?) {
+    override fun initView() {
         //从bundle中取出数据
         fragmentTitle  = intent.getStringExtra(FRAGMENT_TITLE_KEY) ?: ""
         fragmentArguments = intent.getBundleExtra(FRAGMENT_ARGUMENTS_KEY) ?: Bundle()

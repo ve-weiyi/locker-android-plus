@@ -47,7 +47,7 @@
     </style>
 
     <style name="tv_content_second" parent="tv_text_layout">
-        <item name="android:textSize">@dimen/text_second</item>
+        <item name="android:textSize">@dimen/text_mid</item>
         <!--        <item name="android:textColor">@color/gray</item>-->
     </style>
 
@@ -58,7 +58,7 @@
 
 
     <dimen name="text_small">12sp</dimen>
-    <dimen name="text_second">14sp</dimen>
+    <dimen name="text_mid">14sp</dimen>
     <dimen name="text_normal">16sp</dimen>
     <dimen name="text_big">18sp</dimen>
     <dimen name="text_bigger">20sp</dimen>
@@ -66,12 +66,12 @@
 
     <!--    列表边距-->
     <dimen name="list_padding_small">2dp</dimen>
-    <dimen name="list_padding_normal">4dp</dimen>
-    <dimen name="list_padding_big">8dp</dimen>
+    <dimen name="list_padding_mid">4dp</dimen>
+    <dimen name="list_padding_normal">8dp</dimen>
 
     <!--    控件边距-->
     <dimen name="dimen_small">2dp</dimen>
-    <dimen name="dimen_normal">4dp</dimen>
+    <dimen name="dimen_mid">4dp</dimen>
     <dimen name="dimen_big">8dp</dimen>
     <dimen name="dimen_bigger">12dp</dimen>
     <dimen name="dimen_giant">16dp</dimen>

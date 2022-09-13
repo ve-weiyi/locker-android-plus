@@ -1,7 +1,6 @@
 package com.ve.module.lockit.ui.page.privacy.card
 
 import android.annotation.SuppressLint
-import android.os.Bundle
 import android.text.InputType
 import android.view.Menu
 import android.view.MenuInflater
@@ -66,7 +65,7 @@ class LockitCardEditFragment :
     private lateinit var mTagName: List<String>
     private lateinit var mTagAdapter: FlowTagAdapter
 
-    override fun initView(savedInstanceState: Bundle?) {
+    override fun initView() {
         setHasOptionsMenu(true)
 
         mFolderSpinner = mBinding.spacerFolder

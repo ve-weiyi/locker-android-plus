@@ -43,7 +43,7 @@ class LockitPassDetailsFragment :
 
     var mPrivacyInfo: PrivacyPass? = null
 
-    override fun initView(savedInstanceState: Bundle?) {
+    override fun initView() {
 
         mPrivacyInfo = arguments?.getSerializable(PRIVACY_DATA_KEY) as PrivacyPass
 //        LogUtil.msg(mPrivacyInfo.toString())

@@ -292,7 +292,7 @@
                     android:id="@+id/operator_view"
                     android:layout_width="match_parent"
                     android:layout_height="52dp"
-                    android:layout_marginTop="@dimen/dimen_normal"
+                    android:layout_marginTop="@dimen/dimen_mid"
                     android:layout_alignParentBottom="true"
                     android:background="@drawable/bg_white_rect_8dp"
                     android:orientation="horizontal">

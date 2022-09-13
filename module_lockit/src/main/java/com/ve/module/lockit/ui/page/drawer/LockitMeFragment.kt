@@ -2,7 +2,6 @@ package com.ve.module.lockit.ui.page.drawer
 
 import android.content.Intent
 import android.location.Location
-import android.os.Bundle
 import android.view.View
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
@@ -54,7 +53,7 @@ class LockitMeFragment : BaseVmFragment<LockitFragmentMeBinding, LockitDrawerVie
     var location: Location? = null
     var placeName: String? = null
 
-    override fun initView(savedInstanceState: Bundle?) {
+    override fun initView() {
         showUserInfo(SpUtil.getValue(LockitSpKey.SP_KEY_LOGIN_DATA_KEY, LoginDTO()::class.java))
     }
 
@@ -156,7 +155,7 @@ class LockitMeFragment : BaseVmFragment<LockitFragmentMeBinding, LockitDrawerVie
             R.id.action_today_weather -> {
                 if (location == null) {
                     LocationLifecycle.permissionCheck(requireActivity())
-                    initViewData()
+                    initData()
                 } else {
                     LogUtil.e("---" + location!!.longitude + "---" + location!!.latitude + "---" + placeName)
                     val intent = Intent(requireContext(), WeatherActivity::class.java).apply {
