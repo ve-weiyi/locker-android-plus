@@ -1,7 +1,7 @@
 package com.ve.module.lockit.respository.database.vo
 
-import com.ve.lib.common.utils.color.ColorUtil
-import com.ve.lib.common.utils.date.TimeUtil
+import com.ve.lib.common.utils.data.ColorUtil
+import com.ve.lib.common.utils.data.TimeUtil
 
 /**
  * @Author  weiyi

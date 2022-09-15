@@ -5,7 +5,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.gson.JsonParseException
 import com.ve.lib.common.network.exception.ApiException
 import com.ve.lib.common.widget.passwordGenerator.PasswordGenerator
-import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.system.LogUtil
 import com.ve.lib.common.utils.view.ToastUtil
 import com.ve.module.lockit.common.config.LockitConstant
 import com.ve.module.lockit.respository.database.AppDataBase
@@ -15,6 +15,7 @@ import com.ve.module.lockit.respository.http.model.ConditionVO
 import com.ve.lib.common.utils.encrypt.AESUtil
 import com.ve.module.lockit.utils.PasswordUtils
 import com.ve.lib.common.utils.encrypt.RSAUtil
+import com.ve.module.lockit.respository.http.api.LockitApiService
 import kotlinx.coroutines.*
 
 import org.junit.Test
@@ -37,7 +38,7 @@ import java.net.UnknownHostException
 @RunWith(AndroidJUnit4::class)
 class ExampleInstrumentedTest {
 
-    private val apiService = LockitApiService().getApiService()
+    private val apiService = LockitApiService.getApiService()
     private val liteDataBase = LitePal.getDatabase()
 
     @Test
@@ -74,38 +75,6 @@ class ExampleInstrumentedTest {
 
         runBlocking {
             AppDataBase.initDataBase()
-        }
-    }
-
-
-    @Test
-    fun apiServiceTest() {
-        LogUtil.e(" androidTest是整合测试。可以运行在设备或虛拟设备上.需要编译打包为APK在设备上运行，可以实时杏看细节.\n")
-        runBlocking {
-            //val result=apiService.tagDelete(0)
-
-            val tag = PrivacyTag(
-                id = 100,
-                "测试标签",
-                "#FAFAFA",
-                "床前明月光"
-            )
-            //增
-            var result = apiService.tagAdd(tag)
-            LogUtil.e(result.toString())
-
-            //改
-            tag.tagName = "测试标签修改"
-            result = apiService.tagUpdate(tag)
-            LogUtil.e(result.toString())
-
-            //查
-            result = apiService.tagQuery(15)
-            LogUtil.e(result.toString())
-
-            //条件查
-            var result1 = apiService.tagQueryList(conditionVO = ConditionVO(id = 15))
-            LogUtil.e(result1.toString())
         }
     }
 

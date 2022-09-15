@@ -2,7 +2,7 @@ package com.ve.module.lockit.ui.adapter
 
 import android.widget.TextView
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
-import com.ve.lib.common.utils.file.ImageLoader
+import com.ve.lib.common.utils.data.ImageLoader
 import com.ve.lib.common.base.adapter.BaseSlideAdapter
 import com.ve.module.lockit.R
 import com.ve.module.lockit.respository.database.entity.PrivacyTag

@@ -12,7 +12,7 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.TextView
-import com.ve.lib.common.utils.manager.ActivityController
+import com.ve.lib.common.utils.ui.ActivityController
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 

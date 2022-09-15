@@ -3,7 +3,6 @@ package com.ve.lib.common.utils.ui
 import android.content.res.Resources
 import android.util.DisplayMetrics
 import android.util.TypedValue
-import com.ve.lib.common.utils.manager.ActivityController
 import com.ve.lib.common.utils.AppContextUtil
 
 /**

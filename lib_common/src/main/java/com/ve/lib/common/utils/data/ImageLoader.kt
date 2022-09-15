@@ -1,4 +1,4 @@
-package com.ve.lib.common.utils.file
+package com.ve.lib.common.utils.data
 
 import android.content.Context
 import android.content.res.ColorStateList
@@ -15,7 +15,7 @@ import com.bumptech.glide.request.target.CustomTarget
 import com.ve.lib.common.R
 import com.ve.lib.common.network.util.NetWorkUtil
 import com.ve.lib.common.utils.AppContextUtil
-import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.system.LogUtil
 
 
 /**

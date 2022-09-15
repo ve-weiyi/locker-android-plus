@@ -5,7 +5,6 @@ import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.Typeface
 import android.widget.TextView
-import androidx.core.graphics.ColorUtils
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import androidx.viewpager2.widget.ViewPager2
@@ -14,7 +13,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.ve.lib.common.base.viewmodel.BaseViewModel
 import com.ve.lib.common.base.view.vm.BaseVmFragment
 import com.ve.lib.common.base.adapter.ViewPager2Adapter
-import com.ve.lib.common.utils.color.ColorUtil
+import com.ve.lib.common.utils.data.ColorUtil
 
 /**
  * @Description hello word!

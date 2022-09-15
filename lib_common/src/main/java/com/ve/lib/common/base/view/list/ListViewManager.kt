@@ -12,7 +12,7 @@ import com.chad.library.adapter.base.listener.*
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.ve.lib.common.R
-import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.system.LogUtil
 import com.ve.lib.common.utils.view.ToastUtil
 
 /**

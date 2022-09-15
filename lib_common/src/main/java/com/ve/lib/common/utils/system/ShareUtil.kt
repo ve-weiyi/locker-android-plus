@@ -1,9 +1,9 @@
-package com.ve.lib.common.utils.provider
+package com.ve.lib.common.utils.system
 
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import com.ve.lib.common.utils.manager.ActivityController
+import com.ve.lib.common.utils.ui.ActivityController
 
 
 /**

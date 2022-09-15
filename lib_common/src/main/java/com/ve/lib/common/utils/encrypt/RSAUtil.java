@@ -1,7 +1,7 @@
 package com.ve.lib.common.utils.encrypt;
 
 
-import com.ve.lib.common.utils.log.LogUtil;
+import com.ve.lib.common.utils.system.LogUtil;
 
 import java.util.Base64;
 import java.util.Base64.*;

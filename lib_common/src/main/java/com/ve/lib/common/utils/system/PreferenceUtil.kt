@@ -1,7 +1,6 @@
-package com.ve.lib.common.utils.sp
+package com.ve.lib.common.utils.system
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.SharedPreferences
 import androidx.preference.PreferenceManager
 import com.ve.lib.common.utils.AppContextUtil

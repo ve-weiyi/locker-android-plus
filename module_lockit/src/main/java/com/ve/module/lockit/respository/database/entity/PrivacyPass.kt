@@ -1,9 +1,9 @@
 package com.ve.module.lockit.respository.database.entity
 
 import com.chad.library.adapter.base.entity.SectionEntity
-import com.ve.lib.common.utils.color.ColorUtil
+import com.ve.lib.common.utils.data.ColorUtil
 import com.ve.lib.common.utils.AppContextUtil
-import com.ve.lib.common.utils.date.TimeUtil
+import com.ve.lib.common.utils.data.TimeUtil
 import com.ve.module.lockit.LockitApplication
 import com.ve.module.lockit.common.enums.PrivacyEnum
 import com.ve.module.lockit.respository.database.vo.PrivacySimpleInfo

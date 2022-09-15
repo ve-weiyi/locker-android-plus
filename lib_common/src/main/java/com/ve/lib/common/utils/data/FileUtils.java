@@ -3,7 +3,7 @@
 // * The program and materials is not free. Without our permission, any use, including but not limited to reproduction, retransmission, communication, display, mirror, download, modification, is expressly prohibited. Otherwise, it will be pursued for legal liability.
 
 //
-package com.ve.lib.common.utils.file;
+package com.ve.lib.common.utils.data;
 
 import android.os.Environment;
 import android.text.TextUtils;

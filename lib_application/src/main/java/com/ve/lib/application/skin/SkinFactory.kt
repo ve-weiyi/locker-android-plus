@@ -7,13 +7,13 @@ object SkinFactory {
 
     private const val SP_SKIN_THEME="sp_skin_theme"
 
-    fun setTheme(skinActivity: SkinActivity) {
+    fun setTheme(skinActivity: SkinCompatActivity) {
         if ("" != getSp(skinActivity, SP_SKIN_THEME)) {
             skinActivity.setTheme(R.style.AppTheme_Sakura)
         }
     }
 
-    fun changeTheme(skinActivity: SkinActivity){
+    fun changeTheme(skinActivity: SkinCompatActivity){
         if ("default" == getSp(skinActivity, SP_SKIN_THEME)) {
             putSp(skinActivity, SP_SKIN_THEME, "")
         } else {

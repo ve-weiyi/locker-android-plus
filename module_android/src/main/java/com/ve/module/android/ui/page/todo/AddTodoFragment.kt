@@ -11,9 +11,8 @@ import com.ve.module.android.repository.bean.TodoBean
 import com.ve.module.android.ui.viewmodel.TodoViewModel
 import com.ve.lib.common.base.view.vm.BaseVmFragment
 import com.ve.module.android.event.RefreshTodoEvent
-import com.ve.lib.common.ext.formatCurrentDate
-import com.ve.lib.common.ext.stringToCalendar
-import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.data.TimeUtil
+import com.ve.lib.common.utils.system.LogUtil
 import org.greenrobot.eventbus.EventBus
 import java.util.*
 
@@ -33,7 +32,7 @@ class AddTodoFragment : BaseVmFragment<FragmentAddTodoBinding, TodoViewModel>(){
     /**
      * Date
      */
-    private var mCurrentDate = formatCurrentDate()
+    private var mCurrentDate = TimeUtil.formatDate(Date())
 
     /**
      * 类型
@@ -106,7 +105,7 @@ class AddTodoFragment : BaseVmFragment<FragmentAddTodoBinding, TodoViewModel>(){
 
         when (mTypeKey) {
             Constant.Type.ADD_TODO_TYPE_KEY -> {
-                tv_date.text = formatCurrentDate()
+                tv_date.text = TimeUtil.formatDate(Date())
             }
             Constant.Type.EDIT_TODO_TYPE_KEY -> {
                 mTodoBean = arguments?.getSerializable(Constant.TODO_BEAN) as TodoBean ?: null
@@ -152,10 +151,10 @@ class AddTodoFragment : BaseVmFragment<FragmentAddTodoBinding, TodoViewModel>(){
 
 
         ll_date.setOnClickListener {
-            var now = Calendar.getInstance()
+            var now = ""
             if (mTypeKey == Constant.Type.EDIT_TODO_TYPE_KEY) {
                 mTodoBean?.dateStr?.let {
-                    now = it.stringToCalendar()
+                    now = TimeUtil.formatDate(it)
                 }
             }
             val dpd = DatePickerDialog(
@@ -163,9 +162,9 @@ class AddTodoFragment : BaseVmFragment<FragmentAddTodoBinding, TodoViewModel>(){
                     mCurrentDate = "$year-${month + 1}-$dayOfMonth"
                     tv_date.text = mCurrentDate
                 },
-                now.get(Calendar.YEAR),
-                now.get(Calendar.MONTH),
-                now.get(Calendar.DAY_OF_MONTH)
+                1,
+                2,
+                3
             )
             dpd.show()
         }

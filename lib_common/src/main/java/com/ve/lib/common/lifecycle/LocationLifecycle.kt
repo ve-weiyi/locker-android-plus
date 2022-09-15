@@ -17,7 +17,7 @@ import androidx.lifecycle.OnLifecycleEvent
 import com.permissionx.guolindev.PermissionX
 import com.ve.lib.application.BaseApplication.Companion.context
 import com.ve.lib.common.utils.view.DialogUtil
-import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.system.LogUtil
 import java.util.*
 
 

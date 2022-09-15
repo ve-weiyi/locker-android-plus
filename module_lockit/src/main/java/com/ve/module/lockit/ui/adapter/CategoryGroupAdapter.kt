@@ -1,6 +1,6 @@
 package com.ve.module.lockit.ui.adapter
 
-import com.ve.lib.common.utils.file.ImageLoader
+import com.ve.lib.common.utils.data.ImageLoader
 import com.ve.module.lockit.databinding.LockitItemCategoryChildrenBinding
 import com.ve.module.lockit.databinding.LockitItemCategoryGroupBinding
 import com.ve.module.lockit.respository.database.vo.PrivacySimpleInfo

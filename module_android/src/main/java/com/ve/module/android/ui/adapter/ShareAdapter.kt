@@ -10,7 +10,7 @@ import com.ve.module.android.R
 import com.ve.module.android.repository.bean.Article
 import com.ve.lib.common.base.adapter.BaseSlideAdapter
 
-import com.ve.lib.common.utils.file.ImageLoader
+import com.ve.lib.common.utils.data.ImageLoader
 
 /**
  * @author chenxz

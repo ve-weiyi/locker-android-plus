@@ -3,7 +3,7 @@ package com.ve.module.lockit.ui.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.TextView
-import com.ve.lib.common.utils.color.ColorUtil
+import com.ve.lib.common.utils.data.ColorUtil
 import com.ve.module.lockit.R
 import com.ve.module.lockit.respository.database.entity.PrivacyTag
 import com.zhy.view.flowlayout.FlowLayout

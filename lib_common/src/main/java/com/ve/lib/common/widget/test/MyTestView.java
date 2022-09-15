@@ -6,7 +6,7 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 
-import com.ve.lib.common.utils.log.LogUtil;
+import com.ve.lib.common.utils.system.LogUtil;
 
 /**
  * @Description hello word!

@@ -1,11 +1,10 @@
-package com.ve.lib.common.utils.sp
+package com.ve.lib.common.utils.system
 
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 import com.ve.lib.common.utils.AppContextUtil
-import com.ve.lib.common.utils.format.FormatUtil
-import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.data.FormatUtil
 import java.io.*
 
 

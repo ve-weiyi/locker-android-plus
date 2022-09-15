@@ -21,7 +21,7 @@ import com.just.agentweb.AgentWeb
 import com.ve.lib.common.base.view.vm.BaseActivity
 import com.ve.module.android.R
 import com.ve.module.android.databinding.ActivityDetailBinding
-import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.system.LogUtil
 
 /**
  * @Description 

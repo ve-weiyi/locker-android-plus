@@ -1,14 +1,13 @@
-package com.ve.lib.common.utils.manager
+package com.ve.lib.common.callback
 
 import androidx.lifecycle.*
-import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.system.LogUtil
 
 /**
  * application 生命周期
  */
-open class ApplicationObserver: DefaultLifecycleObserver,LifecycleEventObserver{
+open class ApplicationCallbacks: DefaultLifecycleObserver,LifecycleEventObserver{
 
-    
     /**
      * ON_CREATE 在应用程序的整个生命周期中只会被调用一次
      */

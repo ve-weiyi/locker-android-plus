@@ -5,7 +5,7 @@ import android.os.Looper
 import android.view.Gravity
 import android.widget.Toast
 import com.ve.lib.common.utils.AppContextUtil
-import com.ve.lib.common.utils.manager.ActivityController
+import com.ve.lib.common.utils.ui.ActivityController
 
 /**
  * Created by yechao on 2020/1/7.

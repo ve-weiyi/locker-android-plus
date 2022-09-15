@@ -1,8 +1,6 @@
-package com.ve.lib.common.utils.date
+package com.ve.lib.common.utils.data
 
 import android.annotation.SuppressLint
-import android.os.Build
-import androidx.annotation.RequiresApi
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.time.LocalDateTime

@@ -6,7 +6,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import com.ve.lib.common.base.view.vm.BaseActivity
-import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.system.LogUtil
 
 /**
  * @Author  weiyi

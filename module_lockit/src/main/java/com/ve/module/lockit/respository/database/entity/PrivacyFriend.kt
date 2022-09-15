@@ -1,7 +1,7 @@
 package com.ve.module.lockit.respository.database.entity
 
 import com.chad.library.adapter.base.entity.SectionEntity
-import com.ve.lib.common.utils.date.TimeUtil
+import com.ve.lib.common.utils.data.TimeUtil
 import com.ve.module.lockit.respository.database.vo.PrivacySimpleInfo
 import org.litepal.annotation.Column
 import org.litepal.annotation.Encrypt

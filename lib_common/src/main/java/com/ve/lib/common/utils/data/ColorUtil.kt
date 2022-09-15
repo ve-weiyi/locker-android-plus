@@ -1,4 +1,4 @@
-package com.ve.lib.common.utils.color
+package com.ve.lib.common.utils.data
 
 import android.graphics.Color
 import androidx.annotation.ColorInt

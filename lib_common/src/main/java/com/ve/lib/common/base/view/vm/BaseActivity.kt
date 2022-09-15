@@ -8,8 +8,8 @@ import android.view.MotionEvent
 import android.view.WindowManager
 import androidx.appcompat.widget.Toolbar
 import androidx.viewbinding.ViewBinding
-import com.ve.lib.application.skin.SkinActivity
-import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.application.skin.SkinCompatActivity
+import com.ve.lib.common.utils.system.LogUtil
 import com.ve.lib.common.utils.system.KeyBoardUtil
 import com.ve.lib.common.utils.view.ToastUtil
 import org.greenrobot.eventbus.EventBus
@@ -19,7 +19,7 @@ import org.greenrobot.eventbus.EventBus
  * @date 2018/11/19
  * @desc BaseActivity 泛型实化 ，内部存有binding对象
  */
-abstract class BaseActivity<VB : ViewBinding> : SkinActivity(), IView<VB> {
+abstract class BaseActivity<VB : ViewBinding> : SkinCompatActivity(), IView<VB> {
 
     lateinit var mBinding: VB
     protected open var mViewName: String? = this.javaClass.simpleName

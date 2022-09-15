@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide
 import com.chad.library.adapter.base.module.DraggableModule
 import com.chad.library.adapter.base.module.LoadMoreModule
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
-import com.ve.lib.common.utils.file.ImageLoader
+import com.ve.lib.common.utils.data.ImageLoader
 import com.ve.module.android.R
 import com.ve.module.android.repository.bean.Article
 import com.ve.lib.common.base.adapter.BaseSlideAdapter

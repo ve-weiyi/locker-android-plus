@@ -6,7 +6,7 @@ import android.content.Intent
 import com.ve.lib.common.event.NetworkChangeEvent
 import com.ve.lib.common.config.AppConfig
 import com.ve.lib.common.network.util.NetWorkUtil
-import com.ve.lib.common.utils.sp.PreferenceUtil
+import com.ve.lib.common.utils.system.PreferenceUtil
 import org.greenrobot.eventbus.EventBus
 
 /**

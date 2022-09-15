@@ -12,7 +12,7 @@ import com.ve.module.android.repository.bean.Navigation
 import com.ve.module.android.ui.page.activity.ArticleDetailActivity
 import com.ve.module.android.ui.viewmodel.TreeViewModel
 import com.ve.lib.common.base.view.vm.BaseVmFragment
-import com.ve.lib.common.utils.color.ColorUtil.randomColor
+import com.ve.lib.common.utils.data.ColorUtil.randomColor
 import com.zhy.view.flowlayout.FlowLayout
 import com.zhy.view.flowlayout.TagAdapter
 import q.rorbin.verticaltablayout.VerticalTabLayout

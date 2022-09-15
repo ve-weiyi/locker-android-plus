@@ -1,7 +1,7 @@
-package com.ve.lib.common.utils.log
+package com.ve.lib.common.utils.system
 
 import android.util.Log
-import com.ve.lib.common.utils.manager.ActivityController
+import com.ve.lib.common.utils.ui.ActivityController
 import kotlin.math.min
 
 
@@ -123,6 +123,7 @@ object LogUtil {
         }
     }
     /**
+     * 获取打印信息所在方法名，行号等信息
      * stacktrace[0].getMethodName() 是 getThreadStackTrace
      * stacktrace[1].getMethodName() 是 getStackTrace，
      * stacktrace[2].getMethodName() 是 getMethodName，

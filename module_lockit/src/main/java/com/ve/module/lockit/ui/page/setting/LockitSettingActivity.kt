@@ -6,7 +6,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.ve.lib.common.base.view.container.BaseContainerActivity
 import com.ve.lib.common.base.view.vm.BaseActivity
-import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.system.LogUtil
 import com.ve.module.lockit.R
 import com.ve.module.lockit.databinding.LockitActivitySettingBinding
 

@@ -1,11 +1,11 @@
-package com.ve.lib.common.utils.manager
+package com.ve.lib.common.utils.ui
 
 import android.app.Activity
 import android.app.Application.ActivityLifecycleCallbacks
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
-import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.system.LogUtil
 import java.util.*
 
 
@@ -25,10 +25,6 @@ object ActivityController {
 
     val activityLifecycleCallbacks: ActivityLifecycleCallbacks
         get() = instance
-
-    val applicationObserver by lazy { ApplicationObserver() }
-
-
 
     /**
      * 获得当前栈顶Activity

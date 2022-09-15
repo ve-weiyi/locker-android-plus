@@ -2,7 +2,6 @@ package com.ve.module.android.ui.page.user
 
 import android.content.DialogInterface
 import android.content.Intent
-import android.graphics.drawable.ColorDrawable
 import android.view.Gravity
 import android.widget.ImageView
 import android.widget.TextView
@@ -23,9 +22,9 @@ import com.ve.module.android.ui.page.todo.TodoActivity
 import com.ve.module.android.ui.viewmodel.WanAndroidViewModel
 import com.ve.lib.common.base.view.vm.BaseVmFragment
 import com.ve.lib.common.utils.view.DialogUtil
-import com.ve.lib.common.utils.sp.PreferenceUtil
+import com.ve.lib.common.utils.system.PreferenceUtil
 import com.ve.lib.common.utils.SettingUtil
-import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.system.LogUtil
 import com.ve.module.android.ui.page.fragment.CollectFragment
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe

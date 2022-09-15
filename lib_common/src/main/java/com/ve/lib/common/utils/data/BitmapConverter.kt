@@ -1,4 +1,4 @@
-package com.ve.lib.common.utils.file
+package com.ve.lib.common.utils.data
 
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory

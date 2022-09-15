@@ -4,10 +4,10 @@ import android.app.DatePickerDialog
 import android.view.View
 import android.widget.*
 import com.ve.lib.common.base.view.vm.BaseVmFragment
-import com.ve.lib.common.utils.file.ImageLoader
-import com.ve.lib.common.ext.formatCurrentDate
+import com.ve.lib.common.utils.data.ImageLoader
 import com.ve.lib.common.ext.setOnclickNoRepeatListener
-import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.data.TimeUtil
+import com.ve.lib.common.utils.system.LogUtil
 import com.ve.module.lockit.common.event.RefreshDataEvent
 import com.ve.module.lockit.databinding.LockitFragmentDetailsFolderBinding
 import com.ve.module.lockit.respository.database.entity.PrivacyFolder
@@ -60,7 +60,7 @@ class LockitFolderDetailsFragment :
     /**
      * Date
      */
-    private var mCurrentDate = formatCurrentDate()
+    private var mCurrentDate = TimeUtil.formatDate(Date())
 
     override fun initView() {
 

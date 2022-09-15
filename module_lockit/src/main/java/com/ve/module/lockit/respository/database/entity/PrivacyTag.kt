@@ -1,6 +1,6 @@
 package com.ve.module.lockit.respository.database.entity
 
-import com.ve.lib.common.utils.color.ColorUtil
+import com.ve.lib.common.utils.data.ColorUtil
 import org.litepal.LitePal
 import org.litepal.annotation.Column
 import org.litepal.crud.LitePalSupport

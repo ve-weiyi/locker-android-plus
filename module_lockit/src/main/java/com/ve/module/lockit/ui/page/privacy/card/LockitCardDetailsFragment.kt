@@ -5,8 +5,8 @@ import android.view.View
 import com.ve.lib.common.base.view.vm.BaseVmFragment
 import com.ve.lib.common.ext.setOnclickNoRepeatListener
 import com.ve.lib.common.utils.view.DialogUtil
-import com.ve.lib.common.utils.log.LogUtil
-import com.ve.lib.common.utils.provider.ShareUtil
+import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.common.utils.system.ShareUtil
 import com.ve.module.lockit.R
 import com.ve.module.lockit.common.event.RefreshDataEvent
 import com.ve.module.lockit.databinding.LockitFragmentDetailsCardBinding

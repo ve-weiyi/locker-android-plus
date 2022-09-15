@@ -10,14 +10,15 @@ import com.tencent.bugly.Bugly
 import com.tencent.mmkv.MMKV
 import com.tencent.tauth.Tencent
 import com.ve.lib.application.BaseApplication
+import com.ve.lib.common.callback.ActivityCallbacks
 
 import com.ve.lib.common.config.AppConfig
 import com.ve.lib.common.utils.SettingUtil
-import com.ve.lib.common.utils.manager.ActivityController
+import com.ve.lib.common.utils.ui.ActivityController
 import com.ve.lib.common.utils.AppContextUtil
-import com.ve.lib.common.utils.log.LogUtil
-import com.ve.lib.common.utils.manager.ApplicationObserver
-import com.ve.lib.common.utils.sp.SpUtil
+import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.common.callback.ApplicationCallbacks
+import com.ve.lib.common.utils.system.SpUtil
 import com.ve.module.lockit.respository.database.AppDataBase
 import org.litepal.LitePal
 import java.util.*
@@ -49,7 +50,7 @@ class LockitApplication : BaseApplication() {
     override fun onCreate() {
         super.onCreate()
         context = applicationContext
-
+        registerActivityLifecycleCallbacks(mActivityLifecycleCallbacks)
 
         ARouter.openLog(); // 打印日志
         ARouter.openDebug();   // 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
@@ -58,7 +59,7 @@ class LockitApplication : BaseApplication() {
         LitePal.initialize(this);
         AppContextUtil.init(this)
         //监听应用程序的生命周期
-        ProcessLifecycleOwner.get().lifecycle.addObserver(object : ApplicationObserver() {
+        ProcessLifecycleOwner.get().lifecycle.addObserver(object : ApplicationCallbacks() {
             override fun onResume(owner: LifecycleOwner) {
                 ActivityController.currentActivity?.let {
                     LogUtil.msg()
@@ -116,4 +117,6 @@ class LockitApplication : BaseApplication() {
             }
         }
     }
+
+    private val mActivityLifecycleCallbacks = ActivityCallbacks()
 }

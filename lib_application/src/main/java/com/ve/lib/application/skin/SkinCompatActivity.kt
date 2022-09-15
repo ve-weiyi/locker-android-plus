@@ -11,7 +11,7 @@ import androidx.annotation.ColorInt
 import androidx.appcompat.app.AppCompatActivity
 import com.ve.lib.application.R
 
-open class SkinActivity: AppCompatActivity() {
+open class SkinCompatActivity: AppCompatActivity() {
 
     var flag=true
     protected  var mThemeColor:Int = 0

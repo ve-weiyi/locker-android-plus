@@ -1,4 +1,4 @@
-package com.ve.lib.common.utils.format
+package com.ve.lib.common.utils.data
 
 import org.json.JSONException
 import org.json.JSONObject

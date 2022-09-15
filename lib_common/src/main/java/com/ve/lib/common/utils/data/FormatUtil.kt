@@ -1,4 +1,4 @@
-package com.ve.lib.common.utils.format
+package com.ve.lib.common.utils.data
 
 import android.text.TextUtils
 import com.google.gson.Gson

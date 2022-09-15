@@ -1,4 +1,4 @@
-package com.ve.lib.common.utils.format;
+package com.ve.lib.common.utils.data;
 
 /**
  * Copyright (C), 2017-2021, Anker

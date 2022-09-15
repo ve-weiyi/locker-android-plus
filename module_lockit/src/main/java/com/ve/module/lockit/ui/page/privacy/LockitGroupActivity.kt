@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import com.ve.lib.common.base.view.vm.BaseVmActivity
-import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.system.LogUtil
 import com.ve.module.lockit.databinding.LockitActivityClassifyGroupBinding
 import com.ve.module.lockit.respository.database.entity.PrivacyFolder
 import com.ve.module.lockit.respository.database.entity.PrivacyTag

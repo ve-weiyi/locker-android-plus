@@ -7,7 +7,7 @@ import androidx.core.view.GravityCompat
 import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ve.lib.common.base.view.vm.BaseVmFragment
-import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.system.LogUtil
 import com.ve.module.sunny.SunnyActivity
 import com.ve.module.sunny.databinding.FragmentPlaceBinding
 import com.ve.module.sunny.ui.weather.WeatherActivity

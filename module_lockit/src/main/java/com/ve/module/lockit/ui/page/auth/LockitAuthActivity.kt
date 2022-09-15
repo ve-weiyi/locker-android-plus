@@ -2,15 +2,13 @@ package com.ve.module.lockit.ui.page.auth
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
 import com.ve.lib.common.base.view.vm.BaseActivity
 import com.ve.lib.common.ext.setOnclickNoRepeatListener
-import com.ve.lib.common.utils.ui.StatusBarUtil
-import com.ve.lib.common.utils.log.LogUtil
-import com.ve.lib.common.utils.sp.SpUtil
+import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.common.utils.system.SpUtil
 import com.ve.lib.common.utils.view.ToastUtil
 import com.ve.module.lockit.LockitMainActivity
 import com.ve.module.lockit.common.config.LockitSpKey
