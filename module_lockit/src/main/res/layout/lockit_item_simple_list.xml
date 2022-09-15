@@ -81,7 +81,7 @@
                     android:maxLines="3"
                     android:ellipsize="end"
                     android:textColor="@color/color_text_gray_light"
-                    android:textSize="@dimen/item_tv_content" />
+                    android:textSize="@dimen/ts_14" />
 
         </RelativeLayout>
 

@@ -39,13 +39,13 @@ class TodoAdapter :
         }
         val btn_done = holder.getView<Button>(R.id.btn_done)
         if (itemData.status == 0) {
-            btn_done.text = context.resources.getString(com.ve.lib.application.R.string.mark_done)
+            btn_done.text = context.resources.getString(com.ve.lib.common.R.string.mark_done)
         } else if (itemData.status == 1) {
-            btn_done.text = context.resources.getString(com.ve.lib.application.R.string.restore)
+            btn_done.text = context.resources.getString(com.ve.lib.common.R.string.restore)
         }
         val tv_tilt = holder.getView<TiltTextView>(R.id.tv_tilt)
         if (itemData.priority == 1) {
-            tv_tilt.setText(context.resources.getString(com.ve.lib.application.R.string.priority_1))
+            tv_tilt.setText(context.resources.getString(com.ve.lib.common.R.string.priority_1))
             tv_tilt.visibility = View.VISIBLE
         } else {
             tv_tilt.visibility = View.GONE

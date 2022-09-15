@@ -76,12 +76,12 @@ class StyleSettingFragment :  BaseSettingFragment(){
 
                     lifecycleOwner(this@StyleSettingFragment)
                 }
-//                ColorChooserDialog.Builder(mSettingActivity as lockitSettingActivity, com.ve.lib.application.R.string.choose_theme_color)
-//                    .backButton(com.ve.lib.application.R.string.back)
-//                    .cancelButton(com.ve.lib.application.R.string.cancel)
-//                    .doneButton(com.ve.lib.application.R.string.done)
-//                    .customButton(com.ve.lib.application.R.string.custom)
-//                    .presetsButton(com.ve.lib.application.R.string.back)
+//                ColorChooserDialog.Builder(mSettingActivity as lockitSettingActivity, com.ve.lib.common.R.string.choose_theme_color)
+//                    .backButton(com.ve.lib.common.R.string.back)
+//                    .cancelButton(com.ve.lib.common.R.string.cancel)
+//                    .doneButton(com.ve.lib.common.R.string.done)
+//                    .customButton(com.ve.lib.common.R.string.custom)
+//                    .presetsButton(com.ve.lib.common.R.string.back)
 //                    .allowUserColorInputAlpha(false)
 //                    .show()
                 false
@@ -100,7 +100,7 @@ class StyleSettingFragment :  BaseSettingFragment(){
         try {
             colorPreview = findPreference<IconPreference>(LockitSpKey.SP_KEY_THEME_COLOR)!!
             colorPreview.setView()
-            val version = context?.resources?.getString(com.ve.lib.application.R.string.current_version).toString()
+            val version = context?.resources?.getString(com.ve.lib.common.R.string.current_version).toString()
                 .plus(
                     context?.packageManager?.getPackageInfo(
                         context?.packageName ?: "",

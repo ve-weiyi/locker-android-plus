@@ -26,7 +26,7 @@ class CollectAdapter : BaseSlideAdapter<Collect, BaseViewHolder>(R.layout.item_c
     override fun convert(holder: BaseViewHolder, item: Collect) {
         val authorStr = when {
             item.author.isNotEmpty() -> item.author
-            else -> mContext.getString(com.ve.lib.application.R.string.anonymous)
+            else -> mContext.getString(com.ve.lib.common.R.string.anonymous)
         }
 
         holder.setText(R.id.tv_article_title, Html.fromHtml(item.title))

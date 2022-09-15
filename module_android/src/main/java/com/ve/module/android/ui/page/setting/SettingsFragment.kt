@@ -9,7 +9,7 @@ import android.os.Message
 import androidx.appcompat.app.AlertDialog
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
-import com.ve.lib.application.R
+import com.ve.lib.common.R
 import com.ve.module.android.ui.page.activity.ArticleDetailActivity
 import com.ve.module.android.ui.page.activity.CommonActivity
 import com.ve.module.android.ui.page.fragment.AboutFragment

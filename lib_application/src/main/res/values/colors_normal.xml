@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="wetdry_device_information_bg">#F0F4F7</color>
-
     <!--    透明-->
     <color name="transparent">#00000000</color><!--透明色 -->
     <color name="transparent_gray">#BFffffff</color>
