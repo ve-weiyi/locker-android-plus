@@ -1,9 +1,6 @@
 package com.ve.lib.common.base.viewmodel
 
-import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.google.gson.JsonParseException
 import com.ve.lib.common.network.exception.ApiException
 import com.ve.lib.common.utils.log.LogUtil
@@ -15,8 +12,8 @@ import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 
 /**
- * @author chenxz
- * @date 2019/11/1
+ * @author waynie
+ * @date 2022/8/22
  * @desc BaseViewModel
  * 1、数据持久化
 我们知道在屏幕旋转的 时候 会经历 activity 的销毁与重新创建，这里就涉及到数据保存的问题，显然重新请求或加载数据是不友好的。在 ViewModel 出现之前我们可以用 activity 的onSaveInstanceState()机制保存和恢复数据，但缺点很明显，onSaveInstanceState只适合保存少量的可以被序列化、反序列化的数据，假如我们需要保存是一个比较大的 bitmap list ，这种机制明显不合适。
@@ -28,9 +25,7 @@ import java.net.UnknownHostException
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
  * (activity 与其内部的 fragment 可以共用一个ViewModel)
  */
-open class BaseViewModel : ViewModel(), LifecycleObserver {
-
-
+open class BaseViewModel : ViewModel() {
     private val mViewModelName by lazy { javaClass.simpleName }
 
     /**********************************/
@@ -135,34 +130,31 @@ open class BaseViewModel : ViewModel(), LifecycleObserver {
      * @param showErrorToast 是否显示错误吐司
      */
     private fun onError(e: Exception, showErrorToast: Boolean) {
+        LogUtil.msg(e.message)
+        e.printStackTrace()
         when (e) {
             is ApiException -> {
                 when (e.errorCode) {
                     -1001 -> {
                         if (showErrorToast) ToastUtil.show(e.errorMsg)
-                        needLogin.value = true
                     }
                     // 其他错误
                     else -> {
                         if (showErrorToast) ToastUtil.show(e.errorMsg)
                     }
                 }
-                ToastUtil.show(e.errorMsg)
             }
             // 网络请求失败
             is ConnectException, is SocketTimeoutException, is UnknownHostException, is retrofit2.HttpException -> {
                 if (showErrorToast) ToastUtil.show(" 网络请求失败")
-                ToastUtil.show(mViewModelName + " 网络请求失败" + e.message)
             }
             // 数据解析错误
             is JsonParseException -> {
                 if (showErrorToast) ToastUtil.show(" 数据解析错误")
-                ToastUtil.show(mViewModelName + " 数据解析错误" + e.message)
             }
             // 其他错误
             else -> {
                 if (showErrorToast) ToastUtil.show(e.message ?: return)
-                ToastUtil.show(e.message ?: return)
             }
 
         }

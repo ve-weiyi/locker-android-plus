@@ -197,23 +197,23 @@ public class AESUtil {
 
         //使用CBC模式，需要一个向量iv，可增加加密算法的强度
         String encrypt = cbcEncrypt(content, key, iv);
-        LogUtil.i("cbc encrypt:{}", encrypt);
+        LogUtil.d("cbc encrypt:{}", encrypt);
         String decrypt = cbcDecrypt(encrypt, key, iv);
-        LogUtil.i("cbc decrypt:{}", decrypt);
+        LogUtil.d("cbc decrypt:{}", decrypt);
 
         encrypt = ecbEncrypt(content, key);
-        LogUtil.i("cbc encrypt:{}", encrypt);
+        LogUtil.d("cbc encrypt:{}", encrypt);
         decrypt = ecbDecrypt(encrypt, key);
-        LogUtil.i("cbc decrypt:{}", decrypt);
+        LogUtil.d("cbc decrypt:{}", decrypt);
 
         for (int i = 0; i < 5; i++) {
             iv = genTimestampIV(String.valueOf(System.currentTimeMillis()));
             encrypt = cbcEncrypt(content, key, iv);
 
-            LogUtil.i("for cbc encrypt:{}", encrypt);
+            LogUtil.d("for cbc encrypt:{}", encrypt);
             decrypt = cbcDecrypt(encrypt, key, iv);
 
-            LogUtil.i("for cbc decrypt:{}", decrypt);
+            LogUtil.d("for cbc decrypt:{}", decrypt);
         }
 
 

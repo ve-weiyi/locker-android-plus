@@ -39,8 +39,7 @@ abstract class BaseVmActivity<VB : ViewBinding, VM : BaseViewModel> : BaseActivi
         mViewModel = ViewModelProvider(this).get(attachViewModelClass())
 
         initObserver()
-        initViewData()
-        initView(saveInstanceState)
+        initView()
         initListener()
         mLayoutStatusView?.setOnClickListener(mRetryClickListener)
     }
@@ -54,15 +53,6 @@ abstract class BaseVmActivity<VB : ViewBinding, VM : BaseViewModel> : BaseActivi
      * 基类订阅，有逻辑的话，复写的时候super不要去掉
      */
     override fun initObserver() {
-        // 需要登录，跳转登录页
-        mViewModel.needLogin.observe(this) {
-            //showMsg("请先登录账户")
-        }
-    }
-    /**
-     * step 2.初始化需要在view初始化时使用的数据，在view初始化之前完成
-     */
-    override fun initViewData(){
 
     }
 
@@ -87,10 +77,6 @@ abstract class BaseVmActivity<VB : ViewBinding, VM : BaseViewModel> : BaseActivi
             initWebData()
             hasLoadData=true
         }
-    }
-    override fun onDestroy() {
-        lifecycle.removeObserver(mViewModel)
-        super.onDestroy()
     }
 
 

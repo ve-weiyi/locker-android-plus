@@ -109,4 +109,8 @@ abstract class BaseApiService<T> {
      * 添加一些自定义拦截器 cookie token
      */
     protected abstract fun handleBuilder(builder: OkHttpClient.Builder)
+
+    open fun <T> create(cls: Class<T>?): T {
+        return retrofit!!.create<T>(cls)
+    }
 }

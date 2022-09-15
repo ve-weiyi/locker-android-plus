@@ -1,4 +1,4 @@
-package com.ve.lib.common.widget
+package com.ve.lib.common.widget.divider
 
 import android.content.Context
 import android.graphics.Canvas

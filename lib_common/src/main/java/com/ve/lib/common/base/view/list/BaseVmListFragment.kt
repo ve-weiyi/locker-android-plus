@@ -1,6 +1,5 @@
 package com.ve.lib.common.base.view.list
 
-import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -35,7 +34,7 @@ abstract class BaseVmListFragment<VB : ViewBinding, VM : BaseViewModel, LD : Any
         mCurrentPage = 0
     }
 
-    override fun initView(savedInstanceState: Bundle?) {
+    override fun initView() {
         initListView()
         defaultListView(requireContext())
     }
