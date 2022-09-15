@@ -78,6 +78,8 @@ class DrawerFragment : BaseVmFragment<WazFragmentDrawerBinding, WanAndroidViewMo
     private var nav_rank: ImageView? = null
     private var nav_header_icon: ImageView?=null
 
+    private var isLogin=true
+
     override fun initView() {
         nav_username=mBinding.tvUsername
         nav_user_id=mBinding.tvUserId
@@ -225,8 +227,4 @@ class DrawerFragment : BaseVmFragment<WazFragmentDrawerBinding, WanAndroidViewMo
             }).show()
     }
 
-    override fun initColor() {
-        super.initColor()
-        mBinding.navViewHeader.background= ColorDrawable(mThemeColor)
-    }
 }

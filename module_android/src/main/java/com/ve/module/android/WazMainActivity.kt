@@ -198,10 +198,6 @@ class WazMainActivity : BaseVmActivity<WazActivityMainBinding, WanAndroidViewMod
         super.recreate()
     }
 
-    override fun initColor() {
-        super.initColor()
-        // mBinding.drawerNavView.getHeaderView(0).setBackgroundColor(mThemeColor)
-    }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun appRecreateEvent(event: AppRecreateEvent) {

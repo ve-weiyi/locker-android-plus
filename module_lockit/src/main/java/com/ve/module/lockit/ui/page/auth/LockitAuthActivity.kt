@@ -51,11 +51,6 @@ class LockitAuthActivity : BaseActivity<LockitActivityAuthBinding>(){
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
     }
 
-    override fun initColor() {
-        super.initColor()
-        //沉浸式状态栏
-        StatusBarUtil.setColor(this, Color.WHITE, 0)
-    }
 
     private lateinit var biometricPrompt: BiometricPrompt
     private lateinit var promptInfo: BiometricPrompt.PromptInfo

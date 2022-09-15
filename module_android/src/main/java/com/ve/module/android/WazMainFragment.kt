@@ -101,10 +101,6 @@ class WazMainFragment : BaseVmPager2Fragment<WazFragmentMainBinding, WanAndroidV
         mFragmentList.add(ProjectFragment.getInstance())
     }
 
-    override fun initColor() {
-        super.initColor()
-        //mBinding.tabContainer.titleLayout.setBackgroundColor(mThemeColorLight)
-    }
 
     override fun initWebData() {
         mViewModel.getBanner()

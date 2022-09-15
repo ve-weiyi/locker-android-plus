@@ -127,7 +127,6 @@ class LoginActivity: BaseVmActivity<ActivityLoginBinding, LoginViewModel>(){
 
     private fun loginSuccess(data: LoginData) {
         showMsg(getString(R.string.login_success))
-        isLogin = true
         user = data.username
         pwd = data.password
         token = data.token

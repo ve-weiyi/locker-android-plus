@@ -64,7 +64,6 @@ class RegisterActivity : BaseVmActivity<ActivityRegisterBinding, RegisterViewMod
 
     fun registerSuccess(data: LoginData) {
         showMsg(getString(R.string.register_success))
-        isLogin = true
         user = data.username
         pwd = data.password
 
@@ -73,7 +72,7 @@ class RegisterActivity : BaseVmActivity<ActivityRegisterBinding, RegisterViewMod
     }
 
     fun registerFail() {
-        isLogin = false
+
     }
 
     override fun initListener() {

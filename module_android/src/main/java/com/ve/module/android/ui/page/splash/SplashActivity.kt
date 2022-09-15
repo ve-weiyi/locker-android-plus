@@ -17,10 +17,6 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
 
     private val layout_splash by lazy { mBinding.layoutSplash }
 
-    override fun initColor() {
-        super.initColor()
-        layout_splash.setBackgroundColor(mThemeColor)
-    }
 
     fun jumpToMain() {
         val intent = Intent(this, WazMainActivity::class.java)

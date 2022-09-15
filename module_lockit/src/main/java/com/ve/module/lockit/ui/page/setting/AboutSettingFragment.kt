@@ -37,7 +37,8 @@ setDefaultText()
         showMsg("功能未实现. key=$key  ")
     }
 
-    override fun onPreferenceClick(preference: Preference?): Boolean {
+
+    override fun onPreferenceClick(preference: Preference): Boolean {
         when (preference?.key) {
             LockitSpKey.SP_KEY_APP_VERSION -> {
 

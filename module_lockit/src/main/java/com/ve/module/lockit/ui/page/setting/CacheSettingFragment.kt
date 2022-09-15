@@ -50,7 +50,7 @@ class CacheSettingFragment :  BaseSettingFragment(){
         }
     }
 
-    override fun onPreferenceClick(preference: Preference?): Boolean {
+    override fun onPreferenceClick(preference: Preference): Boolean {
         when (preference?.key) {
             LockitSpKey.SP_KEY_CLEAR_CACHE -> {
                 CacheDataUtil.clearAllCache(mContext)

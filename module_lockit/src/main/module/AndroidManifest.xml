@@ -24,10 +24,8 @@
 
         <activity
                 android:name=".ui.page.LockitSplashActivity"
-            android:theme="@style/SplashTheme"
-                android:exported="true"
-            android:theme="@style/SplashTheme"
-                >
+                android:theme="@style/SplashTheme"
+                android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -43,7 +41,8 @@
                 android:exported="true">
 
         </activity>
-        <activity android:name=".ui.page.auth.LockitLoginActivity"
+        <activity
+                android:name=".ui.page.auth.LockitLoginActivity"
                 android:exported="true">
 
         </activity>
@@ -69,7 +68,6 @@
                     android:name="android.autofill"
                     android:resource="@xml/lockit_service_configuration" />
         </service>
-
 
 
         <activity

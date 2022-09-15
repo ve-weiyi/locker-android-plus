@@ -53,7 +53,7 @@ class StyleSettingFragment :  BaseSettingFragment(){
         }
     }
 
-    override fun onPreferenceClick(preference: Preference?): Boolean {
+    override fun onPreferenceClick(preference: Preference): Boolean {
         when (preference?.key) {
             /**
              * 其他设置

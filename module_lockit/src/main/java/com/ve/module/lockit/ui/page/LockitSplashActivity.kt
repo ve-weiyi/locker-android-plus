@@ -30,7 +30,48 @@ class LockitSplashActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         mBinding = LockitActivitySplashBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
+
+        initialize(savedInstanceState)
     }
+
+     fun initialize(saveInstanceState: Bundle?) {
+        val biometric= SpUtil.getBoolean(LockitSpKey.SP_KEY_BIOMETRICS)
+        var isLogin= SpUtil.getValue(LockitSpKey.SP_KEY_LOGIN_STATE_KEY,false)
+        val data= SpUtil.getValue(LockitSpKey.SP_KEY_LOGIN_DATA_KEY,LoginDTO::class.java)
+
+        LogUtil.msg(data.toString())
+        alphaAnimation = AlphaAnimation(0.1F, 1.0F)
+        alphaAnimation?.run {
+            //持续时间
+            duration = 1000
+            setAnimationListener(object : Animation.AnimationListener {
+                override fun onAnimationRepeat(p0: Animation?) {
+                }
+
+                override fun onAnimationEnd(p0: Animation?) {
+//                    jumpToMain()
+                    //已经登录，跳转身份验证页面
+//                    if(isLogin){
+//                        if(!biometric){
+//                            jumpToLogin()
+//                        }else{
+//                            jumpToAuth()
+//                        }
+//                    }else{
+//                        jumpToMain()
+//                    }
+                    jumpToMain()
+//                    jumpToLogin()
+//                    LockitAuthActivity.start(mContext,LockitMainActivity::class.java.name)
+                }
+
+                override fun onAnimationStart(p0: Animation?) {
+                }
+            })
+        }
+        mBinding.layoutSplash.startAnimation(alphaAnimation)
+    }
+
 
     fun jumpToMain() {
         val intent = Intent(this, LockitMainActivity::class.java)

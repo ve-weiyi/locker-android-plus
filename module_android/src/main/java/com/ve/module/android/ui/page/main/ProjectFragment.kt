@@ -60,9 +60,7 @@ open class ProjectFragment : BaseVmPager2Fragment<FragmentProjectBinding, Projec
 
     }
 
-    override fun initColor() {
-        super.initColor()
-    }
+
     override fun initPagerView() {
         mLayoutStatusView=mBinding.multipleStatusView
         mTabLayout=mBinding.tabLayout

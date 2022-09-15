@@ -100,9 +100,7 @@ class BundleActivity : BaseActivity<ActivityCommonBinding>() {
     }
 
 
-    override fun initColor() {
-        super.initColor()
-    }
+
 
 
     override fun attachViewBinding(): ActivityCommonBinding {

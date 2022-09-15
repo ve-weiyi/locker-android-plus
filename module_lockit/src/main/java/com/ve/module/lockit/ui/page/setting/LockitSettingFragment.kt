@@ -137,7 +137,7 @@ class LockitSettingFragment : BaseSettingFragment() {
     }
 
 
-    override fun onPreferenceClick(preference: Preference?): Boolean {
+    override fun onPreferenceClick(preference: Preference): Boolean {
         LogUtil.msg("sharedPreferences ${preference?.key}")
         when (preference?.key) {
             LockitSpKey.SP_KEY_KEY_MANAGER->{

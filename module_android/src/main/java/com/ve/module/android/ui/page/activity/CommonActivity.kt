@@ -73,9 +73,7 @@ class CommonActivity : BaseActivity<ActivityCommonBinding>() {
     }
 
 
-    override fun initColor() {
-        super.initColor()
-    }
+
 
     override fun attachViewBinding(): ActivityCommonBinding {
         return ActivityCommonBinding.inflate(layoutInflater)

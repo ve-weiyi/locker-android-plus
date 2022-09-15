@@ -33,7 +33,7 @@ interface IVmView<VM : BaseViewModel> : INetView {
     /**
      * step 2.初始化view相关数据, 需要在view初始化之前完成
      */
-    fun initViewData(){
+    fun initData(){
 
     }
 

@@ -60,9 +60,7 @@ open class WeChatFragment : BaseVmPager2Fragment<FragmentWechatBinding, WeChatVi
 
     }
 
-    override fun initColor() {
-        super.initColor()
-    }
+
 
     override fun initPagerView() {
         mLayoutStatusView=mBinding.multipleStatusView

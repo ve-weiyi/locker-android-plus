@@ -20,8 +20,6 @@ class SaveCookieInterceptor(
     override fun intercept(chain: Interceptor.Chain): Response {
         val request = chain.request()
         val response = chain.proceed(request)
-        val requestUrl = request.url().toString()
-        val domain = request.url().host()
 
         /**
          * 保存cookie
