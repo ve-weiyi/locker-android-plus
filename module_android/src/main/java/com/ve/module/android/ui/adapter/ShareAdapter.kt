@@ -67,7 +67,7 @@ class ShareAdapter : BaseSlideAdapter<Article, BaseViewHolder>(R.layout.item_sha
         val tv_article_audit = holder.getView<TextView>(R.id.tv_article_audit)
         if (item.audit == 0) {
             tv_article_audit.visibility = View.VISIBLE
-            tv_article_audit.text = context.getString(com.ve.lib.application.R.string.audited)
+            tv_article_audit.text = context.getString(com.ve.lib.common.R.string.audited)
         } else {
             tv_article_audit.visibility = View.GONE
         }

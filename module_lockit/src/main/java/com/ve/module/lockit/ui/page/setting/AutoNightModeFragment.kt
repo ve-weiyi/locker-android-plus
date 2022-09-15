@@ -38,8 +38,8 @@ class AutoNightModeFragment : PreferenceFragmentCompat() {
                 setDefaultText()
             }, nightStartHour.toInt(), nightStartMinute.toInt(), true)
             dialog.show()
-            dialog.getButton(DialogInterface.BUTTON_POSITIVE).setText(com.ve.lib.application.R.string.done)
-            dialog.getButton(DialogInterface.BUTTON_NEGATIVE).setText(com.ve.lib.application.R.string.cancel)
+            dialog.getButton(DialogInterface.BUTTON_POSITIVE).setText(com.ve.lib.common.R.string.done)
+            dialog.getButton(DialogInterface.BUTTON_NEGATIVE).setText(com.ve.lib.common.R.string.cancel)
             false
         }
 
@@ -50,8 +50,8 @@ class AutoNightModeFragment : PreferenceFragmentCompat() {
                 setDefaultText()
             }, dayStartHour.toInt(), dayStartMinute.toInt(), true)
             dialog.show()
-            dialog.getButton(DialogInterface.BUTTON_POSITIVE).setText(com.ve.lib.application.R.string.done)
-            dialog.getButton(DialogInterface.BUTTON_NEGATIVE).setText(com.ve.lib.application.R.string.cancel)
+            dialog.getButton(DialogInterface.BUTTON_POSITIVE).setText(com.ve.lib.common.R.string.done)
+            dialog.getButton(DialogInterface.BUTTON_NEGATIVE).setText(com.ve.lib.common.R.string.cancel)
             false
         }
     }

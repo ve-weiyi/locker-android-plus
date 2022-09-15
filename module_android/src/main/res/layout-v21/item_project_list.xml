@@ -39,7 +39,7 @@
                 android:maxLines="1"
                 android:text="@string/app_name"
                 android:textColor="@color/color_text_normal"
-                android:textSize="@dimen/item_tv_title" />
+                android:textSize="@dimen/ts_16" />
 
             <TextView
                 android:id="@+id/item_project_list_content_tv"
@@ -51,7 +51,7 @@
                 android:maxLines="3"
                 android:text="@string/app_name"
                 android:textColor="@color/color_text_gray_light"
-                android:textSize="@dimen/item_tv_content" />
+                android:textSize="@dimen/ts_14" />
 
             <RelativeLayout
                 android:layout_width="wrap_content"
@@ -65,7 +65,7 @@
                     android:layout_alignBaseline="@+id/item_project_list_time_tv"
                     android:text="@string/app_name"
                     android:textColor="@color/color_text_gray"
-                    android:textSize="@dimen/item_tv_author" />
+                    android:textSize="@dimen/ts_12" />
 
                 <TextView
                     android:id="@+id/item_project_list_time_tv"
@@ -76,7 +76,7 @@
                     android:layout_marginBottom="@dimen/dp_8"
                     android:text="@string/app_name"
                         android:textColor="@color/color_text_gray_light"
-                    android:textSize="@dimen/item_tv_date" />
+                    android:textSize="@dimen/ts_12" />
 
                 <ImageView
                     android:id="@+id/item_project_list_like_iv"

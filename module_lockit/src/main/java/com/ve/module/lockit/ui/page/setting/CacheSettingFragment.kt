@@ -54,7 +54,7 @@ class CacheSettingFragment :  BaseSettingFragment(){
         when (preference?.key) {
             LockitSpKey.SP_KEY_CLEAR_CACHE -> {
                 CacheDataUtil.clearAllCache(mContext)
-                showMsg(getString(com.ve.lib.application.R.string.clear_cache_successfully))
+                showMsg(getString(com.ve.lib.common.R.string.clear_cache_successfully))
                 setDefaultText()
             }
             else->{

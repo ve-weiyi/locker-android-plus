@@ -69,7 +69,7 @@ setDefaultText()
         try {
             findPreference<Preference>(LockitSpKey.SP_KEY_CLEAR_CACHE)?.summary=
                 CacheDataUtil.getTotalCacheSize(requireContext())
-            val version = context?.resources?.getString(com.ve.lib.application.R.string.current_version).toString()
+            val version = context?.resources?.getString(com.ve.lib.common.R.string.current_version).toString()
                 .plus(
                     context?.packageManager?.getPackageInfo(
                         context?.packageName ?: "",

@@ -1,0 +1,41 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <attr name="skin_main_bg" format="reference" />
+    <!--format指定为reference的时候，需要输入索引，比如@color/white，但是format指定为color时，可以直接设置16进制的int作为颜色-->
+    <attr name="skin_color_main" format="color|reference" />
+    <attr name="skin_color_sub" format="color|reference" />
+    <!--    背景色-->
+    <attr name="skin_color_background" format="color|reference" />
+    <!--    显示在背景色上-->
+    <attr name="skin_color_windows" format="color|reference" />
+    <!--    文字颜色-->
+    <attr name="skin_color_text" format="color|reference" />
+    <attr name="skin_color_text_sub" format="color|reference" />
+
+    <attr name="skin_color_btn" format="color|reference" />
+    <attr name="skin_color_mask" format="color|reference" />
+    <attr name="skin_color_divider" format="color|reference" />
+
+
+    <style name="AppTheme.Night">
+        <item name="skin_color_main">#35464e</item>
+        <item name="skin_color_sub">@color/light_blue</item>
+        <item name="skin_color_background">@color/grey800</item>
+        <item name="skin_color_windows">@color/grey900</item>
+        <item name="skin_color_text">@color/grey200</item>
+        <item name="skin_color_btn">@color/pink</item>
+        <item name="skin_color_mask">@color/black</item>
+        <item name="skin_color_divider">@color/grey600</item>
+    </style>
+
+    <style name="AppTheme.Sakura">
+        <item name="skin_color_main">@color/pink</item>
+        <item name="skin_color_sub">@color/light_blue</item>
+        <item name="skin_color_background">@color/grey800</item>
+        <item name="skin_color_windows">@color/grey900</item>
+        <item name="skin_color_text">@color/grey200</item>
+        <item name="skin_color_btn">@color/pink</item>
+        <item name="skin_color_mask">@color/black</item>
+        <item name="skin_color_divider">@color/grey600</item>
+    </style>
+</resources>
