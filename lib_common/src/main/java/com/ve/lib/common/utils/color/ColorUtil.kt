@@ -4,6 +4,7 @@ import android.graphics.Color
 import androidx.annotation.ColorInt
 import androidx.annotation.FloatRange
 import androidx.annotation.IntRange
+import java.util.*
 
 /**
  * @author chenxz
@@ -21,6 +22,17 @@ object ColorUtil {
         Color.parseColor("#FF5722"), Color.parseColor("#795548"), Color.parseColor("#9E9E9E"),
         Color.parseColor("#607D8B")
     )
+    /**
+     * 随机Color 避免纯色没有从255取值
+     */
+    fun randomColor(): Int {
+        Random().run {
+            val red = nextInt(210)
+            val green = nextInt(210)
+            val blue = nextInt(210)
+            return Color.rgb(red, green, blue)
+        }
+    }
     /**
      * 获取随机rgb颜色值
      */

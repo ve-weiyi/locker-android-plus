@@ -1,47 +1,36 @@
 package com.ve.lib.common.base.view.vm
 
 import android.content.Context
-import android.content.IntentFilter
 import android.content.pm.ActivityInfo
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.MotionEvent
 import android.view.WindowManager
-import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.viewbinding.ViewBinding
-import com.ve.lib.common.event.ColorEvent
-import com.ve.lib.common.ext.getMethodName
-import com.ve.lib.common.receiver.NetworkChangeReceiver
-import com.ve.lib.common.utils.system.KeyBoardUtil
-import com.ve.lib.common.utils.SettingUtil
-import com.ve.lib.common.utils.ui.StatusBarUtil
+import com.ve.lib.application.skin.SkinActivity
 import com.ve.lib.common.utils.log.LogUtil
+import com.ve.lib.common.utils.system.KeyBoardUtil
 import com.ve.lib.common.utils.view.ToastUtil
 import org.greenrobot.eventbus.EventBus
-import org.greenrobot.eventbus.Subscribe
-import org.greenrobot.eventbus.ThreadMode
 
 /**
  * @author chenxz
  * @date 2018/11/19
  * @desc BaseActivity 泛型实化 ，内部存有binding对象
  */
-abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity(), IView<VB> {
+abstract class BaseActivity<VB : ViewBinding> : SkinActivity(), IView<VB> {
 
     lateinit var mBinding: VB
     protected open var mViewName: String? = this.javaClass.simpleName
 
-    protected var mNetworkChangeReceiver: NetworkChangeReceiver? = null
-    protected var mThemeColor: Int = SettingUtil.getColor()
+
     protected val mContext: Context by lazy { this }
 
     /**
      * 是否使用 EventBus
      */
-    open fun useEventBus(): Boolean = true
+    open fun useEventBus(): Boolean = false
 
     /**
      * 1. onCreate()，创建时调用，初始化操作写在这里，如指定布局文件，成员变量绑定对应ID等。
@@ -64,14 +53,6 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity(), IView<VB> {
         initialize(savedInstanceState)
     }
 
-    /**
-     * Theme color Change
-     */
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    fun onColorChangeEvent(event: ColorEvent) {
-        initColor()
-        LogUtil.d("$mViewName receiver theme color change ")
-    }
 
     /**
      * 设置标题栏，调用此方法后标题栏颜色与主题色保持一致
@@ -90,28 +71,6 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity(), IView<VB> {
         supportActionBar?.setHomeButtonEnabled(homeAsUpEnabled)
     }
 
-    open fun initColor() {
-        mThemeColor = if (!SettingUtil.getIsNightMode()) {
-            //非夜间模式
-            SettingUtil.getColor()
-        } else {
-            resources.getColor(com.ve.lib.application.R.color.colorPrimary,null)
-        }
-        application
-        //沉浸式状态栏
-        StatusBarUtil.setColor(this, mThemeColor, 0)
-        //标题栏
-        if (this.supportActionBar != null) {
-            this.supportActionBar?.setBackgroundDrawable(ColorDrawable(mThemeColor))
-        }
-        //是否开启导航栏上色
-        if (SettingUtil.getNavBar()) {
-            window.navigationBarColor = mThemeColor
-        } else {
-            window.navigationBarColor = Color.BLACK
-        }
-
-    }
 
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
         if (ev?.action == MotionEvent.ACTION_UP) {
@@ -156,11 +115,6 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity(), IView<VB> {
      */
     override fun onResume() {
         // 动态注册网络变化广播
-        val filter = IntentFilter()
-        filter.addAction("android.net.conn.CONNECTIVITY_CHANGE")
-        mNetworkChangeReceiver = NetworkChangeReceiver()
-        registerReceiver(mNetworkChangeReceiver, filter)
-        initColor()
 
         super.onResume()
     }
@@ -170,10 +124,6 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity(), IView<VB> {
      *  因此你应当在onPause里保存一些至关重要的状态属性，这些属性会被保存到物理内存中。但此方法执行速度一定要快，否则会影响新栈顶活动的使用。
      */
     override fun onPause() {
-        if (mNetworkChangeReceiver != null) {
-            unregisterReceiver(mNetworkChangeReceiver)
-            mNetworkChangeReceiver = null
-        }
         super.onPause()
     }
 
@@ -227,7 +177,7 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity(), IView<VB> {
     }
 
     override fun onRestart() {
-        LogUtil.msg(mViewName+ getMethodName(3))
+        LogUtil.msg(mViewName)
         super.onRestart()
     }
 }

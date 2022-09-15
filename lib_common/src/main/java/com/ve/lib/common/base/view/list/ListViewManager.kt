@@ -12,8 +12,6 @@ import com.chad.library.adapter.base.listener.*
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.ve.lib.common.R
-import com.ve.lib.common.exception.BizException
-import com.ve.lib.common.widget.SpaceItemDecoration
 import com.ve.lib.common.utils.log.LogUtil
 import com.ve.lib.common.utils.view.ToastUtil
 
@@ -382,7 +380,7 @@ open class ListViewManager<LD> {
 //        LogUtil.e("data:$data ")
 
         if (mRecyclerView == null) {
-            throw BizException(" mRecyclerView 未初始化，无法执行 showAtAdapter")
+            throw IllegalAccessException(" mRecyclerView 未初始化，无法执行 showAtAdapter")
         }
         //hideLoading
         mSwipeRefreshLayout?.isRefreshing = false

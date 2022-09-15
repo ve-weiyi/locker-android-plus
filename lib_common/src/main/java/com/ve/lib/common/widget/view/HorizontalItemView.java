@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.ve.lib.common.R;
 
+import java.util.ArrayList;
 
 
 /**
@@ -211,20 +212,16 @@ public class HorizontalItemView extends RelativeLayout {
 		int specSize = MeasureSpec.getSize(measureSpec);
 
 		switch (specMode) {
-			case MeasureSpec.AT_MOST:  // 子容器可以是声明大小内的任意大小
-//				LogUtil.e(TAG, "子容器可以是声明大小内的任意大小");
-//				LogUtil.e(TAG, "大小为:"+specSize);
+			// 子容器可以是声明大小内的任意大小
+			case MeasureSpec.AT_MOST:
 				result=specSize;
 				break;
-			case MeasureSpec.EXACTLY: //父容器已经为子容器设置了尺寸,子容器应当服从这些边界,不论子容器想要多大的空间.  比如EditTextView中的DrawLeft
-//				LogUtil.e(TAG, "父容器已经为子容器设置了尺寸,子容器应当服从这些边界,不论子容器想要多大的空间");
-//				LogUtil.e(TAG, "大小为:"+specSize);
+			//父容器已经为子容器设置了尺寸,子容器应当服从这些边界,不论子容器想要多大的空间.  比如EditTextView中的DrawLeft
+			case MeasureSpec.EXACTLY:
 				result=specSize;
 				break;
-			case MeasureSpec.UNSPECIFIED:  //父容器对于子容器没有任何限制,子容器想要多大就多大. 所以完全取决于子view的大小
-//				LogUtil.e(TAG, "父容器对于子容器没有任何限制,子容器想要多大就多大");
-//				LogUtil.e(TAG, "大小为:"+specSize);
-//				LogUtil.e(TAG, "默认大小为:"+defaultSize);
+			//父容器对于子容器没有任何限制,子容器想要多大就多大. 所以完全取决于子view的大小
+			case MeasureSpec.UNSPECIFIED:
 				result=defaultSize;
 				break;
 			default:
@@ -261,4 +258,5 @@ public class HorizontalItemView extends RelativeLayout {
 		//LogUtil.e("将所有子View的高度相加= "+height);
 		return height;
 	}
+
 }

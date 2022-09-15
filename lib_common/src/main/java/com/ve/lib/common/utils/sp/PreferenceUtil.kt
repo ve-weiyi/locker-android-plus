@@ -3,6 +3,7 @@ package com.ve.lib.common.utils.sp
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
+import androidx.preference.PreferenceManager
 import com.ve.lib.common.utils.AppContextUtil
 import java.io.*
 import kotlin.reflect.KProperty
@@ -14,10 +15,9 @@ import kotlin.reflect.KProperty
 class PreferenceUtil<T>(val name: String, private val default: T) {
 
     companion object {
-        private val file_name = "wan_android_file"
 
         private val sp: SharedPreferences by lazy {
-            AppContextUtil.mContext.getSharedPreferences(file_name, Context.MODE_PRIVATE)
+            PreferenceManager.getDefaultSharedPreferences(AppContextUtil.mContext)
         }
 
         /**

@@ -9,15 +9,15 @@ import com.ve.lib.common.widget.multipleview.MultipleStatusView
  */
 interface INetView {
 
-    /**
-     * check login
-     */
-    var isLogin: Boolean
-
-    /**
-     * 缓存上一次的网络状态
-     */
-    var hasNetwork: Boolean
+//    /**
+//     * check login
+//     */
+//    var isLogin: Boolean
+//
+//    /**
+//     * 缓存上一次的网络状态
+//     */
+//    var hasNetwork: Boolean
     
     /**
      * 多种状态的 View 的切换

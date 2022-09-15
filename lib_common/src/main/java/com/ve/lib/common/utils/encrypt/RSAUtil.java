@@ -1,7 +1,6 @@
 package com.ve.lib.common.utils.encrypt;
 
 
-import com.ve.lib.common.exception.BizException;
 import com.ve.lib.common.utils.log.LogUtil;
 
 import java.util.Base64;
@@ -92,7 +91,7 @@ public final class RSAUtil {
      * @param model 加解密模式
      * @return 加密后的字符串
      */
-    public static String parsingRSAString(String data, String keyStr, Integer keyType, Integer model){
+    public static String parsingRSAString(String data, String keyStr, Integer keyType, Integer model) throws IllegalAccessException {
         try{
             if(keyType==0&&model==0){
                 //私钥解密
@@ -111,10 +110,10 @@ public final class RSAUtil {
                 RSAPublicKey publicKey = (RSAPublicKey) RSAUtil.getPublicKey(keyStr);
                 return  publicEncrypt(data, publicKey);
             }{
-                throw new BizException("秘钥类型或加密模式错误");
+                throw new IllegalAccessException("秘钥类型或加密模式错误");
             }
         }catch (Exception e) {
-            throw new BizException("加密字符串[" + data + "]时遇到异常", e);
+            throw new IllegalAccessException("加密字符串[" + data + "]时遇到异常");
         }
     }
 
@@ -124,12 +123,12 @@ public final class RSAUtil {
      * @param publicKeyStrSave
      * @return
      */
-    public static String publicEncrypt(String data, String publicKeyStrSave) {
+    public static String publicEncrypt(String data, String publicKeyStrSave) throws IllegalAccessException {
         try {
             RSAPublicKey publicKey = (RSAPublicKey) RSAUtil.getPublicKey(publicKeyStrSave);
             return publicEncrypt(data, publicKey);
         } catch (Exception e) {
-            throw new BizException("加密字符串[" + data + "]时遇到异常", e);
+            throw new IllegalAccessException("加密字符串[" + data + "]时遇到异常");
         }
     }
 
@@ -139,12 +138,12 @@ public final class RSAUtil {
      * @param privateKeyStrSave
      * @return
      */
-    public static String privateDecrypt(String data, String privateKeyStrSave) {
+    public static String privateDecrypt(String data, String privateKeyStrSave) throws IllegalAccessException {
         try {
             RSAPrivateKey privateKey=(RSAPrivateKey) RSAUtil.getPrivateKey(privateKeyStrSave);
             return privateDecrypt(data,privateKey);
         } catch (Exception e) {
-            throw new BizException("解密字符串[" + data + "]时遇到异常", e);
+            throw new IllegalAccessException("解密字符串[" + data + "]时遇到异常");
         }
     }
 
@@ -158,13 +157,13 @@ public final class RSAUtil {
      * @param publicKey
      * @return
      */
-    public static String publicEncrypt(String data, RSAPublicKey publicKey) {
+    public static String publicEncrypt(String data, RSAPublicKey publicKey) throws IllegalAccessException {
         try {
             Cipher cipher = Cipher.getInstance(RSA_ALGORITHM);
             cipher.init(Cipher.ENCRYPT_MODE, publicKey);
             return encoder.encodeToString(rsaSplitCodec(cipher, Cipher.ENCRYPT_MODE, data.getBytes(CHARSET), publicKey.getModulus().bitLength()));
         } catch (Exception e) {
-            throw new BizException("加密字符串[" + data + "]时遇到异常", e);
+            throw new IllegalAccessException("加密字符串[" + data + "]时遇到异常");
         }
     }
 
@@ -174,13 +173,13 @@ public final class RSAUtil {
      * @param privateKey
      * @return
      */
-    public static String privateDecrypt(String data, RSAPrivateKey privateKey) {
+    public static String privateDecrypt(String data, RSAPrivateKey privateKey) throws IllegalAccessException {
         try {
             Cipher cipher = Cipher.getInstance(RSA_ALGORITHM);
             cipher.init(Cipher.DECRYPT_MODE, privateKey);
             return new String(rsaSplitCodec(cipher, Cipher.DECRYPT_MODE, decoder.decode(data), privateKey.getModulus().bitLength()), CHARSET);
         } catch (Exception e) {
-            throw new BizException("解密字符串[" + data + "]时遇到异常", e);
+            throw new IllegalAccessException("解密字符串[" + data + "]时遇到异常");
         }
     }
 
@@ -190,13 +189,13 @@ public final class RSAUtil {
      * @param privateKey
      * @return
      */
-    public static String privateEncrypt(String data, RSAPrivateKey privateKey) {
+    public static String privateEncrypt(String data, RSAPrivateKey privateKey) throws IllegalAccessException {
         try {
             Cipher cipher = Cipher.getInstance(RSA_ALGORITHM);
             cipher.init(Cipher.ENCRYPT_MODE, privateKey);
             return encoder.encodeToString(rsaSplitCodec(cipher, Cipher.ENCRYPT_MODE, data.getBytes(CHARSET), privateKey.getModulus().bitLength()));
         } catch (Exception e) {
-            throw new BizException("加密字符串[" + data + "]时遇到异常", e);
+            throw new IllegalAccessException("加密字符串[" + data + "]时遇到异常");
         }
     }
 
@@ -206,14 +205,14 @@ public final class RSAUtil {
      * @param publicKey
      * @return
      */
-    public static String publicDecrypt(String data, RSAPublicKey publicKey) {
+    public static String publicDecrypt(String data, RSAPublicKey publicKey) throws IllegalAccessException {
         try {
             Cipher cipher = Cipher.getInstance(RSA_ALGORITHM);
             // 编码前设定编码方式及密钥
             cipher.init(Cipher.DECRYPT_MODE, publicKey);
             return new String(rsaSplitCodec(cipher, Cipher.DECRYPT_MODE, decoder.decode(data), publicKey.getModulus().bitLength()), CHARSET);
         } catch (Exception e) {
-            throw new BizException("解密字符串[" + data + "]时遇到异常", e);
+            throw new IllegalAccessException("解密字符串[" + data + "]时遇到异常");
         }
     }
 
@@ -221,7 +220,7 @@ public final class RSAUtil {
      * 每次加密的字节数，不能超过密钥的长度值除以 8 再减去 11，所以采取分段加密的方式规避
      * @return 加密后的byte型数据
      */
-    private static byte[] rsaSplitCodec(Cipher cipher, int opmode, byte[] datas, int keySize) {
+    private static byte[] rsaSplitCodec(Cipher cipher, int opmode, byte[] datas, int keySize) throws IllegalAccessException {
         int maxBlock = 0;
         if (opmode == Cipher.DECRYPT_MODE) {
             //解密模式
@@ -251,7 +250,7 @@ public final class RSAUtil {
             return resultDatas;
 
         } catch (Exception e) {
-            throw new BizException("加/解密阀值为[" + maxBlock + "]的数据时发生异常", e);
+            throw new IllegalAccessException("加/解密阀值为[" + maxBlock + "]的数据时发生异常");
         }
     }
 

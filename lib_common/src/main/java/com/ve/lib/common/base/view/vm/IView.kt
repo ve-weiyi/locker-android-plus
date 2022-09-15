@@ -1,9 +1,12 @@
 package com.ve.lib.common.base.view.vm
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.viewbinding.ViewBinding
+import com.alibaba.android.arouter.facade.enums.RouteType
+import com.alibaba.android.arouter.launcher.ARouter
 import com.ve.lib.common.utils.view.ToastUtil
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -59,6 +62,33 @@ interface IView <VB : ViewBinding> {
      */
     fun showError(errorMsg: String) {
         ToastUtil.show(errorMsg)
+    }
+
+
+    fun startActivity(path: String?) {
+        startActivity(path, null)
+    }
+
+    fun startActivity(activity: Activity?, path: String?) {
+        startActivity(activity, path, -1)
+    }
+
+    fun startActivity(path: String?, bundle: Bundle?) {
+        startActivity(null, path, bundle, -1)
+    }
+
+    fun startActivity(activity: Activity?, path: String?, requestCode: Int) {
+        startActivity(activity, path, null, requestCode)
+    }
+
+    fun startActivity(activity: Activity?, path: String?, bundle: Bundle?, requestCode: Int) {
+        val postcard = ARouter.getInstance()
+            .build(path)
+            .with(bundle)
+        if (activity != null) {
+            postcard.type = RouteType.ACTIVITY
+        }
+        postcard.navigation(activity, requestCode)
     }
 
     fun startActivity(context: Context,activityClass: Class<*>,bundle: Bundle?=null){

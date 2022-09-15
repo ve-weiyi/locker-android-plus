@@ -18,8 +18,8 @@
 
             <com.ve.lib.common.widget.view.TiltTextView
                     android:id="@+id/tv_tilt"
-                    android:layout_width="@dimen/dp_25"
-                    android:layout_height="@dimen/dp_25"
+                    android:layout_width="@dimen/dp_24"
+                    android:layout_height="@dimen/dp_24"
 
                     app:tagTiltLength="@dimen/dp_16"
                     app:tagTiltMode="left_top_triangle"
@@ -72,7 +72,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/item_name"
                     android:layout_alignStart="@+id/item_name"
-                    android:layout_marginVertical="@dimen/dp_5"
+                    android:layout_marginVertical="@dimen/dp_4"
 
                     android:paddingLeft="@dimen/dp_16"
                     android:paddingRight="@dimen/dp_16"

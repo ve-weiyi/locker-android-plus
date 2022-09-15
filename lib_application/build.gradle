@@ -11,19 +11,64 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     //使用api 将引用依赖暴露给其他模块
-    api rootProject.ext.androidxLibs
-    //基本视图依赖
-    api rootProject.ext.commonLibs
-    api rootProject.ext.rxJavaLibs
-    //网络依赖
-    api rootProject.ext.networkLibs
-    //注解
-    kapt rootProject.ext.annotationProcessorLibs
-    //annotationProcessor rootProject.ext.annotationProcessorLibs
+    api 'androidx.core:core-ktx:1.7.0'
+    api 'androidx.appcompat:appcompat:1.3.1'
+    api 'com.google.android.material:material:1.6.1'
+    api 'androidx.constraintlayout:constraintlayout:2.1.4'
+    api "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+    api 'androidx.lifecycle:lifecycle-process:2.5.1'
+    api 'androidx.preference:preference-ktx:1.2.0'
 
-    implementation rootProject.ext.libARouter
+    // BRVAH   万能适配器BaseRecyclerViewAdapterHolder框架,需引入 maven { url "https://jitpack.io" }
+    api "com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.6"
+    // glide
+    api "com.github.bumptech.glide:glide:4.13.2"
+    // eventbus
+    api "org.greenrobot:eventbus:3.2.0"
+    api 'com.google.code.gson:gson:2.8.9'
+    // fab
+    api "com.github.clans:fab:1.6.4"
+    // banner
+    api "com.youth.banner:banner:2.1.0"
+    //cvbanner           : "com.bigkoo:convenientbanner:2.0.5",
+    api "com.hyman:flowlayout-lib:1.1.2"
+    api "q.rorbin:VerticalTabLayout:1.2.7"
+    api "com.github.hackware1993:MagicIndicator:1.7.0"
+    //动态权限申请
+    api 'com.guolindev.permissionx:permissionx:1.6.1'
+    //guolin 写的数据库
+    api 'org.litepal.guolindev:core:3.2.3'
+
+
+
+    // tencent mmkv
+    api "com.tencent:mmkv-static:1.2.10"
+    //"bugly"           : "com.tencent.bugly:crashreport:3.1.0",
+    api "com.tencent.bugly:crashreport_upgrade:1.5.23"
+    // Tencent热更新框架，免费后台 bugly。 指定tinker依赖版本（注：应用升级1.3.5版本起，不再内置tinker）
+    api "com.tencent.tinker:tinker-android-lib:1.9.14.16"
+
+
+
+    //Room
+    def room_version = "2.4.2"
+    api  "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    // room针对kotlin协程功能的扩展库
+    api "androidx.room:room-ktx:$room_version"
+
+    // 网络框架
+    api "com.squareup.retrofit2:retrofit:${versions.retrofit}"
+    api "com.squareup.retrofit2:converter-gson:${versions.retrofit}"
+    api "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2"
+    api "com.github.franmontiel:PersistentCookieJar:v1.0.1"
+
+    api rootProject.ext.libARouter
     api 'com.afollestad.material-dialogs:core:3.3.0'
     api 'com.afollestad.material-dialogs:files:3.3.0'
     api 'com.afollestad.material-dialogs:color:3.3.0'
@@ -31,11 +76,4 @@ dependencies {
     api 'com.afollestad.material-dialogs:bottomsheets:3.3.0'
     api 'com.afollestad.material-dialogs:lifecycle:3.3.0'
 
-
-//    api 'cn.jiguang.sdk:jmessage:2.9.2'  // 此处以JMessage 2.9.2 版本为例。
-//
-//    api 'cn.jiguang.sdk:jcore:2.3.0'  // 此处以JCore 2.3.0 版本为例。
-//
-//    api 'org.projectlombok:lombok:1.18.16'
-//    kapt 'org.projectlombok:lombok:1.18.16'
 }

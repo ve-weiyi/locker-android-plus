@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginVertical="10dp"
-            android:padding="@dimen/dp_5">
+            android:padding="@dimen/dp_4">
 
         <com.ve.lib.common.widget.view.VerticalItemView
                 android:id="@+id/icon__msg"

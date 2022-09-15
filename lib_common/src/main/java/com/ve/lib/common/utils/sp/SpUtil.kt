@@ -3,8 +3,8 @@ package com.ve.lib.common.utils.sp
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
-import com.alibaba.fastjson.JSONObject
 import com.ve.lib.common.utils.AppContextUtil
+import com.ve.lib.common.utils.format.FormatUtil
 import com.ve.lib.common.utils.log.LogUtil
 import java.io.*
 
@@ -22,13 +22,13 @@ object SpUtil {
     /**
      * Context.MODE_PRIVATE
      * 文件创建模式：默认模式，其中创建的文件只能由调用应用程序（或共享相同用户ID的所有应用程序）访问。
+     * var sp= PreferenceManager.getDefaultSharedPreferences(AppContextUtil.mContext)
      */
-    private lateinit var sp: SharedPreferences
-    private lateinit var editor: SharedPreferences.Editor
+    private var sp: SharedPreferences =
+        AppContextUtil.getApp().getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE)
+    private var editor: SharedPreferences.Editor = sp.edit()
 
     init {
-        sp=AppContextUtil.getApp().getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE)
-        editor= sp.edit()
         editor.apply()
     }
     /**
@@ -160,13 +160,13 @@ object SpUtil {
             is Int -> setInt(key, value)
             is Boolean -> setBoolean(key, value)
             is Float -> setFloat(key, value)
-            else -> setString(key, JSONObject.toJSONString(value))
+            else -> setString(key, FormatUtil.objectToJson(value))
         }
     }
 
     fun <T> getValue(key: String, clazz: Class<T>): T? {
         try {
-            var target = JSONObject.parseObject(getString(key), clazz)
+            var target = FormatUtil.jsonToObject(getString(key), clazz)
             if (target == null) {
                 return null
             } else {

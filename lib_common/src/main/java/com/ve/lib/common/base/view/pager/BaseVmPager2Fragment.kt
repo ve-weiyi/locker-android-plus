@@ -4,6 +4,7 @@ import android.R
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.Typeface
+import android.os.Bundle
 import android.widget.TextView
 import androidx.core.graphics.ColorUtils
 import androidx.fragment.app.Fragment
@@ -14,7 +15,7 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.ve.lib.common.base.viewmodel.BaseViewModel
 import com.ve.lib.common.base.view.vm.BaseVmFragment
 import com.ve.lib.common.base.adapter.ViewPager2Adapter
-import com.ve.lib.common.utils.SettingUtil
+import com.ve.lib.common.utils.color.ColorUtil
 
 /**
  * @Description hello word!
@@ -34,7 +35,7 @@ abstract class BaseVmPager2Fragment<VB : ViewBinding, VM : BaseViewModel>() :
 
     override lateinit var mediator: TabLayoutMediator
 
-    override var activeColor: Int = SettingUtil.getColor()
+    override var activeColor: Int = ColorUtil.randomColor()
     override var normalColor: Int = Color.GRAY
 
     override var activeTextSize:Float =16F
@@ -44,17 +45,13 @@ abstract class BaseVmPager2Fragment<VB : ViewBinding, VM : BaseViewModel>() :
      * 颜色混合比例
      */
     protected var ratio:Float =0.2F
-    /**
-     * 浅主题色
-     */
-    protected var mThemeColorLight:Int = ColorUtils.blendARGB(mThemeColor,Color.WHITE, ratio)
 
 
     open fun getPagerAdapter(): ViewPager2Adapter {
         return ViewPager2Adapter(this.requireActivity(), mTitleList, mFragmentList)
     }
 
-    override fun initView() {
+    override fun initView(savedInstanceState: Bundle?) {
         initPagerView()
     }
 
@@ -82,11 +79,7 @@ abstract class BaseVmPager2Fragment<VB : ViewBinding, VM : BaseViewModel>() :
     abstract fun initPagerView()
     abstract fun getFragmentList()
 
-    override fun initColor() {
-        super.initColor()
-        mThemeColorLight=ColorUtils.blendARGB(mThemeColor,Color.WHITE, ratio)
-        mTabLayout.setBackgroundColor(Color.WHITE)
-    }
+
     override fun onDestroy() {
         super.onDestroy()
         mViewPager2.unregisterOnPageChangeCallback(pageChangeCallback);

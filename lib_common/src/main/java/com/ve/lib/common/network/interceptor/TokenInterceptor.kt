@@ -27,8 +27,8 @@ class TokenInterceptor(
     override fun intercept(chain: Interceptor.Chain): Response {
         val request = chain.request()
         val builder = request.newBuilder()
-        val domain = request.url.host
-        val url = request.url.toString()
+        val domain = request.url().host()
+        val url = request.url().toString()
 
         token = SpUtil.getValue(spTokenKey, "Authorization is null")
 

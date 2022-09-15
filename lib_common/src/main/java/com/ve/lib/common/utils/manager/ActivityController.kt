@@ -5,10 +5,6 @@ import android.app.Application.ActivityLifecycleCallbacks
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
-import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.OnLifecycleEvent
-import com.ve.lib.common.ext.getMethodName
 import com.ve.lib.common.utils.log.LogUtil
 import java.util.*
 
@@ -152,23 +148,23 @@ object ActivityController {
         }
 
         override fun onActivityStarted(activity: Activity) {
-//            LogUtil.msg(currentActivityName + getMethodName(3))
+
         }
 
         override fun onActivityResumed(activity: Activity) {
-            LogUtil.msg(currentActivityName + getMethodName(3))
+            LogUtil.msg(currentActivityName)
         }
 
         override fun onActivityPaused(activity: Activity) {
-//            LogUtil.msg(currentActivityName + getMethodName(3))
+
         }
 
         override fun onActivityStopped(activity: Activity) {
-//            LogUtil.msg(currentActivityName + getMethodName(3))
+
         }
 
         override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) {
-//            LogUtil.msg(currentActivityName + getMethodName(3))
+
         }
 
         override fun onActivityDestroyed(activity: Activity) {

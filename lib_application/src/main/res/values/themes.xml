@@ -1,85 +1,17 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-
-    <!-- Base application theme.-->
-    <!--    为Android设置Material Components主题  https://www.jianshu.com/p/533b397c63f0-->
-    <!--    原因分析：默认的<Button>标签其实是MaterialButton ， MaterialButton 会自动忽略<background>-->
-    <!--    1.使用android.widget.Button        2.使用Theme.>>.Bridge    -->
-    <!--    这样就可以解决background的问题了, 但是按钮会失去ripple效果-->
-    <!--    DayNight自动暗/亮主题-->
-    <style name="BaseAppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-
-        <!--Appbar背景色-->
+    <!-- Base application theme. -->
+    <style name="BaseAppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <!--状态栏颜色-->
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <!--(checkbox 填充)控制各个控件被选中时的颜色-->
-        <item name="colorAccent">@color/colorAccent</item>
-        <!--底部导航栏颜色-->
-        <item name="android:navigationBarColor">@color/light_blue</item>
-        <!--ToolBar上的Title颜色-->
-        <item name="android:textColorPrimary">@color/textColorPrimary</item>
-        <!--(checkbox 边框) 各个控制控件的默认颜色-->
-        <item name="android:colorControlNormal">@color/grey700</item>
-        <!--(页面背景色) colorBackground不仅影响主窗口的背景，而且影响所有组件的背景，例如除非您在组件布局中覆盖它。-->
-        <item name="android:colorBackground">@color/colorBackground</item>
-        <!--(页面背景色) windowBackground只影响主窗口的背景,优先级比colorBackground高。-->
-        <item name="android:windowBackground">@color/colorBackground</item>
-
-
-        <!--    colorPrimary：(Appbar背景色)您的应用的主要品牌颜色，主要用于主题 -->
-        <!--        <item name="colorPrimary">@color/colorPrimary</item>-->
-        <!--            colorPrimaryVariant：您的主要品牌颜色的较浅/较暗变体，在主题中很少使用-->
         <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
-        <!--    colorOnPrimary：用于显示在原色上方的元素的颜色（例如，文本和图标，根据可访问性，通常为白色或半透明的黑色）-->
-        <item name="colorOnPrimary">@color/colorOnPrimary</item>
-        <!--    colorSecondary：您应用程式的次要品牌色彩，主要用于强调某些需要突出的小部件-->
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/colorSecondary</item>
-        <!--    colorSecondaryVariant：您的次要品牌颜色的较浅/较深变体，在主题中很少使用-->
         <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
-        <!--    colorOnSecondary：用于显示在辅助颜色顶部的元素的颜色-->
-        <item name="colorOnSecondary">@color/colorOnSecondary</item>
-        <!--    colorError：用于错误的颜色（通常为红色阴影）-->
-        <item name="colorError">@color/colorError</item>
-        <!--    colorOnError：用于显示在错误颜色顶部的元素的颜色-->
-        <item name="colorOnError">@color/colorOnError</item>
-        <!--    colorSurface：(夜间模式标题栏颜色、菜单栏背景色)用于表面的颜色（即材料“纸张”）-->
-        <item name="colorSurface">@color/colorSurface</item>
-        <!--    colorOnSurface：用于显示在表面颜色顶部的元素的颜色-->
-        <item name="colorOnSurface">@color/colorOnSurface</item>
-        <!--    colorOnBackground：用于显示在背景色上方的元素的颜色-->
-        <item name="colorOnBackground">@color/colorOnBackground</item>
-
-
-        <!--关闭启动窗口-->
-        <item name="android:windowDisablePreview">true</item>
-        <item name="android:listDivider">@drawable/bg_divider</item>
-        <item name="textAppearanceButton">@style/AppTextAppearance.Button</item>
-        <item name="actionBarSize">44dp</item>
-        <item name="android:textSize">16sp</item>
-        <item name="android:windowAnimationStyle">@style/WindowAnimationFadeInOut</item>
-    </style>
-
-    <!--    字体风格-->
-    <style name="AppTextAppearance.Button" parent="TextAppearance.MaterialComponents.Button">
-        <item name="android:textAllCaps">false</item>
-    </style>
-
-    <style name="AppTheme" parent="BaseAppTheme.NoActionBar" />
-
-    <style name="SplashTheme" parent="AppTheme">
-        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
-        <item name="android:windowLayoutInDisplayCutoutMode" tools:ignore="NewApi">shortEdges</item>
-        <item name="android:windowActionBarOverlay">true</item>
-        <item name="android:windowFullscreen">true</item>
-        <!--将顶部状态栏设置为透明，并将界面内容布局上边界上提至状态栏顶部-->
-        <item name="android:windowTranslucentStatus">true</item>
-        <!--如果有底部虚拟导航栏，则将底部虚拟导航栏设置为透明，并将界面内容布局下边界下沉至虚拟导航栏底部-->
-        <item name="android:windowTranslucentNavigation">true</item>
-        <!--给window窗口设置背景图,启动白屏是因为application oncreate 浪费太多时间-->
-        <item name="android:windowBackground">@color/white</item>
-        <!-- 设置状态栏为白色的，状态栏文字为黑的 -->
-        <item name="android:statusBarColor">@color/white</item>
-        <item name="android:windowLightStatusBar">true</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. 状态栏颜色-->
+        <item name="android:statusBarColor">@color/transparent</item>
+        <!-- Customize your theme here. -->
     </style>
 
     <style name="BaseAppTheme.NoActionBar">
@@ -87,108 +19,63 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <!--default-->
+    <style name="AppTheme" parent="BaseAppTheme.NoActionBar">
+        <item name="skin_color_main">@color/light_blue</item>
+        <item name="skin_color_sub">@color/light_blue</item>
+        <item name="skin_color_background">@color/grey100</item>
+        <item name="skin_color_windows">@color/grey150</item>
+        <item name="skin_color_text">@color/black</item>
+        <item name="skin_color_btn">@color/orange</item>
+        <item name="skin_color_mask">@color/light_white</item>
+        <item name="skin_color_divider">@color/grey400</item>
+    </style>
+
+
+    <style name="AppTheme.Night">
+        <item name="skin_color_main">#35464e</item>
+        <item name="skin_color_sub">@color/light_blue</item>
+        <item name="skin_color_background">@color/grey800</item>
+        <item name="skin_color_windows">@color/grey900</item>
+        <item name="skin_color_text">@color/grey200</item>
+        <item name="skin_color_btn">@color/pink</item>
+        <item name="skin_color_mask">@color/black</item>
+        <item name="skin_color_divider">@color/grey600</item>
+    </style>
+
+    <style name="AppTheme.Sakura">
+        <item name="skin_color_main">@color/pink</item>
+        <item name="skin_color_sub">@color/light_blue</item>
+        <item name="skin_color_background">@color/grey800</item>
+        <item name="skin_color_windows">@color/grey900</item>
+        <item name="skin_color_text">@color/grey200</item>
+        <item name="skin_color_btn">@color/pink</item>
+        <item name="skin_color_mask">@color/black</item>
+        <item name="skin_color_divider">@color/grey600</item>
+    </style>
+
+
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light">
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" >
         <!--新增一个item，用于控制menu-->
         <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
     </style>
 
-    <style name="OverflowMenuStyle" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
-        <!--把该属性改为false即可使menu位置位于toolbar之下-->
-        <item name="overlapAnchor">false</item>
+    <style name="SplashTheme" parent="AppTheme">
+        <!--将顶部状态栏设置为透明，并将界面内容布局上边界上提至状态栏顶部-->
+        <item name="android:windowTranslucentStatus">true</item>
+        <!--如果有底部虚拟导航栏，则将底部虚拟导航栏设置为透明，并将界面内容布局下边界下沉至虚拟导航栏底部-->
+        <item name="android:windowTranslucentNavigation">true</item>
+        <!-- 给window窗口设置背景图,启动白屏是因为application oncreate 浪费太多时间-->
+        <item name="android:windowBackground">@drawable/common_app_background</item>
+        <!-- 背景图全屏显示-->
+        <item name="android:windowFullscreen">true</item>
+        <!-- 设置状态栏为白色的，状态栏文字为黑的 -->
+        <item name="android:statusBarColor">@color/white</item>
+        <!-- 设置导航栏透明-->
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:fitsSystemWindows">true</item>
     </style>
-
-
-    <style name="ThemeTabLayoutStyle" parent="Base.Widget.Design.TabLayout">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@color/colorPrimary</item>
-        <item name="tabIndicatorColor">@color/white</item>
-        <item name="tabIndicatorHeight">@dimen/dp_2</item>
-        <item name="tabSelectedTextColor">@color/white</item>
-        <item name="tabTextAppearance">@style/TopTabLayoutStyle</item>
-    </style>
-
-
-    <style name="TopTabLayoutStyle" parent="Base.Widget.Design.TabLayout">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">40dp</item>
-        <item name="android:background">@color/colorPrimary</item>
-        <item name="android:textColor">@color/color_text_normal</item>
-        <item name="tabTextColor">@color/purple</item>
-        <item name="tabMode">scrollable</item>
-        <item name="tabGravity">center</item>
-        <item name="tabIndicatorColor">@color/red</item>
-        <item name="tabIndicatorHeight">@dimen/dp_1</item>
-        <item name="tabIndicatorFullWidth">false</item>
-        <item name="tabSelectedTextColor">@color/white</item>
-        <item name="tabTextAppearance">@style/TopTabTextAppearance</item>
-    </style>
-
-    <style name="TopTabTextAppearance">
-        <item name="android:textSize">@dimen/sp_14</item>
-        <item name="textAllCaps">false</item>
-        <item name="android:textColor">?android:textColorSecondary</item>
-    </style>
-
-    <!--页面切换动画 淡入淡出-->
-    <style name="WindowAnimationFadeInOut">
-        <item name="android:windowEnterAnimation">@anim/fade_in</item>
-        <item name="android:windowExitAnimation">@anim/fade_out</item>
-    </style>
-
-    <style name="ToolbarStyle" parent="AppTheme">
-        <item name="android:textColorSecondary">@android:color/white</item>
-        <item name="searchHintIcon">@null</item>
-    </style>
-
-    <!-- 设置Toolbar标题字体的大小 -->
-    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <item name="android:textSize">@dimen/sp_18</item>
-    </style>
-
-    <!-- 浮动窗口动画 -->
-    <style name="anim_float_view">
-        <item name="android:windowEnterAnimation">@anim/push_up_in</item>
-        <item name="android:windowExitAnimation">@anim/push_up_out</item>
-    </style>
-
-    <style name="MenuLabelsStyle">
-        <item name="android:background">@drawable/state_fab_label</item>
-        <item name="android:textColor">#FFFFFF</item>
-        <item name="android:textSize">@dimen/sp_14</item>
-        <item name="android:maxLines">2</item>
-        <item name="android:ellipsize">end</item>
-    </style>
-
-    <style name="MenuButtonsStyle">
-        <item name="fab_size">mini</item>
-        <!--去掉button背景色和边框,高版本按钮会有黑色阴影框-->
-        <item name="android:outlineProvider">none</item>
-        <item name="fab_showAnimation">@anim/jump_from_down</item>
-        <item name="fab_hideAnimation">@anim/jump_to_down</item>
-        <item name="fab_shadowColor">#444</item>
-        <item name="fab_colorNormal">@color/colorPrimary</item>
-        <item name="fab_colorPressed">@color/colorPrimary</item>
-        <item name="fab_colorRipple">@color/colorPrimary</item>
-    </style>
-
-    <style name="RecyclerViewStyle">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">match_parent</item>
-        <item name="android:scrollbarSize">@dimen/dp_2</item>
-        <item name="android:scrollbars">vertical</item>
-    </style>
-
-    <!--  分割线-->
-    <style name="Divider">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">0.5dp</item>
-        <item name="android:layout_marginTop">@dimen/dp_20</item>
-        <item name="android:layout_marginBottom">@dimen/dp_20</item>
-        <item name="android:background">@color/gray</item>
-    </style>
-
-
 </resources>

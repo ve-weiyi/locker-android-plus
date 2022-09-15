@@ -2,6 +2,7 @@ package com.ve.lib.common.utils.ui
 
 import android.view.View
 import android.view.animation.AccelerateInterpolator
+import android.view.animation.Animation
 import androidx.core.view.ViewCompat
 import androidx.core.view.ViewPropertyAnimatorListener
 import androidx.interpolator.view.animation.LinearOutSlowInInterpolator
@@ -84,4 +85,20 @@ object AnimatorUtil {
                 .start()
     }
 
+    /**
+     *  View淡入动画
+     *
+     * @param view View
+     * @param listener ViewPropertyAnimatorListener
+     */
+    fun alphaAnimation(view: View, listener: ViewPropertyAnimatorListener) {
+        view.visibility = View.VISIBLE
+        ViewCompat.animate(view)
+            .alphaBy(0F)
+            .alpha(1F)
+            .setDuration(400)
+            .setInterpolator(FAST_OUT_SLOW_IN_INTERPOLATOR)
+            .setListener(listener)
+            .start()
+    }
 }

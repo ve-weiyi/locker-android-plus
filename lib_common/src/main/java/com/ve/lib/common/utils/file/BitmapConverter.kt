@@ -7,7 +7,6 @@ import android.graphics.PixelFormat
 import android.graphics.drawable.BitmapDrawable
 import android.graphics.drawable.Drawable
 import android.util.Base64
-import androidx.room.TypeConverter
 import java.io.ByteArrayOutputStream
 
 /**
@@ -22,7 +21,6 @@ class BitmapConverter {
      * @param icon 需要转化的字符串
      * @return 转化后的Drawable
      */
-    @TypeConverter
     @Synchronized
     fun stringToDrawable(icon: String): Drawable? {
         val img = Base64.decode(icon.toByteArray(), Base64.DEFAULT)
@@ -40,7 +38,6 @@ class BitmapConverter {
      * @param drawable 需要转化的Drawable
      * @return 转化后的字符串
      */
-    @TypeConverter
     @Synchronized
     fun drawableToByte(drawable: Drawable?): String? {
         if (drawable != null) {

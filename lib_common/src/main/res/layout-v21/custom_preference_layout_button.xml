@@ -64,7 +64,7 @@
                     android:maxWidth="@dimen/dp_30"
                     android:minWidth="@dimen/dp_10"
                     android:minHeight="@dimen/dp_10"
-                    android:layout_marginStart="@dimen/dp_5"
+                    android:layout_marginStart="@dimen/dp_4"
                     android:layout_gravity="center_vertical"
                     android:adjustViewBounds="true"
                     android:visibility="gone"

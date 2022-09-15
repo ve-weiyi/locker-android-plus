@@ -93,14 +93,14 @@ object TimeUtil {
     }
 
 
-    @RequiresApi(Build.VERSION_CODES.O)
+    
     fun getTimeMillisString():String{
         val current = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofPattern("ss.SS")
         return current.format(formatter)
     }
 
-    @RequiresApi(Build.VERSION_CODES.O)
+    
     fun getTimeMillisFloat():Float{
         val current = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofPattern("ss.SS")

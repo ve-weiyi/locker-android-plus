@@ -1,5 +1,6 @@
 package com.ve.lib.common.base.view.list
 
+import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -35,7 +36,7 @@ import com.ve.lib.common.base.view.vm.BaseVmActivity
         mCurrentPage = 0
     }
 
-    override fun initView() {
+    override fun initView(savedInstanceState: Bundle?) {
         initListView()
         defaultListView(this)
     }

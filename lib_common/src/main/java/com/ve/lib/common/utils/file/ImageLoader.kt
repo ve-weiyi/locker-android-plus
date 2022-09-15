@@ -14,7 +14,6 @@ import com.bumptech.glide.request.RequestOptions
 import com.bumptech.glide.request.target.CustomTarget
 import com.ve.lib.common.R
 import com.ve.lib.common.network.util.NetWorkUtil
-import com.ve.lib.common.utils.SettingUtil
 import com.ve.lib.common.utils.AppContextUtil
 import com.ve.lib.common.utils.log.LogUtil
 
@@ -26,13 +25,12 @@ object ImageLoader {
 
     // 1.开启无图模式 2.非WiFi环境 不加载图片
     private val isLoadImage =
-        !SettingUtil.getIsNoPhotoMode() && NetWorkUtil.isConnected(AppContextUtil.mContext)
+        NetWorkUtil.isConnected(AppContextUtil.mContext)
 
     //通过 RequestOptions 共享配置
     private val options = RequestOptions()
         .diskCacheStrategy(DiskCacheStrategy.DATA)
         .placeholder(R.drawable.bg_placeholder)
-
     /**
      * 加载图片
      * @param context

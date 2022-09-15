@@ -1,7 +1,6 @@
 package com.ve.lib.common.utils.log
 
 import android.util.Log
-import com.ve.lib.common.ext.getMethodName
 import com.ve.lib.common.utils.manager.ActivityController
 import kotlin.math.min
 
@@ -175,6 +174,16 @@ object LogUtil {
             }
         )
     }
-
+    /**
+     * stacktrace[0].getMethodName() 是 getThreadStackTrace
+     * stacktrace[1].getMethodName() 是 getStackTrace，
+     * stacktrace[2].getMethodName() 是 getMethodName，
+     * stacktrace[3].getMethodName() 才是调用 getMethodName 的函数的函数名。
+     */
+    fun getMethodName(deep: Int=3): String? {
+        val stacktrace = Thread.currentThread().stackTrace
+        val e = stacktrace[deep]
+        return " "+e.methodName
+    }
 
 }

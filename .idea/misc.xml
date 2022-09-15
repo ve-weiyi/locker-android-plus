@@ -7,6 +7,8 @@
         <entry key="../../../../layout/custom_preview.xml" value="0.12006079027355623" />
         <entry key="..\:/Users/anker/StudioProjects/lockit-android/module_lockit/src/main/res/layout/lockit_activity_splash.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable-v21/ic_baseline_code_24.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable-v22/common_app_background.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable-v22/common_btn_bg.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable-v24/bg_blue_circle.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable-v24/bg_blue_oval.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable-v24/bg_done.xml" value="0.1" />
@@ -47,6 +49,8 @@
         <entry key="lib_application/src/main/res/drawable/bg_delete.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable/bg_done.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable/bg_logo.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable/ic_about_us_white_24dp.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable/ic_add_24dp.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable/ic_apple.xml" value="0.133" />
         <entry key="lib_application/src/main/res/drawable/ic_apps_black_24dp.xml" value="0.133" />
         <entry key="lib_application/src/main/res/drawable/ic_password_24dp.xml" value="0.1" />
@@ -63,9 +67,11 @@
         <entry key="lib_common/src/main/res/layout/layout_empty_view.xml" value="0.182518115942029" />
         <entry key="lib_common/src/main/res/layout/layout_loading_view.xml" value="0.182518115942029" />
         <entry key="lib_common/src/main/res/layout/layout_no_network_view.xml" value="0.182518115942029" />
+        <entry key="module_android/src/main/res/layout-v21/item_home_list.xml" value="0.13854166666666667" />
         <entry key="module_android/src/main/res/layout/activity_login.xml" value="0.182518115942029" />
         <entry key="module_android/src/main/res/layout/activity_register.xml" value="0.182518115942029" />
         <entry key="module_android/src/main/res/layout/activity_score.xml" value="0.182518115942029" />
+        <entry key="module_android/src/main/res/layout/activity_search.xml" value="0.1" />
         <entry key="module_android/src/main/res/layout/app_bar_banner.xml" value="0.182518115942029" />
         <entry key="module_lockit/src/main/res/drawable-v21/bg_dialog_sheet_header.xml" value="0.1" />
         <entry key="module_lockit/src/main/res/drawable-v21/ic_baseline_account_box_24.xml" value="0.1" />

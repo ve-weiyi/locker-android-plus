@@ -33,12 +33,12 @@ interface IVmView<VM : BaseViewModel> : INetView {
     /**
      * step 2.初始化view相关数据, 需要在view初始化之前完成
      */
-    fun initData()
+    fun initViewData()
 
     /**
      * step 3.初始化view相关, 绑定数据在此时完成
      */
-    fun initView()
+    fun initView(savedInstanceState: Bundle?=null)
 
     /**
      * step 4.填充界面时所需要的data,从仓库获取或者网络抓取

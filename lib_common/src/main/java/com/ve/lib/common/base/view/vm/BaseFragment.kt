@@ -5,12 +5,8 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
-import com.ve.lib.common.event.ColorEvent
-import com.ve.lib.common.utils.SettingUtil
 import com.ve.lib.common.utils.log.LogUtil
 import org.greenrobot.eventbus.EventBus
-import org.greenrobot.eventbus.Subscribe
-import org.greenrobot.eventbus.ThreadMode
 
 /**
  * @author chenxz
@@ -23,7 +19,6 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() , IView<VB> {
     protected open var binding: VB? = null
     protected open val mBinding get() = binding!!
     protected open var mViewName: String  = this.javaClass.simpleName
-    protected var mThemeColor: Int = SettingUtil.getColor()
     protected val mContext:Context by lazy { requireActivity() }
     protected var mEventBus:EventBus?=null
 
@@ -67,7 +62,6 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() , IView<VB> {
      */
     override fun onResume() {
         super.onResume()
-        initColor()
     }
 
     override fun onDestroy() {
@@ -78,22 +72,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() , IView<VB> {
         LogUtil.d(javaClass.simpleName+" onDestroy")
     }
 
-    /**
-     * Theme color Change  BaseFragment必须有@Subscribe方法才不会保错
-     */
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    fun onColorChangeEvent(event: ColorEvent) {
-        initColor()
-        LogUtil.d("$mViewName receiver theme color change ")
-    }
 
-    open fun initColor() {
-        mThemeColor = if (!SettingUtil.getIsNightMode()) {
-            SettingUtil.getColor()
-        } else {
-            resources.getColor(com.ve.lib.application.R.color.colorPrimary)
-        }
-    }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         //inflater.inflate(R.menu.menu_search, menu)

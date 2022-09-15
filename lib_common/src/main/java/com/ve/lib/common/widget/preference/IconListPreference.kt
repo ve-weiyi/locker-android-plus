@@ -55,7 +55,7 @@ class IconListPreference(context: Context, attrs: AttributeSet) : ListPreference
 
     private lateinit var mBinIconPreviewBinding: ItemIconListpreferencePreviewBinding
     private lateinit var mBinIconBinding: ItemIconListpreferenceBinding
-    override fun onBindViewHolder(holder: PreferenceViewHolder?) {
+    override fun onBindViewHolder(holder: PreferenceViewHolder) {
         super.onBindViewHolder(holder)
         val selectedValue = value
         val selectedIndex = findIndexOfValue(selectedValue)

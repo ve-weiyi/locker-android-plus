@@ -22,17 +22,6 @@ fun Int.showToast(duration: Int = Toast.LENGTH_SHORT){
     Toast.makeText(BaseApplication.context,this,duration).show()
 }
 
-/**
- * 随机Color 避免纯色没有从255取值
- */
-fun randomColor(): Int {
-    Random().run {
-        val red = nextInt(210)
-        val green = nextInt(210)
-        val blue = nextInt(210)
-        return Color.rgb(red, green, blue)
-    }
-}
 
 /**
  * 把搜索关键字变色，默认红色
@@ -63,13 +52,4 @@ fun TextView.spanText(searchKey: String?, value: String?, @ColorInt color: Int =
     } else {
         text = value
     }
-}
-
-/**
- * 数据格式化
- */
-fun numFormat(value: Double?): String {
-    return if (value == null) "0.00" else DecimalFormat("0.00").apply {
-        roundingMode = RoundingMode.HALF_UP
-    }.format(value)
 }

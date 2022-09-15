@@ -6,14 +6,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 import com.ve.lib.common.base.viewmodel.BaseViewModel
-import com.ve.lib.common.config.AppConfig
-import com.ve.lib.common.event.NetworkChangeEvent
-import com.ve.lib.common.widget.multipleview.MultipleStatusView
-import com.ve.lib.common.utils.sp.PreferenceUtil
 import com.ve.lib.common.utils.log.LogUtil
 import com.ve.lib.common.utils.view.ToastUtil
-import org.greenrobot.eventbus.Subscribe
-import org.greenrobot.eventbus.ThreadMode
+import com.ve.lib.common.widget.multipleview.MultipleStatusView
 
 /**
  * @author chenxz
@@ -23,24 +18,22 @@ import org.greenrobot.eventbus.ThreadMode
 abstract class BaseVmFragment<VB : ViewBinding, VM : BaseViewModel> : BaseFragment<VB>(),
     IVmView<VM> {
 
-    companion object{
-        fun Fragment.getInstance() : Fragment {
+    companion object {
+        fun Fragment.getInstance(): Fragment {
             return javaClass.newInstance()
         }
 
-        fun Fragment.newInstance() : Fragment {
+        fun Fragment.newInstance(): Fragment {
             return javaClass.newInstance()
         }
     }
 
     override var hasLoadData: Boolean = false
-    override var isLogin: Boolean by PreferenceUtil(AppConfig.LOGIN_KEY, false)
-    override var hasNetwork: Boolean by PreferenceUtil(AppConfig.HAS_NETWORK_KEY, true)
     override var mLayoutStatusView: MultipleStatusView? = null
 
     lateinit var mViewModel: VM
 
-    override fun useEventBus() = true
+    override fun useEventBus() = false
 
     override fun initialize(saveInstanceState: Bundle?) {
         setHasOptionsMenu(true)
@@ -48,12 +41,12 @@ abstract class BaseVmFragment<VB : ViewBinding, VM : BaseViewModel> : BaseFragme
         //我不理解
         arguments?.let {
             val bundle: Bundle? = arguments //从bundle中取出数据
-            LogUtil.e(mViewName+bundle.toString())
+            LogUtil.e(mViewName + bundle.toString())
         }
 
         initObserver()
-        initData()
-        initView()
+        initViewData()
+        initView(saveInstanceState)
         initListener()
 
 //        arguments?.let {
@@ -75,7 +68,7 @@ abstract class BaseVmFragment<VB : ViewBinding, VM : BaseViewModel> : BaseFragme
         if (!hasLoadData) {
             showLoading()
             initWebData()
-            hasLoadData=true
+            hasLoadData = true
         }
     }
 
@@ -91,7 +84,7 @@ abstract class BaseVmFragment<VB : ViewBinding, VM : BaseViewModel> : BaseFragme
     /**
      * step 2.初始化view相关数据, 需要在view初始化之前完成
      */
-    override fun initData() {
+    override fun initViewData() {
 
     }
 
@@ -107,13 +100,6 @@ abstract class BaseVmFragment<VB : ViewBinding, VM : BaseViewModel> : BaseFragme
      */
     override fun initListener() {
 
-    }
-
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    fun onNetworkChangeEvent(event: NetworkChangeEvent) {
-        if (event.isConnected) {
-            doReConnected()
-        }
     }
 
     override fun showLoading() {

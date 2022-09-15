@@ -1,24 +1,13 @@
 package com.ve.lib.common.base.view.vm
 
-import android.content.Context
-import android.graphics.PixelFormat
 import android.os.Bundle
-import android.view.Gravity
 import android.view.View
-import android.view.ViewGroup
 import android.view.WindowManager
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
-import com.ve.lib.common.R
 import com.ve.lib.common.base.viewmodel.BaseViewModel
-import com.ve.lib.common.config.AppConfig
-import com.ve.lib.common.event.NetworkChangeEvent
-import com.ve.lib.common.network.util.NetWorkUtil
-import com.ve.lib.common.widget.multipleview.MultipleStatusView
-import com.ve.lib.common.utils.sp.PreferenceUtil
 import com.ve.lib.common.utils.view.ToastUtil
-import org.greenrobot.eventbus.Subscribe
-import org.greenrobot.eventbus.ThreadMode
+import com.ve.lib.common.widget.multipleview.MultipleStatusView
 
 /**
  * @author chenxz
@@ -29,8 +18,6 @@ abstract class BaseVmActivity<VB : ViewBinding, VM : BaseViewModel> : BaseActivi
     IVmView<VM> {
 
     override var hasLoadData: Boolean =false
-    override var isLogin: Boolean by PreferenceUtil(AppConfig.LOGIN_KEY, false)
-    override var hasNetwork: Boolean by PreferenceUtil(AppConfig.HAS_NETWORK_KEY, true)
     override var mLayoutStatusView: MultipleStatusView? = null
 
     lateinit var mViewModel: VM
@@ -51,13 +38,11 @@ abstract class BaseVmActivity<VB : ViewBinding, VM : BaseViewModel> : BaseActivi
     override fun initialize(saveInstanceState: Bundle?) {
         mViewModel = ViewModelProvider(this).get(attachViewModelClass())
 
-        initTipView()
         initObserver()
-        initData()
-        initView()
+        initViewData()
+        initView(saveInstanceState)
         initListener()
         mLayoutStatusView?.setOnClickListener(mRetryClickListener)
-        checkNetwork(NetWorkUtil.isConnected())
     }
 
     open val mRetryClickListener: View.OnClickListener = View.OnClickListener {
@@ -77,7 +62,7 @@ abstract class BaseVmActivity<VB : ViewBinding, VM : BaseViewModel> : BaseActivi
     /**
      * step 2.初始化需要在view初始化时使用的数据，在view初始化之前完成
      */
-    override fun initData(){
+    override fun initViewData(){
 
     }
 
@@ -108,50 +93,6 @@ abstract class BaseVmActivity<VB : ViewBinding, VM : BaseViewModel> : BaseActivi
         super.onDestroy()
     }
 
-    /**
-     * 初始化 TipView
-     */
-    private fun initTipView() {
-        mTipView = layoutInflater.inflate(R.layout.layout_network_tip, null)
-        mWindowManager = getSystemService(Context.WINDOW_SERVICE) as WindowManager
-        mLayoutParams = WindowManager.LayoutParams(
-            ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT,
-            WindowManager.LayoutParams.TYPE_APPLICATION,
-            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-            PixelFormat.TRANSLUCENT
-        )
-        mLayoutParams.gravity = Gravity.TOP
-        mLayoutParams.x = 0
-        mLayoutParams.y = 0
-    }
-
-    /**
-     * Network Change
-     */
-    @Subscribe(threadMode = ThreadMode.MAIN)
-    fun onNetworkChangeEvent(event: NetworkChangeEvent) {
-        hasNetwork = event.isConnected
-        checkNetwork(event.isConnected)
-    }
-
-    private fun checkNetwork(isConnected: Boolean) {
-        if (enableNetworkTip()) {
-            if (isConnected) {
-                doReConnected()
-                if (mTipView != null && mTipView?.parent != null) {
-                    mWindowManager.removeView(mTipView)
-                }
-            } else {
-                if (mTipView?.parent == null) {
-                    mTipView?.setOnClickListener {
-                        mTipView?.visibility=View.GONE
-                    }
-                    mWindowManager.addView(mTipView, mLayoutParams)
-                }
-            }
-        }
-    }
 
     override fun showLoading() {
         mLayoutStatusView?.showLoading()

@@ -3,6 +3,7 @@ package com.ve.module.lockit
 import android.annotation.SuppressLint
 import android.content.Context
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.ProcessLifecycleOwner
 import com.alibaba.android.arouter.launcher.ARouter
 import com.tencent.bugly.Bugly
@@ -57,16 +58,14 @@ class LockitApplication : BaseApplication() {
         LitePal.initialize(this);
         AppContextUtil.init(this)
         //监听应用程序的生命周期
-        ProcessLifecycleOwner.get().lifecycle.addObserver(object :
-            ApplicationObserver() {
-            override fun onResume() {
-//                if(!onForeground){
-//                    ActivityUtil.currentActivity?.let {
-//                        val appCompatActivity=it as AppCompatActivity
+        ProcessLifecycleOwner.get().lifecycle.addObserver(object : ApplicationObserver() {
+            override fun onResume(owner: LifecycleOwner) {
+                ActivityController.currentActivity?.let {
+                    LogUtil.msg()
+//                    val appCompatActivity = it as AppCompatActivity
 //                        startActivity(appCompatActivity,LockitAuthActivity::class.java)
-//                    }
-//                }
-                super.onResume()
+                }
+                super.onResume(owner)
             }
         })
 
