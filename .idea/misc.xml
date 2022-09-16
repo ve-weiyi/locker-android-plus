@@ -6,6 +6,9 @@
         <entry key="../../../../../layout/custom_preview.xml" value="0.17135416666666667" />
         <entry key="../../../../layout/custom_preview.xml" value="0.12006079027355623" />
         <entry key="..\:/Users/anker/StudioProjects/lockit-android/module_lockit/src/main/res/layout/lockit_activity_splash.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.14375" />
+        <entry key="app/src/main/res/layout/fragment_msg_content.xml" value="0.14375" />
+        <entry key="app/src/main/res/layout/fragment_test.xml" value="0.14375" />
         <entry key="lib_application/src/main/res/drawable-v21/ic_baseline_code_24.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable-v22/common_app_background.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable-v22/common_btn_bg.xml" value="0.1" />
@@ -76,6 +79,12 @@
         <entry key="lib_common/src/main/res/layout/toolbar.xml" value="0.14375" />
         <entry key="lib_view/src/main/res/drawable/ic_launcher_background.xml" value="0.114" />
         <entry key="lib_view/src/main/res/layout/item_sticky_header.xml" value="0.19927536231884058" />
+        <entry key="lockit_plus/src/main/res/drawable-v25/ic_qq_28.xml" value="0.123" />
+        <entry key="lockit_plus/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="lockit_plus/src/main/res/layout/activity_login.xml" value="0.204534912109375" />
+        <entry key="lockit_plus/src/main/res/layout/activity_main.xml" value="0.14375" />
+        <entry key="lockit_plus/src/main/res/layout/activity_splash.xml" value="0.14375" />
+        <entry key="lockit_plus/src/main/res/layout/layout_login_type.xml" value="0.18704710144927536" />
         <entry key="module_android/src/main/res/layout-v21/item_home_list.xml" value="0.13854166666666667" />
         <entry key="module_android/src/main/res/layout/activity_login.xml" value="0.182518115942029" />
         <entry key="module_android/src/main/res/layout/activity_register.xml" value="0.182518115942029" />

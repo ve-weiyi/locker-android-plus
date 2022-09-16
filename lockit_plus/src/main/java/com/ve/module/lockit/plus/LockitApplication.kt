@@ -1,15 +1,10 @@
-package com.ve.module.lockit
+package com.ve.module.lockit.plus
 
 import android.annotation.SuppressLint
 import android.content.Context
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.ProcessLifecycleOwner
 import com.alibaba.android.arouter.launcher.ARouter
 import com.ve.lib.application.BaseApplication
 import com.ve.lib.common.utils.AppContextUtil
-import com.ve.lib.common.utils.system.LogUtil
-import com.ve.lib.common.utils.ui.ActivityController
-import com.ve.lib.common.callback.ApplicationCallbacks
 
 
 /**
@@ -36,6 +31,8 @@ class LockitApplication : BaseApplication() {
 
     override fun onCreate() {
         super.onCreate()
+        context = applicationContext
+
 
         ARouter.openLog(); // 打印日志
         ARouter.openDebug();   // 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
@@ -43,17 +40,7 @@ class LockitApplication : BaseApplication() {
         ARouter.init(this); // 尽可能早，推荐在Application中初始化
 
         AppContextUtil.init(this)
-        //监听应用程序的生命周期
-        ProcessLifecycleOwner.get().lifecycle.addObserver(object : ApplicationCallbacks() {
-            override fun onResume(owner: LifecycleOwner) {
-                ActivityController.currentActivity?.let {
-                    LogUtil.msg()
-//                    val appCompatActivity = it as AppCompatActivity
-//                        startActivity(appCompatActivity,LockitAuthActivity::class.java)
-                }
-                super.onResume(owner)
-            }
-        })
+
 
     }
 

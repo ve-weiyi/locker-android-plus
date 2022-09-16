@@ -9,10 +9,12 @@
                 android:startColor="#FF72FBE3" />
         </shape>
     </item>
-    <item android:gravity="center"
-        >
-        <bitmap
-            android:gravity="center"
-            android:src="@drawable/password" />
-    </item>
+
+
+<!--    <item android:gravity="center"-->
+<!--        >-->
+<!--        <bitmap-->
+<!--            android:gravity="center"-->
+<!--            android:src="@drawable/password" />-->
+<!--    </item>-->
 </layer-list>
