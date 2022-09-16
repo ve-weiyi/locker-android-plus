@@ -15,11 +15,11 @@ import com.ve.lib.application.impl.ModuleApplication
  */
 abstract class BaseApplication : Application() {
 
-
     companion object {
         const val isDebug =true
         const val TAG = "app"
-        lateinit var modulesClassName:List<String>
+
+        var modulesClass:MutableList<Class<ModuleApplication>> = mutableListOf()
 
         //注释 忽略内存泄露警告
         @SuppressLint("StaticFieldLeak")
@@ -36,34 +36,27 @@ abstract class BaseApplication : Application() {
         super.onCreate()
         mContext = applicationContext
         context = applicationContext
-        modulesApplicationInit()
 
+        modulesApplicationInit()
     }
 
 
-    open fun getModulesApplicationName():List<String>{
+    open fun getModulesApplicationClass(): MutableList<Class<ModuleApplication>> {
         return mutableListOf()
     }
 
     open fun modulesApplicationInit() {
-        modulesClassName=getModulesApplicationName()
-        for (moduleImpl in modulesClassName) {
-            try {
-                val clazz = Class.forName(moduleImpl)
-                val obj = clazz.newInstance()
-                if (obj is ModuleApplication) {
-                    obj.onModuleCreate(this)
-                    Log.e(TAG, "$moduleImpl is init")
-                }
-            } catch (e: ClassNotFoundException) {
-                e.printStackTrace()
-            } catch (e: IllegalAccessException) {
-                e.printStackTrace()
-            } catch (e: InstantiationException) {
-                e.printStackTrace()
-            }
+        modulesClass=getModulesApplicationClass()
+
+        for (clazz in modulesClass){
+//            val clazz = Class.forName(moduleImpl)
+            val mApplication = clazz.newInstance()
+            mApplication.onModuleCreate(this)
+            Log.e(TAG, "$mApplication is init")
         }
+
     }
+
 
     /**
      * 应用终止时回调，不保证一定调用（如被系统回收时）

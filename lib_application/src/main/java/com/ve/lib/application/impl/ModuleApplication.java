@@ -13,4 +13,5 @@ public interface ModuleApplication {
      * @param application
      */
     void onModuleCreate(BaseApplication application);
+
 }
