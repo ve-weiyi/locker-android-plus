@@ -4,14 +4,12 @@ import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.gson.JsonParseException
 import com.ve.lib.common.network.exception.ApiException
-import com.ve.lib.common.widget.passwordGenerator.PasswordGenerator
+import com.ve.lib.view.widget.passwordGenerator.PasswordGenerator
 import com.ve.lib.common.utils.system.LogUtil
 import com.ve.lib.common.utils.view.ToastUtil
 import com.ve.module.lockit.common.config.LockitConstant
 import com.ve.module.lockit.respository.database.AppDataBase
-import com.ve.module.lockit.respository.database.entity.*
 import com.ve.module.lockit.respository.AuthRepository
-import com.ve.module.lockit.respository.http.model.ConditionVO
 import com.ve.lib.common.utils.encrypt.AESUtil
 import com.ve.module.lockit.utils.PasswordUtils
 import com.ve.lib.common.utils.encrypt.RSAUtil

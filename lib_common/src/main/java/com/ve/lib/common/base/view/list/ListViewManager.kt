@@ -301,7 +301,7 @@ open class ListViewManager<LD> {
             //绑定视图
             //recyclerView=mRecyclerView
             //设置空布局,调用此方法前需要 recyclerView.adapter=MAdapter
-            setEmptyView(R.layout.layout_empty_view)
+//            setEmptyView(R.layout.layout_empty_view)
 
             //允许侧滑、拖动
             if (mConfig.enableDrag) {

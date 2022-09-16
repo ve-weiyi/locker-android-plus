@@ -7,7 +7,7 @@
             app:iconSpaceReserved="false"
             android:title="@string/about_settings">
 
-        <com.ve.lib.common.widget.preference.MyPreference
+        <com.ve.lib.view.widget.preference.MyPreference
                 android:key="@string/sp_key_app_version"
                 android:layout="@layout/custom_preference_layout"
                 android:title="version 1.0.0"

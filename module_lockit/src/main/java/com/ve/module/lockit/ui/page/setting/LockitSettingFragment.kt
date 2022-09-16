@@ -15,7 +15,7 @@ import androidx.preference.SwitchPreference
 import com.ve.lib.common.event.RefreshHomeEvent
 import com.ve.lib.common.utils.data.ImageLoader
 import com.ve.lib.common.utils.view.DialogUtil
-import com.ve.lib.common.widget.preference.IconPreference
+import com.ve.lib.view.widget.preference.IconPreference
 import com.ve.lib.common.utils.system.LogUtil
 import com.ve.lib.common.utils.system.SpUtil
 import com.ve.lib.common.utils.view.ToastUtil

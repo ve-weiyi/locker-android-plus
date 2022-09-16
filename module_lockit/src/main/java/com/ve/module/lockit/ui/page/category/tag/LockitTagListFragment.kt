@@ -14,7 +14,7 @@ import com.ve.module.lockit.ui.adapter.TagListAdapter
 import com.ve.module.lockit.ui.page.container.LockitContainerActivity
 import com.ve.module.lockit.common.enums.EditTypeEnum
 import com.ve.module.lockit.ui.viewmodel.LockitClassifyViewModel
-import com.ve.lib.common.widget.layout.SwipeItemLayout
+import com.ve.lib.view.widget.layout.SwipeItemLayout
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 

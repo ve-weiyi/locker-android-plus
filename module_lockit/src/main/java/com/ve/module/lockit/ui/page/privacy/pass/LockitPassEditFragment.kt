@@ -17,7 +17,7 @@ import com.afollestad.materialdialogs.lifecycle.lifecycleOwner
 import com.afollestad.materialdialogs.list.customListAdapter
 import com.afollestad.materialdialogs.list.listItems
 import com.ve.lib.common.base.view.vm.BaseVmFragment
-import com.ve.lib.common.widget.passwordGenerator.PasswordGeneratorDialog
+import com.ve.lib.view.widget.passwordGenerator.PasswordGeneratorDialog
 import com.ve.lib.common.utils.data.TimeUtil
 import com.ve.lib.common.utils.system.LogUtil
 import com.ve.module.lockit.R

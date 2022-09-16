@@ -126,9 +126,9 @@ object ImageLoader {
                         val colorStateList = ColorStateList.valueOf(colorInt)
                         view.backgroundTintList = colorStateList
 
-//                    val gd: GradientDrawable = view.background as GradientDrawable
+//                    val gd: GradientDrawable = com.ve.lib.view.background as GradientDrawable
 //                    gd.setColor(Color.parseColor(url))
-//                    view.setBackgroundColor(Color.parseColor(url))
+//                    com.ve.lib.view.setBackgroundColor(Color.parseColor(url))
                     } catch (e: Exception) {
                         LogUtil.d(e.message!!)
                         e.printStackTrace()
@@ -140,12 +140,12 @@ object ImageLoader {
                         val colorStateList = ColorStateList.valueOf(colorInt)
                         view.backgroundTintList = colorStateList
 
-//                    val gd: GradientDrawable = view.background as GradientDrawable
+//                    val gd: GradientDrawable = com.ve.lib.view.background as GradientDrawable
 //                    gd.setColor(colorInt)
 //                    gd.colorFilter=LightingColorFilter(Color.WHITE,colorInt)
 //                    gd.setTint(colorInt)
-//                    view.background.setTint(colorInt)
-//                    view.setBackgroundColor(Color.parseColor(colorInt.toString(16).replace("-","#")))
+//                    com.ve.lib.view.background.setTint(colorInt)
+//                    com.ve.lib.view.setBackgroundColor(Color.parseColor(colorInt.toString(16).replace("-","#")))
                     } catch (e: Exception) {
                         LogUtil.d(e.message!!)
                         e.printStackTrace()

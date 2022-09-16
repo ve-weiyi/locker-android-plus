@@ -8,7 +8,7 @@ import androidx.viewbinding.ViewBinding
 import com.ve.lib.common.base.viewmodel.BaseViewModel
 import com.ve.lib.common.utils.system.LogUtil
 import com.ve.lib.common.utils.view.ToastUtil
-import com.ve.lib.common.widget.multipleview.MultipleStatusView
+import com.ve.lib.view.widget.multipleview.MultipleStatusView
 
 /**
  * @author chenxz

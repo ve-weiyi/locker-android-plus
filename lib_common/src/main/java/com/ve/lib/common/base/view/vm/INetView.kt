@@ -1,6 +1,6 @@
 package com.ve.lib.common.base.view.vm
 
-import com.ve.lib.common.widget.multipleview.MultipleStatusView
+import com.ve.lib.view.widget.multipleview.MultipleStatusView
 
 /**
  * @Description hello word!

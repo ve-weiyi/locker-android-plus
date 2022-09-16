@@ -119,6 +119,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     //    依赖公用模块
     api project(':lib_common')
+    api project(':lib_view')
     kapt rootProject.ext.libARouterCompiler
     //注解 room数据库
     kapt rootProject.ext.annotationProcessorLibs

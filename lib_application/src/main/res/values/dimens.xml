@@ -61,4 +61,7 @@
     <dimen name="ts_20">20sp</dimen>
     <dimen name="ts_22">22sp</dimen>
     <dimen name="ts_24">24sp</dimen>
+    <dimen name="ts_28">28sp</dimen>
+    <dimen name="ts_34">34sp</dimen>
+    <dimen name="ts_36">36sp</dimen>
 </resources>

@@ -19,7 +19,7 @@ open class SkinCompatActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         SkinFactory.setTheme(this)
         super.onCreate(savedInstanceState)
-        mThemeColor= getThemeColor(this,R.attr.skin_color_main,Color.CYAN)
+        mThemeColor= getThemeColor(this,R.attr.sc_brand,Color.CYAN)
         //沉浸式状态栏
         setColor(this, mThemeColor, 0)
     }

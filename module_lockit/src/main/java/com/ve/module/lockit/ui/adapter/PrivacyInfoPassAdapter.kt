@@ -30,7 +30,7 @@ import kotlinx.coroutines.withContext
  */
 class PrivacyInfoPassAdapter :
     BaseSectionQuickAdapter<PrivacyPass, BaseViewHolder>(
-        com.ve.lib.common.R.layout.item_sticky_header, R.layout.lockit_item_privacy_pass
+        com.ve.lib.view.R.layout.item_sticky_header, R.layout.lockit_item_privacy_pass
     ), LoadMoreModule, DraggableModule, UpFetchModule {
 
     init {
@@ -117,8 +117,8 @@ class PrivacyInfoPassAdapter :
 
     override fun convertHeader(helper: BaseViewHolder, item: PrivacyPass) {
 //        LogUtil.msg("head " + item.headerName)
-        helper.setText(com.ve.lib.common.R.id.tv_header, item.headerName)
-        helper.setEnabled(com.ve.lib.common.R.id.tv_header, false)
+        helper.setText(com.ve.lib.view.R.id.tv_header, item.headerName)
+        helper.setEnabled(com.ve.lib.view.R.id.tv_header, false)
     }
 
     fun getSelectData(): MutableList<PrivacyPass> {

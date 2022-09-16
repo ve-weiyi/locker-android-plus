@@ -15,7 +15,7 @@ import com.ve.lib.common.base.view.vm.BaseVmActivity
 import com.ve.module.android.config.Constant
 import com.ve.module.android.event.TodoEvent
 import com.ve.module.android.event.TodoTypeEvent
-import com.ve.lib.common.utils.ui.DisplayManager
+import com.ve.lib.common.utils.ui.DisplayUtil
 import org.greenrobot.eventbus.EventBus
 
 /**
@@ -131,7 +131,7 @@ class TodoActivity : BaseVmActivity<ActivityTodoBinding, TodoViewModel>(){
             height = ViewGroup.LayoutParams.WRAP_CONTENT
             isOutsideTouchable = true
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                elevation = DisplayManager.dip2px(10F).toFloat()
+                elevation = DisplayUtil.dip2px(10F).toFloat()
             }
             // setBackgroundDrawable(ColorDrawable(mThemeColor))
             setOnDismissListener {
@@ -153,9 +153,9 @@ class TodoActivity : BaseVmActivity<ActivityTodoBinding, TodoViewModel>(){
         if (mSwitchPopupWindow == null) initPopupWindow(dataList)
         if (mSwitchPopupWindow?.isShowing == true) mSwitchPopupWindow?.dismiss()
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            mSwitchPopupWindow?.showAsDropDown(mToolbar, -DisplayManager.dip2px(5F), 0, Gravity.END)
+            mSwitchPopupWindow?.showAsDropDown(mToolbar, -DisplayUtil.dip2px(5F), 0, Gravity.END)
         } else {
-            mSwitchPopupWindow?.showAtLocation(mToolbar, Gravity.BOTTOM, -DisplayManager.dip2px(5F), 0)
+            mSwitchPopupWindow?.showAtLocation(mToolbar, Gravity.BOTTOM, -DisplayUtil.dip2px(5F), 0)
         }
     }
 

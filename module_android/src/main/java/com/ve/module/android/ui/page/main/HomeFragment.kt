@@ -48,7 +48,7 @@ class HomeFragment() : BaseVmListFragment<FragmentHomeBinding, HomeViewModel, Ar
     private lateinit var bannersData: ArrayList<BannerBean>
 
     /**
-     * banner view
+     * banner com.ve.lib.view
      */
     private lateinit var mHomeHeaderView: ItemHomeBannerBinding
 

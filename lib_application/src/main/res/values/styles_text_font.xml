@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="tv_text_layout">
+        <item name="android:paddingVertical">0dp</item>
+        <item name="android:paddingHorizontal">2dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <!--        文字与图片距离-->
+        <item name="android:drawablePadding">4dp</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <!--    标题字体，标题字体都加粗了-->
+    <style name="tv_title_big" parent="tv_text_layout">
+        <item name="android:textSize">@dimen/text_bigger</item>
+        <item name="android:textColor">@color/color_text_normal</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!--    标题 不加粗-->
+    <style name="tv_title_normal" parent="tv_text_layout">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:textColor">@color/color_text_normal</item>
+    </style>
+
+    <!--    标题 加粗-->
+    <style name="tv_title_normal_primary" parent="tv_text_layout">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:textColor">@color/color_text_normal</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="tv_title_normal_gray" parent="tv_text_layout">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:textColor">@color/color_text_gray</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="tv_content_primary" parent="tv_text_layout">
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:textColor">@color/color_text_normal</item>
+        <!--        <item name="android:textColor">@color/black</item>-->
+    </style>
+
+    <style name="tv_content_second" parent="tv_text_layout">
+        <item name="android:textSize">@dimen/text_mid</item>
+        <!--        <item name="android:textColor">@color/gray</item>-->
+    </style>
+
+    <style name="tv_content_small" parent="tv_text_layout">
+        <item name="android:textSize">@dimen/text_small</item>
+        <!--        <item name="android:textColor">@color/gray</item>-->
+    </style>
+
+
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="text_mid">14sp</dimen>
+    <dimen name="text_normal">16sp</dimen>
+    <dimen name="text_big">18sp</dimen>
+    <dimen name="text_bigger">20sp</dimen>
+    <dimen name="text_biggest">22sp</dimen>
+
+    <!--    列表边距-->
+    <dimen name="list_padding_small">2dp</dimen>
+    <dimen name="list_padding_mid">4dp</dimen>
+    <dimen name="list_padding_normal">8dp</dimen>
+
+    <!--    控件边距-->
+    <dimen name="dimen_small">2dp</dimen>
+    <dimen name="dimen_mid">4dp</dimen>
+    <dimen name="dimen_big">8dp</dimen>
+    <dimen name="dimen_bigger">12dp</dimen>
+    <dimen name="dimen_giant">16dp</dimen>
+    <dimen name="dimen_enormous">16dp</dimen>
+    <dimen name="dimen_max">32dp</dimen>
+
+
+    <!-- 键盘字体 -->
+    <style name="TextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:paddingVertical">0.1dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@drawable/bg_grey_rect_10dp</item>
+        <item name="android:textSize">28sp</item>
+    </style>
+
+<!--    -->
+    <style name="text_style_light">
+        <item name="android:fontFamily">@font/open_sans_light</item>
+    </style>
+
+    <style name="text_style_common">
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+    </style>
+    <style name="text_style_bold">
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+    </style>
+
+    <style name="DefaultFontTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:fontFamily">@font/open_sans_light</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+
+    <style name="t8_l">
+        <item name="android:textSize">@dimen/ts_8</item>
+        <item name="android:fontFamily">@font/open_sans_light</item>
+    </style>
+    <style name="t8_r">
+        <item name="android:textSize">@dimen/ts_8</item>
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+    </style>
+    <style name="t8_b">
+        <item name="android:textSize">@dimen/ts_8</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+    </style>
+    <style name="t10_l">
+        <item name="android:textSize">@dimen/ts_10</item>
+        <item name="android:fontFamily">@font/open_sans_light</item>
+    </style>
+    <style name="t10_r">
+        <item name="android:textSize">@dimen/ts_10</item>
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+    </style>
+    <style name="t10_b">
+        <item name="android:textSize">@dimen/ts_10</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+    </style>
+
+    <style name="t12_r">
+        <item name="android:textSize">@dimen/ts_12</item>
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+    </style>
+    <style name="t12_l">
+        <item name="android:textSize">@dimen/ts_12</item>
+        <item name="android:fontFamily">@font/open_sans_light</item>
+    </style>
+    <style name="t12_b">
+        <item name="android:textSize">@dimen/ts_12</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+    </style>
+    <style name="t14_r">
+        <item name="android:textSize">@dimen/ts_14</item>
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+    </style>
+    <style name="t14_l">
+        <item name="android:textSize">@dimen/ts_14</item>
+        <item name="android:fontFamily">@font/open_sans_light</item>
+    </style>
+    <style name="t14_b">
+        <item name="android:textSize">@dimen/ts_14</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+    </style>
+    <style name="t16_r">
+        <item name="android:textSize">@dimen/ts_16</item>
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+    </style>
+    <style name="t16_l">
+        <item name="android:textSize">@dimen/ts_16</item>
+        <item name="android:fontFamily">@font/open_sans_light</item>
+    </style>
+    <style name="t16_b">
+        <item name="android:textSize">@dimen/ts_16</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+    </style>
+    <style name="t18_r">
+        <item name="android:textSize">@dimen/ts_18</item>
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+    </style>
+    <style name="t18_l">
+        <item name="android:textSize">@dimen/ts_18</item>
+        <item name="android:fontFamily">@font/open_sans_light</item>
+    </style>
+    <style name="t18_b">
+        <item name="android:textSize">@dimen/ts_18</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+    </style>
+    <style name="t20_r">
+        <item name="android:textSize">@dimen/ts_20</item>
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+    </style>
+    <style name="t20_l">
+        <item name="android:textSize">@dimen/ts_20</item>
+        <item name="android:fontFamily">@font/open_sans_light</item>
+    </style>
+    <style name="t20_b">
+        <item name="android:textSize">@dimen/ts_20</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+    </style>
+    <style name="t22_r">
+        <item name="android:textSize">@dimen/ts_22</item>
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+    </style>
+    <style name="t22_l">
+        <item name="android:textSize">@dimen/ts_22</item>
+        <item name="android:fontFamily">@font/open_sans_light</item>
+    </style>
+    <style name="t22_b">
+        <item name="android:textSize">@dimen/ts_22</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+    </style>
+    <style name="t24_r">
+        <item name="android:textSize">@dimen/ts_24</item>
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+    </style>
+    <style name="t24_l">
+        <item name="android:textSize">@dimen/ts_24</item>
+        <item name="android:fontFamily">@font/open_sans_light</item>
+    </style>
+    <style name="t24_b">
+        <item name="android:textSize">@dimen/ts_24</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+    </style>
+
+    <style name="t28_r">
+        <item name="android:textSize">@dimen/ts_28</item>
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+    </style>
+    <style name="t28_l">
+        <item name="android:textSize">@dimen/ts_28</item>
+        <item name="android:fontFamily">@font/open_sans_light</item>
+    </style>
+    <style name="t28_b">
+        <item name="android:textSize">@dimen/ts_28</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+    </style>
+
+    <style name="t34_r">
+        <item name="android:textSize">@dimen/ts_34</item>
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+    </style>
+    <style name="t34_l">
+        <item name="android:textSize">@dimen/ts_34</item>
+        <item name="android:fontFamily">@font/open_sans_light</item>
+    </style>
+    <style name="t34_b">
+        <item name="android:textSize">@dimen/ts_34</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+    </style>
+    <style name="t36_r">
+        <item name="android:textSize">@dimen/ts_36</item>
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+    </style>
+    <style name="t36_l">
+        <item name="android:textSize">@dimen/ts_36</item>
+        <item name="android:fontFamily">@font/open_sans_light</item>
+    </style>
+    <style name="t36_b">
+        <item name="android:textSize">@dimen/ts_36</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+    </style>
+
+</resources>

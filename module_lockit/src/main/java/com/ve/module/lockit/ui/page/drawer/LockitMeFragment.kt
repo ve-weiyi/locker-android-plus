@@ -118,7 +118,7 @@ class LockitMeFragment : BaseVmFragment<LockitFragmentMeBinding, LockitDrawerVie
     }
 
     override fun onClick(v: View?) {
-        LogUtil.msg("click view ")
+        LogUtil.msg("click com.ve.lib.view ")
         when (v?.id) {
             R.id.exit_layout -> {
                 SpUtil.clearPreference(LockitSpKey.SP_KEY_LOGIN_DATA_KEY)

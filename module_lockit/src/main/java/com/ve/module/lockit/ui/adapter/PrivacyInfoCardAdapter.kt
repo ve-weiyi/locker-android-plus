@@ -26,7 +26,7 @@ import com.ve.lib.common.utils.system.StickUtils
  */
 class PrivacyInfoCardAdapter :
     BaseSectionQuickAdapter<PrivacyCard, BaseViewHolder>(
-        com.ve.lib.common.R.layout.item_sticky_header, R.layout.lockit_item_privacy_card
+        com.ve.lib.view.R.layout.item_sticky_header, R.layout.lockit_item_privacy_card
     ), LoadMoreModule, DraggableModule, UpFetchModule {
 
     init {
@@ -111,8 +111,8 @@ class PrivacyInfoCardAdapter :
 
     override fun convertHeader(helper: BaseViewHolder, item: PrivacyCard) {
 //        LogUtil.msg("head " + item.headerName)
-        helper.setText(com.ve.lib.common.R.id.tv_header, item.headerName)
-        helper.setEnabled(com.ve.lib.common.R.id.tv_header, false)
+        helper.setText(com.ve.lib.view.R.id.tv_header, item.headerName)
+        helper.setEnabled(com.ve.lib.view.R.id.tv_header, false)
     }
 
     fun getSelectData(): MutableList<PrivacyCard> {

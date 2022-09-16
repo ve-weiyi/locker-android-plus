@@ -44,7 +44,7 @@
                 app:elevation="@dimen/dp_16"
                 app:itemIconTint="@drawable/state_nav_item_color"
                 app:itemTextColor="@drawable/state_nav_item_color"
-                app:layout_behavior="com.ve.lib.common.widget.behavior.BottomNavigationBehavior"
+                app:layout_behavior="com.ve.lib.view.widget.behavior.BottomNavigationBehavior"
                 app:menu="@menu/lockit_bottom_navigation" />
 
 

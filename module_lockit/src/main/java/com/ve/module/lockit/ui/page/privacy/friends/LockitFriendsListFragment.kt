@@ -20,7 +20,7 @@ import com.ve.module.lockit.respository.database.entity.PrivacyFolder
 import com.ve.module.lockit.respository.database.entity.PrivacyFriend
 import com.ve.module.lockit.ui.adapter.PrivacyInfoFriendsAdapter
 import com.ve.module.lockit.ui.page.container.LockitContainerActivity
-import com.ve.lib.common.widget.layout.SwipeItemLayout
+import com.ve.lib.view.widget.layout.SwipeItemLayout
 import com.ve.module.lockit.ui.viewmodel.LockitPrivacyFriendsViewModel
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode

@@ -9,7 +9,7 @@ import com.afollestad.materialdialogs.color.colorChooser
 import com.afollestad.materialdialogs.lifecycle.lifecycleOwner
 import com.ve.lib.common.event.ColorEvent
 import com.ve.lib.common.utils.SettingUtil
-import com.ve.lib.common.widget.preference.IconPreference
+import com.ve.lib.view.widget.preference.IconPreference
 import com.ve.module.lockit.R
 import com.ve.module.lockit.common.config.LockitSpKey
 import org.greenrobot.eventbus.EventBus

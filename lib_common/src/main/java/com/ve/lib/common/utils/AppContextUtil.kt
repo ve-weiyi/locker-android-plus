@@ -128,22 +128,6 @@ object AppContextUtil {
     }
 
     /**
-     * 弹出软键盘
-     */
-    fun showSoftKeyboard(view: View) {
-        val inputManger = view.context.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        inputManger.showSoftInput(view, InputMethodManager.SHOW_FORCED)
-    }
-
-    /**
-     * 关闭软键盘
-     */
-    fun closeSoftKeyboard() {
-        val inputManger = ActivityController.currentActivity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-        inputManger.hideSoftInputFromWindow(ActivityController.currentActivity?.window?.decorView?.windowToken, 0)
-    }
-
-    /**
      * 是否有sim卡 即设备是否可以拨打电话等
      */
     fun hasSim(): Boolean {

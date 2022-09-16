@@ -6,31 +6,49 @@ import android.util.TypedValue
 import com.ve.lib.common.utils.AppContextUtil
 
 /**
- * Created by yechao on 2020/10/30.
- * Describe : 屏幕相关 密度
- *
- * GitHub : https://github.com/yechaoa
- * CSDN : http://blog.csdn.net/yechaoa
+ * @author ve
+ * @date 2022/9/16
+ * @desc lockit-android
  */
 object DisplayUtil {
 
-    /**
-     * dp to px
-     */
-    @JvmStatic
-    fun dp2px(dp: Float): Int {
-        val density = AppContextUtil.getApp().resources.displayMetrics.density
-        return (dp * density + 0.5f).toInt()
+    private var displayMetrics: DisplayMetrics = AppContextUtil.mContext.resources.displayMetrics
+
+
+    private var screenWidth: Int = 0
+//    @Deprecated(message = "use screenWidth", replaceWith = ReplaceWith("this.getScreenHeight()"))
+    private var screenHeight: Int = 0
+    private var screenDpi: Int = 0
+
+    init {
+        screenWidth = displayMetrics.widthPixels
+        screenHeight = displayMetrics.heightPixels
+        screenDpi = displayMetrics.densityDpi
     }
 
     /**
      * px to dp
      */
-    fun px2dp(px: Int): Float {
-        val density = AppContextUtil.getApp().resources.displayMetrics.density
-        return px / density
+    @JvmStatic
+    fun px2dip(pxValue: Float): Int {
+        val scale = displayMetrics.density
+        return (pxValue / scale+ 0.5f).toInt()
     }
-
+    @JvmStatic
+    fun dip2px(dpValue: Float): Int {
+        val scale = displayMetrics.density
+        return (dpValue * scale+ 0.5f).toInt()
+    }
+    @JvmStatic
+    fun dp2px(dpValue: Float): Int {
+        val scale = displayMetrics.density
+        return (dpValue * scale+ 0.5f).toInt()
+    }
+    fun sp2px(spValue: Float): Int {
+        val fontScale = displayMetrics.scaledDensity
+        return (spValue * fontScale+ 0.5f).toInt()
+    }
+    
     /**
      * 获取状态栏高度 px
      */
@@ -64,41 +82,20 @@ object DisplayUtil {
     }
 
 
-    private var displayMetrics: DisplayMetrics? = null
-
-    private var screenWidth: Int? = null
-
-    private var screenHeight: Int? = null
-
-    private var screenDpi: Int? = null
-
-    init{
-        displayMetrics = AppContextUtil.mContext.resources.displayMetrics
-        screenWidth = displayMetrics?.widthPixels
-        screenHeight = displayMetrics?.heightPixels
-        screenDpi = displayMetrics?.densityDpi
+   fun getScreenWidth(): Int {
+        return screenWidth
     }
+
+   fun getScreenHeight(): Int {
+        return screenHeight
+    }
+
 
 
     //UI图的大小
     private val STANDARD_WIDTH = 1080
     private val STANDARD_HEIGHT = 1920
-
-    /**
-     * 获取屏幕宽度
-     */
-    fun getScreenWidth(): Int {
-        return screenWidth!!
-    }
-
-    /**
-     * 获取屏幕高度
-     */
-    fun getScreenHeight(): Int {
-        return screenHeight!!
-    }
-
-
+    
     /**
      * 传入UI图中问题的高度，单位像素
      * @param size
@@ -127,7 +124,7 @@ object DisplayUtil {
      * @return
      */
     fun getRealWidth(px: Int, parentWidth: Float): Int {
-        return (px / parentWidth * getScreenWidth()!!).toInt()
+        return (px / parentWidth * screenWidth).toInt()
     }
 
     /**
@@ -149,16 +146,6 @@ object DisplayUtil {
      * @return
      */
     fun getRealHeight(px: Int, parentHeight: Float): Int {
-        return (px / parentHeight * getScreenHeight()!!).toInt()
-    }
-
-    /**
-     * dip转px
-     * @param dipValue
-     * @return int
-     */
-    fun dip2px(dipValue: Float): Int {
-        val scale = displayMetrics?.density
-        return (dipValue * scale!! + 0.5f).toInt()
+        return (px / parentHeight * screenHeight).toInt()
     }
 }

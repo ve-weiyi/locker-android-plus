@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- 自定义主题颜色 -->
-
     <!--    colorPrimary：您的应用的主要品牌颜色，主要用于主题-->
-    <color name="colorPrimary">@color/blue</color>
+    <color name="brand">@color/colorPrimary</color>
+    <!--    colorPrimary：您的应用的主要品牌颜色，主要用于主题-->
+    <color name="colorPrimary">#14e0d0</color>
     <!--    顶部标题栏颜色-->
     <color name="colorPrimaryDark">@color/deep_blue</color>
     <!--    图标填充颜色  check box按钮填充色-->
@@ -19,7 +20,7 @@
     <!--    colorOnSecondary：用于显示在辅助颜色顶部的元素的颜色-->
     <color name="colorOnSecondary">@color/white</color>
     <!--    colorError：用于错误的颜色（通常为红色阴影）-->
-    <color name="colorError">#F44336</color>
+    <color name="colorError">#ff5454</color>
     <!--    colorOnError：用于显示在错误颜色顶部的元素的颜色-->
     <color name="colorOnError">#FFFFFF</color>
     <!--    colorSurface：(夜间模式标题栏颜色)用于表面的颜色（即材料“纸张”）-->

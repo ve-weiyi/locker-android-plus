@@ -22,7 +22,7 @@ import com.ve.module.android.ui.page.activity.CommonActivity
 import com.ve.module.android.ui.viewmodel.SearchViewModel
 import com.ve.lib.common.base.view.list.BaseVmListActivity
 import com.ve.lib.common.utils.data.ColorUtil
-import com.ve.lib.common.utils.ui.DisplayManager
+import com.ve.lib.common.utils.ui.DisplayUtil
 import com.ve.lib.common.utils.system.LogUtil
 import com.zhy.view.flowlayout.FlowLayout
 import com.zhy.view.flowlayout.TagAdapter
@@ -160,7 +160,7 @@ class SearchActivity: BaseVmListActivity<ActivitySearchBinding, SearchViewModel,
                     R.layout.flow_layout_tv,
                     mBinding.hotSearchFlowLayout, false
                 ) as TextView
-                val padding: Int = DisplayManager.dip2px(10F)
+                val padding: Int = DisplayUtil.dip2px(10F)
                 tv.setPadding(padding, padding, padding, padding)
                 tv.text = Hotkey?.name
                 tv.setTextColor(ColorUtil.randomColor())

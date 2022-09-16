@@ -13,10 +13,9 @@ import com.ve.lib.common.R
 import com.ve.module.android.ui.page.activity.ArticleDetailActivity
 import com.ve.module.android.ui.page.activity.CommonActivity
 import com.ve.module.android.ui.page.fragment.AboutFragment
-import com.ve.lib.common.widget.preference.IconPreference
+import com.ve.lib.view.widget.preference.IconPreference
 import com.ve.lib.common.event.RefreshHomeEvent
 import com.ve.lib.common.ext.showSnackMsg
-import com.ve.lib.common.ext.showToast
 import com.ve.lib.common.utils.system.CacheDataUtil
 import org.greenrobot.eventbus.EventBus
 

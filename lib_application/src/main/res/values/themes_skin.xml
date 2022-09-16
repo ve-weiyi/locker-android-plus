@@ -1,41 +1,94 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="BaseAppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@android:color/black</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/brand</item>
+        <item name="colorSecondaryVariant">@android:color/black</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. 状态栏颜色-->
+        <item name="android:statusBarColor">@color/transparent</item>
+        <!-- Customize your theme here. -->
+        <!--    colorError：用于错误的颜色（通常为红色阴影）-->
+        <item name="colorError">@color/colorError</item>
+    </style>
+
+    <style name="BaseAppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
 
     <attr name="skin_main_bg" format="reference" />
     <!--format指定为reference的时候，需要输入索引，比如@color/white，但是format指定为color时，可以直接设置16进制的int作为颜色-->
-    <attr name="skin_color_main" format="color|reference" />
-    <attr name="skin_color_sub" format="color|reference" />
+    <attr name="sc_brand" format="color|reference" />
+    <attr name="sc_sub" format="color|reference" />
     <!--    背景色-->
-    <attr name="skin_color_background" format="color|reference" />
+    <attr name="sc_background" format="color|reference" />
     <!--    显示在背景色上-->
-    <attr name="skin_color_windows" format="color|reference" />
+    <attr name="sc_windows" format="color|reference" />
     <!--    文字颜色-->
-    <attr name="skin_color_text" format="color|reference" />
-    <attr name="skin_color_text_sub" format="color|reference" />
+    <attr name="sc_text" format="color|reference" />
+    <attr name="sc_text_light" format="color|reference" />
 
-    <attr name="skin_color_btn" format="color|reference" />
-    <attr name="skin_color_mask" format="color|reference" />
-    <attr name="skin_color_divider" format="color|reference" />
-
+    <attr name="sc_btn" format="color|reference" />
+    <attr name="sc_mask" format="color|reference" />
+    <attr name="sc_divider" format="color|reference" />
+    <!--default-->
+    <style name="AppTheme" parent="BaseAppTheme.NoActionBar">
+        <item name="sc_brand">@color/colorPrimary</item>
+        <item name="sc_sub">@color/colorPrimary</item>
+        <item name="sc_background">@color/grey100</item>
+        <item name="sc_windows">@color/grey150</item>
+        <item name="sc_text">@color/black</item>
+        <item name="sc_btn">@color/orange</item>
+        <item name="sc_mask">@color/light_white</item>
+        <item name="sc_divider">@color/grey400</item>
+    </style>
 
     <style name="AppTheme.Night">
-        <item name="skin_color_main">#35464e</item>
-        <item name="skin_color_sub">@color/light_blue</item>
-        <item name="skin_color_background">@color/grey800</item>
-        <item name="skin_color_windows">@color/grey900</item>
-        <item name="skin_color_text">@color/grey200</item>
-        <item name="skin_color_btn">@color/pink</item>
-        <item name="skin_color_mask">@color/black</item>
-        <item name="skin_color_divider">@color/grey600</item>
+        <item name="sc_brand">#35464e</item>
+        <item name="sc_sub">@color/cyan_light</item>
+        <item name="sc_background">@color/grey800</item>
+        <item name="sc_windows">@color/grey900</item>
+        <item name="sc_text">@color/grey200</item>
+        <item name="sc_btn">@color/pink</item>
+        <item name="sc_mask">@color/black</item>
+        <item name="sc_divider">@color/grey600</item>
     </style>
 
     <style name="AppTheme.Sakura">
-        <item name="skin_color_main">@color/pink</item>
-        <item name="skin_color_sub">@color/light_blue</item>
-        <item name="skin_color_background">@color/grey800</item>
-        <item name="skin_color_windows">@color/grey900</item>
-        <item name="skin_color_text">@color/grey200</item>
-        <item name="skin_color_btn">@color/pink</item>
-        <item name="skin_color_mask">@color/black</item>
-        <item name="skin_color_divider">@color/grey600</item>
+        <item name="sc_brand">@color/pink</item>
+        <item name="sc_sub">@color/cyan_light</item>
+        <item name="sc_background">@color/grey800</item>
+        <item name="sc_windows">@color/grey900</item>
+        <item name="sc_text">@color/grey200</item>
+        <item name="sc_btn">@color/pink</item>
+        <item name="sc_mask">@color/black</item>
+        <item name="sc_divider">@color/grey600</item>
+    </style>
+
+
+
+
+
+    <style name="SplashTheme" parent="AppTheme">
+        <!--将顶部状态栏设置为透明，并将界面内容布局上边界上提至状态栏顶部-->
+        <item name="android:windowTranslucentStatus">true</item>
+        <!--如果有底部虚拟导航栏，则将底部虚拟导航栏设置为透明，并将界面内容布局下边界下沉至虚拟导航栏底部-->
+        <item name="android:windowTranslucentNavigation">true</item>
+        <!-- 给window窗口设置背景图,启动白屏是因为application oncreate 浪费太多时间-->
+        <item name="android:windowBackground">@drawable/common_app_background</item>
+        <!-- 背景图全屏显示-->
+        <item name="android:windowFullscreen">true</item>
+        <!-- 设置状态栏为白色的，状态栏文字为黑的 -->
+        <item name="android:statusBarColor">@color/white</item>
+        <!-- 设置导航栏透明-->
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:fitsSystemWindows">true</item>
     </style>
 </resources>

@@ -14,7 +14,7 @@
     <!--    colorOnSecondary：用于显示在辅助颜色顶部的元素的颜色-->
     <color name="colorOnSecondary">@color/white</color>
     <!--    colorError：用于错误的颜色（通常为红色阴影）-->
-    <color name="colorError">#F44336</color>
+    <color name="colorError">#ff5454</color>
     <!--    colorOnError：用于显示在错误颜色顶部的元素的颜色-->
     <color name="colorOnError">#FFFFFF</color>
     <!--    colorSurface：(夜间模式标题栏颜色)用于表面的颜色（即材料“纸张”）-->

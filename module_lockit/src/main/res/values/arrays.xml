@@ -35,13 +35,13 @@
         <item>2</item>
     </string-array>
 
-    <!-- Controls the initial visibility of the view.  -->
+    <!-- Controls the initial visibility of the com.ve.lib.view.  -->
     <attr name="messageVisibility">
         <!-- Visible on screen; the default value. -->
         <enum name="visible" value="0" />
         <!-- Not displayed, but taken into account during layout (space is left for it). -->
         <enum name="invisible" value="1" />
-        <!-- Completely hidden, as if the view had not been added. -->
+        <!-- Completely hidden, as if the com.ve.lib.view had not been added. -->
         <enum name="gone" value="2" />
     </attr>
 

@@ -77,7 +77,7 @@ abstract class BaseActivity<VB : ViewBinding> : SkinCompatActivity(), IView<VB> 
             val v = currentFocus
             // 如果不是落在EditText区域，则需要关闭输入法
             if (KeyBoardUtil.isHideKeyboard(v, ev)) {
-                KeyBoardUtil.hideKeyBoard(this, v)
+                KeyBoardUtil.closeSoftKeyboard(v!!)
             }
         }
         return super.dispatchTouchEvent(ev)

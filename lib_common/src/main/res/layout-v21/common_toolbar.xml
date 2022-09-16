@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/common_header_layout"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:layoutDirection="locale">
+
+    <ImageView
+        android:id="@+id/common_header_start_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:contentDescription="@null"
+        android:padding="8dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_icon_outline_left1" />
+
+    <LinearLayout
+        android:id="@+id/llContent"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="16dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/common_header_end_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="@null"
+                android:scaleType="centerInside"
+                tools:src="@drawable/edit_icon_tips"
+                android:visibility="visible" />
+
+            <View
+                android:id="@+id/view_end_red_dot"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_gravity="left"
+                android:layout_marginStart="24dp"
+                android:background="@drawable/common_red_dot"
+                android:visibility="gone"
+                tools:visibility="visible"
+                />
+
+
+        </FrameLayout>
+
+        <TextView
+            tools:text="skip"
+            android:id="@+id/common_header_end_tv"
+            style="@style/t16_l"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:ellipsize="end"
+            android:textColor="@color/colorPrimary"
+            android:gravity="center_vertical|end"
+            android:lines="1"
+            android:maxWidth="80dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/llContent"
+            app:layout_constraintStart_toEndOf="@+id/common_header_start_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_centerInParent="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/llContent"
+        app:layout_constraintStart_toEndOf="@id/common_header_start_icon"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/header_title"
+            style="@style/t16_b"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:lines="1"
+            tools:text="Title" />
+
+        <ImageView
+            android:id="@+id/header_tips"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/edit_icon_tips"
+            android:layout_marginStart="5dp"
+            android:visibility="gone"
+            />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

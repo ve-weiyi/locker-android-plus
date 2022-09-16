@@ -19,7 +19,7 @@ import com.ve.module.lockit.respository.database.entity.PrivacyFriend
  */
 class PrivacyInfoFriendsAdapter :
     BaseSectionQuickAdapter<PrivacyFriend, BaseViewHolder>(
-        com.ve.lib.common.R.layout.item_sticky_header, R.layout.lockit_item_privacy_friends
+        com.ve.lib.view.R.layout.item_sticky_header, R.layout.lockit_item_privacy_friends
     ), LoadMoreModule, DraggableModule, UpFetchModule {
 
     var isCheckMode = false
@@ -82,8 +82,8 @@ class PrivacyInfoFriendsAdapter :
 
     override fun convertHeader(helper: BaseViewHolder, item: PrivacyFriend) {
         LogUtil.msg("head " + item.headerName)
-        helper.setText(com.ve.lib.common.R.id.tv_header, item.headerName)
-        helper.setEnabled(com.ve.lib.common.R.id.tv_header, false)
+        helper.setText(com.ve.lib.view.R.id.tv_header, item.headerName)
+        helper.setEnabled(com.ve.lib.view.R.id.tv_header, false)
     }
 
     fun getSelectData(): MutableList<PrivacyFriend> {

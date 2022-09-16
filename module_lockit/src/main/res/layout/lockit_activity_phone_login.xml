@@ -202,7 +202,7 @@
                     android:layout_marginBottom="20dp"
                     android:text=' 13333' />
 
-            <com.ve.lib.common.widget.view.CaptchaView
+            <com.ve.lib.view.widget.view.CaptchaView
                     android:id="@+id/captcha_view"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

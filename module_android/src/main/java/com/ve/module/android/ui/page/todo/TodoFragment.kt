@@ -11,7 +11,7 @@ import com.ve.module.android.repository.bean.TodoResponseBody
 import com.ve.module.android.ui.adapter.TodoAdapter
 import com.ve.module.android.ui.page.activity.CommonActivity
 import com.ve.module.android.ui.viewmodel.TodoViewModel
-import com.ve.lib.common.widget.layout.SwipeItemLayout
+import com.ve.lib.view.widget.layout.SwipeItemLayout
 import com.ve.lib.application.BaseApplication
 import com.ve.lib.common.base.view.list.BaseVmListFragment
 import com.ve.module.android.event.RefreshTodoEvent
