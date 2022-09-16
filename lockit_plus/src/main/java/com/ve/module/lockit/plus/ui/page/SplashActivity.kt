@@ -3,20 +3,22 @@ package com.ve.module.lockit.plus.ui.page
 import android.os.Bundle
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
+import com.gyf.immersionbar.ImmersionBar
 import com.ve.lib.common.base.view.vm.BaseActivity
 import com.ve.lib.common.router.ARouterPath
 import com.ve.module.lockit.plus.databinding.ActivitySplashBinding
 
 
 class SplashActivity : BaseActivity<ActivitySplashBinding>(){
+
     override fun attachViewBinding(): ActivitySplashBinding {
         return ActivitySplashBinding.inflate(layoutInflater)
     }
 
     private var alphaAnimation: AlphaAnimation? = null
     override fun initialize(saveInstanceState: Bundle?) {
-
-        alphaAnimation = AlphaAnimation(0.1F, 1.0F)
+        ImmersionBar.with(this).init()
+        alphaAnimation = AlphaAnimation(0.3F, 1.0F)
         alphaAnimation?.run {
             //持续时间
             duration = 1000
@@ -25,22 +27,24 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(){
                 }
 
                 override fun onAnimationEnd(p0: Animation?) {
-//                    jumpToMain()
-                    jumpToLogin()
+                    jumpToMain()
+//                    jumpToLogin()
                 }
 
                 override fun onAnimationStart(p0: Animation?) {
                 }
             })
         }
-        mBinding.layoutSplash.startAnimation(alphaAnimation)
+        mBinding.ivLogo.startAnimation(alphaAnimation)
     }
 
     fun jumpToMain() {
         startActivity(ARouterPath.MAIN_HOME)
+        finish()
     }
 
     fun jumpToLogin() {
         startActivity(ARouterPath.LOGIN)
+        finish()
     }
 }

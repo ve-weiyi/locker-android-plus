@@ -6,6 +6,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.util.TypedValue
+import android.view.View
 import android.view.WindowManager
 import androidx.annotation.ColorInt
 import androidx.appcompat.app.AppCompatActivity
@@ -19,7 +20,7 @@ open class SkinCompatActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         SkinFactory.setTheme(this)
         super.onCreate(savedInstanceState)
-        mThemeColor= getThemeColor(this,R.attr.sc_brand,Color.CYAN)
+        mThemeColor= getThemeColor(this,R.attr.sc_background,Color.CYAN)
         //沉浸式状态栏
         setColor(this, mThemeColor, 0)
     }
@@ -70,6 +71,7 @@ open class SkinCompatActivity: AppCompatActivity() {
         activity.window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
         activity.window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
         activity.window.statusBarColor = calculateStatusColor(color, statusBarAlpha)
+        activity.window.decorView.systemUiVisibility= View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
     }
 
     /**

@@ -2,13 +2,16 @@ package com.ve.lib.common.base.view.vm
 
 import android.content.Context
 import android.content.pm.ActivityInfo
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.MotionEvent
+import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.widget.Toolbar
 import androidx.viewbinding.ViewBinding
 import com.ve.lib.application.skin.SkinCompatActivity
+import com.ve.lib.common.databinding.CommonToolbarBinding
 import com.ve.lib.common.utils.system.LogUtil
 import com.ve.lib.common.utils.system.KeyBoardUtil
 import com.ve.lib.common.utils.view.ToastUtil
@@ -24,7 +27,6 @@ abstract class BaseActivity<VB : ViewBinding> : SkinCompatActivity(), IView<VB> 
     lateinit var mBinding: VB
     protected open var mViewName: String? = this.javaClass.simpleName
 
-
     protected val mContext: Context by lazy { this }
 
     /**
@@ -39,18 +41,44 @@ abstract class BaseActivity<VB : ViewBinding> : SkinCompatActivity(), IView<VB> 
         super.onCreate(savedInstanceState)
         LogUtil.d("$mViewName onCreate")
         /**************************/
+        mBinding = attachViewBinding()
+        setContentView(mBinding.root)
+
         //设置窗口软键盘的交互模式,保证用户要进行输入的输入框肯定在用户的视野范围里面
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
         //由系统选择显示方向，不同的设备可能会有所不同。（旋转手机，界面会跟着旋转）
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
 
-        mBinding = attachViewBinding()
-        setContentView(mBinding.root)
 
         if (useEventBus()) {
             EventBus.getDefault().register(this)
         }
         initialize(savedInstanceState)
+    }
+
+    open fun initHeaderInfo(
+        headerInfoLayout: CommonToolbarBinding,
+        title: String = "",
+        endTitle: String? = null,
+        endIcon: Drawable? = null,
+        enableBack:Boolean =true
+    ) {
+        setSupportActionBar(headerInfoLayout.toolbar)
+
+        headerInfoLayout.tvTitle.text = title
+
+        headerInfoLayout.ivStartIcon.visibility=if(enableBack)View.VISIBLE else View.GONE
+        headerInfoLayout.ivStartIcon.setOnClickListener {
+            finish()
+        }
+
+        if (endTitle != null) {
+            headerInfoLayout.tvEndTitle.text = endTitle
+        }
+
+        if (endIcon != null) {
+            headerInfoLayout.ivEndIcon.setImageDrawable(endIcon)
+        }
     }
 
 
@@ -144,12 +172,12 @@ abstract class BaseActivity<VB : ViewBinding> : SkinCompatActivity(), IView<VB> 
      * 当activity有可能被系统回收的情况下，而且是在onStop()之前。注意是有可能，
      * 如果是已经确定会被销毁，比如用户按下了返回键，或者调用了finish()方法销毁activity，则onSaveInstanceState不会被调用。
      *
-        总结下，onSaveInstanceState(Bundle outState)会在以下情况被调用：
-        1、当用户按下HOME键时。
-        2、从最近应用中选择运行其他的程序时。
-        3、按下电源按键（关闭屏幕显示）时。
-        4、从当前activity启动一个新的activity时。
-        5、屏幕方向切换时(无论竖屏切横屏还是横屏切竖屏都会调用)。
+    总结下，onSaveInstanceState(Bundle outState)会在以下情况被调用：
+    1、当用户按下HOME键时。
+    2、从最近应用中选择运行其他的程序时。
+    3、按下电源按键（关闭屏幕显示）时。
+    4、从当前activity启动一个新的activity时。
+    5、屏幕方向切换时(无论竖屏切横屏还是横屏切竖屏都会调用)。
     在前4种情况下，当前activity的生命周期为：
     onPause -> onSaveInstanceState -> onStop。
     比如第5种情况屏幕方向切换时，activity生命周期如下：
