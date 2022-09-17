@@ -42,6 +42,6 @@
             android:focusable="true"
             android:clickable="true"
             android:textColor="@color/light_blue"
-            android:background="@drawable/bg_white_rect_8dp" />
+            android:background="@drawable/bg_background_rect" />
 
 </RelativeLayout>

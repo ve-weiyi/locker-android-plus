@@ -9,7 +9,7 @@
 
     <include
             android:id="@+id/ext_toolbar"
-            layout="@layout/waz_toolbar_search" />
+            layout="@layout/toolbar_search" />
 
     <androidx.core.widget.NestedScrollView
             android:id="@+id/search_scroll_view"

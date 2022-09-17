@@ -7,11 +7,11 @@
 
     <include
             android:id="@+id/ext_toolbar"
-            layout="@layout/waz_toolbar" />
+            layout="@layout/toolbar" />
 
     <include
             android:id="@+id/container"
-            layout="@layout/waz_container" />
+            layout="@layout/container" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"

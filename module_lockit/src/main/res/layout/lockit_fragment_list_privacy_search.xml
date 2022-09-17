@@ -27,7 +27,7 @@
                     android:layout_gravity="center_vertical"
                     android:paddingStart="15dp"
                     android:layout_weight="7"
-                    android:background="@drawable/bg_grey_rect_search"
+                    android:background="@drawable/bg_grey_rect"
                     android:gravity="bottom"
                     android:imeOptions="actionSearch"
                     android:inputType="text"

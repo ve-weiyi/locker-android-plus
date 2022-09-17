@@ -8,7 +8,7 @@
 
     <include
             android:id="@+id/ext_toolbar"
-            layout="@layout/waz_toolbar" />
+            layout="@layout/toolbar" />
 
     <include
             android:id="@+id/fragment_refresh_layout"

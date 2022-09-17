@@ -8,7 +8,7 @@
 
     <include
             android:id="@+id/ext_toolbar"
-            layout="@layout/waz_toolbar" />
+            layout="@layout/toolbar" />
 
     <FrameLayout
         android:id="@+id/common_frame_layout"

@@ -9,7 +9,7 @@
 
     <include
             android:id="@+id/toolbar"
-            layout="@layout/waz_toolbar" />
+            layout="@layout/toolbar" />
 
     <FrameLayout
         android:id="@+id/web_content"

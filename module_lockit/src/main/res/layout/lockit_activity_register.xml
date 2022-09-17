@@ -14,7 +14,7 @@
 
         <include
                 android:id="@+id/ext_toolbar"
-                layout="@layout/lockit_toolbar" />
+                layout="@layout/toolbar" />
 
         <LinearLayout
                 android:layout_width="match_parent"
@@ -183,7 +183,7 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="@dimen/dp_20"
                     android:layout_marginBottom="@dimen/dp_20"
-                    android:background="@drawable/bg_btn_login"
+                    android:background="@drawable/bg_brand_rect"
                     android:gravity="center"
 
                     android:text="@string/register"

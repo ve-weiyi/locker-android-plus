@@ -11,7 +11,7 @@
 
         <include
                 android:id="@+id/ext_toolbar"
-                layout="@layout/lockit_toolbar"
+                layout="@layout/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 

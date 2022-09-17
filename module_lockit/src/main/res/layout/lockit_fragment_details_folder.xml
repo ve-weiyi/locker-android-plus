@@ -221,7 +221,7 @@
                 android:layout_marginLeft="@dimen/dp_24"
                 android:layout_marginRight="@dimen/dp_24"
                 android:layout_marginBottom="@dimen/dp_24"
-                android:background="@drawable/bg_btn_login"
+                android:background="@drawable/bg_brand_rect"
                 android:gravity="center"
                 android:padding="@dimen/dp_12"
                 android:text="@string/save"

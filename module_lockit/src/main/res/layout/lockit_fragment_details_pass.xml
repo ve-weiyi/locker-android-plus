@@ -27,7 +27,7 @@
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/bg_white_rect_8dp"
+                    android:background="@drawable/bg_background_rect"
                     android:gravity="center"
                     android:orientation="vertical">
 
@@ -116,7 +116,7 @@
                     android:layout_marginHorizontal="@dimen/dimen_giant"
                     android:layout_marginVertical="@dimen/dimen_mid"
 
-                    android:background="@drawable/bg_white_rect_8dp"
+                    android:background="@drawable/bg_background_rect"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
@@ -199,7 +199,7 @@
                     android:layout_marginHorizontal="@dimen/dimen_giant"
                     android:layout_marginVertical="@dimen/dimen_mid"
 
-                    android:background="@drawable/bg_white_rect_8dp"
+                    android:background="@drawable/bg_background_rect"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
@@ -304,7 +304,7 @@
                     android:layout_marginHorizontal="@dimen/dimen_giant"
                     android:layout_marginVertical="@dimen/dimen_mid"
 
-                    android:background="@drawable/bg_white_rect_8dp"
+                    android:background="@drawable/bg_background_rect"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
@@ -334,7 +334,7 @@
                     android:layout_marginHorizontal="@dimen/dimen_giant"
                     android:layout_marginVertical="@dimen/dimen_mid"
 
-                    android:background="@drawable/bg_white_rect_8dp"
+                    android:background="@drawable/bg_background_rect"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">

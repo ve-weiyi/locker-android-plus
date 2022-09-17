@@ -15,11 +15,11 @@
 
         <include
                 android:id="@+id/ext_toolbar"
-                layout="@layout/waz_toolbar" />
+                layout="@layout/toolbar" />
 
         <include
                 android:id="@+id/ext_container"
-                layout="@layout/waz_container"
+                layout="@layout/container"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="?attr/actionBarSize"

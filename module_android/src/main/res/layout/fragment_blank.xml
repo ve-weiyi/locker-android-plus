@@ -17,7 +17,7 @@
         <include
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
                 android:id="@+id/ext_toolbar"
-                layout="@layout/waz_toolbar"
+                layout="@layout/toolbar"
                 />
         <com.google.android.material.tabs.TabLayout
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
