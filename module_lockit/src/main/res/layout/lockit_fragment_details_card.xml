@@ -132,7 +132,7 @@
 
                             android:id="@+id/tv_label_1"
                             style="@style/tv_content_primary"
-                            android:textColor="@color/color_text_normal"
+                            android:textColor="@color/color_text_dark"
                             android:text="卡号" />
 
 
@@ -167,7 +167,7 @@
 
                             android:id="@+id/tv_label_2"
                             style="@style/tv_content_primary"
-                            android:textColor="@color/color_text_normal"
+                            android:textColor="@color/color_text_dark"
                             android:text="密码" />
 
 
@@ -213,7 +213,7 @@
                             android:layout_centerVertical="true"
                             android:layout_alignParentStart="true"
                             style="@style/tv_content_primary"
-                            android:textColor="@color/color_text_normal"
+                            android:textColor="@color/color_text_dark"
                             android:text="持有人" />
 
 
@@ -256,7 +256,7 @@
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintBottom_toBottomOf="parent"
                             style="@style/tv_content_primary"
-                            android:textColor="@color/color_text_normal"
+                            android:textColor="@color/color_text_dark"
                             android:text="发行机构" />
 
                     <TextView
@@ -271,7 +271,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="lockit"
-                            android:textColor="@color/color_text_gray"
+                            android:textColor="@color/color_text_normal"
                             style="@style/tv_content_primary"
                             />
 

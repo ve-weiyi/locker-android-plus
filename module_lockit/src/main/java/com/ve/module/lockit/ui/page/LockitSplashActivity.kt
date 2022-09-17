@@ -31,11 +31,6 @@ class LockitSplashActivity : AppCompatActivity(){
     }
 
      fun initialize(saveInstanceState: Bundle?) {
-        val biometric= SpUtil.getBoolean(LockitSpKey.SP_KEY_BIOMETRICS)
-        var isLogin= SpUtil.getValue(LockitSpKey.SP_KEY_LOGIN_STATE_KEY,false)
-        val data= SpUtil.getValue(LockitSpKey.SP_KEY_LOGIN_DATA_KEY,LoginDTO::class.java)
-
-        LogUtil.msg(data.toString())
         alphaAnimation = AlphaAnimation(0.1F, 1.0F)
         alphaAnimation?.run {
             //持续时间

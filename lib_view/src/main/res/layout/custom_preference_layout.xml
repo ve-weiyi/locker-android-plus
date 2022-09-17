@@ -24,7 +24,7 @@
                 android:fadingEdge="horizontal"
                 android:singleLine="true"
                 android:textAppearance="?android:attr/textAppearanceListItem"
-                android:textColor="@color/color_text_normal"
+                android:textColor="@color/color_text_dark"
                 tools:text="设置"
                 />
 
@@ -35,7 +35,7 @@
                 android:layout_alignLeft="@android:id/title"
                 android:layout_below="@android:id/title"
                 android:maxLines="4"
-                android:textColor="@color/color_text_gray_light"
+                android:textColor="@color/color_text_gray"
                 tools:text="床前明月光"
                 android:textAppearance="?android:attr/textAppearanceSmall" />
     </RelativeLayout>

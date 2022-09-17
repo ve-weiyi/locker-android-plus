@@ -52,7 +52,7 @@
                         android:gravity="center"
                         android:text="@string/lockit_app_name"
                         android:textAllCaps="false"
-                        android:textColor="@color/color_text_normal"
+                        android:textColor="@color/color_text_dark"
                         android:textSize="@dimen/sp_16" />
 
                 <TextView
@@ -60,7 +60,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="@dimen/dp_16"
-                        android:textColor="@color/color_text_normal"
+                        android:textColor="@color/color_text_dark"
                         tools:text="@string/lockit_about_content" />
 
                 <LinearLayout
@@ -74,7 +74,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/dp_20"
-                            android:textColor="@color/color_text_normal"
+                            android:textColor="@color/color_text_dark"
                             android:textSize="@dimen/dp_18"
                             tools:text="微博:---" />
 
@@ -82,7 +82,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/dp_20"
-                            android:textColor="@color/color_text_normal"
+                            android:textColor="@color/color_text_dark"
                             android:textSize="@dimen/dp_18"
                             tools:text="邮箱:---" />
 
@@ -90,7 +90,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/dp_20"
-                            android:textColor="@color/color_text_normal"
+                            android:textColor="@color/color_text_dark"
                             android:textSize="@dimen/dp_18"
                             tools:text="开发者地址:https://ve77.cn/blog" />
 
@@ -98,7 +98,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="@dimen/dp_20"
-                            android:textColor="@color/color_text_normal"
+                            android:textColor="@color/color_text_dark"
                             android:textSize="@dimen/dp_18"
                             tools:text="开源地址:---" />
                 </LinearLayout>
@@ -114,6 +114,6 @@
                 android:gravity="center"
                 android:layout_centerInParent="true"
                 android:layout_alignParentBottom="true"
-                android:textColor="@color/color_text_normal"
+                android:textColor="@color/color_text_dark"
                 tools:text="服务条款" />
     </RelativeLayout>

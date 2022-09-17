@@ -46,9 +46,9 @@ class PrivacyInfoFriendsAdapter :
             setText(R.id.tv_friends_birthday,age.toString()+"岁")
 
             if(item.sex==0){
-                setBackgroundResource(R.id.iv_friends_sex,R.drawable.ic_female )
+                setBackgroundResource(R.id.iv_friends_sex, com.ve.lib.application.R.drawable.ic_sex_female_24dp )
             }else{
-                setBackgroundResource(R.id.iv_friends_sex,R.drawable.ic_male)
+                setBackgroundResource(R.id.iv_friends_sex, com.ve.lib.application.R.drawable.ic_sex_male_24dp)
             }
         }
 

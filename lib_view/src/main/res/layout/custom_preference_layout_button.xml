@@ -23,7 +23,7 @@
                 android:fadingEdge="horizontal"
                 android:singleLine="true"
                 android:textAppearance="?android:attr/textAppearanceListItem"
-                android:textColor="@color/color_text_normal"
+                android:textColor="@color/color_text_dark"
                 tools:text="设置" />
 
         <LinearLayout
@@ -40,7 +40,7 @@
                     android:ellipsize="end"
                     android:maxLines="1"
                     android:layout_toStartOf="@android:id/icon"
-                    android:textColor="@color/color_text_gray_light"
+                    android:textColor="@color/color_text_gray"
                     tools:text="@string/text_content"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 

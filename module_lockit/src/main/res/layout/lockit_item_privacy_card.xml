@@ -64,7 +64,7 @@
             style="@style/tv_content_second"
             tools:text="可转账、查询账单"
             android:textColor="@color/color_text_light"
-            android:drawableTint="@color/windowColorBackground"
+            android:drawableTint="@color/windowBackground"
             app:drawableStartCompat="@drawable/ic_id_card" />
 
     <TextView
@@ -79,7 +79,7 @@
             style="@style/tv_content_second"
             tools:text="1234****6321"
             android:textColor="@color/color_text_light"
-            android:drawableTint="@color/windowColorBackground"
+            android:drawableTint="@color/windowBackground"
             app:drawableStartCompat="@drawable/ic_id_card" />
 
 

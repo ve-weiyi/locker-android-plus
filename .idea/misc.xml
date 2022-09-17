@@ -162,6 +162,7 @@
         <entry key="lib_common/src/main/res/layout-v21/layout_upgrade_dialog.xml" value="0.2125" />
         <entry key="lib_common/src/main/res/layout/activity_container.xml" value="0.16458333333333333" />
         <entry key="lib_common/src/main/res/layout/agentweb_error_page.xml" value="0.2125" />
+        <entry key="lib_common/src/main/res/layout/common_toolbar.xml" value="0.23796296296296296" />
         <entry key="lib_common/src/main/res/layout/container.xml" value="0.16458333333333333" />
         <entry key="lib_common/src/main/res/layout/toolbar.xml" value="0.2995819091796875" />
         <entry key="lib_common/src/main/res/layout/toolbar_search.xml" value="0.215625" />
@@ -192,6 +193,7 @@
         <entry key="module_android/src/main/res/drawable/ic_like_normal.xml" value="0.1505" />
         <entry key="module_android/src/main/res/drawable/ic_search_white_24dp.xml" value="0.1505" />
         <entry key="module_android/src/main/res/layout-v21/item_collect_list.xml" value="0.1" />
+        <entry key="module_android/src/main/res/layout/activity_login.xml" value="0.1828125" />
         <entry key="module_android/src/main/res/layout/activity_rank.xml" value="0.2125" />
         <entry key="module_android/src/main/res/layout/activity_todo.xml" value="0.2125" />
         <entry key="module_android/src/main/res/layout/fragment_about.xml" value="0.2125" />

@@ -31,7 +31,7 @@
 
     <!--浅色-->
     <color name="light_white">#EEEEEE</color>
-    <color name="light_red">#f44336</color>
+    <color name="light_red">#ff5454</color>
     <color name="light_green">#8bc34a</color>
     <color name="light_blue">#59C6F6</color>
     <color name="light_gray">#FFECECEC</color>

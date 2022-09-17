@@ -26,7 +26,7 @@
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/color_text_normal"
+                    android:textColor="@color/color_text_dark"
                     android:textSize="25sp"
                     android:textStyle="bold"
                     android:text="登录lockit" />

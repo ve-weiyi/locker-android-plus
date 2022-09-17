@@ -24,7 +24,7 @@ object SpUtil {
      * var sp= PreferenceManager.getDefaultSharedPreferences(AppContextUtil.mContext)
      */
     private var sp: SharedPreferences =
-        AppContextUtil.getApp().getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE)
+        AppContextUtil.mContext.getSharedPreferences(FILE_NAME, Context.MODE_PRIVATE)
     private var editor: SharedPreferences.Editor = sp.edit()
 
     init {

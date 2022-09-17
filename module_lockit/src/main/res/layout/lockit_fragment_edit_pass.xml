@@ -39,7 +39,7 @@
 
                             android:id="@+id/tv_label_1"
                             style="@style/tv_content_primary"
-                            android:textColor="@color/color_text_normal"
+                            android:textColor="@color/color_text_dark"
                             android:text="用户名" />
 
 
@@ -70,7 +70,7 @@
 
                             android:id="@+id/tv_label_2"
                             style="@style/tv_content_primary"
-                            android:textColor="@color/color_text_normal"
+                            android:textColor="@color/color_text_dark"
                             android:text="密码" />
 
 
@@ -101,7 +101,7 @@
 
                             android:id="@+id/tv_label_url"
                             style="@style/tv_content_primary"
-                            android:textColor="@color/color_text_normal"
+                            android:textColor="@color/color_text_dark"
                             android:text="网站" />
 
 
@@ -132,7 +132,7 @@
                             app:layout_constraintTop_toTopOf="parent"
                             app:layout_constraintBottom_toBottomOf="parent"
                             style="@style/tv_content_primary"
-                            android:textColor="@color/color_text_normal"
+                            android:textColor="@color/color_text_dark"
                             android:text="所属app" />
 
                     <TextView
@@ -224,7 +224,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
-                        android:textColor="@color/color_text_normal"
+                        android:textColor="@color/color_text_dark"
                         android:text="文件夹" />
 
                 <androidx.appcompat.widget.AppCompatSpinner
@@ -251,7 +251,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
-                        android:textColor="@color/color_text_normal"
+                        android:textColor="@color/color_text_dark"
                         android:text="标签" />
 
                 <ImageView

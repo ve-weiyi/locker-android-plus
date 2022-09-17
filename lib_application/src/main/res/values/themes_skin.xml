@@ -1,14 +1,14 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="BaseAppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="BaseAppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar.Bridge">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryVariant">@android:color/black</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
         <!-- Status bar color. 状态栏颜色-->
         <item name="android:statusBarColor">@color/transparent</item>
         <!-- Customize your theme here. -->
@@ -21,11 +21,10 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-
     <attr name="skin_main_bg" format="reference" />
     <!--format指定为reference的时候，需要输入索引，比如@color/white，但是format指定为color时，可以直接设置16进制的int作为颜色-->
     <attr name="sc_brand" format="color|reference" />
-    <attr name="sc_sub" format="color|reference" />
+    <attr name="sc_secondary" format="color|reference" />
     <!--    背景色-->
     <attr name="sc_background" format="color|reference" />
     <!--    显示在背景色上-->
@@ -33,25 +32,29 @@
     <!--    文字颜色-->
     <attr name="sc_text" format="color|reference" />
     <attr name="sc_text_light" format="color|reference" />
+    <attr name="sc_sub_text" format="color|reference" />
+    <attr name="sc_sub_text_light" format="color|reference" />
 
     <attr name="sc_btn" format="color|reference" />
     <attr name="sc_mask" format="color|reference" />
     <attr name="sc_divider" format="color|reference" />
+
     <!--default-->
     <style name="AppTheme" parent="BaseAppTheme.NoActionBar">
         <item name="sc_brand">@color/colorPrimary</item>
-        <item name="sc_sub">@color/colorPrimary</item>
-        <item name="sc_background">@color/grey100</item>
-        <item name="sc_windows">@color/grey150</item>
-        <item name="sc_text">@color/black</item>
+        <item name="sc_secondary">@color/colorSecondary</item>
+        <item name="sc_background">@color/colorBackground</item>
+        <item name="sc_windows">@color/windowBackground</item>
+        <item name="sc_text">@color/textColorPrimary</item>
+        <item name="sc_sub_text">@color/color_gray</item>
         <item name="sc_btn">@color/orange</item>
-        <item name="sc_mask">@color/light_white</item>
-        <item name="sc_divider">@color/grey400</item>
+        <item name="sc_mask">@color/mask_color</item>
+        <item name="sc_divider">@color/line_divider</item>
     </style>
 
     <style name="AppTheme.Night">
         <item name="sc_brand">#35464e</item>
-        <item name="sc_sub">@color/cyan_light</item>
+        <item name="sc_secondary">@color/cyan_light</item>
         <item name="sc_background">@color/grey800</item>
         <item name="sc_windows">@color/grey900</item>
         <item name="sc_text">@color/grey200</item>
@@ -62,7 +65,7 @@
 
     <style name="AppTheme.Sakura">
         <item name="sc_brand">@color/pink</item>
-        <item name="sc_sub">@color/cyan_light</item>
+        <item name="sc_secondary">@color/cyan_light</item>
         <item name="sc_background">@color/grey800</item>
         <item name="sc_windows">@color/grey900</item>
         <item name="sc_text">@color/grey200</item>

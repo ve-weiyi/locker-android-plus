@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/share_article_title"
-            android:textColor="@color/color_text_normal"
+            android:textColor="@color/color_text_dark"
             android:textSize="@dimen/sp_14" />
 
         <EditText
@@ -29,7 +29,7 @@
             android:hint="@string/share_article_title_tip"
             android:inputType="text|textMultiLine"
             android:minHeight="@dimen/dp_60"
-            android:textColor="@color/color_text_normal"
+            android:textColor="@color/color_text_dark"
             android:textSize="@dimen/sp_16" />
 
 
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dp_10"
             android:text="@string/share_article_link"
-            android:textColor="@color/color_text_normal"
+            android:textColor="@color/color_text_dark"
             android:textSize="@dimen/sp_14" />
 
         <EditText
@@ -51,7 +51,7 @@
             android:hint="@string/share_article_link_tip"
             android:inputType="text|textMultiLine"
             android:minHeight="@dimen/dp_60"
-            android:textColor="@color/color_text_normal"
+            android:textColor="@color/color_text_dark"
             android:textSize="@dimen/sp_16" />
 
     </LinearLayout>
@@ -65,7 +65,7 @@
         android:paddingStart="@dimen/dp_16"
         android:paddingEnd="@dimen/dp_20"
         android:text="@string/share_article_tip"
-        android:textColor="@color/color_text_gray_light"
+        android:textColor="@color/color_text_gray"
         android:textSize="@dimen/sp_12" />
 
 </RelativeLayout>

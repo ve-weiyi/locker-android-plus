@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_gravity="bottom"
-                android:background="@color/windowColorBackground"
+                android:background="@color/windowBackground"
                 app:elevation="@dimen/dp_16"
                 app:itemIconTint="@drawable/state_nav_item_color"
                 app:itemTextColor="@drawable/state_nav_item_color"
@@ -56,7 +56,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            android:background="@color/windowColorBackground"
+            android:background="@color/windowBackground"
             android:fitsSystemWindows="true"
             tools:layout="@layout/lockit_fragment_me" />
 

@@ -3,27 +3,16 @@
 
     <!--    colorPrimary：您的应用的主要品牌颜色，主要用于主题-->
     <color name="colorPrimary">#35464e</color>
-    <!--    colorPrimaryVariant：您的主要品牌颜色的较浅/较暗变体，在主题中很少使用-->
     <color name="colorPrimaryVariant">#512DA8</color>
-    <!--colorOnPrimary：用于显示在原色上方的元素的颜色（例如，文本和图标，根据可访问性，通常为白色或半透明的黑色）-->
     <color name="colorOnPrimary">@color/white</color>
-    <!--    colorSecondary：您应用程式的次要品牌色彩，主要用于强调某些需要突出的小部件-->
     <color name="colorSecondary">@color/light_blue</color>
-    <!--    colorSecondaryVariant：您的次要品牌颜色的较浅/较深变体，在主题中很少使用-->
     <color name="colorSecondaryVariant">#0039CB</color>
-    <!--    colorOnSecondary：用于显示在辅助颜色顶部的元素的颜色-->
     <color name="colorOnSecondary">@color/white</color>
-    <!--    colorError：用于错误的颜色（通常为红色阴影）-->
     <color name="colorError">#ff5454</color>
-    <!--    colorOnError：用于显示在错误颜色顶部的元素的颜色-->
     <color name="colorOnError">#FFFFFF</color>
-    <!--    colorSurface：(夜间模式标题栏颜色)用于表面的颜色（即材料“纸张”）-->
     <color name="colorSurface">@color/black</color>
-    <!--    colorOnSurface：用于显示在表面颜色顶部的元素的颜色-->
     <color name="colorOnSurface">#212121</color>
-    <!--    android:colorBackground：所有其他屏幕内容后面的颜色(view默认背景颜色)-->
     <color name="colorBackground">@color/grey800</color>
-    <!--    colorOnBackground：用于显示在背景色上方的元素的颜色()-->
     <color name="colorOnBackground">@color/grey900</color>
 
 
@@ -31,18 +20,17 @@
     <color name="colorAccent">@color/blue</color>
     <color name="textColorPrimary">#616161</color>
     <!--    比背景色深一点-->
-    <color name="windowColorBackground">@color/grey900</color>
+    <color name="windowBackground">@color/grey900</color>
+    <color name="windowBackgroundDark">@color/grey700</color>
 
-    <color name="line_divider">@color/grey700</color>
-    <color name="list_divider">@color/grey600</color>
+    <color name="line_divider">@color/grey600</color>
     <color name="mask_color">#111111</color>
 
     <color name="color_text_light">#111111</color>
-    <color name="color_text_normal">@color/grey200</color>
-    <color name="color_text_gray">@color/grey500</color>
-    <color name="color_text_gray_light">@color/grey500</color>
-    <color name="color_flow_layout_bg">@color/grey700</color>
+    <color name="color_text_dark">@color/grey200</color>
+    <color name="color_text_normal">@color/grey500</color>
+    <color name="color_text_gray">@color/grey400</color>
 
-    <color name="bg_day_night_gray">@color/grey400</color>
+
 
 </resources>

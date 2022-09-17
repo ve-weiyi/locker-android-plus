@@ -7,6 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:fitsSystemWindows="true"
+    android:background="?sc_background"
     android:theme="@style/AppTheme.AppBarOverlay"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     app:elevation="0dp">
@@ -16,6 +17,8 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:layout_scrollFlags="scroll|enterAlways"
+        tools:title="标题"
+        app:titleTextColor="?sc_brand"
         app:popupTheme="@style/AppTheme.PopupOverlay"
         app:titleTextAppearance="@style/Toolbar.TitleText">
 
@@ -24,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:textColor="@color/white"
+            android:textColor="?sc_brand"
             android:textSize="@dimen/sp_18"
             android:textStyle="bold"
             android:ellipsize="marquee"

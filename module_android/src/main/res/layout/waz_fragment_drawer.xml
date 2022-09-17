@@ -129,8 +129,8 @@
             android:layout_gravity="start"
             android:background="@color/colorBackground"
             android:fitsSystemWindows="true"
-            app:itemIconTint="@color/color_text_normal"
-            app:itemTextColor="@color/color_text_normal"
+            app:itemIconTint="@color/color_text_dark"
+            app:itemTextColor="@color/color_text_dark"
             app:menu="@menu/nav_menu"
             />
 
