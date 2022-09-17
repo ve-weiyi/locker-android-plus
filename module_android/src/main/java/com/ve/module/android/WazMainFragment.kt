@@ -81,9 +81,6 @@ class WazMainFragment : BaseVmPager2Fragment<WazFragmentMainBinding, WanAndroidV
                 EventBus.getDefault().post(DrawerOpenEvent(mViewName!!))
             }
         }
-        mBinding.toolbar.navigationIcon = resources.getDrawable(R.mipmap.ic_default_avatar);
-
-
 
         setHasOptionsMenu(true)
         mTabLayout=mBinding.tabContainer.tabLayout

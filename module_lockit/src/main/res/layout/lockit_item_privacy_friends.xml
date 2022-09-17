@@ -64,7 +64,7 @@
                 android:layout_marginStart="@dimen/dp_2"
                 android:layout_width="@dimen/dp_16"
                 android:layout_height="@dimen/dp_16"
-                android:background="@drawable/ic_male" />
+                android:background="@drawable/shape_male" />
 
         <TextView
                 app:layout_constraintStart_toStartOf="@id/tv_friends_nickname"

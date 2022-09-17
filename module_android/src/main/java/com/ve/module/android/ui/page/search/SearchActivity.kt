@@ -139,7 +139,7 @@ class SearchActivity: BaseVmListActivity<ActivitySearchBinding, SearchViewModel,
             val field = searchView.javaClass.getDeclaredField("mGoButton")
             field.isAccessible = true
             val mGoButton = field.get(searchView) as ImageView
-            mGoButton.setImageResource(R.drawable.ic_search_white_24dp)
+            mGoButton.setImageResource(com.ve.lib.application.R.drawable.ic_baseline_search_gray_24)
         } catch (e: Exception) {
             e.printStackTrace()
         }

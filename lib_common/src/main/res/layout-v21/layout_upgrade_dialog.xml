@@ -18,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scaleType="fitXY"
-            android:src="@mipmap/ic_upgrade_top" />
+            android:src="@drawable/ic_upgrade_top" />
 
         <LinearLayout
             android:id="@+id/ll_content"

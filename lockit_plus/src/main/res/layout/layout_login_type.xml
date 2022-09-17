@@ -14,38 +14,38 @@
                 android:id="@+id/ib_phone"
                 style="@style/ib_login_way"
                 android:contentDescription="@string/add_record_ib_desc_tele"
-                android:src="@drawable/ic_phone_round_28" />
+                android:src="@drawable/ic_platform_phone_28" />
 
         <ImageView
                 android:id="@+id/ib_qq"
                 style="@style/ib_login_way"
                 android:contentDescription="@string/add_record_ib_desc_qq"
-                android:src="@drawable/ic_qq_28" />
+                android:src="@drawable/ic_platform_qq_28" />
 
         <ImageView
                 android:id="@+id/ib_wechat"
                 style="@style/ib_login_way"
                 android:contentDescription="@string/add_record_ib_desc_wechat"
-                android:src="@drawable/ic_wechat_28" />
+                android:src="@drawable/ic_platform_wechat_28" />
 
         <ImageView
                 android:id="@+id/ib_email"
                 style="@style/ib_login_way"
                 android:contentDescription="@string/add_record_ib_desc_email"
-                android:src="@drawable/ic_email_round_28" />
+                android:src="@drawable/ic_platform_email_28" />
 
         <ImageView
                 android:id="@+id/ib_weibo"
                 style="@style/ib_login_way"
                 android:background="@null"
                 android:contentDescription="@string/add_record_ib_desc_weibo"
-                android:src="@drawable/ic_weibo_28" />
+                android:src="@drawable/ic_platform_weibo_28" />
 
         <ImageView
                 android:id="@+id/ib_alipay"
                 style="@style/ib_login_way"
                 android:contentDescription="@string/add_record_ib_desc_alipay"
-                android:src="@drawable/ic_alipay_28" />
+                android:src="@drawable/ic_platform_alipay_28" />
 
         <ImageView
                 android:id="@+id/ib_addLoginWay"

@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.ve.lib.common.base.view.container.BaseContainerActivity
 import com.ve.lib.common.base.view.vm.BaseActivity
 import com.ve.lib.common.utils.system.LogUtil
 import com.ve.module.lockit.R
@@ -53,9 +52,9 @@ class LockitSettingActivity: BaseActivity<LockitActivitySettingBinding>(){
 
     override fun initialize(saveInstanceState: Bundle?) {
         //从bundle中取出数据
-        fragmentTitle  = intent.getStringExtra(BaseContainerActivity.FRAGMENT_TITLE_KEY) ?: "设置"
-        fragmentClassName = intent.getStringExtra(BaseContainerActivity.FRAGMENT_CLASS_NAME_KEY) ?: ""
-        fragmentArguments = intent.getBundleExtra(BaseContainerActivity.FRAGMENT_ARGUMENTS_KEY) ?: Bundle()
+        fragmentTitle  = intent.getStringExtra(FRAGMENT_TITLE_KEY) ?: "设置"
+        fragmentClassName = intent.getStringExtra(FRAGMENT_CLASS_NAME_KEY) ?: ""
+        fragmentArguments = intent.getBundleExtra(FRAGMENT_ARGUMENTS_KEY) ?: Bundle()
 
         LogUtil.msg(fragmentTitle+fragmentClassName+fragmentArguments)
         initToolbar(mBinding.extToolbar.toolbar,fragmentTitle)

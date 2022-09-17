@@ -5,7 +5,9 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
+import com.ve.lib.common.R
 import com.ve.lib.common.base.view.vm.BaseActivity
+import com.ve.lib.common.databinding.ActivityContainerBinding
 import com.ve.lib.common.utils.system.LogUtil
 
 /**
@@ -13,7 +15,11 @@ import com.ve.lib.common.utils.system.LogUtil
  * @Date 2022/4/13
  * @Description  current project lockit-android
  */
-abstract class BaseContainerActivity<VB : ViewBinding> : BaseActivity<VB>() {
+class ContainerActivity : BaseActivity<ActivityContainerBinding>() {
+
+    override fun attachViewBinding(): ActivityContainerBinding {
+        return ActivityContainerBinding.inflate(layoutInflater)
+    }
 
     companion object {
 
@@ -32,10 +38,8 @@ abstract class BaseContainerActivity<VB : ViewBinding> : BaseActivity<VB>() {
                 putExtra(FRAGMENT_TITLE_KEY, title)
                 putExtra(FRAGMENT_CLASS_NAME_KEY, fragmentClassName)
                 putExtra(FRAGMENT_ARGUMENTS_KEY,fragmentBundle)
-                //或者
-//                if (fragmentBundle != null) {
-//                    putExtras(fragmentBundle)
-//                }
+                //启动模式
+//                flags=Intent.FLAG_ACTIVITY_SINGLE_TOP
                 context.startActivity(this)
             }
         }
@@ -52,6 +56,9 @@ abstract class BaseContainerActivity<VB : ViewBinding> : BaseActivity<VB>() {
         fragmentClassName = intent.getStringExtra(FRAGMENT_CLASS_NAME_KEY) ?: ""
         fragmentArguments = intent.getBundleExtra(FRAGMENT_ARGUMENTS_KEY) ?: Bundle()
 
+        LogUtil.msg(fragmentTitle+fragmentClassName+fragmentArguments)
+        initToolbar(mBinding.extToolbar.toolbar,fragmentTitle)
+
         if(fragmentClassName.isEmpty()){
             LogUtil.msg("fragment class name is null")
         }else{
@@ -65,14 +72,13 @@ abstract class BaseContainerActivity<VB : ViewBinding> : BaseActivity<VB>() {
      * add方法的第二个参数tag不要直接传入TestFragment::class.java.simpleName，
      * 因为一旦Fragment发生了混淆，可能会出现多个添加的不同Fragment的tag相同的情况，影响后续使用
      */
-    protected fun transactionFragment(fragmentClassName: String, bundle: Bundle? = null) {
+    private fun transactionFragment(fragmentClassName: String, bundle: Bundle? = null) {
         val fragmentClass = Class.forName(fragmentClassName) //完整类名
         val fragment = fragmentClass.newInstance() as Fragment
         fragment.arguments = bundle
         supportFragmentManager.beginTransaction()
-            .replace(attachContainerResId(), fragment, fragmentTitle)
+            .replace(R.id.ext_container, fragment, fragmentTitle)
             .commit()
     }
 
-    abstract fun attachContainerResId(): Int
 }
