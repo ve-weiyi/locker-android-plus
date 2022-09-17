@@ -168,11 +168,23 @@
         <entry key="lib_common/src/main/res/menu/menu_content.xml" value="0.2125" />
         <entry key="lib_view/src/main/res/layout/dialog_y_loading.xml" value="0.1828125" />
         <entry key="lib_view/src/main/res/layout/layout_upgrade_dialog.xml" value="0.215625" />
+        <entry key="lockit_plus/src/main/res/drawable/ic_bulb_img_home_bulb1.xml" value="0.1505" />
+        <entry key="lockit_plus/src/main/res/drawable/ic_bulb_img_home_bulb2.xml" value="0.1505" />
+        <entry key="lockit_plus/src/main/res/drawable/ic_icon_home_help_deleteall.xml" value="0.1505" />
+        <entry key="lockit_plus/src/main/res/drawable/ic_icon_outline_360rotate.xml" value="0.1505" />
+        <entry key="lockit_plus/src/main/res/drawable/ic_icon_outline_add2.xml" value="0.1505" />
+        <entry key="lockit_plus/src/main/res/drawable/ic_icon_outline_thumbs_down.xml" value="0.1505" />
+        <entry key="lockit_plus/src/main/res/drawable/ic_icon_outline_thumbs_up.xml" value="0.1505" />
+        <entry key="lockit_plus/src/main/res/drawable/ic_icon_outline_up3.xml" value="0.1505" />
+        <entry key="lockit_plus/src/main/res/drawable/ic_icon_solid_voice_next.xml" value="0.1505" />
+        <entry key="lockit_plus/src/main/res/drawable/ic_icon_solid_volume_mute.xml" value="0.1505" />
+        <entry key="lockit_plus/src/main/res/drawable/ic_icon_solid_widget.xml" value="0.1505" />
         <entry key="lockit_plus/src/main/res/layout/activity_login.xml" value="0.215625" />
         <entry key="lockit_plus/src/main/res/layout/activity_main.xml" value="0.1828125" />
         <entry key="lockit_plus/src/main/res/layout/activity_splash.xml" value="0.1828125" />
         <entry key="lockit_plus/src/main/res/layout/fragment_drawer.xml" value="0.215625" />
         <entry key="lockit_plus/src/main/res/layout/layout_login_type.xml" value="0.1828125" />
+        <entry key="lockit_plus/src/main/res/layout/layout_userinfo.xml" value="0.2125" />
         <entry key="lockit_plus/src/main/res/layout/layout_userinfo_null.xml" value="0.1828125" />
         <entry key="module_android/src/main/res/drawable/ic_launcher_background.xml" value="0.1505" />
         <entry key="module_android/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1505" />
