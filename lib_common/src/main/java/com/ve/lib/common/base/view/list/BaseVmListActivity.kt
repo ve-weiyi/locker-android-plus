@@ -45,13 +45,13 @@ import com.ve.lib.common.base.view.vm.BaseVmActivity
     override fun getRefreshData() {
         showMsg("刷新成功")
         mCurrentPage = 0
-        initWebData()
+        loadWebData()
     }
 
     override fun getMoreData() {
         showMsg("加载成功")
         mCurrentPage ++
-        initWebData()
+        loadWebData()
     }
 
     override fun showAtAdapter(isSetNewData: Boolean, data: MutableList<LD>?) {

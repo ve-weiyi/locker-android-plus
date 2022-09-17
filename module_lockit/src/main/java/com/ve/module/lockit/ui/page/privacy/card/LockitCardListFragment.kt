@@ -53,8 +53,8 @@ class LockitCardListFragment :
         mFolderList = LitePal.findAll(PrivacyFolder::class.java)
     }
 
-    override fun initWebData() {
-        super.initWebData()
+    override fun loadWebData() {
+        super.loadWebData()
         mViewModel.getPrivacyCardList()
     }
 

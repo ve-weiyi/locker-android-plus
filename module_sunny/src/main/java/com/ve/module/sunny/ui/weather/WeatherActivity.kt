@@ -63,7 +63,7 @@ class WeatherActivity : BaseVmActivity<ActivityWeatherBinding, WeatherViewModel>
         lifeIndexBinding = mBinding.weatherLifeIndex
     }
 
-    override fun initWebData() {
+    override fun loadWebData() {
 
         if (mViewModel.locationLng.isEmpty()) {
             mViewModel.locationLng = intent.getStringExtra(SunnyConstant.KEY_LOCATION_LNG) ?: ""

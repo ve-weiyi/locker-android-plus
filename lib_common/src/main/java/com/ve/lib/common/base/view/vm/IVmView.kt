@@ -26,33 +26,28 @@ interface IVmView<VM : BaseViewModel> : INetView {
     fun attachViewModelClass(): Class<VM>
 
     /**
-     * step 1.初始化 liveData.observe.订阅
+     * step 1.初始化view相关数据, 需要在view初始化之前完成
      */
-    fun initObserver()
+    fun initData()
 
     /**
-     * step 2.初始化view相关数据, 需要在view初始化之前完成
-     */
-    fun initData(){
-
-    }
-
-    /**
-     * step 3.初始化view相关, 绑定数据在此时完成
-     */
-    /**
-     * step 2.初始化view相关数据,初始化view相关, 绑定数据在此时完成
+     * step 2.初始化view相关, 绑定数据在此时完成
      */
     fun initView()
 
     /**
-     * step 4.填充界面时所需要的data,从仓库获取或者网络抓取
-     */
-    fun initWebData()
-
-    /**
-     * step 5.设置监听器
+     * step 3.设置监听器
      */
     fun initListener()
+
+    /**
+     * step 4.初始化 liveData.observe.订阅
+     */
+    fun initObserver()
+
+    /**
+     * step 5.填充界面时所需要的data,从仓库获取或者网络抓取
+     */
+    fun loadWebData()
 
 }

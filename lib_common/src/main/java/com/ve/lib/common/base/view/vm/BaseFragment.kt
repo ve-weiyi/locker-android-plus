@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
+import com.ve.lib.common.lifecycle.EventBusLifecycle
 import com.ve.lib.common.utils.system.LogUtil
 import org.greenrobot.eventbus.EventBus
 
@@ -20,8 +21,6 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() , IView<VB> {
     protected open val mBinding get() = binding!!
     protected open var mViewName: String  = this.javaClass.simpleName
     protected val mContext:Context by lazy { requireActivity() }
-    protected var mEventBus:EventBus?=null
-
 
     /**
      * 是否使用 EventBus
@@ -45,11 +44,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() , IView<VB> {
         LogUtil.d("$mViewName onCreate")
         //注册订阅者
         if (useEventBus()) {
-            if (!EventBus.getDefault().isRegistered(this))//加上判断,注销订阅者
-            {
-                mEventBus=EventBus.getDefault()
-                EventBus.getDefault().register(this)
-            }
+            lifecycle.addObserver(EventBusLifecycle.instant)
         }
         initialize(savedInstanceState)
     }
@@ -66,8 +61,6 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() , IView<VB> {
 
     override fun onDestroy() {
         super.onDestroy()
-        if (EventBus.getDefault().isRegistered(this))//加上判断,注销订阅者
-            EventBus.getDefault().unregister(this)
         binding = null
         LogUtil.d(javaClass.simpleName+" onDestroy")
     }

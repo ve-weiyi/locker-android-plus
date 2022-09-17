@@ -49,7 +49,7 @@ open class WeChatFragment : BaseVmPager2Fragment<FragmentWechatBinding, WeChatVi
     /**
      * step 3.初始化data相关
      */
-    override fun initWebData() {
+    override fun loadWebData() {
         mViewModel.getWxChapters()
     }
 

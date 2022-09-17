@@ -12,6 +12,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.viewbinding.ViewBinding
 import com.ve.lib.application.skin.SkinCompatActivity
 import com.ve.lib.common.databinding.CommonToolbarBinding
+import com.ve.lib.common.lifecycle.EventBusLifecycle
 import com.ve.lib.common.utils.system.LogUtil
 import com.ve.lib.common.utils.system.KeyBoardUtil
 import com.ve.lib.common.utils.view.ToastUtil
@@ -25,6 +26,7 @@ import org.greenrobot.eventbus.EventBus
 abstract class BaseActivity<VB : ViewBinding> : SkinCompatActivity(), IView<VB> {
 
     lateinit var mBinding: VB
+
     protected open var mViewName: String? = this.javaClass.simpleName
 
     protected val mContext: Context by lazy { this }
@@ -51,8 +53,9 @@ abstract class BaseActivity<VB : ViewBinding> : SkinCompatActivity(), IView<VB> 
 
 
         if (useEventBus()) {
-            EventBus.getDefault().register(this)
+            lifecycle.addObserver(EventBusLifecycle.instant)
         }
+
         initialize(savedInstanceState)
     }
 
@@ -63,8 +66,7 @@ abstract class BaseActivity<VB : ViewBinding> : SkinCompatActivity(), IView<VB> 
         endIcon: Drawable? = null,
         enableBack:Boolean =true
     ) {
-        setSupportActionBar(headerInfoLayout.toolbar)
-
+        initToolbar(headerInfoLayout.toolbar,title,enableBack)
         headerInfoLayout.tvTitle.text = title
 
         headerInfoLayout.ivStartIcon.visibility=if(enableBack)View.VISIBLE else View.GONE
@@ -113,8 +115,8 @@ abstract class BaseActivity<VB : ViewBinding> : SkinCompatActivity(), IView<VB> 
 
     /**
      * 返回键选中处理
+     * fragment 需要在onCreate设置 setHasOptionsMenu()
      */
-    //需要在onCreate设置 setHasOptionsMenu()
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home -> {
@@ -160,10 +162,6 @@ abstract class BaseActivity<VB : ViewBinding> : SkinCompatActivity(), IView<VB> 
      */
     override fun onDestroy() {
         super.onDestroy()
-        if (useEventBus()) {
-            EventBus.getDefault().unregister(this)
-        }
-
         //ColorUtil.fixInputMethodManagerLeak(this)
         ToastUtil.release()
     }

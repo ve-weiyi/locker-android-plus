@@ -44,7 +44,7 @@ class SearchListFragment : BaseVmListFragment<FragmentSearchListBinding, SearchV
     }
 
     private var mKey = ""
-    override fun initWebData() {
+    override fun loadWebData() {
         mViewModel.getSearchList(mCurrentPage, mKey)
     }
 

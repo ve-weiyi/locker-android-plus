@@ -55,7 +55,7 @@ class ProjectListFragment : BaseVmListFragment<FragmentRefreshLayoutBinding, Pro
     }
 
 
-    override fun initWebData() {
+    override fun loadWebData() {
         mViewModel.getProjectChild(mCurrentPage, mCid)
     }
     override fun getRefreshData() {

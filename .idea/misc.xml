@@ -56,12 +56,15 @@
         <entry key="lib_auth/src/main/res/layout/normal_authorization_layout.xml" value="0.25729166666666664" />
         <entry key="lib_auth/src/main/res/layout/privacy_dialog.xml" value="0.1814814814814815" />
         <entry key="lib_common/src/main/res/layout-v21/common_toolbar.xml" value="0.2203125" />
+        <entry key="lockit_plus/src/main/res/layout/activity_login.xml" value="0.215625" />
         <entry key="lockit_plus/src/main/res/layout/activity_main.xml" value="0.1828125" />
         <entry key="lockit_plus/src/main/res/layout/activity_splash.xml" value="0.1828125" />
+        <entry key="lockit_plus/src/main/res/layout/fragment_drawer.xml" value="0.215625" />
         <entry key="lockit_plus/src/main/res/layout/layout_login_type.xml" value="0.1828125" />
         <entry key="lockit_plus/src/main/res/layout/layout_userinfo_null.xml" value="0.1828125" />
         <entry key="module_android/src/main/res/layout-v21/item_collect_list.xml" value="0.1" />
         <entry key="module_android/src/main/res/layout/waz_fragment_drawer.xml" value="0.35104166666666664" />
+        <entry key="module_android/src/main/res/layout/waz_fragment_main.xml" value="0.215625" />
         <entry key="module_lockit/src/main/res/drawable-v21/bg_dialog_sheet_header.xml" value="0.1" />
         <entry key="module_lockit/src/main/res/drawable-v21/ic_baseline_account_box_24.xml" value="0.1" />
         <entry key="module_lockit/src/main/res/drawable-v21/ic_baseline_cloud_24.xml" value="0.1" />

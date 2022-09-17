@@ -121,8 +121,8 @@ class HomeFragment() : BaseVmListFragment<FragmentHomeBinding, HomeViewModel, Ar
         mListAdapter.addHeaderView(mHomeHeaderView.root)
     }
 
-    override fun initWebData() {
-        super.initWebData()
+    override fun loadWebData() {
+        super.loadWebData()
         //初始化页面之前先获取横幅和文章
         mViewModel.getTopAndHomeArticles()
         mViewModel.getBanner()

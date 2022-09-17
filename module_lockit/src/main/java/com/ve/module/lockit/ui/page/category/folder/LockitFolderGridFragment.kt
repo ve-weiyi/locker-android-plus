@@ -47,7 +47,7 @@ class LockitFolderGridFragment :
         }
     }
 
-    override fun initWebData() {
+    override fun loadWebData() {
         mViewModel.folderList()
     }
 

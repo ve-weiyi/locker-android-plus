@@ -31,7 +31,7 @@ class RankActivity: BaseVmListActivity<ActivityRankBinding, RankViewModel, CoinI
         }
     }
 
-    override fun initWebData() {
+    override fun loadWebData() {
         showLoading()
         mPageSize=30
         mViewModel.getUserScore(mCurrentPage)

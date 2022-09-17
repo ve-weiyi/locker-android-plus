@@ -1,4 +1,4 @@
-package com.ve.lib.common.base.adapter
+package com.ve.lib.common.base.adapter.recycle
 
 import android.content.Context
 import android.view.LayoutInflater

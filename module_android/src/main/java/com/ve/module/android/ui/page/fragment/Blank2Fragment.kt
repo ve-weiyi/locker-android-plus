@@ -74,8 +74,8 @@ class Blank2Fragment : BaseVmPager2Fragment<FragmentBlank2Binding, HomeViewModel
 
     }
 
-    override fun initWebData() {
-        super.initWebData()
+    override fun loadWebData() {
+        super.loadWebData()
         mViewModel.getBanner()
         mViewModel.getProject()
     }

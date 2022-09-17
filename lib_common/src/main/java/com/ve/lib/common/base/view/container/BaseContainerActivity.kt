@@ -59,6 +59,12 @@ abstract class BaseContainerActivity<VB : ViewBinding> : BaseActivity<VB>() {
         }
     }
 
+    /**
+     * PS:
+     * 通过FragmentManager的FragmentTransaction添加Fragment时，
+     * add方法的第二个参数tag不要直接传入TestFragment::class.java.simpleName，
+     * 因为一旦Fragment发生了混淆，可能会出现多个添加的不同Fragment的tag相同的情况，影响后续使用
+     */
     protected fun transactionFragment(fragmentClassName: String, bundle: Bundle? = null) {
         val fragmentClass = Class.forName(fragmentClassName) //完整类名
         val fragment = fragmentClass.newInstance() as Fragment

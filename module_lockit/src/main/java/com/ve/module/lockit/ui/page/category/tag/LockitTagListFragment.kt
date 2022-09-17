@@ -44,7 +44,7 @@ class LockitTagListFragment :
         mSwipeRefreshLayout = mBinding.swipeRefreshLayout
     }
 
-    override fun initWebData() {
+    override fun loadWebData() {
         mViewModel.getTagList()
     }
 

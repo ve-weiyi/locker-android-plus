@@ -46,7 +46,7 @@ class ShareActivity : BaseVmListActivity<ActivityShareBinding, ShareViewModel, A
 
 
 
-    override fun initWebData() {
+    override fun loadWebData() {
         mViewModel.getUserShare(mCurrentPage)
     }
 

@@ -58,7 +58,7 @@ class CollectFragment : BaseVmListFragment<FragmentCollectBinding, WanAndroidVie
         }
     }
 
-    override fun initWebData() {
+    override fun loadWebData() {
         mViewModel.getCollectList(mCurrentPage)
     }
 

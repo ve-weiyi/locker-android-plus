@@ -43,7 +43,7 @@ class ScoreActivity : BaseVmListActivity<ActivityScoreBinding, ScoreViewModel, U
 
     }
 
-    override fun initWebData() {
+    override fun loadWebData() {
         showLoading()
         mCurrentPage = 1
         mViewModel.getUserScore(mCurrentPage)

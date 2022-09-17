@@ -55,7 +55,7 @@ class AddTodoFragment : BaseVmFragment<FragmentAddTodoBinding, TodoViewModel>(){
      */
     private var mPriority = 0
 
-    override fun initWebData() {
+    override fun loadWebData() {
 
     }
 

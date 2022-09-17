@@ -63,7 +63,7 @@ class NavigationFragment : BaseVmFragment<FragmentNavigationBinding, TreeViewMod
         mLayoutStatusView = mBinding.multipleStatusView
     }
 
-    override fun initWebData() {
+    override fun loadWebData() {
         mViewModel.getNavi()
     }
 

@@ -111,8 +111,8 @@ class DrawerFragment : BaseVmFragment<WazFragmentDrawerBinding, WanAndroidViewMo
         mBinding.drawerNavView.setNavigationItemSelectedListener(onDrawerNavigationItemSelectedListener)
     }
 
-    override fun initWebData() {
-        super.initWebData()
+    override fun loadWebData() {
+        super.loadWebData()
         mViewModel.getUserInfo()
     }
     override fun initObserver() {

@@ -102,7 +102,7 @@ class WazMainFragment : BaseVmPager2Fragment<WazFragmentMainBinding, WanAndroidV
     }
 
 
-    override fun initWebData() {
+    override fun loadWebData() {
         mViewModel.getBanner()
     }
 

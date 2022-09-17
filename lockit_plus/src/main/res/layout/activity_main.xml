@@ -6,27 +6,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:openDrawer="end"
-    >
+    tools:openDrawer="end">
     <!--    tools:openDrawer="start"-->
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <include
-            android:id="@+id/ext_toolbar"
-            layout="@layout/common_toolbar"
-            />
 
         <include
             android:id="@+id/ext_container"
             layout="@layout/container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="?attr/actionBarSize"
-            android:layout_marginTop="?attr/actionBarSize"
-            />
+            android:layout_height="match_parent" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigation"
@@ -42,8 +34,7 @@
             app:elevation="@dimen/dp_16"
             app:itemIconTint="@drawable/state_nav_item_color"
             app:itemTextColor="@drawable/state_nav_item_color"
-            app:layout_behavior="com.ve.lib.view.widget.behavior.BottomNavigationBehavior"
-            />
+            app:layout_behavior="com.ve.lib.view.widget.behavior.BottomNavigationBehavior" />
 
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>

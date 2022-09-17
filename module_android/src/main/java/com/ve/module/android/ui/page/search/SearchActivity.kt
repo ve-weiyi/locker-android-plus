@@ -76,7 +76,7 @@ class SearchActivity: BaseVmListActivity<ActivitySearchBinding, SearchViewModel,
         }
     }
 
-    override fun initWebData() {
+    override fun loadWebData() {
         mViewModel.getHotkey()
         mViewModel.getHistorySearch()
     }

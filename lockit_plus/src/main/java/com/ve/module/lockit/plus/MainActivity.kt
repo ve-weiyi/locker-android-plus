@@ -1,15 +1,11 @@
 package com.ve.module.lockit.plus
 
 import android.os.Bundle
-import androidx.annotation.DrawableRes
 import androidx.core.view.get
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.google.android.material.navigation.NavigationBarView
-import com.ve.lib.common.base.model.FragmentPage
 import com.ve.lib.common.base.view.vm.BaseActivity
-
 import com.ve.lib.common.router.ARouterPath
 import com.ve.module.android.WazMainFragment
 import com.ve.module.lockit.plus.bean.NavigationMenuItem
@@ -23,16 +19,18 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         return ActivityMainBinding.inflate(layoutInflater)
     }
 
-    override fun initialize(saveInstanceState: Bundle?) {
-        initHeaderInfo(mBinding.extToolbar, "首页", enableBack = false)
-        initNavigation()
-    }
     private var mIndex = 0
     private lateinit var mFragmentPageList: MutableList<NavigationMenuItem>
 
+    override fun initialize(saveInstanceState: Bundle?) {
+        initFragment()
+        initNavigation()
+        showFragment(mIndex)
+    }
+
     private fun initFragment() {
         var pageCount = 0
-        mFragmentPageList =  mutableListOf(
+        mFragmentPageList = mutableListOf(
             NavigationMenuItem(
                 0, R.id.home_navigation_0, pageCount++, "首页",
                 R.drawable.ic_icon_outline_custome,
@@ -41,7 +39,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             NavigationMenuItem(
                 0, R.id.home_navigation_1, pageCount++, "卡片",
                 R.drawable.ic_icon_outline_about,
-                DrawerFragment::class.java
+                WazMainFragment::class.java
             ),
             NavigationMenuItem(
                 0, R.id.home_navigation_2, pageCount++, "好友",
@@ -62,7 +60,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     fun initNavigation() {
-        initFragment()
         mBinding.bottomNavigation.apply {
             menu.clear()
             //导航栏文字可见;原因：底部导航栏的类别多于三个了，多于三个就会不显示，解决方案如下~~~
@@ -82,9 +79,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
      */
     private val onNavigationItemSelectedListener =
         NavigationBarView.OnItemSelectedListener { item ->
-            mFragmentPageList.forEach {
-                it->
-                if(item.itemId==it.menuId){
+            mFragmentPageList.forEach { it ->
+                if (item.itemId == it.menuId) {
                     showFragment(it.menuIndex)
                     return@OnItemSelectedListener true
                 }
@@ -125,7 +121,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             transaction.show(mFragmentPage.mFragment!!)
         }
 
-        mBinding.extToolbar.tvTitle.text= mFragmentPage.menuTitle
         transaction.commit()
     }
 }

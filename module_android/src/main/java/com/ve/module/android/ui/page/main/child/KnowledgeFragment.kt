@@ -75,7 +75,7 @@ class KnowledgeFragment : BaseVmListFragment<FragmentRefreshLayoutBinding, Knowl
 
     private var mCid: Int = 0
 
-    override fun initWebData() {
+    override fun loadWebData() {
         mCid = arguments?.getInt(CID)!!
         mViewModel.getTreeChild(mCurrentPage, mCid)
     }

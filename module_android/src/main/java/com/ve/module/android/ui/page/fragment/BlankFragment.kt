@@ -99,8 +99,8 @@ class BlankFragment : BaseVmListFragment<FragmentBlankBinding, HomeViewModel, Ar
     }
 
 
-    override fun initWebData() {
-        super.initWebData()
+    override fun loadWebData() {
+        super.loadWebData()
         //初始化页面之前先获取横幅和文章
         mViewModel.getTopAndHomeArticles()
         mViewModel.getBanner()

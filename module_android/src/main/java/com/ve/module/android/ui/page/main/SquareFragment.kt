@@ -70,7 +70,7 @@ class SquareFragment : BaseVmListFragment<FragmentSquareBinding, SquareViewModel
     /**
      * step 3.初始化data相关
      */
-    override fun initWebData() {
+    override fun loadWebData() {
         mViewModel.getSquareList(mCurrentPage)
     }
 

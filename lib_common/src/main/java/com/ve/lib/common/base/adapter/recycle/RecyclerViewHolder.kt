@@ -1,4 +1,4 @@
-package com.ve.lib.common.base.adapter
+package com.ve.lib.common.base.adapter.recycle
 
 import android.content.Context
 import android.util.SparseArray
@@ -16,7 +16,8 @@ import androidx.recyclerview.widget.RecyclerView
  */
 class RecyclerViewHolder(ctx: Context?, itemView: View?) :
     RecyclerView.ViewHolder(itemView!!) {
-    private val mViews: SparseArray<View?>
+    private val mViews: SparseArray<View?> = SparseArray()
+
     private fun <T : View?> findViewById(viewId: Int): T? {
         var view = mViews[viewId]
         if (view == null) {
@@ -76,7 +77,4 @@ class RecyclerViewHolder(ctx: Context?, itemView: View?) :
         return this
     }
 
-    init {
-        mViews = SparseArray()
-    }
 }

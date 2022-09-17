@@ -42,8 +42,8 @@ class LockitPassSearchFragment :
         mBinding.tvSearchText.addTextChangedListener(textWatcher)
     }
 
-    override fun initWebData() {
-        super.initWebData()
+    override fun loadWebData() {
+        super.loadWebData()
         mViewModel.getPrivacyPassList()
     }
 

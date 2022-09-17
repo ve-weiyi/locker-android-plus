@@ -68,8 +68,8 @@ class LockitGroupActivity:
 
     }
 
-    override fun initWebData() {
-        super.initWebData()
+    override fun loadWebData() {
+        super.loadWebData()
         mViewModel.getGroupList(ConditionVO().apply {
             if(data is PrivacyFolder)
             {

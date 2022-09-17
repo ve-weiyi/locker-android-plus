@@ -57,8 +57,8 @@ class LockitMeFragment : BaseVmFragment<LockitFragmentMeBinding, LockitDrawerVie
         showUserInfo(SpUtil.getValue(LockitSpKey.SP_KEY_LOGIN_DATA_KEY, LoginDTO()::class.java))
     }
 
-    override fun initWebData() {
-        super.initWebData()
+    override fun loadWebData() {
+        super.loadWebData()
 
         if (LocationLifecycle.isPermissionEnable(mContext) && LocationLifecycle.isLocationProviderEnabled(
                 mContext

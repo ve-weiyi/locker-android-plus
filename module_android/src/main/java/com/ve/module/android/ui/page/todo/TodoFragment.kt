@@ -84,7 +84,7 @@ class TodoFragment : BaseVmListFragment<FragmentTodoBinding, TodoViewModel, Todo
         }
     }
 
-    override fun initWebData() {
+    override fun loadWebData() {
         mLayoutStatusView?.showLoading()
         mCurrentPage = 0
         if (bDone) {

@@ -33,7 +33,7 @@ class TreeFragment : BaseVmListFragment<FragmentRefreshLayoutBinding, TreeViewMo
         }
     }
 
-    override fun initWebData() {
+    override fun loadWebData() {
         mViewModel.getTree()
     }
 

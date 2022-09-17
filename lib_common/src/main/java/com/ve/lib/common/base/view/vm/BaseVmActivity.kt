@@ -45,20 +45,17 @@ abstract class BaseVmActivity<VB : ViewBinding, VM : BaseViewModel> : BaseActivi
     }
 
     open val mRetryClickListener: View.OnClickListener = View.OnClickListener {
-        initWebData()
+        loadWebData()
     }
 
-    /**
-     * step 1.初始化 liveData.observe.订阅
-     * 基类订阅，有逻辑的话，复写的时候super不要去掉
-     */
+    override fun initData() {
+
+    }
+
     override fun initObserver() {
 
     }
 
-    /**
-     * step 4.设置监听器
-     */
     override fun initListener(){
 
     }
@@ -66,7 +63,7 @@ abstract class BaseVmActivity<VB : ViewBinding, VM : BaseViewModel> : BaseActivi
      * step 5.填充界面时所需要的data,从仓库获取或者网络抓取.
      * 这个方法应在onResume()中调用
      */
-    override fun initWebData(){
+    override fun loadWebData(){
 
     }
 
@@ -74,7 +71,7 @@ abstract class BaseVmActivity<VB : ViewBinding, VM : BaseViewModel> : BaseActivi
         super.onResume()
         if (!hasLoadData){
             showLoading()
-            initWebData()
+            loadWebData()
             hasLoadData=true
         }
     }

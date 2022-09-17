@@ -36,6 +36,7 @@ interface IView <VB : ViewBinding> {
      */
     abstract fun initialize(saveInstanceState: Bundle?)
 
+
     /**
      * 显示加载
      */

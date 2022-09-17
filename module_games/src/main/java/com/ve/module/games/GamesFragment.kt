@@ -58,8 +58,8 @@ class GamesFragment : BaseVmListFragment<FragmentGamesBinding, BaseViewModel, Ga
 //        recyclerView.adapter = mAdapter
     }
 
-    override fun initWebData() {
-        super.initWebData()
+    override fun loadWebData() {
+        super.loadWebData()
         mSwipeRefreshLayout?.isRefreshing=false
         hideLoading()
     }

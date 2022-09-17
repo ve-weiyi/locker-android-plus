@@ -42,12 +42,12 @@ abstract class BaseVmListFragment<VB : ViewBinding, VM : BaseViewModel, LD : Any
 
     override fun getRefreshData() {
         showMsg("刷新成功")
-        initWebData()
+        loadWebData()
     }
 
     override fun getMoreData() {
         showMsg("加载成功")
-        initWebData()
+        loadWebData()
     }
 
 

@@ -47,7 +47,7 @@ class LockitTagGridFragment :
         }
     }
 
-    override fun initWebData() {
+    override fun loadWebData() {
         mViewModel.getTagList()
     }
 
