@@ -19,8 +19,7 @@ dependencies {
     // Kotlin
     implementation "androidx.biometric:biometric-ktx:1.2.0-alpha04"
     implementation project(path: ':lib_application')
-//    implementation "com.squareup.okhttp3:okhttp:4.0.0"
-//    implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.6"
+    implementation project(path: ':module_android')
 
     //lombok配置依赖
     annotationProcessor "org.projectlombok:lombok:1.18.12"
