@@ -7,11 +7,11 @@ import com.chad.library.adapter.base.BaseQuickAdapter
 import java.lang.reflect.ParameterizedType
 
 abstract class BaseBindingAdapter<T,VB : ViewBinding>(data: MutableList<T>? = null) :
-    BaseQuickAdapter<T, VBViewHolder<VB>>(0, data) {
+    BaseQuickAdapter<T, ViewBindingHolder<VB>>(0, data) {
 
 
     //重写返回自定义 ViewHolder
-    override fun onCreateDefViewHolder(parent: ViewGroup, viewType: Int): VBViewHolder<VB> {
+    override fun onCreateDefViewHolder(parent: ViewGroup, viewType: Int): ViewBindingHolder<VB> {
         //这里为了使用简洁性，使用反射来实例ViewBinding  actualTypeArguments[1]是泛型第二个参数VB
         val vbClass: Class<VB> =
             (javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[1] as Class<VB>
@@ -22,6 +22,6 @@ abstract class BaseBindingAdapter<T,VB : ViewBinding>(data: MutableList<T>? = nu
             Boolean::class.java
         )
         val mBinding = inflate.invoke(null, LayoutInflater.from(parent.context), parent, false) as VB
-        return VBViewHolder(mBinding, mBinding.root)
+        return ViewBindingHolder(mBinding, mBinding.root)
     }
 }

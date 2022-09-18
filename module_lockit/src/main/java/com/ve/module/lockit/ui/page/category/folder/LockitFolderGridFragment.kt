@@ -43,7 +43,6 @@ class LockitFolderGridFragment :
     override fun attachListManager(context: Context): ListViewManager<PrivacyFolder> {
         return ListViewManager<PrivacyFolder>(context).apply {
             mLinearLayoutManager = GridLayoutManager(requireContext(), 3)
-            mConfig.enableLoadMore = false
         }
     }
 

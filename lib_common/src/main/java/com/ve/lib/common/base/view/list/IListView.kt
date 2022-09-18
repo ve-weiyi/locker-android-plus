@@ -56,7 +56,6 @@ interface IListView<LD : Any> {
 
     abstract fun onItemChildClickEvent(datas: MutableList<LD>, view: View, position: Int)
 
-
     /**
      * 初始化ListView相关, 初始化 recyclerview，swipeRefreshView 相关数据，应该在initView之前调用
      */
@@ -67,16 +66,14 @@ interface IListView<LD : Any> {
 
         mListAdapter = attachAdapter()
         mListViewManager = attachListManager(context)
-
-        mListViewManager
-            .initListener(
+            .onCreateListView(mRecyclerView, mSwipeRefreshLayout, mListAdapter)
+            .setListener(
                 refreshListener = {
                     mSwipeRefreshLayout?.postDelayed({
                         getRefreshData()
                         LogUtil.msg("refresh page at : " + javaClass.simpleName)
                     }, 1500)
                 },
-
                 loadMoreListener = {
                     mRecyclerView?.postDelayed({
                         //刷新视图是否应显示刷新进度，关闭刷新loading
@@ -86,6 +83,7 @@ interface IListView<LD : Any> {
                         LogUtil.msg("Load more at : " + javaClass.simpleName)
                     }, 500)
                 },
+
                 itemClickListener = { adapter, view, position ->
                     mPosition = position
                     onItemClickEvent(mListAdapter.data, view, position)
@@ -96,13 +94,9 @@ interface IListView<LD : Any> {
                     onItemChildClickEvent(mListAdapter.data, view, position)
                 }
             )
-            .initListView(
-                mRecyclerView,
-                mSwipeRefreshLayout,
-                mFloatingActionBtn,
-                mListAdapter
-            )
+            .setFabView(mFloatingActionBtn)
             .contract()
+
         //在最后设置adapter ，否则会出现错误
         mRecyclerView?.adapter = mListAdapter
     }
@@ -114,45 +108,7 @@ interface IListView<LD : Any> {
      * @param data List<T>  数据集合
      */
     open fun showAtAdapter(isSetNewData: Boolean, data: MutableList<LD>?) {
-
         mListViewManager.showAtAdapter(isSetNewData, data)
-
-//        LogUtil.e("isNewData:$isSetNewData ")
-//        LogUtil.e("data:$data ")
-//
-//        if (mRecyclerView == null) {
-//            throw BizException(" mRecyclerView 未初始化，无法执行 showAtAdapter")
-//        }
-//        //hideLoading
-//        mSwipeRefreshLayout?.isRefreshing = false
-//
-//        mListAdapter.apply {
-//            if (isSetNewData) {
-//                //刷新数据，如果实现了loadModule。则会检查数据是否满一屏，如果满足条件，再开启 自动调用加载更多
-//                mListAdapter.data.clear()
-//                setNewInstance(data)
-//            } else {
-//                //添加数据
-//                if (data != null) {
-//                    addData(data)
-//                }
-//            }
-//
-//            LogUtil.msg("加载更多 " + mListViewManager!!.mConfig.enableLoadMore)
-//
-//            if (mListViewManager!!.mConfig.enableLoadMore) {
-//
-//                // 处理加载更多    End/Complete（End：不会再触发上拉加载更多，Complete：还会继续触发上拉加载更多）
-//                if (data == null) {
-//                    // 加载更多结束（true：不展示「加载更多结束」的view，false则展示「没有更多数据」）
-//                    loadMoreModule.loadMoreEnd(true)
-//                } else {
-//                    // loadMoreComplete()  刷新完成 。设置auto loadModel则会自动调用加载更多
-//                    loadMoreModule.loadMoreComplete()
-//                }
-//            }
-//        }
-
     }
 
     fun showAtAdapter(data: MutableList<LD>?) {

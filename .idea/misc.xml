@@ -133,6 +133,7 @@
         <entry key="lib_application/src/main/res/drawable/ic_wechat_black_24dp.xml" value="0.1505" />
         <entry key="lib_application/src/main/res/drawable/ic_windows.xml" value="0.1505" />
         <entry key="lib_application/src/main/res/drawable/shape_seekbar_btn.xml" value="0.127" />
+        <entry key="lib_application/src/main/res/mipmap-xxxhdpi/ic_launcher.xml" value="0.1505" />
         <entry key="lib_auth/src/main/res/drawable/privacy_button_cancel.xml" value="0.1" />
         <entry key="lib_auth/src/main/res/layout/normal_authorization_layout.xml" value="0.25729166666666664" />
         <entry key="lib_auth/src/main/res/layout/privacy_dialog.xml" value="0.1814814814814815" />

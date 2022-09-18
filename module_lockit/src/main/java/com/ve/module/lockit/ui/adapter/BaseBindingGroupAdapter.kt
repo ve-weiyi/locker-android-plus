@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseExpandableListAdapter
 import androidx.viewbinding.ViewBinding
-import com.ve.lib.common.base.adapter.VBViewHolder
+import com.ve.lib.common.base.adapter.ViewBindingHolder
 import com.ve.lib.common.exception.BizException
 import com.ve.lib.common.utils.system.LogUtil
 import org.jetbrains.anko.layoutInflater
@@ -185,9 +185,9 @@ abstract class BaseBindingGroupAdapter<GD : Any, CD : Any, GVB : ViewBinding, CV
 
 
     class GroupViewHolder<GVB : ViewBinding>(var mBinding: GVB, var view: View) :
-        VBViewHolder<GVB>(mBinding, view)
+        ViewBindingHolder<GVB>(mBinding, view)
 
     class ChildViewHolder<CVB : ViewBinding>(var mBinding: CVB, var view: View) :
-        VBViewHolder<CVB>(mBinding, view)
+        ViewBindingHolder<CVB>(mBinding, view)
 
 }

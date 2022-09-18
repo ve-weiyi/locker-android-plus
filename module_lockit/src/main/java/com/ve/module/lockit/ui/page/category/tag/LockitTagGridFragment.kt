@@ -43,7 +43,6 @@ class LockitTagGridFragment :
     override fun attachListManager(context: Context): ListViewManager<PrivacyTag> {
         return ListViewManager<PrivacyTag>(context).apply {
             mLinearLayoutManager = GridLayoutManager(requireContext(), 3)
-            mConfig.enableLoadMore = false
         }
     }
 

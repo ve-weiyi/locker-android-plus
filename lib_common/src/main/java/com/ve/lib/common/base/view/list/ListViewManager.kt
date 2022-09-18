@@ -1,7 +1,6 @@
 package com.ve.lib.common.base.view.list
 
 import android.content.Context
-import android.graphics.Canvas
 import android.view.View
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,133 +10,57 @@ import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.listener.*
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.ve.lib.common.R
-import com.ve.lib.common.utils.system.LogUtil
-import com.ve.lib.common.utils.view.ToastUtil
 
 /**
- * @Description hello word!
  * @Author  weiyi
- * @Date 2022/4/9
+ * @Date 2022/9/18
+ * @Description  current project lockit-android
  *
- * 调用方式：
- * ListViewManager(context,ListViewConfig())
- * ListViewManager.setListListener()
- * ListViewManager.setListView()
+ * 装饰者模式 ListManager(context).onCreateListView(...).setListener(...).contact()
  */
-
-open class ListViewManager<LD> {
-
-    lateinit var mConfig: ListViewConfig
+open class ListViewManager<LD : Any>(context: Context) {
 
     var mRecyclerView: RecyclerView? = null
     var mSwipeRefreshLayout: SwipeRefreshLayout? = null
-    var mFloatingActionBtn: FloatingActionButton? = null
     lateinit var mListAdapter: BaseQuickAdapter<LD, out BaseViewHolder>
-
+    lateinit var mListListener: ListViewListener
 
     /**
      * LinearLayoutManager 布局管理器
      */
-    lateinit var mLinearLayoutManager: LinearLayoutManager
+    lateinit var mLinearLayoutManager: RecyclerView.LayoutManager
 
     /**
      * RecyclerView Divider 分割线
      */
-    lateinit var mRecyclerViewItemDecoration: SpaceItemDecoration
-
-    /**
-     * LoadMoreListener
-     */
-    lateinit var mLoadMoreListener: OnLoadMoreListener
-
-    /**
-     * RefreshListener
-     */
-    lateinit var mRefreshListener: SwipeRefreshLayout.OnRefreshListener
-
-    /**
-     * ItemClickListener  item点击监听
-     */
-    lateinit var mItemClickListener: OnItemClickListener
-
-    /**
-     * ItemChildClickListener  children item点击监听，需要设置 addChildClickViewIds()
-     */
-    lateinit var mItemChildClickListener: OnItemChildClickListener
+    lateinit var mRecyclerViewItemDecoration: RecyclerView.ItemDecoration
 
 
-    lateinit var mItemDragListener: OnItemDragListener
-
-    lateinit var mItemSwipeListener: OnItemSwipeListener
-
-    lateinit var mUpFetchListener: OnUpFetchListener
-
-    constructor(context: Context) :this(context,ListViewConfig.REFRASH_AND_LOADMORE,null){
-
-    }
-
-    constructor(context: Context, model:Int,config: ListViewConfig?=null)  {
+    init {
         init(context)
-        initConfig(model,config)
     }
 
-    private fun init(context: Context) {
+    /**
+     * 调用 ListManager(context).onCreateListView(...).setListener(...).contact()
+     */
+    open fun init(context: Context) {
         mLinearLayoutManager = LinearLayoutManager(context)
         mRecyclerViewItemDecoration = SpaceItemDecoration(context)
+        mListListener=ListViewListener()
     }
 
-    private fun initConfig(model:Int, config: ListViewConfig?=null){
-        when(model){
-            ListViewConfig.ALL_OPEN->{
-                mConfig = ListViewConfig(
-                    enableRefresh = true,
-                    enableLoadMore = true,
-                    enableDrag = true,
-                    enableSwipe = true,
-                    enableUpFetch = true,
-                    enableAutoLoadMore = true,
-                )
-            }
-            ListViewConfig.ALL_CLOSE->{
-                mConfig = ListViewConfig(
-                    enableRefresh = false,
-                    enableLoadMore = false,
-                    enableAutoLoadMore = false,
-                    enableDrag = false,
-                    enableSwipe = false,
-                    enableUpFetch = false,
-                )
-            }
-            ListViewConfig.DIY->{
-                config?.let {
-                    mConfig=config
-                }
-            }
-            ListViewConfig.NO_NEW_DATA->{
-                mConfig = ListViewConfig(
-                    enableDrag = true,
-                    enableSwipe = true,
-                    enableUpFetch = true,
-                )
-            }
-            ListViewConfig.REFRASH_AND_LOADMORE->{
-                mConfig = ListViewConfig(
-                    enableRefresh = true,
-                    enableLoadMore = true,
-                )
-            }
-            else->{
-
-                mConfig=config?:ListViewConfig()
-
-            }
-        }
-
-        contractConfig()
+    open fun onCreateListView(
+        recyclerView: RecyclerView?,
+        swipeRefreshLayout: SwipeRefreshLayout?,
+        listAdapter: BaseQuickAdapter<LD, out BaseViewHolder>,
+    ): ListViewManager<LD> {
+        mRecyclerView = recyclerView
+        mSwipeRefreshLayout = swipeRefreshLayout
+        mListAdapter = listAdapter
+        return this
     }
 
-    fun initListener(
+    fun setListener(
         refreshListener: SwipeRefreshLayout.OnRefreshListener? = null,
         loadMoreListener: OnLoadMoreListener? = null,
         upFetchListener: OnUpFetchListener? = null,
@@ -146,152 +69,25 @@ open class ListViewManager<LD> {
         itemDragListener: OnItemDragListener? = null,
         itemSwipeListener: OnItemSwipeListener? = null,
     ): ListViewManager<LD> {
-        refreshListener?.let {
-            mRefreshListener = it
-        }
-
-        refreshListener?.let {
-            mRefreshListener = it
-        }
-        loadMoreListener?.let {
-            mLoadMoreListener = it
-        }
-        upFetchListener?.let {
-            mUpFetchListener = it
-        }
-        itemClickListener?.let {
-            mItemClickListener = it
-        }
-        itemChildClickListener?.let {
-            mItemChildClickListener = it
-        }
-        itemDragListener?.let {
-            mItemDragListener = it
-        }
-        itemSwipeListener?.let {
-            mItemSwipeListener = it
-        }
+        mListListener.setListener(
+            refreshListener,
+            loadMoreListener,
+            upFetchListener,
+            itemClickListener,
+            itemChildClickListener,
+            itemDragListener,
+            itemSwipeListener
+        )
         return this
     }
 
-    /**
-     * 必要的初始化： mLayoutStatusView、mRecyclerView、mSwipeRefreshLayout,mListAdapter
-     */
-    fun initListView(
-        recyclerView: RecyclerView?,
-        swipeRefreshLayout: SwipeRefreshLayout?,
-        floatingActionBtn: FloatingActionButton?,
-        listAdapter: BaseQuickAdapter<LD, out BaseViewHolder>,
-    ): ListViewManager<LD> {
-        mRecyclerView = recyclerView
-        mSwipeRefreshLayout = swipeRefreshLayout
-        mFloatingActionBtn = floatingActionBtn
-        mListAdapter=listAdapter
-        return this
-    }
-
-    fun contract() {
+    fun contract(): ListViewManager<LD> {
         contractAdapter()
         contractListView()
+        return this
     }
 
-    private fun contractConfig(){
-        /**
-         * 默认的监听器
-         */
-        mItemClickListener = OnItemClickListener { adapter, view, position ->
-            when (view.id) {
-                else -> ToastUtil.show("you click ${view.id} item ")
-            }
-        }
 
-        mItemChildClickListener = OnItemChildClickListener { adapter, view, position ->
-            when (view.id) {
-                else -> ToastUtil.show("you click child ${view.id} item ")
-            }
-        }
-
-        /**
-         * 随配置修改
-         */
-        if (mConfig.enableRefresh) {
-            mRefreshListener = SwipeRefreshLayout.OnRefreshListener {
-
-            }
-        }
-
-        if (mConfig.enableLoadMore) {
-            mLoadMoreListener = OnLoadMoreListener {
-                val status=1
-                mListAdapter.apply {
-                    when(status){
-                        //状态-》成功，失败，到结尾
-                        1->loadMoreModule.loadMoreComplete()
-                        2->loadMoreModule.loadMoreFail()
-                        3->loadMoreModule.loadMoreEnd()
-                    }
-                }
-            }
-        }
-
-        if (mConfig.enableDrag) {
-            mItemDragListener = object : OnItemDragListener {
-                //拖拽开始
-                override fun onItemDragStart(viewHolder: RecyclerView.ViewHolder?, pos: Int) {
-
-                }
-
-                override fun onItemDragMoving(
-                    source: RecyclerView.ViewHolder?,
-                    from: Int,
-                    target: RecyclerView.ViewHolder?,
-                    to: Int
-                ) {
-
-                }
-
-                //拖拽结束
-                override fun onItemDragEnd(viewHolder: RecyclerView.ViewHolder?, pos: Int) {
-
-                }
-
-            }
-            if (mConfig.enableSwipe) {
-                mItemSwipeListener = object : OnItemSwipeListener {
-                    override fun onItemSwipeStart(viewHolder: RecyclerView.ViewHolder?, pos: Int) {
-
-                    }
-
-                    override fun clearView(viewHolder: RecyclerView.ViewHolder?, pos: Int) {
-
-                    }
-
-                    override fun onItemSwiped(viewHolder: RecyclerView.ViewHolder?, pos: Int) {
-
-                    }
-
-                    override fun onItemSwipeMoving(
-                        canvas: Canvas?,
-                        viewHolder: RecyclerView.ViewHolder?,
-                        dX: Float,
-                        dY: Float,
-                        isCurrentlyActive: Boolean
-                    ) {
-
-                    }
-
-                }
-            }
-        }
-
-        if (mConfig.enableUpFetch) {
-            mUpFetchListener = object : OnUpFetchListener {
-                override fun onUpFetch() {
-                    LogUtil.msg("up fetch")
-                }
-            }
-        }
-    }
     private fun contractAdapter() {
         mListAdapter.apply {
             //开启加载动画
@@ -303,38 +99,45 @@ open class ListViewManager<LD> {
             //设置空布局,调用此方法前需要 recyclerView.adapter=MAdapter
 //            setEmptyView(R.layout.layout_empty_view)
 
-            //允许侧滑、拖动
-            if (mConfig.enableDrag) {
-                draggableModule.isSwipeEnabled = mConfig.enableSwipe
-                draggableModule.isDragEnabled = mConfig.enableDrag
+            //允许拖拽
+            mListListener.mItemDragListener?.let {
+                draggableModule.isDragEnabled = true
+                draggableModule.setOnItemDragListener(it)
             }
-            //
-            if (mConfig.enableUpFetch) {
-                upFetchModule.isUpFetchEnable = mConfig.enableUpFetch
+
+            //允许侧滑
+            mListListener.mItemSwipeListener?.let {
+                draggableModule.isSwipeEnabled = true
+                draggableModule.setOnItemSwipeListener(it)
             }
-            //自动加载
-            if (mConfig.enableLoadMore) {
-                loadMoreModule.isEnableLoadMore = mConfig.enableLoadMore
-                loadMoreModule.isAutoLoadMore = mConfig.enableAutoLoadMore
-                loadMoreModule.setOnLoadMoreListener(mLoadMoreListener)
+
+            //下拉加载（符合聊天软件下拉历史数据需求）
+            mListListener.mUpFetchListener?.let {
+                upFetchModule.isUpFetchEnable = true
+                upFetchModule.setOnUpFetchListener(it)
             }
-            //加载更多
+
+            //加载更多,自动加载
+            mListListener.mLoadMoreListener?.let {
+                loadMoreModule.isEnableLoadMore = true
+                loadMoreModule.isAutoLoadMore = false
+                loadMoreModule.setOnLoadMoreListener(it)
+            }
 
             //item点击，在fragment中完成，也可以在adapter中完成
-            setOnItemClickListener(mItemClickListener)
+            setOnItemClickListener(mListListener.mItemClickListener)
             //item子view点击，收藏
-            setOnItemChildClickListener(mItemChildClickListener)
+            setOnItemChildClickListener(mListListener.mItemChildClickListener)
         }
     }
 
     private fun contractListView() {
-
         //适配器绑定视图,不绑定不显示
         mRecyclerView?.apply {
             layoutManager = mLinearLayoutManager
             itemAnimator = DefaultItemAnimator()
             //添加分割线
-//            addItemDecoration(mRecyclerViewItemDecoration)
+            addItemDecoration(mRecyclerViewItemDecoration)
         }
 
         //下拉刷新
@@ -344,29 +147,12 @@ open class ListViewManager<LD> {
                 android.R.color.holo_green_light,
                 android.R.color.holo_orange_light
             )
-            if(mConfig.enableRefresh){
-                setOnRefreshListener(mRefreshListener)
-            }
-        }
 
+            setOnRefreshListener(mListListener.mRefreshListener)
+
+        }
         //如果有fab
-        mFloatingActionBtn?.apply {
-            visibility = View.VISIBLE
-            setOnClickListener {
-                scrollToTop(mRecyclerView)
-            }
-        }
-    }
 
-    //滑动顶部
-    private fun scrollToTop(mRecyclerView: RecyclerView?) {
-        mRecyclerView?.run {
-            if (mLinearLayoutManager.findFirstVisibleItemPosition() > 20) {
-                scrollToPosition(0)
-            } else {
-                smoothScrollToPosition(0)
-            }
-        }
     }
 
     /**
@@ -376,8 +162,6 @@ open class ListViewManager<LD> {
      * @param data List<T>  数据集合
      */
     open fun showAtAdapter(isSetNewData: Boolean, data: MutableList<LD>?) {
-//        LogUtil.e("isNewData:$isSetNewData ")
-//        LogUtil.e("data:$data ")
 
         if (mRecyclerView == null) {
             throw IllegalAccessException(" mRecyclerView 未初始化，无法执行 showAtAdapter")
@@ -397,9 +181,7 @@ open class ListViewManager<LD> {
                 }
             }
 
-//            LogUtil.msg("加载更多 " + mConfig.enableLoadMore)
-
-            if (mConfig.enableLoadMore) {
+            if (mListListener.mLoadMoreListener!=null) {
 
                 // 处理加载更多    End/Complete（End：不会再触发上拉加载更多，Complete：还会继续触发上拉加载更多）
                 if (data == null) {
@@ -412,6 +194,29 @@ open class ListViewManager<LD> {
             }
         }
 
+    }
+
+    var mFloatingActionBtn: FloatingActionButton? = null
+    fun setFabView(floatingActionBtn: FloatingActionButton?): ListViewManager<LD> {
+        mFloatingActionBtn = floatingActionBtn
+        //如果有fab
+        mFloatingActionBtn?.apply {
+            visibility = View.VISIBLE
+            setOnClickListener {
+                scrollToTop(mRecyclerView)
+            }
+        }
+        return this
+    }
+
+    private fun scrollToTop(mRecyclerView: RecyclerView?) {
+        mRecyclerView?.run {
+            if ((mLinearLayoutManager as LinearLayoutManager).findFirstVisibleItemPosition() > 20) {
+                scrollToPosition(0)
+            } else {
+                smoothScrollToPosition(0)
+            }
+        }
     }
 
 }

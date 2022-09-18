@@ -1,7 +1,7 @@
 package com.ve.module.lockit.ui.adapter
 
 import com.ve.lib.common.base.adapter.BaseSlideBindingAdapter
-import com.ve.lib.common.base.adapter.VBViewHolder
+import com.ve.lib.common.base.adapter.ViewBindingHolder
 import com.ve.module.lockit.databinding.LockitItemAppBinding
 import com.ve.lib.common.utils.system.AndroidUtil
 
@@ -13,7 +13,7 @@ import com.ve.lib.common.utils.system.AndroidUtil
 class AppAdapter : BaseSlideBindingAdapter<AndroidUtil.AppInfo, LockitItemAppBinding>() {
 
 
-    override fun convert(holder: VBViewHolder<LockitItemAppBinding>, item: AndroidUtil.AppInfo) {
+    override fun convert(holder: ViewBindingHolder<LockitItemAppBinding>, item: AndroidUtil.AppInfo) {
         holder.apply {
             vb.tvAppName.text = item.name
             vb.tvAppPackageName.text = item.packageName

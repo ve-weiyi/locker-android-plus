@@ -25,11 +25,12 @@
     <!--format指定为reference的时候，需要输入索引，比如@color/white，但是format指定为color时，可以直接设置16进制的int作为颜色-->
     <attr name="sc_brand" format="color|reference" />
     <attr name="sc_secondary" format="color|reference" />
-    <!--    背景色-->
+    <!--   背景色-->
     <attr name="sc_background" format="color|reference" />
-    <!--    显示在背景色上-->
+    <attr name="sc_on_background" format="color|reference" />
+    <!--   窗口颜色，比背景色深-->
     <attr name="sc_windows" format="color|reference" />
-    <!--    文字颜色-->
+    <!--   文字颜色-->
     <attr name="sc_text" format="color|reference" />
     <attr name="sc_text_light" format="color|reference" />
     <attr name="sc_sub_text" format="color|reference" />
@@ -44,6 +45,7 @@
         <item name="sc_brand">@color/colorPrimary</item>
         <item name="sc_secondary">@color/colorSecondary</item>
         <item name="sc_background">@color/colorBackground</item>
+        <item name="sc_on_background">@color/colorOnBackground</item>
         <item name="sc_windows">@color/windowBackground</item>
         <item name="sc_text">@color/textColorPrimary</item>
         <item name="sc_sub_text">@color/color_gray</item>
