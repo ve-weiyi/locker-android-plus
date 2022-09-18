@@ -129,6 +129,23 @@ object ActivityController {
     }
 
 
+    /**
+     * 根据时间休眠然后关闭当前页面
+     * 比如：5秒自动返回
+     * 或者只需要后台给一个结果而已
+     */
+    fun finishBySleep(millis: Long) {
+        object : Thread() {
+            override fun run() {
+                try {
+                    sleep(millis)
+                    ActivityController.currentActivity?.finish()
+                } catch (e: InterruptedException) {
+                    e.printStackTrace()
+                }
+            }
+        }.start()
+    }
 
     /**
      * activity 生命周期

@@ -16,8 +16,8 @@ import com.ve.lib.common.base.view.vm.BaseVmFragment
 abstract class BaseVmListFragment<VB : ViewBinding, VM : BaseViewModel, LD : Any>() :
     BaseVmFragment<VB, VM>(), IListView<LD> {
 
-    override var mTotalCount: Int = 0
-    override var mPageSize: Int = 0
+    override var mTotalCount: Int = 100
+    override var mOnePageSize: Int = 20
     override var mCurrentPage: Int = 0
     override var mPosition: Int = 0
 
@@ -30,26 +30,27 @@ abstract class BaseVmListFragment<VB : ViewBinding, VM : BaseViewModel, LD : Any
 
     override fun onDestroy() {
         super.onDestroy()
-        mPageSize = 0
+        mOnePageSize = 0
         mCurrentPage = 0
     }
 
     override fun initView() {
         initListView()
-        defaultListView(requireContext())
+        onCreateListView(requireContext())
     }
     abstract fun initListView()
 
     override fun getRefreshData() {
         showMsg("刷新成功")
+        mCurrentPage = 0
         loadWebData()
     }
 
     override fun getMoreData() {
         showMsg("加载成功")
+        mCurrentPage ++
         loadWebData()
     }
-
 
     override fun showError(errorMsg: String) {
         super.showError(errorMsg)

@@ -51,7 +51,7 @@ class ListViewListener {
 
 
     init {
-        contractListener()
+
     }
 
     fun setListener(
@@ -122,7 +122,6 @@ class ListViewListener {
 
         }
 
-
         mItemDragListener = object : OnItemDragListener {
             //拖拽开始
             override fun onItemDragStart(viewHolder: RecyclerView.ViewHolder?, pos: Int) {
@@ -142,7 +141,6 @@ class ListViewListener {
             override fun onItemDragEnd(viewHolder: RecyclerView.ViewHolder?, pos: Int) {
 
             }
-
         }
 
         mItemSwipeListener = object : OnItemSwipeListener {

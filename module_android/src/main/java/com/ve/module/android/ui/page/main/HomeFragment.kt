@@ -129,12 +129,13 @@ class HomeFragment() : BaseVmListFragment<FragmentHomeBinding, HomeViewModel, Ar
     }
 
     override fun getRefreshData() {
+        mCurrentPage=0
         mViewModel.getTopAndHomeArticles()
         mViewModel.getBanner()
     }
 
     override fun getMoreData() {
-        mViewModel.getArticleList(mCurrentPage)
+        mViewModel.getArticleList(++mCurrentPage)
     }
 
     override fun onItemClickEvent(datas: MutableList<Article>, view: View, position: Int) {

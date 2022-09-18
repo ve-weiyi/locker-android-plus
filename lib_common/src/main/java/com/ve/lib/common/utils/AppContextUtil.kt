@@ -44,54 +44,6 @@ object AppContextUtil {
 
 
     /**
-     * 根据时间休眠然后关闭当前页面
-     * 比如：5秒自动返回
-     * 或者只需要后台给一个结果而已
-     */
-    fun finishBySleep(millis: Long) {
-        object : Thread() {
-            override fun run() {
-                try {
-                    sleep(millis)
-                    ActivityController.currentActivity?.finish()
-                } catch (e: InterruptedException) {
-                    e.printStackTrace()
-                }
-            }
-        }.start()
-    }
-
-    /**
-     * 获取版本名
-     */
-    fun getVersionName(): String {
-        return try {
-            val packageManager = getApp().packageManager
-            val packageInfo = packageManager.getPackageInfo(getApp().packageName, 0)
-            packageInfo.versionName
-        } catch (e: PackageManager.NameNotFoundException) {
-            e.printStackTrace()
-            ""
-        }
-    }
-
-    /**
-     * 获取版本号
-     */
-    fun getVersionCode(): Int {
-        return try {
-            val packageManager = getApp().packageManager
-            val packageInfo = packageManager.getPackageInfo(getApp().packageName, 0)
-            packageInfo.versionCode
-        } catch (e: PackageManager.NameNotFoundException) {
-            e.printStackTrace()
-            0
-        }
-    }
-
-
-
-    /**
      * MD5加密
      */
     fun MD5(data: String): String {
@@ -107,36 +59,5 @@ object AppContextUtil {
     }
 
 
-    /**
-     * 字体高亮
-     */
-    fun foreground(view: View?, color: Int, start: Int, end: Int): View? {
-        if (view is Button) {
-            // 获取文字
-            val span: Spannable = SpannableString(view.text.toString())
-            //设置颜色和起始位置
-            span.setSpan(ForegroundColorSpan(color), start, end, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
-            view.text = span
-            return view
-        } else if (view is TextView) { //EditText extends TextView
-            val span: Spannable = SpannableString(view.text.toString())
-            span.setSpan(ForegroundColorSpan(color), start, end, Spannable.SPAN_INCLUSIVE_EXCLUSIVE)
-            view.text = span
-            return view
-        }
-        return null
-    }
 
-    /**
-     * 是否有sim卡 即设备是否可以拨打电话等
-     */
-    fun hasSim(): Boolean {
-        val telephonyManager = getApp().getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
-        var result = true
-        when (telephonyManager.simState) {
-            TelephonyManager.SIM_STATE_ABSENT -> result = false
-            TelephonyManager.SIM_STATE_UNKNOWN -> result = false
-        }
-        return result
-    }
 }

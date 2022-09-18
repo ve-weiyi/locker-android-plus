@@ -21,8 +21,8 @@ interface IListView<LD : Any> {
      * 分页参数，每页数据的个数
      */
     var mTotalCount: Int  // 服务器可返回数据的总数
-    var mPageSize: Int    //当前加载数量，为bean返回结果的大小。即it=data.size，当it<mTotalCount表示数据已到达结尾
     var mCurrentPage: Int //当前加载页数，刷新页面数据时重置为0 ,加载更多时it++
+    var mOnePageSize: Int //当前加载数量，为bean返回结果的大小。即it=data.size，当data.size<mOnePageSize表示数据已到达结尾
     var mPosition: Int    //当前点击位置
 
 
@@ -33,36 +33,19 @@ interface IListView<LD : Any> {
     var mListAdapter: BaseQuickAdapter<LD, out BaseViewHolder>
     var mListViewManager: ListViewManager<LD>
 
-    /**
-     * 如果有自定义的适配器不是BaseQuickAdapter, 可以在初始化后  mRecyclerView?.adapter=Adapter()
-     */
-    abstract fun attachAdapter(): BaseQuickAdapter<LD, *>
 
     fun attachListManager(context: Context): ListViewManager<LD> {
         return ListViewManager(context)
     }
 
     /**
-     * RefreshListener  下拉刷新页面
-     */
-    abstract fun getRefreshData()
-
-    /**
-     * LoadMoreListener 上拉加载更多,在适配器处使用
-     */
-    abstract fun getMoreData()
-
-    abstract fun onItemClickEvent(datas: MutableList<LD>, view: View, position: Int)
-
-    abstract fun onItemChildClickEvent(datas: MutableList<LD>, view: View, position: Int)
-
-    /**
      * 初始化ListView相关, 初始化 recyclerview，swipeRefreshView 相关数据，应该在initView之前调用
      */
-    fun defaultListView(context: Context) {
-        mTotalCount = 20
-        mPageSize = 0
+    fun onCreateListView(context: Context) {
+        mTotalCount = 100
+        mOnePageSize = 20
         mCurrentPage = 0
+        mPosition = 0
 
         mListAdapter = attachAdapter()
         mListViewManager = attachListManager(context)
@@ -114,5 +97,30 @@ interface IListView<LD : Any> {
     fun showAtAdapter(data: MutableList<LD>?) {
         showAtAdapter(mCurrentPage == 0, data)
     }
+
+    /**
+     * 如果有自定义的适配器不是BaseQuickAdapter, 可以在初始化后  mRecyclerView?.adapter=Adapter()
+     */
+    abstract fun attachAdapter(): BaseQuickAdapter<LD, *>
+
+    /**
+     * RefreshListener  下拉刷新页面
+     */
+    abstract fun getRefreshData()
+
+    /**
+     * LoadMoreListener 上拉加载更多,在适配器处使用
+     */
+    abstract fun getMoreData()
+
+    /**
+     * 点击事件
+     */
+    abstract fun onItemClickEvent(datas: MutableList<LD>, view: View, position: Int)
+
+    /**
+     * 子控件点击事件
+     */
+    abstract fun onItemChildClickEvent(datas: MutableList<LD>, view: View, position: Int)
 }
 

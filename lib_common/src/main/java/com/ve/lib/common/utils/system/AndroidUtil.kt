@@ -10,6 +10,7 @@ import android.graphics.Canvas
 import android.graphics.PixelFormat
 import android.graphics.drawable.Drawable
 import android.os.Build
+import android.telephony.TelephonyManager
 import android.util.Log
 import com.ve.lib.common.utils.AppContextUtil
 import java.io.Serializable
@@ -45,6 +46,20 @@ object AndroidUtil {
             e.printStackTrace()
             0
         }
+    }
+
+    /**
+     * 是否有sim卡 即设备是否可以拨打电话等
+     */
+    fun hasSim(): Boolean {
+        val telephonyManager = AppContextUtil.getApp()
+            .getSystemService(Context.TELEPHONY_SERVICE) as TelephonyManager
+        var result = true
+        when (telephonyManager.simState) {
+            TelephonyManager.SIM_STATE_ABSENT -> result = false
+            TelephonyManager.SIM_STATE_UNKNOWN -> result = false
+        }
+        return result
     }
 
     fun getAppIcon(context: Context, appId: String): Bitmap? {

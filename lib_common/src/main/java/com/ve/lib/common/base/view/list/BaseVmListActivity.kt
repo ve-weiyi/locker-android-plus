@@ -7,7 +7,6 @@ import androidx.viewbinding.ViewBinding
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.gyf.immersionbar.ImmersionBar
 import com.ve.lib.common.base.viewmodel.BaseViewModel
 import com.ve.lib.common.base.view.vm.BaseVmActivity
 
@@ -17,10 +16,9 @@ import com.ve.lib.common.base.view.vm.BaseVmActivity
  abstract class BaseVmListActivity<VB : ViewBinding, VM : BaseViewModel, LD : Any> :
     BaseVmActivity<VB, VM>(), IListView<LD> {
 
-    override var mTotalCount: Int = 20
-    override var mPageSize: Int = 0
+    override var mTotalCount: Int = 100
+    override var mOnePageSize: Int = 20
     override var mCurrentPage: Int = 0
-
     override var mPosition: Int = 0
 
     override var mRecyclerView: RecyclerView? = null
@@ -32,13 +30,13 @@ import com.ve.lib.common.base.view.vm.BaseVmActivity
 
     override fun onDestroy() {
         super.onDestroy()
-        mPageSize = 0
+        mOnePageSize = 0
         mCurrentPage = 0
     }
 
     override fun initView() {
         initListView()
-        defaultListView(this)
+        onCreateListView(this)
     }
 
     abstract fun initListView()
