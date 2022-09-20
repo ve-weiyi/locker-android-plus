@@ -1,8 +1,6 @@
 package com.ve.lib.common.utils.system
 
 import android.util.Log
-import com.ve.lib.common.utils.ui.ActivityController
-import kotlin.math.min
 
 
 /**
@@ -31,108 +29,69 @@ object LogUtil {
     }
 
 
-    private fun logMsg(
-        tag: String ?= TAG, msg: String, info: Array<String>,
-        logFun: (String?, String, Array<String>) -> Int
-    ) {
-        val start = 0
-        val end = min(msg.length, MAX_LENGTH)
-        val message = msg.substring(start, end)
-
-        logFun.invoke(tag, message, info)
-    }
-
-
     @JvmStatic
     fun msg() {
-        Log.e(tag, covertMessage())
+        val info= getStackInfo()
+        Log.e(tag, info.covertMessage())
     }
 
     @JvmStatic
-    fun msg(obj: Any?) {
-        Log.e(tag, covertMessage(obj.toString()))
+    fun msg(msg: Any?) {
+        val info= getStackInfo()
+        Log.e(tag, info.covertMessage(msg.toString()))
     }
 
     @JvmStatic
-    fun msg(tag: String?, msg: String) {
-        Log.e(tag, covertMessage(msg))
+    fun msg(tag: String?, msg: Any?) {
+        val info= getStackInfo()
+        Log.e(tag, info.covertMessage(msg.toString()))
     }
 
     @JvmStatic
-    fun d(obj: Any) {
-        if (IS_LOG) {
-            Log.e(tag, covertMessage(obj.toString()))
-        }
+    fun d(msg: Any) {
+        val info= getStackInfo()
+        Log.d(tag, info.covertMessage(msg.toString()))
     }
 
     @JvmStatic
     fun d(tag: String, msg: String) {
-        if (IS_LOG) {
-            Log.e(tag, covertMessage(msg))
-        }
+        val info= getStackInfo()
+        Log.d(tag, info.covertMessage(msg))
     }
 
-    @JvmStatic
-    fun e(msg: String) {
-        if (IS_LOG) {
-            Log.e(tag, covertMessage(msg))
-        }
-    }
-
-    @JvmStatic
-    fun e(tag: String?, msg: String) {
-        if (IS_LOG) {
-            Log.e(tag, covertMessage(msg))
-        }
-    }
 
     /**
      * 获取打印信息所在方法名，行号等信息
-     * stacktrace[0].getMethodName() 是 getStackTrace，
-     * stacktrace[1].getMethodName() 是 getMethodName，
-     * stacktrace[2].getMethodName() 是 autoJumpLogInfo。
-     * stacktrace[3].getMethodName() 是 LogUtil.e。
-     * stacktrace[4].getMethodName() 才是调用此的函数的函数名 。
+     * stacktrace[0].getMethodName() 是 VMStack.getThreadStackTrace
+     * stacktrace[1].getMethodName() 是 Thread.getStackTrace，
+     * stacktrace[2].getMethodName() 是 getMethodName，
+     * stacktrace[3].getMethodName() 是 getStackInfo。
+     * stacktrace[4].getMethodName() 是调用此函数的名称 LogUtil.d。
+     * stacktrace[5].getMethodName() 是调用LogUtil.d的函数名。
      * 每次迭代调用，层数+1
      */
-    private fun autoJumpLogInfo(stackCount: Int): Array<String> {
-        val infos = arrayOf("", "", "")
+    private fun getStackInfo(stackCount: Int=5): StackTraceInfo {
         val stackTrace = Thread.currentThread().stackTrace
-        infos[0] = stackTrace[stackCount].className.substring(stackTrace[stackCount].className.lastIndexOf(".") + 1)
-        infos[1] = stackTrace[stackCount].methodName
-        infos[2] = "(" + stackTrace[stackCount].fileName + ":" + stackTrace[stackCount].lineNumber + ")"
-        return infos
+
+        val info=StackTraceInfo()
+        info.className = stackTrace[stackCount].className
+        info.simpleClassName = stackTrace[stackCount].className.substringAfterLast(".")
+        info.methodName= stackTrace[stackCount].methodName
+        info.jumpTo = "(" + stackTrace[stackCount].fileName + ":" + stackTrace[stackCount].lineNumber + ")"
+        return info
     }
 
-    /**
-     * 转换 message
-     */
-    private fun covertMessage(msg: String?=null): String {
-        if(msg==null){
-            return ActivityController.currentActivityName + getMethodName(4)
-        }
-
-        val info= autoJumpLogInfo(4)
-        return info[1] + info[2] + " --->> " + msg
-    }
-
-    @JvmStatic
-    open fun error(msg: String?, vararg obj: Any?) {
-        if (IS_LOG) {
-            Log.e(tag, covertMessage(msg+obj))
+    private data class StackTraceInfo(
+        var jumpTo:String="",
+        var className:String="",
+        var simpleClassName:String="",
+        var methodName:String="",
+    ){
+        /**
+         * 转换 message
+         */
+        fun covertMessage(msg: String?=className): String {
+            return "$jumpTo$methodName --->> $msg"
         }
     }
-    /**
-     * 获取打印信息所在方法名，行号等信息
-     * stacktrace[0].getMethodName() 是 getThreadStackTrace
-     * stacktrace[1].getMethodName() 是 getStackTrace，
-     * stacktrace[2].getMethodName() 是 getMethodName，
-     * stacktrace[3].getMethodName() 才是调用 getMethodName 的函数的函数名。
-     */
-    fun getMethodName(deep: Int=3): String? {
-        val stacktrace = Thread.currentThread().stackTrace
-        val e = stacktrace[deep]
-        return " "+e.methodName
-    }
-
 }

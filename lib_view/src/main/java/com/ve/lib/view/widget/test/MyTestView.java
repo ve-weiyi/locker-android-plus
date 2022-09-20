@@ -45,19 +45,19 @@ public class MyTestView extends View {
 
         switch (specMode) {
             case MeasureSpec.AT_MOST:  // 子容器可以是声明大小内的任意大小
-                LogUtil.e(TAG, "子容器可以是声明大小内的任意大小");
-                LogUtil.e(TAG, "大小为:"+specSize);
+                LogUtil.msg(TAG, "子容器可以是声明大小内的任意大小");
+                LogUtil.msg(TAG, "大小为:"+specSize);
                 result=specSize;
                 break;
             case MeasureSpec.EXACTLY: //父容器已经为子容器设置了尺寸,子容器应当服从这些边界,不论子容器想要多大的空间.  比如EditTextView中的DrawLeft
-                LogUtil.e(TAG, "父容器已经为子容器设置了尺寸,子容器应当服从这些边界,不论子容器想要多大的空间");
-                LogUtil.e(TAG, "大小为:"+specSize);
+                LogUtil.msg(TAG, "父容器已经为子容器设置了尺寸,子容器应当服从这些边界,不论子容器想要多大的空间");
+                LogUtil.msg(TAG, "大小为:"+specSize);
                 result=specSize;
                 break;
             case MeasureSpec.UNSPECIFIED:  //父容器对于子容器没有任何限制,子容器想要多大就多大. 所以完全取决于子view的大小
-                LogUtil.e(TAG, "父容器对于子容器没有任何限制,子容器想要多大就多大");
-                LogUtil.e(TAG, "大小为:"+specSize);
-                LogUtil.e(TAG, "默认大小为:"+defaultSize);
+                LogUtil.msg(TAG, "父容器对于子容器没有任何限制,子容器想要多大就多大");
+                LogUtil.msg(TAG, "大小为:"+specSize);
+                LogUtil.msg(TAG, "默认大小为:"+defaultSize);
                 result=defaultSize;
                 break;
             default:

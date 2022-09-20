@@ -41,7 +41,7 @@ class ExampleInstrumentedTest {
 
     @Test
     fun passLevel(){
-        LogUtil.e(" androidTest是整合测试。可以运行在设备或虛拟设备上.需要编译打包为APK在设备上运行，可以实时杏看细节.\n")
+        LogUtil.msg(" androidTest是整合测试。可以运行在设备或虛拟设备上.需要编译打包为APK在设备上运行，可以实时杏看细节.\n")
         println(PasswordUtils.checkPasswordLevel("86485880"))
         println(PasswordUtils.checkPasswordLevel("FILKRBK"))
         println(PasswordUtils.checkPasswordLevel("8jfd419U6A"))
@@ -56,7 +56,7 @@ class ExampleInstrumentedTest {
 
     @Test
     fun simple(){
-        LogUtil.e(" androidTest是整合测试。可以运行在设备或虛拟设备上.需要编译打包为APK在设备上运行，可以实时杏看细节.\n")
+        LogUtil.msg(" androidTest是整合测试。可以运行在设备或虛拟设备上.需要编译打包为APK在设备上运行，可以实时杏看细节.\n")
 
         var passwordGenerator = PasswordGenerator(12,                           // To specify password length
             includeUpperCaseLetters = true,            // To include upper case Letters
@@ -69,7 +69,7 @@ class ExampleInstrumentedTest {
 
     @Test
     fun appDataBaseTest() {
-        LogUtil.e(" androidTest是整合测试。可以运行在设备或虛拟设备上.需要编译打包为APK在设备上运行，可以实时杏看细节.\n")
+        LogUtil.msg(" androidTest是整合测试。可以运行在设备或虛拟设备上.需要编译打包为APK在设备上运行，可以实时杏看细节.\n")
 
         runBlocking {
             AppDataBase.initDataBase()
@@ -85,21 +85,21 @@ class ExampleInstrumentedTest {
 
     @Test
     fun login() {
-        LogUtil.e(" androidTest是整合测试。可以运行在设备或虛拟设备上.需要编译打包为APK在设备上运行，可以实时杏看细节.\n")
+        LogUtil.msg(" androidTest是整合测试。可以运行在设备或虛拟设备上.需要编译打包为APK在设备上运行，可以实时杏看细节.\n")
 
         val repository = AuthRepository
 
         runBlocking {
             val result = repository.loginLockit(LockitConstant.username, LockitConstant.password)
-            LogUtil.e(result.data().toString())
+            LogUtil.msg(result.data().toString())
         }
     }
 
 
     @Test
     fun netTest() {
-        LogUtil.e(" androidTest是整合测试。可以运行在设备或虛拟设备上.需要编译打包为APK在设备上运行，可以实时杏看细节.\n")
-        LogUtil.e(" test是单元测试类.运行在本地开发机上，可以脱离Android运行时环境,速度快.")
+        LogUtil.msg(" androidTest是整合测试。可以运行在设备或虛拟设备上.需要编译打包为APK在设备上运行，可以实时杏看细节.\n")
+        LogUtil.msg(" test是单元测试类.运行在本地开发机上，可以脱离Android运行时环境,速度快.")
 
 
     }
@@ -122,22 +122,22 @@ class ExampleInstrumentedTest {
                         if (showErrorToast) ToastUtil.show(e.errorMsg)
                     }
                 }
-                LogUtil.e(e.errorMsg)
+                LogUtil.msg(e.errorMsg)
             }
             // 网络请求失败
             is ConnectException, is SocketTimeoutException, is UnknownHostException, is retrofit2.HttpException -> {
                 if (showErrorToast) ToastUtil.show(" 网络请求失败")
-                LogUtil.e(" 网络请求失败" + e.message)
+                LogUtil.msg(" 网络请求失败" + e.message)
             }
             // 数据解析错误
             is JsonParseException -> {
                 if (showErrorToast) ToastUtil.show(" 数据解析错误")
-                LogUtil.e(" 数据解析错误" + e.message)
+                LogUtil.msg(" 数据解析错误" + e.message)
             }
             // 其他错误
             else -> {
                 if (showErrorToast) ToastUtil.show(e.message ?: return)
-                LogUtil.e(e.message ?: return)
+                LogUtil.msg(e.message ?: return)
             }
 
         }

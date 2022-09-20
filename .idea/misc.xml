@@ -184,10 +184,12 @@
         <entry key="lockit_plus/src/main/res/layout/activity_login.xml" value="0.215625" />
         <entry key="lockit_plus/src/main/res/layout/activity_main.xml" value="0.1828125" />
         <entry key="lockit_plus/src/main/res/layout/activity_splash.xml" value="0.1828125" />
+        <entry key="lockit_plus/src/main/res/layout/common_gdpr_dialog.xml" value="0.21331521739130435" />
         <entry key="lockit_plus/src/main/res/layout/fragment_drawer.xml" value="0.215625" />
         <entry key="lockit_plus/src/main/res/layout/layout_login_type.xml" value="0.1828125" />
         <entry key="lockit_plus/src/main/res/layout/layout_userinfo.xml" value="0.2125" />
         <entry key="lockit_plus/src/main/res/layout/layout_userinfo_null.xml" value="0.1828125" />
+        <entry key="lockit_plus/src/main/res/layout/privacy_dialog.xml" value="0.2438446044921875" />
         <entry key="module_android/src/main/res/drawable/ic_launcher_background.xml" value="0.1505" />
         <entry key="module_android/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1505" />
         <entry key="module_android/src/main/res/drawable/ic_like_checked.xml" value="0.1505" />

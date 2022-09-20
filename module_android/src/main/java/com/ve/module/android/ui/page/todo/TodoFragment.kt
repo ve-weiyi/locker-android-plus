@@ -196,7 +196,7 @@ class TodoFragment : BaseVmListFragment<FragmentTodoBinding, TodoViewModel, Todo
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun doTodoTypeEvent(event: TodoTypeEvent) {
-        LogUtil.e("get todo event")
+        LogUtil.msg("get todo event")
         mType = event.type
         bDone = false
         getRefreshData()
@@ -204,7 +204,7 @@ class TodoFragment : BaseVmListFragment<FragmentTodoBinding, TodoViewModel, Todo
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun doTodoEvent(event: TodoEvent) {
-        LogUtil.e("get todo event")
+        LogUtil.msg("get todo event")
         if (mType == event.curIndex) {
             when (event.type) {
                 Constant.TODO_ADD -> {
@@ -236,7 +236,7 @@ class TodoFragment : BaseVmListFragment<FragmentTodoBinding, TodoViewModel, Todo
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun doRefresh(event: RefreshTodoEvent) {
-        LogUtil.e("get todo event")
+        LogUtil.msg("get todo event")
         if (event.isRefresh) {
             if (mType == event.type) {
                 getRefreshData()

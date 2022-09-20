@@ -191,7 +191,7 @@ class SearchActivity: BaseVmListActivity<ActivitySearchBinding, SearchViewModel,
     private val queryTextListener = object : SearchView.OnQueryTextListener {
         // 当点击搜索按钮时触发该方法
         override fun onQueryTextSubmit(query: String): Boolean {
-            LogUtil.e( "搜索内容===$query")
+            LogUtil.msg( "搜索内容===$query")
             mKey = query
             mCurrentPage = 0 //重置分页，避免二次加载分页混乱
             //搜索请求

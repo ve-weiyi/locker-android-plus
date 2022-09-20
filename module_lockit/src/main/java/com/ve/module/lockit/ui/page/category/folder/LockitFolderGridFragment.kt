@@ -52,7 +52,7 @@ class LockitFolderGridFragment :
 
     override fun initObserver() {
         mViewModel.folderList.observe(this) {
-            LogUtil.e(it.toString())
+            LogUtil.msg(it.toString())
             showAtAdapter(it)
             mListAdapter.loadMoreModule.loadMoreEnd(true)
         }

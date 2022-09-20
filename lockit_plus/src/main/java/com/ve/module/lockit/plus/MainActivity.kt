@@ -11,6 +11,7 @@ import com.ve.module.android.WazMainFragment
 import com.ve.module.lockit.plus.bean.NavigationMenuItem
 import com.ve.module.lockit.plus.databinding.ActivityMainBinding
 import com.ve.module.lockit.plus.ui.page.drawer.DrawerFragment
+import com.ve.module.lockit.plus.widget.PrivacyDialog
 
 
 @Route(path = ARouterPath.MAIN_HOME)
@@ -26,6 +27,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         initFragment()
         initNavigation()
         showFragment(mIndex)
+        PrivacyDialog.Builder(this).show()
     }
 
     private fun initFragment() {

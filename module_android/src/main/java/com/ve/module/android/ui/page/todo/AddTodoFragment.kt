@@ -89,9 +89,9 @@ class AddTodoFragment : BaseVmFragment<FragmentAddTodoBinding, TodoViewModel>(){
         mType = arguments?.getInt(Constant.TODO_TYPE) ?: 0
         mTypeKey = arguments?.getString(Constant.TYPE_KEY) ?: Constant.Type.ADD_TODO_TYPE_KEY
         var bundle: Bundle? = arguments //从bundle中取出数据
-        LogUtil.e(mType.toString())
-        LogUtil.e(mTypeKey.toString())
-        LogUtil.e(bundle.toString())
+        LogUtil.msg(mType.toString())
+        LogUtil.msg(mTypeKey.toString())
+        LogUtil.msg(bundle.toString())
 
         val tv_date=mBinding.tvDate
         val et_content=mBinding.etContent
@@ -109,7 +109,7 @@ class AddTodoFragment : BaseVmFragment<FragmentAddTodoBinding, TodoViewModel>(){
             }
             Constant.Type.EDIT_TODO_TYPE_KEY -> {
                 mTodoBean = arguments?.getSerializable(Constant.TODO_BEAN) as TodoBean ?: null
-                LogUtil.e(mTodoBean.toString())
+                LogUtil.msg(mTodoBean.toString())
                 et_title.setText(mTodoBean?.title)
                 et_content.setText(mTodoBean?.content)
                 tv_date.text = mTodoBean?.dateStr

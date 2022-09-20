@@ -52,7 +52,7 @@ class LockitTagGridFragment :
 
     override fun initObserver() {
         mViewModel.tagList.observe(this) {
-            LogUtil.e(it.toString())
+            LogUtil.msg(it.toString())
             showAtAdapter(it)
             mListAdapter.loadMoreModule.loadMoreEnd(true)
         }

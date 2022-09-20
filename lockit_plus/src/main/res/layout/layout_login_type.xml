@@ -6,7 +6,8 @@
 
     <LinearLayout
             android:id="@+id/temp_layout_3"
-            style="@style/cardView_linearlayout"
+
+            style="@style/CommonCardViewLayout"
             android:orientation="horizontal"
             >
 

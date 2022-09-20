@@ -113,7 +113,7 @@ class PlaceFragment : BaseVmFragment<FragmentPlaceBinding, PlaceViewModel>() {
                         putExtra(SunnyConstant.KEY_LOCATION_LAT, place.location.lat)
                         putExtra(SunnyConstant.KEY_PLACE_NAME, place.name)
                     }
-                    LogUtil.e("search place :" + data[position].name)
+                    LogUtil.msg("search place :" + data[position].name)
                     startActivity(intent)
                 }
                 mViewModel.savePlace(place)

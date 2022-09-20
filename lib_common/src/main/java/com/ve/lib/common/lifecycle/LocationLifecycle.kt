@@ -55,7 +55,7 @@ class LocationLifecycle private constructor():LifecycleObserver{
         fun permissionCheck(activity: FragmentActivity) {
             //添加权限检查
             if (!isPermissionEnable(activity)) {
-                LogUtil.e("TAG", "没有权限")
+                LogUtil.msg("TAG", "没有权限")
                 openLocationPermission(activity)
             }
 
@@ -145,7 +145,7 @@ class LocationLifecycle private constructor():LifecycleObserver{
 
         //当坐标改变时触发此函数，如果Provider传进相同的坐标，它就不会被触发
         override fun onLocationChanged(location: Location) {
-            LogUtil.e("TAG", "监视地理位置变化-经纬度：" + location.longitude + "   " + location.latitude)
+            LogUtil.msg("TAG", "监视地理位置变化-经纬度：" + location.longitude + "   " + location.latitude)
         }
     }
 
@@ -213,7 +213,7 @@ class LocationLifecycle private constructor():LifecycleObserver{
         var location: Location?=mLocationManager.getLastKnownLocation(mLocationProvider)
 
         if (location != null) {
-            LogUtil.e("TAG", "获取上次的位置-经纬度：" + location.longitude + "   " + location.latitude)
+            LogUtil.msg("TAG", "获取上次的位置-经纬度：" + location.longitude + "   " + location.latitude)
         }else{
             //监视地理位置变化，第二个和第三个参数分别为更新的最短时间minTime和最短距离minDistace
             mLocationManager.requestLocationUpdates(mLocationProvider, 3000, 1F, mLocationListener);
@@ -228,7 +228,7 @@ class LocationLifecycle private constructor():LifecycleObserver{
             if (location != null) {
                 val gc = Geocoder(context, Locale.getDefault())
                 result = gc.getFromLocation(location.latitude, location.longitude, 1)
-                LogUtil.e("TAG", "获取地址信息：$result")
+                LogUtil.msg("TAG", "获取地址信息：$result")
             }
         } catch (e: Exception) {
             e.printStackTrace()

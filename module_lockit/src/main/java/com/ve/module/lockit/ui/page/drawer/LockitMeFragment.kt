@@ -84,8 +84,8 @@ class LockitMeFragment : BaseVmFragment<LockitFragmentMeBinding, LockitDrawerVie
         super.initObserver()
 
         mViewModel.weatherLiveData.observe(this) {
-            LogUtil.e(it.daily.toString())
-            LogUtil.e(it.realtime.toString())
+            LogUtil.msg(it.daily.toString())
+            LogUtil.msg(it.realtime.toString())
             mBinding.actionTodayWeather.rightTextView.text = "${it.realtime.temperature} °C"
             mBinding.actionTodayWeather.rightImageView.setImageResource(SkyUtil.getSky(it.realtime.skycon).icon)
         }
@@ -157,7 +157,7 @@ class LockitMeFragment : BaseVmFragment<LockitFragmentMeBinding, LockitDrawerVie
                     LocationLifecycle.permissionCheck(requireActivity())
                     initData()
                 } else {
-                    LogUtil.e("---" + location!!.longitude + "---" + location!!.latitude + "---" + placeName)
+                    LogUtil.msg("---" + location!!.longitude + "---" + location!!.latitude + "---" + placeName)
                     val intent = Intent(requireContext(), WeatherActivity::class.java).apply {
                         putExtra(SunnyConstant.KEY_LOCATION_LNG, location!!.longitude.toString())
                         putExtra(SunnyConstant.KEY_LOCATION_LAT, location!!.latitude.toString())

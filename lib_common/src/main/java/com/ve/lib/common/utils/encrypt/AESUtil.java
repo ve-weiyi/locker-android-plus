@@ -55,7 +55,7 @@ public class AESUtil {
             byte[] contentBytes = content.getBytes(ENCODING);
             data = encryptOrDecrypt(Cipher.ENCRYPT_MODE, contentBytes, key, null, EncodeType.AES_ECB_PKCS5Padding);
         } catch (Exception e) {
-            LogUtil.error(e.getMessage(), e);
+            LogUtil.msg(e.getMessage(), e);
         }
         return data == null ? null : Base64.getUrlEncoder().encodeToString(data);
     }
@@ -73,7 +73,7 @@ public class AESUtil {
             data = encryptOrDecrypt(Cipher.ENCRYPT_MODE, contentBytes, key, iv, EncodeType.AES_CBC_PKCS5Padding);
         } catch (Exception e) {
 
-            LogUtil.error(e.getMessage(), e);
+            LogUtil.msg(e.getMessage(), e);
         }
         return data == null ? null : Base64.getUrlEncoder().encodeToString(data);
     }
@@ -91,7 +91,7 @@ public class AESUtil {
             return new String(data, ENCODING);
         } catch (Exception e) {
 
-            LogUtil.error(e.getMessage(), e);
+            LogUtil.msg(e.getMessage(), e);
         }
         return null;
     }
@@ -105,12 +105,12 @@ public class AESUtil {
     public static String cbcDecrypt(String content, String key, String iv) {
         try {
             byte[] contentBytes = Base64.getUrlDecoder().decode(content);
-            LogUtil.error(contentBytes.toString());
+            LogUtil.msg(contentBytes.toString());
             byte[] data = encryptOrDecrypt(Cipher.DECRYPT_MODE, contentBytes, key, iv, EncodeType.AES_CBC_PKCS5Padding);
             return new String(data, ENCODING);
         } catch (Exception e) {
 
-            LogUtil.error(e.getMessage(), e);
+            LogUtil.msg(e.getMessage(), e);
         }
         return null;
     }

@@ -48,7 +48,7 @@ class WazMainApplication:BaseApplication() {
 
         Bugly.init(applicationContext, AppConfig.BUGLY_ID, false)
 
-        LogUtil.e("Application init ")
+        LogUtil.msg("Application init ")
         SpUtil.getAll().forEach{
             map-> LogUtil.msg(map.toString())
         }

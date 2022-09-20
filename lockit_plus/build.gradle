@@ -16,6 +16,7 @@ android {
 
 dependencies {
     implementation  project(':lib_common')
+    implementation  project(':module_android')
     // Kotlin
     implementation "androidx.biometric:biometric-ktx:1.2.0-alpha04"
     implementation project(path: ':lib_application')

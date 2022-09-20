@@ -41,7 +41,7 @@ abstract class BaseVmFragment<VB : ViewBinding, VM : BaseViewModel> : BaseFragme
         //我不理解
         arguments?.let {
             val bundle: Bundle? = arguments //从bundle中取出数据
-            LogUtil.e(mViewName + bundle.toString())
+            LogUtil.msg(mViewName + bundle.toString())
         }
 
         initObserver()

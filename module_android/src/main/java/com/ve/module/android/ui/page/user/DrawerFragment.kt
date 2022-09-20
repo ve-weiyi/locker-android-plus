@@ -96,7 +96,7 @@ class DrawerFragment : BaseVmFragment<WazFragmentDrawerBinding, WanAndroidViewMo
         nav_username?.run {
             text = if (!isLogin) "去登录" else username
             setOnClickListener {
-                LogUtil.e(mViewName+"go login")
+                LogUtil.msg(mViewName+"go login")
                 if (!isLogin) {
                     Intent(requireContext(), LoginActivity::class.java).run {
                         startActivity(this)
@@ -105,7 +105,7 @@ class DrawerFragment : BaseVmFragment<WazFragmentDrawerBinding, WanAndroidViewMo
             }
         }
         nav_rank!!.setOnClickListener {
-            LogUtil.e(mViewName+"go rank")
+            LogUtil.msg(mViewName+"go rank")
             startActivity(Intent(activity, RankActivity::class.java))
         }
         mBinding.drawerNavView.setNavigationItemSelectedListener(onDrawerNavigationItemSelectedListener)
@@ -152,7 +152,7 @@ class DrawerFragment : BaseVmFragment<WazFragmentDrawerBinding, WanAndroidViewMo
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun loginEvent(event: LoginEvent) {
-        LogUtil.e(mViewName+" get login event")
+        LogUtil.msg(mViewName+" get login event")
         if (event.isLogin) {
             //登录事件
             nav_username?.text = username
@@ -174,7 +174,7 @@ class DrawerFragment : BaseVmFragment<WazFragmentDrawerBinding, WanAndroidViewMo
      */
     private val onDrawerNavigationItemSelectedListener =
         NavigationView.OnNavigationItemSelectedListener { item ->
-            LogUtil.e("click"+item.title)
+            LogUtil.msg("click"+item.title)
             when (item.itemId) {
                 R.id.nav_score -> {
                     Intent(requireContext(), ScoreActivity::class.java).run {

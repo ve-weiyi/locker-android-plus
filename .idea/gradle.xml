@@ -22,7 +22,6 @@
             <option value="$PROJECT_DIR$/module_sunny" />
           </set>
         </option>
-        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

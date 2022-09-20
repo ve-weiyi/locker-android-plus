@@ -156,7 +156,7 @@ object ActivityController {
             activityStack.push(activity)
 
             if(savedInstanceState!=null){
-                LogUtil.e("$currentActivityName $savedInstanceState")
+                LogUtil.msg("$currentActivityName $savedInstanceState")
             }
         }
 

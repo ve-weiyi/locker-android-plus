@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="@dimen/dp_30"
+    android:background="@drawable/bg_background_rect"
+    android:orientation="vertical"
+    android:paddingTop="24dp"
+    android:paddingBottom="24dp">
+
+
+    <TextView
+        android:id="@+id/dialog_title"
+        style="@style/t16_b"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="license_title"
+        android:textColor="?sc_text" />
+
+    <ScrollView
+        android:id="@+id/dialog_describe_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/dialog_title"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:paddingBottom="5dp">
+
+        <TextView
+            android:id="@+id/dialog_describe_tv"
+            style="@style/t14_l"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:lineSpacingExtra="5dp"
+            android:paddingStart="16dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="20dp"
+            android:text="license_text"
+            android:textColor="?sc_text" />
+
+    </ScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/dialog_double_btns_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingStart="16dp"
+        android:paddingLeft="16dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="16dp"
+        android:paddingRight="16dp">
+
+        <Button
+            android:id="@+id/dialog_btn_left"
+            style="@style/CommonBtnStyle.GreenMiddleBtn"
+            android:layout_width="0dp"
+            android:layout_margin="0dp"
+            android:layout_weight="1"
+            android:text="不同意" />
+
+        <View
+            android:layout_width="10dp"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/dialog_btn_right"
+            style="@style/CommonBtnStyle.GreenMiddleBtn"
+            android:layout_width="0dp"
+            android:layout_margin="0dp"
+            android:layout_weight="1"
+            android:text="同意" />
+    </LinearLayout>
+
+</LinearLayout>
