@@ -8,7 +8,11 @@ import com.ve.lib.common.base.view.vm.BaseActivity
 import com.ve.lib.common.router.ARouterPath
 import com.ve.module.lockit.plus.databinding.ActivitySplashBinding
 
-
+/**
+ * null：    表示对象为空
+ * empty：表示对象为空或长度为0
+ * blank： 表示对象为空或长度为0、空格字符串
+ */
 class SplashActivity : BaseActivity<ActivitySplashBinding>(){
 
     override fun attachViewBinding(): ActivitySplashBinding {

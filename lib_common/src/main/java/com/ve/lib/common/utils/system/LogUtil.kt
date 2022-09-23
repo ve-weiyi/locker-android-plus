@@ -77,12 +77,12 @@ object LogUtil {
         info.className = stackTrace[stackCount].className
         info.simpleClassName = stackTrace[stackCount].className.substringAfterLast(".")
         info.methodName= stackTrace[stackCount].methodName
-        info.jumpTo = "(" + stackTrace[stackCount].fileName + ":" + stackTrace[stackCount].lineNumber + ")"
+        info.jumpToLine = "(" + stackTrace[stackCount].fileName + ":" + stackTrace[stackCount].lineNumber + ")"
         return info
     }
 
     private data class StackTraceInfo(
-        var jumpTo:String="",
+        var jumpToLine:String="",
         var className:String="",
         var simpleClassName:String="",
         var methodName:String="",
@@ -91,7 +91,7 @@ object LogUtil {
          * 转换 message
          */
         fun covertMessage(msg: String?=className): String {
-            return "$jumpTo$methodName --->> $msg"
+            return "$jumpToLine$methodName --->> $msg"
         }
     }
 }
