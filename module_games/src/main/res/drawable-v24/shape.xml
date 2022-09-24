@@ -5,11 +5,11 @@
     <!--颜色渐变-->
     <gradient
         android:angle="90"
-        android:centerColor="@color/colorAccent"
+        android:centerColor="?colorAccent"
         android:endColor="@android:color/black"
-        android:startColor="@color/colorBlue" />
+        android:startColor="?colorBlue" />
     <!--边线-->
     <stroke
         android:width="1dp"
-        android:color="@color/colorWhite" />
+        android:color="?colorWhite" />
 </shape>

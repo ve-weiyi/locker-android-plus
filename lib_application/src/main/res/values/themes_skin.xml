@@ -1,19 +1,36 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="BaseAppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar.Bridge">
+        <!--        <item name="colorPrimaryDark">?colorPrimaryDark</item>-->
+        <!--        <item name="colorAccent">?colorAccent</item>-->
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
-        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <item name="colorPrimary">?colorPrimary</item>
+        <item name="colorPrimaryVariant">?colorPrimaryDark</item>
+        <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/colorSecondary</item>
-        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
-        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+        <item name="colorSecondary">?colorAccent</item>
+        <item name="colorSecondaryVariant">?colorPrimary</item>
+        <item name="colorOnSecondary">@color/white</item>
         <!-- Status bar color. 状态栏颜色-->
         <item name="android:statusBarColor">@color/transparent</item>
+        <item name="android:navigationBarColor">@color/light_blue</item>
         <!-- Customize your theme here. -->
         <!--    colorError：用于错误的颜色（通常为红色阴影）-->
-        <item name="colorError">@color/colorError</item>
+        <item name="colorError">@color/red</item>
+        <!--    colorOnError：用于显示在错误颜色顶部的元素的颜色-->
+        <item name="colorOnError">@color/light_white</item>
+        <!--    colorSurface：(夜间模式标题栏颜色、菜单栏背景色)用于表面的颜色（即材料“纸张”）-->
+        <item name="colorSurface">@color/light_white</item>
+        <!--    colorOnSurface：用于显示在表面颜色顶部的元素的颜色-->
+        <item name="colorOnSurface">@color/grey</item>
+        <!--    colorOnBackground：用于显示在背景色上方的元素的颜色-->
+        <item name="android:colorBackground">@color/grey100</item>
+        <item name="colorOnBackground">@color/light_white</item>
+
+        <!--        <item name="android:textColor">@color/textColorPrimary</item>-->
+        <!--        <item name="android:textColorPrimary">@color/textColorPrimary</item>-->
+        <!--        <item name="android:colorControlNormal">@color/grey700</item>-->
+        <item name="android:windowBackground">?colorBackground</item>
     </style>
 
     <style name="BaseAppTheme.NoActionBar">
@@ -23,54 +40,56 @@
 
     <attr name="skin_main_bg" format="reference" />
     <!--format指定为reference的时候，需要输入索引，比如@color/white，但是format指定为color时，可以直接设置16进制的int作为颜色-->
-    <attr name="sc_brand" format="color|reference" />
-    <attr name="sc_secondary" format="color|reference" />
+    <attr name="colorBrand" format="color|reference" />
+    <!--    <attr name="colorSecondary" format="color|reference" />-->
     <!--   背景色-->
-    <attr name="sc_background" format="color|reference" />
-    <attr name="sc_on_background" format="color|reference" />
-    <!--   窗口颜色，比背景色深-->
-    <attr name="sc_windows" format="color|reference" />
+    <attr name="colorBackground" format="color|reference" />
+    <!--    <attr name="colorOnBackground" format="color|reference" />-->
     <!--   文字颜色-->
-    <attr name="sc_text" format="color|reference" />
+    <attr name="sc_text_dark" format="color|reference" />
+    <attr name="sc_text_normal" format="color|reference" />
     <attr name="sc_text_light" format="color|reference" />
-    <attr name="sc_sub_text" format="color|reference" />
-    <attr name="sc_sub_text_light" format="color|reference" />
 
     <attr name="sc_btn" format="color|reference" />
     <attr name="sc_mask" format="color|reference" />
     <attr name="sc_divider" format="color|reference" />
 
-    <!--default-->
+    <!--default day：白色主题，青色辅助，蓝色控件-->
     <style name="AppTheme" parent="BaseAppTheme.NoActionBar">
-        <item name="sc_brand">@color/colorPrimary</item>
-        <item name="sc_secondary">@color/colorSecondary</item>
-        <item name="sc_background">@color/colorBackground</item>
-        <item name="sc_on_background">@color/colorOnBackground</item>
-        <item name="sc_windows">@color/windowBackground</item>
-        <item name="sc_text">@color/textColorPrimary</item>
-        <item name="sc_sub_text">@color/color_gray</item>
-        <item name="sc_btn">@color/orange</item>
-        <item name="sc_mask">@color/mask_color</item>
-        <item name="sc_divider">@color/line_divider</item>
+        <item name="colorBrand">@color/white</item>
+        <item name="colorPrimary">@color/cyan</item>
+        <item name="colorAccent">@color/cyan</item>
+        <item name="colorSecondary">@color/light_cyan</item>
+        <item name="colorBackground">@color/white</item>
+        <item name="android:textColorPrimary">@color/black</item>
+
+        <item name="sc_text_dark">@color/black</item>
+        <item name="sc_text_normal">@color/grey</item>
+        <item name="sc_text_light">@color/white</item>
     </style>
 
-    <style name="AppTheme.Night">
-        <item name="sc_brand">#35464e</item>
-        <item name="sc_secondary">@color/cyan_light</item>
-        <item name="sc_background">@color/grey800</item>
-        <item name="sc_windows">@color/grey900</item>
-        <item name="sc_text">@color/grey200</item>
-        <item name="sc_btn">@color/pink</item>
-        <item name="sc_mask">@color/black</item>
-        <item name="sc_divider">@color/grey600</item>
+    <!--default night：灰色主题，青色辅助，蓝色控件-->
+    <style name="AppTheme.Night" parent="AppTheme">
+        <item name="colorBrand">@color/grey</item>
+        <item name="colorPrimary">?colorPrimary</item>
+        <item name="colorAccent">?colorAccent</item>
+        <item name="colorBackground">@color/white</item>
+        <item name="android:textColorPrimary">@color/white</item>
+
+        <item name="sc_text_dark">@color/white</item>
+        <item name="sc_text_normal">@color/grey</item>
+        <item name="sc_text_light">@color/black</item>
     </style>
 
-    <style name="AppTheme.Sakura">
-        <item name="sc_brand">@color/pink</item>
-        <item name="sc_secondary">@color/cyan_light</item>
-        <item name="sc_background">@color/grey800</item>
-        <item name="sc_windows">@color/grey900</item>
-        <item name="sc_text">@color/grey200</item>
+    <!--default 仿b站：粉色主题，粉色辅助，蓝色控件,白色字体-->
+    <style name="AppTheme.Sakura" parent="AppTheme">
+        <item name="colorBrand">?colorPrimary</item>
+        <item name="colorPrimary">@color/pink</item>
+        <item name="colorAccent">?colorAccent</item>
+        <item name="colorBackground">@color/white</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorPrimary">@color/white</item>
+
         <item name="sc_btn">@color/pink</item>
         <item name="sc_mask">@color/black</item>
         <item name="sc_divider">@color/grey600</item>
@@ -85,8 +104,20 @@
         <!-- 给window窗口设置背景图,启动白屏是因为application oncreate 浪费太多时间-->
         <item name="android:windowBackground">@drawable/common_app_background</item>
         <!-- 设置状态栏为白色的，则状态栏文字为黑的 -->
-<!--        <item name="android:windowLightStatusBar">true</item>-->
+        <!--        <item name="android:windowLightStatusBar">true</item>-->
         <!-- 设置导航栏透明-->
         <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="BaseAppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+
+    <style name="BaseAppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" >
+        <!--新增一个item，用于控制menu-->
+        <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
+    </style>
+
+    <style name="OverflowMenuStyle" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
+        <!--把该属性改为false即可使menu位置位于toolbar之下-->
+        <item name="overlapAnchor">false</item>
     </style>
 </resources>

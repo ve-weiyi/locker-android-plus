@@ -24,7 +24,7 @@
                 android:fadingEdge="horizontal"
                 android:singleLine="true"
                 android:textAppearance="?android:attr/textAppearanceListItem"
-                android:textColor="@color/color_text_dark"
+                android:textColor="@color/text_color_dark"
                 tools:text="设置" />
 
         <LinearLayout
@@ -41,7 +41,7 @@
                     android:ellipsize="end"
                     android:maxLines="1"
                     android:layout_toStartOf="@android:id/icon"
-                    android:textColor="@color/color_text_gray"
+                    android:textColor="@color/text_color_grey"
                     tools:text="@string/text_content"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
@@ -72,7 +72,7 @@
                     android:layout_gravity="center_vertical"
                     android:adjustViewBounds="true"
                     android:visibility="gone"
-                    android:background="@drawable/bg_gray_circle" />
+                    android:background="@drawable/bg_grey_circle" />
 
             <!-- Preference should place its actual preference widget here. -->
             <LinearLayout

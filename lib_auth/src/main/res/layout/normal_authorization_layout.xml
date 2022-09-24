@@ -24,7 +24,7 @@
         android:layout_centerVertical="true"
         android:layout_toRightOf="@id/platIcon"
         android:layout_marginLeft= "@dimen/list_item_padding_left"
-        android:textColor="@color/color_text_normal"
+        android:textColor="?color_text_normal"
         android:textSize="@dimen/main_activity_top_margin_color_size"/>
 
     <TextView

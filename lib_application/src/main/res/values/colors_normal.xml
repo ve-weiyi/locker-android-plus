@@ -3,59 +3,20 @@
 
     <!--    透明-->
     <color name="transparent">#00000000</color><!--透明色 -->
-    <color name="transparent_gray">#BFffffff</color>
+    <color name="transparent_grey">#BFffffff</color>
 
 
     <!-- 通用颜色颜色 -->
-    <!--白到黑-->
-    <color name="color_white">#FFFFFF</color>
-    <color name="color_light_grey">#d3d3d3</color>
-    <color name="color_silver">#C0C0C0</color>
-    <color name="color_gray">#808080</color>
-    <color name="color_black">#000000</color>
-
-    <!--红橙黄绿青蓝紫  -->
-    <color name="color_red">#FF0000</color>
-    <color name="color_orange">#FFA500</color>
-    <color name="color_yellow">#FFFF00</color>
-    <color name="color_green">#008000</color>
-    <color name="color_cyan">#00FFFF</color>
-    <color name="color_blue">#0000FF</color>
-    <color name="color_purple">#800080</color>
-
-    <!--酸橙、金、棕、紫红-->
-    <color name="color_lime">#00FF00</color>
-    <color name="color_gold">#FFD700</color>
-    <color name="color_brown">#A52A2A</color>
-    <color name="color_magenta">#FF00FF</color>
-
-    <!--浅色-->
-    <color name="light_white">#EEEEEE</color>
-    <color name="light_red">#ff5454</color>
-    <color name="light_green">#8bc34a</color>
-    <color name="light_blue">#59C6F6</color>
-    <color name="light_gray">#FFECECEC</color>
-    <color name="light_grey">#FFECECEC</color>
-
-    <!--深色-->
-    <color name="deep_red">#ff0000</color>
-    <color name="deep_purple">#673ab7</color>
-    <color name="deep_black">#FF000000</color>
-    <color name="deep_orange">#ff5722</color>
-    <color name="deep_blue">#0288D1</color>
-
-
-    <!--常用颜色 material600 -->
+    <!--常用颜色 material600 cyan 青色-->
     <color name="black">#111111</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="gray">#757575</color>
+    <color name="white">#FFFFFF</color>
     <color name="grey">#757575</color>
     <color name="red">#E53935</color>
     <color name="pink">#e91e63</color>
     <color name="purple">#9c27b0</color>
     <color name="indigo">#3f51b5</color>
     <color name="blue">#2196f3</color>
-<!--    <color name="cyan">#00bcd4</color>-->
+    <color name="cyan">#14e0d0</color>
     <color name="real">#009688</color>
     <color name="green">#4caf50</color>
     <color name="lime">#cddc39</color>
@@ -65,9 +26,35 @@
     <color name="brown">#795548</color>
     <color name="blue_grey">#607d8b</color>
 
-    <!--    Cyan 青色-->
-    <color name="cyan">#14e0d0</color>
-    <color name="cyan_light">#52fbda</color>
+
+    <!--纯色：红橙黄绿青蓝紫 黑白银灰 -->
+    <color name="deep_red">#FF0000</color>
+    <color name="deep_orange">#FFA500</color>
+    <color name="deep_yellow">#FFFF00</color>
+    <color name="deep_green">#008000</color>
+    <color name="deep_cyan">#00FFFF</color>
+    <color name="deep_blue">#0000FF</color>
+    <color name="deep_purple">#800080</color>
+    <color name="deep_black">#000000</color>
+    <color name="deep_white">#FFFFFF</color>
+    <color name="deep_silver">#C0C0C0</color>
+    <color name="deep_grey">#808080</color>
+    <!--黄绿、金、棕、紫红-->
+    <color name="deep_lime">#00FF00</color>
+    <color name="deep_gold">#FFD700</color>
+    <color name="deep_brown">#A52A2A</color>
+    <color name="deep_magenta">#FF00FF</color>
+
+
+    <!--浅色-->
+    <color name="light_white">#EEEEEE</color>
+    <color name="light_red">#ff5454</color>
+    <color name="light_green">#8bc34a</color>
+    <color name="light_blue">#59C6F6</color>
+    <color name="light_grey">#d3d3d3</color>
+    <color name="light_cyan">#52fbda</color>
+
+
 
 
 

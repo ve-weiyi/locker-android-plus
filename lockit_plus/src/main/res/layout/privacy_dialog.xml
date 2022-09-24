@@ -18,7 +18,7 @@
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         android:text="license_title"
-        android:textColor="?sc_text" />
+        android:textColor="?sc_text_dark" />
 
     <ScrollView
         android:id="@+id/dialog_describe_layout"
@@ -41,7 +41,7 @@
             android:paddingEnd="16dp"
             android:paddingBottom="20dp"
             android:text="license_text"
-            android:textColor="?sc_text" />
+            android:textColor="?sc_text_dark" />
 
     </ScrollView>
 

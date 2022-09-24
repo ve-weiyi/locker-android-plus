@@ -28,7 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/dp_10"
-                android:background="@color/colorOnBackground"
+                android:background="?colorOnBackground"
                 android:layout_marginTop="@dimen/dp_1"
                 >
 
@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:padding="@dimen/dp_10"
                 android:layout_marginTop="@dimen/dp_1"
-                android:background="@color/colorOnBackground"
+                android:background="?colorOnBackground"
                 >
 
             <TextView
@@ -98,7 +98,7 @@
                 android:layout_height="wrap_content"
                 android:padding="@dimen/dp_10"
                 android:layout_marginTop="@dimen/dp_1"
-                android:background="@color/colorOnBackground"
+                android:background="?colorOnBackground"
                 >
 
             <TextView
@@ -127,7 +127,7 @@
                 android:layout_height="wrap_content"
                 android:padding="@dimen/dp_10"
                 android:layout_marginTop="@dimen/dp_1"
-                android:background="@color/colorOnBackground"
+                android:background="?colorOnBackground"
                 >
 
             <TextView
@@ -156,7 +156,7 @@
                 android:layout_height="wrap_content"
                 android:padding="@dimen/dp_10"
                 android:layout_marginTop="@dimen/dp_1"
-                android:background="@color/colorOnBackground"
+                android:background="?colorOnBackground"
                 >
 
             <TextView
@@ -185,7 +185,7 @@
                 android:layout_height="wrap_content"
                 android:padding="@dimen/dp_10"
                 android:layout_marginTop="@dimen/dp_1"
-                android:background="@color/colorOnBackground"
+                android:background="?colorOnBackground"
                 >
 
             <TextView
@@ -219,7 +219,7 @@
                 android:layout_height="wrap_content"
                 android:padding="@dimen/dp_10"
                 android:layout_marginTop="@dimen/dp_1"
-                android:background="@color/colorOnBackground"
+                android:background="?colorOnBackground"
                 >
 
             <TextView
@@ -249,7 +249,7 @@
                 android:layout_height="wrap_content"
                 android:padding="@dimen/dp_10"
                 android:layout_marginTop="@dimen/dp_12"
-                android:background="@color/colorOnBackground"
+                android:background="?colorOnBackground"
                 >
 
             <TextView
@@ -279,7 +279,7 @@
                 android:layout_height="wrap_content"
                 android:padding="@dimen/dp_10"
                 android:layout_marginTop="@dimen/dp_12"
-                android:background="@color/colorOnBackground"
+                android:background="?colorOnBackground"
                 >
 
             <TextView
@@ -310,7 +310,7 @@
                 android:layout_height="wrap_content"
                 android:padding="@dimen/dp_10"
                 android:layout_marginTop="@dimen/dp_1"
-                android:background="@color/colorOnBackground"
+                android:background="?colorOnBackground"
                 >
 
             <TextView
@@ -345,7 +345,7 @@
                 android:layout_height="wrap_content"
                 android:padding="@dimen/dp_10"
                 android:layout_marginTop="@dimen/dp_1"
-                android:background="@color/colorOnBackground"
+                android:background="?colorOnBackground"
                 >
 
             <TextView
@@ -375,7 +375,7 @@
                 android:layout_height="wrap_content"
                 android:padding="@dimen/dp_10"
                 android:layout_marginTop="@dimen/dp_1"
-                android:background="@color/colorOnBackground"
+                android:background="?colorOnBackground"
                 >
 
             <TextView

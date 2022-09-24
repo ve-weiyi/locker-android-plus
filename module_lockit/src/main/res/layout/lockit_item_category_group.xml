@@ -3,7 +3,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorBackground"
+        android:background="?colorBackground"
         android:orientation="vertical"
         >
 
@@ -17,7 +17,7 @@
             android:ellipsize="end"
             android:gravity="center_vertical"
             android:maxLines="1"
-            android:textColor="@color/colorPrimary"
+            android:textColor="?colorPrimary"
             android:textStyle="bold"
             tools:text="@string/lockit_app_name" />
 

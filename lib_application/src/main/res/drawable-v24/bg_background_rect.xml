@@ -6,12 +6,12 @@
 
             android:radius="10dp" />
 
-    <solid android:color="@color/colorBackground" />
+    <solid android:color="?colorBackground" />
 
 <!--    边框-->
 <!--    <stroke-->
 <!--            android:width="2dp"-->
-<!--            android:color="@color/colorPrimary" />-->
+<!--            android:color="?colorPrimary" />-->
 
 <!--渐变色-->
 <!--    <gradient-->

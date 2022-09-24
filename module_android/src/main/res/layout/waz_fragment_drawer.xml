@@ -12,7 +12,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
+            android:background="?colorPrimary"
             android:clickable="true"
             android:focusable="true"
             android:gravity="bottom"
@@ -127,10 +127,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            android:background="@color/colorBackground"
+            android:background="?colorBackground"
             android:fitsSystemWindows="true"
-            app:itemIconTint="@color/color_text_dark"
-            app:itemTextColor="@color/color_text_dark"
+            app:itemIconTint="@color/text_color_dark"
+            app:itemTextColor="@color/text_color_dark"
             app:menu="@menu/nav_menu"
             />
 

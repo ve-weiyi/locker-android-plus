@@ -59,7 +59,7 @@
             android:paddingTop="@dimen/dp_2"
             android:paddingRight="@dimen/dp_4"
             android:paddingBottom="@dimen/dp_2"
-            android:textColor="@color/colorAccent"
+            android:textColor="?colorAccent"
             android:textSize="@dimen/sp_10"
             android:visibility="gone"
             tools:text="@string/app_name"
@@ -76,7 +76,7 @@
             android:paddingTop="@dimen/dp_2"
             android:paddingRight="@dimen/dp_4"
             android:paddingBottom="@dimen/dp_2"
-            android:textColor="@color/colorAccent"
+            android:textColor="?colorAccent"
             android:textSize="@dimen/sp_10"
             android:visibility="gone"
             tools:text="@string/app_name"
@@ -89,7 +89,7 @@
             android:layout_alignBaseline="@+id/tv_article_top"
             android:layout_marginStart="@dimen/dp_10"
             android:layout_toEndOf="@+id/tv_article_audit"
-            android:textColor="@color/color_text_normal"
+            android:textColor="@color/text_color_normal"
             android:textSize="@dimen/ts_12"
             tools:text="@string/app_name" />
 
@@ -99,7 +99,7 @@
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/tv_article_top"
             android:layout_alignParentEnd="true"
-                android:textColor="@color/color_text_gray"
+                android:textColor="@color/text_color_grey"
             android:textSize="@dimen/ts_12"
             tools:text="@string/app_name" />
 
@@ -125,7 +125,7 @@
             android:lineSpacingExtra="2dp"
             android:maxLines="2"
             android:paddingBottom="@dimen/dp_6"
-            android:textColor="@color/color_text_dark"
+            android:textColor="@color/text_color_dark"
             android:textSize="@dimen/ts_16" />
 
         <TextView
@@ -141,7 +141,7 @@
             android:layout_marginRight="@dimen/dp_10"
             android:layout_toEndOf="@+id/iv_article_thumbnail"
             android:gravity="center"
-                android:textColor="@color/color_text_gray"
+                android:textColor="@color/text_color_grey"
             android:textSize="@dimen/ts_12"
             tools:text="@string/app_name" />
 

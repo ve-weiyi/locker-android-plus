@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fitsSystemWindows="true"
-            android:theme="@style/AppTheme.AppBarOverlay">
+        >
         <include
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
                 android:id="@+id/ext_toolbar"
@@ -22,12 +22,11 @@
         <com.google.android.material.tabs.TabLayout
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
                 android:id="@+id/tabLayout"
-                android:background="@color/colorAccent"
+                android:background="?colorAccent"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:theme="@style/AppTheme.AppBarOverlay"
                 app:tabGravity="fill"
                 app:tabMode="scrollable"
                 app:tabIndicatorColor="@color/red"
@@ -50,7 +49,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:background="@color/white"
-                    app:banner_indicator_selected_color="@color/colorPrimary"
+                    app:banner_indicator_selected_color="?colorPrimary"
                     app:banner_radius="@dimen/dp_10"
                     app:layout_collapseMode="pin" />
 
@@ -62,7 +61,7 @@
 <!--            module.module.android:id="@+id/swipeRefreshLayout"-->
 <!--            module.module.android:layout_width="match_parent"-->
 <!--            module.module.android:layout_height="match_parent"-->
-<!--            module.module.android:background="@color/colorBackground">-->
+<!--            module.module.android:background="?colorBackground">-->
 
         <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view"

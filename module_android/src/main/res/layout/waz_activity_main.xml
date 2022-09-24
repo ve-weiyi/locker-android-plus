@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_gravity="bottom"
-                android:background="@color/colorBackground"
+                android:background="?colorBackground"
                 app:elevation="@dimen/dp_16"
                 app:itemIconTint="@drawable/state_nav_item_color"
                 app:itemTextColor="@drawable/state_nav_item_color"

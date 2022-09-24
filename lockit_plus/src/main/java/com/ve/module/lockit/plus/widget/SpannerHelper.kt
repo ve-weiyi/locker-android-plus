@@ -15,36 +15,31 @@ import android.text.style.*
  */
 object SpannerHelper {
 
-    private lateinit var ss: SpannableString
+    class Builder(
+        var text: String,
+        var start: Int,
+        var end: Int
+        ) {
+        var textSize: Int? = null
+        var textStyle: Int? = null
+        var textScale: Float? = null
 
-    fun builder(str: String): SpannerHelper {
-        ss = SpannableString(str)
-        return this
-    }
+        var foregroundColor: Int? = null
+        var backGroundColor: Int? = null
 
+        var underLineSpan = false
+        var deleteLine = false
+        var subscript = false
 
-    object Builder{
-        var textSize:Int?=null
-        var textStyle:Int?=null
-        var textScale:Int?=null
-
-        var foregroundColor=0
-        var backGroundColor=0
-
-        var underLineSpan=false
-        var deleteLine=false
-        var subscript=false
-
-        var textClickListener=0
+        var textClickListener = 0
 
         /**
          *
          */
-        var flag=Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        var flag = Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
 
-        fun build(text:String,start: Int,end: Int): SpannableString {
-            val ss=SpannableString(text)
-
+        fun build(): SpannableString {
+            val ss = SpannableString(text)
 
             textSize?.let {
                 ss.setSpan(AbsoluteSizeSpan(it), start, end, flag)
@@ -54,6 +49,30 @@ object SpannerHelper {
                 ss.setSpan(StyleSpan(it), start, end, flag)
 
             }
+
+            textScale?.let {
+                ss.setSpan(ScaleXSpan(it), start, end, flag)
+            }
+
+            foregroundColor?.let {
+                ss.setSpan(ForegroundColorSpan(it), start, end, flag)
+            }
+
+            backGroundColor?.let {
+                ss.setSpan(BackgroundColorSpan(it), start, end, flag)
+            }
+
+            if (underLineSpan) {
+                ss.setSpan(UnderlineSpan(), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+            }
+
+            if (deleteLine) {
+                ss.setSpan(StrikethroughSpan(), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+            }
+            if (subscript) {
+                ss.setSpan(SubscriptSpan(), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+            }
+
             return ss
         }
     }
@@ -63,17 +82,22 @@ object SpannerHelper {
      * SpannableString ss=new SpannableString("str");
      * 设置字体大小，用px
      */
-    fun setSizeSpanUsePx(start: Int, end: Int, pxSize: Int): SpannerHelper {
+    fun setSizeSpanUsePx(ss: SpannableString, start: Int, end: Int, pxSize: Int): SpannableString {
         ss.setSpan(AbsoluteSizeSpan(pxSize), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-        return this
+        return ss
     }
 
     /**
      * 设置字体大小，用dip
      */
-    fun setSizeSpanUseDip(start: Int, end: Int, dipSize: Int): SpannerHelper {
+    fun setSizeSpanUseDip(
+        ss: SpannableString,
+        start: Int,
+        end: Int,
+        dipSize: Int
+    ): SpannableString {
         ss.setSpan(AbsoluteSizeSpan(dipSize, true), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-        return this
+        return ss
     }
 
     /**
@@ -82,9 +106,9 @@ object SpannerHelper {
      *
      * @param relativeSize 相对大小 如：0.5f，2.0f
      */
-    fun setRelativeSizeSpan(start: Int, end: Int, relativeSize: Float): SpannerHelper {
+    fun setRelativeSizeSpan(ss: SpannableString, start: Int, end: Int, relativeSize: Float): SpannableString {
         ss.setSpan(RelativeSizeSpan(relativeSize), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-        return this
+        return ss
     }
 
     /**
@@ -93,9 +117,9 @@ object SpannerHelper {
      * @param typeface 字体类型 如：default，efault-bold,monospace,serif,sans-serif
      * @return
      */
-    fun setTypeFaceSpan(start: Int, end: Int, typeface: String?): SpannerHelper {
+    fun setTypeFaceSpan(ss: SpannableString, start: Int, end: Int, typeface: String?): SpannableString {
         ss.setSpan(TypefaceSpan(typeface), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-        return this
+        return ss
     }
 
     /**
@@ -105,49 +129,50 @@ object SpannerHelper {
      * Typeface.BOLD_ITALIC粗斜体
      * @return
      */
-    fun setStyleSpan(start: Int, end: Int, style: Int): SpannerHelper {
+    fun setStyleSpan(ss: SpannableString, start: Int, end: Int, style: Int): SpannableString {
         ss.setSpan(StyleSpan(style), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-        return this
-    }
-
-    /**
-     * 设置字体下划线
-     */
-    fun setUnderLineSpan(start: Int, end: Int): SpannerHelper {
-        ss.setSpan(UnderlineSpan(), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-        return this
-    }
-
-    /**
-     * 设置字体删除线
-     */
-    fun setDeleteLineSpan(start: Int, end: Int): SpannerHelper {
-        ss.setSpan(StrikethroughSpan(), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-        return this
-    }
-
-    /**
-     * 设置上标
-     */
-    fun setSuperscriptSpan(start: Int, end: Int): SpannerHelper {
-        ss.setSpan(SuperscriptSpan(), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-        return this
+        return ss
     }
 
     /**
      * 设置放大系数
      */
-    fun setScaleSpan(start: Int, end: Int, scale: Float): SpannerHelper {
+    fun setScaleSpan(ss: SpannableString, start: Int, end: Int, scale: Float): SpannableString {
         ss.setSpan(ScaleXSpan(scale), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-        return this
+        return ss
+    }
+
+
+    /**
+     * 设置字体下划线
+     */
+    fun setUnderLineSpan(ss: SpannableString, start: Int, end: Int): SpannableString {
+        ss.setSpan(UnderlineSpan(), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        return ss
+    }
+
+    /**
+     * 设置字体删除线
+     */
+    fun setDeleteLineSpan(ss: SpannableString, start: Int, end: Int): SpannableString {
+        ss.setSpan(StrikethroughSpan(), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        return ss
+    }
+
+    /**
+     * 设置上标
+     */
+    fun setSuperscriptSpan(ss: SpannableString, start: Int, end: Int): SpannableString {
+        ss.setSpan(SuperscriptSpan(), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        return ss
     }
 
     /**
      * 设置下标
      */
-    fun setSubscriptSpan(start: Int, end: Int): SpannerHelper {
+    fun setSubscriptSpan(ss: SpannableString, start: Int, end: Int): SpannableString {
         ss.setSpan(SubscriptSpan(), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-        return this
+        return ss
     }
 
     /**
@@ -156,20 +181,21 @@ object SpannerHelper {
      * @param color 颜色值 如Color.BLACK ,Color.parseColor("#CCCCCC")
      * @return
      */
-    fun setForegroundColorSpan(start: Int, end: Int, color: Int): SpannerHelper {
+    fun setForegroundColorSpan(ss: SpannableString, start: Int, end: Int, color: Int): SpannableString {
         ss.setSpan(ForegroundColorSpan(color), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-        return this
+        return ss
     }
+
     /**
      * 设置背景色
      */
-    fun setBackGroundColorSpan(start: Int, end: Int, color: Int): SpannerHelper {
+    fun setBackGroundColorSpan(ss: SpannableString, start: Int, end: Int, color: Int): SpannableString {
         ss.setSpan(BackgroundColorSpan(color), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-        return this
+        return ss
     }
 
-    fun setTextClickListener(start: Int, end: Int, clickableSpan: ClickableSpan): SpannerHelper {
+    fun setTextClickListener(ss: SpannableString,start: Int, end: Int, clickableSpan: ClickableSpan): SpannableString {
         ss.setSpan(clickableSpan, start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-        return this
+        return ss
     }
 }

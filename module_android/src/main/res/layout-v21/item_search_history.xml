@@ -8,7 +8,7 @@
     android:clickable="true"
     android:focusable="true"
     android:foreground="?attr/selectableItemBackground"
-    app:cardBackgroundColor="@color/colorBackground"
+    app:cardBackgroundColor="?colorBackground"
     app:cardCornerRadius="@dimen/dp_1"
     app:cardElevation="@dimen/dp_1">
 
@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:textColor="@color/color_text_gray"
+            android:textColor="@color/text_color_grey"
             tools:text="TextView" />
 
         <ImageView

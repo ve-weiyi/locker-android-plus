@@ -3,7 +3,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:background="@color/colorBackground"
+        android:background="?colorBackground"
         android:fitsSystemWindows="true">
 
     <LinearLayout
@@ -27,7 +27,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/user_login"
-                    android:textColor="@color/color_text_dark"
+                    android:textColor="@color/text_color_dark"
                     android:textSize="@dimen/sp_18" />
 
             <TextView

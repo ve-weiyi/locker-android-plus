@@ -9,7 +9,7 @@
         android:id="@+id/tv_reason"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/color_text_dark"
+        android:textColor="@color/text_color_dark"
         android:textSize="@dimen/sp_16"
         tools:text="签到" />
 
@@ -21,7 +21,7 @@
         android:layout_marginTop="@dimen/dp_4"
         android:layout_marginEnd="@dimen/dp_4"
         android:layout_toStartOf="@+id/tv_score"
-            android:textColor="@color/color_text_gray"
+            android:textColor="@color/text_color_grey"
         tools:text="2019-09-05 00:01:16 签到,积分：10 + 23" />
 
     <TextView
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:textColor="@color/colorAccent"
+        android:textColor="?colorAccent"
         tools:text="+33" />
 
 </RelativeLayout>

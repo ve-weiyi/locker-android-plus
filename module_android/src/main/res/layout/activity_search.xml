@@ -4,7 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorBackground"
+        android:background="?colorBackground"
         android:orientation="vertical">
 
     <include
@@ -30,7 +30,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/dp_8"
                     android:text="@string/hot_search"
-                    android:textColor="@color/colorAccent"
+                    android:textColor="?colorAccent"
                     android:textSize="@dimen/sp_16" />
 
             <com.zhy.view.flowlayout.TagFlowLayout
@@ -63,7 +63,7 @@
                         android:layout_toLeftOf="@+id/search_history_clear_all_tv"
                         android:layout_toStartOf="@+id/search_history_clear_all_tv"
                         android:text="@string/history_search"
-                        android:textColor="@color/colorAccent"
+                        android:textColor="?colorAccent"
                         android:textSize="@dimen/sp_16" />
             </RelativeLayout>
 
@@ -72,7 +72,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="@dimen/dp_12"
-                    android:background="@color/colorBackground" />
+                    android:background="?colorBackground" />
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>

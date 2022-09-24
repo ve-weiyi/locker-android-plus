@@ -13,7 +13,7 @@
         android:top="240dp">
         <!--        <bitmap module.module.android:src="@drawable/logo" />-->
         <shape>
-            <solid android:color="@color/colorAccent" />
+            <solid android:color="?colorAccent" />
             <corners android:radius="8dp" />
         </shape>
     </item>

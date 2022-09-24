@@ -9,5 +9,5 @@
         android:paddingHorizontal="@dimen/dp_20"
         android:text="社交"
         android:textSize="20sp"
-        android:textColor="@color/colorPrimary" />
+        android:textColor="?colorPrimary" />
 

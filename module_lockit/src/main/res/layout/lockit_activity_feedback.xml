@@ -30,7 +30,7 @@
                     android:padding="@dimen/dp_10"
                     android:gravity="top"
                     android:background="@drawable/bg_grey_tag"
-                    android:textColorHint="@color/colorPrimary"
+                    android:textColorHint="?colorPrimary"
                     android:hint="说说你的问题ヾ(^▽^ヾ)~~" />
 
 
@@ -50,7 +50,7 @@
                     android:padding="@dimen/dp_10"
                     android:gravity="top"
                     android:background="@drawable/bg_grey_tag"
-                    android:textColorHint="@color/colorPrimary"
+                    android:textColorHint="?colorPrimary"
                     android:hint="请输入你的联系邮箱(选填)" />
 
 

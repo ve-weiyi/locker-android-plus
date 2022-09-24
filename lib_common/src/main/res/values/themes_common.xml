@@ -1,22 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
-
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" >
-        <!--新增一个item，用于控制menu-->
-        <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
-    </style>
-
-    <style name="OverflowMenuStyle" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
-        <!--把该属性改为false即可使menu位置位于toolbar之下-->
-        <item name="overlapAnchor">false</item>
-    </style>
-
 
     <style name="ThemeTabLayoutStyle" parent="Base.Widget.Design.TabLayout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:background">?colorPrimary</item>
         <item name="tabIndicatorColor">@color/white</item>
         <item name="tabIndicatorHeight">@dimen/dp_2</item>
         <item name="tabSelectedTextColor">@color/white</item>
@@ -27,8 +15,8 @@
     <style name="TopTabLayoutStyle" parent="Base.Widget.Design.TabLayout">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">40dp</item>
-        <item name="android:background">@color/colorPrimary</item>
-        <item name="android:textColor">@color/color_text_dark</item>
+        <item name="android:background">?colorPrimary</item>
+        <item name="android:textColor">@color/text_color_dark</item>
         <item name="tabTextColor">@color/purple</item>
         <item name="tabMode">scrollable</item>
         <item name="tabGravity">center</item>
@@ -93,7 +81,7 @@
         <item name="android:layout_height">0.5dp</item>
         <item name="android:layout_marginTop">@dimen/dp_20</item>
         <item name="android:layout_marginBottom">@dimen/dp_20</item>
-        <item name="android:background">@color/gray</item>
+        <item name="android:background">@color/grey</item>
     </style>
 
 

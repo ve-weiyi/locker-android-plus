@@ -60,7 +60,7 @@ class PrivacyDialog(context: Context) : Dialog(context, R.style.CommonEufyDialog
 
             val dialogWindow = dialog.window
             val lp = dialogWindow!!.attributes
-            lp.width = (DisplayUtil.getScreenWidth()* 0.8).toInt()
+            lp.width = (DisplayUtil.getScreenWidth()* 0.9).toInt()
             lp.height = (DisplayUtil.getScreenHeight()* 0.8).toInt()
             dialogWindow.attributes = lp
 

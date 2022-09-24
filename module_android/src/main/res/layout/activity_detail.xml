@@ -4,7 +4,7 @@
     android:id="@+id/common_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBackground"
+    android:background="?colorBackground"
     android:orientation="vertical">
 
     <include
@@ -15,7 +15,7 @@
         android:id="@+id/web_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorBackground"
+        android:background="?colorBackground"
         android:fitsSystemWindows="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 

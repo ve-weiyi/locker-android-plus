@@ -1,52 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-<!--    Android 样式：常用主题属性 -->
-<!--    colorPrimary：应用的主要品牌颜色，最常用于主题 toolbar-->
-<!--    colorPrimaryVariant：您的主要品牌颜色的较浅/较深变体，在主题中很少使用 状态栏-->
-<!--    colorOnPrimary：用于显示在原色之上的元素的颜色（例如，文本和图标，通常为白色或半- 透明黑色，具体取决于可访问性）-->
-<!--    colorSecondary：您的应用的辅助品牌颜色，主要用作某些需要突出的小部件的重点-->
-<!--    colorSecondaryVariant：您的辅助品牌颜色的较浅/较深变体，在主题中很少使用-->
-<!--    colorOnSecondary：用于显示在辅助颜色之上的元素的颜色-->
-<!--    colorError：用于错误的颜色（通常是红色阴影）-->
-<!--    colorOnError：用于显示在错误颜色之上的元素的颜色-->
-<!--    colorSurface：用于表面的颜色（即材料“片材”）-->
-<!--    colorOnSurface：用于显示在表面颜色之上的元素的颜色-->
-<!--    colorBackground：所有其他屏幕内容背后的颜色-->
-<!--    colorOnBackground：用于显示在背景颜色之上的元素的颜色-->
+    <!--    Android 样式：常用主题属性 -->
+    <!--    colorPrimary：应用的主要品牌颜色，最常用于主题 toolbar-->
+    <!--    colorPrimaryVariant：您的主要品牌颜色的较浅/较深变体，在主题中很少使用 状态栏-->
+    <!--    colorOnPrimary：用于显示在原色之上的元素的颜色（例如，文本和图标，通常为白色或半- 透明黑色，具体取决于可访问性）-->
+    <!--    colorSecondary：您的应用的辅助品牌颜色，主要用作某些需要突出的小部件的重点-->
+    <!--    colorSecondaryVariant：您的辅助品牌颜色的较浅/较深变体，在主题中很少使用-->
+    <!--    colorOnSecondary：用于显示在辅助颜色之上的元素的颜色-->
+    <!--    colorError：用于错误的颜色（通常是红色阴影）-->
+    <!--    colorOnError：用于显示在错误颜色之上的元素的颜色-->
+    <!--    colorSurface：用于表面的颜色（即材料“片材”）-->
+    <!--    colorOnSurface：用于显示在表面颜色之上的元素的颜色-->
+    <!--    colorBackground：(所有控件背景色) 不仅影响主窗口的背景，而且影响所有组件的背景，例如除非您在组件布局中覆盖它。-->
+    <!--    colorOnBackground：用于显示在背景颜色之上的元素的颜色-->
+    <!--    windowBackground：(页面背景色) 只影响主窗口的背景,在colorBackground下方，优先级比colorBackground高。。-->
 
+    <!--    1.colorPrimary 应用的主要色调，actionBar默认使用该颜色，Toolbar导航栏的底色-->
+    <!--    2.colorPrimaryDark 应用的主要暗色调，statusBarColor默认使用该颜色-->
+    <!--    3.statusBarColor 状态栏颜色，默认使用colorPrimaryDark-->
+    <!--    4.windowBackground 窗口背景颜色-->
+    <!--    5.navigationBarColor 底部栏颜色-->
+    <!--    6.colorForeground 应用的前景色，ListView的分割线，switch滑动区默认使用该颜色-->
+    <!--    7.colorBackground 应用的背景色，popMenu的背景默认使用该颜色-->
+    <!--    8.colorAccent CheckBox，RadioButton，SwitchCompat等一般控件的选中效果默认采用该颜色-->
+    <!--    9.colorControlNormal CheckBox，RadioButton，SwitchCompat等默认状态的颜色。使用tint可以让drawable自动适应主题-->
+    <!--    10.colorControlHighlight 控件按压时的色调-->
+    <!--    11.colorControlActivated 控件选中时的颜色，默认使用colorAccent-->
+    <!--    12.colorButtonNormal 默认按钮的背景颜色-->
+    <!--    13.editTextColor：默认EditView输入框字体的颜色。-->
+    <!--    14.textColor Button，textView的文字颜色-->
+    <!--    15.textColorPrimaryDisableOnly RadioButton checkbox等控件的文字-->
+    <!--    16.textColorPrimary 应用的主要文字颜色，actionBar的标题文字默认使用该颜色-->
+    <!--    17.colorSwitchThumbNormal: switch thumbs 默认状态的颜色. (switch off)-->
 
     <!-- 自定义主题颜色 -->
-    <!--    colorPrimary：您的应用的主要品牌颜色，主要用于主题-->
-    <color name="brand">@color/colorPrimary</color>
-    <!--    colorPrimary：您的应用的主要品牌颜色，主要用于主题-->
-    <color name="colorPrimary">#14e0d0</color>
-    <color name="colorPrimaryDark">@color/deep_blue</color>
-    <color name="colorAccent">@color/colorPrimary</color>
-    <color name="colorPrimaryVariant">#512DA8</color>
-    <color name="colorOnPrimary">@color/white</color>
-    <color name="colorSecondary">@color/light_blue</color>
-    <color name="colorSecondaryVariant">#0039CB</color>
-    <color name="colorOnSecondary">#212121</color>
-    <color name="colorError">#ff5454</color>
-    <color name="colorOnError">#FFFFFF</color>
-    <color name="colorSurface">@color/light_white</color>
-    <color name="colorOnSurface">#212121</color>
-    <color name="colorBackground">@color/grey100</color>
-    <color name="colorOnBackground">@color/white</color>
+    <color name="brand">?colorPrimary</color>
+    <color name="colorPrimary">@color/cyan</color>
+    <color name="colorPrimaryDark">@color/light_blue</color>
+    <color name="colorAccent">@color/cyan</color>
+<!--    <color name="colorPrimaryVariant">#512DA8</color>-->
+<!--    <color name="colorOnPrimary">@color/white</color>-->
+<!--    <color name="colorSecondary">@color/light_blue</color>-->
+<!--    <color name="colorSecondaryVariant">#0039CB</color>-->
+<!--    <color name="colorOnSecondary">#212121</color>-->
+<!--    <color name="colorError">#ff5454</color>-->
+<!--    <color name="colorOnError">#FFFFFF</color>-->
+<!--    <color name="colorSurface">@color/light_white</color>-->
+<!--    <color name="colorOnSurface">#212121</color>-->
+<!--    <color name="colorBackground">@color/grey100</color>-->
+<!--    <color name="colorOnBackground">@color/white</color>-->
 
-    <!--    比背景色深一点-->
-    <color name="windowBackground">@color/grey150</color>
-    <color name="windowBackgroundDark">@color/grey200</color>
-    <color name="textColorPrimary">@color/color_text_dark</color>
+<!--    &lt;!&ndash;    比背景色深一点&ndash;&gt;-->
+<!--    <color name="windowBackground">@color/grey150</color>-->
+<!--    <color name="windowBackgroundDark">@color/grey200</color>-->
+<!--    <color name="textColorPrimary">?color_text_dark</color>-->
 
     <color name="line_divider">@color/grey400</color>
     <color name="mask_color">#f5f5f5</color>
 
     <!-- color -->
-    <color name="color_text_light">@color/grey200</color>
-    <color name="color_text_dark">#111111</color>
-    <color name="color_text_normal">@color/grey700</color>
-    <color name="color_text_gray">@color/grey600</color>
+    <color name="text_color_dark">#111111</color>
+    <color name="text_color_normal">@color/grey700</color>
+    <color name="text_color_grey">@color/grey600</color>
+    <color name="text_color_light">@color/grey200</color>
 
 
     <color name="purple_200">#FFBB86FC</color>
@@ -54,7 +70,6 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-
 
 
     <color name="grey50">#FaFaFa</color>

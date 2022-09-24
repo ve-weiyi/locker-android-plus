@@ -5,7 +5,6 @@
         android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?sc_background"
         android:fitsSystemWindows="true"
         app:elevation="0dp">
 
@@ -55,13 +54,13 @@
                         app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                            android:id="@+id/iv_end_icon"
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:contentDescription="@null"
-                            android:scaleType="centerInside"
-                            android:visibility="visible"
-                            tools:src="@drawable/edit_icon_tips" />
+                        android:id="@+id/iv_end_icon"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:contentDescription="@null"
+                        android:scaleType="centerInside"
+                        android:visibility="visible"
+                        tools:src="@drawable/edit_icon_tips" />
 
                     <View
                             android:id="@+id/view_end_red_dot"
@@ -84,7 +83,7 @@
                         android:gravity="center_vertical|end"
                         android:lines="1"
                         android:maxWidth="80dp"
-                        android:textColor="@color/colorPrimary"
+                        android:textColor="?colorAccent"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/llContent"
                         app:layout_constraintStart_toEndOf="@+id/common_start_icon"

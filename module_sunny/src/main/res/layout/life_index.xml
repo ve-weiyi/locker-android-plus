@@ -7,7 +7,7 @@
         app:cardCornerRadius="4dp">
 
     <LinearLayout
-            android:background="@color/colorOnBackground"
+            android:background="?colorOnBackground"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

@@ -13,7 +13,7 @@
         <!--        <item name="passwordToggleEnabled">true</item>-->
         <!--        <item name="endIconMode">clear_text</item>-->
         <!--右边图标填充色-->
-        <!--        <item name="passwordToggleTint">@color/colorPrimary</item>-->
+        <!--        <item name="passwordToggleTint">?colorPrimary</item>-->
         <item name="passwordToggleTintMode">src_atop</item>
         <!--        左边图标-->
         <!--        <item name="startIconDrawable">@drawable/fab_add</item>-->
@@ -30,9 +30,9 @@
         <item name="boxBackgroundMode">outline</item>
         <item name="passwordToggleEnabled">true</item>
         <!--        <item name="endIconMode">password_toggle</item>-->
-        <item name="passwordToggleTint">@color/colorPrimary</item>
+        <item name="passwordToggleTint">?colorPrimary</item>
         <item name="boxBackgroundColor">@color/grey100</item>
-        <item name="boxStrokeColor">@color/colorPrimary</item>
+        <item name="boxStrokeColor">?colorPrimary</item>
         <item name="boxCornerRadiusTopStart">@dimen/dp_10</item>
         <item name="boxCornerRadiusTopEnd">@dimen/dp_10</item>
         <item name="boxCornerRadiusBottomStart">@dimen/dp_10</item>
@@ -46,9 +46,9 @@
         <item name="endIconDrawable">@drawable/ic_baseline_clear_24</item>
         <item name="endIconMode">clear_text</item>
         <!--右边图标填充色-->
-        <item name="passwordToggleTint">@color/colorPrimary</item>
+        <item name="passwordToggleTint">?colorPrimary</item>
         <item name="boxBackgroundColor">@color/grey100</item>
-        <item name="boxStrokeColor">@color/colorPrimary</item>
+        <item name="boxStrokeColor">?colorPrimary</item>
         <item name="boxCornerRadiusTopStart">@dimen/dp_10</item>
         <item name="boxCornerRadiusTopEnd">@dimen/dp_10</item>
         <item name="boxCornerRadiusBottomStart">@dimen/dp_10</item>
@@ -58,11 +58,11 @@
     <style name="InputTextLayoutStyle.Bound" parent="InputTextLayoutStyle">
 
         <!--右边图标填充色-->
-        <item name="passwordToggleTint">@color/colorPrimary</item>
+        <item name="passwordToggleTint">?colorPrimary</item>
         <item name="boxBackgroundMode">outline</item>
         <item name="passwordToggleEnabled">true</item>
         <item name="boxBackgroundColor">@color/grey100</item>
-        <item name="boxStrokeColor">@color/colorPrimary</item>
+        <item name="boxStrokeColor">?colorPrimary</item>
         <item name="boxCornerRadiusTopStart">@dimen/dp_10</item>
         <item name="boxCornerRadiusTopEnd">@dimen/dp_10</item>
         <item name="boxCornerRadiusBottomStart">@dimen/dp_10</item>
@@ -75,7 +75,7 @@
 
     <!--    不可以编辑-->
     <style name="EditText.See" >
-        <item name="android:textColor">@color/color_text_normal</item>
+        <item name="android:textColor">@color/text_color_normal</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:focusable">false</item>
@@ -87,7 +87,7 @@
     <!--    编辑-->
     <style name="EditText.Edit" >
         <item name="android:gravity">top</item>
-        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textColor">?colorAccent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:focusable">true</item>
@@ -144,7 +144,7 @@
         <item name="android:layout_marginTop">8dp</item>
         <item name="android:padding">4dp</item>
 
-        <item name="android:background">@color/colorBackground</item>
+        <item name="android:background">?colorBackground</item>
         <item name="android:elevation">0dp</item>
         <item name="android:orientation">vertical</item>
 

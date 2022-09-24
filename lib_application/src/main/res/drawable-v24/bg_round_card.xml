@@ -6,12 +6,12 @@
 
             android:radius="8dp" />
 
-    <solid android:color="@color/colorPrimary" />
+    <solid android:color="?colorPrimary" />
 
 <!--    边框-->
     <stroke
             android:width="2dp"
-            android:color="@color/colorSecondary" />
+            android:color="?colorSecondary" />
 
 <!--渐变色-->
     <gradient

@@ -49,7 +49,7 @@
                 app:iconHeight="23dp"
                 app:iconWidth="23dp"
                 app:infoText="我的消息"
-                app:infoTextColor="@color/colorPrimary"
+                app:infoTextColor="?colorPrimary"
                 app:infoTextMarginTop="5dp"
                 app:infoTextSize="11sp"
                 />
@@ -63,7 +63,7 @@
                 app:iconHeight="23dp"
                 app:iconWidth="23dp"
                 app:infoText="我的收藏"
-                app:infoTextColor="@color/colorPrimary"
+                app:infoTextColor="?colorPrimary"
                 app:infoTextMarginTop="5dp"
                 app:infoTextSize="11sp"
                 />
@@ -77,7 +77,7 @@
                 app:iconHeight="23dp"
                 app:iconWidth="23dp"
                 app:infoText="个性换肤"
-                app:infoTextColor="@color/colorPrimary"
+                app:infoTextColor="?colorPrimary"
                 app:infoTextMarginTop="5dp"
                 app:infoTextSize="11sp" />
 
@@ -123,7 +123,7 @@
                             android:id="@+id/action_today_weather"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            app:tileTextColor="@color/color_text_dark"
+                            app:tileTextColor="@color/text_color_dark"
                             app:hIcon="@drawable/ic_cloud"
 
                             app:hTipTextSize="@dimen/dp_12"
@@ -148,7 +148,7 @@
                             android:layout_height="wrap_content"
                             app:hIcon="@drawable/ic_night_24dp"
                             app:hTipVisiblity="false"
-                            app:tileTextColor="@color/color_text_dark"
+                            app:tileTextColor="@color/text_color_dark"
                             app:paddingLeft="20dp"
                             app:paddingRight="30dp"
                             app:tileText="夜间模式" />
@@ -160,7 +160,7 @@
                             android:id="@+id/action_share"
                             app:hIcon="@drawable/ic_baseline_share_24"
                             app:hTipVisiblity="false"
-                            app:tileTextColor="@color/color_text_dark"
+                            app:tileTextColor="@color/text_color_dark"
                             app:paddingLeft="20dp"
                             app:paddingRight="30dp"
                             app:tileText="分享应用" />
@@ -170,7 +170,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             app:hIcon="@drawable/ic_about_us_white_24dp"
-                            app:tileTextColor="@color/color_text_dark"
+                            app:tileTextColor="@color/text_color_dark"
                             app:hTipVisiblity="false"
                             app:paddingLeft="20dp"
                             app:paddingRight="30dp"
@@ -180,7 +180,7 @@
                             android:id="@+id/action_check_update_view"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:tileTextColor="@color/color_text_dark"
+                            app:tileTextColor="@color/text_color_dark"
                             app:hIcon="@drawable/ic_sun"
                             app:hTipVisiblity="false"
                             app:paddingLeft="20dp"
@@ -192,7 +192,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             app:hIcon="@drawable/ic_setting_24dp"
-                            app:tileTextColor="@color/color_text_dark"
+                            app:tileTextColor="@color/text_color_dark"
                             app:hTipVisiblity="false"
                             app:paddingLeft="20dp"
                             app:paddingRight="30dp"
@@ -227,7 +227,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             app:hIcon="@drawable/ic_alarm"
-                            app:tileTextColor="@color/color_text_dark"
+                            app:tileTextColor="@color/text_color_dark"
                             app:hTipVisiblity="false"
                             app:paddingLeft="20dp"
                             app:paddingRight="30dp"
@@ -238,7 +238,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             app:hIcon="@drawable/ic_free_flow"
-                            app:tileTextColor="@color/color_text_dark"
+                            app:tileTextColor="@color/text_color_dark"
                             app:hTipVisiblity="false"
                             app:paddingLeft="20dp"
                             app:paddingRight="30dp"
@@ -249,7 +249,7 @@
                             android:id="@+id/action_about"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:tileTextColor="@color/color_text_dark"
+                            app:tileTextColor="@color/text_color_dark"
                             app:hIcon="@drawable/ic_cloud"
                             app:hTipVisiblity="false"
                             app:paddingLeft="20dp"
@@ -259,7 +259,7 @@
                     <com.ve.lib.view.widget.view.HorizontalItemView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:tileTextColor="@color/color_text_dark"
+                            app:tileTextColor="@color/text_color_dark"
                             app:hIcon="@drawable/ic_cloud"
                             app:hTipVisiblity="false"
                             app:paddingLeft="20dp"
@@ -268,7 +268,7 @@
                     <com.ve.lib.view.widget.view.HorizontalItemView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:tileTextColor="@color/color_text_dark"
+                            app:tileTextColor="@color/text_color_dark"
                             app:hIcon="@drawable/ic_cloud"
                             app:hTipVisiblity="false"
                             app:paddingLeft="20dp"
@@ -277,7 +277,7 @@
                     <com.ve.lib.view.widget.view.HorizontalItemView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            app:tileTextColor="@color/color_text_dark"
+                            app:tileTextColor="@color/text_color_dark"
                             app:hIcon="@drawable/ic_cloud"
                             app:hTipVisiblity="false"
                             app:paddingLeft="20dp"
@@ -316,7 +316,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
                             android:text="退出登录"
-                            android:textColor="@color/colorPrimary"
+                            android:textColor="?colorPrimary"
                             android:textSize="15sp" />
                 </LinearLayout>
             </LinearLayout>

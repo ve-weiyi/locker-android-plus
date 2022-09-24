@@ -47,7 +47,7 @@
             android:singleLine="true"
             tools:text="中国银行储蓄卡"
             style="@style/tv_title_normal_primary"
-            android:textColor="@color/color_text_light"
+            android:textColor="@color/text_color_light"
             android:textStyle="bold" />
 
 
@@ -63,7 +63,7 @@
             android:maxLines="1"
             style="@style/tv_content_second"
             tools:text="可转账、查询账单"
-            android:textColor="@color/color_text_light"
+            android:textColor="@color/text_color_light"
             android:drawableTint="@color/windowBackground"
             app:drawableStartCompat="@drawable/ic_id_card" />
 
@@ -78,7 +78,7 @@
             android:maxLines="1"
             style="@style/tv_content_second"
             tools:text="1234****6321"
-            android:textColor="@color/color_text_light"
+            android:textColor="@color/text_color_light"
             android:drawableTint="@color/windowBackground"
             app:drawableStartCompat="@drawable/ic_id_card" />
 
@@ -101,14 +101,14 @@
                 android:maxLines="1"
                 style="@style/tv_content_second"
                 tools:text="添加标签"
-                android:textColor="@color/color_text_light"
+                android:textColor="@color/text_color_light"
                 />
 
         <TextView
                 android:layout_width="@dimen/dp_18"
                 android:layout_height="@dimen/dp_18"
                 android:background="@drawable/ic_edit_24dp"
-                android:backgroundTint="@color/colorOnBackground"
+                android:backgroundTint="?colorOnBackground"
                 />
     </LinearLayout>
 

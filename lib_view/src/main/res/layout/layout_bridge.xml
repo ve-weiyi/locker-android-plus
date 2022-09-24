@@ -10,7 +10,7 @@
         android:maxWidth="@dimen/dp_30"
         android:adjustViewBounds="true"
         android:orientation="vertical"
-        android:background="@color/colorPrimary">
+        android:background="?colorPrimary">
 
     <ImageView
             android:id="@android:id/icon1"
@@ -23,7 +23,7 @@
 
 
             android:adjustViewBounds="true"
-            android:background="@drawable/bg_gray_circle" />
+            android:background="@drawable/bg_grey_circle" />
 
 </LinearLayout>
 
