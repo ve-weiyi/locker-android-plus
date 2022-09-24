@@ -4,22 +4,40 @@ import android.content.Context
 import com.ve.lib.application.R
 
 object SkinFactory {
+    private const val SP_SKIN_THEME = "sp_skin_theme"
 
-    private const val SP_SKIN_THEME="sp_skin_theme"
 
     fun setTheme(skinActivity: SkinCompatActivity) {
-        if ("" != getSp(skinActivity, SP_SKIN_THEME)) {
-            skinActivity.setTheme(R.style.AppTheme_Sakura)
+        val theme= getSp(skinActivity,SP_SKIN_THEME)
+        when (theme) {
+            SkinConstants.THEME_DEFAULT -> {
+                skinActivity.setTheme(R.style.AppTheme)
+            }
+            SkinConstants.THEME_NIGHT -> {
+                skinActivity.setTheme(R.style.ThemeNight)
+            }
+            SkinConstants.THEME_SAKURA -> {
+                skinActivity.setTheme(R.style.ThemeSakura)
+            }
         }
     }
 
-    fun changeTheme(skinActivity: SkinCompatActivity){
-        if ("default" == getSp(skinActivity, SP_SKIN_THEME)) {
-            putSp(skinActivity, SP_SKIN_THEME, "")
-        } else {
-            putSp(skinActivity, SP_SKIN_THEME, "default")
+    fun switchTheme(skinActivity: SkinCompatActivity, theme: String = SkinConstants.THEME_DEFAULT) {
+        when (theme) {
+            SkinConstants.THEME_DEFAULT -> {
+                skinActivity.setTheme(R.style.AppTheme)
+            }
+            SkinConstants.THEME_NIGHT -> {
+                skinActivity.setTheme(R.style.ThemeNight)
+            }
+            SkinConstants.THEME_SAKURA -> {
+                skinActivity.setTheme(R.style.ThemeSakura)
+            }
         }
+        putSp(skinActivity, SP_SKIN_THEME, theme)
     }
+
+
     private fun putSp(context: Context, key: String, value: String) {
         context.getSharedPreferences("default", Context.MODE_PRIVATE).also {
             it.edit().putString(key, value).apply()

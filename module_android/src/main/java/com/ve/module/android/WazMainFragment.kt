@@ -116,7 +116,7 @@ class WazMainFragment : BaseVmPager2Fragment<WazFragmentMainBinding, WanAndroidV
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             android.R.id.home->{
-                showMsg("module.module.android.R.id.home")
+                showMsg("android.R.id.home")
                 return true
             }
             R.id.action_search->{

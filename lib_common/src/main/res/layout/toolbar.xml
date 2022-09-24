@@ -29,7 +29,8 @@
             android:textStyle="bold"
             android:ellipsize="marquee"
             android:singleLine="true"
-            tools:text="@string/app_name" />
+            tools:text="@string/app_name"
+            android:textColor="#212121" />
 
     </androidx.appcompat.widget.Toolbar>
 

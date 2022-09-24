@@ -26,9 +26,6 @@ class LockitMainActivity : BaseVmActivity<LockitActivityMainBinding, LockitViewM
 
     private var mIndex = 0
     private lateinit var mFragmentPageList: MutableList<FragmentPage>
-    override fun enableNetworkTip(): Boolean {
-        return false
-    }
 
     override fun onRestart() {
         super.onRestart()

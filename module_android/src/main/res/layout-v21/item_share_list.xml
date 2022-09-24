@@ -90,7 +90,7 @@
             android:layout_marginStart="@dimen/dp_10"
             android:layout_toEndOf="@+id/tv_article_audit"
             android:textColor="@color/text_color_normal"
-            android:textSize="@dimen/ts_12"
+            android:textSize="@dimen/sp_12"
             tools:text="@string/app_name" />
 
         <TextView
@@ -100,7 +100,7 @@
             android:layout_alignBaseline="@+id/tv_article_top"
             android:layout_alignParentEnd="true"
                 android:textColor="@color/text_color_grey"
-            android:textSize="@dimen/ts_12"
+            android:textSize="@dimen/sp_12"
             tools:text="@string/app_name" />
 
         <ImageView
@@ -125,8 +125,8 @@
             android:lineSpacingExtra="2dp"
             android:maxLines="2"
             android:paddingBottom="@dimen/dp_6"
-            android:textColor="@color/text_color_dark"
-            android:textSize="@dimen/ts_16" />
+            android:textColor="?sc_text_dark"
+            android:textSize="@dimen/sp_16" />
 
         <TextView
             android:id="@+id/tv_article_chapterName"
@@ -142,7 +142,7 @@
             android:layout_toEndOf="@+id/iv_article_thumbnail"
             android:gravity="center"
                 android:textColor="@color/text_color_grey"
-            android:textSize="@dimen/ts_12"
+            android:textSize="@dimen/sp_12"
             tools:text="@string/app_name" />
 
         <LinearLayout

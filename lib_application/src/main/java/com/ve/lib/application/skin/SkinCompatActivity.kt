@@ -20,17 +20,14 @@ open class SkinCompatActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         SkinFactory.setTheme(this)
         super.onCreate(savedInstanceState)
-        mThemeColor= getThemeColor(this,R.attr.colorBackground,Color.CYAN)
+        mThemeColor= getThemeColor(this,R.attr.colorBrand,Color.CYAN)
         //沉浸式状态栏
         setColor(this, mThemeColor, 0)
     }
 
-    private fun toggleTheme() {
-        SkinFactory.changeTheme(this)
-    }
 
-    fun onChangeTheme2() {
-        toggleTheme()
+    fun switchTheme(theme: String){
+        SkinFactory.switchTheme(this,theme)
         val intent = intent
         intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
         finish()
@@ -38,6 +35,7 @@ open class SkinCompatActivity: AppCompatActivity() {
         startActivity(intent)
         overridePendingTransition(0, 0)
     }
+
 
     /**
      * 获取主题属性的资源id

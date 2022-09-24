@@ -1,6 +1,7 @@
-package com.ve.module.lockit.plus.bean
+package com.ve.lib.common.base.model
 
 import androidx.annotation.DrawableRes
+import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
 
 /**
@@ -9,12 +10,12 @@ import androidx.fragment.app.Fragment
  * @Description  current project lockit-android
  */
 class NavigationMenuItem(
-    var menuGroup: Int = 0,
-    var menuId: Int = 0,
-    var menuIndex: Int = 0,
-    var menuTitle: String = "",
-    @DrawableRes var menuIconRes: Int = 0,
+    var fragmentIndex: Int,
+    var fragmentTitle: String = "",
     var fragmentClass: Class<out Fragment>,
+    @IdRes var menuId: Int,
+    @DrawableRes var menuIcon: Int = com.ve.lib.application.R.drawable.ic_home_black_24dp,
+    var menuGroup: Int = 0,
 ) {
 
     var mFragment: Fragment? = null

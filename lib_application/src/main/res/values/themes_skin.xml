@@ -4,33 +4,34 @@
         <!--        <item name="colorPrimaryDark">?colorPrimaryDark</item>-->
         <!--        <item name="colorAccent">?colorAccent</item>-->
         <!-- Primary brand color. -->
-        <item name="colorPrimary">?colorPrimary</item>
-        <item name="colorPrimaryVariant">?colorPrimaryDark</item>
+        <item name="colorPrimary">@color/blue</item>
+        <item name="colorPrimaryVariant">@color/deep_blue</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">?colorAccent</item>
-        <item name="colorSecondaryVariant">?colorPrimary</item>
+        <item name="colorSecondary">@color/light_blue</item>
+        <item name="colorSecondaryVariant">@color/blue</item>
         <item name="colorOnSecondary">@color/white</item>
         <!-- Status bar color. 状态栏颜色-->
         <item name="android:statusBarColor">@color/transparent</item>
         <item name="android:navigationBarColor">@color/light_blue</item>
+
         <!-- Customize your theme here. -->
         <!--    colorError：用于错误的颜色（通常为红色阴影）-->
         <item name="colorError">@color/red</item>
         <!--    colorOnError：用于显示在错误颜色顶部的元素的颜色-->
-        <item name="colorOnError">@color/light_white</item>
+        <item name="colorOnError">@color/pure_white</item>
         <!--    colorSurface：(夜间模式标题栏颜色、菜单栏背景色)用于表面的颜色（即材料“纸张”）-->
         <item name="colorSurface">@color/light_white</item>
-        <!--    colorOnSurface：用于显示在表面颜色顶部的元素的颜色-->
-        <item name="colorOnSurface">@color/grey</item>
+        <!--    colorOnSurface：用于显示在表面颜色顶部的元素的颜色 未选中时颜色-->
+        <item name="colorOnSurface">@color/light_black</item>
         <!--    colorOnBackground：用于显示在背景色上方的元素的颜色-->
         <item name="android:colorBackground">@color/grey100</item>
-        <item name="colorOnBackground">@color/light_white</item>
+        <item name="colorOnBackground">@color/white</item>
 
         <!--        <item name="android:textColor">@color/textColorPrimary</item>-->
         <!--        <item name="android:textColorPrimary">@color/textColorPrimary</item>-->
         <!--        <item name="android:colorControlNormal">@color/grey700</item>-->
-        <item name="android:windowBackground">?colorBackground</item>
+        <item name="android:windowBackground">@color/grey150</item>
     </style>
 
     <style name="BaseAppTheme.NoActionBar">
@@ -44,11 +45,13 @@
     <!--    <attr name="colorSecondary" format="color|reference" />-->
     <!--   背景色-->
     <attr name="colorBackground" format="color|reference" />
+<!--    <attr name="windowBackground" format="color|reference" />-->
     <!--    <attr name="colorOnBackground" format="color|reference" />-->
     <!--   文字颜色-->
     <attr name="sc_text_dark" format="color|reference" />
     <attr name="sc_text_normal" format="color|reference" />
     <attr name="sc_text_light" format="color|reference" />
+    <attr name="sc_text_grey" format="color|reference" />
 
     <attr name="sc_btn" format="color|reference" />
     <attr name="sc_mask" format="color|reference" />
@@ -60,39 +63,60 @@
         <item name="colorPrimary">@color/cyan</item>
         <item name="colorAccent">@color/cyan</item>
         <item name="colorSecondary">@color/light_cyan</item>
-        <item name="colorBackground">@color/white</item>
+        <item name="colorSurface">@color/light_white</item>
+        <item name="colorOnSurface">@color/light_black</item>
+        <item name="colorBackground">@color/light_grey</item>
+        <item name="colorOnBackground">@color/grey900</item>
         <item name="android:textColorPrimary">@color/black</item>
+        <item name="colorControlNormal">@color/black</item>
 
-        <item name="sc_text_dark">@color/black</item>
-        <item name="sc_text_normal">@color/grey</item>
-        <item name="sc_text_light">@color/white</item>
+        <item name="sc_text_dark">@color/text_color_dark</item>
+        <item name="sc_text_normal">@color/text_color_normal</item>
+        <item name="sc_text_light">@color/text_color_light</item>
+        <item name="sc_text_grey">@color/text_color_grey</item>
+
+        <item name="sc_divider">@color/grey</item>
+        <item name="sc_mask">@color/light_grey</item>
     </style>
 
     <!--default night：灰色主题，青色辅助，蓝色控件-->
-    <style name="AppTheme.Night" parent="AppTheme">
-        <item name="colorBrand">@color/grey</item>
-        <item name="colorPrimary">?colorPrimary</item>
-        <item name="colorAccent">?colorAccent</item>
-        <item name="colorBackground">@color/white</item>
+    <style name="ThemeNight" parent="AppTheme">
+        <item name="colorBrand">#35464e</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorSurface">@color/black</item>
+        <item name="colorOnSurface">@color/light_black</item>
+        <item name="colorBackground">@color/grey800</item>
+        <item name="colorOnBackground">@color/grey900</item>
         <item name="android:textColorPrimary">@color/white</item>
+        <item name="colorControlNormal">@color/white</item>
 
-        <item name="sc_text_dark">@color/white</item>
-        <item name="sc_text_normal">@color/grey</item>
-        <item name="sc_text_light">@color/black</item>
+        <item name="sc_text_dark">@color/text_color_light</item>
+        <item name="sc_text_normal">@color/text_color_grey</item>
+        <item name="sc_text_light">@color/text_color_dark</item>
+        <item name="sc_text_grey">@color/text_color_normal</item>
+
+        <item name="sc_divider">@color/grey</item>
+        <item name="sc_mask">@color/light_grey</item>
     </style>
 
     <!--default 仿b站：粉色主题，粉色辅助，蓝色控件,白色字体-->
-    <style name="AppTheme.Sakura" parent="AppTheme">
+    <style name="ThemeSakura" parent="BaseAppTheme.NoActionBar">
         <item name="colorBrand">?colorPrimary</item>
         <item name="colorPrimary">@color/pink</item>
-        <item name="colorAccent">?colorAccent</item>
+        <item name="colorAccent">@color/colorAccent</item>
         <item name="colorBackground">@color/white</item>
-        <item name="android:textColor">@color/white</item>
+<!--        <item name="android:textColor">@color/white</item>-->
         <item name="android:textColorPrimary">@color/white</item>
+        <item name="colorControlNormal">@color/white</item>
 
-        <item name="sc_btn">@color/pink</item>
-        <item name="sc_mask">@color/black</item>
-        <item name="sc_divider">@color/grey600</item>
+        <item name="sc_text_dark">@color/text_color_dark</item>
+        <item name="sc_text_normal">@color/text_color_normal</item>
+        <item name="sc_text_light">@color/text_color_light</item>
+        <item name="sc_text_grey">@color/text_color_grey</item>
+
+        <item name="sc_divider">@color/grey</item>
+        <item name="sc_mask">@color/light_grey</item>
     </style>
 
 

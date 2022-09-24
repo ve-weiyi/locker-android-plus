@@ -200,8 +200,20 @@
         <entry key="module_android/src/main/res/drawable/ic_like_checked.xml" value="0.1505" />
         <entry key="module_android/src/main/res/drawable/ic_like_normal.xml" value="0.1505" />
         <entry key="module_android/src/main/res/drawable/ic_search_white_24dp.xml" value="0.1505" />
-        <entry key="module_android/src/main/res/layout-v21/item_collect_list.xml" value="0.1" />
+        <entry key="module_android/src/main/res/layout-v21/item_collect_list.xml" value="0.165" />
+        <entry key="module_android/src/main/res/layout-v21/item_home_banner.xml" value="0.1513467293715263" />
+        <entry key="module_android/src/main/res/layout-v21/item_home_list.xml" value="0.335" />
         <entry key="module_android/src/main/res/layout-v21/item_knowledge_list.xml" value="0.24010416666666667" />
+        <entry key="module_android/src/main/res/layout-v21/item_knowledge_tree_list.xml" value="0.1513467293715263" />
+        <entry key="module_android/src/main/res/layout-v21/item_navi.xml" value="0.1513467293715263" />
+        <entry key="module_android/src/main/res/layout-v21/item_navigation_list.xml" value="0.1513467293715263" />
+        <entry key="module_android/src/main/res/layout-v21/item_project_list.xml" value="0.1513467293715263" />
+        <entry key="module_android/src/main/res/layout-v21/item_rank_list.xml" value="0.1513467293715263" />
+        <entry key="module_android/src/main/res/layout-v21/item_search_history.xml" value="0.1513467293715263" />
+        <entry key="module_android/src/main/res/layout-v21/item_share_list.xml" value="0.1513467293715263" />
+        <entry key="module_android/src/main/res/layout-v21/item_socre_list.xml" value="0.1513467293715263" />
+        <entry key="module_android/src/main/res/layout-v21/item_sticky_header.xml" value="0.1828125" />
+        <entry key="module_android/src/main/res/layout-v21/item_todo_list.xml" value="0.1513467293715263" />
         <entry key="module_android/src/main/res/layout/activity_agent_web.xml" value="0.25052083333333336" />
         <entry key="module_android/src/main/res/layout/activity_knowledge.xml" value="0.2265625" />
         <entry key="module_android/src/main/res/layout/activity_login.xml" value="0.1828125" />
@@ -209,6 +221,7 @@
         <entry key="module_android/src/main/res/layout/activity_settings.xml" value="0.24010416666666667" />
         <entry key="module_android/src/main/res/layout/activity_todo.xml" value="0.2125" />
         <entry key="module_android/src/main/res/layout/app_bar_banner.xml" value="0.40714874267578116" />
+        <entry key="module_android/src/main/res/layout/flow_layout_tv.xml" value="0.28815733219324496" />
         <entry key="module_android/src/main/res/layout/fragment_about.xml" value="0.2125" />
         <entry key="module_android/src/main/res/layout/fragment_blank.xml" value="0.24010416666666667" />
         <entry key="module_android/src/main/res/layout/fragment_blank2.xml" value="0.24010416666666667" />
@@ -217,16 +230,21 @@
         <entry key="module_android/src/main/res/layout/fragment_project.xml" value="0.24010416666666667" />
         <entry key="module_android/src/main/res/layout/fragment_system.xml" value="0.24010416666666667" />
         <entry key="module_android/src/main/res/layout/fragment_wechat.xml" value="0.24010416666666667" />
-        <entry key="module_android/src/main/res/layout/waz_activity_main.xml" value="0.25013224283854163" />
+        <entry key="module_android/src/main/res/layout/layout_popup_todo.xml" value="0.1828125" />
+        <entry key="module_android/src/main/res/layout/tab_action_container.xml" value="0.1828125" />
+        <entry key="module_android/src/main/res/layout/waz_activity_main.xml" value="0.23038330078125002" />
         <entry key="module_android/src/main/res/layout/waz_container.xml" value="0.35104166666666664" />
         <entry key="module_android/src/main/res/layout/waz_fragment_drawer.xml" value="0.35104166666666664" />
         <entry key="module_android/src/main/res/layout/waz_fragment_main.xml" value="0.215625" />
         <entry key="module_android/src/main/res/layout/waz_toolbar.xml" value="0.215625" />
         <entry key="module_android/src/main/res/layout/waz_toolbar_search.xml" value="0.215625" />
         <entry key="module_android/src/main/res/menu/bottom_navigation_android.xml" value="0.22239583333333332" />
+        <entry key="module_android/src/main/res/menu/bottom_navigation_main.xml" value="0.22239583333333332" />
+        <entry key="module_android/src/main/res/menu/menu_add.xml" value="0.35104166666666664" />
         <entry key="module_android/src/main/res/menu/menu_content.xml" value="0.25052083333333336" />
         <entry key="module_android/src/main/res/menu/menu_search.xml" value="0.2265625" />
         <entry key="module_android/src/main/res/menu/menu_search_flow.xml" value="0.2265625" />
+        <entry key="module_android/src/main/res/menu/menu_share_article.xml" value="0.35104166666666664" />
         <entry key="module_android/src/main/res/menu/nav_menu.xml" value="0.35104166666666664" />
         <entry key="module_android/src/main/res/mipmap-xxxhdpi/ic_launcher.xml" value="0.1505" />
         <entry key="module_android/src/main/res/mipmap-xxxhdpi/ic_launcher_round.xml" value="0.1505" />

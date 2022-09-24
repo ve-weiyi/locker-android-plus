@@ -134,7 +134,7 @@
             style="@style/tv_content_primary"
             android:layout_gravity="center"
             android:text="第三方快速登录"
-            android:textSize="@dimen/ts_14" />
+            android:textSize="@dimen/sp_14" />
 
         <include
             android:id="@+id/layout_login_type"

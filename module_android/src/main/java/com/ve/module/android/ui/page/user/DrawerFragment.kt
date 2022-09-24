@@ -7,6 +7,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatDelegate
 import com.google.android.material.navigation.NavigationView
+import com.ve.lib.application.skin.SkinCompatActivity
+import com.ve.lib.application.skin.SkinConstants
 import com.ve.module.android.R
 import com.ve.module.android.config.Constant
 import com.ve.module.android.databinding.WazFragmentDrawerBinding
@@ -198,14 +200,26 @@ class DrawerFragment : BaseVmFragment<WazFragmentDrawerBinding, WanAndroidViewMo
                     logout()
                 }
                 R.id.nav_night_mode -> {
-                    if (SettingUtil.getIsNightMode()) {
-                        SettingUtil.setIsNightMode(false)
-                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                    } else {
-                        SettingUtil.setIsNightMode(true)
-                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                    }
-                    EventBus.getDefault().post(AppRecreateEvent())
+                    val activity=activity as SkinCompatActivity
+                    activity.switchTheme(SkinConstants.THEME_DEFAULT)
+//                    if (SettingUtil.getIsNightMode()) {
+//                        SettingUtil.setIsNightMode(false)
+//                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+//                    } else {
+//                        SettingUtil.setIsNightMode(true)
+//                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+//                    }
+//                    EventBus.getDefault().post(AppRecreateEvent())
+                }
+
+                R.id.nav_night_mode2 -> {
+                    val activity=activity as SkinCompatActivity
+                    activity.switchTheme(SkinConstants.THEME_NIGHT)
+                }
+
+                R.id.nav_night_mode3 -> {
+                    val activity=activity as SkinCompatActivity
+                    activity.switchTheme(SkinConstants.THEME_SAKURA)
                 }
                 R.id.nav_todo -> {
                     Intent(requireContext(), TodoActivity::class.java).run {

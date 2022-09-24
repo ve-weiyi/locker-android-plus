@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         android:paddingHorizontal="@dimen/dimen_small"
         android:orientation="vertical"
-        android:background="@color/windowBackground"
+        android:background="?android:windowBackground"
         >
     <include
         android:id="@+id/ext_toolbar"

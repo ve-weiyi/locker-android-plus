@@ -110,150 +110,150 @@
 
 
     <style name="t8_l">
-        <item name="android:textSize">@dimen/ts_8</item>
+        <item name="android:textSize">@dimen/sp_8</item>
         <item name="android:fontFamily">@font/open_sans_light</item>
     </style>
     <style name="t8_r">
-        <item name="android:textSize">@dimen/ts_8</item>
+        <item name="android:textSize">@dimen/sp_8</item>
         <item name="android:fontFamily">@font/open_sans_regular</item>
     </style>
     <style name="t8_b">
-        <item name="android:textSize">@dimen/ts_8</item>
+        <item name="android:textSize">@dimen/sp_8</item>
         <item name="android:fontFamily">@font/open_sans_bold</item>
     </style>
     <style name="t10_l">
-        <item name="android:textSize">@dimen/ts_10</item>
+        <item name="android:textSize">@dimen/sp_10</item>
         <item name="android:fontFamily">@font/open_sans_light</item>
     </style>
     <style name="t10_r">
-        <item name="android:textSize">@dimen/ts_10</item>
+        <item name="android:textSize">@dimen/sp_10</item>
         <item name="android:fontFamily">@font/open_sans_regular</item>
     </style>
     <style name="t10_b">
-        <item name="android:textSize">@dimen/ts_10</item>
+        <item name="android:textSize">@dimen/sp_10</item>
         <item name="android:fontFamily">@font/open_sans_bold</item>
     </style>
 
     <style name="t12_r">
-        <item name="android:textSize">@dimen/ts_12</item>
+        <item name="android:textSize">@dimen/sp_12</item>
         <item name="android:fontFamily">@font/open_sans_regular</item>
     </style>
     <style name="t12_l">
-        <item name="android:textSize">@dimen/ts_12</item>
+        <item name="android:textSize">@dimen/sp_12</item>
         <item name="android:fontFamily">@font/open_sans_light</item>
     </style>
     <style name="t12_b">
-        <item name="android:textSize">@dimen/ts_12</item>
+        <item name="android:textSize">@dimen/sp_12</item>
         <item name="android:fontFamily">@font/open_sans_bold</item>
     </style>
     <style name="t14_r">
-        <item name="android:textSize">@dimen/ts_14</item>
+        <item name="android:textSize">@dimen/sp_14</item>
         <item name="android:fontFamily">@font/open_sans_regular</item>
     </style>
     <style name="t14_l">
-        <item name="android:textSize">@dimen/ts_14</item>
+        <item name="android:textSize">@dimen/sp_14</item>
         <item name="android:fontFamily">@font/open_sans_light</item>
     </style>
     <style name="t14_b">
-        <item name="android:textSize">@dimen/ts_14</item>
+        <item name="android:textSize">@dimen/sp_14</item>
         <item name="android:fontFamily">@font/open_sans_bold</item>
     </style>
     <style name="t16_r">
-        <item name="android:textSize">@dimen/ts_16</item>
+        <item name="android:textSize">@dimen/sp_16</item>
         <item name="android:fontFamily">@font/open_sans_regular</item>
     </style>
     <style name="t16_l">
-        <item name="android:textSize">@dimen/ts_16</item>
+        <item name="android:textSize">@dimen/sp_16</item>
         <item name="android:fontFamily">@font/open_sans_light</item>
     </style>
     <style name="t16_b">
-        <item name="android:textSize">@dimen/ts_16</item>
+        <item name="android:textSize">@dimen/sp_16</item>
         <item name="android:fontFamily">@font/open_sans_bold</item>
     </style>
     <style name="t18_r">
-        <item name="android:textSize">@dimen/ts_18</item>
+        <item name="android:textSize">@dimen/sp_18</item>
         <item name="android:fontFamily">@font/open_sans_regular</item>
     </style>
     <style name="t18_l">
-        <item name="android:textSize">@dimen/ts_18</item>
+        <item name="android:textSize">@dimen/sp_18</item>
         <item name="android:fontFamily">@font/open_sans_light</item>
     </style>
     <style name="t18_b">
-        <item name="android:textSize">@dimen/ts_18</item>
+        <item name="android:textSize">@dimen/sp_18</item>
         <item name="android:fontFamily">@font/open_sans_bold</item>
     </style>
     <style name="t20_r">
-        <item name="android:textSize">@dimen/ts_20</item>
+        <item name="android:textSize">@dimen/sp_20</item>
         <item name="android:fontFamily">@font/open_sans_regular</item>
     </style>
     <style name="t20_l">
-        <item name="android:textSize">@dimen/ts_20</item>
+        <item name="android:textSize">@dimen/sp_20</item>
         <item name="android:fontFamily">@font/open_sans_light</item>
     </style>
     <style name="t20_b">
-        <item name="android:textSize">@dimen/ts_20</item>
+        <item name="android:textSize">@dimen/sp_20</item>
         <item name="android:fontFamily">@font/open_sans_bold</item>
     </style>
     <style name="t22_r">
-        <item name="android:textSize">@dimen/ts_22</item>
+        <item name="android:textSize">@dimen/sp_22</item>
         <item name="android:fontFamily">@font/open_sans_regular</item>
     </style>
     <style name="t22_l">
-        <item name="android:textSize">@dimen/ts_22</item>
+        <item name="android:textSize">@dimen/sp_22</item>
         <item name="android:fontFamily">@font/open_sans_light</item>
     </style>
     <style name="t22_b">
-        <item name="android:textSize">@dimen/ts_22</item>
+        <item name="android:textSize">@dimen/sp_22</item>
         <item name="android:fontFamily">@font/open_sans_bold</item>
     </style>
     <style name="t24_r">
-        <item name="android:textSize">@dimen/ts_24</item>
+        <item name="android:textSize">@dimen/sp_24</item>
         <item name="android:fontFamily">@font/open_sans_regular</item>
     </style>
     <style name="t24_l">
-        <item name="android:textSize">@dimen/ts_24</item>
+        <item name="android:textSize">@dimen/sp_24</item>
         <item name="android:fontFamily">@font/open_sans_light</item>
     </style>
     <style name="t24_b">
-        <item name="android:textSize">@dimen/ts_24</item>
+        <item name="android:textSize">@dimen/sp_24</item>
         <item name="android:fontFamily">@font/open_sans_bold</item>
     </style>
 
     <style name="t28_r">
-        <item name="android:textSize">@dimen/ts_28</item>
+        <item name="android:textSize">@dimen/sp_28</item>
         <item name="android:fontFamily">@font/open_sans_regular</item>
     </style>
     <style name="t28_l">
-        <item name="android:textSize">@dimen/ts_28</item>
+        <item name="android:textSize">@dimen/sp_28</item>
         <item name="android:fontFamily">@font/open_sans_light</item>
     </style>
     <style name="t28_b">
-        <item name="android:textSize">@dimen/ts_28</item>
+        <item name="android:textSize">@dimen/sp_28</item>
         <item name="android:fontFamily">@font/open_sans_bold</item>
     </style>
 
     <style name="t34_r">
-        <item name="android:textSize">@dimen/ts_34</item>
+        <item name="android:textSize">@dimen/sp_34</item>
         <item name="android:fontFamily">@font/open_sans_regular</item>
     </style>
     <style name="t34_l">
-        <item name="android:textSize">@dimen/ts_34</item>
+        <item name="android:textSize">@dimen/sp_34</item>
         <item name="android:fontFamily">@font/open_sans_light</item>
     </style>
     <style name="t34_b">
-        <item name="android:textSize">@dimen/ts_34</item>
+        <item name="android:textSize">@dimen/sp_34</item>
         <item name="android:fontFamily">@font/open_sans_bold</item>
     </style>
     <style name="t36_r">
-        <item name="android:textSize">@dimen/ts_36</item>
+        <item name="android:textSize">@dimen/sp_36</item>
         <item name="android:fontFamily">@font/open_sans_regular</item>
     </style>
     <style name="t36_l">
-        <item name="android:textSize">@dimen/ts_36</item>
+        <item name="android:textSize">@dimen/sp_36</item>
         <item name="android:fontFamily">@font/open_sans_light</item>
     </style>
     <style name="t36_b">
-        <item name="android:textSize">@dimen/ts_36</item>
+        <item name="android:textSize">@dimen/sp_36</item>
         <item name="android:fontFamily">@font/open_sans_bold</item>
     </style>
 

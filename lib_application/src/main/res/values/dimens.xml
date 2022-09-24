@@ -49,20 +49,27 @@
     <dimen name="sp_20">20sp</dimen>
     <dimen name="sp_22">22sp</dimen>
     <dimen name="sp_24">24sp</dimen>
+    <dimen name="sp_26">26sp</dimen>
+    <dimen name="sp_28">28sp</dimen>
+    <dimen name="sp_30">30sp</dimen>
+    <dimen name="sp_32">32sp</dimen>
+    <dimen name="sp_34">36sp</dimen>
+    <dimen name="sp_36">34sp</dimen>
     <dimen name="sp_40">40sp</dimen>
     <dimen name="sp_50">50sp</dimen>
 
+
     <!-- text size sp -->
-    <dimen name="ts_8">8sp</dimen>
-    <dimen name="ts_10">10sp</dimen>
-    <dimen name="ts_12">12sp</dimen>
-    <dimen name="ts_14">14sp</dimen>
-    <dimen name="ts_16">16sp</dimen>
-    <dimen name="ts_18">18sp</dimen>
-    <dimen name="ts_20">20sp</dimen>
-    <dimen name="ts_22">22sp</dimen>
-    <dimen name="ts_24">24sp</dimen>
-    <dimen name="ts_28">28sp</dimen>
-    <dimen name="ts_34">34sp</dimen>
-    <dimen name="ts_36">36sp</dimen>
+<!--    <dimen name="sp_8">8sp</dimen>-->
+<!--    <dimen name="sp_10">10sp</dimen>-->
+<!--    <dimen name="sp_12">12sp</dimen>-->
+<!--    <dimen name="sp_14">14sp</dimen>-->
+<!--    <dimen name="sp_16">16sp</dimen>-->
+<!--    <dimen name="sp_18">18sp</dimen>-->
+<!--    <dimen name="sp_20">20sp</dimen>-->
+<!--    <dimen name="sp_22">22sp</dimen>-->
+<!--    <dimen name="sp_24">24sp</dimen>-->
+<!--    <dimen name="sp_28">28sp</dimen>-->
+<!--    <dimen name="sp_34">34sp</dimen>-->
+<!--    <dimen name="sp_36">36sp</dimen>-->
 </resources>

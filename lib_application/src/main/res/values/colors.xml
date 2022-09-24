@@ -7,10 +7,10 @@
     <!--    colorSecondary：您的应用的辅助品牌颜色，主要用作某些需要突出的小部件的重点-->
     <!--    colorSecondaryVariant：您的辅助品牌颜色的较浅/较深变体，在主题中很少使用-->
     <!--    colorOnSecondary：用于显示在辅助颜色之上的元素的颜色-->
-    <!--    colorError：用于错误的颜色（通常是红色阴影）-->
-    <!--    colorOnError：用于显示在错误颜色之上的元素的颜色-->
+    <!--    colorError：用于错误的颜色（通常是红色阴影） 如小红点-->
+    <!--    colorOnError：用于显示在错误颜色之上的元素的颜色 如小红点内的数字-->
     <!--    colorSurface：用于表面的颜色（即材料“片材”）-->
-    <!--    colorOnSurface：用于显示在表面颜色之上的元素的颜色-->
+    <!--    colorOnSurface：用于显示在表面颜色之上的元素的颜色 未选中颜色-->
     <!--    colorBackground：(所有控件背景色) 不仅影响主窗口的背景，而且影响所有组件的背景，例如除非您在组件布局中覆盖它。-->
     <!--    colorOnBackground：用于显示在背景颜色之上的元素的颜色-->
     <!--    windowBackground：(页面背景色) 只影响主窗口的背景,在colorBackground下方，优先级比colorBackground高。。-->
@@ -51,7 +51,7 @@
 <!--    <color name="colorOnBackground">@color/white</color>-->
 
 <!--    &lt;!&ndash;    比背景色深一点&ndash;&gt;-->
-<!--    <color name="windowBackground">@color/grey150</color>-->
+    <color name="windowBackground">@color/grey150</color>
 <!--    <color name="windowBackgroundDark">@color/grey200</color>-->
 <!--    <color name="textColorPrimary">?color_text_dark</color>-->
 
@@ -59,7 +59,7 @@
     <color name="mask_color">#f5f5f5</color>
 
     <!-- color -->
-    <color name="text_color_dark">#111111</color>
+    <color name="text_color_dark">@color/black</color>
     <color name="text_color_normal">@color/grey700</color>
     <color name="text_color_grey">@color/grey600</color>
     <color name="text_color_light">@color/grey200</color>

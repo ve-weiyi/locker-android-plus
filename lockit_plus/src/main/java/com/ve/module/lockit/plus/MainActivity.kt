@@ -8,7 +8,7 @@ import com.google.android.material.navigation.NavigationBarView
 import com.ve.lib.common.base.view.vm.BaseActivity
 import com.ve.lib.common.router.ARouterPath
 import com.ve.module.android.WazMainFragment
-import com.ve.module.lockit.plus.bean.NavigationMenuItem
+import com.ve.lib.common.base.model.NavigationMenuItem
 import com.ve.module.lockit.plus.databinding.ActivityMainBinding
 import com.ve.module.lockit.plus.ui.page.drawer.DrawerFragment
 import com.ve.module.lockit.plus.widget.PrivacyDialog
@@ -24,7 +24,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     private lateinit var mFragmentPageList: MutableList<NavigationMenuItem>
 
     override fun initialize(saveInstanceState: Bundle?) {
-        initFragment()
         initNavigation()
         showFragment(mIndex)
         PrivacyDialog.Builder(this).show()
@@ -34,29 +33,29 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         var pageCount = 0
         mFragmentPageList = mutableListOf(
             NavigationMenuItem(
-                0, R.id.home_navigation_0, pageCount++, "首页",
+                pageCount++, "首页", WazMainFragment::class.java, R.id.home_navigation_0,
                 R.drawable.ic_icon_outline_custome,
-                WazMainFragment::class.java
+                0
             ),
             NavigationMenuItem(
-                0, R.id.home_navigation_1, pageCount++, "卡片",
+                pageCount++, "卡片", WazMainFragment::class.java, R.id.home_navigation_1,
                 R.drawable.ic_icon_outline_about,
-                WazMainFragment::class.java
+                0
             ),
             NavigationMenuItem(
-                0, R.id.home_navigation_2, pageCount++, "好友",
+                pageCount++, "好友", DrawerFragment::class.java, R.id.home_navigation_2,
                 R.drawable.ic_icon_outline_flow,
-                DrawerFragment::class.java
+                0
             ),
             NavigationMenuItem(
-                0, R.id.home_navigation_3, pageCount++, "分类",
+                pageCount++, "分类", DrawerFragment::class.java, R.id.home_navigation_3,
                 R.drawable.ic_icon_outline_down4,
-                DrawerFragment::class.java
+                0
             ),
             NavigationMenuItem(
-                0, R.id.home_navigation_4, pageCount++, "我的",
+                pageCount++, "我的", DrawerFragment::class.java, R.id.home_navigation_4,
                 R.drawable.ic_icon_outline_about,
-                DrawerFragment::class.java
+                0
             )
         )
     }
@@ -68,9 +67,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             labelVisibilityMode = NavigationBarView.LABEL_VISIBILITY_LABELED
             setOnItemSelectedListener(onNavigationItemSelectedListener)
             mFragmentPageList.forEach { it ->
-                menu.add(it.menuGroup, it.menuId, it.menuIndex, it.menuTitle)
+                menu.add(it.menuGroup, it.menuId, it.fragmentIndex, it.fragmentTitle)
                 menu.findItem(it.menuId).apply {
-                    setIcon(it.menuIconRes)
+                    setIcon(it.menuIcon)
                 }
             }
         }
@@ -83,7 +82,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         NavigationBarView.OnItemSelectedListener { item ->
             mFragmentPageList.forEach { it ->
                 if (item.itemId == it.menuId) {
-                    showFragment(it.menuIndex)
+                    showFragment(it.fragmentIndex)
                     return@OnItemSelectedListener true
                 }
             }
@@ -112,12 +111,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
         val mFragmentPage = mFragmentPageList[index]
         if (mFragmentPage.mFragment == null) {
-            mBinding.bottomNavigation.menu[index].title = mFragmentPage.menuTitle
+            mBinding.bottomNavigation.menu[index].title = mFragmentPage.fragmentTitle
             mFragmentPage.mFragment = mFragmentPage.getFragment()
             transaction.add(
                 R.id.ext_container,
                 mFragmentPage.mFragment!!,
-                mFragmentPage.menuTitle
+                mFragmentPage.fragmentTitle
             )
         } else {
             transaction.show(mFragmentPage.mFragment!!)

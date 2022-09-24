@@ -10,5 +10,10 @@
     <item name="error_retry_view" type="id" />
     <item name="no_network_retry_view" type="id" />
 
-
+    <item name="home_navigation_0" type="id" />
+    <item name="home_navigation_1" type="id" />
+    <item name="home_navigation_2" type="id" />
+    <item name="home_navigation_3" type="id" />
+    <item name="home_navigation_4" type="id" />
+    <item name="home_navigation_5" type="id" />
 </resources>
