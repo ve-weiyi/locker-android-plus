@@ -34,7 +34,7 @@
         android:layout_marginEnd="@dimen/dp_4"
         android:layout_toStartOf="@+id/tv_score"
         android:layout_toEndOf="@+id/rl_ranking"
-        android:textColor="@color/text_color_dark"
+        android:textColor="?sc_text_dark"
         android:textSize="@dimen/sp_16"
         tools:text="iceCola" />
 

@@ -8,7 +8,7 @@
     android:fitsSystemWindows="true"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    android:theme="@style/BaseAppTheme.AppBarOverlay"
+    android:background="?colorBrand"
     app:elevation="0dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:contentDescription="@string/about_content">
@@ -18,20 +18,11 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:layout_scrollFlags="scroll|enterAlways"
-        app:popupTheme="@style/BaseAppTheme.PopupOverlay"
-        app:titleTextAppearance="@style/Toolbar.TitleText" >
+        app:titleTextAppearance="@style/t18_l"
+        app:titleTextColor="?colorControlNormal"
+        >
 
-        <!--        <TextView-->
-        <!--                module.module.android:id="@+id/tv_title"-->
-        <!--                module.module.android:layout_width="wrap_content"-->
-        <!--                module.module.android:layout_height="wrap_content"-->
-        <!--                module.module.android:layout_gravity="center"-->
-        <!--                module.module.android:textColor="@color/white"-->
-        <!--                module.module.android:textSize="@dimen/sp_18"-->
-        <!--                module.module.android:textStyle="bold"-->
-        <!--                module.module.android:ellipsize="marquee"-->
-        <!--                module.module.android:singleLine="true"-->
-        <!--                tools:text="@string/app_name" />-->
+
     </androidx.appcompat.widget.Toolbar>
 
 </com.google.android.material.appbar.AppBarLayout>

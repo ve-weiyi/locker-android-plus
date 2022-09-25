@@ -9,7 +9,7 @@
     <!-- 通用颜色颜色 -->
     <!--常用颜色 material600 cyan 青色-->
     <color name="black">#111111</color>
-    <color name="white">#FFFFFF</color>
+    <color name="white">#EEEEEE</color>
     <color name="grey">#757575</color>
     <color name="red">#E53935</color>
     <color name="pink">#e91e63</color>
@@ -27,18 +27,37 @@
     <color name="blue_grey">#607d8b</color>
 
 
+
     <!--纯色：红橙黄绿青蓝紫 黑白银灰 -->
+    <color name="pure_red">#FF0000</color>
+    <color name="pure_orange">#FFA500</color>
+    <color name="pure_yellow">#FFFF00</color>
+    <color name="pure_green">#008000</color>
+    <color name="pure_cyan">#00FFFF</color>
+    <color name="pure_blue">#0000FF</color>
+    <color name="pure_purple">#800080</color>
+    <color name="pure_black">#000000</color>
+    <color name="pure_white">#FFFFFF</color>
+    <color name="pure_silver">#C0C0C0</color>
+    <color name="pure_grey">#808080</color>
+    <!--黄绿、金、棕、紫红-->
+    <color name="pure_lime">#00FF00</color>
+    <color name="pure_gold">#FFD700</color>
+    <color name="pure_brown">#A52A2A</color>
+    <color name="pure_magenta">#FF00FF</color>
+
+    <!--深色：红橙黄绿青蓝紫 黑白银灰 -->
     <color name="deep_red">#FF0000</color>
     <color name="deep_orange">#FFA500</color>
     <color name="deep_yellow">#FFFF00</color>
     <color name="deep_green">#008000</color>
     <color name="deep_cyan">#00FFFF</color>
-    <color name="deep_blue">#0000FF</color>
+    <color name="deep_blue">#0277BD</color>
     <color name="deep_purple">#800080</color>
     <color name="deep_black">#000000</color>
     <color name="deep_white">#FFFFFF</color>
     <color name="deep_silver">#C0C0C0</color>
-    <color name="deep_grey">#808080</color>
+    <color name="deep_grey">@color/grey700</color>
     <!--黄绿、金、棕、紫红-->
     <color name="deep_lime">#00FF00</color>
     <color name="deep_gold">#FFD700</color>
@@ -47,11 +66,12 @@
 
 
     <!--浅色-->
-    <color name="light_white">#EEEEEE</color>
+    <color name="light_black">#212121</color>
+    <color name="light_white">#eeeeee</color>
     <color name="light_red">#ff5454</color>
     <color name="light_green">#8bc34a</color>
     <color name="light_blue">#59C6F6</color>
-    <color name="light_grey">#d3d3d3</color>
+    <color name="light_grey">#F5F5F5</color>
     <color name="light_cyan">#52fbda</color>
 
 

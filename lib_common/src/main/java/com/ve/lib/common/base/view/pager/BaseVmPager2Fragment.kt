@@ -36,13 +36,13 @@ abstract class BaseVmPager2Fragment<VB : ViewBinding, VM : BaseViewModel>() :
     override var activeColor: Int = ColorUtil.randomColor()
     override var normalColor: Int = Color.GRAY
 
-    override var activeTextSize:Float =16F
-    override var normalTextSize:Float =14F
+    override var activeTextSize: Float = 16F
+    override var normalTextSize: Float = 14F
 
     /**
      * 颜色混合比例
      */
-    protected var ratio:Float =0.2F
+    protected var ratio: Float = 0.2F
 
 
     open fun getPagerAdapter(): ViewPager2Adapter {
@@ -55,7 +55,7 @@ abstract class BaseVmPager2Fragment<VB : ViewBinding, VM : BaseViewModel>() :
 
     open fun autoPagerView() {
         getFragmentList()
-        
+
         mViewPager2Adapter = getPagerAdapter()
         //禁用预加载
         mViewPager2.offscreenPageLimit = ViewPager2.OFFSCREEN_PAGE_LIMIT_DEFAULT;
@@ -64,13 +64,14 @@ abstract class BaseVmPager2Fragment<VB : ViewBinding, VM : BaseViewModel>() :
         //懒加载页面总数，即默认加载左右2个页面
         mViewPager2.offscreenPageLimit = 2
         //页面切换监听
-        mViewPager2.registerOnPageChangeCallback(pageChangeCallback)
+//        mViewPager2.registerOnPageChangeCallback(pageChangeCallback)
 
         mediator = TabLayoutMediator(
             mTabLayout,
-            mViewPager2,
-            tabConfigurationStrategy
-        )
+            mViewPager2
+        ) { tab, position ->
+            tab.text=mTitleList[position]
+        }
         mediator.attach()
     }
 
@@ -82,6 +83,25 @@ abstract class BaseVmPager2Fragment<VB : ViewBinding, VM : BaseViewModel>() :
         super.onDestroy()
         mViewPager2.unregisterOnPageChangeCallback(pageChangeCallback);
     }
+
+    private val pageChangeCallback: ViewPager2.OnPageChangeCallback =
+        object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                //可以来设置选中时tab的大小
+                val tabCount: Int = mTabLayout.tabCount
+                for (i in 0 until tabCount) {
+                    val tab: TabLayout.Tab = mTabLayout.getTabAt(i)!!
+                    val tabView = tab.customView as TextView
+                    if (tab.position == position) {
+                        tabView.textSize = activeTextSize
+                        tabView.typeface = Typeface.DEFAULT_BOLD
+                    } else {
+                        tabView.textSize = normalTextSize
+                        tabView.typeface = Typeface.DEFAULT
+                    }
+                }
+            }
+        }
 
     private val tabConfigurationStrategy: TabLayoutMediator.TabConfigurationStrategy =
         object : TabLayoutMediator.TabConfigurationStrategy {
@@ -102,23 +122,5 @@ abstract class BaseVmPager2Fragment<VB : ViewBinding, VM : BaseViewModel>() :
                 tab.customView = tabView
             }
 
-        }
-    private val pageChangeCallback: ViewPager2.OnPageChangeCallback =
-        object : ViewPager2.OnPageChangeCallback() {
-            override fun onPageSelected(position: Int) {
-                //可以来设置选中时tab的大小
-                val tabCount: Int = mTabLayout.tabCount
-                for (i in 0 until tabCount) {
-                    val tab: TabLayout.Tab = mTabLayout.getTabAt(i)!!
-                    val tabView = tab.customView as TextView
-                    if (tab.position == position) {
-                        tabView.textSize = activeTextSize
-                        tabView.typeface = Typeface.DEFAULT_BOLD
-                    } else {
-                        tabView.textSize = normalTextSize
-                        tabView.typeface = Typeface.DEFAULT
-                    }
-                }
-            }
         }
 }

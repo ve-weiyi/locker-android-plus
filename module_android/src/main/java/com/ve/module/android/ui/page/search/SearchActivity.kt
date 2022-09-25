@@ -2,6 +2,7 @@ package com.ve.module.android.ui.page.search
 
 import android.graphics.Color
 import android.os.Bundle
+import android.util.TypedValue
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.View
@@ -12,20 +13,21 @@ import android.widget.TextView
 import androidx.appcompat.widget.SearchView
 import androidx.core.content.ContextCompat
 import com.chad.library.adapter.base.BaseQuickAdapter
+import com.ve.lib.common.base.view.list.BaseVmListActivity
+import com.ve.lib.common.utils.data.ColorUtil
+import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.common.utils.ui.DisplayUtil
 import com.ve.module.android.R
 import com.ve.module.android.config.Constant
 import com.ve.module.android.databinding.ActivitySearchBinding
-import com.ve.module.android.repository.database.entity.SearchHistory
 import com.ve.module.android.repository.bean.Hotkey
+import com.ve.module.android.repository.database.entity.SearchHistory
 import com.ve.module.android.ui.adapter.SearchHistoryAdapter
 import com.ve.module.android.ui.page.activity.CommonActivity
 import com.ve.module.android.ui.viewmodel.SearchViewModel
-import com.ve.lib.common.base.view.list.BaseVmListActivity
-import com.ve.lib.common.utils.data.ColorUtil
-import com.ve.lib.common.utils.ui.DisplayUtil
-import com.ve.lib.common.utils.system.LogUtil
 import com.zhy.view.flowlayout.FlowLayout
 import com.zhy.view.flowlayout.TagAdapter
+
 
 /**
  * @Description hello word!
@@ -129,11 +131,14 @@ class SearchActivity: BaseVmListActivity<ActivitySearchBinding, SearchViewModel,
             //设置搜索文本监听
             setOnQueryTextListener(queryTextListener)
         }
-
+        val typedValue = TypedValue()
+        theme.resolveAttribute(com.ve.lib.application.R.attr.sc_text_light, typedValue, true)
+        val color = typedValue.data
         //设置输入框文字颜色
         mEditText = searchView.findViewById(androidx.appcompat.R.id.search_src_text) as EditText
-        mEditText.setHintTextColor(ContextCompat.getColor(this, com.ve.lib.application.R.color.white))
-        mEditText.setTextColor(ContextCompat.getColor(this, com.ve.lib.application.R.color.white))
+        mEditText.setHintTextColor(color)
+        mEditText.setTextColor(color)
+
 
         try {
             val field = searchView.javaClass.getDeclaredField("mGoButton")
