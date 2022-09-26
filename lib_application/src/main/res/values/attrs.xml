@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
+    <!--    控件是否支持换肤-->
+    <declare-styleable name="SkinSupport">
+        <attr name="enableSkin" format="boolean" />
+    </declare-styleable>
 
 </resources>
