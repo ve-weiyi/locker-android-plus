@@ -195,7 +195,9 @@
         <entry key="module_android/src/main/res/drawable/ic_like_checked.xml" value="0.1505" />
         <entry key="module_android/src/main/res/drawable/ic_like_normal.xml" value="0.1505" />
         <entry key="module_android/src/main/res/drawable/ic_search_white_24dp.xml" value="0.1505" />
+        <entry key="module_android/src/main/res/layout-v21/banner_image_title_num.xml" value="0.16893115942028986" />
         <entry key="module_android/src/main/res/layout-v21/item_collect_list.xml" value="0.1" />
+        <entry key="module_android/src/main/res/layout-v21/item_home_banner.xml" value="0.16893115942028986" />
         <entry key="module_android/src/main/res/layout/activity_login.xml" value="0.1828125" />
         <entry key="module_android/src/main/res/layout/activity_rank.xml" value="0.2125" />
         <entry key="module_android/src/main/res/layout/activity_todo.xml" value="0.2125" />
