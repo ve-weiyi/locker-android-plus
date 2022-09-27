@@ -45,7 +45,7 @@
     <!--    <attr name="colorSecondary" format="color|reference" />-->
     <!--   背景色-->
     <attr name="colorBackground" format="color|reference" />
-<!--    <attr name="windowBackground" format="color|reference" />-->
+    <!--    <attr name="windowBackground" format="color|reference" />-->
     <!--    <attr name="colorOnBackground" format="color|reference" />-->
     <!--   文字颜色-->
     <attr name="sc_text_dark" format="color|reference" />
@@ -77,6 +77,7 @@
 
         <item name="sc_divider">@color/grey</item>
         <item name="sc_mask">@color/light_grey</item>
+        <item name="sc_btn">@color/orange</item>
     </style>
 
     <!--default night：灰色主题，青色辅助，蓝色控件-->
@@ -98,6 +99,7 @@
 
         <item name="sc_divider">@color/grey</item>
         <item name="sc_mask">@color/light_grey</item>
+        <item name="sc_btn">@color/orange</item>
     </style>
 
     <!--default 仿b站：粉色主题，粉色辅助，蓝色控件,白色字体-->
@@ -106,7 +108,7 @@
         <item name="colorPrimary">@color/pink</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorBackground">@color/white</item>
-<!--        <item name="android:textColor">@color/white</item>-->
+        <!--        <item name="android:textColor">@color/white</item>-->
         <item name="android:textColorPrimary">@color/white</item>
         <item name="colorControlNormal">@color/white</item>
 
@@ -117,6 +119,7 @@
 
         <item name="sc_divider">@color/grey</item>
         <item name="sc_mask">@color/light_grey</item>
+        <item name="sc_btn">@color/light_green</item>
     </style>
 
 
@@ -133,9 +136,24 @@
         <item name="android:navigationBarColor">@android:color/transparent</item>
     </style>
 
+    <style name="AppTheme.Starting" parent="Theme.SplashScreen">
+        <!-- Set the splash screen background, animated icon, and animation duration. -->
+        <item name="windowSplashScreenBackground">@drawable/common_app_background</item>
+
+        <!-- Use windowSplashScreenAnimatedIcon to add either a drawable or an
+             animated drawable. One of these is required. -->
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_password_logo</item>
+        <!-- Required for animated icons 对实际启动时间没有影响-->
+        <item name="windowSplashScreenAnimationDuration">20000</item>
+        <!-- Set the theme of the Activity that directly follows your splash screen. -->
+        <!-- Required -->
+        <item name="postSplashScreenTheme">@style/AppTheme</item>
+    </style>
+
+
     <style name="BaseAppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
 
-    <style name="BaseAppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light" >
+    <style name="BaseAppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light">
         <!--新增一个item，用于控制menu-->
         <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
     </style>

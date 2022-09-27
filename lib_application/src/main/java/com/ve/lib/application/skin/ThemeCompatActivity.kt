@@ -58,6 +58,10 @@ open class ThemeCompatActivity: AppCompatActivity() {
         return redIds[0]
     }
 
+
+
+
+
     /**
      * 设置状态栏颜色
      *

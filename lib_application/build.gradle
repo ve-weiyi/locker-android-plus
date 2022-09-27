@@ -1,4 +1,5 @@
 apply from: "../build.library.gradle"
+apply plugin: 'org.jetbrains.kotlin.android'
 
 android {
     defaultConfig {
@@ -89,5 +90,7 @@ dependencies {
     api 'com.afollestad.material-dialogs:datetime:3.3.0'
     api 'com.afollestad.material-dialogs:bottomsheets:3.3.0'
     api 'com.afollestad.material-dialogs:lifecycle:3.3.0'
+
+    api 'androidx.core:core-splashscreen:1.0.0'
 
 }

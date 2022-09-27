@@ -97,7 +97,7 @@ class SkinFactory(activity: AppCompatActivity) : LayoutInflater.Factory2 {
     }
 
 
-    private fun changAttrView(theme: Theme, attrView: AttrView) {
+    fun changAttrView(theme: Theme, attrView: AttrView) {
         //将每一个换肤控件的属性进行应用
         attrView.attrs.forEach {
 

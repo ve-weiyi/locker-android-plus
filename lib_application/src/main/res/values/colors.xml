@@ -34,7 +34,7 @@
     <!--    17.colorSwitchThumbNormal: switch thumbs 默认状态的颜色. (switch off)-->
 
     <!-- 自定义主题颜色 -->
-    <color name="brand">?colorPrimary</color>
+    <color name="brand">@color/colorPrimary</color>
     <color name="colorPrimary">@color/cyan</color>
     <color name="colorPrimaryDark">@color/light_blue</color>
     <color name="colorAccent">@color/cyan</color>

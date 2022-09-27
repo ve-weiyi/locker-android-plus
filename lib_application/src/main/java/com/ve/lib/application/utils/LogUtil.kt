@@ -53,9 +53,9 @@ object LogUtil {
     }
 
     @JvmStatic
-    fun d(tag: String, msg: String) {
+    fun d(tag: Any, msg: String) {
         val info= getStackInfo()
-        Log.d(tag, info.covertMessage(msg))
+        Log.d(tag.toString(), info.covertMessage(msg))
     }
 
 

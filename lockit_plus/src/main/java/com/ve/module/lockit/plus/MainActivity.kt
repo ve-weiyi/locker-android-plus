@@ -10,6 +10,7 @@ import com.ve.lib.common.router.ARouterPath
 import com.ve.module.android.WazMainFragment
 import com.ve.lib.common.base.model.NavigationMenuItem
 import com.ve.module.lockit.plus.databinding.ActivityMainBinding
+import com.ve.module.lockit.plus.ui.page.SkinFragment
 import com.ve.module.lockit.plus.ui.page.drawer.DrawerFragment
 import com.ve.module.lockit.plus.widget.PrivacyDialog
 
@@ -43,7 +44,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 0
             ),
             NavigationMenuItem(
-                pageCount++, "好友", DrawerFragment::class.java, R.id.home_navigation_2,
+                pageCount++, "好友", SkinFragment::class.java, R.id.home_navigation_2,
                 R.drawable.ic_icon_outline_flow,
                 0
             ),

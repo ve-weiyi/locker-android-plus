@@ -23,7 +23,7 @@ import kotlinx.coroutines.launch
  * @date 2019/11/1
  * @desc IView
  */
-interface IView <VB : ViewBinding> {
+interface IView<VB : ViewBinding> {
 
     /**
      * 返回绑定对象
@@ -47,14 +47,14 @@ interface IView <VB : ViewBinding> {
     /**
      * 隐藏加载
      */
-    fun hideLoading(){
+    fun hideLoading() {
 
     }
 
     /**
      * 显示信息
      */
-    fun showMsg(msg: String){
+    fun showMsg(msg: String) {
         ToastUtil.show(msg)
     }
 
@@ -66,34 +66,28 @@ interface IView <VB : ViewBinding> {
     }
 
 
-    fun startActivity(path: String?) {
-        startActivity(path, null)
+    fun startActivity(path: String) {
+        startActivity(null, path, null)
     }
 
-    fun startActivity(activity: Activity?, path: String?) {
-        startActivity(activity, path, -1)
-    }
-
-    fun startActivity(path: String?, bundle: Bundle?) {
-        startActivity(null, path, bundle, -1)
-    }
-
-    fun startActivity(activity: Activity?, path: String?, requestCode: Int) {
-        startActivity(activity, path, null, requestCode)
-    }
-
-    fun startActivity(activity: Activity?, path: String?, bundle: Bundle?, requestCode: Int) {
+    fun startActivity(
+        activity:Activity?,
+        path: String,
+        bundle: Bundle? = null,
+        requestCode: Int = -1,
+        type: RouteType = RouteType.ACTIVITY
+    ) {
         val postcard = ARouter.getInstance()
             .build(path)
             .with(bundle)
-        if (activity != null) {
-            postcard.type = RouteType.ACTIVITY
-        }
+
+        postcard.type = type
+
         postcard.navigation(activity, requestCode)
     }
 
-    fun startActivity(context: Context,activityClass: Class<*>,bundle: Bundle?=null){
-        val intent = Intent(context,activityClass)
+    fun startActivity(context: Context, activityClass: Class<*>, bundle: Bundle? = null) {
+        val intent = Intent(context, activityClass)
         if (bundle != null) {
             intent.putExtras(bundle)
         }
@@ -101,7 +95,7 @@ interface IView <VB : ViewBinding> {
     }
 
 
-    fun launchOnBackground(function:suspend () -> Unit): Job {
+    fun launchOnBackground(function: suspend () -> Unit): Job {
         return CoroutineScope(Dispatchers.IO).launch {
             function.invoke()
         }

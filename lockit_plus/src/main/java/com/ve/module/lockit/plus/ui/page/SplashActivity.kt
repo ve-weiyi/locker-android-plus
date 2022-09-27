@@ -1,8 +1,12 @@
 package com.ve.module.lockit.plus.ui.page
 
+import android.animation.ObjectAnimator
 import android.os.Bundle
+import android.view.View
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
+import androidx.core.splashscreen.SplashScreen
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.gyf.immersionbar.ImmersionBar
 import com.ve.lib.common.base.view.vm.BaseActivity
 import com.ve.lib.common.router.ARouterPath
@@ -14,32 +18,23 @@ import com.ve.module.lockit.plus.databinding.ActivitySplashBinding
  * empty：表示对象为空或长度为0
  * blank： 表示对象为空或长度为0、空格字符串
  */
-class SplashActivity : BaseActivity<ActivitySplashBinding>(){
+class SplashActivity : BaseActivity<ActivitySplashBinding>() {
 
+    private lateinit var splashScreen: SplashScreen
     override fun attachViewBinding(): ActivitySplashBinding {
+        // Handle the splash screen transition.
+        splashScreen = installSplashScreen()
+        splashScreen.setOnExitAnimationListener { splashScreenView ->
+            splashScreenView.iconAnimationDurationMillis
+            jumpToMain()
+        }
         return ActivitySplashBinding.inflate(layoutInflater)
     }
 
-    private var alphaAnimation: AlphaAnimation? = null
     override fun initialize(saveInstanceState: Bundle?) {
-        alphaAnimation = AlphaAnimation(0.3F, 1.0F)
-        alphaAnimation?.run {
-            //持续时间
-            duration = 1000
-            setAnimationListener(object : Animation.AnimationListener {
-                override fun onAnimationRepeat(p0: Animation?) {
-                }
+        // Add a callback that's called when the splash screen is animating to
+        // the app content.
 
-                override fun onAnimationEnd(p0: Animation?) {
-                    jumpToMain()
-//                    jumpToLogin()
-                }
-
-                override fun onAnimationStart(p0: Animation?) {
-                }
-            })
-        }
-//        mBinding.ivLogo.startAnimation(alphaAnimation)
     }
 
     fun jumpToMain() {

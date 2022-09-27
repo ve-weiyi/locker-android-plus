@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:theme="@style/ThemeSakura"
+    tools:context=".skin.set.SkinSetActivity">
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/brand"
+        android:title="Skin Set"
+        />
+
+    <TextView
+        android:id="@+id/tv_tip"
+        style="@style/t16_b"
+        android:padding="@dimen/dp_12"
+        android:text="使用setTheme方式改变的主题需要重启Activity，可能造成页面状态丢失"
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/brand"
+        />
+    <LinearLayout
+        android:id="@+id/ll_btn"
+        android:layout_below="@id/tv_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Button
+            android:background="@color/purple_200"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="1234567890"
+            android:textColor="?colorPrimary"
+            app:enableSkin="true" />
+
+
+        <Button
+            android:background="?colorAccent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onChangeSkin"
+            android:text="换肤" />
+
+        <Button
+            android:background="?colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="resetSkin"
+            android:text="还原皮肤" />
+
+        <Button
+            android:background="?sc_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onAddView"
+            android:text="动态添加控件" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@id/ll_btn"
+        android:id="@+id/ll_add_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+</RelativeLayout>
