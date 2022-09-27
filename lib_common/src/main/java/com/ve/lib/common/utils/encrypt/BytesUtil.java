@@ -8,7 +8,7 @@
 package com.ve.lib.common.utils.encrypt;
 
 
-import com.ve.lib.common.utils.system.LogUtil;
+import com.ve.lib.application.utils.LogUtil;
 
 /**
  * Created by ocean on 2018/1/12.

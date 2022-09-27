@@ -7,7 +7,7 @@ import com.ve.lib.common.base.view.vm.BaseVmFragment
 import com.ve.lib.common.utils.data.ImageLoader
 import com.ve.lib.common.ext.setOnclickNoRepeatListener
 import com.ve.lib.common.utils.data.TimeUtil
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 import com.ve.module.lockit.common.event.RefreshDataEvent
 import com.ve.module.lockit.databinding.LockitFragmentDetailsTagBinding
 import com.ve.module.lockit.respository.database.entity.PrivacyTag

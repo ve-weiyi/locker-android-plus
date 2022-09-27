@@ -5,7 +5,7 @@ import android.view.View
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.ve.lib.common.base.view.list.BaseVmListFragment
 import com.ve.lib.common.ext.setOnclickNoRepeatListener
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 import com.ve.module.lockit.R
 import com.ve.module.lockit.common.event.RefreshDataEvent
 import com.ve.module.lockit.databinding.LockitFragmentListCategoryBinding

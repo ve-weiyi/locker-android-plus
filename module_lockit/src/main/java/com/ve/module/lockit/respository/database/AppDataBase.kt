@@ -1,7 +1,7 @@
 package com.ve.module.lockit.respository.database
 
 import com.ve.lib.common.utils.data.ColorUtil
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 import com.ve.lib.common.utils.system.SpUtil
 import com.ve.module.lockit.common.config.LockitSpKey
 import com.ve.module.lockit.respository.database.entity.*

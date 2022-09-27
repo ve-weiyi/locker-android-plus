@@ -13,7 +13,7 @@ import com.tencent.tauth.IUiListener
 import com.tencent.tauth.Tencent
 import com.ve.lib.application.BaseApplication
 import com.ve.lib.common.ext.showToast
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 
 /**
  * @Author  weiyi

@@ -12,7 +12,7 @@ import com.ve.lib.common.ext.setOnclickNoRepeatListener
 import com.ve.lib.common.utils.data.ImageLoader
 import com.ve.lib.common.lifecycle.LocationLifecycle
 import com.ve.lib.common.utils.SettingUtil
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 import com.ve.lib.common.utils.system.SpUtil
 import com.ve.module.lockit.R
 import com.ve.module.lockit.common.config.LockitConstant

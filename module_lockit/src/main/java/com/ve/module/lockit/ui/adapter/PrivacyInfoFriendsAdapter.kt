@@ -7,7 +7,7 @@ import com.chad.library.adapter.base.module.DraggableModule
 import com.chad.library.adapter.base.module.LoadMoreModule
 import com.chad.library.adapter.base.module.UpFetchModule
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 import com.ve.lib.common.utils.data.TimeUtil
 import com.ve.module.lockit.R
 import com.ve.module.lockit.respository.database.entity.PrivacyFriend

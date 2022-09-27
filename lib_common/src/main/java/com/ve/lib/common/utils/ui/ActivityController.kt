@@ -5,7 +5,7 @@ import android.app.Application.ActivityLifecycleCallbacks
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 import java.util.*
 
 

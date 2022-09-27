@@ -6,8 +6,7 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
 import com.ve.lib.common.lifecycle.EventBusLifecycle
-import com.ve.lib.common.utils.system.LogUtil
-import org.greenrobot.eventbus.EventBus
+import com.ve.lib.application.utils.LogUtil
 
 /**
  * @author chenxz

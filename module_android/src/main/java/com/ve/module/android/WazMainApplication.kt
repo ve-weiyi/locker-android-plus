@@ -10,7 +10,7 @@ import com.ve.lib.application.BuildConfig
 import com.ve.lib.common.config.AppConfig
 import com.ve.lib.common.utils.SettingUtil
 import com.ve.lib.common.utils.AppContextUtil
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 import com.ve.lib.common.utils.system.SpUtil
 import java.util.*
 

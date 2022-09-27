@@ -7,7 +7,7 @@ import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
 import com.ve.lib.common.base.view.vm.BaseActivity
 import com.ve.lib.common.ext.setOnclickNoRepeatListener
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 import com.ve.lib.common.utils.system.SpUtil
 import com.ve.lib.common.utils.view.ToastUtil
 import com.ve.module.lockit.LockitMainActivity

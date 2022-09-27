@@ -7,7 +7,7 @@ import com.ve.module.android.repository.database.entity.SearchHistory
 import com.ve.lib.application.BaseApplication
 import com.ve.lib.common.base.repository.BaseRepository
 
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 import com.ve.lib.common.utils.data.TimeUtil
 
 

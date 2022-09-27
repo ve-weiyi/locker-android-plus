@@ -16,7 +16,7 @@ import com.ve.lib.common.config.AppConfig
 import com.ve.lib.common.utils.SettingUtil
 import com.ve.lib.common.utils.ui.ActivityController
 import com.ve.lib.common.utils.AppContextUtil
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 import com.ve.lib.common.callback.ApplicationCallbacks
 import com.ve.lib.common.utils.system.SpUtil
 import com.ve.module.lockit.respository.database.AppDataBase

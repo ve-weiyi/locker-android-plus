@@ -10,20 +10,19 @@ import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.widget.Toolbar
 import androidx.viewbinding.ViewBinding
-import com.ve.lib.application.skin.SkinCompatActivity
+import com.ve.lib.application.skin.ThemeCompatActivity
 import com.ve.lib.common.databinding.CommonToolbarBinding
 import com.ve.lib.common.lifecycle.EventBusLifecycle
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 import com.ve.lib.common.utils.system.KeyBoardUtil
 import com.ve.lib.common.utils.view.ToastUtil
-import org.greenrobot.eventbus.EventBus
 
 /**
  * @author chenxz
  * @date 2018/11/19
  * @desc BaseActivity 泛型实化 ，内部存有binding对象
  */
-abstract class BaseActivity<VB : ViewBinding> : SkinCompatActivity(), IView<VB> {
+abstract class BaseActivity<VB : ViewBinding> : ThemeCompatActivity(), IView<VB> {
 
     lateinit var mBinding: VB
 

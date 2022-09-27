@@ -3,7 +3,7 @@ package com.ve.lib.common.base.viewmodel
 import androidx.lifecycle.*
 import com.google.gson.JsonParseException
 import com.ve.lib.common.network.exception.ApiException
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 import com.ve.lib.common.utils.view.ToastUtil
 import kotlinx.coroutines.*
 

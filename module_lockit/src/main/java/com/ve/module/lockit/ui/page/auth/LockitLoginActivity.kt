@@ -14,7 +14,7 @@ import com.afollestad.materialdialogs.lifecycle.lifecycleOwner
 import com.ve.lib.common.base.view.vm.BaseVmActivity
 import com.ve.lib.common.ext.setOnclickNoRepeat
 import com.ve.lib.common.utils.view.DialogUtil
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 import com.ve.lib.view.widget.passwordGenerator.PasswordGeneratorDialog
 import com.ve.lib.common.utils.system.SpUtil
 import com.ve.module.lockit.LockitMainActivity

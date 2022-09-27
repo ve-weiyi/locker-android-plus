@@ -4,7 +4,7 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
-import com.ve.lib.common.utils.system.LogUtil;
+import com.ve.lib.application.utils.LogUtil;
 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;

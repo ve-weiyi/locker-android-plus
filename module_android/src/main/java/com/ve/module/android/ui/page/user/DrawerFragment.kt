@@ -5,14 +5,11 @@ import android.content.Intent
 import android.view.Gravity
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatDelegate
 import com.google.android.material.navigation.NavigationView
-import com.ve.lib.application.skin.SkinCompatActivity
-import com.ve.lib.application.skin.SkinConstants
+import com.ve.lib.application.skin.ThemeCompatActivity
 import com.ve.module.android.R
 import com.ve.module.android.config.Constant
 import com.ve.module.android.databinding.WazFragmentDrawerBinding
-import com.ve.lib.common.event.AppRecreateEvent
 import com.ve.lib.common.event.LoginEvent
 import com.ve.module.android.repository.bean.UserInfoBody
 import com.ve.module.android.ui.page.activity.CommonActivity
@@ -25,8 +22,7 @@ import com.ve.module.android.ui.viewmodel.WanAndroidViewModel
 import com.ve.lib.common.base.view.vm.BaseVmFragment
 import com.ve.lib.common.utils.view.DialogUtil
 import com.ve.lib.common.utils.system.PreferenceUtil
-import com.ve.lib.common.utils.SettingUtil
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 import com.ve.module.android.ui.page.fragment.CollectFragment
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
@@ -200,8 +196,8 @@ class DrawerFragment : BaseVmFragment<WazFragmentDrawerBinding, WanAndroidViewMo
                     logout()
                 }
                 R.id.nav_night_mode -> {
-                    val activity=activity as SkinCompatActivity
-                    activity.switchTheme(SkinConstants.THEME_DEFAULT)
+                    val activity=activity as ThemeCompatActivity
+                    activity.switchTheme(com.ve.lib.application.R.style.AppTheme)
 //                    if (SettingUtil.getIsNightMode()) {
 //                        SettingUtil.setIsNightMode(false)
 //                        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
@@ -213,13 +209,13 @@ class DrawerFragment : BaseVmFragment<WazFragmentDrawerBinding, WanAndroidViewMo
                 }
 
                 R.id.nav_night_mode2 -> {
-                    val activity=activity as SkinCompatActivity
-                    activity.switchTheme(SkinConstants.THEME_NIGHT)
+                    val activity=activity as ThemeCompatActivity
+                    activity.switchTheme(com.ve.lib.application.R.style.ThemeNight)
                 }
 
                 R.id.nav_night_mode3 -> {
-                    val activity=activity as SkinCompatActivity
-                    activity.switchTheme(SkinConstants.THEME_SAKURA)
+                    val activity=activity as ThemeCompatActivity
+                    activity.switchTheme(com.ve.lib.application.R.style.ThemeSakura)
                 }
                 R.id.nav_todo -> {
                     Intent(requireContext(), TodoActivity::class.java).run {

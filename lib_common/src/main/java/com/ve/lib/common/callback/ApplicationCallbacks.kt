@@ -1,7 +1,7 @@
 package com.ve.lib.common.callback
 
 import androidx.lifecycle.*
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 
 /**
  * application 生命周期

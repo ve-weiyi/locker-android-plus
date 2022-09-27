@@ -1,4 +1,4 @@
-package com.ve.lib.application.skin.skin
+package com.ve.lib.application.skin
 
 import android.app.Activity
 import android.view.View

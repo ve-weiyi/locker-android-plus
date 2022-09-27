@@ -8,12 +8,9 @@
         <entry key="..\:/Users/anker/StudioProjects/lockit-android/module_lockit/src/main/res/layout/lockit_activity_splash.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_test.xml" value="0.35104166666666664" />
         <entry key="lib_application/src/main/res/drawable-v21/ic_baseline_code_24.xml" value="0.1" />
-        <entry key="lib_application/src/main/res/drawable-v21/ic_baseline_menu_24.xml" value="0.172" />
-        <entry key="lib_application/src/main/res/drawable-v21/ic_baseline_person_pin_24.xml" value="0.2175" />
         <entry key="lib_application/src/main/res/drawable-v21/ic_baseline_phone_24.xml" value="0.1505" />
-        <entry key="lib_application/src/main/res/drawable-v21/ic_baseline_search_24.xml" value="0.2175" />
-        <entry key="lib_application/src/main/res/drawable-v21/ic_baseline_select_all_24.xml" value="0.2175" />
         <entry key="lib_application/src/main/res/drawable-v21/ic_music_note_black_48dp.xml" value="0.1505" />
+        <entry key="lib_application/src/main/res/drawable-v22/common_app_background.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable-v24/bg_accent_rect.xml" value="0.1505" />
         <entry key="lib_application/src/main/res/drawable-v24/bg_accent_rrect.xml" value="0.1505" />
         <entry key="lib_application/src/main/res/drawable-v24/bg_backgroud_rect.xml" value="0.1505" />
@@ -31,7 +28,6 @@
         <entry key="lib_application/src/main/res/drawable-v24/bg_done.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable-v24/bg_fresh.xml" value="0.1505" />
         <entry key="lib_application/src/main/res/drawable-v24/bg_gray_border.xml" value="0.1" />
-        <entry key="lib_application/src/main/res/drawable-v24/bg_gray_circle.xml" value="0.2175" />
         <entry key="lib_application/src/main/res/drawable-v24/bg_gray_circle_tag.xml" value="0.1" />
         <entry key="lib_application/src/main/res/drawable-v24/bg_green_oval.xml" value="0.1505" />
         <entry key="lib_application/src/main/res/drawable-v24/bg_green_rect.xml" value="0.1" />
@@ -126,7 +122,6 @@
         <entry key="lib_application/src/main/res/drawable/ic_setting_24dp.xml" value="0.1505" />
         <entry key="lib_application/src/main/res/drawable/ic_setting_white_24dp.xml" value="0.1505" />
         <entry key="lib_application/src/main/res/drawable/ic_sex_female_24dp.xml" value="0.1505" />
-        <entry key="lib_application/src/main/res/drawable/ic_sex_male_24dp.xml" value="0.1775" />
         <entry key="lib_application/src/main/res/drawable/ic_share_white_24dp.xml" value="0.1505" />
         <entry key="lib_application/src/main/res/drawable/ic_square_black_24dp.xml" value="0.1505" />
         <entry key="lib_application/src/main/res/drawable/ic_switch_white_24dp.xml" value="0.1505" />
@@ -169,7 +164,7 @@
         <entry key="lib_common/src/main/res/layout-v21/layout_upgrade_dialog.xml" value="0.2125" />
         <entry key="lib_common/src/main/res/layout/activity_container.xml" value="0.16458333333333333" />
         <entry key="lib_common/src/main/res/layout/agentweb_error_page.xml" value="0.2125" />
-        <entry key="lib_common/src/main/res/layout/common_toolbar.xml" value="0.4154104727285879" />
+        <entry key="lib_common/src/main/res/layout/common_toolbar.xml" value="0.23796296296296296" />
         <entry key="lib_common/src/main/res/layout/container.xml" value="0.16458333333333333" />
         <entry key="lib_common/src/main/res/layout/toolbar.xml" value="0.2995819091796875" />
         <entry key="lib_common/src/main/res/layout/toolbar_search.xml" value="0.215625" />
@@ -190,62 +185,30 @@
         <entry key="lockit_plus/src/main/res/layout/activity_login.xml" value="0.215625" />
         <entry key="lockit_plus/src/main/res/layout/activity_main.xml" value="0.1828125" />
         <entry key="lockit_plus/src/main/res/layout/activity_splash.xml" value="0.1828125" />
+        <entry key="lockit_plus/src/main/res/layout/common_gdpr_dialog.xml" value="0.21331521739130435" />
         <entry key="lockit_plus/src/main/res/layout/fragment_drawer.xml" value="0.215625" />
         <entry key="lockit_plus/src/main/res/layout/layout_login_type.xml" value="0.1828125" />
         <entry key="lockit_plus/src/main/res/layout/layout_userinfo.xml" value="0.2125" />
         <entry key="lockit_plus/src/main/res/layout/layout_userinfo_null.xml" value="0.1828125" />
-        <entry key="lockit_plus/src/main/res/layout/privacy_dialog.xml" value="0.2265625" />
+        <entry key="lockit_plus/src/main/res/layout/privacy_dialog.xml" value="0.2438446044921875" />
         <entry key="module_android/src/main/res/drawable/ic_launcher_background.xml" value="0.1505" />
         <entry key="module_android/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1505" />
         <entry key="module_android/src/main/res/drawable/ic_like_checked.xml" value="0.1505" />
         <entry key="module_android/src/main/res/drawable/ic_like_normal.xml" value="0.1505" />
         <entry key="module_android/src/main/res/drawable/ic_search_white_24dp.xml" value="0.1505" />
-        <entry key="module_android/src/main/res/layout-v21/item_collect_list.xml" value="0.165" />
-        <entry key="module_android/src/main/res/layout-v21/item_home_banner.xml" value="0.1513467293715263" />
-        <entry key="module_android/src/main/res/layout-v21/item_home_list.xml" value="0.335" />
-        <entry key="module_android/src/main/res/layout-v21/item_knowledge_list.xml" value="0.24010416666666667" />
-        <entry key="module_android/src/main/res/layout-v21/item_knowledge_tree_list.xml" value="0.1513467293715263" />
-        <entry key="module_android/src/main/res/layout-v21/item_navi.xml" value="0.1513467293715263" />
-        <entry key="module_android/src/main/res/layout-v21/item_navigation_list.xml" value="0.1513467293715263" />
-        <entry key="module_android/src/main/res/layout-v21/item_project_list.xml" value="0.1513467293715263" />
-        <entry key="module_android/src/main/res/layout-v21/item_rank_list.xml" value="0.1513467293715263" />
-        <entry key="module_android/src/main/res/layout-v21/item_search_history.xml" value="0.1513467293715263" />
-        <entry key="module_android/src/main/res/layout-v21/item_share_list.xml" value="0.1513467293715263" />
-        <entry key="module_android/src/main/res/layout-v21/item_socre_list.xml" value="0.1513467293715263" />
-        <entry key="module_android/src/main/res/layout-v21/item_sticky_header.xml" value="0.1828125" />
-        <entry key="module_android/src/main/res/layout-v21/item_todo_list.xml" value="0.1513467293715263" />
-        <entry key="module_android/src/main/res/layout/activity_agent_web.xml" value="0.25052083333333336" />
-        <entry key="module_android/src/main/res/layout/activity_knowledge.xml" value="0.2265625" />
+        <entry key="module_android/src/main/res/layout-v21/banner_image_title_num.xml" value="0.16893115942028986" />
+        <entry key="module_android/src/main/res/layout-v21/item_collect_list.xml" value="0.1" />
+        <entry key="module_android/src/main/res/layout-v21/item_home_banner.xml" value="0.16893115942028986" />
         <entry key="module_android/src/main/res/layout/activity_login.xml" value="0.1828125" />
         <entry key="module_android/src/main/res/layout/activity_rank.xml" value="0.2125" />
-        <entry key="module_android/src/main/res/layout/activity_settings.xml" value="0.24010416666666667" />
         <entry key="module_android/src/main/res/layout/activity_todo.xml" value="0.2125" />
-        <entry key="module_android/src/main/res/layout/app_bar_banner.xml" value="0.40714874267578116" />
-        <entry key="module_android/src/main/res/layout/flow_layout_tv.xml" value="0.28815733219324496" />
         <entry key="module_android/src/main/res/layout/fragment_about.xml" value="0.2125" />
-        <entry key="module_android/src/main/res/layout/fragment_blank.xml" value="0.24010416666666667" />
-        <entry key="module_android/src/main/res/layout/fragment_blank2.xml" value="0.24010416666666667" />
-        <entry key="module_android/src/main/res/layout/fragment_home.xml" value="0.22239583333333332" />
-        <entry key="module_android/src/main/res/layout/fragment_navigation.xml" value="0.24010416666666667" />
-        <entry key="module_android/src/main/res/layout/fragment_project.xml" value="0.24010416666666667" />
-        <entry key="module_android/src/main/res/layout/fragment_system.xml" value="0.24010416666666667" />
-        <entry key="module_android/src/main/res/layout/fragment_wechat.xml" value="0.24010416666666667" />
-        <entry key="module_android/src/main/res/layout/layout_popup_todo.xml" value="0.1828125" />
-        <entry key="module_android/src/main/res/layout/tab_action_container.xml" value="0.1828125" />
-        <entry key="module_android/src/main/res/layout/waz_activity_main.xml" value="0.23038330078125002" />
+        <entry key="module_android/src/main/res/layout/waz_activity_main.xml" value="0.35104166666666664" />
         <entry key="module_android/src/main/res/layout/waz_container.xml" value="0.35104166666666664" />
         <entry key="module_android/src/main/res/layout/waz_fragment_drawer.xml" value="0.35104166666666664" />
         <entry key="module_android/src/main/res/layout/waz_fragment_main.xml" value="0.215625" />
         <entry key="module_android/src/main/res/layout/waz_toolbar.xml" value="0.215625" />
         <entry key="module_android/src/main/res/layout/waz_toolbar_search.xml" value="0.215625" />
-        <entry key="module_android/src/main/res/menu/bottom_navigation_android.xml" value="0.22239583333333332" />
-        <entry key="module_android/src/main/res/menu/bottom_navigation_main.xml" value="0.22239583333333332" />
-        <entry key="module_android/src/main/res/menu/menu_add.xml" value="0.35104166666666664" />
-        <entry key="module_android/src/main/res/menu/menu_content.xml" value="0.25052083333333336" />
-        <entry key="module_android/src/main/res/menu/menu_search.xml" value="0.2265625" />
-        <entry key="module_android/src/main/res/menu/menu_search_flow.xml" value="0.2265625" />
-        <entry key="module_android/src/main/res/menu/menu_share_article.xml" value="0.35104166666666664" />
-        <entry key="module_android/src/main/res/menu/nav_menu.xml" value="0.35104166666666664" />
         <entry key="module_android/src/main/res/mipmap-xxxhdpi/ic_launcher.xml" value="0.1505" />
         <entry key="module_android/src/main/res/mipmap-xxxhdpi/ic_launcher_round.xml" value="0.1505" />
         <entry key="module_games/src/main/res/drawable/button_font_style.xml" value="0.1505" />

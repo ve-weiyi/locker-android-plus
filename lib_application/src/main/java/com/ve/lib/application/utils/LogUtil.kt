@@ -1,4 +1,4 @@
-package com.ve.lib.common.utils.system
+package com.ve.lib.application.utils
 
 import android.util.Log
 
@@ -12,7 +12,6 @@ import android.util.Log
  */
 object LogUtil {
     private var TAG = "LogUtil"
-    private var tag = "LogUtil"
     private var IS_LOG = true
     private const val MAX_LENGTH = 2000
 
@@ -24,7 +23,7 @@ object LogUtil {
     }
 
     fun setIsLog(isLog: Boolean, tag: String) {
-        TAG = tag
+        this.TAG = tag
         IS_LOG = isLog
     }
 
@@ -32,13 +31,13 @@ object LogUtil {
     @JvmStatic
     fun msg() {
         val info= getStackInfo()
-        Log.e(tag, info.covertMessage())
+        Log.e(this.TAG, info.covertMessage())
     }
 
     @JvmStatic
     fun msg(msg: Any?) {
         val info= getStackInfo()
-        Log.e(tag, info.covertMessage(msg.toString()))
+        Log.e(this.TAG, info.covertMessage(msg.toString()))
     }
 
     @JvmStatic
@@ -50,7 +49,7 @@ object LogUtil {
     @JvmStatic
     fun d(msg: Any) {
         val info= getStackInfo()
-        Log.d(tag, info.covertMessage(msg.toString()))
+        Log.d(this.TAG, info.covertMessage(msg.toString()))
     }
 
     @JvmStatic
@@ -73,7 +72,7 @@ object LogUtil {
     private fun getStackInfo(stackCount: Int=5): StackTraceInfo {
         val stackTrace = Thread.currentThread().stackTrace
 
-        val info=StackTraceInfo()
+        val info= StackTraceInfo()
         info.className = stackTrace[stackCount].className
         info.simpleClassName = stackTrace[stackCount].className.substringAfterLast(".")
         info.methodName= stackTrace[stackCount].methodName
@@ -90,7 +89,7 @@ object LogUtil {
         /**
          * 转换 message
          */
-        fun covertMessage(msg: String?=className): String {
+        fun covertMessage(msg: String?="object is null"): String {
             return "$jumpToLine$methodName --->> $msg"
         }
     }

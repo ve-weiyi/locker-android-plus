@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
 import com.ve.lib.common.base.viewmodel.BaseViewModel
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 import com.ve.lib.common.utils.view.ToastUtil
 import com.ve.lib.view.widget.multipleview.MultipleStatusView
 

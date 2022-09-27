@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.ve.lib.common.base.view.list.BaseVmListFragment
 import com.ve.lib.common.base.view.list.ListViewManager
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 import com.ve.module.lockit.databinding.LockitFragmentTagBinding
 import com.ve.module.lockit.respository.database.entity.PrivacyTag
 import com.ve.module.lockit.ui.adapter.TagGridAdapter

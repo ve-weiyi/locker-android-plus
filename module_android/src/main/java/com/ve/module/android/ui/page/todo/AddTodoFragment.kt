@@ -12,7 +12,7 @@ import com.ve.module.android.ui.viewmodel.TodoViewModel
 import com.ve.lib.common.base.view.vm.BaseVmFragment
 import com.ve.module.android.event.RefreshTodoEvent
 import com.ve.lib.common.utils.data.TimeUtil
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 import org.greenrobot.eventbus.EventBus
 import java.util.*
 

@@ -3,7 +3,7 @@ package com.ve.module.lockit.ui.page.user
 import android.os.Bundle
 import com.ve.lib.common.base.view.vm.BaseActivity
 import com.ve.lib.common.utils.data.ImageLoader
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 import com.ve.lib.common.utils.system.SpUtil
 import com.ve.module.lockit.common.config.LockitSpKey
 import com.ve.module.lockit.databinding.LockitActivityUserinfoBinding

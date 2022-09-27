@@ -5,7 +5,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.google.gson.JsonParseException
 import com.ve.lib.common.network.exception.ApiException
 import com.ve.lib.view.widget.passwordGenerator.PasswordGenerator
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 import com.ve.lib.common.utils.view.ToastUtil
 import com.ve.module.lockit.common.config.LockitConstant
 import com.ve.module.lockit.respository.database.AppDataBase

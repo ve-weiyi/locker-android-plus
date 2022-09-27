@@ -4,11 +4,10 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import androidx.viewbinding.ViewBinding
 import com.ve.lib.common.R
 import com.ve.lib.common.base.view.vm.BaseActivity
 import com.ve.lib.common.databinding.ActivityContainerBinding
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 
 /**
  * @Author  weiyi

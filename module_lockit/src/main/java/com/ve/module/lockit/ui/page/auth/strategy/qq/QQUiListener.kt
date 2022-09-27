@@ -5,7 +5,7 @@ import com.tencent.mmkv.MMKV
 import com.tencent.tauth.DefaultUiListener
 import com.tencent.tauth.UiError
 import com.ve.lib.common.ext.showToast
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 
 open class QQUiListener() : DefaultUiListener() {
 

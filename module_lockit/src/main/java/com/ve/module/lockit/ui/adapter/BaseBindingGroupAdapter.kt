@@ -8,7 +8,7 @@ import android.widget.BaseExpandableListAdapter
 import androidx.viewbinding.ViewBinding
 import com.ve.lib.common.base.adapter.ViewBindingHolder
 import com.ve.lib.common.exception.BizException
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 import org.jetbrains.anko.layoutInflater
 import java.lang.reflect.ParameterizedType
 

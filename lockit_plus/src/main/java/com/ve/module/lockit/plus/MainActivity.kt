@@ -61,6 +61,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     fun initNavigation() {
+        initFragment()
         mBinding.bottomNavigation.apply {
             menu.clear()
             //导航栏文字可见;原因：底部导航栏的类别多于三个了，多于三个就会不显示，解决方案如下~~~

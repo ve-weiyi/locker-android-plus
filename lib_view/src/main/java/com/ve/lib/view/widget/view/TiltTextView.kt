@@ -7,7 +7,7 @@ import android.text.TextUtils
 import android.util.AttributeSet
 import android.view.View
 import com.ve.lib.view.R
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 
 
 /**

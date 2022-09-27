@@ -15,7 +15,7 @@ import com.bumptech.glide.request.target.CustomTarget
 import com.ve.lib.common.R
 import com.ve.lib.common.network.util.NetWorkUtil
 import com.ve.lib.common.utils.AppContextUtil
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 
 
 /**

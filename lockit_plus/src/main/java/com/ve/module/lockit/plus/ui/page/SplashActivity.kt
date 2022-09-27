@@ -8,6 +8,7 @@ import com.ve.lib.common.base.view.vm.BaseActivity
 import com.ve.lib.common.router.ARouterPath
 import com.ve.module.lockit.plus.databinding.ActivitySplashBinding
 
+
 /**
  * null：    表示对象为空
  * empty：表示对象为空或长度为0
@@ -21,7 +22,6 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(){
 
     private var alphaAnimation: AlphaAnimation? = null
     override fun initialize(saveInstanceState: Bundle?) {
-        ImmersionBar.with(this).init()
         alphaAnimation = AlphaAnimation(0.3F, 1.0F)
         alphaAnimation?.run {
             //持续时间
@@ -39,7 +39,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>(){
                 }
             })
         }
-        mBinding.ivLogo.startAnimation(alphaAnimation)
+//        mBinding.ivLogo.startAnimation(alphaAnimation)
     }
 
     fun jumpToMain() {

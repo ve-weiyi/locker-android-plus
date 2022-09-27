@@ -1,7 +1,7 @@
 package com.ve.module.lockit.ui.viewmodel
 
 import androidx.lifecycle.MutableLiveData
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 import com.ve.module.lockit.respository.database.entity.*
 import com.ve.module.lockit.respository.database.vo.PrivacyPassInfo
 import org.litepal.LitePal

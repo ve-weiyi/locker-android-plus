@@ -1,3 +1,5 @@
+var isModule=true
+
 if (isModule.toBoolean()) {
     apply from: "../build.module.gradle"
 }else{

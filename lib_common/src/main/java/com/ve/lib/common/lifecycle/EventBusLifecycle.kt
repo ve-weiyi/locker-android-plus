@@ -1,7 +1,7 @@
 package com.ve.lib.common.lifecycle
 
 import androidx.lifecycle.*
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 import org.greenrobot.eventbus.EventBus
 
 /**

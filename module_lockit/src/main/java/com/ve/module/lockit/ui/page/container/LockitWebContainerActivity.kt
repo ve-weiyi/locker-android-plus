@@ -20,7 +20,7 @@ import androidx.annotation.RequiresApi
 import com.just.agentweb.AgentWeb
 import com.ve.lib.common.R
 import com.ve.lib.common.base.view.vm.BaseActivity
-import com.ve.lib.common.utils.system.LogUtil
+import com.ve.lib.application.utils.LogUtil
 import com.ve.module.lockit.databinding.LockitActivityContainerWebBinding
 
 /**

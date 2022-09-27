@@ -5,13 +5,9 @@ import android.os.Bundle
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
 import androidx.appcompat.app.AppCompatActivity
-import com.ve.lib.common.utils.system.LogUtil
-import com.ve.lib.common.utils.system.SpUtil
 import com.ve.module.lockit.LockitMainActivity
-import com.ve.module.lockit.common.config.LockitSpKey
 
 import com.ve.module.lockit.databinding.LockitActivitySplashBinding
-import com.ve.module.lockit.respository.http.bean.LoginDTO
 import com.ve.module.lockit.ui.page.auth.LockitAuthActivity
 import com.ve.module.lockit.ui.page.auth.LockitLoginActivity
 
