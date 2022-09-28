@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.content.res.AssetManager
 import android.content.res.Resources
 import android.content.res.Resources.Theme
+import android.graphics.drawable.Drawable
 import android.util.Log
 import androidx.annotation.StyleRes
 import androidx.core.content.ContextCompat
@@ -126,6 +127,16 @@ object SkinEngine {
         return resource.getString(identifier)
     }
 
+    fun getDrawable(redId: Int): Drawable? {
+        //找到插件工程的对应资源id
+        val identifier = ThemeAttrUtil.getIdFromPkg(mContext, redId, resource, skinPkgName)
+        //获取失败时，返回本应用的Id
+        if (identifier <= 0) {
+            return mContext.getDrawable(redId)
+        }
+        //获取插件工程的资源
+        return resource.getDrawable(identifier,themeCache[selectedThemeRes])
+    }
 
     fun reset() {
         LogUtil.msg("1")

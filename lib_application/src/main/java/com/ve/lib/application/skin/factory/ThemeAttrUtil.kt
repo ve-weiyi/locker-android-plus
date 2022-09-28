@@ -29,15 +29,25 @@ object ThemeAttrUtil {
     /**
      * 找到插件工程的对应资源id
      * resId--->resId
+     * //org.learn.skinchangedemp:layout/activity_main
+     * Log.i(TAG, "${resources.getResourceName(R.layout.activity_main)} ")
+     * //org.learn.skinchangedemp
+     * Log.i(TAG, "${resources.getResourcePackageName(R.layout.activity_main)} ")
+     * //activity_main
+     * Log.i(TAG, "${resources.getResourceEntryName(R.layout.activity_main)} ")
+     * //layout
+     * Log.i(TAG, "${resources.getResourceTypeName(R.layout.activity_main)} ")
+     * //资源id,  packageName=插件包的包名
+     * Log.i(TAG, "${resources.getIdentifier("activity_main", "layout", packageName)}")
      */
-    fun getIdFromPkg(context: Context, resId: Int, resource: Resources=context.resources, skinPkgName:String=context.packageName): Int {
+    fun getIdFromPkg(context: Context, resId: Int, skinResource: Resources=context.resources, skinPkgName:String=context.packageName): Int {
         //主工程资源id->资源名字、类型->插件包中的资源id
         //R.color.black
         //black
         val resourceEntryName = context.resources.getResourceEntryName(resId)
         //color
         val resourceTypeName = context.resources.getResourceTypeName(resId)
-        val result=resource.getIdentifier(resourceEntryName, resourceTypeName, skinPkgName) ?: 0
+        val result=skinResource.getIdentifier(resourceEntryName, resourceTypeName, skinPkgName) ?: 0
         LogUtil.msg("$resId == $result")
         return result
     }

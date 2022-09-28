@@ -43,6 +43,9 @@ class SkinFactory(activity: AppCompatActivity) : LayoutInflater.Factory2 {
         return null
     }
 
+    /**
+     * 优先使用 mFactory2 创建 view，mFactory2 为空则使用 mFactory，否则使用 mPrivateFactory
+     */
     override fun onCreateView(
         parent: View?,
         name: String,
@@ -52,11 +55,10 @@ class SkinFactory(activity: AppCompatActivity) : LayoutInflater.Factory2 {
         var createView: View? = null
         //调用系统方法创建控件
         createView = appCompatDelegate.createView(parent, name, context, attrs)
-        if(createView==null){
-//            LogUtil.msg("$parent  $name $context $attrs")
+        if (createView == null) {
             return null
         }
-        //获取theme中的值
+        //获取theme中的值,读取自定义属性 enable
         val obtainStyledAttributes = context.obtainStyledAttributes(attrs, R.styleable.SkinSupport)
         val isEnable = obtainStyledAttributes.getBoolean(R.styleable.SkinSupport_enableSkin, true)
         obtainStyledAttributes.recycle()
@@ -73,15 +75,14 @@ class SkinFactory(activity: AppCompatActivity) : LayoutInflater.Factory2 {
                     //?2130903258 ?colorPrimary 这样的 解析主题，找到id，再去找资源名称和类型
                     if (attributeValue.startsWith("?")) {
                         val attrId = attributeValue.substring(1).toInt()
-                        attrView.attrs.add(AttrView.AttrItem(attributeName, attrId))
-//                        val resIdFromTheme = ThemeAttrUtil.getResIdFromTheme(context.theme, attrId)
-//                        if (resIdFromTheme > 0) {
-//                            attrView.attrs.add(AttrView.AttrItem(attributeName, resIdFromTheme))
-//                        }
+                        val resIdFromTheme = ThemeAttrUtil.getResIdFromTheme(context.theme, attrId)
+                        if (resIdFromTheme > 0) {
+                            attrView.attrs.add(AttrView.AttrItem(attributeName, resIdFromTheme, attrId))
+                        }
                     }//@2131231208 @color/red 直接就是id，根据id找到资源名称和类型
                     else if (attributeValue.startsWith("@")) {
-//                        val attrId = attributeValue.substring(1).toInt()
-//                        attrView.attrs.add(AttrView.AttrItem(attributeName, attrId))
+                        val attrId = attributeValue.substring(1).toInt()
+                        attrView.attrs.add(AttrView.AttrItem(attributeName, attrId))
                     }
                 }
             }
@@ -109,9 +110,13 @@ class SkinFactory(activity: AppCompatActivity) : LayoutInflater.Factory2 {
         LogUtil.msg(attrView)
         //将每一个换肤控件的属性进行应用
         attrView.attrs.forEach {
-            val resId=ThemeAttrUtil.getResIdFromTheme(theme,it.attrId)
+            val resId = if (it.attrId != null) {
+                ThemeAttrUtil.getResIdFromTheme(theme, it.attrId)
+            } else {
+                it.resId
+            }
 
-            if(it.attrName==SkinAttr.background){
+            if (it.attrName == SkinAttr.background) {
                 attrView.view.setBackgroundResource(resId)
             }
 
@@ -121,14 +126,14 @@ class SkinFactory(activity: AppCompatActivity) : LayoutInflater.Factory2 {
                     attrView.view.textColor = SkinEngine.getColor(resId)
                 } else if (it.attrName == SkinAttr.text) {
                     //去皮肤包中寻找对应的资源
-                    attrView.view.text = SkinEngine.getString(it.attrId)
+                    attrView.view.text = SkinEngine.getString(resId)
                 }
             }
 
             // 先对attrName分类，再对view分类
             if (attrView.view is ImageView) {
                 if (it.attrName == SkinAttr.src) {
-                    attrView.view.setImageResource(it.attrId)
+                    attrView.view.setImageDrawable(SkinEngine.getDrawable(resId))
                 }
             }
         }

@@ -34,13 +34,13 @@ class SkinFactoryActivity : SkinCompatActivity() {
 
         val addAttr = layoutFactory2.dynamicAddSkin(textView)
             .addAttr("text", com.google.android.material.R.string.chip_text)
-            .addAttr("textColor", R.color.colorAccent)
+            .addAttr("textColor", R.color.colorPrimary, attrId = androidx.appcompat.R.attr.colorPrimary)
 
         mLL.addView(textView, ViewGroup.LayoutParams(
             ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT
         ))
 
-//        layoutFactory2.changAttrView(this.theme, addAttr)
+        layoutFactory2.changAttrView(this.theme, addAttr)
 
         textView.setOnClickListener {
             mLL.removeView(it)
