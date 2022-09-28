@@ -20,6 +20,8 @@
             <option value="$PROJECT_DIR$/module_games" />
             <option value="$PROJECT_DIR$/module_lockit" />
             <option value="$PROJECT_DIR$/module_sunny" />
+            <option value="$PROJECT_DIR$/skinDemo" />
+            <option value="$PROJECT_DIR$/skinModule" />
           </set>
         </option>
       </GradleProjectSettings>

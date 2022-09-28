@@ -27,7 +27,7 @@ class AddCookieInterceptor(
         val stringSet = SpUtil.getStringSet(spCookieKey)
         for (cookie in stringSet) {
             builder.addHeader("Cookie", cookie)
-            LogUtil.msg(cookie)
+            LogUtil.i(cookie)
         }
 
         return chain.proceed(builder.build())

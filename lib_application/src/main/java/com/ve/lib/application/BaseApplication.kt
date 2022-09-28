@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.res.Configuration
 import android.util.Log
 import com.ve.lib.application.impl.ModuleApplication
+import com.ve.lib.application.skin.factory.SkinEngine
 
 /**
  * @Description
@@ -37,6 +38,7 @@ abstract class BaseApplication : Application() {
         mContext = applicationContext
         context = applicationContext
 
+        SkinEngine.init(this,R.style.AppTheme)
         modulesApplicationInit()
     }
 

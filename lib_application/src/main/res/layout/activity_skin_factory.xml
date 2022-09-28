@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:elevation="0dp"
     tools:theme="@style/ThemeSakura">
 
     <Toolbar
@@ -30,15 +31,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <Button
-            android:background="@color/purple_200"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
+            android:background="@color/purple_200"
             android:gravity="center"
             android:text="1234567890"
             android:textColor="?colorPrimary"
-            app:enableSkin="true" />
+            tools:ignore="TextContrastCheck" />
 
 
         <Button
@@ -56,11 +58,12 @@
             android:text="还原皮肤" />
 
         <Button
-            android:background="?sc_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="?sc_btn"
             android:onClick="onAddView"
-            android:text="动态添加控件" />
+            android:text="动态添加控件"
+            />
     </LinearLayout>
 
     <LinearLayout

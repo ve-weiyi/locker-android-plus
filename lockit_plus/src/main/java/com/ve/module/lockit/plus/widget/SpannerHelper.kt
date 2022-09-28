@@ -16,10 +16,10 @@ import android.text.style.*
 object SpannerHelper {
 
     class Builder(
-        var text: String,
-        var start: Int,
-        var end: Int
-        ) {
+        private var text: String,
+        private var start: Int,
+        private var end: Int
+    ) {
         var textSize: Int? = null
         var textStyle: Int? = null
         var textScale: Float? = null
@@ -27,52 +27,55 @@ object SpannerHelper {
         var foregroundColor: Int? = null
         var backGroundColor: Int? = null
 
-        var underLineSpan = false
+        var underLine = false
         var deleteLine = false
         var subscript = false
 
-        var textClickListener = 0
+        var textClickListener :ClickableSpan?=null
 
         /**
          *
          */
-        var flag = Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
+        var exclusive = Spanned.SPAN_EXCLUSIVE_EXCLUSIVE
 
         fun build(): SpannableString {
             val ss = SpannableString(text)
 
             textSize?.let {
-                ss.setSpan(AbsoluteSizeSpan(it), start, end, flag)
+                ss.setSpan(AbsoluteSizeSpan(it), start, end, exclusive)
             }
 
             textStyle?.let {
-                ss.setSpan(StyleSpan(it), start, end, flag)
+                ss.setSpan(StyleSpan(it), start, end, exclusive)
 
             }
 
             textScale?.let {
-                ss.setSpan(ScaleXSpan(it), start, end, flag)
+                ss.setSpan(ScaleXSpan(it), start, end, exclusive)
             }
 
             foregroundColor?.let {
-                ss.setSpan(ForegroundColorSpan(it), start, end, flag)
+                ss.setSpan(ForegroundColorSpan(it), start, end, exclusive)
             }
 
             backGroundColor?.let {
-                ss.setSpan(BackgroundColorSpan(it), start, end, flag)
+                ss.setSpan(BackgroundColorSpan(it), start, end, exclusive)
             }
 
-            if (underLineSpan) {
-                ss.setSpan(UnderlineSpan(), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+            if (underLine) {
+                ss.setSpan(UnderlineSpan(), start, end, exclusive)
             }
 
             if (deleteLine) {
-                ss.setSpan(StrikethroughSpan(), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+                ss.setSpan(StrikethroughSpan(), start, end, exclusive)
             }
             if (subscript) {
-                ss.setSpan(SubscriptSpan(), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+                ss.setSpan(SubscriptSpan(), start, end, exclusive)
             }
 
+            if (textClickListener != null) {
+                ss.setSpan(textClickListener,start,end,exclusive)
+            }
             return ss
         }
     }

@@ -39,17 +39,22 @@ object LogUtil {
         val info= getStackInfo()
         Log.e(this.TAG, info.covertMessage(msg.toString()))
     }
+    @JvmStatic
+    fun d(msg: Any?) {
+        val info= getStackInfo()
+        Log.d(this.TAG, info.covertMessage(msg.toString()))
+    }
+
+    @JvmStatic
+    fun i(msg: Any?) {
+        val info= getStackInfo()
+        Log.i(this.TAG, info.covertMessage(msg.toString()))
+    }
 
     @JvmStatic
     fun msg(tag: String?, msg: Any?) {
         val info= getStackInfo()
         Log.e(tag, info.covertMessage(msg.toString()))
-    }
-
-    @JvmStatic
-    fun d(msg: Any) {
-        val info= getStackInfo()
-        Log.d(this.TAG, info.covertMessage(msg.toString()))
     }
 
     @JvmStatic

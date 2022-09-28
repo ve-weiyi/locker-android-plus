@@ -27,7 +27,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     override fun initialize(saveInstanceState: Bundle?) {
         initNavigation()
         showFragment(mIndex)
-        PrivacyDialog.Builder(this).show()
+//        PrivacyDialog.Builder(this).show()
     }
 
     private fun initFragment() {

@@ -138,7 +138,7 @@
         <entry key="lib_application/src/main/res/drawable/ic_wechat_black_24dp.xml" value="0.1505" />
         <entry key="lib_application/src/main/res/drawable/ic_windows.xml" value="0.1505" />
         <entry key="lib_application/src/main/res/drawable/shape_seekbar_btn.xml" value="0.127" />
-        <entry key="lib_application/src/main/res/layout/activity_skin_factory.xml" value="0.1453125" />
+        <entry key="lib_application/src/main/res/layout/activity_skin_factory.xml" value="0.1" />
         <entry key="lib_application/src/main/res/layout/activity_skin_set.xml" value="0.1453125" />
         <entry key="lib_application/src/main/res/mipmap-xxxhdpi/ic_launcher.xml" value="0.1505" />
         <entry key="lib_application/src/main/res/mipmap-xxxhdpi/ic_launcher_round.xml" value="0.1015" />
@@ -315,6 +315,8 @@
         <entry key="module_lockit/src/main/res/mipmap-anydpi-v26/lockit_ic_launcher_round.xml" value="0.1505" />
         <entry key="module_lockit/src/main/res/xml/file_path.xml" value="0.22447916666666667" />
         <entry key="module_lockit/src/main/res/xml/lockit_pref_setting_autonight.xml" value="0.30833333333333335" />
+        <entry key="skinDemo/src/main/res/layout/activity_demo2_theme.xml" value="0.1" />
+        <entry key="skinDemo/src/main/res/layout/activity_demo3_theme.xml" value="0.1" />
       </map>
     </option>
   </component>

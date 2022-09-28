@@ -1,14 +1,12 @@
 package com.ve.lib.application.skin.factory
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import com.ve.lib.application.BaseApplication.Companion.mContext
 import com.ve.lib.application.R
-import com.ve.lib.application.skin.SkinCompatActivity
-import java.io.File
 
 class SkinFactoryActivity : SkinCompatActivity() {
     private lateinit var mLL: LinearLayout
@@ -19,21 +17,16 @@ class SkinFactoryActivity : SkinCompatActivity() {
         mLL = findViewById(R.id.ll_add_view)
 
     }
-
-    private fun changeSkin() {
-        SkinLoader.instance.changeTheme(this, R.style.ThemeSakura)
-//        layoutFactory2.changeSkin(this)
-    }
     fun onChangeSkin(view: View) {
         //io操作，需要异步，这里省略了
-        val file = File(getExternalFilesDir(null), "skin.apk")
-        SkinLoader.instance.loadResource(this, file.absolutePath)
-        changeSkin()
+//        val file = File(getExternalFilesDir(null), "skin.apk")
+//        SkinEngine.instance.loadResource(this, file.absolutePath)
+        SkinEngine.changeTheme(this, R.style.ThemeSakura)
     }
 
     fun resetSkin(view: View) {
-        SkinLoader.instance.reset()
-        changeSkin()
+        SkinEngine.reset()
+        SkinEngine.changeTheme(mContext, R.style.AppTheme)
     }
 
     fun onAddView(view: View) {
@@ -47,7 +40,7 @@ class SkinFactoryActivity : SkinCompatActivity() {
             ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT
         ))
 
-        layoutFactory2.changAttrView(this.theme, addAttr)
+//        layoutFactory2.changAttrView(this.theme, addAttr)
 
         textView.setOnClickListener {
             mLL.removeView(it)

@@ -24,9 +24,9 @@ class HeaderInterceptor : Interceptor {
 
         val domain = request.url.host
         val url = request.url.toString()
-        LogUtil.msg(request.body)
-        LogUtil.msg(domain)
-        LogUtil.msg(url)
+        LogUtil.i(request.body)
+        LogUtil.i(domain)
+        LogUtil.i(url)
         return chain.proceed(builder.build())
     }
 

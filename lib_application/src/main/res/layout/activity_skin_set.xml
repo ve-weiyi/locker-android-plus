@@ -18,13 +18,12 @@
     <TextView
         android:id="@+id/tv_tip"
         style="@style/t16_b"
-        android:padding="@dimen/dp_12"
-        android:text="使用setTheme方式改变的主题需要重启Activity，可能造成页面状态丢失"
-        android:layout_below="@id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/brand"
-        />
+        android:layout_below="@id/toolbar"
+        android:padding="@dimen/dp_12"
+        android:text="使用setTheme方式改变的主题需要重启Activity，可能造成页面状态丢失,并且需要重启之前所有页面"
+        android:textColor="@color/brand" />
     <LinearLayout
         android:id="@+id/ll_btn"
         android:layout_below="@id/tv_tip"

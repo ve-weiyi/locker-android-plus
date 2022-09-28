@@ -165,7 +165,7 @@ object ActivityController {
         }
 
         override fun onActivityResumed(activity: Activity) {
-            LogUtil.msg(currentActivityName)
+            LogUtil.i(currentActivityName)
         }
 
         override fun onActivityPaused(activity: Activity) {

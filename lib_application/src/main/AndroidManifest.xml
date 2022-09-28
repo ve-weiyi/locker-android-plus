@@ -14,10 +14,10 @@
 
     <application>
         <activity
-            android:name=".SkinSetActivity"
+            android:name=".skin.set.SkinSetActivity"
             android:exported="false" />
         <activity
-            android:name=".SkinFactoryActivity"
+            android:name=".skin.factory.SkinFactoryActivity"
             android:exported="false" />
     </application>
 
