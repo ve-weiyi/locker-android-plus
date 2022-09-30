@@ -24,7 +24,7 @@
         app:elevation="@dimen/dp_16"
         app:itemIconTint="@drawable/state_nav_item_color"
         app:itemTextColor="@drawable/state_nav_item_color"
-        app:layout_behavior="com.ve.lib.view.widget.behavior.BottomNavigationBehavior"
+        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
         app:menu="@menu/bottom_navigation_todo" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

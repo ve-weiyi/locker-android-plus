@@ -113,7 +113,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
         val mFragmentPage = mFragmentPageList[index]
         if (mFragmentPage.mFragment == null) {
-            mBinding.bottomNavigation.menu[index].title = mFragmentPage.fragmentTitle
+            mBinding.bottomNavigation.menu.getItem(index).title = mFragmentPage.fragmentTitle
             mFragmentPage.mFragment = mFragmentPage.getFragment()
             transaction.add(
                 R.id.ext_container,
