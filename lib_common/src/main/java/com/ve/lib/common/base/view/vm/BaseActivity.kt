@@ -3,17 +3,15 @@ package com.ve.lib.common.base.view.vm
 import android.content.Context
 import android.content.pm.ActivityInfo
 import android.graphics.drawable.Drawable
+import android.os.Build
 import android.os.Bundle
-import android.view.MenuItem
-import android.view.MotionEvent
-import android.view.View
-import android.view.WindowManager
+import android.view.*
 import androidx.appcompat.widget.Toolbar
 import androidx.viewbinding.ViewBinding
 import com.ve.lib.application.skin.ThemeCompatActivity
+import com.ve.lib.application.utils.LogUtil
 import com.ve.lib.common.databinding.CommonToolbarBinding
 import com.ve.lib.common.lifecycle.EventBusLifecycle
-import com.ve.lib.application.utils.LogUtil
 import com.ve.lib.common.utils.system.KeyBoardUtil
 import com.ve.lib.common.utils.view.ToastUtil
 
@@ -55,7 +53,7 @@ abstract class BaseActivity<VB : ViewBinding> : ThemeCompatActivity(), IView<VB>
             lifecycle.addObserver(EventBusLifecycle.instant)
         }
 
-        initialize(savedInstanceState)
+        initialize()
     }
 
     open fun initHeaderInfo(
@@ -205,4 +203,5 @@ abstract class BaseActivity<VB : ViewBinding> : ThemeCompatActivity(), IView<VB>
         LogUtil.msg(mViewName)
         super.onRestart()
     }
+
 }

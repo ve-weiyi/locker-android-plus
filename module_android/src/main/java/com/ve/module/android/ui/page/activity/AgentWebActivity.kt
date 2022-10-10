@@ -74,7 +74,7 @@ class AgentWebActivity : BaseActivity<ActivityAgentWebBinding>() {
 
 
     @RequiresApi(Build.VERSION_CODES.N)
-    override fun initialize(saveInstanceState: Bundle?) {
+    override fun initialize() {
 
         //设置标题栏之后才能修改菜单
         mBinding.toolbar.toolbar.run {

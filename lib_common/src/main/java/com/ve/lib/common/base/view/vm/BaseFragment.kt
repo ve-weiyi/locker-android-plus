@@ -45,7 +45,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() , IView<VB> {
         if (useEventBus()) {
             lifecycle.addObserver(EventBusLifecycle.instant)
         }
-        initialize(savedInstanceState)
+        initialize()
     }
 
 

@@ -34,7 +34,7 @@ interface IView<VB : ViewBinding> {
     /**
      * 初始化函数，命名与子类BaseVmActivity初始化函数区分。
      */
-    abstract fun initialize(saveInstanceState: Bundle?)
+    abstract fun initialize()
 
 
     /**
@@ -66,11 +66,11 @@ interface IView<VB : ViewBinding> {
     }
 
 
-    fun startActivity(path: String) {
-        startActivity(null, path, null)
+    fun startRouteActivity(path: String) {
+        startRouteActivity(null, path, null)
     }
 
-    fun startActivity(
+    fun startRouteActivity(
         activity:Activity?,
         path: String,
         bundle: Bundle? = null,

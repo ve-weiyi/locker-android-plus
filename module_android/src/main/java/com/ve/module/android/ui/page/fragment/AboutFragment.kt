@@ -39,7 +39,7 @@ class AboutFragment : BaseFragment<FragmentAboutBinding>(){
         iv_logo.setBackgroundDrawable(drawable)
     }
 
-    override fun initialize(saveInstanceState: Bundle?) {
+    override fun initialize() {
         about_content.run {
             text = Html.fromHtml(getString(R.string.about_content))
             movementMethod = LinkMovementMethod.getInstance()

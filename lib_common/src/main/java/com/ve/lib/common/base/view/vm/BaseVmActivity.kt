@@ -1,6 +1,5 @@
 package com.ve.lib.common.base.view.vm
 
-import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
 import androidx.lifecycle.ViewModelProvider
@@ -35,7 +34,7 @@ abstract class BaseVmActivity<VB : ViewBinding, VM : BaseViewModel> : BaseActivi
     open fun enableNetworkTip(): Boolean = true
 
 
-    override fun initialize(saveInstanceState: Bundle?) {
+    override fun initialize() {
         mViewModel = ViewModelProvider(this).get(attachViewModelClass())
 
         initObserver()

@@ -50,7 +50,7 @@ class LockitSettingActivity: BaseActivity<LockitActivitySettingBinding>(){
         return LockitActivitySettingBinding.inflate(layoutInflater)
     }
 
-    override fun initialize(saveInstanceState: Bundle?) {
+    override fun initialize() {
         //从bundle中取出数据
         fragmentTitle  = intent.getStringExtra(FRAGMENT_TITLE_KEY) ?: "设置"
         fragmentClassName = intent.getStringExtra(FRAGMENT_CLASS_NAME_KEY) ?: ""

@@ -38,7 +38,7 @@ class CommonActivity : BaseActivity<ActivityCommonBinding>() {
         }
     }
 
-    override fun initialize(saveInstanceState: Bundle?) {
+    override fun initialize() {
         var toolbar = mBinding.extToolbar.toolbar
 
 

@@ -1,6 +1,5 @@
 package com.ve.module.android.ui.page.setting
 
-import android.os.Bundle
 import com.ve.module.android.databinding.FragmentQrCodeBinding
 import com.ve.lib.common.base.view.vm.BaseFragment
 
@@ -19,7 +18,7 @@ class QrCodeFragment : BaseFragment<FragmentQrCodeBinding>(){
         return FragmentQrCodeBinding.inflate(layoutInflater)
     }
 
-    override fun initialize(saveInstanceState: Bundle?) {
+    override fun initialize() {
 
     }
 }

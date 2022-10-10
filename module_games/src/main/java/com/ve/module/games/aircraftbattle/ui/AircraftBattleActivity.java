@@ -55,7 +55,7 @@ public class AircraftBattleActivity extends BaseActivity<ActivityAircraftBattleB
     }
 
     @Override
-    public void initialize(@Nullable Bundle saveInstanceState) {
+    public void initialize() {
         ImmersionBar.with(this)
                 .init();
 

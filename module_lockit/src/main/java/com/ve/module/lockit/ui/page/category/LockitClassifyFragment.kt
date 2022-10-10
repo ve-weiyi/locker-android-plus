@@ -48,7 +48,7 @@ class LockitClassifyFragment : BaseFragment<LockitFragmentClassifyBinding>() {
     lateinit var fragmentClassName: String
     lateinit var fragmentArguments: Bundle
 
-    override fun initialize(saveInstanceState: Bundle?) {
+    override fun initialize() {
         setHasOptionsMenu(true)
 
         //从bundle中取出数据

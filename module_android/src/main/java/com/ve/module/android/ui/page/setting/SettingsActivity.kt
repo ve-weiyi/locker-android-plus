@@ -18,7 +18,7 @@ class SettingsActivity : BaseActivity<ActivitySettingsBinding>(){
         return ActivitySettingsBinding.inflate(layoutInflater)
     }
 
-    override fun initialize(saveInstanceState: Bundle?) {
+    override fun initialize() {
 
         val initFragment: String = intent.getStringExtra(EXTRA_SHOW_FRAGMENT) ?: ""
         val initArguments: Bundle = intent.getBundleExtra(EXTRA_SHOW_FRAGMENT_ARGUMENTS) ?: Bundle()

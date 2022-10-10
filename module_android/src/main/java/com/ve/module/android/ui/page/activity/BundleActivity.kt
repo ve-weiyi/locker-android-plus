@@ -34,7 +34,7 @@ class BundleActivity : BaseActivity<ActivityCommonBinding>() {
         }
     }
 
-    override fun initialize(saveInstanceState: Bundle?) {
+    override fun initialize() {
         val extras = intent.extras ?: return
         mType = extras.getString(Constant.TYPE_KEY, "")
         var toolbar=mBinding.extToolbar.toolbar

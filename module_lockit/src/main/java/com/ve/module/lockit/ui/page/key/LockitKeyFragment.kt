@@ -1,6 +1,5 @@
 package com.ve.module.lockit.ui.page.key
 
-import android.os.Bundle
 import android.text.Html
 import com.ve.lib.common.base.view.vm.BaseFragment
 import com.ve.module.lockit.R
@@ -17,7 +16,7 @@ class LockitKeyFragment:BaseFragment<LockitFragmentKeyBinding>() {
         return LockitFragmentKeyBinding.inflate(layoutInflater)
     }
 
-    override fun initialize(saveInstanceState: Bundle?) {
+    override fun initialize() {
         mBinding.tvKeyTip.apply {
             text= Html.fromHtml(getString(R.string.lockit_key_tip))
         }

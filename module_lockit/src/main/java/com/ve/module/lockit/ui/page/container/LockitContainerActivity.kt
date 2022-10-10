@@ -64,7 +64,7 @@ class LockitContainerActivity :BaseActivity<LockitActivityContainerBinding>(){
     lateinit var fragmentClassName: String
     lateinit var fragmentArguments: Bundle
 
-    override fun initialize(saveInstanceState: Bundle?) {
+    override fun initialize() {
 
         //从bundle中取出数据
         fragmentTitle  = intent.getStringExtra(FRAGMENT_TITLE_KEY) ?: ""

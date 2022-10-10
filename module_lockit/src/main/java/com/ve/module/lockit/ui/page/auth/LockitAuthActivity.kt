@@ -55,7 +55,7 @@ class LockitAuthActivity : BaseActivity<LockitActivityAuthBinding>(){
     private lateinit var activityClassName: String
     private lateinit var activityBundle: Bundle
 
-    override fun initialize(saveInstanceState: Bundle?) {
+    override fun initialize() {
         activityClassName=intent.getStringExtra(NEXT_ACTIVITY_KEY)?: ""
         activityBundle=intent.getBundleExtra(NEXT_ACTIVITY_DATA_KEY)?: Bundle()
 

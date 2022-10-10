@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="@dimen/dp_30"
-    android:background="@drawable/bg_background_rect"
+    android:background="@drawable/bg_rect_background"
     android:orientation="vertical"
     android:paddingTop="24dp"
     android:paddingBottom="24dp">

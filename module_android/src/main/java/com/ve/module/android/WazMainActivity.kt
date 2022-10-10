@@ -8,7 +8,7 @@ import androidx.core.view.GravityCompat
 import androidx.core.view.get
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.navigation.NavigationBarView
-import com.ve.lib.common.base.model.NavigationMenuItem
+import com.ve.lib.common.base.model.NaviMenuItem
 import com.ve.lib.common.base.view.vm.BaseVmActivity
 import com.ve.lib.common.event.AppRecreateEvent
 import com.ve.lib.common.event.DrawerOpenEvent
@@ -25,7 +25,7 @@ import org.greenrobot.eventbus.ThreadMode
 class WazMainActivity : BaseVmActivity<WazActivityMainBinding, WanAndroidViewModel>() {
 
     private var mIndex = 0
-    private lateinit var mFragmentPageList: MutableList<NavigationMenuItem>
+    private lateinit var mFragmentPageList: MutableList<NaviMenuItem>
 
 
     override fun attachViewBinding(): WazActivityMainBinding {
@@ -35,35 +35,35 @@ class WazMainActivity : BaseVmActivity<WazActivityMainBinding, WanAndroidViewMod
     private fun initFragment() {
         var pageCount = 0
         mFragmentPageList = mutableListOf(
-            NavigationMenuItem(
+            NaviMenuItem(
                 pageCount++,
                 "首页",
                 HomeFragment::class.java,
                 com.ve.lib.common.R.id.home_navigation_0,
                 com.ve.lib.application.R.drawable.ic_home_black_24dp
             ),
-            NavigationMenuItem(
+            NaviMenuItem(
                 pageCount++,
                 "广场",
                 SquareFragment::class.java,
                 com.ve.lib.common.R.id.home_navigation_1,
                 com.ve.lib.application.R.drawable.ic_square_black_24dp
             ),
-            NavigationMenuItem(
+            NaviMenuItem(
                 pageCount++,
                 "公众号",
                 WeChatFragment::class.java,
                 com.ve.lib.common.R.id.home_navigation_2,
                 com.ve.lib.common.R.drawable.ic_wechat_black_24dp
             ),
-            NavigationMenuItem(
+            NaviMenuItem(
                 pageCount++,
                 "体系",
                 TreeFragment::class.java,
                 com.ve.lib.common.R.id.home_navigation_3,
                 com.ve.lib.application.R.drawable.ic_apps_black_24dp
             ),
-            NavigationMenuItem(
+            NaviMenuItem(
                 pageCount++,
                 "项目",
                 ProjectFragment::class.java,

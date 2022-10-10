@@ -1,7 +1,5 @@
 package com.ve.module.lockit.ui.page.setting
 
-import android.os.Bundle
-
 import com.ve.lib.common.base.view.vm.BaseFragment
 import com.ve.module.lockit.databinding.LockitFragmentQrCodeBinding
 
@@ -20,7 +18,7 @@ class QrCodeFragment : BaseFragment<LockitFragmentQrCodeBinding>(){
         return LockitFragmentQrCodeBinding.inflate(layoutInflater)
     }
 
-    override fun initialize(saveInstanceState: Bundle?) {
+    override fun initialize() {
 
     }
 }

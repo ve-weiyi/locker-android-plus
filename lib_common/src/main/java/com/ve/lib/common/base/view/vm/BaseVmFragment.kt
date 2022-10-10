@@ -35,7 +35,7 @@ abstract class BaseVmFragment<VB : ViewBinding, VM : BaseViewModel> : BaseFragme
 
     override fun useEventBus() = false
 
-    override fun initialize(saveInstanceState: Bundle?) {
+    override fun initialize() {
         setHasOptionsMenu(true)
         mViewModel = ViewModelProvider(this).get(attachViewModelClass())
         //我不理解

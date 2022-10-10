@@ -121,7 +121,5 @@ dependencies {
     api project(':lib_common')
     api project(':lib_view')
     kapt rootProject.ext.libARouterCompiler
-    //注解 room数据库
-    kapt rootProject.ext.annotationProcessorLibs
 
 }

@@ -68,7 +68,7 @@ public class GameActivity extends BaseActivity<ActivityGameBinding> {
     }
 
     @Override
-    public void initialize(@Nullable Bundle saveInstanceState) {
+    public void initialize() {
         ImmersionBar.with(this)
                 .statusBarDarkFont(true)  //状态栏字体是深色，不写默认为亮色
                 .init();

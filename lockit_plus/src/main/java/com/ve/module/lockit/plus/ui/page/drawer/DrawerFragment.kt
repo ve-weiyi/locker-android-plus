@@ -1,6 +1,5 @@
 package com.ve.module.lockit.plus.ui.page.drawer
 
-import android.os.Bundle
 import com.ve.lib.common.base.view.vm.BaseFragment
 import com.ve.module.lockit.plus.databinding.FragmentDrawerBinding
 
@@ -14,7 +13,7 @@ class DrawerFragment:BaseFragment<FragmentDrawerBinding>() {
         return FragmentDrawerBinding.inflate(layoutInflater)
     }
 
-    override fun initialize(saveInstanceState: Bundle?) {
+    override fun initialize() {
 
     }
 }

@@ -32,7 +32,7 @@
         <!--        <item name="android:textColorPrimary">@color/textColorPrimary</item>-->
         <!--        <item name="android:colorControlNormal">@color/grey700</item>-->
         <item name="android:windowBackground">@color/grey150</item>
-        <item name="android:textColor">@color/text_color_normal</item>
+        <item name="android:textColor">@color/text_color_dark</item>
     </style>
 
     <style name="BaseAppTheme.NoActionBar">
@@ -67,7 +67,7 @@
         <item name="colorSurface">@color/light_white</item>
         <item name="colorOnSurface">@color/light_black</item>
         <item name="colorBackground">@color/light_grey</item>
-        <item name="colorOnBackground">@color/grey900</item>
+        <item name="colorOnBackground">@color/white</item>
         <item name="android:textColorPrimary">@color/black</item>
         <item name="colorControlNormal">@color/black</item>
 
@@ -104,7 +104,7 @@
     </style>
 
     <!--default 仿b站：粉色主题，粉色辅助，蓝色控件,白色字体-->
-    <style name="ThemeSakura" parent="BaseAppTheme.NoActionBar">
+    <style name="ThemeSakura" parent="AppTheme">
         <item name="colorBrand">?colorPrimary</item>
         <item name="colorPrimary">@color/pink</item>
         <item name="colorAccent">@color/colorAccent</item>
@@ -152,9 +152,9 @@
     </style>
 
 
-    <style name="BaseAppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar" />
 
-    <style name="BaseAppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light">
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light">
         <!--新增一个item，用于控制menu-->
         <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
     </style>

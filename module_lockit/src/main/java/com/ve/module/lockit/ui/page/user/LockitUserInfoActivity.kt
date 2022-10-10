@@ -1,6 +1,5 @@
 package com.ve.module.lockit.ui.page.user
 
-import android.os.Bundle
 import com.ve.lib.common.base.view.vm.BaseActivity
 import com.ve.lib.common.utils.data.ImageLoader
 import com.ve.lib.application.utils.LogUtil
@@ -19,7 +18,7 @@ class LockitUserInfoActivity:BaseActivity<LockitActivityUserinfoBinding>() {
         return LockitActivityUserinfoBinding.inflate(layoutInflater)
     }
 
-    override fun initialize(saveInstanceState: Bundle?) {
+    override fun initialize() {
         initToolbar(mBinding.extToolbar.toolbar,"账号资料")
         val userinfo= SpUtil.getValue(LockitSpKey.SP_KEY_LOGIN_DATA_KEY, LoginDTO::class.java)
         LogUtil.msg(userinfo)

@@ -70,7 +70,7 @@ class LockitWebContainerActivity : BaseActivity<LockitActivityContainerWebBindin
 
 
     @RequiresApi(Build.VERSION_CODES.N)
-    override fun initialize(saveInstanceState: Bundle?) {
+    override fun initialize() {
 
         intent.extras?.let {
             agentWebId = it.getInt(WEB_ID_KEY, -1)

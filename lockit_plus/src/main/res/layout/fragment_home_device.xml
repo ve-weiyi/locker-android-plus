@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:background="@color/white"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:background="?colorBackground"
+        >
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+           android:id="@+id/collapsing_toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minHeight="48dp"
+            app:toolbarId="@layout/toolbar"
+            app:expandedTitleMarginBottom="50dp"
+            app:contentScrim="@color/white"
+            app:statusBarScrim="@android:color/transparent"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <!--封面图片-->
+            <ImageView
+                android:fitsSystemWindows="true"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_home_me_bg"
+                app:layout_collapseMode="parallax"
+                />
+
+            <!--封面图片-->
+            <ImageView
+                android:id="@+id/image"
+                android:fitsSystemWindows="false"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_home_bg"
+                app:layout_collapseMode="parallax"
+                />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:menu="@menu/menu_home"
+                app:title="Anna"
+                app:subtitle="Welcome"
+                app:subtitleTextAppearance="@style/t16_b"
+                app:titleTextAppearance="@style/t16_b"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <TextView
+                android:layout_gravity="bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome home,"
+                android:layout_marginStart="32dp"
+                android:layout_marginBottom="90dp"
+                style="@style/t18_r"
+                />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <include
+
+        android:id="@+id/layout_device_list"
+        layout="@layout/home_scrollview"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        app:layout_anchor="@id/appbar"
+        app:layout_anchorGravity="end|bottom"
+        app:srcCompat="@drawable/ic_add"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

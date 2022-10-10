@@ -1,6 +1,5 @@
 package com.ve.module.lockit.plus.ui.page
 
-import android.os.Bundle
 import com.ve.lib.application.skin.factory.SkinFactoryActivity
 import com.ve.lib.application.skin.set.SkinSetActivity
 import com.ve.lib.common.base.view.vm.BaseFragment
@@ -16,7 +15,7 @@ class SkinFragment:BaseFragment<FragmentSkinBinding>() {
         return FragmentSkinBinding.inflate(layoutInflater)
     }
 
-    override fun initialize(saveInstanceState: Bundle?) {
+    override fun initialize() {
         mBinding.demo1Theme.setOnClickListener {
             startActivity(mContext,SkinSetActivity::class.java)
         }

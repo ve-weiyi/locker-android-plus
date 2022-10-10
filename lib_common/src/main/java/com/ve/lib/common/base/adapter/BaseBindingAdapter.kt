@@ -1,13 +1,22 @@
 package com.ve.lib.common.base.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.viewbinding.ViewBinding
 import com.chad.library.adapter.base.BaseQuickAdapter
+import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import java.lang.reflect.ParameterizedType
 
-abstract class BaseBindingAdapter<T,VB : ViewBinding>(data: MutableList<T>? = null) :
-    BaseQuickAdapter<T, ViewBindingHolder<VB>>(0, data) {
+/**
+ * BaseQuickAdapter与ViewBinding结合使用
+ * https://www.jianshu.com/p/1a95e8af5efb
+ * @Description hello word!
+ * @Author  waynie
+ * @Date 2022/4/10
+ */
+abstract class BaseBindingAdapter<T, VB : ViewBinding>( data: MutableList<T>? = null,res: Int = 0,) :
+    BaseQuickAdapter<T, BaseBindingAdapter.ViewBindingHolder<VB>>(res, data) {
 
 
     //重写返回自定义 ViewHolder
@@ -21,7 +30,10 @@ abstract class BaseBindingAdapter<T,VB : ViewBinding>(data: MutableList<T>? = nu
             ViewGroup::class.java,
             Boolean::class.java
         )
-        val mBinding = inflate.invoke(null, LayoutInflater.from(parent.context), parent, false) as VB
+        val mBinding =
+            inflate.invoke(null, LayoutInflater.from(parent.context), parent, false) as VB
         return ViewBindingHolder(mBinding, mBinding.root)
     }
+
+    open class ViewBindingHolder<VB : ViewBinding>(val vb: VB, view: View) : BaseViewHolder(view)
 }

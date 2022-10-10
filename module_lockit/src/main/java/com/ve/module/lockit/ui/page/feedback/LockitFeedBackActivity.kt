@@ -1,6 +1,5 @@
 package com.ve.module.lockit.ui.page.feedback
 
-import android.os.Bundle
 import com.ve.lib.common.base.view.vm.BaseActivity
 import com.ve.module.lockit.databinding.LockitActivityFeedbackBinding
 
@@ -14,7 +13,7 @@ class LockitFeedBackActivity:BaseActivity<LockitActivityFeedbackBinding>() {
         return LockitActivityFeedbackBinding.inflate(layoutInflater)
     }
 
-    override fun initialize(saveInstanceState: Bundle?) {
+    override fun initialize() {
          initToolbar(mBinding.extToolbar.toolbar,"意见反馈")
     }
 }
