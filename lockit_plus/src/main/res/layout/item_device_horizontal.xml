@@ -17,7 +17,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_gravity="center"
-        tools:src="@drawable/img_robovac_select" />
+        android:src="@drawable/img_robovac_select" />
 
     <LinearLayout
         android:layout_toEndOf="@id/iv_device_icon"
@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="?sc_text_dark"
-            tools:text="Robovac 20hy — UEC" />
+            android:text="Robovac 20hy — UEC" />
 
         <TextView
             android:layout_marginTop="@dimen/dp_8"
@@ -42,15 +42,16 @@
             android:layout_height="wrap_content"
             android:drawablePadding="4dp"
             android:textColor="?sc_text_grey"
-            tools:text="Online"
+            android:text="Online"
             app:drawableStartCompat="@drawable/img_green_dot" />
 
     </LinearLayout>
 
     <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="@dimen/dp_16"
         android:layout_alignParentEnd="true"
         android:layout_centerVertical="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/img_play"/>
+        android:src="@drawable/img_play" />
 </RelativeLayout>

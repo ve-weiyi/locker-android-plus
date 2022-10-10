@@ -2,10 +2,10 @@ ext {
     //android开发版本配置
     android = [
             applicationId    : "com.ve",
-            compileSdkVersion: 31,
+            compileSdkVersion: 32,
             buildToolsVersion: "30.0.3",
             minSdkVersion    : 26,
-            targetSdkVersion : 31,
+            targetSdkVersion : 32,
             versionCode      : 1,
             versionName      : "2.0.1"
     ]
@@ -18,7 +18,7 @@ ext {
             rxAndroid: "2.1.0",
             rxKotlin : "2.3.0",
             anko     : "0.10.7",
-               room     : "2.4.2",
+            room     : "2.4.2",
             hilt     : "2.40.5",
     ]
 

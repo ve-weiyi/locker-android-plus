@@ -253,7 +253,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             app:tileTextColor="@color/text_color_dark"
-                            app:hIcon="@drawable/ic_icon_outline_about"
+                            app:hIcon="@drawable/ic_icon_outline_home"
                             app:hTipVisiblity="false"
                             app:paddingLeft="20dp"
                             app:paddingRight="30dp"

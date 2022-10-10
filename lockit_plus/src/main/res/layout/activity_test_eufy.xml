@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.page.test.EufyTestActivity">
+
+
+    <include
+        android:id="@+id/ext_container"
+        layout="@layout/container"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:background="#F9F9F9"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:clipChildren="false"
+        >
+
+        <include
+            android:id="@+id/bottom_navigation_home"
+            android:layout_weight="1"
+            layout="@layout/bottom_item"
+            android:layout_gravity="bottom"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            />
+
+        <include
+            android:id="@+id/bottom_navigation_me"
+            android:layout_weight="1"
+            layout="@layout/bottom_item"
+            android:layout_gravity="bottom"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            />
+    </LinearLayout>
+<!--    <com.google.android.material.bottomnavigation.BottomNavigationView-->
+<!--        android:id="@+id/bottom_navigation"-->
+<!--        style="@style/Widget.Design.BottomNavigationView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_gravity="bottom"-->
+<!--        android:background="?android:windowBackground"-->
+<!--        app:elevation="@dimen/dp_16"-->
+<!--        app:itemIconTint="@drawable/state_nav_item_color"-->
+<!--        app:itemTextAppearanceActive="@style/t14_l"-->
+<!--        app:itemTextAppearanceInactive="@style/t14_l"-->
+<!--        app:itemTextColor="@drawable/state_nav_item_color"-->
+<!--        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"-->
+
+<!--        >-->
+<!--        <FrameLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="@dimen/dp_80"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:layout_gravity="bottom"-->
+<!--            android:gravity="center"-->
+<!--            >-->
+
+<!--            <include-->
+<!--                android:layout_marginStart="27dp"-->
+<!--                android:layout_gravity="start"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                layout="@layout/bottom_frame"-->
+<!--                />-->
+
+<!--        </FrameLayout>-->
+<!--    </com.google.android.material.bottomnavigation.BottomNavigationView>-->
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

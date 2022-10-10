@@ -5,7 +5,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.ve.lib.common.base.view.vm.BaseActivity
 import com.ve.lib.common.router.ARouterPath
 import com.ve.module.lockit.plus.databinding.ActivitySplashBinding
-import com.ve.module.lockit.plus.ui.page.test.ScrollingActivity
+import com.ve.module.lockit.plus.ui.page.test.EufyTestActivity
 
 
 /**
@@ -21,8 +21,8 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
         splashScreen = installSplashScreen()
         splashScreen.setOnExitAnimationListener { splashScreenView ->
             splashScreenView.iconAnimationDurationMillis
-            jumpToMain()
-//            jumpToTest()
+//            jumpToMain()
+            jumpToTest()
         }
 
         return ActivitySplashBinding.inflate(layoutInflater)
@@ -45,7 +45,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
     }
 
     private fun jumpToTest(){
-        startActivity(mContext,ScrollingActivity::class.java)
+        startActivity(mContext,EufyTestActivity::class.java)
         finish()
     }
 }

@@ -1,6 +1,5 @@
 package com.ve.module.lockit.plus
 
-import android.view.WindowManager
 import androidx.fragment.app.FragmentTransaction
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.google.android.material.navigation.NavigationBarView
@@ -10,7 +9,6 @@ import com.ve.module.android.WazMainFragment
 import com.ve.lib.common.base.model.NaviMenuItem
 import com.ve.module.lockit.plus.databinding.ActivityMainBinding
 import com.ve.module.lockit.plus.ui.page.SkinFragment
-import com.ve.module.lockit.plus.ui.page.drawer.DrawerFragment
 import com.ve.module.lockit.plus.ui.page.test.HomeDeviceFragment
 import com.ve.module.lockit.plus.ui.page.test.HomeMeFragment
 import com.ve.module.lockit.plus.ui.page.test.HomeTestFragment
@@ -46,12 +44,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             ),
             NaviMenuItem(
                 pageCount++, "我的", HomeMeFragment::class.java, NaviMenuItem.getId(pageCount),
-                R.drawable.ic_icon_outline_about,
+                R.drawable.ic_icon_outline_home,
                 0
             ),
             NaviMenuItem(
                 pageCount++, "卡片", HomeTestFragment::class.java, NaviMenuItem.getId(pageCount),
-                R.drawable.ic_icon_outline_about,
+                R.drawable.ic_icon_outline_home,
                 0
             ),
             NaviMenuItem(
@@ -79,6 +77,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 menu.findItem(it.menuId).apply {
                     setIcon(it.menuIcon)
                 }
+                val badge=getOrCreateBadge(it.menuId)
+                badge.number=it.fragmentIndex
+
             }
         }
     }
