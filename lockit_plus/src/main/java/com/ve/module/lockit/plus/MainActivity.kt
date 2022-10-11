@@ -44,12 +44,12 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             ),
             NaviMenuItem(
                 pageCount++, "我的", HomeMeFragment::class.java, NaviMenuItem.getId(pageCount),
-                R.drawable.ic_icon_outline_home,
+                R.drawable.ic_eufy_home,
                 0
             ),
             NaviMenuItem(
                 pageCount++, "卡片", HomeTestFragment::class.java, NaviMenuItem.getId(pageCount),
-                R.drawable.ic_icon_outline_home,
+                R.drawable.ic_eufy_home,
                 0
             ),
             NaviMenuItem(

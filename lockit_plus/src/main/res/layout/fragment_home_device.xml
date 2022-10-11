@@ -25,7 +25,7 @@
             app:expandedTitleMarginBottom="50dp"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:statusBarScrim="@android:color/transparent"
-            app:toolbarId="@layout/toolbar">
+            app:toolbarId="@id/toolbar">
 
             <!--封面图片-->
             <ImageView

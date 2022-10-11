@@ -86,7 +86,7 @@ interface IView<VB : ViewBinding> {
         postcard.navigation(activity, requestCode)
     }
 
-    fun startActivity(context: Context, activityClass: Class<*>, bundle: Bundle? = null) {
+    fun startActivityClass(context: Context, activityClass: Class<*>, bundle: Bundle? = null) {
         val intent = Intent(context, activityClass)
         if (bundle != null) {
             intent.putExtras(bundle)

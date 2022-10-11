@@ -1,19 +1,17 @@
 package com.ve.module.lockit.plus.ui.page.test
 
 import android.view.View
-import android.widget.ImageView
 import androidx.fragment.app.FragmentTransaction
-import com.google.android.material.bottomnavigation.BottomNavigationMenuView
 import com.google.android.material.navigation.NavigationBarView
 import com.ve.lib.common.base.model.NaviMenuItem
 import com.ve.lib.common.base.view.vm.BaseActivity
 import com.ve.module.lockit.plus.R
-import com.ve.module.lockit.plus.databinding.ActivityTestEufyBinding
+import com.ve.module.lockit.plus.databinding.ActivityEufyCleanNewBinding
 
-class EufyTestActivity : BaseActivity<ActivityTestEufyBinding>() {
+class EufyCleanNewActivity : BaseActivity<ActivityEufyCleanNewBinding>() {
 
-    override fun attachViewBinding(): ActivityTestEufyBinding {
-        return ActivityTestEufyBinding.inflate(layoutInflater)
+    override fun attachViewBinding(): ActivityEufyCleanNewBinding{
+        return ActivityEufyCleanNewBinding.inflate(layoutInflater)
     }
 
     private var mIndex = 0
@@ -51,7 +49,7 @@ class EufyTestActivity : BaseActivity<ActivityTestEufyBinding>() {
 
             NaviMenuItem(
                 pageCount++, "分类", HomeDeviceFragment::class.java, NaviMenuItem.getId(pageCount),
-                R.drawable.ic_icon_outline_home,
+                R.drawable.ic_eufy_home,
                 0
             ),
             NaviMenuItem(

@@ -31,7 +31,7 @@
 
         </activity>
         <activity android:name=".ui.page.test.ScrollingActivity" />
-        <activity android:name=".ui.page.test.EufyTestActivity" />
+        <activity android:name=".ui.page.test.EufyCleanNewActivity" />
     </application>
 
 </manifest>

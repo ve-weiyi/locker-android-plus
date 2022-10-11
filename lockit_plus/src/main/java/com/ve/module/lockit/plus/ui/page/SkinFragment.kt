@@ -17,13 +17,13 @@ class SkinFragment:BaseFragment<FragmentSkinBinding>() {
 
     override fun initialize() {
         mBinding.demo1Theme.setOnClickListener {
-            startActivity(mContext,SkinSetActivity::class.java)
+            startActivityClass(mContext,SkinSetActivity::class.java)
         }
         mBinding.demo2Theme.setOnClickListener {
-            startActivity(mContext,SkinFactoryActivity::class.java)
+            startActivityClass(mContext,SkinFactoryActivity::class.java)
         }
         mBinding.demo3Theme.setOnClickListener {
-            startActivity(mContext,SkinSetActivity::class.java)
+            startActivityClass(mContext,SkinSetActivity::class.java)
         }
     }
 }

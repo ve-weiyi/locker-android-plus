@@ -58,7 +58,7 @@
                     android:id="@+id/item_icon"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
-                    android:src="@drawable/ic_icon_outline_home"
+                    android:src="@drawable/ic_eufy_home"
                     app:layout_constraintBottom_toTopOf="@id/item_title"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

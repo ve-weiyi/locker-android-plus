@@ -78,7 +78,7 @@ class LockitAuthActivity : BaseActivity<LockitActivityAuthBinding>(){
                     finish()
                 }else{
                     LogUtil.msg()
-                    startActivity(mContext, Class.forName(activityClassName),activityBundle)
+                    startActivityClass(mContext, Class.forName(activityClassName),activityBundle)
                 }
             }
 

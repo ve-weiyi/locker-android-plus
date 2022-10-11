@@ -5,7 +5,7 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.ve.lib.common.base.view.vm.BaseActivity
 import com.ve.lib.common.router.ARouterPath
 import com.ve.module.lockit.plus.databinding.ActivitySplashBinding
-import com.ve.module.lockit.plus.ui.page.test.EufyTestActivity
+import com.ve.module.lockit.plus.ui.page.test.EufyCleanNewActivity
 
 
 /**
@@ -45,7 +45,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
     }
 
     private fun jumpToTest(){
-        startActivity(mContext,EufyTestActivity::class.java)
+        startActivityClass(mContext,EufyCleanNewActivity::class.java)
         finish()
     }
 }

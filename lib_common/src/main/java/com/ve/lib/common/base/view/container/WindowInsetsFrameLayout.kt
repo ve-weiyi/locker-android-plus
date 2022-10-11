@@ -6,7 +6,6 @@ import android.util.AttributeSet
 import android.view.View
 import android.view.WindowInsets
 import android.widget.FrameLayout
-import com.ve.lib.application.utils.LogUtil
 
 
 /**

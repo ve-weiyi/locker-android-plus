@@ -8,6 +8,7 @@
         <entry key="..\:/Users/anker/StudioProjects/lockit-android/module_lockit/src/main/res/layout/lockit_activity_splash.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_test.xml" value="0.35104166666666664" />
         <entry key="lib_application/src/main/res/drawable-v21/ic_baseline_code_24.xml" value="0.1" />
+        <entry key="lib_application/src/main/res/drawable-v21/ic_baseline_person_24.xml" value="0.1295" />
         <entry key="lib_application/src/main/res/drawable-v21/ic_baseline_phone_24.xml" value="0.1505" />
         <entry key="lib_application/src/main/res/drawable-v21/ic_launcher_foreground.xml" value="0.1015" />
         <entry key="lib_application/src/main/res/drawable-v21/ic_music_note_black_48dp.xml" value="0.1505" />
@@ -195,6 +196,9 @@
         <entry key="lib_common/src/main/res/menu/menu_content.xml" value="0.2125" />
         <entry key="lib_view/src/main/res/layout/dialog_y_loading.xml" value="0.1828125" />
         <entry key="lib_view/src/main/res/layout/layout_upgrade_dialog.xml" value="0.215625" />
+        <entry key="lockit_plus/src/main/res/drawable-hdpi/ic_eufy_home.xml" value="0.1295" />
+        <entry key="lockit_plus/src/main/res/drawable-hdpi/ic_group.xml" value="0.1295" />
+        <entry key="lockit_plus/src/main/res/drawable-hdpi/ic_simple_text_rect.xml" value="0.1295" />
         <entry key="lockit_plus/src/main/res/drawable-v21/ic_device_sharing.xml" value="0.144" />
         <entry key="lockit_plus/src/main/res/drawable-v21/ic_help_feedback.xml" value="0.144" />
         <entry key="lockit_plus/src/main/res/drawable/ic_bulb_img_home_bulb1.xml" value="0.1505" />
