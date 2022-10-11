@@ -4,7 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../../layout/custom_preview.xml" value="0.17135416666666667" />
-        <entry key="../../../../layout/custom_preview.xml" value="0.2534766118836915" />
+        <entry key="../../../../layout/custom_preview.xml" value="0.19471588134765627" />
         <entry key="..\:/Users/anker/StudioProjects/lockit-android/module_lockit/src/main/res/layout/lockit_activity_splash.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_test.xml" value="0.35104166666666664" />
         <entry key="lib_application/src/main/res/drawable-v21/ic_baseline_code_24.xml" value="0.1" />
@@ -212,6 +212,7 @@
         <entry key="lockit_plus/src/main/res/drawable/ic_icon_solid_voice_next.xml" value="0.1505" />
         <entry key="lockit_plus/src/main/res/drawable/ic_icon_solid_volume_mute.xml" value="0.1505" />
         <entry key="lockit_plus/src/main/res/drawable/ic_icon_solid_widget.xml" value="0.1505" />
+        <entry key="lockit_plus/src/main/res/layout/activity_eufy_clean_new.xml" value="0.15433946130825138" />
         <entry key="lockit_plus/src/main/res/layout/activity_login.xml" value="0.215625" />
         <entry key="lockit_plus/src/main/res/layout/activity_main.xml" value="0.1828125" />
         <entry key="lockit_plus/src/main/res/layout/activity_scrolling.xml" value="0.18862304687500003" />
@@ -219,11 +220,13 @@
         <entry key="lockit_plus/src/main/res/layout/activity_test.xml" value="0.24635416666666668" />
         <entry key="lockit_plus/src/main/res/layout/activity_test_eufy.xml" value="0.19119110107421877" />
         <entry key="lockit_plus/src/main/res/layout/bottom_frame.xml" value="0.1140625" />
-        <entry key="lockit_plus/src/main/res/layout/bottom_item.xml" value="0.43432464599609377" />
-        <entry key="lockit_plus/src/main/res/layout/bottom_tab_bar.xml" value="0.23290100097656252" />
+        <entry key="lockit_plus/src/main/res/layout/bottom_item.xml" value="0.10443878173828125" />
+        <entry key="lockit_plus/src/main/res/layout/bottom_tab_bar.xml" value="0.1" />
         <entry key="lockit_plus/src/main/res/layout/common_gdpr_dialog.xml" value="0.21331521739130435" />
         <entry key="lockit_plus/src/main/res/layout/fragment_drawer.xml" value="0.215625" />
         <entry key="lockit_plus/src/main/res/layout/fragment_home_device.xml" value="0.3038833618164063" />
+        <entry key="lockit_plus/src/main/res/layout/fragment_home_device_new.xml" value="0.14743589743589744" />
+        <entry key="lockit_plus/src/main/res/layout/fragment_home_empty.xml" value="0.16859893798828132" />
         <entry key="lockit_plus/src/main/res/layout/fragment_home_me.xml" value="0.21930541992187502" />
         <entry key="lockit_plus/src/main/res/layout/fragment_home_test.xml" value="0.24635416666666668" />
         <entry key="lockit_plus/src/main/res/layout/fragment_home_test1.xml" value="0.20572916666666666" />
@@ -239,6 +242,7 @@
         <entry key="lockit_plus/src/main/res/layout/layout_userinfo_null.xml" value="0.1828125" />
         <entry key="lockit_plus/src/main/res/layout/layout_users_info.xml" value="0.24635416666666668" />
         <entry key="lockit_plus/src/main/res/layout/privacy_dialog.xml" value="0.2438446044921875" />
+        <entry key="lockit_plus/src/main/res/menu/menu_home.xml" value="0.20213675213675214" />
         <entry key="module_android/src/main/res/drawable/ic_launcher_background.xml" value="0.1505" />
         <entry key="module_android/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1505" />
         <entry key="module_android/src/main/res/drawable/ic_like_checked.xml" value="0.1505" />
@@ -271,6 +275,7 @@
         <entry key="module_android/src/main/res/mipmap-xxxhdpi/ic_launcher.xml" value="0.1505" />
         <entry key="module_android/src/main/res/mipmap-xxxhdpi/ic_launcher_round.xml" value="0.1505" />
         <entry key="module_games/src/main/res/drawable-v24/shape.xml" value="0.126" />
+        <entry key="module_games/src/main/res/drawable-v24/shape2.xml" value="0.1465" />
         <entry key="module_games/src/main/res/drawable/button_font_style.xml" value="0.1505" />
         <entry key="module_games/src/main/res/drawable/layerlist.xml" value="0.1505" />
         <entry key="module_lockit/src/main/res/drawable-v21/bg_dialog_sheet_header.xml" value="0.1" />

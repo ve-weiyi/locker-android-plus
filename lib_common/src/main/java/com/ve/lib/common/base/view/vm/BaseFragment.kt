@@ -65,18 +65,4 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() , IView<VB> {
     }
 
 
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        //inflater.inflate(R.menu.menu_search, menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-//            else -> {
-//                showMsg("该功能未实现，请留意后续版本。"+item.title+"-->"+item.itemId)
-//            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
 }

@@ -197,6 +197,7 @@ open class ListViewManager<LD : Any>(context: Context) {
     }
 
     var mFloatingActionBtn: FloatingActionButton? = null
+
     fun setFabView(floatingActionBtn: FloatingActionButton?): ListViewManager<LD> {
         mFloatingActionBtn = floatingActionBtn
         //如果有fab

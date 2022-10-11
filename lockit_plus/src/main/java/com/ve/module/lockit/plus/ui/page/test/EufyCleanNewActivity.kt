@@ -15,40 +15,27 @@ class EufyCleanNewActivity : BaseActivity<ActivityEufyCleanNewBinding>() {
     }
 
     private var mIndex = 0
-    private lateinit var mFragmentPageList: MutableList<NaviMenuItem>
 
     override fun initialize() {
-        initFragment()
+        initMenu()
         showFragment(mIndex)
 
         setSystemBarTheme(false)
-
-        mBinding.bottomNavigationMe.itemIcon.setImageResource(com.ve.lib.application.R.drawable.ic_baseline_person_24)
-        mBinding.bottomNavigationMe.itemTitle.text="我的"
-
-        mBinding.bottomNavigationMe.apply {
-            layoutMain.setOnClickListener {
-                showFragment(1)
-                itemFrame.visibility= View.VISIBLE
-                mBinding.bottomNavigationHome.itemFrame.visibility=View.GONE
-            }
-        }
-
-        mBinding.bottomNavigationHome.apply {
-            layoutMain.setOnClickListener {
-                showFragment(0)
-                itemFrame.visibility= View.VISIBLE
-                mBinding.bottomNavigationMe.itemFrame.visibility=View.GONE
-            }
-        }
     }
 
-    private fun initFragment() {
-        var pageCount = 0
-        mFragmentPageList = mutableListOf(
+    private var mFragmentPageList: MutableList<NaviMenuItem> = mutableListOf()
 
+    private fun initMenu() {
+        var pageCount = 0
+
+        mFragmentPageList = mutableListOf(
             NaviMenuItem(
-                pageCount++, "分类", HomeDeviceFragment::class.java, NaviMenuItem.getId(pageCount),
+                pageCount++, "首页", HomeDeviceFragment::class.java, NaviMenuItem.getId(pageCount),
+                R.drawable.ic_eufy_home,
+                0
+            ),
+            NaviMenuItem(
+                pageCount++, "首页2", HomeDeviceNewFragment::class.java, NaviMenuItem.getId(pageCount),
                 R.drawable.ic_eufy_home,
                 0
             ),
@@ -57,24 +44,23 @@ class EufyCleanNewActivity : BaseActivity<ActivityEufyCleanNewBinding>() {
                 com.ve.lib.application.R.drawable.ic_baseline_person_24,
                 0
             ),
+            NaviMenuItem(
+                pageCount++, "其他", HomeEmptyFragment::class.java, NaviMenuItem.getId(pageCount),
+                R.drawable.ic_icon_outline_artical,
+                0
+            ),
         )
-    }
 
+        mFragmentPageList.forEachIndexed { index, menuItem ->
 
+            mBinding.bottomTabView.addMenuItem(menuItem,object :BottomTabView.OnMenuClickListener{
 
-    /**
-     * NavigationItemSelect监听
-     */
-    private val onNavigationItemSelectedListener =
-        NavigationBarView.OnItemSelectedListener { item ->
-            mFragmentPageList.forEach { it ->
-                if (item.itemId == it.menuId) {
-                    showFragment(it.fragmentIndex)
-                    return@OnItemSelectedListener true
+                override fun onItemClick(view: View, item: NaviMenuItem) {
+                    showFragment(mFragmentPageList.indexOf(item))
                 }
-            }
-            return@OnItemSelectedListener false
+            })
         }
+    }
 
     /**
      * 隐藏所有的Fragment

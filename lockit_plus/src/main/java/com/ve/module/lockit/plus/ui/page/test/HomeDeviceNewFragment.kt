@@ -2,7 +2,7 @@ package com.ve.module.lockit.plus.ui.page.test
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ve.lib.common.base.view.vm.BaseFragment
-import com.ve.module.lockit.plus.databinding.FragmentHomeDeviceBinding
+import com.ve.module.lockit.plus.databinding.FragmentHomeDeviceNewBinding
 import com.ve.module.lockit.plus.ui.page.list.HomeDeviceAdapter
 import com.ve.module.lockit.plus.ui.page.list.HomeDeviceBean
 
@@ -12,9 +12,9 @@ import com.ve.module.lockit.plus.ui.page.list.HomeDeviceBean
  * @date 2022/9/30
  * @desc EufyHomeNew
  */
-class HomeDeviceFragment: BaseFragment<FragmentHomeDeviceBinding>() {
-    override fun attachViewBinding(): FragmentHomeDeviceBinding {
-        return FragmentHomeDeviceBinding.inflate(layoutInflater)
+class HomeDeviceNewFragment: BaseFragment<FragmentHomeDeviceNewBinding>() {
+    override fun attachViewBinding(): FragmentHomeDeviceNewBinding {
+        return FragmentHomeDeviceNewBinding.inflate(layoutInflater)
     }
 
     private val mListAdapter = HomeDeviceAdapter()

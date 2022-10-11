@@ -14,7 +14,9 @@
         android:layout_height="wrap_content"
         android:background="?colorBackground"
         android:theme="@style/AppTheme.AppBarOverlay"
-        app:layout_behavior="com.ve.module.lockit.plus.ui.page.test.AppbarZoomBehavior">
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior"
+
+        >
 
 
     <com.google.android.material.appbar.CollapsingToolbarLayout

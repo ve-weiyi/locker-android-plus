@@ -35,11 +35,6 @@ object DisplayUtil {
         return (pxValue / scale+ 0.5f).toInt()
     }
     @JvmStatic
-    fun dip2px(dpValue: Float): Int {
-        val scale = displayMetrics.density
-        return (dpValue * scale+ 0.5f).toInt()
-    }
-    @JvmStatic
     fun dp2px(dpValue: Float): Int {
         val scale = displayMetrics.density
         return (dpValue * scale+ 0.5f).toInt()
@@ -48,7 +43,12 @@ object DisplayUtil {
         val fontScale = displayMetrics.scaledDensity
         return (spValue * fontScale+ 0.5f).toInt()
     }
-    
+
+    @JvmStatic
+    fun dip2px(dpValue: Float): Int {
+        val scale = displayMetrics.density
+        return (dpValue * scale+ 0.5f).toInt()
+    }
     /**
      * 获取状态栏高度 px
      */

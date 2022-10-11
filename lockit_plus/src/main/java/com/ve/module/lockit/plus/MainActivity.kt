@@ -10,6 +10,7 @@ import com.ve.lib.common.base.model.NaviMenuItem
 import com.ve.module.lockit.plus.databinding.ActivityMainBinding
 import com.ve.module.lockit.plus.ui.page.SkinFragment
 import com.ve.module.lockit.plus.ui.page.test.HomeDeviceFragment
+import com.ve.module.lockit.plus.ui.page.test.HomeEmptyFragment
 import com.ve.module.lockit.plus.ui.page.test.HomeMeFragment
 import com.ve.module.lockit.plus.ui.page.test.HomeTestFragment
 
@@ -48,7 +49,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 0
             ),
             NaviMenuItem(
-                pageCount++, "卡片", HomeTestFragment::class.java, NaviMenuItem.getId(pageCount),
+                pageCount++, "卡片", HomeEmptyFragment::class.java, NaviMenuItem.getId(pageCount),
                 R.drawable.ic_eufy_home,
                 0
             ),

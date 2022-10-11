@@ -1,6 +1,9 @@
 package com.ve.lib.common.base.view.vm
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -103,5 +106,20 @@ abstract class BaseVmFragment<VB : ViewBinding, VM : BaseViewModel> : BaseFragme
     override fun showError(errorMsg: String) {
         ToastUtil.show(errorMsg)
         mLayoutStatusView?.showError()
+    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        //inflater.inflate(R.menu.menu_search, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+//            else -> {
+//                showMsg("该功能未实现，请留意后续版本。"+item.title+"-->"+item.itemId)
+//            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
