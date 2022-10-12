@@ -38,6 +38,14 @@ class HomeDeviceNewFragment: BaseFragment<FragmentHomeDeviceNewBinding>() {
         }
 
         initRecyclerView()
+
+//        mBinding.btnStart.setOnClickListener {
+//            mBinding.swipeRefreshLayout.isRefreshing=true
+//        }
+//        mBinding.btnEnd.setOnClickListener {
+//            mBinding.swipeRefreshLayout.isRefreshing=false
+//        }
+
     }
 
 

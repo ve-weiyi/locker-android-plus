@@ -54,7 +54,7 @@
             android:layout_below="@id/layout_advert">
 
             <RelativeLayout
-                android:id="@+id/layout_device_title"
+                android:id="@+id/layout_group_header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/dp_12">
@@ -81,13 +81,13 @@
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/layout_device_title"
+                android:layout_below="@id/layout_group_header"
                 android:overScrollMode="never"
                 tools:itemCount="2"
-                tools:listitem="@layout/item_device_horizontal" />
+                tools:listitem="@layout/item_home_device_linear" />
 
             <RelativeLayout
-                android:id="@+id/layout_group_title"
+                android:id="@+id/layout_device_header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/recyclerView"
@@ -110,12 +110,12 @@
                 android:id="@+id/recyclerView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/layout_group_title"
+                android:layout_below="@id/layout_device_header"
                 android:overScrollMode="never"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="2"
                 tools:itemCount="2"
-                tools:listitem="@layout/item_device_vertical" />
+                tools:listitem="@layout/item_home_device_grid" />
 
         </RelativeLayout>
 

@@ -196,15 +196,22 @@
         <entry key="lib_common/src/main/res/menu/menu_content.xml" value="0.2125" />
         <entry key="lib_view/src/main/res/layout/dialog_y_loading.xml" value="0.1828125" />
         <entry key="lib_view/src/main/res/layout/layout_upgrade_dialog.xml" value="0.215625" />
+        <entry key="lockit_plus/src/main/res/drawable-hdpi/bg_background_gridenet.xml" value="0.33797607421875003" />
+        <entry key="lockit_plus/src/main/res/drawable-hdpi/bg_gradient_background.xml" value="0.166400146484375" />
         <entry key="lockit_plus/src/main/res/drawable-hdpi/ic_eufy_home.xml" value="0.1295" />
         <entry key="lockit_plus/src/main/res/drawable-hdpi/ic_group.xml" value="0.1295" />
+        <entry key="lockit_plus/src/main/res/drawable-hdpi/ic_icon_arrow_list_gray.xml" value="0.1155" />
+        <entry key="lockit_plus/src/main/res/drawable-hdpi/ic_iconl_eufyclean_home_layout1.xml" value="0.1" />
+        <entry key="lockit_plus/src/main/res/drawable-hdpi/ic_iconl_eufyclean_home_layout1_arabic.xml" value="0.1" />
         <entry key="lockit_plus/src/main/res/drawable-hdpi/ic_simple_text_rect.xml" value="0.1295" />
         <entry key="lockit_plus/src/main/res/drawable-v21/ic_device_sharing.xml" value="0.144" />
         <entry key="lockit_plus/src/main/res/drawable-v21/ic_help_feedback.xml" value="0.144" />
         <entry key="lockit_plus/src/main/res/drawable/ic_bulb_img_home_bulb1.xml" value="0.1505" />
         <entry key="lockit_plus/src/main/res/drawable/ic_bulb_img_home_bulb2.xml" value="0.1505" />
+        <entry key="lockit_plus/src/main/res/drawable/ic_icon_home_help_delete.xml" value="0.1" />
         <entry key="lockit_plus/src/main/res/drawable/ic_icon_home_help_deleteall.xml" value="0.1505" />
         <entry key="lockit_plus/src/main/res/drawable/ic_icon_outline_360rotate.xml" value="0.1505" />
+        <entry key="lockit_plus/src/main/res/drawable/ic_icon_outline_activity.xml" value="0.1" />
         <entry key="lockit_plus/src/main/res/drawable/ic_icon_outline_add2.xml" value="0.1505" />
         <entry key="lockit_plus/src/main/res/drawable/ic_icon_outline_thumbs_down.xml" value="0.1505" />
         <entry key="lockit_plus/src/main/res/drawable/ic_icon_outline_thumbs_up.xml" value="0.1505" />
@@ -212,6 +219,7 @@
         <entry key="lockit_plus/src/main/res/drawable/ic_icon_solid_voice_next.xml" value="0.1505" />
         <entry key="lockit_plus/src/main/res/drawable/ic_icon_solid_volume_mute.xml" value="0.1505" />
         <entry key="lockit_plus/src/main/res/drawable/ic_icon_solid_widget.xml" value="0.1505" />
+        <entry key="lockit_plus/src/main/res/drawable/ic_iconl_eufyclean_home_switch_on.xml" value="0.104" />
         <entry key="lockit_plus/src/main/res/layout/activity_eufy_clean_new.xml" value="0.15433946130825138" />
         <entry key="lockit_plus/src/main/res/layout/activity_login.xml" value="0.215625" />
         <entry key="lockit_plus/src/main/res/layout/activity_main.xml" value="0.1828125" />
@@ -220,20 +228,27 @@
         <entry key="lockit_plus/src/main/res/layout/activity_test.xml" value="0.24635416666666668" />
         <entry key="lockit_plus/src/main/res/layout/activity_test_eufy.xml" value="0.19119110107421877" />
         <entry key="lockit_plus/src/main/res/layout/bottom_frame.xml" value="0.1140625" />
-        <entry key="lockit_plus/src/main/res/layout/bottom_item.xml" value="0.10443878173828125" />
+        <entry key="lockit_plus/src/main/res/layout/bottom_item.xml" value="0.48330230712890626" />
         <entry key="lockit_plus/src/main/res/layout/bottom_tab_bar.xml" value="0.1" />
         <entry key="lockit_plus/src/main/res/layout/common_gdpr_dialog.xml" value="0.21331521739130435" />
         <entry key="lockit_plus/src/main/res/layout/fragment_drawer.xml" value="0.215625" />
-        <entry key="lockit_plus/src/main/res/layout/fragment_home_device.xml" value="0.3038833618164063" />
+        <entry key="lockit_plus/src/main/res/layout/fragment_home_device.xml" value="0.29229984915019663" />
         <entry key="lockit_plus/src/main/res/layout/fragment_home_device_new.xml" value="0.14743589743589744" />
         <entry key="lockit_plus/src/main/res/layout/fragment_home_empty.xml" value="0.16859893798828132" />
         <entry key="lockit_plus/src/main/res/layout/fragment_home_me.xml" value="0.21930541992187502" />
         <entry key="lockit_plus/src/main/res/layout/fragment_home_test.xml" value="0.24635416666666668" />
         <entry key="lockit_plus/src/main/res/layout/fragment_home_test1.xml" value="0.20572916666666666" />
         <entry key="lockit_plus/src/main/res/layout/fragment_skin.xml" value="0.1453125" />
-        <entry key="lockit_plus/src/main/res/layout/home_scrollview.xml" value="0.21859710733995297" />
+        <entry key="lockit_plus/src/main/res/layout/home_scrollview.xml" value="0.29291961710557796" />
+        <entry key="lockit_plus/src/main/res/layout/home_scrollview_new.xml" value="0.18547008547008548" />
         <entry key="lockit_plus/src/main/res/layout/item_device_horizontal.xml" value="0.3243189493815104" />
         <entry key="lockit_plus/src/main/res/layout/item_device_vertical.xml" value="0.24635416666666668" />
+        <entry key="lockit_plus/src/main/res/layout/item_home_device_card.xml" value="0.20213675213675214" />
+        <entry key="lockit_plus/src/main/res/layout/item_home_device_grid.xml" value="0.25947113037109376" />
+        <entry key="lockit_plus/src/main/res/layout/item_home_device_linear.xml" value="0.3207540006719084" />
+        <entry key="lockit_plus/src/main/res/layout/item_home_device_vertical.xml" value="0.12435897435897436" />
+        <entry key="lockit_plus/src/main/res/layout/item_home_group.xml" value="0.3252838134765625" />
+        <entry key="lockit_plus/src/main/res/layout/item_home_single.xml" value="0.24201507568359376" />
         <entry key="lockit_plus/src/main/res/layout/item_simple_setting.xml" value="0.24635416666666668" />
         <entry key="lockit_plus/src/main/res/layout/layout_device_list.xml" value="0.2540415445963542" />
         <entry key="lockit_plus/src/main/res/layout/layout_login_type.xml" value="0.1828125" />

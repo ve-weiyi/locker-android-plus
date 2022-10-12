@@ -82,6 +82,11 @@ class BottomTabView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
         itemIcon.setImageResource(menu.menuIcon)
         itemFrame.visibility = if (isSelect) View.VISIBLE else View.GONE
 
+        if (isSelect){
+            menuView.alpha=1F
+        }else{
+            menuView.alpha=0.6F
+        }
     }
 
     interface OnMenuClickListener {

@@ -56,13 +56,12 @@
         />
 
     <ImageView
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@id/iv_avatar"
-        android:layout_alignBottom="@id/iv_avatar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_icon_outline_right2"
-        />
+        android:layout_alignTop="@id/iv_avatar"
+        android:layout_alignBottom="@id/iv_avatar"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_icon_arrow_list_gray" />
 
     <LinearLayout
         android:layout_width="match_parent"

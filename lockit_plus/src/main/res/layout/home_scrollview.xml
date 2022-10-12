@@ -6,25 +6,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:overScrollMode="never"
+    android:layout_marginTop="-16dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:clipChildren="false"
+    tools:showIn="@layout/fragment_home_device"
     >
 
     <!--app:layout_behavior属性触发滑动效果，前提是内容区是可滑动的-->
 
     <RelativeLayout
-
         android:background="@drawable/bg_rect_background"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:clipChildren="false"
         android:layout_height="wrap_content">
 
-
-
         <RelativeLayout
             android:visibility="gone"
-            android:id="@+id/layout_advert"
+            android:id="@+id/layout_banner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="-28dp"
@@ -48,50 +47,64 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_marginBottom="@dimen/dp_50"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/layout_advert">
+            android:layout_below="@id/layout_banner"
+            android:layout_marginBottom="@dimen/dp_50">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/bg_gradient_background"
+                />
 
             <RelativeLayout
-                android:id="@+id/layout_device_title"
+                android:id="@+id/layout_group_header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/dp_12">
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_marginHorizontal="@dimen/dp_12"
+                >
 
                 <TextView
-                    android:id="@+id/tv_device_title"
                     style="@style/t18_r"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:drawablePadding="@dimen/dp_8"
-                    android:text="Devices"
+                    android:text="Groups"
                     app:drawableStartCompat="@drawable/ic_simple_text_rect" />
 
-
                 <ImageView
-                    android:layout_marginBottom="@dimen/dp_24"
+                    android:id="@+id/iv_group_swap"
+                    android:layout_alignParentEnd="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:src="@drawable/ic_group" />
+                    android:src="@drawable/ic_group"
+                    />
+
             </RelativeLayout>
 
             <androidx.recyclerview.widget.RecyclerView
+                android:padding="@dimen/dp_8"
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/layout_device_title"
+                android:layout_below="@id/layout_group_header"
+                android:orientation="horizontal"
                 android:overScrollMode="never"
-                tools:itemCount="2"
-                tools:listitem="@layout/item_device_horizontal" />
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_home_group" />
 
             <RelativeLayout
-                android:id="@+id/layout_group_title"
+                android:id="@+id/layout_device_header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/recyclerView"
-                android:layout_margin="@dimen/dp_12">
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_marginEnd="@dimen/dp_12"
+                >
 
                 <TextView
                     android:id="@+id/tv_group_title"
@@ -102,20 +115,25 @@
                     android:text="Devices"
                     app:drawableStartCompat="@drawable/ic_simple_text_rect" />
 
-
+                <ImageView
+                    android:id="@+id/iv_device_swap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_group" />
             </RelativeLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-
                 android:id="@+id/recyclerView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/layout_group_title"
+                android:layout_below="@id/layout_device_header"
                 android:overScrollMode="never"
+                android:padding="@dimen/dp_8"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:spanCount="2"
                 tools:itemCount="2"
-                tools:listitem="@layout/item_device_vertical" />
+                tools:listitem="@layout/item_home_device_grid" />
 
         </RelativeLayout>
 

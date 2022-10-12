@@ -4,16 +4,15 @@ import android.animation.ValueAnimator
 import android.content.Context
 import android.util.AttributeSet
 import android.view.View
-import android.widget.FrameLayout
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.core.animation.addListener
 import androidx.core.view.ViewCompat
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.ve.lib.application.utils.LogUtil
-import com.ve.lib.common.ext.dp2px
-import com.ve.lib.common.ext.px2dp
 import com.ve.module.lockit.plus.R
 
 /**
@@ -21,7 +20,8 @@ import com.ve.module.lockit.plus.R
  * create on 2020-05-22
  * description
  */
-class AppbarZoomBehavior(context: Context?, attrs: AttributeSet?) : AppBarLayout.Behavior(context, attrs) {
+class AppbarZoomBehavior(val context: Context, attrs: AttributeSet?) : AppBarLayout.Behavior(context, attrs) {
+
     private var mImageView: ImageView? = null
     private var mSwipeRefreshLayout: SwipeRefreshLayout? = null
 
@@ -39,7 +39,7 @@ class AppbarZoomBehavior(context: Context?, attrs: AttributeSet?) : AppBarLayout
             = false
 
     companion object {
-        private const val MAX_ZOOM_HEIGHT = 200f //放大最大高度
+        private const val MAX_ZOOM_HEIGHT = 150f //放大最大高度
     }
 
     /**
@@ -70,14 +70,13 @@ class AppbarZoomBehavior(context: Context?, attrs: AttributeSet?) : AppBarLayout
         if (mImageView != null) {
             mImageViewHeight = mImageView!!.height
         }
-//        mSwipeRefreshLayout=abl.findViewById(R.id.appbar_refresh)
-        mSwipeRefreshLayout?.setColorSchemeResources(
-            android.R.color.holo_blue_bright,
-            android.R.color.holo_green_light,
-            android.R.color.holo_orange_light
-        )
-
+        mSwipeRefreshLayout = abl.findViewById(R.id.appbar_refresh)
+        collapsingToolbarLayout = abl.findViewById<CollapsingToolbarLayout>(R.id.collapsing_toolbar_layout)
+        relativeLayout = abl.findViewById<RelativeLayout>(R.id.rl_header)
     }
+
+    private var collapsingToolbarLayout: CollapsingToolbarLayout? = null
+    private var relativeLayout: RelativeLayout? = null
 
     /**
      * 当CoordinatorLayout的子View尝试发起嵌套滚动时调用
@@ -168,7 +167,6 @@ class AppbarZoomBehavior(context: Context?, attrs: AttributeSet?) : AppBarLayout
      */
     override fun onStopNestedScroll(coordinatorLayout: CoordinatorLayout, abl: AppBarLayout, target: View, type: Int) {
         recovery(abl)
-        LogUtil.msg("isRefreshing")
         super.onStopNestedScroll(coordinatorLayout, abl, target, type)
     }
 
@@ -190,7 +188,8 @@ class AppbarZoomBehavior(context: Context?, attrs: AttributeSet?) : AppBarLayout
         velocityY: Float
     ): Boolean {
         if (velocityY > 100) {
-            isAnimate = false
+            LogUtil.msg(velocityY)
+//            isAnimate = false
         }
         return super.onNestedPreFling(coordinatorLayout, child, target, velocityX, velocityY)
     }
@@ -206,21 +205,32 @@ class AppbarZoomBehavior(context: Context?, attrs: AttributeSet?) : AppBarLayout
         if (mTotalDy > 0) {
             mTotalDy = 0f
             if (isAnimate) {
-                valueAnimator = ValueAnimator.ofFloat(mScaleValue, 1f).setDuration(220)
+                valueAnimator = ValueAnimator.ofFloat(mScaleValue, 1f).setDuration(300)
                 valueAnimator?.addUpdateListener { animation ->
                     val value = animation.animatedValue as Float
-                    scaleView(abl, value)
 
-                    abl.bottom = (mLastBottom - (mLastBottom - mAppbarHeight) * animation.animatedFraction).toInt()
+                    val h = (mLastBottom - (mLastBottom - mAppbarHeight) * animation.animatedFraction).toInt()
+//                    abl.bottom = h
+                    scaleView(abl, value, h)
                 }
-                valueAnimator?.start()
-            } else {
-                scaleView(abl, 1f)
 
+                valueAnimator?.addListener(
+                    onEnd = { animator ->
+                        scaleView(abl, 1f, mAppbarHeight)
+                        recoveryListener?.onRecovery()
+                    }
+                )
+                valueAnimator?.start()
+                LogUtil.msg(isAnimate)
+
+            } else {
+                LogUtil.msg(isAnimate)
+                scaleView(abl, 1.2f, mAppbarHeight)
                 abl.bottom = mAppbarHeight
             }
         }
     }
+
 
     /**
      * 对ImageView进行缩放处理，对AppbarLayout进行高度的设置
@@ -231,25 +241,50 @@ class AppbarZoomBehavior(context: Context?, attrs: AttributeSet?) : AppBarLayout
     private fun zoomHeaderImageView(abl: AppBarLayout, dy: Int) {
         mTotalDy += -dy.toFloat()
         mTotalDy = Math.min(mTotalDy, MAX_ZOOM_HEIGHT)
-        mScaleValue = Math.max(1f, 1f + mTotalDy / MAX_ZOOM_HEIGHT)
+        mScaleValue = Math.max(1f, 1f + mTotalDy / MAX_ZOOM_HEIGHT / 2)
 
-        scaleView(abl, mScaleValue)
 
         mLastBottom = mAppbarHeight + (mImageViewHeight / 2 * (mScaleValue - 1)).toInt()
         abl.bottom = mLastBottom
+
+        scaleView(abl, mScaleValue,mLastBottom)
     }
 
-    private fun scaleView(abl: AppBarLayout, scaleValue: Float) {
-        val collapsingToolbarLayout = abl.findViewById<CollapsingToolbarLayout>(R.id.collapsing_toolbar_layout)
-        val params = AppBarLayout.LayoutParams(AppBarLayout.LayoutParams.MATCH_PARENT,
-            mAppbarHeight * scaleValue.toInt()
+    private fun scaleView(abl: AppBarLayout, scaleValue: Float, mLastBottom: Int) {
+        val h = (mAppbarHeight * scaleValue).toInt()
+        val params = AppBarLayout.LayoutParams(
+            AppBarLayout.LayoutParams.MATCH_PARENT,
+            mLastBottom
         )
+//        collapsingToolbarLayout?.layoutParams = params
 
-//        collapsingToolbarLayout.layoutParams = params
+        val params2 = CollapsingToolbarLayout.LayoutParams(
+            CollapsingToolbarLayout.LayoutParams.MATCH_PARENT,
+            mLastBottom
+        )
+        LogUtil.msg(h, mAppbarHeight,scaleValue)
+//        relativeLayout!!.layoutParams=params2
 
-//        abl.bottom = (mAppbarHeight * scaleValue).toInt()
+
+        abl.bottom = mLastBottom
+//        relativeLayout?.bottom = mLastBottom
         mImageView?.scaleX = scaleValue
         mImageView?.scaleY = scaleValue
+
     }
 
+    private fun dp2px(dpValue: Int): Int {
+        val scale = context.resources.displayMetrics.density
+        return (dpValue * scale + 0.5f).toInt()
+    }
+
+    private var recoveryListener: OnLayoutRecoveryListener? = null
+
+    fun setRecoveryListener(listener: OnLayoutRecoveryListener) {
+        this.recoveryListener = listener
+    }
+
+    interface OnLayoutRecoveryListener {
+        fun onRecovery()
+    }
 }

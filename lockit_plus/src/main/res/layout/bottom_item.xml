@@ -26,7 +26,16 @@
         android:paddingVertical="@dimen/dp_4"
         >
 
+        <com.google.android.material.imageview.ShapeableImageView
+            app:layout_constraintTop_toTopOf="@id/item_icon"
+            app:layout_constraintEnd_toEndOf="@id/item_icon"
+            android:layout_width="@dimen/dp_6"
+            android:layout_height="@dimen/dp_6"
+            android:background="@android:color/holo_red_light"
+            app:shapeAppearance="@style/CircleImageStyle"
+            />
         <ImageView
+            android:layout_marginHorizontal="@dimen/dp_4"
             android:id="@+id/item_icon"
             android:layout_width="24dp"
             android:layout_height="24dp"

@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/bg_rect_on_background"
+    android:paddingVertical="@dimen/dp_12"
+    android:paddingHorizontal="@dimen/dp_8"
     android:layout_marginHorizontal="@dimen/dp_8"
     android:layout_marginVertical="@dimen/dp_8"
-    >
+    android:background="@drawable/bg_rect_on_background">
 
     <ImageView
         android:id="@+id/iv_device_icon"
@@ -15,46 +16,61 @@
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        android:layout_marginVertical="@dimen/dp_8"
-        tools:src="@drawable/img_robovac_select" />
+        android:src="@drawable/img_robovac_select" />
 
     <LinearLayout
         android:id="@+id/layout_device_info"
-        android:layout_below="@id/iv_device_icon"
-        android:orientation="vertical"
-        android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_device_icon"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
+
         <TextView
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/dp_4"
             android:id="@+id/tv_device_name"
             style="@style/t16_l"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="?sc_text_dark"
-            tools:text="Robovac 20hy — UEC" />
+            android:layout_gravity="center"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginTop="@dimen/dp_4"
+            android:text="Robovac 20hy — UEC"
+            android:textColor="?sc_text_dark" />
 
         <TextView
-            android:layout_gravity="center"
-            android:layout_marginTop="@dimen/dp_8"
             android:id="@+id/tv_device_online"
             style="@style/t14_l"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_8"
             android:drawablePadding="4dp"
+            android:text="Online"
             android:textColor="?sc_text_grey"
-            tools:text="Online"
             app:drawableStartCompat="@drawable/img_green_dot" />
 
     </LinearLayout>
 
     <ImageView
-        android:layout_marginTop="@dimen/dp_12"
-        android:layout_marginBottom="@dimen/dp_16"
-        android:layout_below="@id/layout_device_info"
+        android:id="@+id/iv_schedule"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:src="@drawable/ic_iconl_eufyclean_home_schedule" />
+
+    <ImageView
+        android:id="@+id/iv_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_iconl_eufyclean_home_update" />
+
+    <ImageView
+        android:id="@+id/iv_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layout_device_info"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/img_play" />
+        android:layout_marginTop="@dimen/dp_12"
+        android:src="@drawable/ic_iconl_eufyclean_home_start_online" />
 </RelativeLayout>
