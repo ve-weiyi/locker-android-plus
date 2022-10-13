@@ -5,7 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.ve.lib.common.R
-import com.ve.lib.common.base.view.vm.BaseActivity
+import com.ve.lib.common.base.view.vm.BaseVBActivity
 import com.ve.lib.common.databinding.ActivityContainerBinding
 import com.ve.lib.application.utils.LogUtil
 
@@ -14,7 +14,7 @@ import com.ve.lib.application.utils.LogUtil
  * @Date 2022/4/13
  * @Description  current project lockit-android
  */
-class ContainerActivity : BaseActivity<ActivityContainerBinding>() {
+class ContainerActivity : BaseVBActivity<ActivityContainerBinding>() {
 
     override fun attachViewBinding(): ActivityContainerBinding {
         return ActivityContainerBinding.inflate(layoutInflater)

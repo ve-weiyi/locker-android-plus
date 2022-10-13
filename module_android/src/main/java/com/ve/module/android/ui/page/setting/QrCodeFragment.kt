@@ -1,14 +1,14 @@
 package com.ve.module.android.ui.page.setting
 
 import com.ve.module.android.databinding.FragmentQrCodeBinding
-import com.ve.lib.common.base.view.vm.BaseFragment
+import com.ve.lib.common.base.view.vm.BaseVBFragment
 
 /**
  * @Description hello word!
  * @Author  weiyi
  * @Date 2022/3/20
  */
-class QrCodeFragment : BaseFragment<FragmentQrCodeBinding>(){
+class QrCodeFragment : BaseVBFragment<FragmentQrCodeBinding>(){
 
     companion object {
         fun getInstance(): QrCodeFragment = QrCodeFragment()

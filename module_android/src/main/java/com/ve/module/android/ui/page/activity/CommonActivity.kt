@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.ve.module.android.R
 import com.ve.module.android.config.Constant
 import com.ve.module.android.databinding.ActivityCommonBinding
-import com.ve.lib.common.base.view.vm.BaseActivity
+import com.ve.lib.common.base.view.vm.BaseVBActivity
 
 /**
  * @Description 通过bundle 和 FragmentName 切换页面
@@ -16,7 +16,7 @@ import com.ve.lib.common.base.view.vm.BaseActivity
  * @Author  weiyi
  * @Date 2022/3/20
  */
-class CommonActivity : BaseActivity<ActivityCommonBinding>() {
+class CommonActivity : BaseVBActivity<ActivityCommonBinding>() {
 
     companion object {
 

@@ -18,7 +18,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import com.just.agentweb.AgentWeb
-import com.ve.lib.common.base.view.vm.BaseActivity
+import com.ve.lib.common.base.view.vm.BaseVBActivity
 import com.ve.module.android.R
 import com.ve.module.android.databinding.ActivityDetailBinding
 import com.ve.lib.application.utils.LogUtil
@@ -29,7 +29,7 @@ import com.ve.lib.application.utils.LogUtil
  * @Author  weiyi
  * @Date 2022/3/21
  */
-class ArticleDetailActivity : BaseActivity<ActivityDetailBinding>() {
+class ArticleDetailActivity : BaseVBActivity<ActivityDetailBinding>() {
 
     private lateinit var mAgentWeb: AgentWeb
 

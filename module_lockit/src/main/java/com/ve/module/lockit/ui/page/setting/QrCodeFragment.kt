@@ -1,6 +1,6 @@
 package com.ve.module.lockit.ui.page.setting
 
-import com.ve.lib.common.base.view.vm.BaseFragment
+import com.ve.lib.common.base.view.vm.BaseVBFragment
 import com.ve.module.lockit.databinding.LockitFragmentQrCodeBinding
 
 /**
@@ -8,7 +8,7 @@ import com.ve.module.lockit.databinding.LockitFragmentQrCodeBinding
  * @Author  weiyi
  * @Date 2022/3/20
  */
-class QrCodeFragment : BaseFragment<LockitFragmentQrCodeBinding>(){
+class QrCodeFragment : BaseVBFragment<LockitFragmentQrCodeBinding>(){
 
     companion object {
         fun getInstance(): QrCodeFragment = QrCodeFragment()

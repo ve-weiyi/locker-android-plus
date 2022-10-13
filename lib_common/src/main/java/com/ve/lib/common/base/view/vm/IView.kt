@@ -23,20 +23,36 @@ import kotlinx.coroutines.launch
  * @date 2019/11/1
  * @desc IView
  */
-interface IView<VB : ViewBinding> {
+interface IView{
+
 
     /**
-     * 返回绑定对象
-     * return ActivityMainBinding.inflate(layoutInflater)
+     * step 1.初始化view相关数据, 需要在view初始化之前完成
      */
-    abstract fun attachViewBinding(): VB
+    fun initData() = true
 
     /**
-     * 初始化函数，命名与子类BaseVmActivity初始化函数区分。
+     * step 2.初始化函数，命名与子类BaseVmActivity初始化函数区分。
      */
     abstract fun initialize()
 
 
+
+
+
+    /**
+     * 显示错误信息
+     */
+    fun showError(errorMsg: String) {
+        ToastUtil.show(errorMsg)
+    }
+
+    /**
+     * 显示信息
+     */
+    fun showMsg(msg: String) {
+        ToastUtil.show(msg)
+    }
     /**
      * 显示加载
      */
@@ -49,20 +65,6 @@ interface IView<VB : ViewBinding> {
      */
     fun hideLoading() {
 
-    }
-
-    /**
-     * 显示信息
-     */
-    fun showMsg(msg: String) {
-        ToastUtil.show(msg)
-    }
-
-    /**
-     * 显示错误信息
-     */
-    fun showError(errorMsg: String) {
-        ToastUtil.show(errorMsg)
     }
 
 

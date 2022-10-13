@@ -2,7 +2,7 @@ package com.ve.module.lockit.ui.page.about
 
 import android.text.Html
 import android.text.method.LinkMovementMethod
-import com.ve.lib.common.base.view.vm.BaseFragment
+import com.ve.lib.common.base.view.vm.BaseVBFragment
 import com.ve.module.lockit.R
 import com.ve.module.lockit.databinding.LockitFragmentServiceItemBinding
 
@@ -11,7 +11,7 @@ import com.ve.module.lockit.databinding.LockitFragmentServiceItemBinding
  * @Date 2022/4/21
  * @Description  current project lockit-android
  */
-class LockitServiceItemFragment :BaseFragment<LockitFragmentServiceItemBinding>(){
+class LockitServiceItemFragment :BaseVBFragment<LockitFragmentServiceItemBinding>(){
     override fun attachViewBinding(): LockitFragmentServiceItemBinding {
         return LockitFragmentServiceItemBinding.inflate(layoutInflater)
     }

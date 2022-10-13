@@ -43,8 +43,9 @@ class TodoActivity : BaseVmActivity<ActivityTodoBinding, TodoViewModel>(){
         return list
     }
 
-    override fun initData() {
+    override fun initData(): Boolean {
         datas=getTypeData()
+        return true
     }
 
     override fun initView() {

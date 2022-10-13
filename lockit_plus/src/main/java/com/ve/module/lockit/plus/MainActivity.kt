@@ -3,7 +3,7 @@ package com.ve.module.lockit.plus
 import androidx.fragment.app.FragmentTransaction
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.google.android.material.navigation.NavigationBarView
-import com.ve.lib.common.base.view.vm.BaseActivity
+import com.ve.lib.common.base.view.vm.BaseVBActivity
 import com.ve.lib.common.router.ARouterPath
 import com.ve.module.android.WazMainFragment
 import com.ve.lib.common.base.model.NaviMenuItem
@@ -12,11 +12,10 @@ import com.ve.module.lockit.plus.ui.page.SkinFragment
 import com.ve.module.lockit.plus.ui.page.test.HomeDeviceFragment
 import com.ve.module.lockit.plus.ui.page.test.HomeEmptyFragment
 import com.ve.module.lockit.plus.ui.page.test.HomeMeFragment
-import com.ve.module.lockit.plus.ui.page.test.HomeTestFragment
 
 
 @Route(path = ARouterPath.MAIN_HOME)
-class MainActivity : BaseActivity<ActivityMainBinding>() {
+class MainActivity : BaseVBActivity<ActivityMainBinding>() {
     override fun attachViewBinding(): ActivityMainBinding {
         return ActivityMainBinding.inflate(layoutInflater)
     }
@@ -28,8 +27,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         initNavigation()
         showFragment(mIndex)
 
-//        overflowStatusBar(true)
-//        setFitsSystemWindows(true)
         setSystemBarTheme(false)
 //        PrivacyDialog.Builder(this).show()
     }

@@ -1,4 +1,4 @@
-package com.ve.module.lockit.plus.ui.page.list
+package com.ve.module.lockit.plus.ui.page.model
 
 import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
@@ -19,15 +19,15 @@ class HomeDeviceAdapter : BaseMultiItemQuickAdapter<HomeDeviceBean, BaseViewHold
 
 
     init {
-        addItemType(HomeBeanType.CARD, R.layout.item_home_device_card)
-        addItemType(HomeBeanType.GRID, R.layout.item_home_device_grid)
-        addItemType(HomeBeanType.LINEAR, R.layout.item_home_device_linear)
+        addItemType(HomeAdapterType.Device.CARD, R.layout.item_home_device_card)
+        addItemType(HomeAdapterType.Device.GRID, R.layout.item_home_device_grid)
+        addItemType(HomeAdapterType.Device.LINEAR, R.layout.item_home_device_linear)
     }
 
     override fun convert(holder: BaseViewHolder, item: HomeDeviceBean) {
         LogUtil.msg(item)
         when (item.itemType) {
-            HomeBeanType.CARD -> {
+            HomeAdapterType.Device.CARD -> {
                 val mBinding = ItemHomeDeviceCardBinding.bind(holder.itemView)
                 mBinding.tvDeviceName.text = item.deviceCode
 
@@ -39,7 +39,7 @@ class HomeDeviceAdapter : BaseMultiItemQuickAdapter<HomeDeviceBean, BaseViewHold
                 mBinding.ivUpdate.visibility = if (item.isUpdate) View.VISIBLE else View.GONE
 
                 when (item.deviceCode) {
-                    HomeBeanType.Code.Robot -> {
+                    HomeAdapterType.Code.Robot -> {
                         mBinding.layoutVacAction.visibility = View.VISIBLE
                         mBinding.ivStartSuction.setOnClickListener {
 
@@ -51,14 +51,14 @@ class HomeDeviceAdapter : BaseMultiItemQuickAdapter<HomeDeviceBean, BaseViewHold
 
                         }
                     }
-//                    HomeBeanType.Code.Wetdry -> {
+//                    HomeAdapterType.Code.Wetdry -> {
 //                        mBinding.tvDeviceState.visibility=View.GONE
 //                    }
-                    HomeBeanType.Code.Bulb -> {
+                    HomeAdapterType.Code.Bulb -> {
                         mBinding.layoutBulbLight.visibility = View.VISIBLE
                         mBinding.ivSwitch.visibility = View.VISIBLE
                     }
-                    HomeBeanType.Code.Genie -> {
+                    HomeAdapterType.Code.Genie -> {
                         mBinding.tvDeviceState.visibility = View.GONE
                     }
                     else -> {
@@ -81,13 +81,13 @@ class HomeDeviceAdapter : BaseMultiItemQuickAdapter<HomeDeviceBean, BaseViewHold
 
     fun swapLayoutType(type: Int) {
         when (type) {
-            HomeBeanType.CARD -> {
+            HomeAdapterType.Device.CARD -> {
                 recyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
             }
-            HomeBeanType.GRID -> {
+            HomeAdapterType.Device.GRID -> {
                 recyclerView.layoutManager = GridLayoutManager(context, 2)
             }
-            HomeBeanType.LINEAR -> {
+            HomeAdapterType.Device.LINEAR -> {
                 recyclerView.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
 
             }

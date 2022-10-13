@@ -5,9 +5,9 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ve.lib.application.utils.LogUtil
-import com.ve.lib.common.base.view.vm.BaseFragment
+import com.ve.lib.common.base.view.vm.BaseVBFragment
 import com.ve.module.lockit.plus.databinding.FragmentHomeDeviceBinding
-import com.ve.module.lockit.plus.ui.page.list.*
+import com.ve.module.lockit.plus.ui.page.model.*
 
 
 /**
@@ -15,13 +15,13 @@ import com.ve.module.lockit.plus.ui.page.list.*
  * @date 2022/9/30
  * @desc EufyHomeNew
  */
-class HomeDeviceFragment : BaseFragment<FragmentHomeDeviceBinding>() {
+class HomeDeviceFragment : BaseVBFragment<FragmentHomeDeviceBinding>() {
     override fun attachViewBinding(): FragmentHomeDeviceBinding {
         return FragmentHomeDeviceBinding.inflate(layoutInflater)
     }
 
     private val mListAdapter = HomeDeviceAdapter()
-    private val mRoomAdapter = HomeRoomAdapter()
+    private val mRoomAdapter = HomeBulbAdapter()
 
     override fun initialize() {
 
@@ -77,8 +77,7 @@ class HomeDeviceFragment : BaseFragment<FragmentHomeDeviceBinding>() {
         }
 
         mBinding.layoutDeviceList.ivGroupSwap.setOnClickListener {
-            HomeRoomBean.swapType()
-            mRoomAdapter.notifyDataSetChanged()
+            mRoomAdapter.swapLayoutType()
         }
 
         mBinding.layoutDeviceList.recyclerView2.apply {
@@ -98,51 +97,51 @@ class HomeDeviceFragment : BaseFragment<FragmentHomeDeviceBinding>() {
         return mutableListOf(
             HomeDeviceBean(
                 name = "Device",
-                deviceCode = HomeBeanType.Code.Robot,
+                deviceCode = HomeAdapterType.Code.Robot,
                 isSchedule = true,
                 isUpdate = true,
             ),
             HomeDeviceBean(
                 "Device",
-                deviceCode = HomeBeanType.Code.Wetdry,
+                deviceCode = HomeAdapterType.Code.Wetdry,
             ),
             HomeDeviceBean(
                 "Device",
-                deviceCode = HomeBeanType.Code.Bulb,
+                deviceCode = HomeAdapterType.Code.Bulb,
             ),
             HomeDeviceBean(
                 "Device",
-                deviceCode = HomeBeanType.Code.Plug,
+                deviceCode = HomeAdapterType.Code.Plug,
             ),
             HomeDeviceBean(
                 "Device",
-                deviceCode = HomeBeanType.Code.Switch,
+                deviceCode = HomeAdapterType.Code.Switch,
             ),
             HomeDeviceBean(
                 "Device",
-                deviceCode = HomeBeanType.Code.Genie,
+                deviceCode = HomeAdapterType.Code.Genie,
             ),
         )
     }
 
-    private fun getItemGroupRoom(): Collection<HomeRoomBean>? {
+    private fun getItemGroupRoom(): Collection<HomeBulbBean>? {
         return mutableListOf(
-            HomeRoomBean(
+            HomeBulbBean(
                 "Room"
             ),
-            HomeRoomBean(
+            HomeBulbBean(
                 "Room"
             ),
-            HomeRoomBean(
+            HomeBulbBean(
                 "Room"
             ),
-            HomeRoomBean(
+            HomeBulbBean(
                 "Room"
             ),
-            HomeRoomBean(
+            HomeBulbBean(
                 "Room"
             ),
-            HomeRoomBean(
+            HomeBulbBean(
                 "Room"
             ),
         )

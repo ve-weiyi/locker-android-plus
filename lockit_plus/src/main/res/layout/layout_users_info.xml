@@ -22,38 +22,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@id/iv_avatar"
-        android:layout_alignEnd="@id/iv_avatar"
         android:layout_alignTop="@id/iv_avatar"
+        android:layout_alignEnd="@id/iv_avatar"
         android:layout_alignBottom="@id/iv_avatar"
-        android:gravity="center"
         android:background="@drawable/bg_circle_brand"
+        android:gravity="center"
         android:text="A"
         android:textColor="@color/white" />
 
 
     <!-- Anna -->
     <TextView
-        android:layout_toEndOf="@id/iv_avatar"
+        android:id="@+id/tv_nickname"
+        style="@style/t24_b"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/dp_16"
         android:layout_marginTop="@dimen/dp_8"
-        android:id="@+id/tv_username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Anna"
-        style="@style/t24_b"
-        />
+        android:layout_toEndOf="@id/iv_avatar"
+        android:text="Anna" />
 
     <TextView
-        android:layout_below="@id/tv_username"
-        android:layout_alignStart="@id/tv_username"
-        android:layout_marginTop="@dimen/dp_4"
-        android:id="@+id/ann"
+        android:id="@+id/tv_username"
+        style="@style/t14_r"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/tv_nickname"
+        android:layout_alignStart="@id/tv_nickname"
+        android:layout_marginTop="@dimen/dp_4"
         android:text="bella.yu@anker-in.com"
-        style="@style/t14_r"
-        android:textColor="@color/t2_dark"
-        />
+        android:textColor="@color/t2_dark" />
 
     <ImageView
         android:layout_width="wrap_content"

@@ -13,13 +13,24 @@ import com.ve.lib.view.widget.multipleview.MultipleStatusView
  * @date 2019/11/1
  * @desc BaseVMActivity
  */
-abstract class BaseVmActivity<VB : ViewBinding, VM : BaseViewModel> : BaseActivity<VB>() ,
-    IVmView<VM> {
+abstract class BaseVmActivity<VB : ViewBinding, VM : BaseViewModel> : BaseVBActivity<VB>() ,
+    IVmView {
 
-    override var hasLoadData: Boolean =false
-    override var mLayoutStatusView: MultipleStatusView? = null
+    /**
+     * 数据是否加载过了
+     */
+    protected var hasLoadData: Boolean =false
+    protected var mLayoutStatusView: MultipleStatusView? = null
 
     lateinit var mViewModel: VM
+
+    /**
+     * 获取ViewModel的class
+     * return MainViewModel::class.java
+     */
+    abstract fun attachViewModelClass(): Class<VM>
+
+
 
     /**
      * 提示View
@@ -28,15 +39,15 @@ abstract class BaseVmActivity<VB : ViewBinding, VM : BaseViewModel> : BaseActivi
     protected lateinit var mWindowManager: WindowManager
     protected lateinit var mLayoutParams: WindowManager.LayoutParams
 
-    /**
-     * 是否需要显示 TipView
-     */
-    open fun enableNetworkTip(): Boolean = true
+
+    override fun initLayoutView() {
+        super.initLayoutView()
+        mViewModel = ViewModelProvider(this).get(attachViewModelClass())
+
+    }
 
 
     override fun initialize() {
-        mViewModel = ViewModelProvider(this).get(attachViewModelClass())
-
         initObserver()
         initView()
         initListener()
@@ -47,8 +58,13 @@ abstract class BaseVmActivity<VB : ViewBinding, VM : BaseViewModel> : BaseActivi
         loadWebData()
     }
 
-    override fun initData() {
-
+    override fun onResume() {
+        super.onResume()
+        if (!hasLoadData){
+            showLoading()
+            loadWebData()
+            hasLoadData=true
+        }
     }
 
     override fun initObserver() {
@@ -58,21 +74,9 @@ abstract class BaseVmActivity<VB : ViewBinding, VM : BaseViewModel> : BaseActivi
     override fun initListener(){
 
     }
-    /**
-     * step 5.填充界面时所需要的data,从仓库获取或者网络抓取.
-     * 这个方法应在onResume()中调用
-     */
+
     override fun loadWebData(){
 
-    }
-
-    override fun onResume() {
-        super.onResume()
-        if (!hasLoadData){
-            showLoading()
-            loadWebData()
-            hasLoadData=true
-        }
     }
 
 

@@ -13,9 +13,9 @@ import com.ve.module.android.ui.page.setting.QrCodeFragment
 import com.ve.module.android.ui.page.setting.SettingsFragment
 import com.ve.module.android.ui.page.fragment.AboutFragment
 import com.ve.module.android.ui.page.todo.AddTodoFragment
-import com.ve.lib.common.base.view.vm.BaseActivity
+import com.ve.lib.common.base.view.vm.BaseVBActivity
 
-class BundleActivity : BaseActivity<ActivityCommonBinding>() {
+class BundleActivity : BaseVBActivity<ActivityCommonBinding>() {
 
 
     private var mType = ""

@@ -3,12 +3,12 @@ package com.ve.module.android.ui.page.setting
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.ve.lib.common.base.view.vm.BaseActivity
+import com.ve.lib.common.base.view.vm.BaseVBActivity
 import com.ve.module.android.R
 import com.ve.module.android.databinding.ActivitySettingsBinding
 
 
-class SettingsActivity : BaseActivity<ActivitySettingsBinding>(){
+class SettingsActivity : BaseVBActivity<ActivitySettingsBinding>(){
 
     private val EXTRA_SHOW_FRAGMENT = "show_fragment"
     private val EXTRA_SHOW_FRAGMENT_ARGUMENTS = "show_fragment_args"

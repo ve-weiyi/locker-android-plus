@@ -6,7 +6,7 @@ import android.text.Html
 import android.text.method.LinkMovementMethod
 import com.ve.module.android.R
 import com.ve.module.android.databinding.FragmentAboutBinding
-import com.ve.lib.common.base.view.vm.BaseFragment
+import com.ve.lib.common.base.view.vm.BaseVBFragment
 import com.ve.lib.common.utils.SettingUtil
 
 /**
@@ -14,7 +14,7 @@ import com.ve.lib.common.utils.SettingUtil
  * @Author  weiyi
  * @Date 2022/3/20
  */
-class AboutFragment : BaseFragment<FragmentAboutBinding>(){
+class AboutFragment : BaseVBFragment<FragmentAboutBinding>(){
 
     companion object {
         fun getInstance(bundle: Bundle): AboutFragment {

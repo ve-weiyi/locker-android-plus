@@ -1,6 +1,6 @@
 package com.ve.module.lockit.ui.page.feedback
 
-import com.ve.lib.common.base.view.vm.BaseActivity
+import com.ve.lib.common.base.view.vm.BaseVBActivity
 import com.ve.module.lockit.databinding.LockitActivityFeedbackBinding
 
 /**
@@ -8,7 +8,7 @@ import com.ve.module.lockit.databinding.LockitActivityFeedbackBinding
  * @Date 2022/4/18
  * @Description  current project lockit-android
  */
-class LockitFeedBackActivity:BaseActivity<LockitActivityFeedbackBinding>() {
+class LockitFeedBackActivity:BaseVBActivity<LockitActivityFeedbackBinding>() {
     override fun attachViewBinding(): LockitActivityFeedbackBinding {
         return LockitActivityFeedbackBinding.inflate(layoutInflater)
     }

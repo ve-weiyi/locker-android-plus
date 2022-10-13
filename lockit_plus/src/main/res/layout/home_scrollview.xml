@@ -94,7 +94,7 @@
                 android:overScrollMode="never"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:itemCount="3"
-                tools:listitem="@layout/item_home_group" />
+                tools:listitem="@layout/item_home_bulb_multi" />
 
             <RelativeLayout
                 android:id="@+id/layout_device_header"

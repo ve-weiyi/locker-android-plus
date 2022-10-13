@@ -1,6 +1,6 @@
 package com.ve.module.lockit.ui.page.user
 
-import com.ve.lib.common.base.view.vm.BaseActivity
+import com.ve.lib.common.base.view.vm.BaseVBActivity
 import com.ve.lib.common.utils.data.ImageLoader
 import com.ve.lib.application.utils.LogUtil
 import com.ve.lib.common.utils.system.SpUtil
@@ -13,7 +13,7 @@ import com.ve.module.lockit.respository.http.bean.LoginDTO
  * @Date 2022/5/13
  * @Description  current project lockit-android
  */
-class LockitUserInfoActivity:BaseActivity<LockitActivityUserinfoBinding>() {
+class LockitUserInfoActivity:BaseVBActivity<LockitActivityUserinfoBinding>() {
     override fun attachViewBinding(): LockitActivityUserinfoBinding {
         return LockitActivityUserinfoBinding.inflate(layoutInflater)
     }

@@ -1,10 +1,10 @@
 package com.ve.module.lockit.plus.ui.page.test
 
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.ve.lib.common.base.view.vm.BaseFragment
+import com.ve.lib.common.base.view.vm.BaseVBFragment
 import com.ve.module.lockit.plus.databinding.FragmentHomeDeviceNewBinding
-import com.ve.module.lockit.plus.ui.page.list.HomeDeviceAdapter
-import com.ve.module.lockit.plus.ui.page.list.HomeDeviceBean
+import com.ve.module.lockit.plus.ui.page.model.HomeDeviceAdapter
+import com.ve.module.lockit.plus.ui.page.model.HomeDeviceBean
 
 
 /**
@@ -12,7 +12,7 @@ import com.ve.module.lockit.plus.ui.page.list.HomeDeviceBean
  * @date 2022/9/30
  * @desc EufyHomeNew
  */
-class HomeDeviceNewFragment: BaseFragment<FragmentHomeDeviceNewBinding>() {
+class HomeDeviceNewFragment: BaseVBFragment<FragmentHomeDeviceNewBinding>() {
     override fun attachViewBinding(): FragmentHomeDeviceNewBinding {
         return FragmentHomeDeviceNewBinding.inflate(layoutInflater)
     }

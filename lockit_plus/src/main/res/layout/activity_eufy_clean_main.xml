@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:clipChildren="false"
     android:fitsSystemWindows="true"
-    tools:context=".ui.page.test.EufyCleanNewActivity">
+    tools:context=".ui.page.test.EufyMainActivity">
 
 
     <include

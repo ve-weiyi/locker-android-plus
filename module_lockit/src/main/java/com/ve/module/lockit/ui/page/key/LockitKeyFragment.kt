@@ -1,7 +1,7 @@
 package com.ve.module.lockit.ui.page.key
 
 import android.text.Html
-import com.ve.lib.common.base.view.vm.BaseFragment
+import com.ve.lib.common.base.view.vm.BaseVBFragment
 import com.ve.module.lockit.R
 import com.ve.module.lockit.databinding.LockitFragmentKeyBinding
 import com.ve.module.lockit.utils.PasswordUtils
@@ -11,7 +11,7 @@ import com.ve.module.lockit.utils.PasswordUtils
  * @Date 2022/5/13
  * @Description  current project lockit-android
  */
-class LockitKeyFragment:BaseFragment<LockitFragmentKeyBinding>() {
+class LockitKeyFragment:BaseVBFragment<LockitFragmentKeyBinding>() {
     override fun attachViewBinding(): LockitFragmentKeyBinding {
         return LockitFragmentKeyBinding.inflate(layoutInflater)
     }

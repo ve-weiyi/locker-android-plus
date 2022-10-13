@@ -2,25 +2,27 @@ package com.ve.module.lockit.plus.ui.page.test
 
 import android.view.View
 import androidx.fragment.app.FragmentTransaction
-import com.google.android.material.navigation.NavigationBarView
 import com.ve.lib.common.base.model.NaviMenuItem
 import com.ve.lib.common.base.view.vm.BaseActivity
 import com.ve.module.lockit.plus.R
-import com.ve.module.lockit.plus.databinding.ActivityEufyCleanNewBinding
+import com.ve.module.lockit.plus.databinding.ActivityEufyCleanMainBinding
 
-class EufyCleanNewActivity : BaseActivity<ActivityEufyCleanNewBinding>() {
-
-    override fun attachViewBinding(): ActivityEufyCleanNewBinding{
-        return ActivityEufyCleanNewBinding.inflate(layoutInflater)
-    }
+class EufyMainActivity : BaseActivity() {
 
     private var mIndex = 0
+    private val mBinding by lazy {
+        ActivityEufyCleanMainBinding.inflate(layoutInflater)
+    }
+
+    override fun initLayoutView() {
+        setContentView(mBinding.root)
+    }
 
     override fun initialize() {
         initMenu()
         showFragment(mIndex)
 
-        setSystemBarTheme(false)
+        lightStatusBar()
     }
 
     private var mFragmentPageList: MutableList<NaviMenuItem> = mutableListOf()
@@ -53,13 +55,15 @@ class EufyCleanNewActivity : BaseActivity<ActivityEufyCleanNewBinding>() {
 
         mFragmentPageList.forEachIndexed { index, menuItem ->
 
-            mBinding.bottomTabView.addMenuItem(menuItem,object :BottomTabView.OnMenuClickListener{
+            mBinding.bottomTabView.addMenuItem(menuItem, object : BottomTabView.OnMenuClickListener {
 
                 override fun onItemClick(view: View, item: NaviMenuItem) {
                     showFragment(mFragmentPageList.indexOf(item))
                 }
             })
         }
+
+        mBinding.bottomTabView.setBadge(mFragmentPageList.size - 1, true)
     }
 
     /**

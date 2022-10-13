@@ -2,7 +2,7 @@ package com.ve.module.lockit.plus.ui.page.test
 
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.ve.lib.common.base.view.vm.BaseFragment
+import com.ve.lib.common.base.view.vm.BaseVBFragment
 import com.ve.module.lockit.plus.R
 
 
@@ -13,7 +13,7 @@ import com.ve.module.lockit.plus.databinding.FragmentHomeMeBinding
  * @date 2022/9/30
  * @desc EufyHomeNew
  */
-class HomeMeFragment: BaseFragment<FragmentHomeMeBinding>() {
+class HomeMeFragment: BaseVBFragment<FragmentHomeMeBinding>() {
     override fun attachViewBinding(): FragmentHomeMeBinding {
         return FragmentHomeMeBinding.inflate(layoutInflater)
     }

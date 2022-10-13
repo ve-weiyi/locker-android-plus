@@ -43,9 +43,9 @@ class BottomTabView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
     }
 
 
-    fun addMenuItem(menuItem: NaviMenuItem,onClickListener: OnMenuClickListener?=null) {
+    fun addMenuItem(menuItem: NaviMenuItem, onClickListener: OnMenuClickListener? = null) {
 
-        val menuView = LayoutInflater.from(context).inflate(R.layout.bottom_item, null)
+        val menuView = LayoutInflater.from(context).inflate(R.layout.bottom_tab_item, null)
         val params = LinearLayout.LayoutParams(0, dp2px(100F))
         params.gravity = Gravity.BOTTOM
         params.weight = 1F
@@ -55,16 +55,20 @@ class BottomTabView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
         mMenuViewList.add(menuView)
 
         menuView.setOnClickListener {
-            onClickListener?.onItemClick(it,menuItem)
+            onClickListener?.onItemClick(it, menuItem)
 
             mMenuViewList.forEachIndexed { index, view ->
                 LogUtil.msg(index)
-                refreshMenuView(view, mMenuList[index], mMenuList[index]==menuItem)
+                refreshMenuView(view, mMenuList[index], mMenuList[index] == menuItem)
             }
         }
         refreshMenuView(menuView, menuItem, mMenuViewList.size == 1)
     }
 
+    fun setBadge(index: Int, show: Boolean) {
+        val badgeView = mMenuViewList[index].findViewById<View>(R.id.item_badge)
+        badgeView.visibility = if (show) View.VISIBLE else View.GONE
+    }
 
     private fun dp2px(dpValue: Float): Int {
         val scale = context.resources.displayMetrics.density
@@ -82,14 +86,14 @@ class BottomTabView(context: Context, attrs: AttributeSet?, defStyleAttr: Int) :
         itemIcon.setImageResource(menu.menuIcon)
         itemFrame.visibility = if (isSelect) View.VISIBLE else View.GONE
 
-        if (isSelect){
-            menuView.alpha=1F
-        }else{
-            menuView.alpha=0.6F
+        if (isSelect) {
+            menuView.alpha = 1F
+        } else {
+            menuView.alpha = 0.6F
         }
     }
 
     interface OnMenuClickListener {
-        fun onItemClick(view:View,item: NaviMenuItem)
+        fun onItemClick(view: View, item: NaviMenuItem)
     }
 }

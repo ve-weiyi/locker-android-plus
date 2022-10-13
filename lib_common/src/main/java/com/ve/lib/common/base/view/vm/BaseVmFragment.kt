@@ -18,8 +18,8 @@ import com.ve.lib.view.widget.multipleview.MultipleStatusView
  * @date 2019/11/1
  * @desc BaseVMFragment
  */
-abstract class BaseVmFragment<VB : ViewBinding, VM : BaseViewModel> : BaseFragment<VB>(),
-    IVmView<VM> {
+abstract class BaseVmFragment<VB : ViewBinding, VM : BaseViewModel> : BaseVBFragment<VB>(),
+    IVmView{
 
     companion object {
         fun Fragment.getInstance(): Fragment {
@@ -31,12 +31,20 @@ abstract class BaseVmFragment<VB : ViewBinding, VM : BaseViewModel> : BaseFragme
         }
     }
 
-    override var hasLoadData: Boolean = false
-    override var mLayoutStatusView: MultipleStatusView? = null
+
+    /**
+     * 数据是否加载过了
+     */
+    protected var hasLoadData: Boolean =false
+    protected var mLayoutStatusView: MultipleStatusView? = null
 
     lateinit var mViewModel: VM
 
-    override fun useEventBus() = false
+    /**
+     * 获取ViewModel的class
+     * return MainViewModel::class.java
+     */
+    abstract fun attachViewModelClass(): Class<VM>
 
     override fun initialize() {
         setHasOptionsMenu(true)
@@ -65,6 +73,18 @@ abstract class BaseVmFragment<VB : ViewBinding, VM : BaseViewModel> : BaseFragme
         //mLayoutStatusView?.showContent()
     }
 
+    override fun initObserver() {
+
+    }
+
+    override fun initListener(){
+
+    }
+
+    override fun loadWebData(){
+
+    }
+    
     override fun onResume() {
         super.onResume()
         if (!hasLoadData) {
@@ -74,22 +94,6 @@ abstract class BaseVmFragment<VB : ViewBinding, VM : BaseViewModel> : BaseFragme
         }
     }
 
-
-    override fun initData() {
-
-    }
-
-    override fun initObserver() {
-
-    }
-
-    override fun loadWebData() {
-
-    }
-
-    override fun initListener() {
-
-    }
 
     override fun showLoading() {
         mLayoutStatusView?.showLoading()

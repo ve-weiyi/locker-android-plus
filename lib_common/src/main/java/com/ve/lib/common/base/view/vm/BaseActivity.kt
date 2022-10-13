@@ -18,11 +18,10 @@ import com.ve.lib.common.utils.view.ToastUtil
 /**
  * @author chenxz
  * @date 2018/11/19
- * @desc BaseActivity 泛型实化 ，内部存有binding对象
+ * @desc BaseVBActivity 泛型实化 ，内部存有binding对象
  */
-abstract class BaseActivity<VB : ViewBinding> : ThemeCompatActivity(), IView<VB> {
+abstract class BaseActivity : ThemeCompatActivity(), IView{
 
-    lateinit var mBinding: VB
 
     protected open var mViewName: String? = this.javaClass.simpleName
 
@@ -34,14 +33,28 @@ abstract class BaseActivity<VB : ViewBinding> : ThemeCompatActivity(), IView<VB>
     open fun useEventBus(): Boolean = false
 
     /**
+     * 普通页面
+     *  setContentView(R.layout.activity_main)
+     * 使用ViewBinding
+     *  mBinding=ActivityMainBinding.inflate(layoutInflater)
+     *  setContentView(mBinding.root)
+     * 使用DateViewBinding
+     *  mBinding=DataBindingUtil.setContentView(this, R.layout.activity_main)
+     *  setContentView(mBinding.root)
+     */
+    abstract fun initLayoutView()
+
+
+    /**
      * 1. onCreate()，创建时调用，初始化操作写在这里，如指定布局文件，成员变量绑定对应ID等。
      */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         LogUtil.d("$mViewName onCreate")
+
         /**************************/
-        mBinding = attachViewBinding()
-        setContentView(mBinding.root)
+
+        initLayoutView()
 
         //设置窗口软键盘的交互模式,保证用户要进行输入的输入框肯定在用户的视野范围里面
         window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN)
@@ -53,8 +66,13 @@ abstract class BaseActivity<VB : ViewBinding> : ThemeCompatActivity(), IView<VB>
             lifecycle.addObserver(EventBusLifecycle.instant)
         }
 
+        if (!initData()) {
+            finish()
+            return
+        }
         initialize()
     }
+
 
     open fun initHeaderInfo(
         headerInfoLayout: CommonToolbarBinding,

@@ -1,4 +1,4 @@
-package com.ve.module.lockit.plus.ui.page.list
+package com.ve.module.lockit.plus.ui.page.model
 
 import android.graphics.drawable.Drawable
 import com.chad.library.adapter.base.entity.MultiItemEntity
@@ -19,13 +19,13 @@ OTA状态图标：该设备有新OTA推送时显示，点击进入「固件升�
 data class HomeDeviceBean(
     var name: String,
     var deviceImage: Drawable? = null,
-    var deviceCode: String = HomeBeanType.Code.Robot,
+    var deviceCode: String = HomeAdapterType.Code.Robot,
+    var isOn: Boolean = false,
     var state: Int = 0,
-    var isRunning: Boolean = false,
     var isSchedule: Boolean = false,
     var isUpdate: Boolean = false,
 ) : MultiItemEntity {
 
-    override var itemType: Int = HomeBeanType.CARD
+    override var itemType: Int = HomeAdapterType.Device.CARD
 
 }

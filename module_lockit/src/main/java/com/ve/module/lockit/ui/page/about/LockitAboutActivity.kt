@@ -2,7 +2,7 @@ package com.ve.module.lockit.ui.page.about
 
 import android.text.Html
 import android.text.method.LinkMovementMethod
-import com.ve.lib.common.base.view.vm.BaseActivity
+import com.ve.lib.common.base.view.vm.BaseVBActivity
 import com.ve.module.lockit.R
 import com.ve.module.lockit.databinding.LockitActivityAboutBinding
 
@@ -11,7 +11,7 @@ import com.ve.module.lockit.databinding.LockitActivityAboutBinding
  * @Author  weiyi
  * @Date 2022/4/10
  */
-class LockitAboutActivity: BaseActivity<LockitActivityAboutBinding>() {
+class LockitAboutActivity: BaseVBActivity<LockitActivityAboutBinding>() {
     override fun attachViewBinding(): LockitActivityAboutBinding {
         return LockitActivityAboutBinding.inflate(layoutInflater)
     }

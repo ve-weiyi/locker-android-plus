@@ -65,13 +65,6 @@
     <color name="text_color_light">@color/grey200</color>
 
 
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
-
-
     <color name="grey50">#FaFaFa</color>
     <color name="grey100">#F5F5F5</color>
     <color name="grey150">#F0F0F0</color>
@@ -84,4 +77,10 @@
     <color name="grey700">#616161</color>
     <color name="grey800">#424242</color>
     <color name="grey900">#ff2C2C2C</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
 </resources>

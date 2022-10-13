@@ -60,7 +60,6 @@ class RegisterActivity : BaseVmActivity<ActivityRegisterBinding, RegisterViewMod
     }
     override fun useEventBus(): Boolean = false
 
-    override fun enableNetworkTip(): Boolean = false
 
     fun registerSuccess(data: LoginData) {
         showMsg(getString(R.string.register_success))

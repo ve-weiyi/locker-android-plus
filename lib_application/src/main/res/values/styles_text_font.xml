@@ -63,10 +63,6 @@
     <dimen name="text_bigger">20sp</dimen>
     <dimen name="text_biggest">22sp</dimen>
 
-    <!--    列表边距-->
-    <dimen name="list_padding_small">2dp</dimen>
-    <dimen name="list_padding_mid">4dp</dimen>
-    <dimen name="list_padding_normal">8dp</dimen>
 
     <!--    控件边距-->
     <dimen name="dimen_small">2dp</dimen>

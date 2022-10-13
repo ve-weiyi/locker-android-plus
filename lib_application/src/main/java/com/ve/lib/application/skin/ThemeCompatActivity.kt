@@ -160,7 +160,7 @@ open class ThemeCompatActivity: AppCompatActivity() {
     /**
      * Changes System Bar Theme.
      */
-    protected fun setSystemBarTheme(isDark: Boolean) {
+    private fun setSystemBarTheme(isDark: Boolean) {
 
 
         //        val controller = ViewCompat.getWindowInsetsController(window.decorView)

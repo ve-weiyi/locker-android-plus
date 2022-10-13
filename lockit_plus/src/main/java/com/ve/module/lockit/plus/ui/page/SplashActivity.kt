@@ -2,10 +2,10 @@ package com.ve.module.lockit.plus.ui.page
 
 import androidx.core.splashscreen.SplashScreen
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.ve.lib.common.base.view.vm.BaseActivity
+import com.ve.lib.common.base.view.vm.BaseVBActivity
 import com.ve.lib.common.router.ARouterPath
 import com.ve.module.lockit.plus.databinding.ActivitySplashBinding
-import com.ve.module.lockit.plus.ui.page.test.EufyCleanNewActivity
+import com.ve.module.lockit.plus.ui.page.test.EufyMainActivity
 
 
 /**
@@ -13,7 +13,7 @@ import com.ve.module.lockit.plus.ui.page.test.EufyCleanNewActivity
  * empty：表示对象为空或长度为0
  * blank： 表示对象为空或长度为0、空格字符串
  */
-class SplashActivity : BaseActivity<ActivitySplashBinding>() {
+class SplashActivity : BaseVBActivity<ActivitySplashBinding>() {
 
     private lateinit var splashScreen: SplashScreen
     override fun attachViewBinding(): ActivitySplashBinding {
@@ -45,7 +45,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
     }
 
     private fun jumpToTest(){
-        startActivityClass(mContext,EufyCleanNewActivity::class.java)
+        startActivityClass(mContext,EufyMainActivity::class.java)
         finish()
     }
 }
