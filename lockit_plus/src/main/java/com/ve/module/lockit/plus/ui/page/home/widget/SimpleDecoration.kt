@@ -1,4 +1,4 @@
-package com.ve.module.lockit.plus.ui.page.test
+package com.ve.module.lockit.plus.ui.page.home.widget
 
 import android.content.Context
 import android.graphics.Canvas
@@ -9,8 +9,6 @@ import android.view.View
 import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.ve.lib.application.skin.darkmode.ThemeAttrValueUtil
-
 
 
 /**

@@ -1,4 +1,4 @@
-package com.ve.module.lockit.plus.ui.page.model
+package com.ve.module.lockit.plus.ui.page.home.model
 
 import android.graphics.drawable.Drawable
 import com.chad.library.adapter.base.entity.MultiItemEntity

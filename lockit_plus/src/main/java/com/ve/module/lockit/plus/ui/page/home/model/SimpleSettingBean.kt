@@ -1,4 +1,4 @@
-package com.ve.module.lockit.plus.ui.page.test
+package com.ve.module.lockit.plus.ui.page.home.model
 
 import android.graphics.drawable.Drawable
 

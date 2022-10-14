@@ -6,6 +6,7 @@ import com.ve.lib.common.base.model.NaviMenuItem
 import com.ve.lib.common.base.view.vm.BaseActivity
 import com.ve.module.lockit.plus.R
 import com.ve.module.lockit.plus.databinding.ActivityEufyCleanMainBinding
+import com.ve.module.lockit.plus.ui.page.home.widget.BottomTabView
 
 class EufyMainActivity : BaseActivity() {
 

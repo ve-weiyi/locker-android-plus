@@ -7,7 +7,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ve.lib.application.utils.LogUtil
 import com.ve.lib.common.base.view.vm.BaseVBFragment
 import com.ve.module.lockit.plus.databinding.FragmentHomeDeviceBinding
-import com.ve.module.lockit.plus.ui.page.model.*
+import com.ve.module.lockit.plus.ui.page.home.brhavior.AppbarZoomBehavior
+import com.ve.module.lockit.plus.ui.page.home.model.*
 
 
 /**
@@ -45,7 +46,7 @@ class HomeDeviceFragment : BaseVBFragment<FragmentHomeDeviceBinding>() {
 
         val behavior=((mBinding.appbar.layoutParams) as CoordinatorLayout.LayoutParams ).behavior as AppbarZoomBehavior
         behavior.setRecoveryListener(
-            object :AppbarZoomBehavior.OnLayoutRecoveryListener{
+            object : AppbarZoomBehavior.OnLayoutRecoveryListener{
                 override fun onRecovery() {
                     mBinding.progressBar.apply {
                         visibility= View.VISIBLE

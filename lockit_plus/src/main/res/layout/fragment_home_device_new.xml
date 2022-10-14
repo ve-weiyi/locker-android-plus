@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="220dp"
         android:fitsSystemWindows="true"
-        app:layout_behavior="com.ve.module.lockit.plus.ui.page.test.AppbarZoomBehavior">
+        app:layout_behavior="com.ve.module.lockit.plus.ui.page.home.brhavior.AppbarZoomBehavior">
 
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -105,7 +105,7 @@
 
     <include
         android:id="@+id/layout_device_list"
-        layout="@layout/home_scrollview" />
+        layout="@layout/layout_home_scrollview" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:visibility="gone"

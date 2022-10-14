@@ -1,10 +1,12 @@
 package com.ve.module.lockit.plus.ui.page.test
 
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.ve.lib.application.R
 import com.ve.lib.common.base.view.vm.BaseVBFragment
 import com.ve.module.lockit.plus.databinding.FragmentHomeDeviceNewBinding
-import com.ve.module.lockit.plus.ui.page.model.HomeDeviceAdapter
-import com.ve.module.lockit.plus.ui.page.model.HomeDeviceBean
+import com.ve.module.lockit.plus.ui.page.home.model.HomeDeviceAdapter
+import com.ve.module.lockit.plus.ui.page.home.model.HomeDeviceBean
+import com.ve.module.lockit.plus.ui.page.home.widget.SimpleDecoration
 
 
 /**
@@ -24,7 +26,7 @@ class HomeDeviceNewFragment: BaseVBFragment<FragmentHomeDeviceNewBinding>() {
             mContext,
             SimpleDecoration.VERTICAL,
             16,
-            com.ve.lib.application.R.drawable.simple_divider
+            R.drawable.simple_divider
         )
     }
 

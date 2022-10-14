@@ -1,4 +1,4 @@
-package com.ve.module.lockit.plus.ui.page.test
+package com.ve.module.lockit.plus.ui.page.home.brhavior
 
 import android.animation.ValueAnimator
 import android.content.Context

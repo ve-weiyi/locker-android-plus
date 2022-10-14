@@ -16,12 +16,12 @@
 
     <RelativeLayout
         android:background="@drawable/bg_rect_background"
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:clipChildren="false"
         android:layout_height="wrap_content">
 
         <RelativeLayout
+            tools:visibility="visible"
             android:visibility="gone"
             android:id="@+id/layout_banner"
             android:layout_width="match_parent"
@@ -31,7 +31,7 @@
             >
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="120dp"
                 android:background="@drawable/img_pet"
                 app:shapeAppearance="@style/RoundedStyle" />

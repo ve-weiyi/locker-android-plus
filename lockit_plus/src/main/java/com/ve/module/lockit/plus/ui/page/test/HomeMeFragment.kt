@@ -7,6 +7,9 @@ import com.ve.module.lockit.plus.R
 
 
 import com.ve.module.lockit.plus.databinding.FragmentHomeMeBinding
+import com.ve.module.lockit.plus.ui.page.home.model.SimpleSettingAdapter
+import com.ve.module.lockit.plus.ui.page.home.model.SimpleSettingBean
+import com.ve.module.lockit.plus.ui.page.home.widget.SimpleDecoration
 
 /**
  * @author waynie
@@ -32,7 +35,7 @@ class HomeMeFragment: BaseVBFragment<FragmentHomeMeBinding>() {
 
         mListAdapter.setList(getItemGroup())
 
-        mBinding.recyclerView.apply {
+        mBinding.layoutMineMenu.recyclerView.apply {
             layoutManager = LinearLayoutManager(mContext)
             addItemDecoration(dividerItemDecoration)
             adapter = mListAdapter

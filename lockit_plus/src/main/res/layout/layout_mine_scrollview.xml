@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    android:layout_marginTop="-16dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:clipChildren="false"
+    tools:showIn="@layout/fragment_home_me"
+    >
+
+    <!--app:layout_behavior属性触发滑动效果，前提是内容区是可滑动的-->
+
+    <RelativeLayout
+        android:background="@drawable/bg_rect_background"
+        android:clipChildren="false"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <LinearLayout
+            android:visibility="visible"
+            android:clipChildren="false"
+            android:id="@+id/layout_action"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-28dp"
+            android:background="@drawable/bg_rect_on_background"
+            android:paddingVertical="@dimen/dp_16"
+            android:layout_marginHorizontal="@dimen/dp_16"
+            app:layout_collapseMode="parallax"
+            app:layout_collapseParallaxMultiplier="0.8">
+
+            <com.ve.module.lockit.plus.ui.page.home.widget.MineItemView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                app:badgeVisibility="visible"
+                app:itemIcon="@drawable/ic_messages"
+                app:itemTitle="Message" />
+
+            <com.ve.module.lockit.plus.ui.page.home.widget.MineItemView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                app:badgeVisibility="visible"
+                app:itemIcon="@drawable/ic_help_feedback"
+                app:itemTitle="Help &amp; Feedback" />
+
+            <com.ve.module.lockit.plus.ui.page.home.widget.MineItemView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                app:badgeVisibility="gone"
+                app:itemIcon="@drawable/ic_device_sharing"
+                app:itemTitle="Device Sharing" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_below="@id/layout_action"
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginHorizontal="@dimen/dp_16"
+            android:background="@drawable/bg_rect_on_background"
+            android:nestedScrollingEnabled="false"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:listitem="@layout/item_simple_setting"
+            tools:itemCount="5"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/recyclerView"
+            android:layout_marginHorizontal="@dimen/dp_16"
+            android:layout_marginStart="@dimen/dp_16"
+            android:layout_marginTop="@dimen/dp_16"
+            android:background="@drawable/bg_rect_on_background"
+            android:nestedScrollingEnabled="false"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:itemCount="2"
+            tools:listitem="@layout/item_simple_setting" />
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

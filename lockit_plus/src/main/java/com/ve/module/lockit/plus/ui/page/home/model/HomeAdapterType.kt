@@ -1,4 +1,4 @@
-package com.ve.module.lockit.plus.ui.page.model
+package com.ve.module.lockit.plus.ui.page.home.model
 
 /**
  * @author waynie

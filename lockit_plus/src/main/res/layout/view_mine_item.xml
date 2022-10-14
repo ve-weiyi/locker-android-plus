@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp_4"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/item_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/bg_circle_grey"
+        android:padding="@dimen/dp_12"
+        android:src="@drawable/ic_device_sharing" />
+
+    <TextView
+        android:id="@+id/item_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/item_icon"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="6dp"
+        android:text="Device Sharing"
+        android:textSize="12sp" />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/item_badge"
+        android:layout_alignTop="@id/item_icon"
+        android:layout_alignEnd="@id/item_icon"
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+        android:background="@android:color/holo_red_light"
+        app:shapeAppearance="@style/CircleImageStyle"
+        />
+</RelativeLayout>

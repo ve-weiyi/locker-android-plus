@@ -1,4 +1,4 @@
-package com.ve.module.lockit.plus.ui.page.model
+package com.ve.module.lockit.plus.ui.page.home.model
 
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder

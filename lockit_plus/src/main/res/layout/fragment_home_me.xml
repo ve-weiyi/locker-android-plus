@@ -4,29 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?colorBackground"
-
+    android:clipChildren="false"
     >
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?colorBackground"
         android:theme="@style/AppTheme.AppBarOverlay"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior"
-
-        >
+        app:layout_behavior="com.ve.module.lockit.plus.ui.page.home.brhavior.AppbarZoomBehavior">
 
 
-    <com.google.android.material.appbar.CollapsingToolbarLayout
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
             android:id="@+id/collapsing_toolbar_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:minHeight="48dp"
             android:layout_gravity="bottom"
             android:fitsSystemWindows="true"
-            
+
             app:contentScrim="@color/transparent"
             app:statusBarScrim="@android:color/transparent"
             app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
@@ -36,7 +33,7 @@
                 android:fitsSystemWindows="true"
                 android:id="@+id/appbar_image"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="match_parent"
                 android:scaleType="fitXY"
                 android:src="@drawable/ic_home_me_bg"
                 app:layout_collapseMode="parallax"
@@ -55,43 +52,10 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="?colorBackground"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        >
+    <include
+        android:id="@+id/layout_mine_menu"
+        layout="@layout/layout_mine_scrollview" />
 
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/dp_16"
-                android:layout_marginVertical="@dimen/dp_16"
-                android:background="@drawable/bg_rect_on_background"
-                android:nestedScrollingEnabled="false"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                />
-
-        </RelativeLayout>
-    </androidx.core.widget.NestedScrollView>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="10dp"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
-        app:layout_anchor="@id/appbar"
-        app:layout_anchorGravity="end|bottom"
-        app:srcCompat="@drawable/ic_add"
-        tools:ignore="SpeakableTextPresentCheck" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

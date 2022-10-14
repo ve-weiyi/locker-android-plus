@@ -1,8 +1,7 @@
-package com.ve.module.lockit.plus.ui.page.test
+package com.ve.module.lockit.plus.ui.page.home.model
 
 import android.view.View
 import com.ve.lib.common.base.adapter.BaseBindingAdapter
-import com.ve.lib.common.base.adapter.ViewBindingHolder
 import com.ve.module.lockit.plus.databinding.ItemSimpleSettingBinding
 
 class SimpleSettingAdapter :

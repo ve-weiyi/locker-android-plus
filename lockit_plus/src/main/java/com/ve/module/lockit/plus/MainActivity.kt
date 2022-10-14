@@ -27,7 +27,7 @@ class MainActivity : BaseVBActivity<ActivityMainBinding>() {
         initNavigation()
         showFragment(mIndex)
 
-        setSystemBarTheme(false)
+        lightStatusBar()
 //        PrivacyDialog.Builder(this).show()
     }
 
