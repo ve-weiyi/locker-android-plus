@@ -5,7 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
-import com.ve.lib.common.base.view.vm.BaseActivity
+import com.ve.lib.common.base.view.vm.BaseVBActivity
 import com.ve.lib.common.ext.setOnclickNoRepeatListener
 import com.ve.lib.application.utils.LogUtil
 import com.ve.lib.common.utils.system.SpUtil
@@ -15,7 +15,7 @@ import com.ve.module.lockit.common.config.LockitSpKey
 import com.ve.module.lockit.databinding.LockitActivityAuthBinding
 
 
-class LockitAuthActivity : BaseActivity<LockitActivityAuthBinding>(){
+class LockitAuthActivity : BaseVBActivity<LockitActivityAuthBinding>(){
 
     companion object{
         const val NEXT_ACTIVITY_KEY: String = "next_activity_key"
@@ -55,7 +55,7 @@ class LockitAuthActivity : BaseActivity<LockitActivityAuthBinding>(){
     private lateinit var activityClassName: String
     private lateinit var activityBundle: Bundle
 
-    override fun initialize(saveInstanceState: Bundle?) {
+    override fun initialize() {
         activityClassName=intent.getStringExtra(NEXT_ACTIVITY_KEY)?: ""
         activityBundle=intent.getBundleExtra(NEXT_ACTIVITY_DATA_KEY)?: Bundle()
 
@@ -78,7 +78,7 @@ class LockitAuthActivity : BaseActivity<LockitActivityAuthBinding>(){
                     finish()
                 }else{
                     LogUtil.msg()
-                    startActivity(mContext, Class.forName(activityClassName),activityBundle)
+                    startActivityClass(mContext, Class.forName(activityClassName),activityBundle)
                 }
             }
 

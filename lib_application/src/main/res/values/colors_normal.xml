@@ -9,7 +9,7 @@
     <!-- 通用颜色颜色 -->
     <!--常用颜色 material600 cyan 青色-->
     <color name="black">#111111</color>
-    <color name="white">#EEEEEE</color>
+    <color name="white">#ffffff</color>
     <color name="grey">#757575</color>
     <color name="red">#E53935</color>
     <color name="pink">#e91e63</color>

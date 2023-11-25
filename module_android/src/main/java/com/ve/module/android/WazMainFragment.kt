@@ -36,32 +36,7 @@ class WazMainFragment : BaseVmPager2Fragment<WazFragmentMainBinding, WanAndroidV
     }
 
     override fun initObserver() {
-        mViewModel.bannerBeanList.observe(this) { bannerList ->
-            //动态设置高度
-            val layoutParams = mBinding.banner.layoutParams
-            layoutParams.height = (DisplayUtil.getScreenWidth() / 1.99).roundToInt()
-            mBinding.banner.apply {
-                //生命周期
-                addBannerLifecycleObserver(requireActivity())
-                //画廊效果
-                setBannerGalleryEffect(10, 1)
-                //魅族效果
-                setBannerGalleryMZ(12)
-                setPageTransformer(ScaleInTransformer())
-                addPageTransformer(AlphaPageTransformer())
-                //设置指示器
-                indicator = CircleIndicator(requireContext())
-                //adapter = BannerImageAdapter(bannerList)
-                adapter= BannerImageTitleNumAdapter(bannerList)
-                removeIndicator()
-                start()
 
-                setOnBannerListener( OnBannerListener<BannerBean>(){ data, position ->
-                    val item = data
-                    ArticleDetailActivity.start(activity, item.id, item.title, item.url)
-                })
-            }
-        }
     }
 
     override fun initPagerView() {

@@ -113,7 +113,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dp_10"
                         android:orientation="vertical"
-                        android:background="@drawable/bg_background_rect">
+                        android:background="@drawable/bg_rect_background">
 
                     <TextView
                             style="@style/tv_title_normal_primary"
@@ -210,7 +210,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/dp_10"
                         android:orientation="vertical"
-                        android:background="@drawable/bg_background_rect">
+                        android:background="@drawable/bg_rect_background">
 
                     <TextView
                             style="@style/tv_title_normal_primary"
@@ -253,7 +253,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             app:tileTextColor="@color/text_color_dark"
-                            app:hIcon="@drawable/ic_icon_outline_about"
+                            app:hIcon="@drawable/ic_eufy_home"
                             app:hTipVisiblity="false"
                             app:paddingLeft="20dp"
                             app:paddingRight="30dp"
@@ -280,7 +280,7 @@
                     android:layout_height="52dp"
                     android:layout_marginTop="@dimen/dimen_mid"
                     android:layout_alignParentBottom="true"
-                    android:background="@drawable/bg_background_rect"
+                    android:background="@drawable/bg_rect_background"
                     android:orientation="horizontal">
 
                 <LinearLayout

@@ -1,6 +1,7 @@
 package com.ve.lib.application.utils
 
 import android.util.Log
+import java.util.*
 
 
 /**
@@ -52,9 +53,9 @@ object LogUtil {
     }
 
     @JvmStatic
-    fun msg(tag: String?, msg: Any?) {
+    fun msg(vararg msg: Any?) {
         val info= getStackInfo()
-        Log.e(tag, info.covertMessage(msg.toString()))
+        Log.e(this.TAG,info.covertMessage(msg.contentToString()))
     }
 
     @JvmStatic

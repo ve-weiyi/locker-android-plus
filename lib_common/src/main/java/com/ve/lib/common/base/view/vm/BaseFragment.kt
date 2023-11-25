@@ -4,20 +4,16 @@ import android.content.Context
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
-import androidx.viewbinding.ViewBinding
 import com.ve.lib.common.lifecycle.EventBusLifecycle
 import com.ve.lib.application.utils.LogUtil
 
 /**
  * @author chenxz
  * @date 2018/11/19
- * @desc BaseFragment
+ * @desc BaseVBFragment
  */
-abstract class BaseFragment<VB : ViewBinding> : Fragment() , IView<VB> {
+abstract class BaseFragment : Fragment() , IView {
 
-    /** 当前fragment的视图绑定 */
-    protected open var binding: VB? = null
-    protected open val mBinding get() = binding!!
     protected open var mViewName: String  = this.javaClass.simpleName
     protected val mContext:Context by lazy { requireActivity() }
 
@@ -26,13 +22,14 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() , IView<VB> {
      */
     open fun useEventBus(): Boolean = false
 
+    abstract fun attachLayoutView():View?
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        binding = attachViewBinding()
-        return mBinding.root
+        return attachLayoutView()
     }
 
     /**
@@ -45,7 +42,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() , IView<VB> {
         if (useEventBus()) {
             lifecycle.addObserver(EventBusLifecycle.instant)
         }
-        initialize(savedInstanceState)
+        initialize()
     }
 
 
@@ -58,25 +55,6 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() , IView<VB> {
         super.onResume()
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        binding = null
-        LogUtil.d(javaClass.simpleName+" onDestroy")
-    }
 
 
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        //inflater.inflate(R.menu.menu_search, menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-//            else -> {
-//                showMsg("该功能未实现，请留意后续版本。"+item.title+"-->"+item.itemId)
-//            }
-        }
-        return super.onOptionsItemSelected(item)
-    }
 }

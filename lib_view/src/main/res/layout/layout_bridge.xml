@@ -23,7 +23,7 @@
 
 
             android:adjustViewBounds="true"
-            android:background="@drawable/bg_grey_circle" />
+            android:background="@drawable/bg_circle_grey" />
 
 </LinearLayout>
 

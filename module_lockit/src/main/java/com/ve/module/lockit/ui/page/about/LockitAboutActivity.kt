@@ -1,9 +1,8 @@
 package com.ve.module.lockit.ui.page.about
 
-import android.os.Bundle
 import android.text.Html
 import android.text.method.LinkMovementMethod
-import com.ve.lib.common.base.view.vm.BaseActivity
+import com.ve.lib.common.base.view.vm.BaseVBActivity
 import com.ve.module.lockit.R
 import com.ve.module.lockit.databinding.LockitActivityAboutBinding
 
@@ -12,7 +11,7 @@ import com.ve.module.lockit.databinding.LockitActivityAboutBinding
  * @Author  weiyi
  * @Date 2022/4/10
  */
-class LockitAboutActivity: BaseActivity<LockitActivityAboutBinding>() {
+class LockitAboutActivity: BaseVBActivity<LockitActivityAboutBinding>() {
     override fun attachViewBinding(): LockitActivityAboutBinding {
         return LockitActivityAboutBinding.inflate(layoutInflater)
     }
@@ -21,7 +20,7 @@ class LockitAboutActivity: BaseActivity<LockitActivityAboutBinding>() {
     private val about_version by lazy {  mBinding.aboutVersion}
     private val about_content by lazy {  mBinding.aboutContent}
 
-    override fun initialize(saveInstanceState: Bundle?) {
+    override fun initialize() {
         initToolbar(mBinding.extToolbar.toolbar, "关于", true)
         about_content.run {
             text = Html.fromHtml(getString(R.string.lockit_about_content))

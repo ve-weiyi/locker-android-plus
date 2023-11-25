@@ -95,7 +95,7 @@ class LockitMeFragment : BaseVmFragment<LockitFragmentMeBinding, LockitDrawerVie
         super.initListener()
 
         mBinding.layoutUnLogin.layoutMain.setOnclickNoRepeatListener {
-            startActivity(mContext, LockitLoginActivity::class.java)
+            startActivityClass(mContext, LockitLoginActivity::class.java)
         }
 
         mBinding.exitLayout.setOnclickNoRepeatListener(this)
@@ -134,7 +134,7 @@ class LockitMeFragment : BaseVmFragment<LockitFragmentMeBinding, LockitDrawerVie
             }
 
             R.id.action_feedback -> {
-                startActivity(mContext, LockitFeedBackActivity::class.java)
+                startActivityClass(mContext, LockitFeedBackActivity::class.java)
             }
             R.id.action_about -> {
                 LockitSettingActivity.start(mContext, AboutSettingFragment::class.java.name, "关于")

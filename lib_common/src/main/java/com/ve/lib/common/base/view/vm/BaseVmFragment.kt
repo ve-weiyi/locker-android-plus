@@ -1,6 +1,9 @@
 package com.ve.lib.common.base.view.vm
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -15,8 +18,8 @@ import com.ve.lib.view.widget.multipleview.MultipleStatusView
  * @date 2019/11/1
  * @desc BaseVMFragment
  */
-abstract class BaseVmFragment<VB : ViewBinding, VM : BaseViewModel> : BaseFragment<VB>(),
-    IVmView<VM> {
+abstract class BaseVmFragment<VB : ViewBinding, VM : BaseViewModel> : BaseVBFragment<VB>(),
+    IVmView{
 
     companion object {
         fun Fragment.getInstance(): Fragment {
@@ -28,14 +31,22 @@ abstract class BaseVmFragment<VB : ViewBinding, VM : BaseViewModel> : BaseFragme
         }
     }
 
-    override var hasLoadData: Boolean = false
-    override var mLayoutStatusView: MultipleStatusView? = null
+
+    /**
+     * 数据是否加载过了
+     */
+    protected var hasLoadData: Boolean =false
+    protected var mLayoutStatusView: MultipleStatusView? = null
 
     lateinit var mViewModel: VM
 
-    override fun useEventBus() = false
+    /**
+     * 获取ViewModel的class
+     * return MainViewModel::class.java
+     */
+    abstract fun attachViewModelClass(): Class<VM>
 
-    override fun initialize(saveInstanceState: Bundle?) {
+    override fun initialize() {
         setHasOptionsMenu(true)
         mViewModel = ViewModelProvider(this).get(attachViewModelClass())
         //我不理解
@@ -62,6 +73,18 @@ abstract class BaseVmFragment<VB : ViewBinding, VM : BaseViewModel> : BaseFragme
         //mLayoutStatusView?.showContent()
     }
 
+    override fun initObserver() {
+
+    }
+
+    override fun initListener(){
+
+    }
+
+    override fun loadWebData(){
+
+    }
+    
     override fun onResume() {
         super.onResume()
         if (!hasLoadData) {
@@ -71,22 +94,6 @@ abstract class BaseVmFragment<VB : ViewBinding, VM : BaseViewModel> : BaseFragme
         }
     }
 
-
-    override fun initData() {
-
-    }
-
-    override fun initObserver() {
-
-    }
-
-    override fun loadWebData() {
-
-    }
-
-    override fun initListener() {
-
-    }
 
     override fun showLoading() {
         mLayoutStatusView?.showLoading()
@@ -103,5 +110,20 @@ abstract class BaseVmFragment<VB : ViewBinding, VM : BaseViewModel> : BaseFragme
     override fun showError(errorMsg: String) {
         ToastUtil.show(errorMsg)
         mLayoutStatusView?.showError()
+    }
+
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        //inflater.inflate(R.menu.menu_search, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+//            else -> {
+//                showMsg("该功能未实现，请留意后续版本。"+item.title+"-->"+item.itemId)
+//            }
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

@@ -63,10 +63,6 @@
     <dimen name="text_bigger">20sp</dimen>
     <dimen name="text_biggest">22sp</dimen>
 
-    <!--    列表边距-->
-    <dimen name="list_padding_small">2dp</dimen>
-    <dimen name="list_padding_mid">4dp</dimen>
-    <dimen name="list_padding_normal">8dp</dimen>
 
     <!--    控件边距-->
     <dimen name="dimen_small">2dp</dimen>
@@ -87,7 +83,7 @@
         <item name="android:gravity">center</item>
         <item name="android:textAllCaps">false</item>
         <item name="android:textColor">@color/black</item>
-        <item name="android:background">@drawable/bg_background_rect</item>
+        <item name="android:background">@drawable/bg_rect_background</item>
         <item name="android:textSize">28sp</item>
     </style>
 
@@ -229,6 +225,19 @@
     </style>
     <style name="t28_b">
         <item name="android:textSize">@dimen/sp_28</item>
+        <item name="android:fontFamily">@font/open_sans_bold</item>
+    </style>
+
+    <style name="t32_r">
+        <item name="android:textSize">@dimen/sp_32</item>
+        <item name="android:fontFamily">@font/open_sans_regular</item>
+    </style>
+    <style name="t32_l">
+        <item name="android:textSize">@dimen/sp_32</item>
+        <item name="android:fontFamily">@font/open_sans_light</item>
+    </style>
+    <style name="t32_b">
+        <item name="android:textSize">@dimen/sp_32</item>
         <item name="android:fontFamily">@font/open_sans_bold</item>
     </style>
 

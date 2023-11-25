@@ -2,14 +2,12 @@ package com.ve.module.games.aircraftbattle.ui;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
 import com.gyf.immersionbar.ImmersionBar;
-import com.ve.lib.common.base.view.vm.BaseActivity;
+import com.ve.lib.common.base.view.vm.BaseVBActivity;
 import com.ve.lib.common.config.AppConfig;
 import com.ve.module.games.R;
 import com.ve.module.games.aircraftbattle.common.GlobalConstant;
@@ -18,7 +16,7 @@ import com.ve.module.games.databinding.ActivityGameBinding;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class GameActivity extends BaseActivity<ActivityGameBinding> {
+public class GameActivity extends BaseVBActivity<ActivityGameBinding> {
 
     private GameView gameView;
     private boolean mBackKeyPressed = false;//记录是否有首次按键
@@ -68,7 +66,7 @@ public class GameActivity extends BaseActivity<ActivityGameBinding> {
     }
 
     @Override
-    public void initialize(@Nullable Bundle saveInstanceState) {
+    public void initialize() {
         ImmersionBar.with(this)
                 .statusBarDarkFont(true)  //状态栏字体是深色，不写默认为亮色
                 .init();

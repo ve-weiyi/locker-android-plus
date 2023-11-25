@@ -20,7 +20,7 @@ import androidx.annotation.RequiresApi
 import com.just.agentweb.AgentWeb
 import com.ve.lib.common.R
 
-import com.ve.lib.common.base.view.vm.BaseActivity
+import com.ve.lib.common.base.view.vm.BaseVBActivity
 import com.ve.lib.application.utils.LogUtil
 import com.ve.module.android.databinding.ActivityAgentWebBinding
 
@@ -30,7 +30,7 @@ import com.ve.module.android.databinding.ActivityAgentWebBinding
  * @Author  weiyi
  * @Date 2022/3/21
  */
-class AgentWebActivity : BaseActivity<ActivityAgentWebBinding>() {
+class AgentWebActivity : BaseVBActivity<ActivityAgentWebBinding>() {
 
     private lateinit var mAgentWeb: AgentWeb
 
@@ -74,7 +74,7 @@ class AgentWebActivity : BaseActivity<ActivityAgentWebBinding>() {
 
 
     @RequiresApi(Build.VERSION_CODES.N)
-    override fun initialize(saveInstanceState: Bundle?) {
+    override fun initialize() {
 
         //设置标题栏之后才能修改菜单
         mBinding.toolbar.toolbar.run {

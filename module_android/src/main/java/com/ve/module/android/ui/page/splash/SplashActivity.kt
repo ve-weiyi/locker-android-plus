@@ -1,15 +1,14 @@
 package com.ve.module.android.ui.page.splash
 
 import android.content.Intent
-import android.os.Bundle
 import android.view.animation.AlphaAnimation
 import android.view.animation.Animation
-import com.ve.lib.common.base.view.vm.BaseActivity
+import com.ve.lib.common.base.view.vm.BaseVBActivity
 import com.ve.module.android.WazMainActivity
 import com.ve.module.android.databinding.ActivitySplashBinding
 
 
-class SplashActivity : BaseActivity<ActivitySplashBinding>() {
+class SplashActivity : BaseVBActivity<ActivitySplashBinding>() {
 
     private var alphaAnimation: AlphaAnimation? = null
 
@@ -29,7 +28,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
         return ActivitySplashBinding.inflate(layoutInflater)
     }
 
-    override fun initialize(saveInstanceState: Bundle?) {
+    override fun initialize() {
         alphaAnimation = AlphaAnimation(0.3F, 1.0F)
         alphaAnimation?.run {
             duration = 1000

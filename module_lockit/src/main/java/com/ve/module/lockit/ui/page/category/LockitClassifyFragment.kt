@@ -6,7 +6,7 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.ve.lib.common.base.view.vm.BaseFragment
+import com.ve.lib.common.base.view.vm.BaseVBFragment
 import com.ve.lib.application.utils.LogUtil
 import com.ve.module.lockit.R
 import com.ve.module.lockit.databinding.LockitFragmentClassifyBinding
@@ -22,7 +22,7 @@ import com.ve.module.lockit.ui.page.category.tag.LockitTagListFragment
  * @Description  current project lockit-android
  * 分类管理
  */
-class LockitClassifyFragment : BaseFragment<LockitFragmentClassifyBinding>() {
+class LockitClassifyFragment : BaseVBFragment<LockitFragmentClassifyBinding>() {
 
     override fun attachViewBinding(): LockitFragmentClassifyBinding {
         return LockitFragmentClassifyBinding.inflate(layoutInflater)
@@ -48,7 +48,7 @@ class LockitClassifyFragment : BaseFragment<LockitFragmentClassifyBinding>() {
     lateinit var fragmentClassName: String
     lateinit var fragmentArguments: Bundle
 
-    override fun initialize(saveInstanceState: Bundle?) {
+    override fun initialize() {
         setHasOptionsMenu(true)
 
         //从bundle中取出数据

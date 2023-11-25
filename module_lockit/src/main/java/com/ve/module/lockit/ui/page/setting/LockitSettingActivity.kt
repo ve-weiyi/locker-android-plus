@@ -4,7 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.ve.lib.common.base.view.vm.BaseActivity
+import com.ve.lib.common.base.view.vm.BaseVBActivity
 import com.ve.lib.application.utils.LogUtil
 import com.ve.module.lockit.R
 import com.ve.module.lockit.databinding.LockitActivitySettingBinding
@@ -16,7 +16,7 @@ import com.ve.module.lockit.databinding.LockitActivitySettingBinding
  *
  * 设置页面容器
  */
-class LockitSettingActivity: BaseActivity<LockitActivitySettingBinding>(){
+class LockitSettingActivity: BaseVBActivity<LockitActivitySettingBinding>(){
 
     companion object {
 
@@ -50,7 +50,7 @@ class LockitSettingActivity: BaseActivity<LockitActivitySettingBinding>(){
         return LockitActivitySettingBinding.inflate(layoutInflater)
     }
 
-    override fun initialize(saveInstanceState: Bundle?) {
+    override fun initialize() {
         //从bundle中取出数据
         fragmentTitle  = intent.getStringExtra(FRAGMENT_TITLE_KEY) ?: "设置"
         fragmentClassName = intent.getStringExtra(FRAGMENT_CLASS_NAME_KEY) ?: ""

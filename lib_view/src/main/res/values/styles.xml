@@ -41,13 +41,6 @@
         <item name="cornerSize">5dp</item>
     </style>
 
-    <!-- 圆形图片 -->
-    <style name="CircleImageStyle">
-        <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">50%</item>
-        <item name="android:layout_width">50dp</item>
-        <item name="android:layout_height">50dp</item>
-    </style>
 
     <!--实现BottomSheetDialog圆角效果-->
     <style name="BottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">

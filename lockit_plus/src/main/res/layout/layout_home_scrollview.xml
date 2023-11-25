@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    android:layout_marginTop="-16dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:clipChildren="false"
+    tools:showIn="@layout/fragment_home_device"
+    >
+
+    <!--app:layout_behavior属性触发滑动效果，前提是内容区是可滑动的-->
+
+    <RelativeLayout
+        android:background="@drawable/bg_rect_background"
+        android:layout_width="match_parent"
+        android:clipChildren="false"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            tools:visibility="visible"
+            android:visibility="gone"
+            android:id="@+id/layout_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-28dp"
+            android:layout_marginHorizontal="@dimen/dp_16"
+            >
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="@drawable/img_pet"
+                app:shapeAppearance="@style/RoundedStyle" />
+
+            <ImageView
+                android:layout_margin="@dimen/dp_2"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_advert_cancel"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout_banner"
+            android:layout_marginBottom="@dimen/dp_50">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@drawable/bg_gradient_background"
+                />
+
+            <RelativeLayout
+                android:id="@+id/layout_group_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_marginHorizontal="@dimen/dp_12"
+                >
+
+                <TextView
+                    style="@style/t18_r"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/dp_8"
+                    android:text="Groups"
+                    app:drawableStartCompat="@drawable/ic_simple_text_rect" />
+
+                <ImageView
+                    android:id="@+id/iv_group_swap"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_group"
+                    />
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:padding="@dimen/dp_8"
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_group_header"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_home_bulb_multi" />
+
+            <RelativeLayout
+                android:id="@+id/layout_device_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/recyclerView"
+                android:layout_marginStart="@dimen/dp_12"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_marginEnd="@dimen/dp_12"
+                >
+
+                <TextView
+                    android:id="@+id/tv_group_title"
+                    style="@style/t18_r"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="@dimen/dp_8"
+                    android:text="Devices"
+                    app:drawableStartCompat="@drawable/ic_simple_text_rect" />
+
+                <ImageView
+                    android:id="@+id/iv_device_swap"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_group" />
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/layout_device_header"
+                android:overScrollMode="never"
+                android:padding="@dimen/dp_8"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_home_device_grid" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/img_eufy_logo"
+            />
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>

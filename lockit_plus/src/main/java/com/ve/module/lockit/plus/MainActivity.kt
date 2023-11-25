@@ -1,63 +1,65 @@
 package com.ve.module.lockit.plus
 
-import android.os.Bundle
-import androidx.core.view.get
 import androidx.fragment.app.FragmentTransaction
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.google.android.material.navigation.NavigationBarView
-import com.ve.lib.common.base.view.vm.BaseActivity
+import com.ve.lib.common.base.view.vm.BaseVBActivity
 import com.ve.lib.common.router.ARouterPath
 import com.ve.module.android.WazMainFragment
-import com.ve.lib.common.base.model.NavigationMenuItem
+import com.ve.lib.common.base.model.NaviMenuItem
 import com.ve.module.lockit.plus.databinding.ActivityMainBinding
 import com.ve.module.lockit.plus.ui.page.SkinFragment
-import com.ve.module.lockit.plus.ui.page.drawer.DrawerFragment
-import com.ve.module.lockit.plus.widget.PrivacyDialog
+import com.ve.module.lockit.plus.ui.page.test.HomeDeviceFragment
+import com.ve.module.lockit.plus.ui.page.test.HomeEmptyFragment
+import com.ve.module.lockit.plus.ui.page.test.HomeMeFragment
 
 
 @Route(path = ARouterPath.MAIN_HOME)
-class MainActivity : BaseActivity<ActivityMainBinding>() {
+class MainActivity : BaseVBActivity<ActivityMainBinding>() {
     override fun attachViewBinding(): ActivityMainBinding {
         return ActivityMainBinding.inflate(layoutInflater)
     }
 
     private var mIndex = 0
-    private lateinit var mFragmentPageList: MutableList<NavigationMenuItem>
+    private lateinit var mFragmentPageList: MutableList<NaviMenuItem>
 
-    override fun initialize(saveInstanceState: Bundle?) {
+    override fun initialize() {
         initNavigation()
         showFragment(mIndex)
+
+        lightStatusBar()
 //        PrivacyDialog.Builder(this).show()
     }
 
     private fun initFragment() {
         var pageCount = 0
         mFragmentPageList = mutableListOf(
-            NavigationMenuItem(
-                pageCount++, "首页", WazMainFragment::class.java, R.id.home_navigation_0,
-                R.drawable.ic_icon_outline_custome,
-                0
-            ),
-            NavigationMenuItem(
-                pageCount++, "卡片", WazMainFragment::class.java, R.id.home_navigation_1,
-                R.drawable.ic_icon_outline_about,
-                0
-            ),
-            NavigationMenuItem(
-                pageCount++, "好友", SkinFragment::class.java, R.id.home_navigation_2,
-                R.drawable.ic_icon_outline_flow,
-                0
-            ),
-            NavigationMenuItem(
-                pageCount++, "分类", DrawerFragment::class.java, R.id.home_navigation_3,
+
+            NaviMenuItem(
+                pageCount++, "分类", HomeDeviceFragment::class.java, NaviMenuItem.getId(pageCount),
                 R.drawable.ic_icon_outline_down4,
                 0
             ),
-            NavigationMenuItem(
-                pageCount++, "我的", DrawerFragment::class.java, R.id.home_navigation_4,
-                R.drawable.ic_icon_outline_about,
+            NaviMenuItem(
+                pageCount++, "我的", HomeMeFragment::class.java, NaviMenuItem.getId(pageCount),
+                R.drawable.ic_eufy_home,
                 0
-            )
+            ),
+            NaviMenuItem(
+                pageCount++, "卡片", HomeEmptyFragment::class.java, NaviMenuItem.getId(pageCount),
+                R.drawable.ic_eufy_home,
+                0
+            ),
+            NaviMenuItem(
+                pageCount++, "首页", WazMainFragment::class.java, NaviMenuItem.getId(pageCount),
+                R.drawable.ic_icon_outline_custome,
+                0
+            ),
+            NaviMenuItem(
+                pageCount++, "好友", SkinFragment::class.java, NaviMenuItem.getId(pageCount),
+                R.drawable.ic_icon_outline_flow,
+                0
+            ),
         )
     }
 
@@ -73,6 +75,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 menu.findItem(it.menuId).apply {
                     setIcon(it.menuIcon)
                 }
+                val badge=getOrCreateBadge(it.menuId)
+                badge.number=it.fragmentIndex
+
             }
         }
     }

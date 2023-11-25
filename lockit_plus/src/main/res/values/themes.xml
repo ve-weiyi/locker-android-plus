@@ -34,7 +34,7 @@
     <dimen name="common_btn_height">54dp</dimen>
     <dimen name="common_btn_middle_height">35dp</dimen>
     <dimen name="common_btn_middle_text_size">15dp</dimen>
-    <dimen name="common_btn_margin_start_end">40dp</dimen>
+    <dimen name="common_btn_margin_start_end">0dp</dimen>
     <dimen name="common_btn_margin_top_bottom">7dp</dimen>
 
     <style name="CommonBtnStyle" parent="t18_l">
