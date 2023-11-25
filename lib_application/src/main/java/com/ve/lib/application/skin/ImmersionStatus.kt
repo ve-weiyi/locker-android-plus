@@ -19,7 +19,6 @@ interface ImmersionStatus {
      * @param color          状态栏颜色值
      * @param statusBarAlpha 状态栏透明度 @IntRange(from = 0, to = 255)
      */
-
     fun setColor(activity: Activity, @ColorInt color: Int, statusBarAlpha: Int) {
         activity.window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
         activity.window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS)
